@@ -1,4 +1,4 @@
-site_name: Docs
+site_name: dstack.ai
 theme:
   name: material
   logo: assets/logo_white.svg

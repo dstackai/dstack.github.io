@@ -29,6 +29,16 @@ body[data-md-color-primary=blue] .md-nav__title .md-nav__button.md-logo img {
     .md-nav__title .md-logo {
         padding: 0;
     }
+
+    .md-header__title {
+        visibility: visible;
+    }
+
+    body[data-md-color-primary=blue] .md-nav__title .md-nav__button.md-logo img {
+        content: url("/assets/logo.png");
+        height: 1.6rem;
+        width: 1.6rem;
+    }
 }
 
 .md-nav__title {
