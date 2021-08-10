@@ -23,11 +23,10 @@ body[data-md-color-primary=blue] .md-nav__title .md-nav__button.md-logo img {
 
 @media screen and (max-width: 76.1875em) {
     .md-nav--primary .md-nav__title {
-        padding-top: 2.9rem;
-        height: 0;
+        display: block;
     }
 
-    .md-nav--primary .md-nav__title .md-logo {
+    .md-nav__title .md-logo {
         padding: 0;
     }
 }
