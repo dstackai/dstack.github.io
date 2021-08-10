@@ -1,12 +1,34 @@
-site_name: My Docs
+site_name: Documentation
 theme:
   name: material
+  logo: assets/logo_white.svg
+  favicon: images/favicon.ico
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+  features:
+    - toc.integrate
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+extra_css:
+  - stylesheets/extra.css
+extra:
+  homepage: https://dstack.ai
+  generator: false
+nav:
+  - Quickstart: index.md
+  - Tutorials:
+    - Training GPT-2: tutorials.md
