@@ -23,6 +23,13 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - toc:
+      toc_depth: 3
 extra_css:
   - stylesheets/extra.css
 extra:
@@ -30,5 +37,5 @@ extra:
   generator: false
 nav:
   - Quickstart: index.md
-  - Tutorials:
-    - Training GPT-2: tutorials.md
+#  - Tutorials:
+#    - Training GPT-2: gpt-2.md
