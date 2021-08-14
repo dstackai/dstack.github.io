@@ -280,10 +280,11 @@ dstack run download-model --model 117M
 If you run the `dstack --help` command, you'll see what commands it supports:
 
 ```bash
-usage: dstack [-h] [--version] {config,run,runners,runs,jobs,stop,logs} ...
+usage: dstack [-h] [--version]
+              {config,run,runners,runs,jobs,stop,logs,artifacts} ...
 
 positional arguments:
-  {config,run,runners,runs,jobs,stop,logs}
+  {config,run,runners,runs,jobs,stop,logs,artifacts}
     config              manage your configuration
     run                 run workflow
     runners             show live runners
@@ -291,6 +292,7 @@ positional arguments:
     jobs                show recent jobs
     stop                stop run or job
     logs                see logs of a run or a job
+    artifacts           manage artifacts of a given job
 
 optional arguments:
   -h, --help            show this help message and exit
