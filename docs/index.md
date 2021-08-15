@@ -7,7 +7,7 @@ Typical ML workflows consist of multiple steps, e.g. pre-processing data, traini
 `dstack` les you to define these steps (in a simple YAML format), and then, run any of them over a pool of remote
 machines (from your local machine).
 
-## Ket components
+### Key components
 
 1. `.dstack/workflows.yaml` – you create this file in your project files, and define there all your workflows that you
    have in your project. For every workflow, you may specify the Docker image, the commands to run the workflow, the
@@ -21,26 +21,28 @@ machines (from your local machine).
    to run the workflows defined in `.dstack/workflows.yaml`. When running workings with this CLI, you can override any
    variables used in the workflow.
 
-## How it works
+### How it works
 
-1. Once you submit a new run (using the `dstack` CLI), the run request is sent to the `dstack` server. This inclues the
-   information on the Git repo (incl. the branch, current revision, uncommited changes, etc), the name of the workflow,
+1. Once you submit a new run (using the `dstack` CLI), the run request is sent to the `dstack` server. This includes the
+   information on the Git repo (incl. the branch, current revision, uncommitted changes, etc.), the name of the workflow,
    and the overridden variable values if any.
 2. Once the `dstack` server (currently is hosted by `dstack.ai`) receives a run request, it creates a list of jobs
    associated with the run request. Then it assigns each job to one of the available runners.
-3. Once a runner (the machine that runs the `dstack-runner` daemon) recieves a job, it runs in via Docker, stream logs
+3. Once a runner (the machine that runs the `dstack-runner` daemon) receives a job, it runs in via Docker, stream logs
    in realtime, and, after the job is finished, upload output artifacts to the storage.
 
 !!! note "Personal access token"
     Even though workflows run on users machines, the data on users, runs as well as logs and output artifacts are stored
-    with `dstack.ai`. In order to use `dstack`, you have to sign up with dstack.ai, and opbtain your personal access token.
+    with `dstack.ai`. In order to use `dstack`, you have to sign up with dstack.ai, and obtain your personal access token.
 
 ## Getting started
 
-### Defining workflows
+### Workflows
 
 The very first thing you have to do to use `dstack` is defining the `.dstack/workflows.yaml` file within your project
 files.
+
+#### Syntax
 
 The root element of that file is called workflows. This is a list. Each element in this list may have the following
 fields:
@@ -49,8 +51,8 @@ fields:
 * `image` – the Docker image that will be used to run the workflow; required
 * `commands` – the list of bash commands to run the workflow; required
 * `depends-on` – defines what the workflow depends on; optional, if not defined, by default, the workflow depends on all
-  files in the repo, on all workflow variables defined in `.dstack/configs.yaml`, and doesn't depend on other workflows)
-  ; within depends-on, you may specify the elements repo, config, and workflows.
+  files in the repo, on all workflow variables defined in `.dstack/configs.yaml`, and doesn't depend on other workflows
+  ; within depends-on, you may specify the elements `repo`, `config`, and `workflows`.
 * `artifacts` – the list of paths by which all files must be stored as output artifacts in the storage once the workflow
   is done; optional
 
@@ -105,26 +107,15 @@ workflows:
       - samples/$job_id
 ```
 
-!!! note "Workflow variables"
-    Within the `.dstack/workflows.yaml` file, you can reference any variables defined in the `.dstack/configs.yaml` file (
-    e.g. `$model`).
+#### Variables
 
-    In addition to the variables that you've defined in `.dstack/configs.yaml`, you can reference the following reserved variables:
+In `.dstack/configs.yaml`, you can define variables (and their default values). Once defined, these variables can be
+referenced then from the `.dstack/workflows.yaml` file. 
 
-    * `$run_name` – the unique ID of the current run
-    * `$job_id` – the unique ID of the current job
-    * `$config_args` - expands into all variables defined in `.dstack/configs.yaml` for that workflow,
-    formatted as `--var_1_name var_1_value, --var_1_name var_1_value ...`; use this variable if you'd like to pass all
-    variables into a command
+!!! tip
+    Also, variables can be accessed through environment variables from the workflow itself (requires using upper case).
 
-### Defining configs
-
-In `.dstack/configs.yaml`, you can define variables (and their default values) to reuse from your workflows. Variables
-can be referenced from the `.dstack/workflows.yaml` or they can be accessed as environment variables from the workflow
-(requires using upper case).
-
-In `.dstack/configs.yaml`, you can define both global variables (shared by all workflows) and individually for each
-workflow.
+You can define both global variables (shared by all workflows) and individually for each workflow.
 
 [comment]: <> (&#40;from the [Training GPT-2]&#40;gpt-2.md&#41; tutorial&#41;)
 Here's an example of `.dstack/configs.yaml`:
@@ -162,9 +153,19 @@ configs:
     val_every: 0
 ```
 
-### Configuring runners
+!!! info
+    In addition to the variables that you've defined, `dstack` has the following system variables that are always 
+    available for any workflow:
+    
+    * `$run_name` – the unique ID of the current run
+    * `$job_id` – the unique ID of the current job
+    * `$config_args` - expands into all variables defined in `.dstack/configs.yaml` for that workflow,
+      formatted as `--var_1_name var_1_value, --var_1_name var_1_value ...`; use this variable if you'd like to pass all
+      variables into a command
 
-The next thing you have to do to use `dstacl` is installing the `dstack-runner` daemon on the machines that you'd like to
+### Runners
+
+The next thing you have to do to use `dstack` is installing the `dstack-runner` daemon on the machines that you'd like to
 use to run workflows.
 
 For example, if you have one or several servers (e.g. with GPU) and would like to run workflows there, you'll need to 
@@ -172,11 +173,13 @@ launch the `dstack-runner` daemon on these machines. Then, any time when you run
 from your laptop), the `dstack` will create jobs and assign them to run one of these machines (through `dstack-runner` 
 daemon). 
 
-Once a runner (the machine that runs the `dstack-runner` daemon) recieves a job, it runs in via Docker, stream logs
+Once a runner (the machine that runs the `dstack-runner` daemon) receives a job, it runs in via Docker, stream logs
 in realtime, and, after the job is finished, upload output artifacts to the storage.
 
 !!! note "Using your local machine as a runner"
     If you don't plan to use remote machines to run workflows, you can launch the `dstack-runner` daemon locally.
+
+#### Installation
 
 Here's how to install and launch the `dstack-runner`:
 
@@ -201,30 +204,60 @@ If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner
 !!! warning "Runner requires Docker"
     `dstack-runner` requires that either the standard Docker or the NVIDIA's Docker is installed and running on the machine
 
-### Running workflows
+### CLI
 
-In order to run and manage workflows from the `dstack` CLI, we have to install the CLI and configure it with our 
-personal access token.
+The `dstack` CLI can be used from inside the directory where your project files reside to run workflows defined with 
+the project, check available runners, and manage existing jobs. Read below to learn how to use the CLI.
 
-#### Install the dstack CLI
+#### Installation
 
-Here's how to install the `dstack` CLI via `pip`:
+First, install the CLI via `pip`:
 
 ```bash
 pip install -i <https://test.pypi.org/simple/> --extra-index-url <https://pypi.org/simple> dstack -U
 ```
 
-#### Configure the CLI with the token
+!!! tip 
+    The same command can be used to update the `dstack` CLI to the latest version.
 
-The final thing to set up the CLI is configuring it with your personal access token. You can do that by running the 
+#### Token
+
+Next, you have to configure the CLI with your personal access token. This can be done by running the 
 following command:
 
 ```bash
 dstack config --token <your personal access token>
 ```
 
-That's it. Now are are able to run workflows using the `dstack` CLI. If you type 
-`dstack run --help`, you'll see the following information:
+!!! note "Project directory"
+    Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
+    `.dstack/workflows.yaml` and `.dstack/configs.yaml` files).
+
+#### Runners
+    
+To check the status of the runners that you set up at the previous step, run the following command:
+
+```bash
+dstack runners 
+```
+
+You'll see the following output:
+```bash
+RUNNER    HOST                        STATUS
+sugar-1   MacBook-Pro-de-Boris.local  LIVE
+```
+
+!!! warning "If your runner is not there"
+    If you don't see your runner, this means the runner is offline, and you have to check whether the VM is up or 
+    that the `dstack-runner` daemon is configured and launched properly.
+
+#### Workflows
+
+In case runners are ready, you can use the CLI to run workflows. 
+
+[comment]: <> (&#40;from the [Training GPT-2]&#40;gpt-2.md&#41; tutorial&#41;)
+If you type `dstack run --help`, you'll see the syntax of the run command as well as the list of the workflows
+defined with `.dstack/workflows.yaml` that you can run. Here's an example:
 
 ```bash
 usage: dstack run [-h] {download-model,encode-dataset,finetune-model} ...
@@ -239,10 +272,10 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
 
-As you see, the command is aware of the workflows defined in `.dstack/workflows.yaml`.
+!!! warning ""
 
-Now, if you type `dstack run download-model --help`, you'll see that `dstack` is also aware of the variables defined
-for that workflow:
+Now, if you type `dstack run <workflow name> --help`, you'll see that `dstack` is also aware of the variables defined
+in `.dstack/configs.yaml` for that workflow. Here's an example:
 
 ```bash
 usage: dstack run download-model [-h] [--model [MODEL]]
@@ -255,27 +288,45 @@ optional arguments:
                         default is model
 ```
 
-!!! note "Project directory"
-    Make sure, to run `dstack` CLI's commands from the directory with your project files (where you have
-    `.dstack/workflows.yaml` and `.dstack/configs.yaml` files).
-
-If we want to run `download-model` and override the `model` variable, we would use the following command:
+If you want to run `download-model` from the example above and override the `model` variable, try this:
 
 ```bash
 dstack run download-model --model 117M
 ```
 
-!!! info "What happens when we run a workflow"
-    1. When we run a workflow using the `dstack run` command, `dstack` sends the run requests to the `dstack` server
-    (hosted with `dstack.ai`). The request contains the information Git repo (incl. the branch, current revision, uncommited changes, etc), the name of the workflow,
-    and the overridden variable values. 
+!!! info "What happens when you run a workflow"
+    1. When you run a workflow using the `dstack run` command, `dstack` sends the run requests to the `dstack` server
+    (hosted with `dstack.ai`). The request contains the information Git repo (incl. the branch, current revision, 
+    uncommitted changes, etc.), the name of the workflow, and the overridden variable values. 
     2. Once the `dstack` server receives a run request, it creates a list of jobs associated with the run request. Then,
-    it assigns each job to one of the available runners. Since the workflow that we run may depend on other workflows, the
-    `dstack` servers creates jobs for these other workflos too (in case they are not cached). 
+    it assigns each job to one of the available runners. Since the workflow that you run may depend on other workflows, the
+    `dstack` servers creates jobs for these other workflows too (in case they are not cached). 
     3. Each job is assigned by the `dstack` server to available runners.
-    4. Once a runner recieves a job, it runs, stream logs, and in the end upload output artifacts.
+    4. Once a runner receives a job, it runs, stream logs, and in the end upload output artifacts.
 
-### CLI reference
+#### Jobs
+
+Once you've run a workflow, you can see the list of jobs associated with it (and their status) by running the following 
+command:
+
+```bash
+bash jobs
+```
+
+If you do, you'll see the following output:
+
+```bash
+JOB           WORKFLOW        RUN              RUNNER    STATUS    STARTED    DURATION    ARTIFACTS
+275a6207be2e  download-model  wonderful-rat-1  sugar-1   DONE      1 min ago  1 min       models/117M
+```
+
+The first column here is the unique ID of the job. Use that ID when calling other commands, such as `dstack stop`, 
+`dstack logs`, and `dstack artifacts`. The third column is the unique name of the run, associated with a single 
+`dstack run` command. You can also use it when calling the commands such as `dstack stop`, and `dstack logs`.
+
+
+
+#### Reference
 
 If you run the `dstack --help` command, you'll see what commands it supports:
 
@@ -303,18 +354,18 @@ Please visit https://docs.dstack.ai for more information
 
 To see what arguments are available for each of these command, type `dstack <command> --help`.
 
-### Limitations
+## Limitations
 
 There is a long list of the things that `dstack` doesn't support yet:
 
 * **Private repositories**: currently, `dstack` only works with public Git repositories. Private Git repositories 
   cannot be used with `dstack` yet.
-* **Dashboard interface**: currently, you can work with `dstack` only via the `dstack`. There is not yet an user interface 
+* **Dashboard interface**: currently, you can work with `dstack` only via the `dstack`. There is not yet a user interface 
   to sign up, and manage runners, runs, artifacts, and logs.
 * **Hardware metrics**: currently, `dstack` doesn't provide the hardware metrics for the runners, e.g. the use and 
   availability of memory, CPU, GPU, etc.
 * **Hardware requirements**: currently, there is no way to specify hardware requirements per workflow (e.g. GPU, CPU,
-  memory, etc)
+  memory, etc.)
 * **Own storage**: currently, `dstack` uses its own storage for artifacts and logs. There is not yet
   a way to use own storage.
 * **Own server**: currently, the `dstack` server is hosted with `dstack.ai` and stores the information about
@@ -323,4 +374,4 @@ There is a long list of the things that `dstack` doesn't support yet:
 * **Triggers**: currently, there is no way to configure your own events or webhooks to trigger new runs. All runs must 
   be manually started via the `dstack` CLI.
 * **Sweeps**: currently, there is no way to run a multiple combinations of variables in parallel (i.e. hyperparameter 
-  tuning, e.g. grid search, bayesian search, etc).
+  tuning, e.g. grid search, bayesian search, etc.)
