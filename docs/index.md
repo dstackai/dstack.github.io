@@ -1,13 +1,13 @@
 # Quickstart
 
-## Introduction
+## How it works
 
 Typical ML workflows consist of multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc.
 
 `dstack` les you to define these steps in a simple YAML format, and then, run any of them on any infrastructure of your 
 choice via the CLI.
 
-Here's the list of key components `dstack` consists of: 
+#### What are the key components of dstack? 
 
 1. `.dstack/workflows.yaml` – you create this file in your project files, and define there all your workflows that you
    have in your project. For every workflow, you may specify the Docker image, the commands to run the workflow, the
@@ -18,31 +18,29 @@ Here's the list of key components `dstack` consists of:
    can use any number of machines (to make a pool of available runners); once the daemon is started, it runs assigned
    workflows, stream logs, and upload output artifacts to the storage.
 4. `dstack` – you install this CLI (Command Line Interface) via `pip` and use from the terminal (e.g. from your laptop)
-   to run the workflows defined in `.dstack/workflows.yaml`. When running workings with this CLI, you can override any
-   variables used in the workflow.
+   to run the workflows defined in `.dstack/workflows.yaml`. When you run workflows with the CLI, you can override any
+   variables.
 
-### How it works
+#### What happens when you run a workflow?
 
-1. Once you submit a new run (using the `dstack` CLI), the run request is sent to the `dstack` server. This includes the
-   information on the Git repo (incl. the branch, current revision, uncommitted changes, etc.), the name of the workflow,
-   and the overridden variable values if any.
-2. Once the `dstack` server (currently is hosted by `dstack.ai`) receives a run request, it creates a list of jobs
-   associated with the run request. Then it assigns each job to one of the available runners.
-3. Once a runner (the machine that runs the `dstack-runner` daemon) receives a job, it runs in via Docker, stream logs
-   in realtime, and, after the job is finished, upload output artifacts to the storage.
+1. When you run a workflow using the `dstack run` command, `dstack` sends the run requests to the `dstack` server
+(hosted with `dstack.ai`). The request contains the information Git repo (incl. the branch, current revision,
+uncommitted changes, etc.), the name of the workflow, and the overridden variable values.
+2. Once the `dstack` server receives a run request, it creates a list of jobs associated with the run request. Then,
+it assigns each job to one of the available runners. Since the workflow that you run may depend on other workflows, the
+`dstack` servers creates jobs for these other workflows too (in case they are not cached).
+3. Each job is assigned by the `dstack` server to available runners.
+4. Once a runner receives a job, it runs, stream logs, and in the end upload output artifacts.
 
-!!! note "Personal access token"
+
+!!! info "Personal access token"
     Even though workflows run on users machines, the data on users, runs as well as logs and output artifacts are stored
     with `dstack.ai`. In order to use `dstack`, you have to sign up with `dstack.ai`, and obtain your personal access token.
 
-## Getting started
-
-### Workflows
+## Workflows
 
 The very first thing you have to do to use `dstack` is defining the `.dstack/workflows.yaml` file within your project
 files.
-
-#### Syntax
 
 The root element of that file is called workflows. This is a list. Each element in this list may have the following
 fields:
@@ -107,7 +105,7 @@ workflows:
       - samples/$job_id
 ```
 
-#### Variables
+#### Workflow variables
 
 In `.dstack/configs.yaml`, you can define variables (and their default values). Once defined, these variables can be
 referenced then from the `.dstack/workflows.yaml` file. 
@@ -163,7 +161,7 @@ configs:
       formatted as `--var_1_name var_1_value, --var_1_name var_1_value ...`; use this variable if you'd like to pass all
       variables into a command
 
-### Runner daemon
+## Runners
 
 The next thing you have to do to use `dstack` is installing the `dstack-runner` daemon on the machines that you'd like to
 use to run workflows.
@@ -176,12 +174,12 @@ daemon).
 Once a runner (the machine that runs the `dstack-runner` daemon) receives a job, it runs in via Docker, stream logs
 in realtime, and, after the job is finished, upload output artifacts to the storage.
 
-!!! note "Using your local machine as a runner"
+!!! info "Using your local machine as a runner"
     If you don't plan to use remote machines to run workflows, you can launch the `dstack-runner` daemon locally.
 
 #### Installation
 
-Here's how to install and launch the `dstack-runner`:
+Here's how to install the `dstack-runner` daemon:
 
 === "Linux"
 
@@ -247,14 +245,14 @@ Launching the `dstack-runner` daemon is easy:
     `dstack-runner` requires that either the standard Docker or the NVIDIA's Docker is installed and running on the 
     machine.
 
-### CLI
+## CLI
 
 The `dstack` CLI can be used to run workflows (defined with the project files), check status of the runners, 
     and manage jobs.
 
 #### Installation
 
-First, install the CLI via `pip`:
+Here's how to install the CLI via `pip`:
 
 ```bash
 pip install -i <https://test.pypi.org/simple/> --extra-index-url <https://pypi.org/simple> dstack -U
@@ -355,13 +353,13 @@ JOB           WORKFLOW        RUN              RUNNER    STATUS    STARTED    DU
 275a6207be2e  download-model  wonderful-rat-1  sugar-1   DONE      1 min ago  1 min       models/117M
 ```
 
-The first column here is the unique ID of the job. Use that ID when calling other commands, such as `dstack stop`, 
-`dstack logs`, and `dstack artifacts`. The third column is the unique name of the run, associated with a single 
+The first column here (`JOB`) is the unique ID of the job. Use that ID when calling other commands, such as `dstack stop`, 
+`dstack logs`, and `dstack artifacts`. The third column (`RUN`) is the unique name of the run, associated with a single 
 `dstack run` command. You can also use it when calling the commands such as `dstack stop`, and `dstack logs`.
 
 #### Logs
 
-As your workflow is being running, you can see the output of the jobs that are associated with your run. 
+With the CLI, you can see the output of your run. 
 Type `dstack logs --help`, to see how to do it:
 
 ```bash

@@ -20,7 +20,7 @@ theme:
         name: Switch to light mode
   features:
     - toc.integrate
-    - navigation.sections
+#    - navigation.sections
     - navigation.expand
     - navigation.top
 markdown_extensions:
@@ -29,7 +29,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed
   - toc:
-      toc_depth: 4
+      toc_depth: 3
 extra_css:
   - stylesheets/extra.css
 extra:
@@ -37,6 +37,6 @@ extra:
   generator: false
 nav:
   - Quickstart: index.md
-#  - Tutorials:
-#    - Training GPT-2: gpt-2.md
+  - Tutorials:
+    - Training GPT-2: gpt-2.md
 #  - Limitations: limitations.md
