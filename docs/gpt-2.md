@@ -17,7 +17,7 @@ choice via the CLI.
 1. `.dstack/workflows.yaml` – you create this file in your project files, and define there all your workflows that you
    have in your project. For every workflow, you may specify the Docker image, the commands to run the workflow, the
    dependencies to other workflows, output artifacts, etc.
-2. `.dstack/config.yaml` – you create this file in your project files, and define there all the variables (and their
+2. `.dstack/variables.yaml` – you create this file in your project files, and define there all the variables (and their
    default values) your workflow may depend on. These variables can be referenced from `.dstack/workflows.yaml`.
 3. `dstack-runner` – you install and start this daemon on the machines that you'd like to use to run your workflows; you
    can use any number of machines (to make a pool of available runners); once the daemon is started, it runs assigned
@@ -157,13 +157,13 @@ Now, it's time to clone the [Git repository](https://github.com/dstackai/gpt-2) 
 
 The Git repository that we are going to use in this tutorial already has the `.dstack` folder with 
 the [`workflows.yaml`](https://github.com/dstackai/gpt-2/blob/finetuning/.dstack/workflows.yaml) and 
-[`configs.yaml`](https://github.com/dstackai/gpt-2/blob/finetuning/.dstack/configs.yaml) files.
+[`variables.yaml`](https://github.com/dstackai/gpt-2/blob/finetuning/.dstack/variables.yaml) files.
 
 ## 5. Run a workflow
 
 !!! note "Project directory"
       Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
-      `.dstack/workflows.yaml` and `.dstack/configs.yaml` files).
+      `.dstack/workflows.yaml` and `.dstack/variables.yaml` files).
 
 If you type `dstack run --help`, you'll see the following output:
 
@@ -190,7 +190,7 @@ optional arguments:
   --models_dir [MODELS_DIR]̋̋̋    by default, the value is is "model"
 ```
 
-Here, the CLI shows you the variables defined for the `download-model` workflow in `.dstack/configs.yaml`.
+Here, the CLI shows you the variables defined for the `download-model` workflow in `.dstack/variables.yaml`.
 
 Now, let's go and run the `finetune-model` workflow:
 
@@ -204,7 +204,7 @@ If you want, alternatively, you can override the default variable `model` with a
 dstack run finetune-model --model 117M 
 ```
 
-This is how you override any variables that you have defined in `.dstack/configs.yaml`.
+This is how you override any variables that you have defined in `.dstack/variables.yaml`.
 
 ## 6. Check jobs
 

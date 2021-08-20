@@ -12,7 +12,7 @@ choice via the CLI.
 1. `.dstack/workflows.yaml` – you create this file in your project files, and define there all your workflows that you
    have in your project. For every workflow, you may specify the Docker image, the commands to run the workflow, the
    dependencies to other workflows, output artifacts, etc.
-2. `.dstack/config.yaml` – you create this file in your project files, and define there all the variables (and their
+2. `.dstack/variables.yaml` – you create this file in your project files, and define there all the variables (and their
    default values) your workflow may depend on. These variables can be referenced from `.dstack/workflows.yaml`.
 3. `dstack-runner` – you install and start this daemon on the machines that you'd like to use to run your workflows; you
    can use any number of machines (to make a pool of available runners); once the daemon is started, it runs assigned
@@ -49,8 +49,8 @@ fields:
 * `image` – the Docker image that will be used to run the workflow; required
 * `commands` – the list of bash commands to run the workflow; required
 * `depends-on` – defines what the workflow depends on; optional, if not defined, by default, the workflow depends on all
-  files in the repo, on all workflow variables defined in `.dstack/configs.yaml`, and doesn't depend on other workflows
-  ; within depends-on, you may specify the elements `repo`, `config`, and `workflows`.
+  files in the repo, on all workflow variables defined in `.dstack/variables.yaml`, and doesn't depend on other workflows
+  ; within depends-on, you may specify the elements `repo`, `variables`, and `workflows`.
 * `artifacts` – the list of paths by which all files must be stored as output artifacts in the storage once the workflow
   is done; optional
 
@@ -98,7 +98,7 @@ workflows:
         - encode-dataset
     commands:
       - pip3 install -r requirements.txt
-      - PYTHONPATH=src python3 train.py --run_name $job_id --model_name $model --dataset input.npz $config_args
+      - PYTHONPATH=src python3 train.py --run_name $job_id --model_name $model --dataset input.npz $variables_as_args
     artifacts:
       - models/$model
       - checkpoint/$job_id
@@ -107,7 +107,7 @@ workflows:
 
 #### Workflow variables
 
-In `.dstack/configs.yaml`, you can define variables (and their default values). Once defined, these variables can be
+In `.dstack/variables.yaml`, you can define variables (and their default values). Once defined, these variables can be
 referenced then from the `.dstack/workflows.yaml` file. 
 
 !!! tip
@@ -116,10 +116,10 @@ referenced then from the `.dstack/workflows.yaml` file.
 You can define both global variables (shared by all workflows) and individually for each workflow.
 
 [comment]: <> (&#40;from the [Training GPT-2]&#40;gpt-2.md&#41; tutorial&#41;)
-Here's an example of `.dstack/configs.yaml`:
+Here's an example of `.dstack/variables.yaml`:
 
 ```yaml
-configs:
+variables:
   global:
     model: 124M
     models_dir: model
@@ -157,7 +157,7 @@ configs:
     
     * `$run_name` – the unique ID of the current run
     * `$job_id` – the unique ID of the current job
-    * `$config_args` - expands into all variables defined in `.dstack/configs.yaml` for that workflow,
+    * `$variables_as_args` - expands into all variables defined in `.dstack/variables.yaml` for that workflow,
       formatted as `--var_1_name var_1_value, --var_1_name var_1_value ...`; use this variable if you'd like to pass all
       variables into a command
 
@@ -271,7 +271,7 @@ dstack config --token <your personal access token>
 
 !!! note "Project directory"
     Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
-    `.dstack/workflows.yaml` and `.dstack/configs.yaml` files).
+    `.dstack/workflows.yaml` and `.dstack/variables.yaml` files).
 
 #### Runners
 
@@ -311,7 +311,7 @@ positional arguments:
 !!! warning ""
 
 Now, if you type `dstack run <workflow name> --help`, you'll see that `dstack` is also aware of the variables defined
-in `.dstack/configs.yaml` for that workflow. Here's an example:
+in `.dstack/variables.yaml` for that workflow. Here's an example:
 
 ```bash
 usage: dstack run download-model [--model [MODEL]] [--models_dir [MODELS_DIR]]
