@@ -391,3 +391,5 @@ In order to see all file stored within each artifact, use `-l` option:
 ```bash
 dstack artifacts list -l <job id>
 ```
+
+!!! info "Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP."
