@@ -278,13 +278,13 @@ dstack config --token <your personal access token>
 At the previous step, you've set up your runners. You can use the `dstack` CLI to check their status:
 
 ```bash
-dstack runners 
+dstack status --runners 
 ```
 
 You'll see the following output:
 ```bash
-RUNNER    HOST                        STATUS
-sugar-1   MacBook-Pro-de-Boris.local  LIVE
+RUNNER    HOST                    STATUS    UPDATED
+sugar-1   MBP-de-Boris.fritz.box  LIVE      3 mins ago
 ```
 
 !!! warning "If your runner is not there"
@@ -337,25 +337,30 @@ dstack run download-model --model 117M
     3. Each job is assigned by the `dstack` server to available runners.
     4. Once a runner receives a job, it runs, stream logs, and in the end upload output artifacts.
 
-#### Jobs
+#### Status
 
-Once you've run a workflow, you can see the list of jobs associated with it (and their status) by running the following 
-command:
-
-```bash
-bash jobs
-```
-
-If you do, you'll see the following output:
+Once you've run a workflow, you can see the status of the run, the jobs associated with it, and runners with the help
+of the `dstack status` command:
 
 ```bash
-JOB           WORKFLOW        RUN              RUNNER    STATUS    STARTED    DURATION    ARTIFACTS
-275a6207be2e  download-model  wonderful-rat-1  sugar-1   DONE      1 min ago  1 min       models/117M
+dstack status
 ```
 
-The first column here (`JOB`) is the unique ID of the job. Use that ID when calling other commands, such as `dstack stop`, 
-`dstack logs`, and `dstack artifacts`. The third column (`RUN`) is the unique name of the run, associated with a single 
-`dstack run` command. You can also use it when calling the commands such as `dstack stop`, and `dstack logs`.
+If call it, you'll see the following output:
+
+```bash
+RUN           JOB           WORKFLOW        VARIABLES      RUNNER    STATUS    STARTED      DURATION    ARTIFACTS
+angry-rat-1                 download-model  --model 117M   sugar-1   DONE      1 min ago    -
+              d0e3d8d0a1ff  download-model  --model 117M   sugar-1   DONE      1 min ago    2 mins      models/117M
+                 
+RUNNER    HOST                    STATUS    UPDATED
+sugar-1   MBP-de-Boris.fritz.box  LIVE      now
+```
+
+The first column (`RUN`) is the unique name of the run, associated with a single `dstack run` command. 
+The second column (`JOB`) is the unique ID of the job associated with the run. Use that ID when calling other commands,
+such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use it when calling the commands such as 
+`dstack stop`, and `dstack logs`.
 
 #### Logs
 
@@ -391,5 +396,14 @@ In order to see all file stored within each artifact, use `-l` option:
 ```bash
 dstack artifacts list -l <job id>
 ```
+
+If you'd like to download the artifacts, this can be done by the following command:
+
+```bash
+dstack artifacts download <job id>
+```
+
+By default, it will download the artifacts into the current working directory. The output directory can be overridden
+with the use of the `--output <path>` argument.
 
 !!! info "Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP."

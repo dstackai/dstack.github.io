@@ -138,13 +138,13 @@ dstack config --token <your personal access token>
 Once the CLI is configured, you can use it to check the status of runners:
 
 ```bash
-dstack runners 
+dstack status --runners 
 ```
 
 You'll see the following output:
 ```bash
-RUNNER    HOST                        STATUS
-sugar-1   MacBook-Pro-de-Boris.local  LIVE
+RUNNER    HOST                    STATUS    UPDATED
+sugar-1   MBP-de-Boris.fritz.box  LIVE      now
 ```
 
 !!! warning "If your runner is not there"
@@ -206,7 +206,7 @@ dstack run finetune-model --model 117M
 
 This is how you override any variables that you have defined in `.dstack/variables.yaml`.
 
-## 6. Check jobs
+## 6. Check run status
 
 After we call the `dstack run` command, the CLI sends the request with all the information about our run (incl. 
 the Git repo, the uncommitted changes, the overridden variable values, etc.) to the `dstack` server. The server
@@ -220,25 +220,30 @@ workflow depends on (in our case these include `download-model` and `encode-data
 To see the created job and their status, run the following command:
 
 ```bash
-dstack jobs
+dstack status
 ```
 
 Here's what you can see if you do that:
 
 ```bash
-JOB           RUN             WORKFLOW        STATUS     STARTED    DURATION    RUNNER    ARTIFACTS
-0673f7f444b6  pink-fly-1      download-model  DONE       6 min ago  1 min       sugar-1   models/124M
-67d53f2daa2e  pink-fly-1      encode-dataset  DONE       5 min ago  1 min       sugar-1   input.npz
-4ef42541c7f4  clever-tiger-1  finetune-model  RUNNING    just now   1 sec       sugar-1   -
+RUN           JOB           WORKFLOW        VARIABLES      RUNNER    STATUS    STARTED      DURATION    ARTIFACTS
+pink-fly-1                  download-model  --model 117M   sugar-1   DONE      1 mins ago   -
+              0673f7f444b6  download-model  --model 117M   sugar-1   DONE      6 mins ago   2 mins      models/117M
+              67d53f2daa2e  download-model  --model 117M   sugar-1   DONE      5 mins ago   2 mins      input.npz
+clever-tiger-1              
+              4ef42541c7f4  finetune-model  --model 117M   sugar-1   RUNNING   just now     2 mins      checkpoint/clever-tiger-1
+                                                                                                        samples/clever-tiger-1
+RUNNER    HOST                    STATUS    UPDATED
+sugar-1   MBP-de-Boris.fritz.box  LIVE      now
 ```
 
-The first column (`JOB`) here is the unique ID of the job. Use that ID when calling other commands, such as 
-`dstack stop`, `dstack logs`, and `dstack artifacts`. The third column (`RUN`) is the unique name of the run, 
-associated with a single `dstack run` command. You can also use it when calling the commands such as `dstack stop`, 
-and `dstack logs`.
+The first column (`RUN`) is the unique name of the run, associated with a single `dstack run` command.
+The second column (`JOB`) is the unique ID of the job associated with the run. Use that ID when calling other commands,
+such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use it when calling the commands such as
+`dstack stop`, and `dstack logs`.
 
-!!! warning "If jobs are not there"
-      In case you don't see jobs in the list, it may mean one of the following: either, the jobs aren't created yet by 
+!!! warning "If run or job is not there"
+      In case you don't see your run or job in the list, it may mean one of the following: either, the job isn't created yet by 
       the `dstack` server, or there is a problem with your runners. 
 
 ## 7. Check logs
@@ -298,5 +303,14 @@ In order to see all file stored within each artifact, use `-l` option:
 ```bash
 dstack artifacts list -l <job id>
 ```
+
+If you'd like to download the artifacts, this can be done by the following command:
+
+```bash
+dstack artifacts download <job id>
+```
+
+By default, it will download the artifacts into the current working directory. The output directory can be overridden 
+with the use of the `--output <path>` argument.
 
 !!! info "Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP." 
