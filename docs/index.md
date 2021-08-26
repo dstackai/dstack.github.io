@@ -1,6 +1,6 @@
-# Quickstart
+# Getting started
 
-## How it works
+## What's dstack?
 
 Typical ML workflows consist of multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc.
 
@@ -37,7 +37,7 @@ it assigns each job to one of the available runners. Since the workflow that you
     Even though workflows run on users machines, the data on users, runs as well as logs and output artifacts are stored
     with `dstack.ai`. In order to use `dstack`, you have to sign up with `dstack.ai`, and obtain your personal access token.
 
-## Workflows
+## Step 1: Define workflows
 
 The very first thing you have to do to use `dstack` is defining the `.dstack/workflows.yaml` file within your project
 files.
@@ -110,7 +110,7 @@ workflows:
 In `.dstack/variables.yaml`, you can define variables (and their default values). Once defined, these variables can be
 referenced then from the `.dstack/workflows.yaml` file. 
 
-!!! tip
+!!! tip "Environment variables"
     Also, variables can be accessed through environment variables from the workflow itself (requires using upper case).
 
 You can define both global variables (shared by all workflows) and individually for each workflow.
@@ -151,7 +151,7 @@ variables:
     val_every: 0
 ```
 
-!!! info
+!!! info ""
     In addition to the variables that you've defined, `dstack` has the following system variables that are always 
     available for any workflow:
     
@@ -161,7 +161,7 @@ variables:
       formatted as `--var_1_name var_1_value, --var_1_name var_1_value ...`; use this variable if you'd like to pass all
       variables into a command
 
-## Runners
+## Step 2: Set up runners
 
 The next thing you have to do to use `dstack` is installing the `dstack-runner` daemon on the machines that you'd like to
 use to run workflows.
@@ -174,10 +174,10 @@ daemon).
 Once a runner (the machine that runs the `dstack-runner` daemon) receives a job, it runs in via Docker, stream logs
 in realtime, and, after the job is finished, upload output artifacts to the storage.
 
-!!! info "Using your local machine as a runner"
+!!! info "Running runners locally"
     If you don't plan to use remote machines to run workflows, you can launch the `dstack-runner` daemon locally.
 
-#### Installation
+#### Install dstack CLI via pip
 
 Here's how to install the `dstack-runner` daemon:
 
@@ -241,11 +241,11 @@ Launching the `dstack-runner` daemon is easy:
     dstack-runner.exe start
     ```
 
-!!! warning "Runner requires Docker"
+!!! warning "Docker is required"
     `dstack-runner` requires that either the standard Docker or the NVIDIA's Docker is installed and running on the 
     machine.
 
-## CLI
+## Step 3: Install CLI
 
 The `dstack` CLI can be used to run workflows (defined with the project files), check status of the runners, 
     and manage jobs.
@@ -258,7 +258,7 @@ Here's how to install the CLI via `pip`:
 pip install -i <https://test.pypi.org/simple/> --extra-index-url <https://pypi.org/simple> dstack -U
 ```
 
-!!! tip 
+!!! tip ""
     The same command can be used to update the `dstack` CLI to the latest version.
 
 #### Token
@@ -273,7 +273,9 @@ dstack config --token <your personal access token>
     Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
     `.dstack/workflows.yaml` and `.dstack/variables.yaml` files).
 
-#### Runners
+## Step 4: Run workflows
+
+#### Check the status of runners
 
 At the previous step, you've set up your runners. You can use the `dstack` CLI to check their status:
 
@@ -287,11 +289,11 @@ RUNNER    HOST                    STATUS    UPDATED
 sugar-1   MBP-de-Boris.fritz.box  LIVE      3 mins ago
 ```
 
-!!! warning "If your runner is not there"
+!!! warning "Runner is not there?"
     If you don't see your runner, this means the runner is offline, and you have to check whether the VM is up or 
     that the `dstack-runner` daemon is configured and launched properly.
 
-#### Runs
+#### Run workflows
 
 Once your runners are ready, you can use the CLI to run workflows. 
 
@@ -327,7 +329,7 @@ If you want to run `download-model` from the example above and override the `mod
 dstack run download-model --model 117M
 ```
 
-!!! info "What happens when you run a workflow"
+!!! info "What happens when you run a workflow?"
     1. When you run a workflow using the `dstack run` command, `dstack` sends the run requests to the `dstack` server
     (hosted with `dstack.ai`). The request contains the information Git repo (incl. the branch, current revision, 
     uncommitted changes, etc.), the name of the workflow, and the overridden variable values. 
@@ -337,7 +339,7 @@ dstack run download-model --model 117M
     3. Each job is assigned by the `dstack` server to available runners.
     4. Once a runner receives a job, it runs, stream logs, and in the end upload output artifacts.
 
-#### Status
+#### Check the status of runs
 
 Once you've run a workflow, you can see the status of the run, the jobs associated with it, and runners with the help
 of the `dstack status` command:
@@ -362,7 +364,7 @@ The second column (`JOB`) is the unique ID of the job associated with the run. U
 such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use it when calling the commands such as 
 `dstack stop`, and `dstack logs`.
 
-#### Logs
+#### Check logs of the runs
 
 With the CLI, you can see the output of your run. 
 Type `dstack logs --help`, to see how to do it:
@@ -374,11 +376,11 @@ positional arguments:
   (RUN | JOB)  run name or job id
 ```
 
-!!! tip 
+!!! tip "" 
     You can type `dstack logs` without additional arguments and see all recent logs, or type `dstack logs <job id`>, 
     or `dstack logs <run name>` to filter logs by a job ID or a run name correspondingly.
 
-#### Artifacts
+#### Check or download artifacts
 
 Every job at the end of its execution stores its artifacts in the storage.
 With the CLI, you can both list the contents of each artifact and download it to your local machine. 
@@ -406,4 +408,5 @@ dstack artifacts download <job id>
 By default, it will download the artifacts into the current working directory. The output directory can be overridden
 with the use of the `--output <path>` argument.
 
-!!! info "Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP."
+!!! bug "Submit feedback" 
+        Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP.

@@ -20,4 +20,5 @@ The `dstack` tool is at the early preview stage. There are lots of things it doe
 * **Sweeps**: Currently, there is no way to run a multiple combinations of variables in parallel (i.e. hyperparameter
   tuning, e.g. grid search, bayesian search, etc.)
 
-!!! info "Something critical is not on the list? Something didn't work or was unclear? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP."
+!!! bug "Submit feedback" 
+    Something critical is not on the list? Something didn't work or was unclear? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP.

@@ -41,7 +41,7 @@ choice via the CLI.
     Even though workflows run on your machines, logs, output artifacts, and other metadata are stored with `dstack.ai`.
     In order to use `dstack`, you have to sign up with `dstack.ai`, and obtain your personal access token.
 
-## 1. Set up a runner
+## Step 1: Set up a runner
 
 !!! note "What is a runner?"
     A runner is any machine which you'd like to use to run `dstack` workflows. In order to use any machine
@@ -49,7 +49,7 @@ choice via the CLI.
     daemon running form a pool of runners. When you later run workflows via the `dstack` CLI, these workflows will be
     assigned to run on runners.
 
-!!! info "Run workflows locally"
+!!! info "Run runners locally"
     If you don't plan to use remote machines to run workflows, you can launch the `dstack-runner` daemon locally.
 
 Here's how you can install the `dstack-runner` daemon:
@@ -110,11 +110,11 @@ Now you can launch the daemon:
     dstack-runner.exe start
     ```
 
-!!! warning "Runner requires Docker"
+!!! warning "Docker is required"
     `dstack-runner` requires that either the standard Docker or the NVIDIA's Docker is installed and running on the
     machine.
 
-## 2. Install CLI
+## Step 2: Install CLI
 
 Now, that the runners are ready, we can install the `dstack` CLI to run workflows on these runners.
 
@@ -124,7 +124,7 @@ Here's how to install the CLI via `pip`:
 pip install -i <https://test.pypi.org/simple/> --extra-index-url <https://pypi.org/simple> dstack -U
 ```
 
-!!! tip
+!!! tip ""
     The same command can be used to update the `dstack` CLI to the latest version.
 
 Next, you have to configure the CLI with your personal access token:
@@ -133,7 +133,7 @@ Next, you have to configure the CLI with your personal access token:
 dstack config --token <your personal access token>
 ```
 
-## 3. Check runner status
+## Step 3: Check runner status
 
 Once the CLI is configured, you can use it to check the status of runners:
 
@@ -147,11 +147,11 @@ RUNNER    HOST                    STATUS    UPDATED
 sugar-1   MBP-de-Boris.fritz.box  LIVE      now
 ```
 
-!!! warning "If your runner is not there"
+!!! warning "Runner is not there?"
     If you don't see your runner, this means the runner is offline, and you have to check whether the VM is up or
     that the `dstack-runner` daemon is configured and launched properly.
 
-## 4. Clone Git repo
+## Step 4: Clone Git repo
 
 Now, it's time to clone the [Git repository](https://github.com/dstackai/gpt-2) with our project files.
 
@@ -159,7 +159,7 @@ The Git repository that we are going to use in this tutorial already has the `.d
 the [`workflows.yaml`](https://github.com/dstackai/gpt-2/blob/finetuning/.dstack/workflows.yaml) and 
 [`variables.yaml`](https://github.com/dstackai/gpt-2/blob/finetuning/.dstack/variables.yaml) files.
 
-## 5. Run a workflow
+## Step 5: Run a workflow
 
 !!! note "Project directory"
       Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
@@ -206,18 +206,18 @@ dstack run finetune-model --model 117M
 
 This is how you override any variables that you have defined in `.dstack/variables.yaml`.
 
-## 6. Check run status
+## Step 6: Check run status
 
 After we call the `dstack run` command, the CLI sends the request with all the information about our run (incl. 
 the Git repo, the uncommitted changes, the overridden variable values, etc.) to the `dstack` server. The server
 creates job for the requested workflow (in our case it's `finetune-model`) and all the workflows the requested 
 workflow depends on (in our case these include `download-model` and `encode-dataset`).
 
-!!! info "Workflow cache"
+!!! info "Cached runs"
       In case the requested workflow depends on a workflow that already ran before with the exact same parameters,
-      it won't run again. Instead, `dstack` will reuse the previously run job's artifacts.
+      it won't run again. Instead, `dstack` will reuse the previously run job's artifacts, and won't create a new job.
 
-To see the created job and their status, run the following command:
+To see created job and their status, run the following command:
 
 ```bash
 dstack status
@@ -242,11 +242,11 @@ The second column (`JOB`) is the unique ID of the job associated with the run. U
 such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use it when calling the commands such as
 `dstack stop`, and `dstack logs`.
 
-!!! warning "If run or job is not there"
+!!! warning "Run or job is not there?"
       In case you don't see your run or job in the list, it may mean one of the following: either, the job isn't created yet by 
       the `dstack` server, or there is a problem with your runners. 
 
-## 7. Check logs
+## Step 7: Check logs
 
 With the CLI, you can see the output of your run.
 If you type `dstack logs --help`, you'll see the following output:
@@ -268,7 +268,7 @@ dstack logs
 
 In this case, it's supposed to print all the recent logs. 
 
-## 8. Stop job
+## Step 8: Stop job
 
 Any job can be stopped at any time. If you type `dstack stop --help`, you'll see the following:
 
@@ -285,7 +285,7 @@ optional arguments:
 This command requires specifying an ID of a job or a name of a run. Also, if you want, you can specify the `--abort`
 argument. In this case, `dstack` will not upload the output artifacts of the stopped job.
 
-## 9. Check artifacts
+## Step 9: Check artifacts
 
 Every job at the end of its execution stores its artifacts in the storage.
 With the CLI, you can both list the contents of each artifact and download it to your local machine.
@@ -313,4 +313,5 @@ dstack artifacts download <job id>
 By default, it will download the artifacts into the current working directory. The output directory can be overridden 
 with the use of the `--output <path>` argument.
 
-!!! info "Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP." 
+!!! bug "Submit feedback"
+        Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP.
