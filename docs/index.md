@@ -38,7 +38,7 @@ it assigns each job to one of the available runners. Since the workflow that you
 Here's how to install the `dstack` CLI via `pip`:
 
 ```bash
-pip install -i <https://test.pypi.org/simple/> --extra-index-url <https://pypi.org/simple> dstack -U
+pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple dstack -U
 ```
 
 !!! note ""

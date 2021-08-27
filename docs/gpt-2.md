@@ -48,7 +48,7 @@ The first thing you have to do to start using `dstack` is to install its CLI.
 This can be done via `pip`:
 
 ```bash
-pip install -i <https://test.pypi.org/simple/> --extra-index-url <https://pypi.org/simple> dstack -U
+pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple dstack -U
 ```
 
 !!! note ""
