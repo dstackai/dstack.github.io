@@ -39,18 +39,75 @@ choice via the CLI.
 
 !!! info "Personal access token"
     Even though workflows run on your machines, logs, output artifacts, and other metadata are stored with `dstack.ai`.
-    In order to use `dstack`, you have to sign up with `dstack.ai`, and obtain your personal access token.
+    In order to use `dstack`, you have to sign up with `dstack.ai`, and obtain your `Personal Access Token`.
 
-## Step 1: Set up a runner
+## Step 1: Install CLI
+
+The first thing you have to do to start using `dstack` is to install its CLI.
+
+This can be done via `pip`:
+
+```bash
+pip install -i <https://test.pypi.org/simple/> --extra-index-url <https://pypi.org/simple> dstack -U
+```
+
+!!! note ""
+    The same command can be used to update the `dstack` CLI to the latest version.
+
+#### Registering a new user
+
+Before you can use the `dstack` CLI or set up runners, you have to register a user with `dstack.ai`.
+
+Here's how to do it via the CLI:
+
+```bash
+dstack register
+```
+
+It will prompt you to select a user name (only latin characters, digits and underscores are allowed), and specify your
+email. Once you provide that, to verify the email address, it will send to this email a verification code that you'll
+have to specify right away.
+
+That's it. Now, you are fully authorized on this machine to perform any operations via the CLI.
+
+!!! note ""
+    The authorization is done via the `Personal Access Token` that is stored in `~/.dstack/config.yaml` file.
+
+#### Login as existing user
+
+If you'll ever have to authorize the `dstack` CLI again on this or another machine, you'll can do that by using
+the following command:
+
+```bash 
+dstack login
+```
+
+This command needs the user name and the password. If it's correct, it authorizes the current machine to use
+the `dstack` CLI.
+
+#### Personal access token
+
+At the next step, when you'll be setting up runners, you'll need your `Personal Access Token`.
+This token can be obtained by the following command:
+
+```bash
+dstack token
+```
+
+Keep the token that the CLI gives you. You'll need it to configure the `dstack-runner` daemon.
+
+## Step 2: Set up a runner
 
 !!! note "What is a runner?"
     A runner is any machine which you'd like to use to run `dstack` workflows. In order to use any machine
-    as a runner, you have to launch the `dstack-runner` daemon on that machine. All machines that have the `dstack-runner`
-    daemon running form a pool of runners. When you later run workflows via the `dstack` CLI, these workflows will be
-    assigned to run on runners.
+    as a runner, you have to launch the `dstack-runner` daemon on that machine.
 
-!!! info "Run runners locally"
-    If you don't plan to use remote machines to run workflows, you can launch the `dstack-runner` daemon locally.
+    All machines that have the `dstack-runner` daemon running form a pool of runners. 
+
+    When you later run workflows via the `dstack` CLI, these workflows are assigned to these runners.
+
+!!! info "Run the runner locally"
+    If you don't plan to use a remote machine, you can launch the `dstack-runner` daemon locally.
 
 Here's how you can install the `dstack-runner` daemon:
 
@@ -70,27 +127,32 @@ Here's how you can install the `dstack-runner` daemon:
 
 If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe), and run it.
 
-Note, before you start the daemon, you have to configure it with your personal access token:
+#### Personal access token
+
+Before you start the daemon, you have to configure it with your `Personal Access Token`:
+
+!!! warning ""
+    This step is not required if you run the daemon on the same machine as the CLI.
 
 === "Linux"
 
     ```bash
-    dstack-runner config --token <token>
+    dstack-runner config --token <Personal Access Token>
     ```
 
 === "macOS"
 
     ```bash
-    dstack-runner config --token <token>
+    dstack-runner config --token <Personal Access Token>
     ```
 
 === "Windows"
 
     ```cmd
-    dstack-runner.exe config --token <token>
+    dstack-runner.exe config --token <Personal Access Token>
     ```
 
-Now you can launch the daemon:
+That's it. Now, you can launch the daemon:
 
 === "Linux"
 
@@ -114,42 +176,24 @@ Now you can launch the daemon:
     `dstack-runner` requires that either the standard Docker or the NVIDIA's Docker is installed and running on the
     machine.
 
-## Step 2: Install CLI
+## Step 3: Check the runner
 
-Now, that the runners are ready, we can install the `dstack` CLI to run workflows on these runners.
-
-Here's how to install the CLI via `pip`:
-
-```bash
-pip install -i <https://test.pypi.org/simple/> --extra-index-url <https://pypi.org/simple> dstack -U
-```
-
-!!! tip ""
-    The same command can be used to update the `dstack` CLI to the latest version.
-
-Next, you have to configure the CLI with your personal access token:
-
-```bash
-dstack config --token <your personal access token>
-```
-
-## Step 3: Check runner status
-
-Once the CLI is configured, you can use it to check the status of runners:
+After you've set up a runner, you can use the `dstack` CLI to check its status:
 
 ```bash
 dstack status --runners 
 ```
 
-You'll see the following output:
+If the runner is running properly, you'll see its hosts in the output:
+
 ```bash
 RUNNER    HOST                    STATUS    UPDATED
-sugar-1   MBP-de-Boris.fritz.box  LIVE      now
+sugar-1   MBP-de-Boris.fritz.box  LIVE      3 mins ago
 ```
 
 !!! warning "Runner is not there?"
-    If you don't see your runner, this means the runner is offline, and you have to check whether the VM is up or
-    that the `dstack-runner` daemon is configured and launched properly.
+    If you don't see your runner in the output, this means the runner is offline or that the `dstack-runner` daemon
+    was not configured or launched properly.
 
 ## Step 4: Clone Git repo
 
