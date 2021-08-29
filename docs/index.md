@@ -168,7 +168,7 @@ That's it. Now, you can launch the daemon:
 After you've set up your runners, you can use the `dstack` CLI to check their status:
 
 ```bash
-dstack status --runners 
+dstack runners 
 ```
 
 If runners are running properly, you'll see their hosts in the output:
@@ -366,31 +366,29 @@ If call it, you'll see the following output:
 RUN           JOB           WORKFLOW        VARIABLES      RUNNER    STATUS    STARTED      DURATION    ARTIFACTS
 angry-rat-1                 download-model  --model 117M   sugar-1   DONE      1 min ago    -
               d0e3d8d0a1ff  download-model  --model 117M   sugar-1   DONE      1 min ago    2 mins      models/117M
-                 
-RUNNER    HOST                    STATUS    UPDATED
-sugar-1   MBP-de-Boris.fritz.box  LIVE      now
 ```
+
+!!! warning ""
+    By default, the `dstack status` command lists all unfinished runs. If there are no unfinished runs,
+    it lists the last finished run. If you'd like to see more finished runs, use the `--last <n>` argument to
+    specify the number of last runs to show regardless of their status.
 
 The first column (`RUN`) is the unique name of the run, associated with a single `dstack run` command. 
 The second column (`JOB`) is the unique ID of the job associated with the run. Use that ID when calling other commands,
 such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use it when calling the commands such as 
 `dstack stop`, and `dstack logs`.
 
-#### Check logs of the runs
+#### Check logs
 
 With the CLI, you can see the output of your run. 
 Type `dstack logs --help`, to see how to do it:
 
 ```bash
-usage: dstack logs [(RUN | JOB)]
+usage: dstack logs (RUN | JOB)
 
 positional arguments:
   (RUN | JOB)  run name or job id
 ```
-
-!!! tip "" 
-    You can type `dstack logs` without additional arguments and see all recent logs, or type `dstack logs <job id`>, 
-    or `dstack logs <run name>` to filter logs by a job ID or a run name correspondingly.
 
 #### Check or download artifacts
 

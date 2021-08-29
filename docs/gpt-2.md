@@ -37,10 +37,6 @@ choice via the CLI.
 3. Each job is assigned by the `dstack` server to available runners.
 4. Once a runner receives a job, it runs, stream logs, and in the end upload output artifacts.
 
-!!! info "Personal access token"
-    Even though workflows run on your machines, logs, output artifacts, and other metadata are stored with `dstack.ai`.
-    In order to use `dstack`, you have to sign up with `dstack.ai`, and obtain your `Personal Access Token`.
-
 ## Step 1: Install CLI
 
 The first thing you have to do to start using `dstack` is to install its CLI.
@@ -181,7 +177,7 @@ That's it. Now, you can launch the daemon:
 After you've set up a runner, you can use the `dstack` CLI to check its status:
 
 ```bash
-dstack status --runners 
+dstack runners 
 ```
 
 If the runner is running properly, you'll see its hosts in the output:
@@ -270,24 +266,26 @@ dstack status
 Here's what you can see if you do that:
 
 ```bash
-RUN           JOB           WORKFLOW        VARIABLES      RUNNER    STATUS    STARTED      DURATION    ARTIFACTS
-pink-fly-1                  download-model  --model 117M   sugar-1   DONE      1 mins ago   -
-              0673f7f444b6  download-model  --model 117M   sugar-1   DONE      6 mins ago   2 mins      models/117M
-              67d53f2daa2e  download-model  --model 117M   sugar-1   DONE      5 mins ago   2 mins      input.npz
-clever-tiger-1              
-              4ef42541c7f4  finetune-model  --model 117M   sugar-1   RUNNING   just now     2 mins      checkpoint/clever-tiger-1
-                                                                                                        samples/clever-tiger-1
-RUNNER    HOST                    STATUS    UPDATED
-sugar-1   MBP-de-Boris.fritz.box  LIVE      now
+RUN             JOB           WORKFLOW        VARIABLES      RUNNER    STATUS    STARTED      DURATION    ARTIFACTS
+clever-tiger-1  -             download-model  --model 117M   sugar-1   RUNNING   6 mins ago   6 mins      -
+                0673f7f444b6  download-model  --model 117M   sugar-1   DONE      6 mins ago   2 mins      models/117M
+                67d53f2daa2e  download-model  --model 117M   sugar-1   DONE      5 mins ago   2 mins      input.npz
+                4ef42541c7f4  finetune-model  --model 117M   sugar-1   RUNNING   just now     2 mins      checkpoint/clever-tiger-1
+                                                                                                          samples/clever-tiger-1
 ```
+
+!!! warning ""
+    By default, the `dstack status` command lists all unfinished runs. If there are no unfinished runs,
+    it lists the last finished run. If you'd like to see more finished runs, use the `--last <n>` argument to
+    specify the number of last runs to show regardless of their status.
 
 The first column (`RUN`) is the unique name of the run, associated with a single `dstack run` command.
 The second column (`JOB`) is the unique ID of the job associated with the run. Use that ID when calling other commands,
 such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use it when calling the commands such as
 `dstack stop`, and `dstack logs`.
 
-!!! warning "Run or job is not there?"
-      In case you don't see your run or job in the list, it may mean one of the following: either, the job isn't created yet by 
+!!! warning "Job is not there?"
+      In case you don't see your job in the list, it may mean one of the following: either, the job isn't created yet by 
       the `dstack` server, or there is a problem with your runners. 
 
 ## Step 7: Check logs
@@ -296,21 +294,11 @@ With the CLI, you can see the output of your run.
 If you type `dstack logs --help`, you'll see the following output:
 
 ```bash
-usage: dstack logs [(RUN | JOB)]
+usage: dstack logs (RUN | JOB)
 
 positional arguments:
   (RUN | JOB)  run name or job id
 ```
-
-You can run `dstack run` with or without an ID of a job or a name of a run.
-
-Try this command:
-
-```bash
-dstack logs
-```
-
-In this case, it's supposed to print all the recent logs. 
 
 ## Step 8: Stop job
 
