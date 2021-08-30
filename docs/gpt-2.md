@@ -6,7 +6,7 @@ OpenAI's GPT-2.
 ## Introduction
 
 Before using `dstack` you have to understand how `dstack` works. If you're already familiar, skip to 
-[Set up a runner](#step-1-set-up-a-runner).
+[Set up a runner](#step-2-set-up-a-runner).
 
 Typical ML workflows consist of multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc. 
 `dstack` les you to define these steps in a simple YAML format, and then, run any of them on any infrastructure of your

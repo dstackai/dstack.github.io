@@ -1,14 +1,19 @@
 # Getting started
 
-## What's dstack?
+## Introduction
 
-!!! abstract ""
-    Typical ML workflows consist of multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc.
+Typical ML workflows consist of multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc.
 
-    `dstack` les you to define these steps in a simple YAML format, and then, run any of them on any infrastructure of your 
-    choice via the CLI.
+`dstack` les you to define these steps in a simple YAML format, and then, run any of them on any infrastructure of your 
+choice via the CLI.
 
-#### What are the key components of dstack? 
+If you use one or several machines to run ML workflows, you can install the `dstack-runner` 
+daemon on all these machines, and submit workflows to run there from your laptop through the `dstack` CLI. 
+
+The `dstack-runner` daemon will manage dependencies, run ML workflows through Docker, and upstream logs and output 
+artifacts to the storage.
+
+### Key components 
 
 1. `.dstack/workflows.yaml` – you create this file in your project files, and define there all your workflows that you
    have in your project. For every workflow, you may specify the Docker image, the commands to run the workflow, the
@@ -22,7 +27,7 @@
    to run the workflows defined in `.dstack/workflows.yaml`. When you run workflows with the CLI, you can override any
    variables.
 
-#### What happens when you run a workflow?
+### How it works
 
 1. When you run a workflow using the `dstack run` command, `dstack` sends the run requests to the `dstack` server
 (hosted with `dstack.ai`). The request contains the information Git repo (incl. the branch, current revision,
@@ -33,158 +38,9 @@ it assigns each job to one of the available runners. Since the workflow that you
 3. Each job is assigned by the `dstack` server to available runners.
 4. Once a runner receives a job, it runs, stream logs, and in the end upload output artifacts.
 
-## Step 1: Install CLI
+## Step 1: Define workflows
 
-Here's how to install the `dstack` CLI via `pip`:
-
-```bash
-pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple dstack -U
-```
-
-!!! note ""
-    The same command can be used to update the `dstack` CLI to the latest version.
-
-#### Registering a new user
-
-Before you can use the `dstack` CLI or set up runners, you have to register a user with `dstack.ai`.
-
-Here's how to do it via the CLI:
-
-```bash
-dstack register
-```
-
-It will prompt you to select a user name (only latin characters, digits and underscores are allowed), and specify your
-email. Once you provide that, to verify the email address, it will send to this email a verification code that you'll 
-have to specify right away.
-
-That's it. Now, you are fully authorized on this machine to perform any operations via the CLI.
-
-!!! note ""
-    The authorization is done via the `Personal Access Token` that is stored in `~/.dstack/config.yaml` file.
-
-#### Login as existing user
-
-If you'll ever have to authorize the `dstack` CLI again on this or another machine, you'll can do that by using 
-the following command:
-
-```bash 
-dstack login
-```
-
-This command needs the user name and the password. If it's correct, it authorizes the current machine to use 
-the `dstack` CLI.
-
-#### Personal access token
-
-At the next step, when you'll be setting up runners, you'll need your `Personal Access Token`.
-This token can be obtained by the following command:
-
-```bash
-dstack token
-```
-
-Keep the token that the CLI gives you. You'll need it to configure the `dstack-runner` daemon.
-
-## Step 2: Set up runners
-
-!!! note "What is a runner?"
-    A runner is any machine which you'd like to use to run `dstack` workflows. In order to use any machine
-    as a runner, you have to launch the `dstack-runner` daemon on that machine. 
-    
-    All machines that have the `dstack-runner` daemon running form a pool of runners. 
-
-    When you later run workflows via the `dstack` CLI, these workflows are assigned to these runners.
-
-!!! info "Run runners locally"
-    If you don't plan to use remote machines, you can launch the `dstack-runner` daemon locally.
-
-Here's how you can install the `dstack-runner` daemon:
-
-=== "Linux"
-
-    ```bash
-    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-linux-amd64"
-    sudo chmod +x /usr/local/bin/dstack-runner
-    ```
-
-=== "macOS"
-
-    ```bash
-    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-darwin-amd64"
-    sudo chmod +x /usr/local/bin/dstack-runner
-    ```
-
-If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe), and run it.
-
-#### Personal access token
-
-Before you start the daemon, you have to configure it with your `Personal Access Token`:
-
-=== "Linux"
-
-    ```bash
-    dstack-runner config --token <token>
-    ```
-
-=== "macOS"
-
-    ```bash
-    dstack-runner config --token <token>
-    ```
-
-=== "Windows"
-
-    ```cmd
-    dstack-runner.exe config --token <token>
-    ```
-
-That's it. Now, you can launch the daemon:
-
-=== "Linux"
-
-    ```bash
-    dstack-runner start
-    ```
-
-=== "macOS"
-
-    ```bash
-    dstack-runner start
-    ```
-
-=== "Windows"
-
-    ```cmd
-    dstack-runner.exe start
-    ```
-
-!!! warning "Docker is required"
-    `dstack-runner` requires that either the standard Docker or the NVIDIA's Docker is installed and running on the
-    machine.
-
-#### Check runners
-
-After you've set up your runners, you can use the `dstack` CLI to check their status:
-
-```bash
-dstack runners 
-```
-
-If runners are running properly, you'll see their hosts in the output:
-
-```bash
-RUNNER    HOST                    STATUS    UPDATED
-sugar-1   MBP-de-Boris.fritz.box  LIVE      3 mins ago
-```
-
-!!! warning "Runner is not there?"
-    If you don't see your runner in the output, this means the runner is offline or that the `dstack-runner` daemon 
-    was not configured or launched properly.
-
-## Step 3: Define workflows
-
-Now it's time to get to create the `.dstack/workflows.yaml` file in your project 
+The first thing you have to do to get started with dstack is creating the `.dstack/workflows.yaml` file in your project
 files.
 
 The root element of that file is called workflows. This is a list. Each element in this list may have the following
@@ -248,18 +104,17 @@ workflows:
       - samples/$run_name
 ```
 
-#### Workflow variables
+### Workflow variables
 
 In `.dstack/variables.yaml`, you can define variables (and their default values). Once defined, these variables can be
-referenced then from the `.dstack/workflows.yaml` file. 
+referenced then from the `.dstack/workflows.yaml` file.
 
 !!! tip "Environment variables"
-    Also, variables can be accessed through environment variables from the workflow itself (requires using upper case).
+Also, variables can be accessed through environment variables from the workflow itself (requires using upper case).
 
 You can define both global variables (shared by all workflows) and individually for each workflow.
 
-[comment]: <> (&#40;from the [Training GPT-2]&#40;gpt-2.md&#41; tutorial&#41;)
-Here's an example of `.dstack/variables.yaml`:
+Here's an example of `.dstack/variables.yaml`(from the [Training GPT-2](gpt-2.md) tutorial):
 
 ```yaml
 variables:
@@ -290,26 +145,173 @@ variables:
 ```
 
 !!! info ""
-    In addition to the variables that you've defined, `dstack` has the following system variables that are always 
+    In addition to the variables that you've defined, `dstack` has the following system variables that are always
     available for any workflow:
-    
+
     * `$run_name` – the unique ID of the current run
     * `$job_id` – the unique ID of the current job
     * `$variables_as_args` - expands into all variables defined in `.dstack/variables.yaml` for that workflow,
       formatted as `--var_1_name var_1_value, --var_1_name var_1_value ...`; use this variable if you'd like to pass all
       variables into a command
 
+## Step 2: Install CLI
+
+The next step is installing the `dstack` CLI. This can be done via `pip`:
+
+```bash
+pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple dstack -U
+```
+
+!!! note ""
+    The same command can be used to update the `dstack` CLI to the latest version.
+
+### Registering a user
+
+Before you can use the `dstack` CLI or set up runners, you have to register a user with `dstack.ai`.
+
+Here's how to do it via the CLI:
+
+```bash
+dstack register
+```
+
+It will prompt you to select a user name (only latin characters, digits and underscores are allowed), and specify your
+email. Once you provide that, to verify the email address, it will send to this email a verification code that you'll 
+have to specify right away.
+
+That's it. Now, you are fully authorized on this machine to perform any operations via the CLI.
+
+!!! note ""
+    The authorization is done via the `Personal Access Token` that is stored in `~/.dstack/config.yaml` file.
+
+!!! note "Login as existing user"
+    If you'll ever have to authorize the `dstack` CLI again on this or another machine, you'll can do that by using 
+    the following command:
+
+    ```bash 
+    dstack login
+    ```
+    
+    This command needs the user name and the password. If it's correct, it authorizes the current machine to use 
+    the `dstack` CLI.
+
+### Get a token
+
+At the next step, when you'll be setting up runners, you'll need your `Personal Access Token`.
+This token can be obtained by the following command:
+
+```bash
+dstack token
+```
+
+Keep the token that the CLI gives you. You'll need it to configure the `dstack-runner` daemon.
+
+## Step 3: Set up runners
+
+!!! note "What is a runner?"
+    A runner is any machine which you'd like to use to run `dstack` workflows. In order to use any machine
+    as a runner, you have to launch the `dstack-runner` daemon on that machine. 
+    
+    All machines that have the `dstack-runner` daemon running form a pool of runners. 
+
+    When you later run workflows via the `dstack` CLI, these workflows are assigned to these runners.
+
+!!! info "Run runners locally"
+    If you don't plan to use remote machines, you can launch the `dstack-runner` daemon locally.
+
+Here's how you can install the `dstack-runner` daemon:
+
+=== "Linux"
+
+    ```bash
+    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-linux-amd64"
+    sudo chmod +x /usr/local/bin/dstack-runner
+    ```
+
+=== "macOS"
+
+    ```bash
+    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-darwin-amd64"
+    sudo chmod +x /usr/local/bin/dstack-runner
+    ```
+
+If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe), and run it.
+
+### Configure a token
+
+Before you start the daemon, you have to configure it with your `Personal Access Token`:
+
+=== "Linux"
+
+    ```bash
+    dstack-runner config --token <token>
+    ```
+
+=== "macOS"
+
+    ```bash
+    dstack-runner config --token <token>
+    ```
+
+=== "Windows"
+
+    ```cmd
+    dstack-runner.exe config --token <token>
+    ```
+
+That's it. Now, you can launch the daemon:
+
+=== "Linux"
+
+    ```bash
+    dstack-runner start
+    ```
+
+=== "macOS"
+
+    ```bash
+    dstack-runner start
+    ```
+
+=== "Windows"
+
+    ```cmd
+    dstack-runner.exe start
+    ```
+
+!!! warning "Docker is required"
+    `dstack-runner` requires that either the standard Docker or the NVIDIA's Docker is installed and running on the
+    machine.
+
+### Check runners
+
+After you've set up your runners, you can use the `dstack` CLI to check their status:
+
+```bash
+dstack runners 
+```
+
+If runners are running properly, you'll see their hosts in the output:
+
+```bash
+RUNNER    HOST                    STATUS    UPDATED
+sugar-1   MBP-de-Boris.fritz.box  LIVE      3 mins ago
+```
+
+!!! warning "Runner is not there?"
+    If you don't see your runner in the output, this means the runner is offline or that the `dstack-runner` daemon 
+    was not configured or launched properly.
+
 ## Step 4: Run workflows
 
-#### Run workflows
+### Run workflows
 
 Once your runners are ready, you can use the CLI to run workflows.
 
 !!! note "Project directory"
-Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
-`.dstack/workflows.yaml` and `.dstack/variables.yaml` files).
+    Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
+    `.dstack/workflows.yaml` and `.dstack/variables.yaml` files).
 
-[comment]: <> (&#40;from the [Training GPT-2]&#40;gpt-2.md&#41; tutorial&#41;)
 If you type `dstack run --help`, you'll see the syntax of the run command as well as the list of the workflows
 defined with `.dstack/workflows.yaml` that you can run. Here's an example:
 
@@ -351,7 +353,7 @@ dstack run download-model --model 117M
     3. Each job is assigned by the `dstack` server to available runners.
     4. Once a runner receives a job, it runs, stream logs, and in the end upload output artifacts.
 
-#### Check the status of runs
+### Check run status
 
 Once you've run a workflow, you can see the status of the run, the jobs associated with it, and runners with the help
 of the `dstack status` command:
@@ -378,7 +380,7 @@ The second column (`JOB`) is the unique ID of the job associated with the run. U
 such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use it when calling the commands such as 
 `dstack stop`, and `dstack logs`.
 
-#### Check logs
+### Check logs
 
 With the CLI, you can see the output of your run. 
 Type `dstack logs --help`, to see how to do it:
@@ -390,7 +392,7 @@ positional arguments:
   (RUN | JOB)  run name or job id
 ```
 
-#### Check or download artifacts
+### Check artifacts
 
 Every job at the end of its execution stores its artifacts in the storage.
 With the CLI, you can both list the contents of each artifact and download it to your local machine. 

@@ -48,16 +48,20 @@ body[data-md-color-primary=blue] .md-nav__title .md-nav__button.md-logo img {
 .md-typeset h1 {
     margin-top: .39em;
     font-size: 1.5em;
-    font-weight: 400;
-    letter-spacing: .08rem;
+    /*font-weight: 600;*/
+    /*letter-spacing: .05rem;*/
     text-transform: uppercase;
     margin-bottom: .9em;
 }
 
 .md-typeset h2 {
     margin-top: .4em;
-    font-weight: 400;
-    font-size: 1.3em;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.md-typeset h3 {
+    font-size: 1.05em;
 }
 
 .md-typeset pre>code, .md-typeset code {
