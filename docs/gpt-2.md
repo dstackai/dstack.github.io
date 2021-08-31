@@ -3,40 +3,6 @@
 This tutorial will walk you through the main steps of using `dstack` on the example of training the famous 
 OpenAI's GPT-2.
 
-## Introduction
-
-Before using `dstack` you have to understand how `dstack` works. If you're already familiar, skip to 
-[Set up a runner](#step-2-set-up-a-runner).
-
-Typical ML workflows consist of multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc. 
-`dstack` les you to define these steps in a simple YAML format, and then, run any of them on any infrastructure of your
-choice via the CLI.
-
-#### What are the key components of dstack?
-
-1. `.dstack/workflows.yaml` – you create this file in your project files, and define there all your workflows that you
-   have in your project. For every workflow, you may specify the Docker image, the commands to run the workflow, the
-   dependencies to other workflows, output artifacts, etc.
-2. `.dstack/variables.yaml` – you create this file in your project files, and define there all the variables (and their
-   default values) your workflow may depend on. These variables can be referenced from `.dstack/workflows.yaml`.
-3. `dstack-runner` – you install and start this daemon on the machines that you'd like to use to run your workflows; you
-   can use any number of machines (to make a pool of available runners); once the daemon is started, it runs assigned
-   workflows, stream logs, and upload output artifacts to the storage.
-4. `dstack` – you install this CLI (Command Line Interface) via `pip` and use from the terminal (e.g. from your laptop)
-   to run the workflows defined in `.dstack/workflows.yaml`. When you run workflows with the CLI, you can override any
-   variables.
-
-#### What happens when you run a workflow?
-
-1. When you run a workflow using the `dstack run` command, `dstack` sends the run requests to the `dstack` server
-   (hosted with `dstack.ai`). The request contains the information Git repo (incl. the branch, current revision,
-   uncommitted changes, etc.), the name of the workflow, and the overridden variable values.
-2. Once the `dstack` server receives a run request, it creates a list of jobs associated with the run request. Then,
-   it assigns each job to one of the available runners. Since the workflow that you run may depend on other workflows, the
-   `dstack` servers creates jobs for these other workflows too (in case they are not cached).
-3. Each job is assigned by the `dstack` server to available runners.
-4. Once a runner receives a job, it runs, stream logs, and in the end upload output artifacts.
-
 ## Step 1: Install CLI
 
 The first thing you have to do to start using `dstack` is to install its CLI.
@@ -50,7 +16,7 @@ pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/
 !!! note ""
     The same command can be used to update the `dstack` CLI to the latest version.
 
-#### Registering a new user
+### Register a new user
 
 Before you can use the `dstack` CLI or set up runners, you have to register a user with `dstack.ai`.
 
@@ -69,7 +35,7 @@ That's it. Now, you are fully authorized on this machine to perform any operatio
 !!! note ""
     The authorization is done via the `Personal Access Token` that is stored in `~/.dstack/config.yaml` file.
 
-#### Login as existing user
+### Login as existing user
 
 If you'll ever have to authorize the `dstack` CLI again on this or another machine, you'll can do that by using
 the following command:
@@ -81,7 +47,7 @@ dstack login
 This command needs the user name and the password. If it's correct, it authorizes the current machine to use
 the `dstack` CLI.
 
-#### Personal access token
+### Obtain a token
 
 At the next step, when you'll be setting up runners, you'll need your `Personal Access Token`.
 This token can be obtained by the following command:
@@ -123,7 +89,7 @@ Here's how you can install the `dstack-runner` daemon:
 
 If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe), and run it.
 
-#### Personal access token
+### Configure a token
 
 Before you start the daemon, you have to configure it with your `Personal Access Token`:
 
@@ -172,9 +138,9 @@ That's it. Now, you can launch the daemon:
     `dstack-runner` requires that either the standard Docker or the NVIDIA's Docker is installed and running on the
     machine.
 
-## Step 3: Check the runner
+### Check the runner
 
-After you've set up a runner, you can use the `dstack` CLI to check its status:
+Once you've set up a runner, you can use the `dstack` CLI to check its status:
 
 ```bash
 dstack runners 
@@ -246,7 +212,7 @@ dstack run finetune-model --model 117M
 
 This is how you override any variables that you have defined in `.dstack/variables.yaml`.
 
-## Step 6: Check run status
+### Check the run status
 
 After we call the `dstack run` command, the CLI sends the request with all the information about our run (incl. 
 the Git repo, the uncommitted changes, the overridden variable values, etc.) to the `dstack` server. The server
@@ -288,7 +254,7 @@ such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use i
       In case you don't see your job in the list, it may mean one of the following: either, the job isn't created yet by 
       the `dstack` server, or there is a problem with your runners. 
 
-## Step 7: Check logs
+### Check logs
 
 With the CLI, you can see the output of your run.
 If you type `dstack logs --help`, you'll see the following output:
@@ -300,7 +266,7 @@ positional arguments:
   (RUN | JOB)  run name or job id
 ```
 
-## Step 8: Stop job
+### Stop the job
 
 Any job can be stopped at any time. If you type `dstack stop --help`, you'll see the following:
 
@@ -317,7 +283,7 @@ optional arguments:
 This command requires specifying an ID of a job or a name of a run. Also, if you want, you can specify the `--abort`
 argument. In this case, `dstack` will not upload the output artifacts of the stopped job.
 
-## Step 9: Check artifacts
+### Check artifacts
 
 Every job at the end of its execution stores its artifacts in the storage.
 With the CLI, you can both list the contents of each artifact and download it to your local machine.
