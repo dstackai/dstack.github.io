@@ -5,7 +5,7 @@
 To run workflows or obtain a token to set up runners, you'll need the `dstack` CLI. It can be installed via `pip`:
 
 ```bash
-pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple dstack -U
+pip install dstack -U
 ```
 
 !!! note ""
