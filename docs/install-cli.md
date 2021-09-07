@@ -11,7 +11,7 @@ pip install dstack -U
 !!! note ""
     The same command can be used to update the `dstack` CLI to the latest version.
 
-## Registering a user
+## Register a user
 
 To set up runners, you'll need to obtain your `Personal Access Token`. To do that, you have to register a user 
 with `dstack.ai`. This can be done via the CLI:
@@ -50,3 +50,6 @@ dstack token
 ```
 
 You'll need this token to configure the `dstack-runner` daemon at the next step.
+
+!!! bug "Submit feedback"
+    Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP.

@@ -16,7 +16,7 @@ pip install dstack -U
 !!! note ""
     The same command can be used to update the `dstack` CLI to the latest version.
 
-### Register a new user
+### Register a user
 
 Before you can use the `dstack` CLI or set up runners, you have to register a user with `dstack.ai`.
 

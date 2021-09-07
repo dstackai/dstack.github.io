@@ -24,7 +24,7 @@ theme:
         name: Switch to light mode
   features:
 #    - toc.integrate
-#    - navigation.sections
+    - navigation.sections
     - navigation.expand
     - navigation.top
 markdown_extensions:
@@ -49,6 +49,8 @@ nav:
     - Install CLI: install-cli.md
     - Set up runners: set-up-runners.md
     - Run workflows: run-workflows.md
+  - How to:
+    - Spot instances: spot-instances.md
   - Tutorials:
-    - Training GPT-2: gpt-2.md
+      - GPT-2: gpt-2.md
   - Limitations: limitations.md
