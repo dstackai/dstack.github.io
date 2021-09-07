@@ -68,7 +68,10 @@ Here's what you have to specify:
 * Amazon machine image (AMI), e.g. `Deep Learning AMI (Amazon Linux 2)`
 * Instance type (with or without GPU)
 * A key pair (optional; required only if you'd like to access your instance via SSH)
-* Security group (it's important that you enable outbound traffic)
+* Security group
+
+!!! warning ""
+    It's important that, in the rules of the selected `Security groups`, you allow `All TCP` outbound traffic. 
 
 Lastly, in `Advanced details`, specify the following `User data`:
 
