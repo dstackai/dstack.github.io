@@ -10,7 +10,7 @@ The first thing you have to do to start using `dstack` is to install its CLI.
 This can be done via `pip`:
 
 ```bash
-pip install dstack==0.0.1rc2
+pip install dstack==0.0.1rc3
 ```
 
 ### Register a user

@@ -18,7 +18,7 @@ and obtain your `Personal Access Token`.
 The `dstack` CLI can be installed via `pip`:
 
 ```bash
-pip install dstack==0.0.1rc2
+pip install dstack==0.0.1rc3
 ```
 
 ### Register a user
