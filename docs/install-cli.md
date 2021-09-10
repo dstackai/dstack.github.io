@@ -5,11 +5,8 @@
 To run workflows or obtain a token to set up runners, you'll need the `dstack` CLI. It can be installed via `pip`:
 
 ```bash
-pip install dstack -U
+pip install dstack==0.0.1rc2
 ```
-
-!!! note ""
-    The same command can be used to update the `dstack` CLI to the latest version.
 
 ## Register a user
 

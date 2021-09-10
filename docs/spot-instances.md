@@ -18,11 +18,8 @@ and obtain your `Personal Access Token`.
 The `dstack` CLI can be installed via `pip`:
 
 ```bash
-pip install dstack -U
+pip install dstack==0.0.1rc2
 ```
-
-!!! note ""
-    The same command can be used to update the `dstack` CLI to the latest version.
 
 ### Register a user
 
@@ -77,7 +74,7 @@ Lastly, in `Advanced details`, specify the following `User data`:
 
 ```bash
 #!/bin/bash
-curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-linux-amd64"
+curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc2/binaries/dstack-runner-linux-amd64"
 chmod +x /usr/local/bin/dstack-runner
 HOME=/root dstack-runner config --token <token>
 HOME=/root nohup dstack-runner start &

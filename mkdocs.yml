@@ -49,8 +49,8 @@ nav:
     - Install CLI: install-cli.md
     - Set up runners: set-up-runners.md
     - Run workflows: run-workflows.md
-  - How to:
-    - Spot instances: spot-instances.md
+#  - How to:
+#    - Spot instances: spot-instances.md
   - Tutorials:
       - GPT-2: gpt-2.md
   - Limitations: limitations.md

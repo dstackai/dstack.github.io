@@ -17,18 +17,18 @@ Here's how you can install the `dstack-runner` daemon:
 === "Linux"
 
     ```bash
-    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-linux-amd64"
+    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc2/binaries/dstack-runner-linux-amd64"
     sudo chmod +x /usr/local/bin/dstack-runner
     ```
 
 === "macOS"
 
     ```bash
-    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-darwin-amd64"
+    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc2/binaries/dstack-runner-darwin-amd64"
     sudo chmod +x /usr/local/bin/dstack-runner
     ```
 
-If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads-stgn.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe), and run it.
+If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc2/binaries/dstack-runner-windows-amd64.exe), and run it.
 
 ## Configure a token
 
