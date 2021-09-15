@@ -10,7 +10,7 @@ The first thing you have to do to start using `dstack` is to install its CLI.
 This can be done via `pip`:
 
 ```bash
-pip install dstack==0.0.1rc3
+pip install dstack==0.0.1rc4
 ```
 
 ### Register a user
@@ -73,18 +73,18 @@ Here's how you can install the `dstack-runner` daemon:
 === "Linux"
 
     ```bash
-    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc2/binaries/dstack-runner-linux-amd64"
+    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc4/binaries/dstack-runner-linux-amd64"
     sudo chmod +x /usr/local/bin/dstack-runner
     ```
 
 === "macOS"
 
     ```bash
-    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc2/binaries/dstack-runner-darwin-amd64"
+    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc4/binaries/dstack-runner-darwin-amd64"
     sudo chmod +x /usr/local/bin/dstack-runner
     ```
 
-If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc2/binaries/dstack-runner-windows-amd64.exe), and run it.
+If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/0.0.1rc4/binaries/dstack-runner-windows-amd64.exe), and run it.
 
 ### Configure a token
 
