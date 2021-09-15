@@ -164,9 +164,13 @@ the [`workflows.yaml`](https://github.com/dstackai/gpt-2/blob/finetuning/.dstack
 
 ## Step 5: Run a workflow
 
-!!! note "Project directory"
-      Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
-      `.dstack/workflows.yaml` and `.dstack/variables.yaml` files).
+!!! warning "Git repository"
+    Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
+    `.dstack/workflows.yaml` and `.dstack/variables.yaml` files). Your project directory must be a Git repository
+    and with a configured remote repository (e.g. `origin`).
+
+    Note, currently `dstack` supports only public Git repositories. Make sure to use HTTPS protocol for authentication.
+    The SSH protocol is not supported yet.
 
 If you type `dstack run --help`, you'll see the following output:
 

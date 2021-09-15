@@ -3,7 +3,8 @@
 The `dstack` tool is at the early preview stage. There are lots of things it doesn't support yet:
 
 * **Private repositories**: Currently, `dstack` only supports public Git repositories. Private Git repositories
-  cannot be used with `dstack` yet.
+  cannot be used with `dstack` yet. Also, make sure to use HTTPS protocol for authentication. 
+* The SSH protocol is not supported yet.
 * **Dashboard interface**: Currently, you can work with `dstack` only via the CLI. There is not yet a user interface
   to sign up, and manage runners, runs, artifacts, and logs.
 * **Hardware metrics**: Currently, `dstack` doesn't report hardware metrics for the runners, e.g. the use and
