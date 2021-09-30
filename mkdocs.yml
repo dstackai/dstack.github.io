@@ -3,28 +3,29 @@ site_name: dstack.ai
 #edit_uri: edit/main/docs/
 theme:
   name: material
-  logo: assets/logo_white.svg
+  logo: assets/logo_dark.svg
   favicon: images/favicon.ico
   icon:
     repo: fontawesome/brands/github
+  font: false
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: white
-      accent: blue
+      primary: light blue
+      accent: light blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue
-      accent: blue
+      primary: light blue
+      accent: light blue
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
   features:
 #    - toc.integrate
-    - navigation.sections
+#    - navigation.sections
     - navigation.expand
     - navigation.top
 markdown_extensions:
@@ -35,7 +36,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - toc:
-      toc_depth: 3
+      toc_depth: 4
 extra_css:
   - stylesheets/extra.css
 extra:
@@ -46,12 +47,12 @@ extra:
     property: UA-4493451-5
 nav:
   - Getting started:
-    - Introduction: index.md
-    - Install CLI: install-cli.md
-    - Set up runners:
-      - Own runners: set-up-own-runners.md
-    - Define workflows: define-wokflows.md
-    - Run workflows: run-workflows.md
+    - Overview: index.md
+    - Installation: install-cli.md
+    - Runners:
+      - Own servers: set-up-own-runners.md
+    - Workflows: define-wokflows.md
+    - CLI commands: run-workflows.md
   - Tutorials:
       - GPT-2: gpt-2.md
   - Limitations: limitations.md
