@@ -1,8 +1,11 @@
-# Install CLI
+# Installation
 
-## Install package
+Before you can set up runners or run workflows, you need to install the `dstack` CLI and obtain a `Personal Access
+Token`. 
 
-To run workflows or obtain a token to set up runners, you'll need the `dstack` CLI. It can be installed via `pip`:
+## Install CLI
+
+The `dstack` CLI can be installed via `pip`:
 
 ```bash
 pip install dstack -U
@@ -10,43 +13,44 @@ pip install dstack -U
 
 ## Register a user
 
-To set up runners, you'll need to obtain your `Personal Access Token`. To do that, you have to register a user 
-with `dstack.ai`. This can be done via the CLI:
+To obtain a `Personal Access Token`, you have to register a user with `dstack.ai`. 
+
+This can be done via a CLI command:
 
 ```bash
 dstack register
 ```
 
-It will prompt you to select a user name (only latin characters, digits and underscores are allowed), and specify your
+It will prompt you to select a username (only latin characters, digits and underscores are allowed), and specify your
 email. To verify the email address, it will send you a verification code that you'll have to confirm.
 
-Now, you are fully authorized on this machine to perform any operations via the CLI. The obtained 
-`Personal Access Token` can be later used to set up runners.
+The `Personal Access Token` that is associated with your user is now stored in the `~/.dstack/config.yaml` file.
+Now, all your commands of the `dstack` CLI will be authorized and associated with your user.
 
-!!! note ""
-    The authorization is done via the `Personal Access Token` that is stored in `~/.dstack/config.yaml` file.
+Later, when you'd like to set up runners on other machines, you'll need to use this `Personal Access Token`.
 
 !!! note "Login as existing user"
-    If you'll have to authorize the `dstack` CLI again on this or another machine, you'll can do that by using
-    the following command:
+    If your `Personal Access Token` is not stored in the `~/.dstack/config.yaml` file (e.g. it's another 
+    machine), you can restore it by the following command:
 
     ```bash 
     dstack login
     ```
     
-    This command needs the user name and the password. If it's correct, it authorizes the current machine to use 
-    the `dstack` CLI.
+    This command will ask your username and password. If credentials are correct, it will update the
+    `~/.dstack/config.yaml` file.
 
-## Obtain a token
+## Get a token
 
-To set up runners, you'll need your `Personal Access Token`.
-This token can be obtained by the following command:
+To see your `Personal Access Token`, you can either open the `~/.dstack/config.yaml` file, or call the following command:
 
 ```bash
 dstack token
 ```
 
-You'll need this token to configure the `dstack-runner` daemon at the next step.
+!!! danger "Keep the token secure"
+    It's important that you keep this token secure and don't share it with others. If the token is compromised, you'll 
+    have to change it.
 
 !!! bug "Submit feedback"
-    Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP.
+    Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).

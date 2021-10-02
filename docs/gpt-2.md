@@ -7,26 +7,33 @@ OpenAI's GPT-2.
 
 !!! success "Set up CLI and runners"
 
-    - [ ] [Install CLI and obtain a token](install-cli.md)
-    - [ ] Set up [own runners](set-up-own-runners.md)
+    Before following this tutorial, make sure you've done these required steps:
+
+    - [ ] [Install CLI and get a token](install-cli.md)
+    - [ ] [Set up runners](set-up-own-runners.md)
 
 ## Step 1: Clone Git repo
 
-Now, it's time to clone the [Git repository](https://github.com/dstackai/gpt-2) with our project files.
+Now, that the `dstack` CLI is installed and runners are set up, go ahead and clone the [`github.com/dstackai/gpt-2`](https://github.com/dstackai/gpt-2)
+repository.
 
-The Git repository that we are going to use in this tutorial already has the `.dstack` folder with 
-the [`workflows.yaml`](https://github.com/dstackai/gpt-2/blob/finetuning/.dstack/workflows.yaml) and 
-[`variables.yaml`](https://github.com/dstackai/gpt-2/blob/finetuning/.dstack/variables.yaml) files.
+## Step 2: Add your Git remote repository
 
-## Step 2: Run a workflow
+If you're connecting to your Git repository via an SSH key, to authorize `dstack` to access your repository, 
+use the following command:
 
-!!! warning "Git repository"
-    Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
-    `.dstack/workflows.yaml` and `.dstack/variables.yaml` files). Your project directory must be a Git repository
-    and with a configured remote repository (e.g. `origin`).
+```bash
+dstack git remote add --private key <path to your ssh key> 
+```
 
-    Note, currently `dstack` supports only public Git repositories. Make sure to use HTTPS protocol for authentication.
-    The SSH protocol is not supported yet.
+This command sends the URL of your remote repository and your private key to `dstack.ai`. This information will be
+securely shared with the runners that will run workflows.
+
+!!! warning "Repository folder"
+    Make sure to run all `dstack` CLI commands from the folder where your Git repository is checked out,
+    and where your `.dstack/workflows.yaml` and `.dstack/variables.yaml` files are.
+
+## Step 3: Run a workflow
 
 If you type `dstack run --help`, you'll see the following output:
 
@@ -69,18 +76,10 @@ dstack run finetune-model --model 117M
 
 This is how you override any variables that you have defined in `.dstack/variables.yaml`.
 
-## Step 2: Check the run status
+## Step 4: Check run status
 
-After we call the `dstack run` command, the CLI sends the request with all the information about our run (incl. 
-the Git repo, the uncommitted changes, the overridden variable values, etc.) to the `dstack` server. The server
-creates job for the requested workflow (in our case it's `finetune-model`) and all the workflows the requested 
-workflow depends on (in our case these include `download-model` and `encode-dataset`).
-
-!!! info "Cached runs"
-      In case the requested workflow depends on a workflow that already ran before with the exact same parameters,
-      it won't run again. Instead, `dstack` will reuse the previously run job's artifacts, and won't create a new job.
-
-To see created job and their status, run the following command:
+Once you've submitted a run, you can see its status, (incl. the jobs associated with it) with the help
+of the `dstack status` command:
 
 ```bash
 dstack status
@@ -102,16 +101,11 @@ clever-tiger-1  -             download-model  --model 117M   sugar-1   RUNNING  
     it lists the last finished run. If you'd like to see more finished runs, use the `--last <n>` argument to
     specify the number of last runs to show regardless of their status.
 
-The first column (`RUN`) is the unique name of the run, associated with a single `dstack run` command.
-The second column (`JOB`) is the unique ID of the job associated with the run. Use that ID when calling other commands,
-such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use it when calling the commands such as
-`dstack stop`, and `dstack logs`.
-
 !!! warning "Job is not there?"
       In case you don't see your job in the list, it may mean one of the following: either, the job isn't created yet by 
       the `dstack` server, or there is a problem with your runners. 
 
-## Step 3: Check logs
+## Step 4: Check logs
 
 With the CLI, you can see the output of your run.
 If you type `dstack logs --help`, you'll see the following output:
@@ -123,7 +117,7 @@ positional arguments:
   (RUN | JOB)  run name or job id
 ```
 
-## Step 4: Stop the job
+## Step 5: Stop the job
 
 Any job can be stopped at any time. If you type `dstack stop --help`, you'll see the following:
 
@@ -140,7 +134,7 @@ optional arguments:
 This command requires specifying an ID of a job or a name of a run. Also, if you want, you can specify the `--abort`
 argument. In this case, `dstack` will not upload the output artifacts of the stopped job.
 
-## Step 5: Check artifacts
+## Step 6: Check artifacts
 
 Every job at the end of its execution stores its artifacts in the storage.
 With the CLI, you can both list the contents of each artifact and download it to your local machine.
@@ -169,4 +163,4 @@ By default, it will download the artifacts into the current working directory. T
 with the use of the `--output <path>` argument.
 
 !!! bug "Submit feedback"
-        Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP.
+        Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).

@@ -1,16 +1,16 @@
-# Set up own runners
+# Use own servers as runners
 
-## Install runner
+A runner is a machine that can run `dstack` workflows. In order to use any machine as a runner, you have to launch 
+the `dstack-runner` daemon on that machine. 
 
-A runner is any machine which you'd like to use to run `dstack` workflows. In order to use any machine
-as a runner, you have to launch the `dstack-runner` daemon on that machine.
-
-All machines that have the `dstack-runner` daemon running form a pool of runners. 
-
-When you later run workflows via the `dstack` CLI, these workflows are assigned to these runners.
+All machines that run the `dstack-runner` daemon form a pool of runners.
+When you run workflows via the `dstack` CLI, these workflows are running on these runners.
 
 !!! info "Run runners locally"
-    If you don't plan to use remote machines, you can launch the `dstack-runner` daemon locally.
+    If you don't want to use remote machines, you can use your local machine as a runner.
+    All you need to do is to launch the `dstack-runner` daemon locally.
+
+## Install the daemon
 
 Here's how you can install the `dstack-runner` daemon:
 
@@ -28,7 +28,7 @@ Here's how you can install the `dstack-runner` daemon:
     sudo chmod +x /usr/local/bin/dstack-runner
     ```
 
-If you are using **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe), and run it.
+If you are on **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe).
 
 ## Configure a token
 
@@ -52,7 +52,7 @@ Before you start the daemon, you have to configure it with your `Personal Access
     dstack-runner.exe config --token <token>
     ```
 
-That's it. Now, you can launch the daemon:
+That's it. Now, it's ready to start:
 
 === "Linux"
 
@@ -73,12 +73,18 @@ That's it. Now, you can launch the daemon:
     ```
 
 !!! warning "Docker is required"
-    `dstack-runner` requires that either the standard Docker or the NVIDIA's Docker is installed and running on the
-    machine.
+    The `dstack-runner` daemon requires that either the standard Docker or the NVIDIA's Docker is installed and 
+    running on the machine.
 
-## Check runners
+!!! warning "Internet is required"
+    The machine where you run the `dstack-runner` daemon has to have a connection to the Internet in order to 
+    send and receive the information from `dstack.ai`. 
 
-After you've set up your runners, you can use the `dstack` CLI to check their status:
+    If your machine is an EC2 instance, make sure its security group allows outbound connections. 
+
+## Check runner status
+
+After you've set up runners, you can check their status via the `dstack` CLI:
 
 ```bash
 dstack runners 
@@ -92,8 +98,8 @@ sugar-1   MBP-de-Boris.fritz.box  LIVE      3 mins ago
 ```
 
 !!! warning "Runner is not there?"
-    If you don't see your runner in the output, this means the runner is offline or that the `dstack-runner` daemon
-    was not configured or launched properly.
+    Don't see your runner? This may mean the runner is offline or that the `dstack-runner` daemon
+    was not configured or started properly.
 
 !!! bug "Submit feedback"
-    Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP.
+    Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).

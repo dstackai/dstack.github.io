@@ -1,19 +1,30 @@
 # Run workflows
 
-## Submit runs
+Before you can run and manage workflows of your project via the CLI, you have to authorize `dstack` to access
+your Git remote repository. 
 
-Once your runners are ready, you can use the CLI to run workflows.
+## Add your Git remote repository
 
-!!! warning "Git repository"
-    Make sure, to run always `dstack` CLI's commands from the directory with your project files (where you have
-    `.dstack/workflows.yaml` and `.dstack/variables.yaml` files). Your project directory must be a Git repository 
-    and with a configured remote repository (e.g. `origin`). 
+If you're connecting to your Git repository via an SSH key, to authorize `dstack` to access your repository, 
+use the following command:
 
-    Note, currently `dstack` supports only public Git repositories. Make sure to use HTTPS protocol for authentication.
-    The SSH protocol is not supported yet.
+```bash
+dstack git remote add --private key <path to your ssh key> 
+```
+
+This command sends the URL of your remote repository and your private key to `dstack.ai`. This information will be
+securely shared with the runners that will run workflows.
+
+!!! warning "Repository folder"
+    Make sure to run all `dstack` CLI commands from the folder where your Git repository is checked out,
+    and where your `.dstack/workflows.yaml` and `.dstack/variables.yaml` files are.
+
+## Run workflows
 
 If you type `dstack run --help`, you'll see the syntax of the run command as well as the list of the workflows
-defined with `.dstack/workflows.yaml` that you can run. Here's an example:
+defined with `.dstack/workflows.yaml` that you can run. 
+
+Here's an example (from the [GPT-2](gpt-2.md) tutorial):
 
 ```bash
 usage: dstack run {download-model,encode-dataset,finetune-model} ...
@@ -24,8 +35,10 @@ positional arguments:
     finetune-model      run finetune-model workflow
 ```
 
-Now, if you type `dstack run <workflow name> --help`, you'll see that `dstack` is also aware of the variables defined
-in `.dstack/variables.yaml` for that workflow. Here's an example:
+If you type `dstack run <workflow name> --help`, you'll see that `dstack` is also aware of the variables defined
+in `.dstack/variables.yaml` for that workflow. 
+
+Here's an example (again, from the [GPT-2](gpt-2.md) tutorial):
 
 ```bash
 usage: dstack run download-model [--model [MODEL]] [--models_dir [MODELS_DIR]]
@@ -42,18 +55,19 @@ dstack run download-model --model 117M
 ```
 
 !!! info "What happens when you run a workflow?"
-    1. When you run a workflow using the `dstack run` command, `dstack` sends the run requests to the `dstack` server
-    (hosted with `dstack.ai`). The request contains the information Git repo (incl. the branch, current revision,
-    uncommitted changes, etc.), the name of the workflow, and the overridden variable values.
-    2. Once the `dstack` server receives a run request, it creates a list of jobs associated with the run request. Then,
-    it assigns each job to one of the available runners. Since the workflow that you run may depend on other workflows, the
-    `dstack` servers creates jobs for these other workflows too (in case they are not cached).
-    3. Each job is assigned by the `dstack` server to available runners.
-    4. Once a runner receives a job, it runs, stream logs, and in the end upload output artifacts.
+    1. When you run a workflow using the `dstack run` command, `dstack` sends the run requests to `dstack.ai`. 
+    The request contains the information about the repository (incl. the branch, the commit hash of the head,
+    uncommitted changes if any, etc.), the name of the workflow, and the overridden variable values.
+    2. Once the `dstack` server receives a run request, it creates a list of jobs (one job per workflow that has to run).
+    Then, `dstack.ai` assigns each job to one of the available runners. If any of the workflows (one that you run or one
+    it depends on) had already run before with the code and variables, `dstack.ai` won't create a new job and instead
+    will reuse the one from cache.
+    3. Each job is assigned to one of the available runners.
+    4. Once a runner receives a job, it runs, upload logs in real-time, and in the end upload output artifacts.
 
 ## Check run status
 
-Once you've run a workflow, you can see the status of the run, the jobs associated with it, and runners with the help
+Once you've submitted a run, you can see its status, (incl. the jobs associated with it) with the help
 of the `dstack status` command:
 
 ```bash
@@ -73,14 +87,10 @@ angry-rat-1                 download-model  --model 117M   sugar-1   DONE      1
     it lists the last finished run. If you'd like to see more finished runs, use the `--last <n>` argument to
     specify the number of last runs to show regardless of their status.
 
-The first column (`RUN`) is the unique name of the run, associated with a single `dstack run` command.
-The second column (`JOB`) is the unique ID of the job associated with the run. Use that ID when calling other commands,
-such as `dstack stop`, `dstack logs`, and `dstack artifacts`. You can also use it when calling the commands such as
-`dstack stop`, and `dstack logs`.
-
 ## Check logs
 
-With the CLI, you can see the output of your run.
+With the `dstack` CLI, you can see the output of the entire run or individual of any job associated with it by its job ID.
+
 Type `dstack logs --help`, to see how to do it:
 
 ```bash
@@ -92,8 +102,8 @@ positional arguments:
 
 ## Check artifacts
 
-Every job at the end of its execution stores its artifacts in the storage.
-With the CLI, you can both list the contents of each artifact and download it to your local machine.
+Every job at the end of its execution saves its artifacts in the storage.
+With the `dstac` CLI, you can do both list the contents of each artifact and download artifacts to your local machine.
 
 Here's how to list the content of the artifacts of a given job:
 
@@ -109,7 +119,7 @@ In order to see all file stored within each artifact, use `-l` option:
 dstack artifacts list -l <job id>
 ```
 
-If you'd like to download the artifacts, this can be done by the following command:
+If you'd like to download artifacts, use the following command:
 
 ```bash
 dstack artifacts download <job id>
@@ -119,4 +129,4 @@ By default, it will download the artifacts into the current working directory. T
 with the use of the `--output <path>` argument.
 
 !!! bug "Submit feedback"
-    Something didn't work or was unclear? Miss a critical feature? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP.
+    Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).

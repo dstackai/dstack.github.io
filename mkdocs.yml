@@ -49,10 +49,10 @@ nav:
   - Getting started:
     - Overview: index.md
     - Installation: install-cli.md
-    - Runners:
+    - Set up runners:
       - Own servers: set-up-own-runners.md
-    - Workflows: define-wokflows.md
-    - CLI commands: run-workflows.md
+    - Define workflows: define-wokflows.md
+    - Run workflows: run-workflows.md
   - Tutorials:
       - GPT-2: gpt-2.md
   - Limitations: limitations.md

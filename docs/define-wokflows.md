@@ -2,22 +2,22 @@
 
 ## Workflows
 
-The `.dstack/workflows.yaml` file is a YAML file within your project files where you define the steps of your ML 
-workflows, their commands, dependencies, and output artifacts.
+The `.dstack/workflows.yaml` file is a YAML file within your project files where you define your ML 
+workflows, their commands, dependencies, output artifacts, etc.
 
-The root element of that file is called workflows. This is a list. Each element in this list may have the following
+The root element of that file is `workflows`. This is a list, where each element may have the following
 fields:
 
 * `name` – the name of the workflow; required
 * `image` – the Docker image that will be used to run the workflow; required
 * `commands` – the list of bash commands to run the workflow; required
-* `depends-on` – defines what the workflow depends on; optional, if not defined, by default, the workflow depends on all
-  files in the repo, on all workflow variables defined in `.dstack/variables.yaml`, and doesn't depend on other workflows
-  ; within depends-on, you may specify the elements `repo`, `variables`, and `workflows`.
+* `depends-on` – defines what the workflow depends on; optional; if not defined, by default, the workflow depends on all 
+files in the repo, on all workflow variables defined in `.dstack/variables.yaml`, and doesn't depend on other workflows; 
+within `depends-on`, you may specify the elements `repo`, `variables`, and `workflows`.
 * `artifacts` – the list of paths by which all files must be stored as output artifacts in the storage once the workflow
   is done; optional
 
-Here's an example of `.dstack/workflows.yaml` (from the [Training GPT-2](gpt-2.md) tutorial):
+Here's an example of `.dstack/workflows.yaml` (from the [GPT-2](gpt-2.md) tutorial):
 
 ```yaml
 workflows:
@@ -68,15 +68,15 @@ workflows:
 
 ## Variables
 
-In `.dstack/variables.yaml`, you can define variables (and their default values). Once defined, these variables can be
+In `.dstack/variables.yaml`, you can define variables and their default values. These variables can be
 referenced then from the `.dstack/workflows.yaml` file.
 
 !!! tip "Environment variables"
-    Also, variables can be accessed through environment variables from the workflow itself (requires using upper case).
+    Variables can be accessed as environment variables from the workflow itself (must be in upper case).
 
-You can define both global variables (shared by all workflows) and individually for each workflow.
+You can define both global variables (shared by all workflows) and for each workflow individually.
 
-Here's an example of `.dstack/variables.yaml`(from the [Training GPT-2](gpt-2.md) tutorial):
+Here's an example of `.dstack/variables.yaml`(from the [GPT-2](gpt-2.md) tutorial):
 
 ```yaml
 variables:
@@ -106,13 +106,12 @@ variables:
     val_every: 0
 ```
 
-!!! info ""
-    In addition to the variables that you've defined, `dstack` has the following system variables that are always
-    available for any workflow:
+In addition to your own variables (that you've defined in `.dstack/variables`), `dstack` supports the following 
+`system variables` that can be also used workflows:
 
-    * `$run_name` – the unique ID of the current run
-    * `$job_id` – the unique ID of the current job
-    * `$variables_as_args` - expands into all variables defined in `.dstack/variables.yaml` for that workflow,
-      formatted as `--var_1_name var_1_value, --var_1_name var_1_value ...`; use this variable if you'd like to pass all
-      variables into a command
+* `$run_name` – the unique ID of the current run
+* `$job_id` – the unique ID of the current job
+* `$variables_as_args` - expands into all variables defined in `.dstack/variables.yaml` for that workflow,
+  formatted as `--var_1_name var_1_value, --var_1_name var_1_value ...`; use this variable if you'd like to pass all
+  variables into a command
 

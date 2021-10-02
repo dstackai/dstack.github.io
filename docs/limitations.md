@@ -22,4 +22,4 @@ The `dstack` tool is at the early preview stage. There are lots of things it doe
   tuning, e.g. grid search, bayesian search, etc.)
 
 !!! bug "Submit feedback" 
-    Something critical is not on the list? Something didn't work or was unclear? Please, [let me know](https://forms.gle/nhigiDm4FmjZdRkx5). I'll look into it ASAP.
+    Something critical is not on the list? Something didn't work or was unclear? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).
