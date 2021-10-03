@@ -130,3 +130,44 @@ with the use of the `--output <path>` argument.
 
 !!! bug "Submit feedback"
     Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).
+
+## Stop runs and jobs
+
+Any submitted run or job can be stopped via the following command:
+
+Type `dstack stop --help`, to see how to do it:
+
+```bash
+usage: dstack stop [-a] (RUN | JOB)
+
+positional arguments:
+  (RUN | JOB)
+
+optional arguments:
+  -a, --abort  Abort a run or job, i.e. don't upload artifacts
+```
+
+!!! tip "Aborting"
+    If you don't specify the `--abort` argument, the runner will try to gracefully stop the job and make sure all artifacts 
+    and logs are collected. If you do specify the `--abort` argument, the runner will try to abort the job immediately.
+
+When you stop a run or a job, they may get the status `STOPPING` or `ABORTING`, and only when they have fully stopped,
+their status will change to `STOPPED` or `ABORTED`.
+
+## Resume jobs
+
+Any job that had been stopped can be resumed. This means, the job is restarted with its previously saved output
+artifacts. If the job used checkpoints, it will be able to start the work where it stopped and not from the 
+beginning.
+
+Type `dstack resume --help`, to this command works:
+
+```bash
+usage: dstack resume [-h] JOB
+
+positional arguments:
+  JOB
+```
+
+!!! warning "Limitation"
+    You can resume only those job that had been explicitly stopped and only if no other jobs depend on them.

@@ -1,4 +1,4 @@
-# Use own servers as runners
+# Use your own servers
 
 A runner is a machine that can run `dstack` workflows. In order to use any machine as a runner, you have to launch 
 the `dstack-runner` daemon on that machine. 

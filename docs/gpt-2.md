@@ -1,6 +1,6 @@
-# Training GPT-2
+# GPT-2
 
-This tutorial will walk you through the main steps of using `dstack` on the example of training the famous 
+This tutorial will walk you through the main steps of using `dstack` on the example of finetuning the famous 
 OpenAI's GPT-2.
 
 !!! warning "Prerequisites"
@@ -159,6 +159,20 @@ dstack artifacts download <job id>
 
 By default, it will download the artifacts into the current working directory. The output directory can be overridden 
 with the use of the `--output <path>` argument.
+
+## Step 7: Resume the stopped job
+
+Any job that had been stopped can be resumed. This means, the job is restarted with its previously saved output
+artifacts. If the job used checkpoints, it will be able to start the work where it stopped and not from the 
+beginning.
+
+If you've stopped the previously run `finetune-model` workflow, use this command to resume it:
+
+```bash
+usage: dstack resume <stopped finetune-model job id>
+```
+
+The job will restore the earlier saved checkpoints and continue finetuning the model.
 
 !!! bug "Submit feedback"
         Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).
