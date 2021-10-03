@@ -1,4 +1,4 @@
-# Installation
+# Installation and registration
 
 Before you can set up runners or run workflows, you need to install the `dstack` CLI and obtain a `Personal Access
 Token`. 

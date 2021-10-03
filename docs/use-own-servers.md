@@ -1,18 +1,19 @@
-# Use your own servers
+# Set up runners on your own machines
 
-A runner is a machine that can run `dstack` workflows. In order to use any machine as a runner, you have to launch 
-the `dstack-runner` daemon on that machine. 
+A runner is a machine that can run `dstack` workflows. You can either use your local machine or
+remote servers as runners.
 
-All machines that run the `dstack-runner` daemon form a pool of runners.
-When you run workflows via the `dstack` CLI, these workflows are running on these runners.
+In order to use any machine as a runner, you have to launch the `dstack-runner` daemon on that machine. 
+The machines that host the `dstack-runner` daemon form a pool of runners, and when the user runs workflows via the 
+`dstack` CLI, the workflows will be running on these servers.
 
-!!! info "Run runners locally"
+!!! tip "Run locally"
     If you don't want to use remote machines, you can use your local machine as a runner.
     All you need to do is to launch the `dstack-runner` daemon locally.
 
 ## Install the daemon
 
-Here's how you can install the `dstack-runner` daemon:
+Here's how to install the `dstack-runner` daemon:
 
 === "Linux"
 
@@ -28,11 +29,11 @@ Here's how you can install the `dstack-runner` daemon:
     sudo chmod +x /usr/local/bin/dstack-runner
     ```
 
-If you are on **Windows**, download [dstack-runner.exe](https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe).
+If you are on **Windows**, simply download [dstack-runner.exe](https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe).
 
 ## Configure a token
 
-Before you start the daemon, you have to configure it with your `Personal Access Token`:
+Before you can start the daemon, you have to configure it with your `Personal Access Token`:
 
 === "Linux"
 
@@ -52,7 +53,10 @@ Before you start the daemon, you have to configure it with your `Personal Access
     dstack-runner.exe config --token <token>
     ```
 
-That's it. Now, it's ready to start:
+!!! tip "Personal Access Token"
+    Use the `dstack token` command of the CLI to get your `Personal Access Token`. See [Installation](installation.md#get-a-token)&hellip;    
+
+Once you do it, the daemon is ready to start:
 
 === "Linux"
 
@@ -72,15 +76,14 @@ That's it. Now, it's ready to start:
     dstack-runner.exe start
     ```
 
-!!! warning "Docker is required"
+!!! danger "Docker is required"
     The `dstack-runner` daemon requires that either the standard Docker or the NVIDIA's Docker is installed and 
     running on the machine.
 
 !!! warning "Internet is required"
-    The machine where you run the `dstack-runner` daemon has to have a connection to the Internet in order to 
-    send and receive the information from `dstack.ai`. 
+    The machine where you run the `dstack-runner` daemon has to have a connection to the Internet. 
 
-    If your machine is an EC2 instance, make sure its security group allows outbound connections. 
+    If your machine is an EC2 instance, make sure its security group allows outgoing traffic. 
 
 ## Check runner status
 

@@ -1,4 +1,4 @@
-# Run workflows
+# Run and manage workflows
 
 Before you can run and manage workflows of your project via the CLI, you have to authorize `dstack` to access
 your Git remote repository. 

@@ -48,9 +48,10 @@ extra:
 nav:
   - Get started:
       - Overview: index.md
-      - Installation: install-cli.md
+      - Installation: installation.md
       - Set up runners:
-          - Own servers: set-up-own-runners.md
+          - Own machines: use-own-servers.md
+          - Spot instances: use-spot-instances.md
       - Define workflows: define-wokflows.md
       - Run workflows: run-workflows.md
   - Examples:

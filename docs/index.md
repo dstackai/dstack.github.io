@@ -50,7 +50,7 @@ the commands of a given job as a Docker container. While the container is being 
 the logs to `dstack`'s logs storage and upload output artifacts of the job to the `dstack`'s artifact storage.
 
 As a user of `dstack`, you can either install the `dstack-runner` daemon to your own servers to make a pool of 
-[your own runners](set-up-own-runners.md),
+[your own runners](use-own-servers.md),
 or provide `dstack` credentials to your own cloud so `dstack` can create runners on-demand using spot instances.
 
 ## How it works
