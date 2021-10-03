@@ -3,14 +3,12 @@
 This tutorial will walk you through the main steps of using `dstack` on the example of training the famous 
 OpenAI's GPT-2.
 
-## Prerequisites
-
-!!! success "Set up CLI and runners"
+!!! warning "Prerequisites"
 
     Before following this tutorial, make sure you've done these required steps:
 
-    - [ ] [Install CLI and get a token](install-cli.md)
-    - [ ] [Set up runners](set-up-own-runners.md)
+    1. [Install CLI and get a token](install-cli.md)
+    2. [Set up runners](set-up-own-runners.md)
 
 ## Step 1: Clone Git repo
 

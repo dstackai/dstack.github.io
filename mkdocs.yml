@@ -3,7 +3,7 @@ site_name: dstack.ai
 #edit_uri: edit/main/docs/
 theme:
   name: material
-  logo: assets/logo_dark.svg
+  logo: assets/logo_layers.svg
   favicon: images/favicon.ico
   icon:
     repo: fontawesome/brands/github
@@ -14,18 +14,18 @@ theme:
       primary: light blue
       accent: light blue
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: light blue
       accent: light blue
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-sunny
         name: Switch to light mode
   features:
-#    - toc.integrate
-#    - navigation.sections
+    #    - toc.integrate
+    - navigation.sections
     - navigation.expand
     - navigation.top
 markdown_extensions:
@@ -46,13 +46,12 @@ extra:
     provider: google
     property: UA-4493451-5
 nav:
-  - Getting started:
-    - Overview: index.md
-    - Installation: install-cli.md
-    - Set up runners:
-      - Own servers: set-up-own-runners.md
-    - Define workflows: define-wokflows.md
-    - Run workflows: run-workflows.md
-  - Tutorials:
+  - Get started:
+      - Overview: index.md
+      - Installation: install-cli.md
+      - Set up runners:
+          - Own servers: set-up-own-runners.md
+      - Define workflows: define-wokflows.md
+      - Run workflows: run-workflows.md
+  - Examples:
       - GPT-2: gpt-2.md
-  - Limitations: limitations.md
