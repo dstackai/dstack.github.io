@@ -57,12 +57,12 @@ or provide `dstack` credentials to your own cloud so `dstack` can create runners
 
 1. You define `.dstack/workflows.yaml` and `.dstack/variables.yaml` files inside your project (must be a Git repository).
 2. You install the `dstack` CLI via `pip`.
-3. You either install `dstack-runner` daemon on your servers, or use the `dstack auto-scale init` to authorize
+3. You either install `dstack-runner` daemon on your servers, or use the `dstack aws configure` to authorize
 `dstack` to use your own cloud to create runners on-demand using spot instances.
 4. You use the `dstack` CLI to run workflows, manage runs, jobs, logs, artifacts, runners.
 5. When a workflow is submitted via the CLI (e.g. via `dstack run`) , the request is sent to the `dstack` server. 
 The `dstack` server creates jobs for the submitted run, and assign them to available runners (either servers where 
 you've installed `dstack-runner` or on-demand spot instances in your cloud that you allowed to create).
-6. Runners execute assigned jobs, report their logs in real time, and upload artifacts once the job is finished.
+6. Runners execute assigned jobs, report their logs in real-time, and upload artifacts once the job is finished.
 
 [//]: # (What can dstack used for)
