@@ -51,7 +51,7 @@ label.md-nav__link {
     margin-top: 0.1em;
 }
 
-:root>* {
+[data-md-color-scheme=default] {
     --md-default-fg-color: #3c4257;
     --md-footer-bg-color: var(--md-primary-fg-color--dark);
 }
