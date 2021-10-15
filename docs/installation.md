@@ -1,7 +1,4 @@
-# Installation and registration
-
-Before you can set up runners or run workflows, you need to install the `dstack` CLI and obtain a `Personal Access
-Token`. 
+# Installation
 
 ## Install CLI
 
@@ -11,34 +8,22 @@ The `dstack` CLI can be installed via `pip`:
 pip install dstack -U
 ```
 
-## Register a user
+## Login
 
-To obtain a `Personal Access Token`, you have to register a user with `dstack.ai`. 
-
-This can be done via a CLI command:
+Before you use the CLI, you need to authorize with your user credentials. This can be done via a CLI command:
 
 ```bash
-dstack register
+dstack login
 ```
 
-It will prompt you to select a username (only latin characters, digits and underscores are allowed), and specify your
-email. To verify the email address, it will send you a verification code that you'll have to confirm.
+The command will prompt you to enter your username and your password. 
 
-The `Personal Access Token` that is associated with your user is now stored in the `~/.dstack/config.yaml` file.
-Now, all your commands of the `dstack` CLI will be authorized and associated with your user.
+If the credentials are correct, the `Personal Access Token` that is associated with your user will be stored in the 
+`~/.dstack/config.yaml` file. Now, all your commands of the `dstack` CLI will be authorized and associated with your user.
 
-Later, when you'd like to set up runners on other machines, you'll need to use this `Personal Access Token`.
-
-!!! note "Login as existing user"
-    If your `Personal Access Token` is not stored in the `~/.dstack/config.yaml` file (e.g. it's another 
-    machine), you can restore it by the following command:
-
-    ```bash 
-    dstack login
-    ```
-    
-    This command will ask your username and password. If credentials are correct, it will update the
-    `~/.dstack/config.yaml` file.
+!!! info "How do I register a user with dstack.ai?"
+    In order to register a user, go to [dstack.ai](https://dstack.ai), and click `Sign up for beta`. 
+    Once your request is approved, you'll get an email with your user credentials.
 
 ## Get a token
 
