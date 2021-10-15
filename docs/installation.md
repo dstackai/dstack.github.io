@@ -22,8 +22,8 @@ If the credentials are correct, the `Personal Access Token` that is associated w
 `~/.dstack/config.yaml` file. Now, all your commands of the `dstack` CLI will be authorized and associated with your user.
 
 !!! info "How do I register a user with dstack.ai?"
-    In order to register a user, go to [dstack.ai](https://dstack.ai), and click `Sign up for beta`. 
-    Once your request is approved, you'll get an email with your user credentials.
+    Please sign up using [this form](https://dstack.ai/signup) and wait for an approval. 
+    As soon as your request is approved, you'll receive your user credentials to your email.
 
 ## Get a token
 
