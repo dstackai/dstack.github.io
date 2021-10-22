@@ -1,4 +1,4 @@
-# Autoscale spot instances in own cloud
+# Use spot instances in own cloud
 
 A runner is a machine that can run `dstack` workflows. With `dstack` you can run workflows using spot instances 
 in your cloud. `dstack` will set up and tear down spot instances automatically based on the need.

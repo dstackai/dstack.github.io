@@ -1,14 +1,14 @@
-# Set up runners on your own machines
+# Use self-hosted runners
 
-A runner is a machine that can run `dstack` workflows. You can either use your local machine or
-remote servers as runners.
+A runner is a machine that can run `dstack` workflows. You can host runners on your local machine or
+on your remote machines.
 
-In order to use any machine as a runner, you have to launch the `dstack-runner` daemon on that machine. 
+In order to host a runner on any machine, you have to launch the `dstack-runner` daemon there. 
 The machines that host the `dstack-runner` daemon form a pool of runners, and when the user runs workflows via the 
-`dstack` CLI, the workflows will be running on these servers.
+`dstack` CLI, the workflows will be running on these machines.
 
 !!! tip "Run locally"
-    If you don't want to use remote machines, you can use your local machine as a runner.
+    If you don't want to use remote machines, you can host a runner locally.
     All you need to do is to launch the `dstack-runner` daemon locally.
 
 ## Install the daemon
@@ -85,7 +85,7 @@ Once you do it, the daemon is ready to start:
 
     If your machine is an EC2 instance, make sure its security group allows outgoing traffic. 
 
-## Check runner status
+## Check runners' status
 
 After you've set up runners, you can check their status via the `dstack` CLI:
 

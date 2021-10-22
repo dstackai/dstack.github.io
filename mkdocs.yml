@@ -47,11 +47,10 @@ extra:
     property: UA-4493451-5
 nav:
   - Get started:
-      - Overview: index.md
+      - How it works: index.md
       - Installation: installation.md
-      - Set up runners:
-          - Own machines: use-own-servers.md
-          - Spot instances: use-spot-instances.md
+      - Self-hosted runners: self-hosted-runners.md
+      - Spot instances: spot-instances.md
       - Define workflows: define-wokflows.md
       - Run workflows: run-workflows.md
   - Examples:

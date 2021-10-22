@@ -7,8 +7,8 @@ OpenAI's GPT-2.
 
     Before following this tutorial, make sure you've done these required steps:
 
-    1. [Install CLI and get a token](install-cli.md)
-    2. [Set up runners](set-up-own-runners.md)
+    1. [Install CLI and get a token](installation.md)
+    2. [Set up runners on your own machines](self-hosted-runners.md) or [Connect dstack to your cloud](spot-instances.md)
 
 ## Step 1: Clone Git repo
 

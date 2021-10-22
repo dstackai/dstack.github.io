@@ -1,4 +1,4 @@
-# Overview
+# How it works
 
 Typical ML workflows include multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc.
 
@@ -6,7 +6,7 @@ Typical ML workflows include multiple steps, e.g. pre-processing data, training,
       With `dstack`, you can define ML workflows in a simple YAML format, and run them over a pool of
       your own servers or spot instances in your cloud. All operations with `dstack` are done from a developer-friendly CLI. 
 
-## Terminology 
+### Terminology 
 
 #### Workflows
 
@@ -50,10 +50,10 @@ the commands of a given job as a Docker container. While the container is being 
 the logs to `dstack`'s logs storage and upload output artifacts of the job to the `dstack`'s artifact storage.
 
 As a user of `dstack`, you can either install the `dstack-runner` daemon to your own servers to make a pool of 
-[your own runners](use-own-servers.md),
+[your own runners](self-hosted-runners.md),
 or provide `dstack` credentials to your own cloud so `dstack` can create runners on-demand using spot instances.
 
-## How it works
+### Lifecycle
 
 1. You define `.dstack/workflows.yaml` and `.dstack/variables.yaml` files inside your project (must be a Git repository).
 2. You install the `dstack` CLI via `pip`.
