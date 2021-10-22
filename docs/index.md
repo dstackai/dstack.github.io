@@ -1,4 +1,4 @@
-# How it works
+# How dstack works
 
 Typical ML workflows include multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc.
 
