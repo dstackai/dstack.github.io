@@ -3,8 +3,8 @@ site_name: dstack.ai
 #edit_uri: edit/main/docs/
 theme:
   name: material
-  logo: assets/logo_layers.svg
-  favicon: images/favicon.ico
+  logo: assets/dstack_notext.png
+  favicon: images/dstack_fav_32.ico
   icon:
     repo: fontawesome/brands/github
   font: false
