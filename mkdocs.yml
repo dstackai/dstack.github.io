@@ -11,14 +11,14 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: light blue
+      primary: white
       accent: light blue
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: light blue
+      primary: black
       accent: light blue
       toggle:
         icon: material/weather-sunny

@@ -51,11 +51,6 @@ label.md-nav__link {
     margin-top: 0.1em;
 }
 
-[data-md-color-scheme=default] {
-    --md-default-fg-color: #3c4257;
-    --md-footer-bg-color: var(--md-primary-fg-color--dark);
-}
-
 .footer__inner {
     background-color: var(--md-footer-bg-color--dark);
 }
@@ -85,4 +80,13 @@ label.md-nav__link {
     font-weight: 700;
     margin: 0;
     color: var(--md-typeset-color);
+}
+
+.md-header, [data-md-color-primary=black] .md-header {
+    background-color: var(--md-default-bg-color);
+}
+
+[data-md-color-scheme=slate][data-md-color-primary=black], [data-md-color-primary=white] {
+    --md-primary-fg-color: #0091eb;
+    --md-typeset-a-color: #0091eb;
 }
