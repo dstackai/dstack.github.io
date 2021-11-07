@@ -173,6 +173,3 @@ usage: dstack resume <stopped finetune-model job id>
 ```
 
 The job will restore the earlier saved checkpoints and continue finetuning the model.
-
-!!! bug "Submit feedback"
-        Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).

@@ -39,6 +39,8 @@ markdown_extensions:
       toc_depth: 4
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - javascripts/extra.js
 extra:
   homepage: https://dstack.ai
   generator: false
@@ -53,5 +55,10 @@ nav:
       - Spot instances: spot-instances.md
       - Define workflows: define-wokflows.md
       - Run workflows: run-workflows.md
+  - Integrations:
+      - AWS: aws.md
   - Examples:
       - GPT-2: gpt-2.md
+  - Support:
+    - Community: https://join.slack.com/t/dstackai/shared_invite/zt-xdnsytie-D4qU9BvJP8vkbkHXdi6clQ
+    - Open a chat 💬: "javascript:$crisp.push(['do', 'chat:show']);$crisp.push(['do', 'chat:open']);"

@@ -103,6 +103,3 @@ sugar-1   MBP-de-Boris.fritz.box  LIVE      3 mins ago
 !!! warning "Runner is not there?"
     Don't see your runner? This may mean the runner is offline or that the `dstack-runner` daemon
     was not configured or started properly.
-
-!!! bug "Submit feedback"
-    Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).

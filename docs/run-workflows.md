@@ -128,8 +128,11 @@ dstack artifacts download <job id>
 By default, it will download the artifacts into the current working directory. The output directory can be overridden
 with the use of the `--output <path>` argument.
 
-!!! bug "Submit feedback"
-    Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).
+!!! warning "Storage"
+    By default, `dstack` stores output artifacts in its own secure storage that only your user has access to. 
+    If you want to use your own storage, you can provide `dstack` 
+    credentials to [your own AWS account](aws.md) (via `dstack aws configure`) and specify your own S3 bucket  
+    to store output artifacts.
 
 ## Stop runs and jobs
 

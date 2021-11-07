@@ -27,9 +27,11 @@ dstack aws configure
 AWS Access Key ID:  
 AWS Secret Access Key: 
 Region name:
+Artifact S3 bucket[None]: 
 ```
 
-This command will ask you to enter the AWS access key, the AWS secret key, and the region that you'd like to use.
+Note, `Artifact S3 bucket` is optional and has to be specified only if you want to use your own S3 bucket to store 
+artifacts.
 
 !!! note "Required IAM permissions"
     The `dstack autoscale` feature requires the following permissions:

@@ -37,5 +37,8 @@ dstack token
     It's important that you keep this token secure and don't share it with others. If the token is compromised, you'll 
     have to change it.
 
-!!! bug "Submit feedback"
-    Something doesn't work or is not clear? Would like to suggest a feature? Please, [let us know](https://forms.gle/nhigiDm4FmjZdRkx5).
+## Artifacts S3 bucket
+
+By default, `dstack` stores output artifacts in its own secure storage that only
+your user has access to. If you want to store output artifacts in your own S3 bucket, [configure your AWS account](aws.md) 
+and specify the name of the S3 bucket.
