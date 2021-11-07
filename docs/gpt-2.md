@@ -21,7 +21,7 @@ If you're connecting to your Git repository via an SSH key, to authorize `dstack
 use the following command:
 
 ```bash
-dstack git remote add --private key <path to your ssh key> 
+dstack git remote add --private-key <path to your ssh key> 
 ```
 
 This command sends the URL of your remote repository and your private key to `dstack.ai`. This information will be
