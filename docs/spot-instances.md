@@ -17,7 +17,7 @@ in your cloud. `dstack` will set up and tear down spot instances automatically b
     daemon that picks up assigned workflows to run.
     4. When workflows are finished, `dstack` tears down unecessary spot instances.
 
-## Configure AWS credentials
+## Configure your AWS account
 
 Before you'll be able to use spot instances as runners in your cloud, you have to provide `dstack.ai` the credentials
 to your AWS account. This can be done by the `dstack aws configure` command:
