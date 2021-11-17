@@ -15,7 +15,7 @@ OpenAI's GPT-2.
 Now, that the `dstack` CLI is installed and runners are set up, go ahead and clone the [`github.com/dstackai/gpt-2`](https://github.com/dstackai/gpt-2)
 repository.
 
-## Step 2: Add your Git remote repository
+## Step 2: Configure Git repos
 
 If you're connecting to your Git repository via an SSH key, to authorize `dstack` to access your repository, 
 use the following command:
@@ -74,7 +74,7 @@ dstack run finetune-model --model 117M
 
 This is how you override any variables that you have defined in `.dstack/variables.yaml`.
 
-## Step 4: Check run status
+## Step 4: Check status
 
 Once you've submitted a run, you can see its status, (incl. the jobs associated with it) with the help
 of the `dstack status` command:
@@ -109,13 +109,25 @@ With the CLI, you can see the output of your run.
 If you type `dstack logs --help`, you'll see the following output:
 
 ```bash
-usage: dstack logs (RUN | JOB)
+usage: dstack logs [--follow] [--since [SINCE]] (RUN | JOB)
 
 positional arguments:
-  (RUN | JOB)  run name or job id
+  (RUN | JOB)
+
+optional arguments:
+  --follow, -f          Whether to continuously poll for new logs. By default,
+                        the command will exit once there are no more logs to
+                        display. To exit from this mode, use Control-C.
+  --since [SINCE], -s [SINCE]
+                        From what time to begin displaying logs. By default,
+                        logs will be displayed starting from ten minutes in
+                        the past. The value provided can be an ISO 8601
+                        timestamp or a relative time. For example, a value of
+                        5m would indicate to display logs starting five
+                        minutes in the past.
 ```
 
-## Step 5: Stop the job
+## Step 5: Stop jobs
 
 Any job can be stopped at any time. If you type `dstack stop --help`, you'll see the following:
 
@@ -160,7 +172,7 @@ dstack artifacts download <job id>
 By default, it will download the artifacts into the current working directory. The output directory can be overridden 
 with the use of the `--output <path>` argument.
 
-## Step 7: Resume the stopped job
+## Step 7: Resume jobs
 
 Any job that had been stopped can be resumed. This means, the job is restarted with its previously saved output
 artifacts. If the job used checkpoints, it will be able to start the work where it stopped and not from the 

@@ -94,10 +94,22 @@ With the `dstack` CLI, you can see the output of the entire run or individual of
 Type `dstack logs --help`, to see how to do it:
 
 ```bash
-usage: dstack logs (RUN | JOB)
+usage: dstack logs [--follow] [--since [SINCE]] (RUN | JOB)
 
 positional arguments:
-  (RUN | JOB)  run name or job id
+  (RUN | JOB)
+
+optional arguments:
+  --follow, -f          Whether to continuously poll for new logs. By default,
+                        the command will exit once there are no more logs to
+                        display. To exit from this mode, use Control-C.
+  --since [SINCE], -s [SINCE]
+                        From what time to begin displaying logs. By default,
+                        logs will be displayed starting from ten minutes in
+                        the past. The value provided can be an ISO 8601
+                        timestamp or a relative time. For example, a value of
+                        5m would indicate to display logs starting five
+                        minutes in the past.
 ```
 
 ## Check artifacts
@@ -166,7 +178,7 @@ beginning.
 Type `dstack resume --help`, to this command works:
 
 ```bash
-usage: dstack resume [-h] JOB
+usage: dstack resume JOB
 
 positional arguments:
   JOB
