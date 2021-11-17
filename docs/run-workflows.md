@@ -3,7 +3,7 @@
 Before you can run and manage workflows of your project via the CLI, you have to authorize `dstack` to access
 your Git remote repository. 
 
-## Add your Git remote repository
+## Add Git repo credentials
 
 If you're connecting to your Git repository via an SSH key, to authorize `dstack` to access your repository, 
 use the following command:

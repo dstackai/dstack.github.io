@@ -15,7 +15,7 @@ OpenAI's GPT-2.
 Now, that the `dstack` CLI is installed and runners are set up, go ahead and clone the [`github.com/dstackai/gpt-2`](https://github.com/dstackai/gpt-2)
 repository.
 
-## Step 2: Configure Git repos
+## Step 2: Add Git repo credentials
 
 If you're connecting to your Git repository via an SSH key, to authorize `dstack` to access your repository, 
 use the following command:
