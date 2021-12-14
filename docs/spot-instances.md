@@ -55,8 +55,8 @@ Once you've configured the credentials to your AWS account, you'll be able to ma
 Type the following to see how to add or replace autoscale rules:
 
 ```bash
-dstack autoscale rules set --help
-usage: dstack autoscale rules set --max MAX INSTANCE_TYPE
+dstack autoscale allow --help
+usage: dstack autoscale allow --max MAX INSTANCE_TYPE
 
 positional arguments:
   INSTANCE_TYPE
@@ -74,7 +74,7 @@ allowed to create per the given instance type.
 Let's look at an example:
 
 ```bash
-dstack autoscale rules set m5.xlarge --max 1
+dstack autoscale allow m5.xlarge --max 1
 ```
 
 This command instructs `dstack` that it can create at max one instance of the type `m5.xlarge`.
@@ -86,7 +86,7 @@ If you try to add a rule that is not supported by your AWS account, you'll get a
 To remove a rule for a given instance type is the same as setting the corresponding maximum number of instances to 0:
 
 ```bash
-dstack autoscale rules set m5.xlarge 0
+dstack autoscale allow m5.xlarge --max 0
 ```
 
 !!! info "" 
@@ -98,35 +98,35 @@ dstack autoscale rules set m5.xlarge 0
 You can always see the list of all rules by the following command:
 
 ```bash
-dstack autoscale rule list
+dstack autoscale info
 ```
 
 ## Clear autoscale rules
 
-To quickly delete all defined rules, you the following command:
+To quickly delete all defined rules, with the following command:
 
 ```bash
-dstack autoscale rule clear
+dstack autoscale clear
 ```
 
 !!! info ""
     This command will immediately shut down all running spot instances if there are any.
 
-## Pause and unpause autoscaling
+## Disable and enable autoscaling
 
-You can pause and unpause autoscaling with a single command:
+You can disable and enable autoscaling with a single command:
 
 ```bash
-dstack autoscale pause
+dstack autoscale disable
 ```
 
 or 
 
 ```bash
-dstack autoscale unpause
+dstack autoscale enable
 ```
 
 These commands allow you to pause temporarily autoscaling without deleting the rules.
 
 !!! warning ""
-    The `pause` command will immediately shut down all running spot instances if there are any.
+    The `disable` command will immediately shut down all running spot instances if there are any.

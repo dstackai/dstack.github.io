@@ -20,6 +20,7 @@ Here's how to install the `dstack-runner` daemon:
     ```bash
     sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-linux-amd64"
     sudo chmod +x /usr/local/bin/dstack-runner
+    if [ -e "/etc/fuse.conf" ]; then sudo sed "s/# *user_allow_other/user_allow_other/" /etc/fuse.conf > t; sudo mv t /etc/fuse.conf; else echo "user_allow_other" | sudo tee -a /etc/fuse.conf > /dev/null; fi
     ```
 
 === "macOS"

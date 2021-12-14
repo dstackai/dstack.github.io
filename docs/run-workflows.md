@@ -5,11 +5,19 @@ your Git remote repository.
 
 ## Add Git repo credentials
 
+If you're connecting to your GitHub repository via HTTPS, use the following command:
+
+```bash
+dstack init 
+```
+
+It will open your browser and prompt you to authorize `dstack` to access your repository. 
+
 If you're connecting to your Git repository via an SSH key, to authorize `dstack` to access your repository, 
 use the following command:
 
 ```bash
-dstack git remote add --private-key <path to your ssh key> 
+dstack init --private-key <path to your ssh key> 
 ```
 
 This command sends the URL of your remote repository and your private key to `dstack.ai`. This information will be
@@ -120,25 +128,22 @@ With the `dstac` CLI, you can do both list the contents of each artifact and dow
 Here's how to list the content of the artifacts of a given job:
 
 ```bash
-dstack artifacts list <job id>
+dstack artifacts <job id>
 ```
 
-By default, this will only show the list of artifacts, the number of files in each, and the total size of the artifact.
+By default, it lists all individual files in each artifact.
 
-In order to see all file stored within each artifact, use `-l` option:
+If you want to see the total size of each artifact, use `-t` option:
 
 ```bash
-dstack artifacts list -l <job id>
+dstack artifacts -t <job id>
 ```
 
 If you'd like to download artifacts, use the following command:
 
 ```bash
-dstack artifacts download <job id>
+dstack artifacts <job id> --output <path to download artifacts>
 ```
-
-By default, it will download the artifacts into the current working directory. The output directory can be overridden
-with the use of the `--output <path>` argument.
 
 !!! warning "Storage"
     By default, `dstack` stores output artifacts in its own secure storage that only your user has access to. 
