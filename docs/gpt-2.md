@@ -17,11 +17,19 @@ repository.
 
 ## Step 2: Add Git repo credentials
 
+If you're connecting to your GitHub repository via HTTPS, use the following command:
+
+```bash
+dstack init 
+```
+
+It will open your browser and prompt you to authorize `dstack` to access your repository. 
+
 If you're connecting to your Git repository via an SSH key, to authorize `dstack` to access your repository, 
 use the following command:
 
 ```bash
-dstack git remote add --private-key <path to your ssh key> 
+dstack init --private-key <path to your ssh key> 
 ```
 
 This command sends the URL of your remote repository and your private key to `dstack.ai`. This information will be
@@ -86,12 +94,11 @@ dstack status
 Here's what you can see if you do that:
 
 ```bash
-RUN             JOB           WORKFLOW        VARIABLES      RUNNER    STATUS    STARTED      DURATION    ARTIFACTS
-clever-tiger-1  -             download-model  --model 117M   sugar-1   RUNNING   6 mins ago   6 mins      -
-                0673f7f444b6  download-model  --model 117M   sugar-1   DONE      6 mins ago   2 mins      models/117M
-                67d53f2daa2e  download-model  --model 117M   sugar-1   DONE      5 mins ago   2 mins      input.npz
-                4ef42541c7f4  finetune-model  --model 117M   sugar-1   RUNNING   just now     2 mins      checkpoint/clever-tiger-1
-                                                                                                          samples/clever-tiger-1
+RUN            TAG     JOB           WORKFLOW        VARIABLES     SUBMITTED    RUNNER     STATUS
+fast-rabbit-1  <none>                finetune-model  --model 117M  1 min ago    cricket-1  RUNNING
+                       53881a211647  download-model  --model 117M  1 min ago    cricket-1  DONE
+                       aa930d70645f  encode-dataset  --model 117M  1 min ago    cricket-1  DONE
+                       59b05053abcb  finetune-model  --model 117M  1 min ago    cricket-1  RUNNING
 ```
 
 !!! warning ""
@@ -152,25 +159,22 @@ With the CLI, you can both list the contents of each artifact and download it to
 Here's how to list the content of the artifacts of a given job:
 
 ```bash
-dstack artifacts list <job id>
+dstack artifacts <job id>
 ```
 
-By default, this will only show the list of artifacts, the number of files in each, and the total size of the artifact.
+By default, it lists all individual files in each artifact.
 
-In order to see all file stored within each artifact, use `-l` option:
+If you want to see the total size of each artifact, use `-t` option:
 
 ```bash
-dstack artifacts list -l <job id>
+dstack artifacts -t <job id>
 ```
 
 If you'd like to download the artifacts, this can be done by the following command:
 
 ```bash
-dstack artifacts download <job id>
+dstack artifacts <job id> --output <path to download artifacts>
 ```
-
-By default, it will download the artifacts into the current working directory. The output directory can be overridden 
-with the use of the `--output <path>` argument.
 
 ## Step 7: Resume jobs
 
@@ -181,7 +185,10 @@ beginning.
 If you've stopped the previously run `finetune-model` workflow, use this command to resume it:
 
 ```bash
-usage: dstack resume <stopped finetune-model job id>
+usage: dstack resume JOB
+
+positional arguments:
+  JOB
 ```
 
 The job will restore the earlier saved checkpoints and continue finetuning the model.

@@ -85,9 +85,9 @@ dstack status
 If call it, you'll see the following output:
 
 ```bash
-RUN           JOB           WORKFLOW        VARIABLES      RUNNER    STATUS    STARTED      DURATION    ARTIFACTS
-angry-rat-1                 download-model  --model 117M   sugar-1   DONE      1 min ago    -
-              d0e3d8d0a1ff  download-model  --model 117M   sugar-1   DONE      1 min ago    2 mins      models/117M
+RUN            TAG     JOB           WORKFLOW        VARIABLES     SUBMITTED    RUNNER     STATUS
+fast-rabbit-1  <none>                finetune-model  --model 117M  1 min ago    cricket-1  DONE
+                       53881a211647  download-model  --model 117M  1 min ago    cricket-1  DONE
 ```
 
 !!! warning ""
