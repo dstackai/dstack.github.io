@@ -18,20 +18,25 @@ Here's how to install the `dstack-runner` daemon:
 === "Linux"
 
     ```bash
-    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-linux-amd64"
-    sudo chmod +x /usr/local/bin/dstack-runner
-    if [ -e "/etc/fuse.conf" ]; then sudo sed "s/# *user_allow_other/user_allow_other/" /etc/fuse.conf > t; sudo mv t /etc/fuse.conf; else echo "user_allow_other" | sudo tee -a /etc/fuse.conf > /dev/null; fi
+    curl -fsSL https://dstack-runner-downloads.eu-west-1.amazonaws.com/get-dstack-runner.sh -o get-dstack-runner.sh
+    sudo sh get-dstack-runner.sh
     ```
 
-=== "macOS"
+[//]: # (=== "macOS")
 
-    ```bash
-    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-darwin-amd64"
-    sudo chmod +x /usr/local/bin/dstack-runner
-    ```
+[//]: # ()
+[//]: # (    ```bash)
 
-If you are on **Windows**, simply download [dstack-runner.exe](https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe).
+[//]: # (    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-darwin-amd64")
 
+[//]: # (    sudo chmod +x /usr/local/bin/dstack-runner)
+
+[//]: # (    ```)
+
+[//]: # ()
+[//]: # (If you are on **Windows**, simply download [dstack-runner.exe]&#40;https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe&#41;.)
+
+[//]: # ()
 ## Configure a token
 
 Before you can start the daemon, you have to configure it with your `Personal Access Token`:
@@ -42,17 +47,24 @@ Before you can start the daemon, you have to configure it with your `Personal Ac
     dstack-runner config --token <token>
     ```
 
-=== "macOS"
+[//]: # (=== "macOS")
 
-    ```bash
-    dstack-runner config --token <token>
-    ```
+[//]: # ()
+[//]: # (    ```bash)
 
-=== "Windows"
+[//]: # (    dstack-runner config --token <token>)
 
-    ```cmd
-    dstack-runner.exe config --token <token>
-    ```
+[//]: # (    ```)
+
+[//]: # ()
+[//]: # (=== "Windows")
+
+[//]: # ()
+[//]: # (    ```cmd)
+
+[//]: # (    dstack-runner.exe config --token <token>)
+
+[//]: # (    ```)
 
 !!! tip "Personal Access Token"
     Use the `dstack token` command of the CLI to get your `Personal Access Token`. See [Installation](installation.md#get-a-token)&hellip;    
@@ -65,17 +77,24 @@ Once you do it, the daemon is ready to start:
     dstack-runner start
     ```
 
-=== "macOS"
+[//]: # (=== "macOS")
 
-    ```bash
-    dstack-runner start
-    ```
+[//]: # ()
+[//]: # (    ```bash)
 
-=== "Windows"
+[//]: # (    dstack-runner start)
 
-    ```cmd
-    dstack-runner.exe start
-    ```
+[//]: # (    ```)
+
+[//]: # ()
+[//]: # (=== "Windows")
+
+[//]: # ()
+[//]: # (    ```cmd)
+
+[//]: # (    dstack-runner.exe start)
+
+[//]: # (    ```)
 
 !!! danger "Docker is required"
     The `dstack-runner` daemon requires that either the standard Docker or the NVIDIA's Docker is installed and 
