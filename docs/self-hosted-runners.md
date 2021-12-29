@@ -18,7 +18,7 @@ Here's how to install the `dstack-runner` daemon:
 === "Linux"
 
     ```bash
-    curl -fsSL https://dstack-runner-downloads.eu-west-1.amazonaws.com/get-dstack-runner.sh -o get-dstack-runner.sh
+    curl -fsSL https://get.dstack.ai/runner -o get-dstack-runner.sh
     sudo sh get-dstack-runner.sh
     ```
 
