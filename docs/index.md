@@ -1,39 +1,35 @@
 # How dstack works
 
-Typical ML workflows include multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc.
+Typical ML workflows include multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc. 
+With `dstack`, you can define ML workflows in a simple YAML format, and run them via the CLI over a pool of
+your own servers or spot instances in your cloud. 
 
-!!! note ""
-      With `dstack`, you can define ML workflows in a simple YAML format, and run them over a pool of
-      your own servers or spot instances in your cloud. All operations with `dstack` are done from a developer-friendly CLI. 
-
-### Terminology 
-
-#### Workflows
+### Workflows
 
 Workflows are defined in the `.dstack/workflows.yaml` file inside a project's Git repository. Each workflow may have 
 a name, a Docker image, commands, what files (in the repository) and what other workflows it depends on, and
 at what paths the files must be stored as output artifacts. 
 [Learn more&hellip;](define-wokflows.md)
 
-#### Variables
+### Variables
 
 Each workflow may have variables and their default values. Variables for each workflow are defined in the 
 `.dstack/varialbles.yaml` file inside a project's Git repository. When a workflow is run, any of the variables 
 can be overridden. [Learn more&hellip;](define-wokflows.md#variables)
 
-#### CLI
+### CLI
 
 CLI is an abbreviation of Command Line Interface. `dstack`'s CLI can be installed via `pip`. 
 It can be used from a terminal to invoke any command on `dstack`, be it running workflows, browsing logs, 
 managing runners, etc. [Learn more&hellip;](run-workflows.md)
 
-#### Runs
+### Runs
 
 Runs are single instances of running workflows. If you submit a workflow to run (e.g. via `dstack` CLI), the 
 corresponding run refers to the name of the workflow, the state of the Git repository (remote URL, branch name,
 commit hash, and local changes), and to the values of the variables if any of them were overridden via the CLI. 
 
-#### Jobs
+### Jobs
 
 If the submitted run refers to a workflow that depends on other workflows, for every workflow, the `dstack` server
 schedules a separate job. If the submitted run refers to a workflow that doesn't have dependencies, then
@@ -41,7 +37,7 @@ the `dstack` server schedules only one job. Each job refers to a single workflow
 set of variables, dependencies, and state of the repository. 
 Generally speaking, jobs are single units of work that can be executed by one machine (aka runner).
 
-#### Runners
+### Runners
 
 Runners are machines (either real or virtual) that host the `dstack-runner` daemon. This daemon listens to the
 `dstack` server for scheduled jobs. If a job is assigned to a particular runner, the daemon, based on the provided

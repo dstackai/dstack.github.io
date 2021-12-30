@@ -1,7 +1,8 @@
 .md-header__title {
     margin-left: -4px;
     font-weight: 700;
-    font-size: 21px;
+    font-size: 20px;
+    padding-top: 2px;
     font-family: 'Poppins', Helvetica, sans-serif;
 }
 
@@ -109,6 +110,10 @@ label.md-nav__link {
     color: rgb(60, 66, 87);
 }
 
+.md-typeset h1 {
+    font-weight: 700;
+}
+
 .md-header, [data-md-color-primary=black] .md-header {
     background-color: var(--md-default-bg-color);
 }
@@ -131,4 +136,8 @@ body {
 .md-header__button.md-logo :where(img,svg) {
     height: 1.4rem;
     width: 1.4rem;
+}
+
+.md-sidebar__inner {
+    margin: 2em 0;
 }
