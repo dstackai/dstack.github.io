@@ -15,67 +15,29 @@ The machines that host the `dstack-runner` daemon form a pool of runners, and wh
 
 Here's how to install the `dstack-runner` daemon:
 
-=== "Linux"
-
-    ```bash
-    curl -fsSL https://get.dstack.ai/runner -o get-dstack-runner.sh
-    sudo sh get-dstack-runner.sh
-    ```
-
-[//]: # (=== "macOS")
-
-[//]: # ()
-[//]: # (    ```bash)
-
-[//]: # (    sudo curl --output /usr/local/bin/dstack-runner "https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-darwin-amd64")
-
-[//]: # (    sudo chmod +x /usr/local/bin/dstack-runner)
-
-[//]: # (    ```)
-
-[//]: # ()
-[//]: # (If you are on **Windows**, simply download [dstack-runner.exe]&#40;https://dstack-runner-downloads.s3.eu-west-1.amazonaws.com/latest/binaries/dstack-runner-windows-amd64.exe&#41;.)
-
-[//]: # ()
+```bash
+curl -fsSL https://get.dstack.ai/runner -o get-dstack-runner.sh
+sudo sh get-dstack-runner.sh
+```
+    
 ## Configure a token
 
 Before you can start the daemon, you have to configure it with your `Personal Access Token`:
 
-=== "Linux"
+[//]: # (=== "Linux")
 
-    ```bash
-    dstack-runner config --token <token>
-    ```
-
-[//]: # (=== "macOS")
-
-[//]: # ()
-[//]: # (    ```bash)
-
-[//]: # (    dstack-runner config --token <token>)
-
-[//]: # (    ```)
-
-[//]: # ()
-[//]: # (=== "Windows")
-
-[//]: # ()
-[//]: # (    ```cmd)
-
-[//]: # (    dstack-runner.exe config --token <token>)
-
-[//]: # (    ```)
+```bash
+dstack-runner config --token <token>
+```
 
 !!! tip "Personal Access Token"
     Use the `dstack token` command of the CLI to get your `Personal Access Token`. See [Installation](installation.md#get-a-token)&hellip;    
 
 Once you do it, the daemon is ready to start:
 
-=== "Linux"
-
-    ```bash
-    dstack-runner start
-    ```
+```bash
+dstack-runner start
+```
 
 [//]: # (=== "macOS")
 

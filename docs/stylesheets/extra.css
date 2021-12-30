@@ -1,8 +1,12 @@
 .md-header__title {
-    margin-left: 0;
+    margin-left: -4px;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 21px;
     font-family: 'Poppins', Helvetica, sans-serif;
+}
+
+.md-header__title[data-md-state="active"] {
+    margin-left: 10px;
 }
 
 @media screen and (max-width: 76.1875em) {
@@ -24,17 +28,39 @@ label.md-nav__link {
     color: var(--md-default-fg-color);
 }
 
-.md-nav__item .md-nav__link--active {
+.md-nav__item {
+    color: #3c4257;
     font-weight: 500;
+    font-size: 15px;
 }
 
-.md-nav__item .md-nav__link--active:hover {
+.md-nav__item .md-nav__link:hover {
     color: var(--md-typeset-a-color);
 }
 
 .md-typeset pre > code, .md-typeset code {
     font-family: IBMPlexMono, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-weight: bold;
+    background-color: inherit;
+}
+
+.md-typeset pre > code {
+    border-radius: 5px;
+    border: 2px solid var(--md-typeset-a-color);
+}
+
+.md-clipboard:after {
+    color: rgb(160, 160, 160)
+}
+
+.md-clipboard:hover:after {
+    color: var(--md-typeset-a-color)
+}
+
+@media screen and (max-width: 44.9375em) {
+    .md-typeset pre > code {
+        border: none;
+    }
 }
 
 .md-typeset .admonition, .md-typeset details {
@@ -69,6 +95,7 @@ label.md-nav__link {
 
 .md-typeset {
     line-height: 1.3rem;
+    font-size: 17px;
 }
 
 .md-typeset h1, .md-typeset h2 {
@@ -76,10 +103,10 @@ label.md-nav__link {
     letter-spacing: 0;
 }
 
-.md-typeset h1 {
-    font-weight: 700;
-    margin: 0;
-    color: var(--md-typeset-color);
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4  {
+    font-weight: 500;
+    /*margin: 0;*/
+    color: rgb(60, 66, 87);
 }
 
 .md-header, [data-md-color-primary=black] .md-header {
@@ -89,4 +116,19 @@ label.md-nav__link {
 [data-md-color-scheme=slate][data-md-color-primary=black], [data-md-color-primary=white] {
     --md-primary-fg-color: #0091eb;
     --md-typeset-a-color: #0091eb;
+    --md-code-hl-keyword-color: #0091eb;
+    --md-code-hl-constant-color: var(--md-code-fg-color);
+}
+
+body {
+    --md-text-font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+}
+
+.md-content__inner {
+    padding-top: 1.1rem;
+}
+
+.md-header__button.md-logo :where(img,svg) {
+    height: 1.4rem;
+    width: 1.4rem;
 }
