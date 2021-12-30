@@ -1,5 +1,5 @@
 .md-header__title {
-    margin-left: -4px;
+    margin-left: -4px !important;
     font-weight: 700;
     font-size: 20px;
     padding-top: 2px;
@@ -7,7 +7,7 @@
 }
 
 .md-header__title[data-md-state="active"] {
-    margin-left: 10px;
+    margin-left: 10px !important;;
 }
 
 @media screen and (max-width: 76.1875em) {
@@ -134,8 +134,8 @@ body {
 }
 
 .md-header__button.md-logo :where(img,svg) {
-    height: 1.4rem;
-    width: 1.4rem;
+    height: 1.4rem !important;
+    width: 1.4rem !important;
 }
 
 .md-sidebar__inner {
