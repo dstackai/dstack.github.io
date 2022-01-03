@@ -14,8 +14,8 @@ The machines that host the `dstack-runner` daemon form a pool of runners, and wh
 ## Install the daemon
 
 !!! warning "Linux"
-    Currently, self-hosted runners work only on Linux. If you'd like to host runners on Windows or macOS, 
-    please write to [hello@dstack.ai](mailto:hello@dstack.ai).
+    Currently, self-hosted runners work on `Linux` only. The `Windows` and `macOS` support is experimental. 
+    If you'd like to try it, please write to [hello@dstack.ai](mailto:hello@dstack.ai).
 
 Here's how to install the `dstack-runner` daemon:
 
