@@ -13,6 +13,10 @@ The machines that host the `dstack-runner` daemon form a pool of runners, and wh
 
 ## Install the daemon
 
+!!! warning "Linux"
+    Currently, self-hosted runners work only on Linux. If you'd like to host runners on Windows or macOS, 
+    please write to [hello@dstack.ai](mailto:hello@dstack.ai).
+
 Here's how to install the `dstack-runner` daemon:
 
 ```bash
@@ -58,7 +62,7 @@ dstack-runner start
 
 [//]: # (    ```)
 
-!!! danger "Docker is required"
+!!! warning "Docker is required"
     The `dstack-runner` daemon requires that either the standard Docker or the NVIDIA's Docker is installed and 
     running on the machine.
 
@@ -82,6 +86,6 @@ RUNNER    HOST                    STATUS    UPDATED
 sugar-1   MBP-de-Boris.fritz.box  LIVE      3 mins ago
 ```
 
-!!! warning "Runner is not there?"
+!!! bug "Runner is not there?"
     Don't see your runner? This may mean the runner is offline or that the `dstack-runner` daemon
     was not configured or started properly.
