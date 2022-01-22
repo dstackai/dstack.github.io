@@ -1,4 +1,4 @@
-# Use self-hosted runners
+# Self-hosted runners
 
 A runner is a machine that can run `dstack` workflows. You can host runners on your local machine or
 on your remote machines.
@@ -34,8 +34,11 @@ Before you can start the daemon, you have to configure it with your `Personal Ac
 dstack-runner config --token <token>
 ```
 
-!!! tip "Personal Access Token"
-    Use the `dstack token` command of the CLI to get your `Personal Access Token`. See [Installation](installation.md#get-a-token)&hellip;    
+The provided `Personal Access Token` will be stored in the `~/.dstack/config.yaml` file. 
+
+!!! info "Personal Access Token"
+    In order to receive your `Personal Access Token`, please click `Request access` at [dstack.ai](https://dstack.ai). 
+    Once your request is approved, you'll be able to create a `dstack` user, and obtain your token.
 
 Once you do it, the daemon is ready to start:
 

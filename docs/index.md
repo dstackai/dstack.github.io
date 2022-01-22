@@ -2,7 +2,7 @@
 
 Typical ML workflows include multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc. 
 With `dstack`, you can define ML workflows in a simple YAML format, and run them via the CLI over a pool of
-your own servers or spot instances in your cloud. 
+your own servers or on-demand servers in your cloud. 
 
 ### Workflows
 
@@ -47,18 +47,18 @@ the logs to `dstack`'s logs storage and upload output artifacts of the job to th
 
 As a user of `dstack`, you can either install the `dstack-runner` daemon to your own servers to make a pool of 
 [your own runners](self-hosted-runners.md),
-or provide `dstack` credentials to your own cloud so `dstack` can create runners on-demand using spot instances.
+or provide `dstack` credentials to your own cloud so `dstack` can create [on-demand runners](on-demand-runners.md).
 
 ### Lifecycle
 
 1. You define `.dstack/workflows.yaml` and `.dstack/variables.yaml` files inside your project (must be a Git repository).
 2. You install the `dstack` CLI via `pip`.
 3. You either install `dstack-runner` daemon on your servers, or use the `dstack aws configure` to authorize
-`dstack` to use your own cloud to create runners on-demand using spot instances.
+`dstack` to use your own cloud to create on-demand runners.
 4. You use the `dstack` CLI to run workflows, manage runs, jobs, logs, artifacts, runners.
 5. When a workflow is submitted via the CLI (e.g. via `dstack run`) , the request is sent to the `dstack` server. 
 The `dstack` server creates jobs for the submitted run, and assign them to available runners (either servers where 
-you've installed `dstack-runner` or on-demand spot instances in your cloud that you allowed to create).
+you've installed `dstack-runner` or on-demand runners in your cloud that you have allowed to create).
 6. Runners execute assigned jobs, report their logs in real-time, and upload artifacts once the job is finished.
 
 [//]: # (What can dstack used for)

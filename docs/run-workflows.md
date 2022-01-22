@@ -1,9 +1,9 @@
-# Run and manage workflows
+# Run workflows
 
 Before you can run and manage workflows of your project via the CLI, you have to authorize `dstack` to access
 your Git remote repository. 
 
-## Add Git repo credentials
+## Add Git credentials
 
 If you're connecting to your GitHub repository via HTTPS, use the following command:
 
@@ -20,7 +20,7 @@ use the following command:
 dstack init --private-key <path to your ssh key> 
 ```
 
-This command sends the URL of your remote repository and your private key to `dstack.ai`. This information will be
+This command sends the URL of your remote repository and your private key to `dstack`. This information will be
 securely shared with the runners that will run workflows.
 
 !!! warning "Repository folder"
@@ -63,12 +63,12 @@ dstack run download-model --model 117M
 ```
 
 !!! info "What happens when you run a workflow?"
-    1. When you run a workflow using the `dstack run` command, `dstack` sends the run requests to `dstack.ai`. 
+    1. When you run a workflow using the `dstack run` command, `dstack` sends the run requests to `dstack`. 
     The request contains the information about the repository (incl. the branch, the commit hash of the head,
     uncommitted changes if any, etc.), the name of the workflow, and the overridden variable values.
     2. Once the `dstack` server receives a run request, it creates a list of jobs (one job per workflow that has to run).
-    Then, `dstack.ai` assigns each job to one of the available runners. If any of the workflows (one that you run or one
-    it depends on) had already run before with the code and variables, `dstack.ai` won't create a new job and instead
+    Then, `dstack` assigns each job to one of the available runners. If any of the workflows (one that you run or one
+    it depends on) had already run before with the code and variables, `dstack` won't create a new job and instead
     will reuse the one from cache.
     3. Each job is assigned to one of the available runners.
     4. Once a runner receives a job, it runs, upload logs in real-time, and in the end upload output artifacts.
@@ -148,7 +148,7 @@ dstack artifacts <job id> --output <path to download artifacts>
 !!! warning "Storage"
     By default, `dstack` stores output artifacts in its own secure storage that only your user has access to. 
     If you want to use your own storage, you can provide `dstack` 
-    credentials to [your own AWS account](aws.md) (via `dstack aws configure`) and specify your own S3 bucket  
+    credentials to [your own AWS account](aws.md) (via `dstack aws configure`) and specify your own S3 bucket
     to store output artifacts.
 
 ## Stop runs and jobs
@@ -167,7 +167,7 @@ optional arguments:
   -a, --abort  Abort a run or job, i.e. don't upload artifacts
 ```
 
-!!! tip "Aborting"
+!!! tip "Abort"
     If you don't specify the `--abort` argument, the runner will try to gracefully stop the job and make sure all artifacts 
     and logs are collected. If you do specify the `--abort` argument, the runner will try to abort the job immediately.
 

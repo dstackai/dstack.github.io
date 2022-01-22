@@ -1,10 +1,10 @@
 # Configure your AWS account
 
-With `dstack` it's possible to run workflows in spot instances in your own AWS cloud as well as to store output 
+With `dstack` it's possible to run workflows in on-demand runners in your own AWS cloud as well as to store output 
 artifacts in your own S3 bucket.
 
 In order to connect `dstack` to your AWS account, run the `dstack aws configure` command and specify the credentials 
-for your AWS account and, optionally, the name of your S3 bucket that you's like to use to store output artifacts:
+for your AWS account and, optionally, the name of your S3 bucket that you'd like to use to store output artifacts:
 
 ```
 dstack aws configure
@@ -16,9 +16,7 @@ Artifact S3 bucket[None]:
 
 ## Required permissions
 
-### Spot instances
-
-If you plan to run workflows in spot instances in your AWS account (via `dstack autoscale`) you'll need the 
+If you plan to use on-demand runners in your AWS account (via `dstack autoscale`) you'll need the 
 following IAM permissions:
 
 ```
@@ -31,7 +29,7 @@ ec2:AuthorizeSecurityGroupIngress
 ec2:AuthorizeSecurityGroupEgress
 ```
 
-To learn how to run workflows in spot instances, [read here](spot-instances.md).
+To learn how to run workflows in on-demand runners, [read here](on-demand-runners.md).
 
 ### Artifact S3 bucket
 

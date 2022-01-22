@@ -7,15 +7,15 @@ OpenAI's GPT-2.
 
     Before following this tutorial, make sure you've done these required steps:
 
-    1. [Install CLI and get a token](installation.md)
-    2. [Set up runners on your own machines](self-hosted-runners.md) or [Connect dstack to your cloud](spot-instances.md)
+    1. [Install CLI](installation.md)
+    2. [Set up self-hosted runners](self-hosted-runners.md) or [Configure on-demand runners](on-demand-runners.md)
 
 ## Step 1: Clone Git repo
 
 Now, that the `dstack` CLI is installed and runners are set up, go ahead and clone the [`github.com/dstackai/gpt-2`](https://github.com/dstackai/gpt-2)
 repository.
 
-## Step 2: Add Git repo credentials
+## Step 2: Add Git credentials
 
 If you're connecting to your GitHub repository via HTTPS, use the following command:
 

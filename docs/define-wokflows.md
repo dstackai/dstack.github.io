@@ -26,11 +26,6 @@ workflows:
     commands:
       - pip3 install -r requirements.txt
       - python3 download_model.py $model
-    depends-on:
-      repo:
-        include:
-          - requirements.txt
-          - download_model.py
     artifacts:
       - models
   - name: encode-dataset
@@ -41,12 +36,6 @@ workflows:
       - mkdir -p datasets
       - PYTHONPATH=src ./encode.py --model_name $model input.txt datasets/input.npy
     depends-on:
-      repo:
-        include:
-          - requirements.txt
-          - encode.py
-          - src/load_dataset.py
-          - src/encoder.py
       workflows:
         - download-model
     artifacts:

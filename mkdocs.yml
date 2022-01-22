@@ -25,7 +25,7 @@ theme:
 #        name: Switch to light mode
   features:
     #    - toc.integrate
-    - navigation.sections
+#    - navigation.sections
     - navigation.expand
     - navigation.top
 markdown_extensions:
@@ -52,13 +52,13 @@ nav:
       - How it works: index.md
       - Installation: installation.md
       - Self-hosted runners: self-hosted-runners.md
-      - Spot instances: spot-instances.md
+      - On-demand runners: on-demand-runners.md
       - Define workflows: define-wokflows.md
       - Run workflows: run-workflows.md
   - Integrations:
       - AWS: aws.md
   - Examples:
       - GPT-2: gpt-2.md
-  - Support:
+  - Help:
     - Community: https://join.slack.com/t/dstackai/shared_invite/zt-xdnsytie-D4qU9BvJP8vkbkHXdi6clQ
     - Open a chat 💬: "javascript:$crisp.push(['do', 'chat:show']);$crisp.push(['do', 'chat:open']);"

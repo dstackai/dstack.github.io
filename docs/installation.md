@@ -8,34 +8,20 @@ The `dstack` CLI can be installed via `pip`:
 pip install dstack -U
 ```
 
-## Login
+## Configure a token
 
-Before you use the CLI, you need to authorize with your user credentials. This can be done via a CLI command:
-
-```bash
-dstack login
-```
-
-The command will prompt you to enter your username and your password. 
-
-If the credentials are correct, the `Personal Access Token` that is associated with your user will be stored in the 
-`~/.dstack/config.yaml` file. Now, all your commands of the `dstack` CLI will be authorized and associated with your user.
-
-!!! info "How do I register a user with dstack.ai?"
-    Please sign up using the form at [dstack.ai](https://dstack.ai) and wait for an approval. 
-    As soon as your request is approved, you'll receive your user credentials to your email.
-
-## Get a token
-
-To see your `Personal Access Token`, you can either open the `~/.dstack/config.yaml` file, or call the following command:
+Before you can use the CLI, you have to configure it with your `Personal Access Token`. This can be done via a CLI command:
 
 ```bash
-dstack token
+dstack config --token <token>
 ```
 
-!!! danger "Keep the token secure"
-    It's important that you keep this token secure and don't share it with others. If the token is compromised, you'll 
-    have to change it.
+The provided `Personal Access Token` will be stored in the `~/.dstack/config.yaml` file. 
+After that, all your commands of CLI will be associated with your user.
+
+!!! info "Personal Access Token"
+    In order to receive your `Personal Access Token`, please click `Request access` at [dstack.ai](https://dstack.ai). 
+    Once your request is approved, you'll be able to create a `dstack` user, and obtain your token.
 
 ## Artifacts S3 bucket
 

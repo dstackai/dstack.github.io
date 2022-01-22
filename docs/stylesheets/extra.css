@@ -36,7 +36,7 @@ label.md-nav__link {
 }
 
 .md-nav__item .md-nav__link:hover {
-    color: var(--md-typeset-a-color);
+    /*color: var(--md-typeset-a-color);*/
 }
 
 .md-typeset pre > code, .md-typeset code {
@@ -107,7 +107,7 @@ label.md-nav__link {
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4  {
     font-weight: 500;
     /*margin: 0;*/
-    color: rgb(60, 66, 87);
+    color: rgb(0, 0, 0);
 }
 
 .md-typeset h1 {
@@ -140,4 +140,45 @@ body {
 
 .md-sidebar__inner {
     margin: 2em 0;
+}
+
+.md-sidebar--primary .md-nav__item .md-nav__link--active {
+    color: white;
+    background-color: black;
+    border-radius: 12px;
+}
+
+.md-sidebar--secondary .md-nav__item .md-nav__link--active {
+    color: black;
+}
+
+.md-sidebar--primary .md-nav__link {
+    padding: 3px 10px 4px;
+    margin: 3px 20px 3px -10px;
+}
+
+.md-sidebar--secondary .md-nav__link {
+    color: rgb(120, 120, 120);
+}
+
+.md-footer, .md-footer-meta {
+     background-color: inherit;
+     color: inherit;
+}
+
+@media screen and (max-width: 76.1875em) {
+    .md-sidebar--primary .md-nav__link {
+        padding: inherit;
+        margin: 10px 15px;
+    }
+
+    .md-sidebar--primary .md-nav__item .md-nav__link--active {
+        color: inherit;
+        background-color: inherit;
+        border-radius: inherit;
+    }
+
+    .md-nav--primary .md-nav__title[for=__drawer] {
+        background-color: inherit;
+    }
 }
