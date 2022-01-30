@@ -1,4 +1,4 @@
-# On-demand runners in cloud
+# On-demand runners
 
 If you provide `dstack` with the credentials to your cloud account and configure limits, 
 `dstack` will be able to set up on-demand runners to run your workflows automatically. 
