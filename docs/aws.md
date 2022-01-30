@@ -1,4 +1,4 @@
-# Connect dstack to AWS account
+# Configure an AWS account
 
 With `dstack` it's possible to run workflows in on-demand runners in your own AWS cloud as well as to store output 
 artifacts in your own S3 bucket.

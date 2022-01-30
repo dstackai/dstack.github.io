@@ -16,7 +16,7 @@ If you provide `dstack` with the credentials to your cloud account and configure
     3. When you submit a workflow, `dstack` will create required EC2 instances automatically.
     4. When the workflows are finished and there is no need in on-demand runners, `dstack` will tears them down.
 
-## Connect to AWS account
+## Configure an AWS account
 
 Before you'll be able to use on-demand runners, you have to provide `dstack` the credentials
 to your AWS account. 
