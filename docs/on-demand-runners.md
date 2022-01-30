@@ -1,29 +1,30 @@
-# On-demand runners in your cloud
+# On-demand runners in cloud
 
-A runner is a machine that can run `dstack` workflows. If you provide `dstack` with the credentials to your cloud 
-and provide autoscaling rules, `dstack` will be able to set up servers to run your workflows automatically – based on 
-the demand and workflow requirements. 
+If you provide `dstack` with the credentials to your cloud account and configure limits, 
+`dstack` will be able to set up on-demand runners to run your workflows automatically. 
 
 !!! warning "Cloud vendors"
-    This tutorial describes how to use the `dstack autoscale` feature with an AWS account. 
-    If you use another cloud vendor, such as GCP, Azure (or some other), please write to 
+    This tutorial describes how to use the `dstack on-demand` feature with AWS. 
+    If you want to use on-demand runners with cloud vendor (such as GCP, Azure, or some other), please write to 
     [hello@dstack.ai](mailto:hello@dstack.ai).
 
 !!! info "How on-demand runners work"
 
     1. You provide `dstack` credentials to create EC2 instances in your AWS account.
-    2. You define what types of EC2 instances `dstack` it's allowed to use, spot or on-demand, and what maximum number 
+    2. You define what types of EC2 instances `dstack` is allowed to use, spot or on-demand, and what maximum number 
     of each instance type is allowed to run at one time.
-    3. When you submit a workflow, `dstack` creates required EC2 instances to run your workflow automatically.
-    4. When your workflow is finished and there is no need in the EC2 instance, `dstack` tears it down.
+    3. When you submit a workflow, `dstack` will create required EC2 instances automatically.
+    4. When the workflows are finished and there is no need in on-demand runners, `dstack` will tears them down.
 
-## Configure your AWS account
+## Connect to AWS account
 
-Before you'll be able to use on-demand runners via your cloud, you have to provide `dstack` the credentials
-to your AWS account. This can be done by the `dstack aws configure` command:
+Before you'll be able to use on-demand runners, you have to provide `dstack` the credentials
+to your AWS account. 
+
+This can be done by the `dstack aws config` command:
 
 ```bash
-dstack aws configure
+dstack aws config
 AWS Access Key ID:  
 AWS Secret Access Key: 
 Region name:
@@ -34,7 +35,7 @@ Note, `Artifact S3 bucket` is optional and has to be specified only if you want 
 artifacts.
 
 !!! note "Required IAM permissions"
-    The `dstack autoscale` feature requires the following permissions:
+    The `dstack on-demand` feature requires the following permissions:
 
     ```
     ec2:Describe*
@@ -46,89 +47,109 @@ artifacts.
     ec2:AuthorizeSecurityGroupEgress
     ```
 
-## Manage allowed instance types
+## Manage limits
 
 With `dstack`, it's possible to configure what instance types it's allowed to use, spot or on-demand, 
 and what maximum number of each instance type is allowed to run at one time.
 
-### Add or update allowed instance type
+### Add or change a limit
 
-Type the following to see how to add or update allowed instance types:
+Type the following to see how the command `dstack limit` works:
 
 ```bash
-dstack autoscale allow --help
-usage: dstack autoscale allow [-h] --max MAX [--spot] [--on-demand] INSTANCE_TYPE
-
-positional arguments:
-  INSTANCE_TYPE
+dstack on-demand limit --help
+usage: dstack on-demand limit [-h] [--region REGION] --instance-type INSTANCE_TYPE [--spot] [--max MAX]
+                              [--delete] [--force]
 
 optional arguments:
-  -h, --help         show this help message and exit
-  --max MAX, -m MAX  The maximum number of instances
-  --spot, -s         Spot instances
-  --on-demand, -d    On-demand instances
+  -h, --help            show this help message and exit
+  --region REGION, -r REGION
+                        Region name
+  --instance-type INSTANCE_TYPE, -i INSTANCE_TYPE
+                        Instance type
+  --spot                Spot purchase type
+  --max MAX, -m MAX     Maximum number of instances
+  --delete              Delete limit
+  --force, -f           Don't ask for confirmation
 ```
 
-The required positional argument `INSTANCE_TYPE` can be any of the [instance types](https://aws.amazon.com/ec2/instance-types/)
-supported by AWS in the region that you've configured.
+The command has two required arguments: `--instance-type INSTANCE_TYPE` and `--max MAX`.
+The `INSTANCE_TYPE` value can be any of the [instance types](https://aws.amazon.com/ec2/instance-types/)
+supported by AWS in the corresponding region for the corresponding purchase type.
+The `MAX` value can be any integer number. It specifies the maximum number of spot instances
+allowed to create per the region, instance type, and purchase type.
 
-The required `--max MAX` argument can be any integer number. It specifies the maximum number of spot instances
-allowed to create per the given instance type.
+The `--spot` argument should be used if you want the `spot` purchase type should be used for the corresponding limit. 
 
-Note, you always have to specify `--spot` or `--on-demand to indicate which purchase type is to use for the 
-corresponding instance type. 
+!!! info "Limit region"
+    Note, the `--region REGION` argument is optional. If it's not provided, the region configured with `dstack config`
+    is going to be used.
 
-!!! example "Example"
-    Here's a command that allows `dstack` to run in parallel up to one spot instance with the type `m5.xlarge`.
+Here's an example of the command that allows `dstack` to run in parallel up to one spot instance with the type `m5.xlarge`.
     
-    ```bash
-    dstack autoscale allow m5.xlarge --max 1 --spot
-    ```
-
+```bash
+dstack on-demand limit --instance-type m5.xlarge --spot --max 1
+```
     
 If you try to add an instance type that is not supported by your AWS account, you'll see an error.
 
-### Remove allowed instance types
+### Show all limits
 
-To remove an allowed instance type, use `dstack autoscale remove`. Here's how this command works:
+In order to see the list of current limits, use the following commands:
 
 ```bash
-dstack autoscale remove --help
-usage: dstack autoscale remove [-h] [--all] [INSTANCE_TYPE]
-
-positional arguments:
-  INSTANCE_TYPE
-
-optional arguments:
-  -h, --help     show this help message and exit
-  --all, -a      Disallow all instances
+dstack on-demand limits
 ```
 
-!!! info "" 
-    As soon as you decrease the number of allowed instances, `dstack` immediately shuts down extra instances to match
-    the maximum number of allowed instances.
-
-### List allowed instance types
-
-You can always see the list of all rules by the following command:
+Here's an example of the output of this command:
 
 ```bash
-dstack autoscale info
+REGION     INSTANCE TYPE    PURCHASE TYPE      MAXIMUM
+eu-west-1  m5.xlarge        spot                     1
+```
+
+### Delete limits
+
+In order to delete a limit, use the `dstack on-demand limit --delete` command.
+
+```bash
+dstack on-demand limit --instance-type m5.xlarge --spot --delete
+```
+
+This command will delete the limit for the corresponding region, instance type, and purchase type. 
+
+!!! warning "Effect" 
+    As soon as you decrease or delete a limit, `dstack` will immediately shut down extra instances to match
+    the maximum number of allowed limit.
+
+If you want to delete all limits at once, use the following command:
+
+```bash
+dstack on-demand limits --delete-all
 ```
 
 ## Disable and enable on-demand runners
 
-You can disable and enable on-demand runnerss with a single command:
+You can disable and enable on-demand runners with a single command:
 
 ```bash
-dstack autoscale disable
+dstack on-demand disable
 ```
 
 or 
 
 ```bash
-dstack autoscale enable
+dstack on-demand enable
 ```
 
-!!! warning ""
+!!! warning "Effect"
     If you disable on-demand runners, `dstack` will immediately shut down all running instances.
+
+!!! tip "Current status"
+
+    To see whether on-demand runners are enabled or not, use the following command:
+    
+    ```bash
+    dstack on-demand status
+    ```
+

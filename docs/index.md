@@ -53,7 +53,7 @@ or provide `dstack` credentials to your own cloud so `dstack` can create [on-dem
 
 1. You define `.dstack/workflows.yaml` and `.dstack/variables.yaml` files inside your project (must be a Git repository).
 2. You install the `dstack` CLI via `pip`.
-3. You either install `dstack-runner` daemon on your servers, or use the `dstack aws configure` to authorize
+3. You either install `dstack-runner` daemon on your servers, or use the `dstack aws config` to authorize
 `dstack` to use your own cloud to create on-demand runners.
 4. You use the `dstack` CLI to run workflows, manage runs, jobs, logs, artifacts, runners.
 5. When a workflow is submitted via the CLI (e.g. via `dstack run`) , the request is sent to the `dstack` server. 

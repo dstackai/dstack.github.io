@@ -1,13 +1,13 @@
-# Configure your AWS account
+# Connect dstack to AWS account
 
 With `dstack` it's possible to run workflows in on-demand runners in your own AWS cloud as well as to store output 
 artifacts in your own S3 bucket.
 
-In order to connect `dstack` to your AWS account, run the `dstack aws configure` command and specify the credentials 
+In order to connect `dstack` to your AWS account, run the `dstack aws config` command and specify the credentials 
 for your AWS account and, optionally, the name of your S3 bucket that you'd like to use to store output artifacts:
 
 ```
-dstack aws configure
+dstack aws config
 AWS Access Key ID:  
 AWS Secret Access Key: 
 Region name:
@@ -16,7 +16,7 @@ Artifact S3 bucket[None]:
 
 ## Required permissions
 
-If you plan to use on-demand runners in your AWS account (via `dstack autoscale`) you'll need the 
+If you plan to use on-demand runners in your AWS account (via `dstack on-demand`) you'll need the 
 following IAM permissions:
 
 ```

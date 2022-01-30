@@ -148,7 +148,7 @@ dstack artifacts <job id> --output <path to download artifacts>
 !!! warning "Storage"
     By default, `dstack` stores output artifacts in its own secure storage that only your user has access to. 
     If you want to use your own storage, you can provide `dstack` 
-    credentials to [your own AWS account](aws.md) (via `dstack aws configure`) and specify your own S3 bucket
+    credentials to [your own AWS account](aws.md) (via `dstack aws config`) and specify your own S3 bucket
     to store output artifacts.
 
 ## Stop runs and jobs
