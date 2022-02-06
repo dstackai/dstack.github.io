@@ -21,7 +21,7 @@ can be overridden. [Learn more&hellip;](define-wokflows.md#variables)
 
 CLI is an abbreviation of Command Line Interface. `dstack`'s CLI can be installed via `pip`. 
 It can be used from a terminal to invoke any command on `dstack`, be it running workflows, browsing logs, 
-managing runners, etc. [Learn more&hellip;](run-workflows.md)
+managing runners, etc. [Learn more&hellip;](workflows.md)
 
 ### Runs
 
