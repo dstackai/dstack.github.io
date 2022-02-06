@@ -148,8 +148,10 @@ body {
     border-radius: 12px;
 }
 
-.md-sidebar--secondary .md-nav__item .md-nav__link--active {
-    color: black;
+.md-nav--secondary .md-nav__item .md-nav__link--active {
+    color: var(--md-typeset-a-color);
+    background-color: inherit;
+    border-radius: inherit;
 }
 
 .md-sidebar--primary .md-nav__link {
@@ -180,5 +182,11 @@ body {
 
     .md-nav--primary .md-nav__title[for=__drawer] {
         background-color: inherit;
+    }
+}
+
+@media screen and (min-width: 76.25em) {
+    .md-nav--integrated>.md-nav__list>.md-nav__item--active .md-nav--secondary {
+        margin-bottom: 0;
     }
 }

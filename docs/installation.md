@@ -1,6 +1,14 @@
 # Installation
 
-## Install CLI
+!!! info "Request access"
+
+    Before you can install the `dstack` CLI, you have to register a `dstack` user and recieve your 
+    `Personal Access Token`.
+    To do that, please click `Request access` at [dstack.ai](https://dstack.ai). 
+    Once your request is approved, you'll recieve an email with the instruction on how to register a user and
+    obtain your `Personal Access Token`.
+
+### Install CLI
 
 The `dstack` CLI can be installed via `pip`:
 
@@ -8,23 +16,13 @@ The `dstack` CLI can be installed via `pip`:
 pip install dstack -U
 ```
 
-## Configure a token
+### Configure a token
 
-Before you can use the CLI, you have to configure it with your `Personal Access Token`. This can be done via a CLI command:
+Once you've installed the CLI, you have to configure it with your `Personal Access Token`. This can be done via a CLI command:
 
 ```bash
 dstack config --token <token>
 ```
 
-The provided `Personal Access Token` will be stored in the `~/.dstack/config.yaml` file. 
+Your `Personal Access Token` will be stored in the `~/.dstack/config.yaml` file. 
 After that, all your commands of CLI will be associated with your user.
-
-!!! info "Personal Access Token"
-    In order to receive your `Personal Access Token`, please click `Request access` at [dstack.ai](https://dstack.ai). 
-    Once your request is approved, you'll be able to create a `dstack` user, and obtain your token.
-
-## Artifacts S3 bucket
-
-By default, `dstack` stores output artifacts in its own secure storage that only
-your user has access to. If you want to store output artifacts in your own S3 bucket, [configure your AWS account](aws.md) 
-and specify the name of the S3 bucket.

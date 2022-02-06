@@ -81,7 +81,7 @@ allowed to create per the region, instance type, and purchase type.
 
 The `--spot` argument should be used if you want the `spot` purchase type should be used for the corresponding limit. 
 
-!!! info "Limit region"
+!!! info "Default region"
     Note, the `--region REGION` argument is optional. If it's not provided, the region configured with `dstack config`
     is going to be used.
 
@@ -93,7 +93,7 @@ dstack on-demand limit --instance-type m5.xlarge --spot --max 1
     
 If you try to add an instance type that is not supported by your AWS account, you'll see an error.
 
-### Show all limits
+### Show limits
 
 In order to see the list of current limits, use the following commands:
 
@@ -128,7 +128,7 @@ If you want to delete all limits at once, use the following command:
 dstack on-demand limits --delete-all
 ```
 
-## Disable and enable on-demand runners
+### Disable and enable on-demand runners
 
 You can disable and enable on-demand runners with a single command:
 
