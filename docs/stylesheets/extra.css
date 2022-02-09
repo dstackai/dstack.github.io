@@ -107,7 +107,6 @@ label.md-nav__link {
 }
 
 .md-typeset pre > code, .md-typeset code {
-    background-color: inherit;
     -webkit-font-smoothing: auto;
 }
 
