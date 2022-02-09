@@ -1,7 +1,5 @@
 ## Define workflows
 
-### Workflows
-
 The `.dstack/workflows.yaml` file is a YAML file within your project files where you define your ML 
 workflows, their commands, dependencies, output artifacts, etc.
 
@@ -45,7 +43,7 @@ workflows:
       - encode-dataset
 ```
 
-### Variables
+### Workflow variables
 
 In `.dstack/variables.yaml`, you can define variables and their default values. These variables can be
 referenced then from the `.dstack/workflows.yaml` file.

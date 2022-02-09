@@ -7,7 +7,7 @@ In order to host a runner on any machine, you have to launch the `dstack-runner`
 The machines that host the `dstack-runner` daemon form a pool of runners, and when the user runs workflows via the 
 `dstack` CLI, the workflows will be running on these machines.
 
-!!! tip "Run locally"
+!!! success ""
     If you don't want to use remote machines, you can host a runner locally.
     All you need to do is to launch the `dstack-runner` daemon locally.
 
@@ -74,7 +74,7 @@ dstack-runner start
 
     If your machine is an EC2 instance, make sure its security group allows outgoing traffic. 
 
-## Check runners' status
+## List runners
 
 After you've set up runners, you can check their status via the `dstack` CLI:
 
