@@ -8,36 +8,33 @@ Here's an example of `.dstack/workflows.yaml` (from the [GPT-2](gpt-2.md) tutori
 ```yaml
 workflows:
   - name: download-model
-    template:
-      image: tensorflow/tensorflow:1.15.0-py3
-      commands:
-        - pip3 install -r requirements.txt
-        - python3 download_model.py $model
-      artifacts:
-        - models
+    image: tensorflow/tensorflow:1.15.0-py3
+    commands:
+      - pip3 install -r requirements.txt
+      - python3 download_model.py $model
+    artifacts:
+      - models
   
   - name: encode-dataset
-    template:
-      image: tensorflow/tensorflow:1.15.0-py3
-      commands:
-        - curl -O https://github.com/karpathy/char-rnn/blob/master/data/tinyshakespeare/input.txt
-        - pip3 install -r requirements.txt
-        - mkdir -p datasets
-        - PYTHONPATH=src ./encode.py --model_name $model input.txt datasets/input.npy
-      artifacts:
-        - datasets
+    image: tensorflow/tensorflow:1.15.0-py3
+    commands:
+      - curl -O https://github.com/karpathy/char-rnn/blob/master/data/tinyshakespeare/input.txt
+      - pip3 install -r requirements.txt
+      - mkdir -p datasets
+      - PYTHONPATH=src ./encode.py --model_name $model input.txt datasets/input.npy
+    artifacts:
+      - datasets
     depends-on:
       - download-model
   
   - name: finetune-model
     image: tensorflow/tensorflow:1.15.0-py3
-    template:
-      commands:
-        - pip3 install -r requirements.txt
-        - PYTHONPATH=src python3 train.py --run_name $run_name --model_name $model --dataset datasets/input.npy $variables_as_args
-      artifacts:
-        - checkpoint
-        - samples
+    commands:
+      - pip3 install -r requirements.txt
+      - PYTHONPATH=src python3 train.py --run_name $run_name --model_name $model --dataset datasets/input.npy $variables_as_args
+    artifacts:
+      - checkpoint
+      - samples
     depends-on:
       - download-model
       - encode-dataset
