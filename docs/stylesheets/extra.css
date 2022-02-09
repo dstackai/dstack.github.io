@@ -31,7 +31,7 @@
 
 .warning {
     --tw-gradient-stops: #fef6e7, #fff;
-    --tw-border-color: rgb(229, 207, 164);
+    --tw-border-color: rgb(229, 197, 123);
     --tw-border-color-light: rgb(253, 244, 236);
 }
 
@@ -40,12 +40,12 @@
     background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
     border: 1px solid var(--tw-border-color-light);
     box-shadow: none;
-    border-left: var(--tw-border-color) 2px solid;
+    border-left: var(--tw-border-color) 2px solid !important;
 }
 
 .admonition-title {
-    border: none;
-    background-color: transparent;
+    border: none !important;
+    background-color: transparent !important;
 }
 
 .md-typeset .admonition, .md-typeset details {
