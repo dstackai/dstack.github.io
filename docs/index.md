@@ -1,4 +1,6 @@
-# What is dstack? 
+# Overview 
+
+### What is dstack? 
 
 dstack allows AI researchers to define their workflows declaratively, and then run these workflows interactively 
 and have infrastructure provisioned automatically.
@@ -29,7 +31,7 @@ While the workflow is running, the output artifacts and output logs are tracked 
 !!! info ""
     For more advanced documentation about workflows, proceed to [Workflows](workflows.md).
 
-# Why use dstack?
+### Why use dstack?
 
 #### Infrastructure provisioning
 
