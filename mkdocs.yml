@@ -51,7 +51,7 @@ extra:
     property: UA-4493451-5
 nav:
   - Get started:
-      - How it works: index.md
+      - Overview: index.md
       - Installation: installation.md
       - Workflows: workflows.md
       - Runners:

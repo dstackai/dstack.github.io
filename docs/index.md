@@ -1,64 +1,52 @@
-# How dstack works
+# What is dstack? 
 
-Typical ML workflows include multiple steps, e.g. pre-processing data, training, fine-tuning, validation, etc. 
-With `dstack`, you can define ML workflows in a simple YAML format, and run them via the CLI over a pool of
-your own servers or on-demand servers in your cloud. 
+dstack allows AI researchers to define their workflows declaratively, and then run these workflows interactively 
+and have infrastructure provisioned automatically.
 
-### Workflows
+Here's a very simple workflow example:
 
-Workflows are defined in the `.dstack/workflows.yaml` file inside a project's Git repository. Each workflow may have 
-a name, a Docker image, commands, what files (in the repository) and what other workflows it depends on, and
-at what paths the files must be stored as output artifacts. 
-[Learn more&hellip;](define-wokflows.md)
+```yaml
+workflows:
+  - name: train
+    image: tensorflow/tensorflow:latest-gpu
+    commands:
+      - python3 train.py
+    artifacts:
+      - checkpoint
+    resources:
+      gpu: 4
+```
 
-### Variables
+Run this workflow via the CLI:
 
-Each workflow may have variables and their default values. Variables for each workflow are defined in the 
-`.dstack/varialbles.yaml` file inside a project's Git repository. When a workflow is run, any of the variables 
-can be overridden. [Learn more&hellip;](define-wokflows.md#variables)
+```bash
+dstack run train -f
+```
 
-### CLI
+Once you do that, dstack provisions an instance that has 4 GPU and assigns this workflow to that instance. 
+While the workflow is running, the output artifacts and output logs are tracked in real-time.
 
-CLI is an abbreviation of Command Line Interface. `dstack`'s CLI can be installed via `pip`. 
-It can be used from a terminal to invoke any command on `dstack`, be it running workflows, browsing logs, 
-managing runners, etc. [Learn more&hellip;](workflows.md)
+!!! info ""
+    For more advanced documentation about workflows, proceed to [Workflows](workflows.md).
 
-### Runs
+# Why use dstack?
 
-Runs are single instances of running workflows. If you submit a workflow to run (e.g. via `dstack` CLI), the 
-corresponding run refers to the name of the workflow, the state of the Git repository (remote URL, branch name,
-commit hash, and local changes), and to the values of the variables if any of them were overridden via the CLI. 
+#### Infrastructure provisioning
 
-### Jobs
+Once you run a workflow, dstack provisions infrastructure according to the workflow requirements and account limits. 
+Once the workflow is finished, the infrastructure is torn down. You can use either your own servers or connect
+dstack to your cloud accounts and have infrastructure set up on demand.
 
-If the submitted run refers to a workflow that depends on other workflows, for every workflow, the `dstack` server
-schedules a separate job. If the submitted run refers to a workflow that doesn't have dependencies, then
-the `dstack` server schedules only one job. Each job refers to a single workflow that must be executed with a particular 
-set of variables, dependencies, and state of the repository. 
-Generally speaking, jobs are single units of work that can be executed by one machine (aka runner).
+!!! info ""
+    To learn more about runners, check out [On-demand runners](on-demand-runners.md) and [Self-hosted runners](self-hosted-runners.md).
 
-### Runners
+#### Data versioning
 
-Runners are machines (either real or virtual) that host the `dstack-runner` daemon. This daemon listens to the
-`dstack` server for scheduled jobs. If a job is assigned to a particular runner, the daemon, based on the provided
-information, fetches the repository, download the artifacts of the jobs that the given job depends on, and run
-the commands of a given job as a Docker container. While the container is being running, the daemon reports 
-the logs to `dstack`'s logs storage and upload output artifacts of the job to the `dstack`'s artifact storage.
+The output artifacts of any run are stored in an immutable storage. Once a run is finished, it can be marked with a tag and 
+used later as a dependency for another workflow.
 
-As a user of `dstack`, you can either install the `dstack-runner` daemon to your own servers to make a pool of 
-[your own runners](self-hosted-runners.md),
-or provide `dstack` credentials to your own cloud so `dstack` can create [on-demand runners](on-demand-runners.md).
+#### Reproducible pipelines
 
-### Lifecycle
-
-1. You define `.dstack/workflows.yaml` and `.dstack/variables.yaml` files inside your project (must be a Git repository).
-2. You install the `dstack` CLI via `pip`.
-3. You either install `dstack-runner` daemon on your servers, or use the `dstack aws config` to authorize
-`dstack` to use your own cloud to create on-demand runners.
-4. You use the `dstack` CLI to run workflows, manage runs, jobs, logs, artifacts, runners.
-5. When a workflow is submitted via the CLI (e.g. via `dstack run`) , the request is sent to the `dstack` server. 
-The `dstack` server creates jobs for the submitted run, and assign them to available runners (either servers where 
-you've installed `dstack-runner` or on-demand runners in your cloud that you have allowed to create).
-6. Runners execute assigned jobs, report their logs in real-time, and upload artifacts once the job is finished.
-
-[//]: # (What can dstack used for)
+Typically, complex workflows include multiple steps, such as pre-processing data, training, fine-tuning, validation, etc.
+With dstack, it's possible to define each step as a separate workflow, and then run any of these workflows interactively
+from the CLI.
