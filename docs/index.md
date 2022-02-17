@@ -1,4 +1,4 @@
-# Overview
+# What is dstack?
 
 dstack is a workflow as code tool for AI researchers 👩🏽‍🔬 to define their workflows and the infrastructure they need declaratively.
 Once defined, these workflows can be run interactively 🧪 in a reproducible manner 🧬. 
@@ -9,8 +9,9 @@ You're free to use any frameworks, vendors, etc.
 
 As an AI researcher 👩🏽‍🔬, you always want to focus on experiments 🧪 and their metrics 📈. 
 
-Training production-ready models 👷🏽‍ however requires high reproducibility 🧬 and involves many things that may 
-distract you from your work.
+!!! warning ""
+    Training production-ready models 👷🏽‍ however requires high reproducibility 🧬 and involves many things that may 
+    distract you from your work.
 
 ### 📦 Versioning data
 
@@ -40,6 +41,10 @@ It should be possible to use multiple workflow providers, either created by your
 
 !!! success ""
     With dstack, you get all of it in a simple and easy-to-use to use form 🙌.
+
+[//]: # (## How does dstack work?)
+[//]: # ()
+[//]: # (![]&#40;images/dstack_how_it_works.png&#41;{: style="width:780px;max-width:100%;"})
 
 ## Features
 
