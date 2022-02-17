@@ -3,8 +3,8 @@
 If you provide `dstack` with the credentials to your cloud account and configure limits, 
 `dstack` will be able to set up on-demand runners to run your workflows automatically. 
 
-!!! warning "AWS"
-    This tutorial describes how to use the `dstack on-demand` feature with AWS. 
+!!! warning "Supported cloud vendors"
+    This tutorial describes how to use the on-demand runners with AWS. 
     If you want to use on-demand runners with cloud vendor (such as GCP, Azure, or some other), please write to 
     [hello@dstack.ai](mailto:hello@dstack.ai).
 
@@ -16,7 +16,7 @@ If you provide `dstack` with the credentials to your cloud account and configure
     3. When you submit a workflow, `dstack` will create required EC2 instances automatically.
     4. When the workflows are finished and there is no need in on-demand runners, `dstack` will tears them down.
 
-## Add AWS credentials
+## AWS credentials
 
 Before you'll be able to use on-demand runners, you have to provide `dstack` the credentials
 to your AWS account. 
@@ -34,7 +34,7 @@ Artifact S3 bucket[None]:
 Note, `Artifact S3 bucket` is optional and has to be specified only if you want to use your own S3 bucket to store 
 artifacts.
 
-!!! note "Required IAM permissions"
+!!! info "Required IAM permissions"
     The `dstack on-demand` feature requires the following permissions:
 
     ```
@@ -47,7 +47,7 @@ artifacts.
     ec2:AuthorizeSecurityGroupEgress
     ```
 
-## Edit limits
+## Limits
 
 With `dstack`, it's possible to configure what instance types it's allowed to use, spot or on-demand, 
 and what maximum number of each instance type is allowed to run at one time.

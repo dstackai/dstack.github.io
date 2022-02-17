@@ -1,54 +1,67 @@
-# Overview 
+# Overview
 
-### What is dstack? 
+dstack is a workflow as code tool for AI researchers 👩🏽‍🔬 to define their workflows and the infrastructure they need declaratively.
+Once defined, these workflows can be run interactively 🧪 in a reproducible manner 🧬. 
+Infrastructure is provisioned on-demand and torn down when it's not needed 💨.
+You're free to use any frameworks, vendors, etc.
 
-dstack allows AI researchers to define their workflows declaratively, and then run these workflows interactively 
-and have infrastructure provisioned automatically.
+## Why dstack?
 
-Here's a very simple workflow example:
+As an AI researcher 👩🏽‍🔬, you always want to focus on experiments 🧪 and their metrics 📈. 
 
-```yaml
-workflows:
-  - name: train
-    image: tensorflow/tensorflow:latest-gpu
-    commands:
-      - python3 train.py
-    artifacts:
-      - checkpoint
-    resources:
-      gpu: 4
-```
+Training production-ready models 👷🏽‍ however requires high reproducibility 🧬 and involves many things that may 
+distract you from your work.
 
-Run this workflow via the CLI:
+### 📦 Versioning data
 
-```bash
-dstack run train -f
-```
+The data produced by your workflows should be saved automatically in an immutable storage 💿.
 
-Once you do that, dstack provisions an instance that has 4 GPU and assigns this workflow to that instance. 
-While the workflow is running, the output artifacts and output logs are tracked in real-time.
+You should be able to chain workflows together ⛓ so one workflow may use the outputs of another workflow at any time.
 
-!!! info ""
-    For more advanced documentation about workflows, proceed to [Workflows](workflows.md).
+### 🤖 Infrastructure as code
 
-### Why use dstack?
+To ensure your workflows can be reproduced, you should be able to describe the 
+infrastructure your workflows need declaratively as code 📝.
 
-#### Infrastructure provisioning
+When you run your workflows, the infrastructure should be provisioned on-demand 🙏🏽 and torn down once it's not needed  
+any more automatically 💨.
 
-Once you run a workflow, dstack provisions infrastructure according to the workflow requirements and account limits. 
-Once the workflow is finished, the infrastructure is torn down. You can use either your own servers or connect
-dstack to your cloud accounts and have infrastructure set up on demand.
+You should be able to use any type and vendor of the infrastructure.
 
-!!! info ""
-    To learn more about runners, check out [On-demand runners](on-demand-runners.md) and [Self-hosted runners](self-hosted-runners.md).
+### 🧪 Interactivity
 
-#### Data versioning
+While ensuring reproducibility, it should be possible to run workflows interactively from your IDE or Terminal.
 
-The output artifacts of any run are stored in an immutable storage. Once a run is finished, it can be marked with a tag and 
-used later as a dependency for another workflow.
+### 🧩 Extensibility
 
-#### Reproducible pipelines
+You should be allowed to use any languages, libraries, frameworks, experiment trackers, or cloud vendors.
 
-Typically, complex workflows include multiple steps, such as pre-processing data, training, fine-tuning, validation, etc.
-With dstack, it's possible to define each step as a separate workflow, and then run any of these workflows interactively
-from the CLI.
+It should be possible to use multiple workflow providers, either created by yourself, or by the community 🌍.
+
+!!! success ""
+    With dstack, you get all of it in a simple and easy-to-use to use form 🙌.
+
+## Features
+
+1. 🧬 **Workflows**
+
+     * Define your workflows and infrastructure they need, using declarative configuration files
+     * Use multiple workflow providers shared by the community or create your own providers
+
+2. 📦 **Artifacts**
+
+     * Define what output files produced by a workflow should be saved as artifacts
+     * Have output data by workflows saved to an immutable storage in real-time as artifacts
+     * Define dependencies between workflows to chain them together and pass artifacts of one workflow as inputs to another one
+     * Tag successful runs with a name to reuse their artifacts later and share with others
+
+3. 🤖 **Runners**
+
+     * Provide dstack with credentials to provision infrastructure on-demand in your own cloud accounts (such
+       as AWS, GCP, Azure, etc.)
+     * Manage what compute instances it's allowed to use, in what regions, and at what quantity  
+     * Add your own servers to the pool of available infrastructure that can be used by dstack
+     
+1. 🧬 **CLI**
+
+     * Run workflows interactively from your IDE or Terminal
