@@ -5,7 +5,8 @@ Once defined, these workflows can be run interactively 🧪 in a reproducible ma
 Infrastructure is provisioned on-demand and torn down when it's not needed 💨.
 You're free to use any frameworks, vendors, etc.
 
-## Why dstack?
+[//]: # (## Why dstack? { #markdown data-toc-label='Principles' })
+## Principles
 
 As an AI researcher 👩🏽‍🔬, you always want to focus on experiments 🧪 and their metrics 📈. 
 
@@ -46,27 +47,84 @@ It should be possible to use multiple workflow providers, either created by your
 [//]: # ()
 [//]: # (![]&#40;images/dstack_how_it_works.png&#41;{: style="width:780px;max-width:100%;"})
 
-## Features
+## Quick tour
 
-1. 🧬 **Workflows**
+### 🧬 Workflows
 
-     * Define your workflows and infrastructure they need, using declarative configuration files
-     * Use multiple workflow providers shared by the community or create your own providers
+#### Workflow syntax
 
-2. 📦 **Artifacts**
+Here's a basic example of a workflow that prepares some data:
 
-     * Define what output files produced by a workflow should be saved as artifacts
-     * Have output data by workflows saved to an immutable storage in real-time as artifacts
-     * Define dependencies between workflows to chain them together and pass artifacts of one workflow as inputs to another one
-     * Tag successful runs with a name to reuse their artifacts later and share with others
+```yaml
+workflows:
+  - name: prepare
+    image: tensorflow/tensorflow:latest-gpu
+    commands:
+      - python3 prepare.py
+    artifacts:
+      - data
+    resources:
+      v100/gpu: $gpu
+```
 
-3. 🤖 **Runners**
+#### Running workflows
 
-     * Provide dstack with credentials to provision infrastructure on-demand in your own cloud accounts (such
-       as AWS, GCP, Azure, etc.)
-     * Manage what compute instances it's allowed to use, in what regions, and at what quantity  
-     * Add your own servers to the pool of available infrastructure that can be used by dstack
-     
-1. 🧬 **CLI**
+You can run a workflow via the CLI:
 
-     * Run workflows interactively from your IDE or Terminal
+```bash
+dstack run prepare --gpu 4
+```
+
+dstack will provision the required infrastructure, and run the workflow. 
+
+If you run `dstack status`, you'll see the following:
+
+```bash
+RUN            TAG     JOB           WORKFLOW    VARIABLES    SUBMITTED    RUNNER          STATUS
+lazy-bobcat-1  <none>                prepare     --gpu 4      5 mins ago   quick-mule-1    DONE
+                       711f6d690b4f  prepare     --gpu 4      5 mins ago   grumpy-duck-1   DONE
+```
+
+#### Run tags
+
+Now, if the run was successful, you can mark the run with a tag.
+
+```bash
+dstack tag lazy-bobcat-1 latest
+```
+    
+Now you can refer to this run from other workflows:
+
+```yaml
+workflows:
+  - name: train
+    image: tensorflow/tensorflow:latest-gpu
+    commands:
+      - python3 train.py
+    artifacts:
+      - checkpoint
+    dependencies:
+      - prepare:latest
+    resources:
+      v100/gpu: $gpu
+```
+
+When you run this workflow, the `data` folder produced by the `prepare:latest` will be mounted to it.
+
+### 🤖 Runners
+
+There are two ways to provision infrastructure: `On-demand` and `Self-hosted` runners.
+
+#### On-demand runners
+
+To use on-demand runners, go to the `Settings`, then `AWS`, provide your credentials, and configure limits:
+
+![](images/dstack_on_demand_settings.png){ lazy=true width="925" }
+
+Once you configure these limits, runners will be set up and torn down automatically when there is a need.
+
+#### Self-hosted runners
+
+As an alternative to on-demand runners in your cloud account, you can use your own servers to run workflows.
+
+To connect your server to your dstack account, you need to install the `dstack-runner` daemon there. 
