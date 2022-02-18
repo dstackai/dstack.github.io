@@ -55,19 +55,29 @@ It should be possible to use multiple workflow providers, either created by your
 
 Here's a basic example of a workflow that prepares some data:
 
-```yaml
-workflows:
-  - name: prepare
-    image: tensorflow/tensorflow:latest-gpu
-    commands:
-      - python3 prepare.py
-    artifacts:
-      - data
-    resources:
-      v100/gpu: $gpu
-```
+=== ".dstack/workflows.yaml"
 
-#### Running workflows
+    ```yaml
+    workflows:
+      - name: prepare
+        image: tensorflow/tensorflow:latest-gpu
+        commands:
+          - python3 prepare.py
+        artifacts:
+          - data
+        resources:
+          v100/gpu: $gpu
+    ```
+
+=== ".dstack/variables.yaml"
+
+    ```yaml
+    variables:
+      prepare:
+        gpu: 1
+    ```
+
+#### Command-line interface
 
 You can run a workflow via the CLI:
 
@@ -95,19 +105,41 @@ dstack tag lazy-bobcat-1 latest
     
 Now you can refer to this run from other workflows:
 
-```yaml
-workflows:
-  - name: train
-    image: tensorflow/tensorflow:latest-gpu
-    commands:
-      - python3 train.py
-    artifacts:
-      - checkpoint
-    dependencies:
-      - prepare:latest
-    resources:
-      v100/gpu: $gpu
-```
+=== ".dstack/workflows.yaml"
+
+    ```yaml
+    workflows:
+      - name: prepare
+        image: tensorflow/tensorflow:latest-gpu
+        commands:
+          - python3 prepare.py
+        artifacts:
+          - data
+        resources:
+          v100/gpu: $gpu
+
+      - name: train
+        image: tensorflow/tensorflow:latest-gpu
+        commands:
+          - python3 train.py
+        artifacts:
+          - checkpoint
+        dependencies:
+          - prepare:latest
+        resources:
+          v100/gpu: $gpu     
+    ```
+
+=== ".dstack/variables.yaml"
+
+    ```yaml
+    variables:
+      prepare:
+        gpu: 1
+
+      train:
+        gpu: 1
+    ```
 
 When you run this workflow, the `data` folder produced by the `prepare:latest` will be mounted to it.
 
@@ -127,4 +159,4 @@ Once you configure these limits, runners will be set up and torn down automatica
 
 As an alternative to on-demand runners in your cloud account, you can use your own servers to run workflows.
 
-To connect your server to your dstack account, you need to install the `dstack-runner` daemon there. 
+To connect your server to your dstack account, you need to install the `dstack-runner` daemon there.
