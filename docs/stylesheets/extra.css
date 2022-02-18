@@ -184,7 +184,7 @@ label.md-nav__link {
     --md-code-hl-keyword-color: #AD58DB;
     --md-code-hl-string-color: #50a14f;
     --md-code-hl-constant-color: var(--md-code-fg-color);
-    --md-primary-bg-color: white;
+    /*--md-primary-bg-color: white;*/
 }
 
 .highlight :where(.l) {
