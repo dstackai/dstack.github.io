@@ -7,7 +7,7 @@ OpenAI's GPT-2.
 
     Before following this tutorial, make sure you've done these required steps:
 
-    1. [Install CLI](installation.md)
+    1. [Install CLI](quickstart.md#install-the-cli)
     2. Set up [on-demand runners](on-demand-runners.md) or [self-hosted runners](self-hosted-runners.md)
 
 ## Step 1: Clone Git repo
