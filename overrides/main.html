@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+<script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
+{{ super() }}
+{% endblock %}
+
+{% block announce %}
+🔥 Use world's cheapest GPUs with <strong>TensorDock</strong> and <strong>dstack</strong>. <a href="/blog/2023/10/31/tensordock/">Learn more</a>.
+{% endblock %}
