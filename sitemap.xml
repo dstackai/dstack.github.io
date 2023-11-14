@@ -91,6 +91,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dstack.ai/docs/guides/text-generation/</loc>
+         <lastmod>2023-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dstack.ai/docs/installation/docker/</loc>
          <lastmod>2023-11-14</lastmod>
          <changefreq>daily</changefreq>

@@ -764,6 +764,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../text-generation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Text generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../dev-environments/" class="md-nav__link">
         
   
@@ -874,11 +900,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#set-up-a-gateway" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Prerequisites
+          Set up a gateway
         </span>
       
     </span>
@@ -1899,11 +1925,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#set-up-a-gateway" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Prerequisites
+          Set up a gateway
         </span>
       
     </span>
@@ -1984,10 +2010,10 @@
 <p>With <code>dstack</code>, you can use the CLI or API to deploy models or web apps.
 Provide the commands, port, and choose the Python version or a Docker image.</p>
 <p><code>dstack</code> handles the deployment on configured cloud GPU provider(s) with the necessary resources.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>If you're using the open-source server, you first have to set up a gateway.</p>
 <details class="info">
-<summary>Set up a gateway</summary>
+<summary>Prerequisites</summary>
+<p>If you're using the open-source server, you first have to set up a gateway.</p>
+<h3 id="set-up-a-gateway">Set up a gateway<a class="headerlink" href="#set-up-a-gateway" title="Permanent link">&para;</a></h3>
 <p>For example, if your domain is <code>example.com</code>, go ahead and run the 
 <code>dstack gateway create</code> command:</p>
 <div class="termy">
@@ -2057,6 +2083,8 @@ Serving<span class="w"> </span>HTTP<span class="w"> </span>on<span class="w"> </
 
 </div>
 
+<p>Once the service is deployed, its endpoint will be available at
+<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
 <div class="admonition info">
 <p class="admonition-title">Run options</p>
 <p>The <code>dstack run</code> command allows you to use <code>--gpu</code> to request GPUs (e.g. <code>--gpu A100</code> or <code>--gpu 80GB</code> or <code>--gpu A100:4</code>, etc.),

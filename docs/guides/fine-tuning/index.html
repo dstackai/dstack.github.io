@@ -18,7 +18,7 @@
         <link rel="prev" href="../../configuration/server/">
       
       
-        <link rel="next" href="../dev-environments/">
+        <link rel="next" href="../text-generation/">
       
       
         
@@ -822,11 +822,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submit-the-task" class="md-nav__link">
+  <a href="#run-the-task" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Submit the task
+          Run the task
         </span>
       
     </span>
@@ -864,6 +864,32 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-generation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Text generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1932,11 +1958,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submit-the-task" class="md-nav__link">
+  <a href="#run-the-task" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Submit the task
+          Run the task
         </span>
       
     </span>
@@ -1995,10 +2021,8 @@
 
 
 <h1 id="fine-tuning">Fine-tuning<a class="headerlink" href="#fine-tuning" title="Permanent link">&para;</a></h1>
-<p>For fine-tuning an LLM with dstack's API, specify a model name, HuggingFace dataset, and training parameters.</p>
-<p>You specify a model name, dataset on HuggingFace, and training parameters.
-<code>dstack</code> takes care of the training and pushes it to the HuggingFace hub upon completion. </p>
-<p>You can use any cloud GPU provider(s) and experiment tracker of your choice.</p>
+<p>For fine-tuning an LLM with <code>dstack</code>'s API, specify a model, dataset, training parameters,
+and required compute resources. <code>dstack</code> takes care of everything else.</p>
 <details class="info">
 <summary>Prerequisites</summary>
 <p>To use the fine-tuning API, ensure you have the latest version:</p>
@@ -2021,12 +2045,14 @@
 and various <a href="../../reference/api/python/#dstack.api.FineTuningTask">training parameters</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">FineTuningTask</span>
 
-<span class="n">task</span> <span class="o">=</span> <span class="n">FineTuningTask</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;NousResearch/Llama-2-13b-hf&quot;</span><span class="p">,</span>
-                      <span class="n">dataset_name</span><span class="o">=</span><span class="s2">&quot;peterschmidt85/samsum&quot;</span><span class="p">,</span>
-                      <span class="n">env</span><span class="o">=</span><span class="p">{</span>
-                          <span class="s2">&quot;HUGGING_FACE_HUB_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-                      <span class="p">},</span>
-                      <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">task</span> <span class="o">=</span> <span class="n">FineTuningTask</span><span class="p">(</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;NousResearch/Llama-2-13b-hf&quot;</span><span class="p">,</span>
+    <span class="n">dataset_name</span><span class="o">=</span><span class="s2">&quot;peterschmidt85/samsum&quot;</span><span class="p">,</span>
+    <span class="n">env</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;HUGGING_FACE_HUB_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Dataset format</p>
@@ -2034,8 +2060,8 @@ and various <a href="../../reference/api/python/#dstack.api.FineTuningTask">trai
 of the corresponding model.
 Check the <a href="https://huggingface.co/datasets/peterschmidt85/samsum">peterschmidt85/samsum</a> example. </p>
 </div>
-<h2 id="submit-the-task">Submit the task<a class="headerlink" href="#submit-the-task" title="Permanent link">&para;</a></h2>
-<p>When submitting a task, you can configure resources, and many <a href="../../reference/api/python/#dstack.api.RunCollection.submit">other options</a>.</p>
+<h2 id="run-the-task">Run the task<a class="headerlink" href="#run-the-task" title="Permanent link">&para;</a></h2>
+<p>When running a task, you can configure resources, and many <a href="../../reference/api/python/#dstack.api.RunCollection.submit">other options</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Resources</span><span class="p">,</span> <span class="n">GPU</span>
 
 <span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
@@ -2055,15 +2081,16 @@ Check the <a href="https://huggingface.co/datasets/peterschmidt85/samsum">peters
 including getting a list of runs, stopping a given run, etc.</p>
 <h2 id="track-experiments">Track experiments<a class="headerlink" href="#track-experiments" title="Permanent link">&para;</a></h2>
 <p>To track experiment metrics, specify <code>report_to</code> and related authentication environment variables.</p>
-<div class="highlight"><pre><span></span><code><span class="n">task</span> <span class="o">=</span> <span class="n">FineTuningTask</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;NousResearch/Llama-2-13b-hf&quot;</span><span class="p">,</span>
-                      <span class="n">dataset_name</span><span class="o">=</span><span class="s2">&quot;peterschmidt85/samsum&quot;</span><span class="p">,</span>
-                      <span class="n">report_to</span><span class="o">=</span><span class="s2">&quot;wandb&quot;</span><span class="p">,</span>
-                      <span class="n">env</span><span class="o">=</span><span class="p">{</span>
-                          <span class="s2">&quot;HUGGING_FACE_HUB_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-                          <span class="s2">&quot;WANDB_API_KEY&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-                      <span class="p">},</span>
-                      <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">2</span>
-                      <span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">task</span> <span class="o">=</span> <span class="n">FineTuningTask</span><span class="p">(</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;NousResearch/Llama-2-13b-hf&quot;</span><span class="p">,</span>
+    <span class="n">dataset_name</span><span class="o">=</span><span class="s2">&quot;peterschmidt85/samsum&quot;</span><span class="p">,</span>
+    <span class="n">report_to</span><span class="o">=</span><span class="s2">&quot;wandb&quot;</span><span class="p">,</span>
+    <span class="n">env</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;HUGGING_FACE_HUB_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;WANDB_API_KEY&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
 </code></pre></div>
 <p>Currently, the API supports <code>"tensorboard"</code> and <code>"wandb"</code>.</p>
 <p><img alt="" src="../../../assets/images/dstack-finetuning-wandb.png" width="800" /></p>
@@ -2121,13 +2148,13 @@ including getting a list of runs, stopping a given run, etc.</p>
         
         
           
-          <a href="../dev-environments/" class="md-footer__link md-footer__link--next" aria-label="Next: Dev environments">
+          <a href="../text-generation/" class="md-footer__link md-footer__link--next" aria-label="Next: Text generation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Dev environments
+                Text generation
               </div>
             </div>
             <div class="md-footer__button md-icon">
