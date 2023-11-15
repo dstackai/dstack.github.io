@@ -993,6 +993,25 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="dstack server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1079,6 +1098,19 @@
       
         <span class="md-typeset">
           dstack gateway
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Environment variables
         </span>
       
     </span>
@@ -1981,6 +2013,25 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="dstack server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2074,6 +2125,19 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#environment-variables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2110,6 +2174,68 @@ Options:
 
 </div>
 
+<h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DSTACK_DEFAULT_CREDS_DISABLED</code></td>
+<td>Disables default credentials detection if set</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_LOCAL_BACKEND_ENABLED</code></td>
+<td>Enables local backend for debug if set</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_RUNNER_VERSION</code></td>
+<td>Sets exact runner version for debug</td>
+<td><code>latest</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_SERVER_ADMIN_TOKEN</code></td>
+<td>Has the same effect as <code>--token</code></td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_SERVER_DIR</code></td>
+<td>Sets path to store data and server configs</td>
+<td><code>~/.dstack/server</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_SERVER_HOST</code></td>
+<td>Has the same effect as <code>--host</code></td>
+<td><code>127.0.0.1</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_SERVER_LOG_LEVEL</code></td>
+<td>Has the same effect as <code>--log-level</code></td>
+<td><code>WARNING</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_SERVER_PORT</code></td>
+<td>Has the same effect as <code>--port</code></td>
+<td><code>3000</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_SERVER_ROOT_LOG_LEVEL</code></td>
+<td>Sets root logger log level</td>
+<td><code>ERROR</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_SERVER_UVICORN_LOG_LEVEL</code></td>
+<td>Sets uvicorn logger log level</td>
+<td><code>ERROR</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="dstack-init">dstack init<a class="headerlink" href="#dstack-init" title="Permanent link">&para;</a></h2>
 <p>This command initializes the current folder as a repo.</p>
 <div class="termy">
@@ -2353,6 +2479,34 @@ Options:
 </code></pre></div>
 
 </div>
+
+<h2 id="environment-variables_1">Environment variables<a class="headerlink" href="#environment-variables_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DSTACK_CLI_LOG_LEVEL</code></td>
+<td>Configures CLI logging level</td>
+<td><code>CRITICAL</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_PROFILE</code></td>
+<td>Has the same effect as <code>--profile</code></td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>DSTACK_PROJECT</code></td>
+<td>Has the same effect as <code>--project</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
