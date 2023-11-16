@@ -18,7 +18,7 @@
         <link rel="prev" href="../fine-tuning/">
       
       
-        <link rel="next" href="../dev-environments/">
+        <link rel="next" href="../tasks/">
       
       
         
@@ -835,11 +835,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-service" class="md-nav__link">
+  <a href="#create-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Create a service
+          Create a configuration
         </span>
       
     </span>
@@ -848,11 +848,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-the-service" class="md-nav__link">
+  <a href="#run-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Run the service
+          Run the configuration
         </span>
       
     </span>
@@ -901,32 +901,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../dev-environments/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Dev environments
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../tasks/" class="md-nav__link">
         
   
@@ -960,6 +934,32 @@
     
   
     Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-environments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev environments
   
 
     
@@ -1945,11 +1945,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-service" class="md-nav__link">
+  <a href="#create-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Create a service
+          Create a configuration
         </span>
       
     </span>
@@ -1958,11 +1958,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-the-service" class="md-nav__link">
+  <a href="#run-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Run the service
+          Run the configuration
         </span>
       
     </span>
@@ -2021,16 +2021,20 @@
 
 
 <h1 id="text-generation">Text generation<a class="headerlink" href="#text-generation" title="Permanent link">&para;</a></h1>
-<p>For deploying an LLM with <code>dstack</code>'s API, specify a model, quantization parameters, 
-and required compute resources. <code>dstack</code> takes care of everything else.</p>
+<p>The easiest way to deploy a text generation model is by using <code>dstack</code> API.
+You only need to specify a model, quantization parameters, 
+and required compute resources.</p>
 <details class="info">
 <summary>Prerequisites</summary>
-<p>If you're using the open-source server, before using the model serving API, make sure to
-<a href="../services/#set-up-a-gateway">set up a gateway</a>.</p>
-<p>If you're using the cloud version of <code>dstack</code>, it's set up automatically for you.</p>
-<p>Also, to use the model serving API, ensure you have the latest version:</p>
+<p>If you're using the cloud version of <code>dstack</code>, no prerequisites are required.</p>
+<p>However, if you're using the open-source server, you need to 
+<a href="../services/#set-up-a-gateway">set up a gateway</a> before running models as public endpoints. 
+Not required for private endpoints.</p>
+<blockquote>
+<p>Please note that the text generation API requires you to use the latest version.</p>
+</blockquote>
 <div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]==0.12.3rc2&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]==0.12.3rc3&quot;</span>
 </code></pre></div>
 </div>
 </details>
@@ -2043,42 +2047,80 @@ and required compute resources. <code>dstack</code> takes care of everything els
 <span class="k">except</span> <span class="n">ClientError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Can&#39;t connect to the server&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="create-a-service">Create a service<a class="headerlink" href="#create-a-service" title="Permanent link">&para;</a></h2>
-<p>Then, you create a completion service, specifying the model, and quantization parameters.</p>
+<h2 id="create-a-configuration">Create a configuration<a class="headerlink" href="#create-a-configuration" title="Permanent link">&para;</a></h2>
+<p><code>dstack</code> allows to run a model either as a public endpoint or as a private endpoint.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Public endpoint</label><label for="__tabbed_1_2">Private endpoint</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">CompletionService</span>
 
-<span class="n">service</span> <span class="o">=</span> <span class="n">CompletionService</span><span class="p">(</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">CompletionService</span><span class="p">(</span>
     <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;TheBloke/CodeLlama-34B-GPTQ&quot;</span><span class="p">,</span>
     <span class="n">quantize</span><span class="o">=</span><span class="s2">&quot;gptq&quot;</span>
 <span class="p">)</span>
 </code></pre></div>
-<h2 id="run-the-service">Run the service<a class="headerlink" href="#run-the-service" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>When you run a model as a public endpoint, <code>dstack</code> makes it available
+at <code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">CompletionTask</span>
+
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">CompletionTask</span><span class="p">(</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;TheBloke/CodeLlama-34B-GPTQ&quot;</span><span class="p">,</span>
+    <span class="n">quantize</span><span class="o">=</span><span class="s2">&quot;gptq&quot;</span><span class="p">,</span>
+    <span class="n">local_port</span><span class="o">=</span><span class="s2">&quot;8080,</span>
+<span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>When you run a model as a private endpoint, <code>dstack</code> makes it available
+only at <code>http://localhost:&lt;local_port&gt;</code> (even though the model itself is running in the cloud). 
+This is convenient if you intend to access the endpoint solely from your local machine.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
 <p>When running a service, you can configure resources, and many <a href="../../reference/api/python/#dstack.api.RunCollection.submit">other options</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Resources</span><span class="p">,</span> <span class="n">GPU</span>
 
 <span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
     <span class="n">run_name</span><span class="o">=</span><span class="s2">&quot;codellama-34b-gptq&quot;</span><span class="p">,</span> <span class="c1"># (Optional) If unset, its chosen randomly</span>
-    <span class="n">configuration</span><span class="o">=</span><span class="n">service</span><span class="p">,</span>
+    <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">,</span>
     <span class="n">resources</span><span class="o">=</span><span class="n">Resources</span><span class="p">(</span><span class="n">gpu</span><span class="o">=</span><span class="n">GPU</span><span class="p">(</span><span class="n">memory</span><span class="o">=</span><span class="s2">&quot;24GB&quot;</span><span class="p">)),</span>
 <span class="p">)</span>
 </code></pre></div>
 <h2 id="access-the-endpoint">Access the endpoint<a class="headerlink" href="#access-the-endpoint" title="Permanent link">&para;</a></h2>
-<p>Once the model is deployed, its endpoint will be available at
-<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Public endpoint</label><label for="__tabbed_2_2">Private endpoint</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="termy">
-
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://<span class="p">&amp;</span>lt<span class="p">;</span>run-name<span class="p">&amp;</span>gt<span class="p">;</span>.<span class="p">&amp;</span>lt<span class="p">;</span>domain-name<span class="p">&amp;</span>gt<span class="p">;</span>/generate<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;inputs&quot;:&quot;What is Deep Learning?&quot;,&quot;parameters&quot;:{&quot;max_new_tokens&quot;: 20}}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span>
 </code></pre></div>
-
 </div>
-
 <blockquote>
-<p>The endpoint supports streaming, continuous batching, tensor parallelism, etc.</p>
+<p>The OpenAPI documentation on the endpoint can be found at <code>https://&lt;run-name&gt;.&lt;domain-name&gt;/docs</code>.</p>
 </blockquote>
-<p>The OpenAI documentation on the endpoint can be found at <code>https://&lt;run-name&gt;.&lt;domain-name&gt;/docs</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>http://localhost:<span class="p">&amp;</span>lt<span class="p">;</span>local-port<span class="p">&amp;</span>gt<span class="p">;</span>/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;inputs&quot;:&quot;What is Deep Learning?&quot;,&quot;parameters&quot;:{&quot;max_new_tokens&quot;: 20}}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span>
+</code></pre></div>
+</div>
+<blockquote>
+<p>The OpenAPI documentation on the endpoint can be found at <code>http://localhost:&lt;local-port&gt;/docs</code>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>Both public and private endpoint support streaming, continuous batching, tensor parallelism, etc.</p>
 <h2 id="manage-runs">Manage runs<a class="headerlink" href="#manage-runs" title="Permanent link">&para;</a></h2>
 <p>You can use the instance of <a href="../../reference/api/python/#dstack.api.Client"><code>dstack.api.Client</code></a> to manage your runs, 
 including getting a list of runs, stopping a given run, etc.</p>
@@ -2136,13 +2178,13 @@ including getting a list of runs, stopping a given run, etc.</p>
         
         
           
-          <a href="../dev-environments/" class="md-footer__link md-footer__link--next" aria-label="Next: Dev environments">
+          <a href="../tasks/" class="md-footer__link md-footer__link--next" aria-label="Next: Tasks">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Dev environments
+                Tasks
               </div>
             </div>
             <div class="md-footer__button md-icon">

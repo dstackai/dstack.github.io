@@ -788,32 +788,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/dev-environments/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Dev environments
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../guides/tasks/" class="md-nav__link">
         
   
@@ -847,6 +821,32 @@
     
   
     Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/dev-environments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev environments
   
 
     
@@ -1058,6 +1058,28 @@
     <span class="md-ellipsis">
       
         FineTuningTask
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.CompletionService" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompletionService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.CompletionTask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompletionTask
       
     </span>
   </a>
@@ -2021,6 +2043,28 @@
     <span class="md-ellipsis">
       
         FineTuningTask
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.CompletionService" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompletionService
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.CompletionTask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CompletionTask
       
     </span>
   </a>
@@ -3123,6 +3167,230 @@ to Hugging Face hub.</p>
           </td>
           <td>
                 <code>25</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h3 id="dstack.api.CompletionService"><code>dstack.api.CompletionService</code><a class="headerlink" href="#dstack.api.CompletionService" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>This service configuration loads a given model from the Hugging Face hub
+and deploys it as a public endpoint.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The model that you want to deploy from the Hugging Face hub. E.g. gpt2, gpt2-xl, bert, etc.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>env</code></td>
+          <td>
+                <code><span title="typing.Dict">Dict</span>[str, str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The list of environment variables, e.g. <code>"HUGGING_FACE_HUB_TOKEN"</code>, <code>"WANDB_API_KEY"</code>, <code>"WANDB_PROJECT"</code>, etc.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>quantize</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether you want the model to be quantized. Supported values: <code>"awq"</code>, <code>"eetq"</code>, <code>"gptq"</code>, and <code>"bitsandbytes"</code>.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dtype</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The dtype to be forced upon the model. This option cannot be used with <code>quantize</code>.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h3 id="dstack.api.CompletionTask"><code>dstack.api.CompletionTask</code><a class="headerlink" href="#dstack.api.CompletionTask" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>This task configuration loads a specified model from the Hugging Face hub and runs it as a private endpoint while
+forwarding the port to the local machine.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The model that you want to deploy from the Hugging Face hub. E.g. gpt2, gpt2-xl, bert, etc.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>env</code></td>
+          <td>
+                <code><span title="typing.Dict">Dict</span>[str, str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The list of environment variables, e.g. <code>"HUGGING_FACE_HUB_TOKEN"</code>, <code>"WANDB_API_KEY"</code>, <code>"WANDB_PROJECT"</code>, etc.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>quantize</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether you want the model to be quantized. Supported values: <code>"awq"</code>, <code>"eetq"</code>, <code>"gptq"</code>, and <code>"bitsandbytes"</code>.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dtype</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The dtype to be forced upon the model. This option cannot be used with <code>quantize</code>.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>local_port</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The local port to forward the traffic to.</p>
+            </div>
+          </td>
+          <td>
+                <code>80</code>
           </td>
         </tr>
     </tbody>
