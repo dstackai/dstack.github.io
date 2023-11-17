@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8+insiders-4.43.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9+insiders-4.43.0">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.382dd0b9.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.f46032ab.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
@@ -203,6 +203,12 @@
       </div>
     
     <div class="md-header__buttons">
+      <!--<script>
+        function sign_in_on_click() {
+          window.location.href = "https://cloud.dstack.ai";
+        }
+      </script>
+      <a href="javascript:void(0)" class="md-button md-button-secondary" onclick="sign_in_on_click()">Sign in</a>-->
       <a href="#" data-tally-open="w7K17R" class="md-button md-button--primary">Sign up</a>
     </div>
   </nav>
@@ -1804,12 +1810,14 @@
                        class="md-button md-button--primary"
                        data-tally-open="w7K17R"
                        style="min-width: 250px"
-                    >Sign up for free</a>
+                    ><span>Try now for free</span>
+                        <span class="icon"><svg viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg"><path d="M12.823 4.164L8.954.182a.592.592 0 0 0-.854 0 .635.635 0 0 0 0 .88l2.836 2.92H.604A.614.614 0 0 0 0 4.604c0 .344.27.622.604.622h10.332L8.1 8.146a.635.635 0 0 0 0 .88.594.594 0 0 0 .854 0l3.869-3.982a.635.635 0 0 0 0-.88z" fill-rule="nonzero" fill="currentColor" class="fill-main"></path></svg></span>
+                    </a>
 
                     <div class="tx-landing__hero_button_placeholder">
-                        <strong>A100</strong> from <span class="highlighted">$1.4/hr</span>, <strong>H100</strong> from
-                        <span class="highlighted">$4.12/hr</span><br>
-                        No reservation needed
+                        <strong>A100</strong> from <span class="highlighted">$1.4/h</span>, <strong>H100</strong> from
+                        <span class="highlighted">$4.12/h</span><br>
+                        Get <span class="highlighted">$15</span> of free compute
                     </div>
                 </div>
 
@@ -2001,7 +2009,7 @@
                     </div>
                 </div>
                 <div class="block">
-                    <h2>Custom serving</h2>
+                    <h2>Services</h2>
 
                     <p>Deploy your model using custom code.</p>
 
@@ -2038,29 +2046,30 @@
 
         <div class="tx-landing__plans">
             <div class="tx-landing__highlights_text">
-                <h2>Get started in less than a minute</h2>
+                <h2>Select the option that suits you best</h2>
             </div>
 
             <div class="tx-landing__plans_cards">
                 <div class="plans_card">
-                    <div class="plans_card__title">GPU cloud</div>
-                    <div class="plans_card__subtitle">No reservation needed</div>
+                    <div class="plans_card__title">dstack Cloud</div>
+                    <div class="plans_card__subtitle">A managed solution for training and deploying gen AI models
+                        with on-demand cloud GPU. Compatible with the open-source CLI and API.</div>
 
                     <div class="plans_card__items">
                         <div class="plans_card__item">
-                            <span class="strong">H100</span> (80GB) from <span class="highlighted">$4.12/hr</span>
+                            <span class="strong">H100</span> (80GB) from <span class="highlighted">$4.12/h</span>
                         </div>
 
                         <div class="plans_card__item">
-                            <span class="strong">A100</span> (80GB) from <span class="highlighted">$1.4/hr</span>
+                            <span class="strong">A100</span> (80GB) from <span class="highlighted">$1.4/h</span>
                         </div>
 
                         <div class="plans_card__item">
-                            <span class="strong">L40</span> (48GB) from <span class="highlighted">$1.05/hr</span>
+                            <span class="strong">L40</span> (48GB) from <span class="highlighted">$1.05/h</span>
                         </div>
 
                         <div class="plans_card__item">
-                            <span class="strong">A6000</span> (80GB) from <span class="highlighted">$0.43/hr</span>
+                            <span class="strong">A6000</span> (80GB) from <span class="highlighted">$0.43/h</span>
                         </div>
                     </div>
 
@@ -2069,13 +2078,18 @@
                     <div class="plans_card__buttons">
                         <a href="#" target="_blank"
                            data-tally-open="w7K17R"
-                           class="md-button md-button--primary small">Sign up for free</a>
+                           class="md-button md-button--primary small">
+                            <span>Try now for free</span>
+                            <span class="icon"><svg viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg"><path d="M12.823 4.164L8.954.182a.592.592 0 0 0-.854 0 .635.635 0 0 0 0 .88l2.836 2.92H.604A.614.614 0 0 0 0 4.604c0 .344.27.622.604.622h10.332L8.1 8.146a.635.635 0 0 0 0 .88.594.594 0 0 0 .854 0l3.869-3.982a.635.635 0 0 0 0-.88z" fill-rule="nonzero" fill="currentColor" class="fill-main"></path></svg></span>
+                        </a>
+                        <div class="plans_card__buttons_subtitle">Get <span class="highlighted">$15</span> of free compute</div>
                     </div>
                 </div>
 
                 <div class="plans_card">
                     <div class="plans_card__title">Open-source</div>
-                    <div class="plans_card__subtitle">Use your own cloud account.</div>
+                    <div class="plans_card__subtitle">A convenient CLI and API to train and deploy gen AI models
+                        compatible with any cloud provider.</div>
 
                     <div class="plans_card__services">
                         <div class="plans_card__service-item">
@@ -2113,6 +2127,7 @@
                     <div class="plans_card__buttons">
                         <a href="/docs" target="_blank"
                            class="md-button md-button-secondary small">Install open-source</a>
+                        <div class="plans_card__buttons_subtitle">Use your own cloud account</div>
                     </div>
                 </div>
             </div>
@@ -2192,6 +2207,7 @@
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Contact</div>
                     <a href="mailto:hello@dstack.ai" class="tx-footer__section-link">hello@dstack.ai</a>
+                    <a class="tx-footer__section-link" href="javascript:void(0)" onclick="$crisp.push(['do', 'chat:open'])">Open chat</a>
                 </div>
 
                 <div class="tx-footer__section">
@@ -2206,6 +2222,12 @@
                     <a href="https://github.com/dstackai/dstack" class="tx-footer__section-link">GitHub</a>
                     <a href="https://discord.gg/u8SmfwPpMd" class="tx-footer__section-link">Discord</a>
                     <a href="https://twitter.com/dstackai/" class="tx-footer__section-link">Twitter</a>
+                </div>
+
+                <div class="tx-footer__section">
+                    <div class="tx-footer__section-title">Legal</div>
+                    <a href="/terms" class="tx-footer__section-link">Terms</a>
+                    <a href="/privacy" class="tx-footer__section-link">Privacy</a>
                 </div>
             </div>
         </div>
@@ -2224,7 +2246,7 @@
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="assets/javascripts/bundle.a5ca32a6.min.js"></script>
+      <script src="assets/javascripts/bundle.0fd39007.min.js"></script>
       
         <script src="assets/javascripts/extra.js"></script>
       

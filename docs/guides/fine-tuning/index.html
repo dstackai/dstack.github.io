@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8+insiders-4.43.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9+insiders-4.43.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.382dd0b9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f46032ab.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -796,6 +796,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prepare-a-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Prepare a dataset
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-a-client" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -848,11 +861,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#track-experiments" class="md-nav__link">
+  <a href="#track-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Track experiments
+          Track metrics
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
         </span>
       
     </span>
@@ -1932,6 +1958,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prepare-a-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Prepare a dataset
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-a-client" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1984,11 +2023,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#track-experiments" class="md-nav__link">
+  <a href="#track-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Track experiments
+          Track metrics
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
         </span>
       
     </span>
@@ -2022,7 +2074,7 @@
 
 <h1 id="fine-tuning">Fine-tuning<a class="headerlink" href="#fine-tuning" title="Permanent link">&para;</a></h1>
 <p>For fine-tuning an LLM with <code>dstack</code>'s API, specify a model, dataset, training parameters,
-and required compute resources. <code>dstack</code> takes care of everything else.</p>
+and required compute resources. The API takes care of everything else.</p>
 <details class="info">
 <summary>Prerequisites</summary>
 <p>To use the fine-tuning API, ensure you have the latest version:</p>
@@ -2031,14 +2083,32 @@ and required compute resources. <code>dstack</code> takes care of everything els
 </code></pre></div>
 </div>
 </details>
+<blockquote>
+<p>The API currently supports only supervised fine-tuning (SFT). Support for DPO and RLHF is coming soon.</p>
+</blockquote>
+<h2 id="prepare-a-dataset">Prepare a dataset<a class="headerlink" href="#prepare-a-dataset" title="Permanent link">&para;</a></h2>
+<p>The dataset should contain a <code>"text"</code> column with completions following the prompt format
+of the corresponding model. Check the <a href="https://huggingface.co/datasets/peterschmidt85/samsum">example</a>
+(for fine-tuning Llama 2).</p>
+<blockquote>
+<p>Once the dataset is prepared, it must be <a href="https://huggingface.co/docs/datasets/upload_dataset">uploaded</a> to Hugging Face.</p>
+</blockquote>
+<details class="info">
+<summary>Uploading a dataset</summary>
+<p>Here's an example of how to upload a dataset programmatically:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">Dataset</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;samsum.jsonl&quot;</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">push_to_hub</span><span class="p">(</span><span class="s2">&quot;peterschmidt85/samsum&quot;</span><span class="p">)</span>
+</code></pre></div>
+</details>
 <h2 id="create-a-client">Create a client<a class="headerlink" href="#create-a-client" title="Permanent link">&para;</a></h2>
 <p>First, you connect to <code>dstack</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">ClientError</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Client</span>
 
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">from_config</span><span class="p">()</span>
-<span class="k">except</span> <span class="n">ClientError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Can&#39;t connect to the server&quot;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">from_config</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="create-a-task">Create a task<a class="headerlink" href="#create-a-task" title="Permanent link">&para;</a></h2>
 <p>Then, you create a fine-tuning task, specifying the model and dataset, 
@@ -2051,15 +2121,11 @@ and various <a href="../../reference/api/python/#dstack.api.FineTuningTask">trai
     <span class="n">env</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;HUGGING_FACE_HUB_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">2</span>
+    <span class="n">num_train_epochs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">max_seq_length</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span>
+    <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Dataset format</p>
-<p>For the SFT fine-tuning method, the dataset should contain a <code>"text"</code> column with completions following the prompt format
-of the corresponding model.
-Check the <a href="https://huggingface.co/datasets/peterschmidt85/samsum">peterschmidt85/samsum</a> example. </p>
-</div>
 <h2 id="run-the-task">Run the task<a class="headerlink" href="#run-the-task" title="Permanent link">&para;</a></h2>
 <p>When running a task, you can configure resources, and many <a href="../../reference/api/python/#dstack.api.RunCollection.submit">other options</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Resources</span><span class="p">,</span> <span class="n">GPU</span>
@@ -2071,15 +2137,18 @@ Check the <a href="https://huggingface.co/datasets/peterschmidt85/samsum">peters
 <span class="p">)</span>
 </code></pre></div>
 <div class="admonition info">
-<p class="admonition-title">Fine-tuning methods</p>
-<p>The API currently supports only SFT, with support for DPO and other methods coming soon.</p>
+<p class="admonition-title">GPU memory</p>
+<p>The API defaults to using QLoRA based on the provided 
+<a href="../../reference/api/python/#dstack.api.FineTuningTask">training parameters</a>.
+When specifying GPU memory, consider both the model size and the specified batch size.
+After a few attempts, you'll discover the best configuration.</p>
 </div>
-<p>When the training is done, <code>dstack</code> pushes the final model to the Hugging Face hub.</p>
+<p>When the training is done, the API pushes the final model to the Hugging Face hub.</p>
 <p><img alt="" src="../../../assets/images/dstack-finetuning-hf.png" width="800" /></p>
 <h2 id="manage-runs">Manage runs<a class="headerlink" href="#manage-runs" title="Permanent link">&para;</a></h2>
-<p>You can use the instance of <a href="../../reference/api/python/#dstack.api.Client"><code>dstack.api.Client</code></a> to manage your runs, 
-including getting a list of runs, stopping a given run, etc.</p>
-<h2 id="track-experiments">Track experiments<a class="headerlink" href="#track-experiments" title="Permanent link">&para;</a></h2>
+<p>You can manage runs using <a href="../../reference/api/python/#dstack.api.Client">API</a>,
+the <a href="../../reference/cli/">CLI</a>, or the user interface.</p>
+<h2 id="track-metrics">Track metrics<a class="headerlink" href="#track-metrics" title="Permanent link">&para;</a></h2>
 <p>To track experiment metrics, specify <code>report_to</code> and related authentication environment variables.</p>
 <div class="highlight"><pre><span></span><code><span class="n">task</span> <span class="o">=</span> <span class="n">FineTuningTask</span><span class="p">(</span>
     <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;NousResearch/Llama-2-13b-hf&quot;</span><span class="p">,</span>
@@ -2094,6 +2163,15 @@ including getting a list of runs, stopping a given run, etc.</p>
 </code></pre></div>
 <p>Currently, the API supports <code>"tensorboard"</code> and <code>"wandb"</code>.</p>
 <p><img alt="" src="../../../assets/images/dstack-finetuning-wandb.png" width="800" /></p>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Once the model is trained, proceed to <a href="../text-generation/">deploy</a> it as an endpoint.
+  The deployed endpoint can be used from your apps directly or via LangChain.</li>
+<li>The source code of the fine-tuning task is available
+  at <a href="https://github.com/dstackai/dstack/tree/master/src/dstack/api/_public/huggingface/finetuning/sft">GitHub</a>.
+  If you prefer using a custom script, feel free to do so using <a href="../dev-environments/">dev environments</a> and 
+  <a href="../tasks/">tasks</a>.</li>
+</ul>
 
 
 
@@ -2230,7 +2308,7 @@ including getting a list of runs, stopping a given run, etc.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.a5ca32a6.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.0fd39007.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
