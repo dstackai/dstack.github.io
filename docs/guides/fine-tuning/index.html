@@ -796,6 +796,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          How does it work?
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How does it work?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#prepare-a-dataset" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -807,8 +821,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#create-a-client" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -820,8 +834,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#create-a-task" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -833,8 +847,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#run-the-task" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -846,8 +860,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#manage-runs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -859,8 +873,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#track-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -870,6 +884,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1958,6 +1977,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          How does it work?
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How does it work?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#prepare-a-dataset" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1969,8 +2002,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#create-a-client" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1982,8 +2015,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#create-a-task" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1995,8 +2028,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#run-the-task" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2008,8 +2041,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#manage-runs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2021,8 +2054,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#track-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2032,6 +2065,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2086,7 +2124,12 @@ and required compute resources. The API takes care of everything else.</p>
 <blockquote>
 <p>The API currently supports only supervised fine-tuning (SFT). Support for DPO and RLHF is coming soon.</p>
 </blockquote>
-<h2 id="prepare-a-dataset">Prepare a dataset<a class="headerlink" href="#prepare-a-dataset" title="Permanent link">&para;</a></h2>
+<h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
+<p><code>dstack</code> loads a base model and dataset from Hugging Face, schedules the fine-tuning task to run on a configured cloud,
+and reports metrics to a tracker of your choice.</p>
+<p><img alt="" src="../../../assets/images/dstack-fine-tuning-diagram.png" /></p>
+<p>Once the model is fine-tuned, it's pushed to Hugging Face and is ready for deployment.</p>
+<h3 id="prepare-a-dataset">Prepare a dataset<a class="headerlink" href="#prepare-a-dataset" title="Permanent link">&para;</a></h3>
 <p>The dataset should contain a <code>"text"</code> column with completions following the prompt format
 of the corresponding model. Check the <a href="https://huggingface.co/datasets/peterschmidt85/samsum">example</a>
 (for fine-tuning Llama 2).</p>
@@ -2104,13 +2147,13 @@ of the corresponding model. Check the <a href="https://huggingface.co/datasets/p
 <span class="n">dataset</span><span class="o">.</span><span class="n">push_to_hub</span><span class="p">(</span><span class="s2">&quot;peterschmidt85/samsum&quot;</span><span class="p">)</span>
 </code></pre></div>
 </details>
-<h2 id="create-a-client">Create a client<a class="headerlink" href="#create-a-client" title="Permanent link">&para;</a></h2>
+<h3 id="create-a-client">Create a client<a class="headerlink" href="#create-a-client" title="Permanent link">&para;</a></h3>
 <p>First, you connect to <code>dstack</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">from_config</span><span class="p">()</span>
 </code></pre></div>
-<h2 id="create-a-task">Create a task<a class="headerlink" href="#create-a-task" title="Permanent link">&para;</a></h2>
+<h3 id="create-a-task">Create a task<a class="headerlink" href="#create-a-task" title="Permanent link">&para;</a></h3>
 <p>Then, you create a fine-tuning task, specifying the model and dataset, 
 and various <a href="../../reference/api/python/#dstack.api.FineTuningTask">training parameters</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">FineTuningTask</span>
@@ -2126,7 +2169,7 @@ and various <a href="../../reference/api/python/#dstack.api.FineTuningTask">trai
     <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
-<h2 id="run-the-task">Run the task<a class="headerlink" href="#run-the-task" title="Permanent link">&para;</a></h2>
+<h3 id="run-the-task">Run the task<a class="headerlink" href="#run-the-task" title="Permanent link">&para;</a></h3>
 <p>When running a task, you can configure resources, and many <a href="../../reference/api/python/#dstack.api.RunCollection.submit">other options</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Resources</span><span class="p">,</span> <span class="n">GPU</span>
 
@@ -2145,10 +2188,10 @@ After a few attempts, you'll discover the best configuration.</p>
 </div>
 <p>When the training is done, the API pushes the final model to the Hugging Face hub.</p>
 <p><img alt="" src="../../../assets/images/dstack-finetuning-hf.png" width="800" /></p>
-<h2 id="manage-runs">Manage runs<a class="headerlink" href="#manage-runs" title="Permanent link">&para;</a></h2>
+<h3 id="manage-runs">Manage runs<a class="headerlink" href="#manage-runs" title="Permanent link">&para;</a></h3>
 <p>You can manage runs using <a href="../../reference/api/python/#dstack.api.Client">API</a>,
 the <a href="../../reference/cli/">CLI</a>, or the user interface.</p>
-<h2 id="track-metrics">Track metrics<a class="headerlink" href="#track-metrics" title="Permanent link">&para;</a></h2>
+<h3 id="track-metrics">Track metrics<a class="headerlink" href="#track-metrics" title="Permanent link">&para;</a></h3>
 <p>To track experiment metrics, specify <code>report_to</code> and related authentication environment variables.</p>
 <div class="highlight"><pre><span></span><code><span class="n">task</span> <span class="o">=</span> <span class="n">FineTuningTask</span><span class="p">(</span>
     <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;NousResearch/Llama-2-13b-hf&quot;</span><span class="p">,</span>
