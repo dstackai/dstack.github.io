@@ -25,11 +25,11 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10+insiders-4.43.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11+insiders-4.44.0">
     
     
       
-        <title>Deploying SDXL using FastAPI - dstack</title>
+        <title>Deploying SDXL using Services - dstack</title>
       
     
     
@@ -89,7 +89,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Deploying SDXL using FastAPI - dstack" />
+<meta property="og:title" content="Deploying SDXL using Services - dstack" />
 <meta property="og:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/examples/stable-diffusion-xl.png" />
 <meta property="og:image:type" content="image/png" />
@@ -97,7 +97,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://dstack.ai/examples/stable-diffusion-xl/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Deploying SDXL using FastAPI - dstack" />
+<meta property="twitter.title" content="Deploying SDXL using Services - dstack" />
 <meta property="twitter:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/examples/stable-diffusion-xl.png" />
 </head>
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#serving-sdxl-with-fastapi" class="md-skip">
+        <a href="#deploying-sdxl-with-services" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploying SDXL using FastAPI
+              Deploying SDXL using Services
             
           </span>
         </div>
@@ -1324,39 +1324,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy-python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploying LLMs using Python API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../finetuning-llama-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Fine-tuning Llama 2 using QLoRA
+    Fine-tuning LLMs using Tasks
   
 
     
@@ -1382,7 +1356,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using TGI
+    Deploying LLMs with TGI
   
 
     
@@ -1417,7 +1391,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying SDXL using FastAPI
+    Deploying SDXL using Services
   
 
     
@@ -1434,7 +1408,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying SDXL using FastAPI
+    Deploying SDXL using Services
   
 
     
@@ -1590,7 +1564,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using vLLM
+    Deploying LLMs with vLLM
   
 
     
@@ -2108,7 +2082,7 @@
   
 
 
-<h1 id="serving-sdxl-with-fastapi">Serving SDXL with FastAPI<a class="headerlink" href="#serving-sdxl-with-fastapi" title="Permanent link">&para;</a></h1>
+<h1 id="deploying-sdxl-with-services">Deploying SDXL with Services<a class="headerlink" href="#deploying-sdxl-with-services" title="Permanent link">&para;</a></h1>
 <p>Stable Diffusion XL (SDXL) 1.0 is the latest version of the open-source model that is capable 
 of generating high-quality images from text.</p>
 <p>The example below demonstrates how to use <code>dstack</code> to serve SDXL as a REST endpoint in a cloud of your choice for image
@@ -2116,7 +2090,7 @@ generation and refinement.</p>
 <h2 id="define-endpoints">Define endpoints<a class="headerlink" href="#define-endpoints" title="Permanent link">&para;</a></h2>
 <h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
 <p>Here's the list of libraries that our example will require:</p>
-<div editor-title="text-generation-inference/requirements.txt">
+<div editor-title="stable-diffusion-xl/requirements.txt">
 
 <div class="highlight"><pre><span></span><code>transformers
 accelerate
@@ -2284,9 +2258,8 @@ it is accessible from your local machine only.</p>
 
 <div class="admonition info">
 <p class="admonition-title">Endpoint URL</p>
-<p>If you've configured a <a href="../../docs/guides/services/#set-up-a-gateway">wildcard domain</a> for the gateway, 
-<code>dstack</code> enables HTTPS automatically and serves the service at 
-<code>https://&lt;run name&gt;.&lt;your domain name&gt;</code>.</p>
+<p>Once the service is deployed, its endpoint will be available at 
+<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
 <p>If you wish to customize the run name, you can use the <code>-n</code> argument with the <code>dstack run</code> command.</p>
 </div>
 <p>Once the service is up, you can query the endpoint:</p>
@@ -2299,7 +2272,10 @@ it is accessible from your local machine only.</p>
 
 </div>
 
-<p><a class="md-button md-button--github" href="https://github.com/dstackai/dstack-examples">Source code</a></p>
+<div class="admonition info">
+<p class="admonition-title">Source code</p>
+<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples">dstackai/dstack-examples</a>.</p>
+</div>
 
 
 
@@ -2337,7 +2313,7 @@ it is accessible from your local machine only.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../text-generation-inference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deploying LLMs using TGI">
+          <a href="../text-generation-inference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deploying LLMs with TGI">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2347,20 +2323,20 @@ it is accessible from your local machine only.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Deploying LLMs using TGI
+                Deploying LLMs with TGI
               </div>
             </div>
           </a>
         
         
           
-          <a href="../vllm/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying LLMs using vLLM">
+          <a href="../vllm/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying LLMs with vLLM">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Deploying LLMs using vLLM
+                Deploying LLMs with vLLM
               </div>
             </div>
             <div class="md-footer__button md-icon">

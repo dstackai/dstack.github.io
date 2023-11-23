@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10+insiders-4.43.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11+insiders-4.44.0">
     
     
       
@@ -1233,6 +1233,19 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#datacrunchconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          DataCrunchConfig
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gcpconfig" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1495,39 +1508,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../examples/deploy-python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploying LLMs using Python API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../examples/finetuning-llama-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Fine-tuning Llama 2 using QLoRA
+    Fine-tuning LLMs using Tasks
   
 
     
@@ -1553,7 +1540,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using TGI
+    Deploying LLMs with TGI
   
 
     
@@ -1579,7 +1566,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying SDXL using FastAPI
+    Deploying SDXL using Services
   
 
     
@@ -1605,7 +1592,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using vLLM
+    Deploying LLMs with vLLM
   
 
     
@@ -2056,6 +2043,19 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#datacrunchconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          DataCrunchConfig
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gcpconfig" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2351,6 +2351,68 @@
 <td></td>
 <td><code>Optional[str]</code></td>
 <td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="datacrunchconfig">DataCrunchConfig<a class="headerlink" href="#datacrunchconfig" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td></td>
+<td><code>Literal['datacrunch']</code></td>
+<td><code>datacrunch</code></td>
+</tr>
+<tr>
+<td><code>regions</code></td>
+<td></td>
+<td><code>Optional[List[str]]</code></td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>creds</code></td>
+<td></td>
+<td><code>DataCrunchAPIKeyCreds</code></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="datacrunchapikeycreds">DataCrunchAPIKeyCreds<a class="headerlink" href="#datacrunchapikeycreds" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td></td>
+<td><code>Literal['api_key']</code></td>
+<td><code>api_key</code></td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td></td>
+<td><code>str</code></td>
+<td><em>required</em></td>
 </tr>
 </tbody>
 </table>

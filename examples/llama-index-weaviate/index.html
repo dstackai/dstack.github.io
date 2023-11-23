@@ -18,14 +18,14 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../deploy-python/">
+        <link rel="next" href="../finetuning-llama-2/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10+insiders-4.43.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11+insiders-4.44.0">
     
     
       
@@ -1448,39 +1448,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy-python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploying LLMs using Python API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../finetuning-llama-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Fine-tuning Llama 2 using QLoRA
+    Fine-tuning LLMs using Tasks
   
 
     
@@ -1506,7 +1480,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using TGI
+    Deploying LLMs with TGI
   
 
     
@@ -1532,7 +1506,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying SDXL using FastAPI
+    Deploying SDXL using Services
   
 
     
@@ -1558,7 +1532,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using vLLM
+    Deploying LLMs with vLLM
   
 
     
@@ -2048,28 +2022,14 @@
 <p>RAG, or retrieval-augmented generation, empowers LLMs by providing them with access to your data.</p>
 <p>Here's an example of how to apply this technique using the <a href="https://www.llamaindex.ai/">Llama Index</a> framework 
 and <a href="https://weaviate.io/">Weaviate</a> vector database.</p>
-<details class="info">
-<summary>About Llama Index</summary>
-<p>Llama Index is an open-source framework that makes it easy extract data from different sources and connect
-it to LLMs. It provides a variety of tools and APIs to help you ingest, structure, and access your data in a way that is
-easy for LLMs to consume.</p>
-</details>
-<details class="info">
-<summary>About Weaviate</summary>
-<p>Weaviate is an open-source vector database that allows you to store and query objects 
-using their vector representations, also known as embeddings.
-A vector representation is a mathematical way of representing an object as a point in a high-dimensional space.
-This allows Weaviate to perform semantic search, which is the ability to search for objects based on their meaning,
-rather than just their exact match to a query.</p>
-</details>
 <h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Llama Index loads data from local files, structures it into chunks, and ingests it into Weaviate. It uses local
-  embeddings through the <a href="https://www.sbert.net/">SentenceTransformers</a> library.</li>
-<li><code>dstack</code> allows us to configure cloud accounts (e.g. AWS, GCP, Azure, or Lambda Cloud), 
-  and deploy LLMs (e.g. Llama 2) there. In this example, it employs <a href="https://github.com/huggingface/text-generation-inference">Text Generation Inference</a>
-  to serve the LLM. Refer to <a href="../text-generation-inference/">Deploying LLMs using TGI</a> and <a href="../deploy-python/">Deploying LLMs via Python API</a>.</li>
-<li>Llama Index allows us to prompt the LLM and automatically incorporates context from Weaviate. </li>
+<li>Llama Index loads data from local files, structures it into chunks, and ingests it into Weaviate (an open-source vector database).
+   We set up Llama Index to use local embeddings through the <a href="https://www.sbert.net/">SentenceTransformers</a> library.</li>
+<li><code>dstack</code> allows us to deploy LLMs to any cloud provider, e.g.
+   via the <a href="../../docs/guides/text-generation/">text generation</a> API. Alternatively, you can also deploy using <a href="../text-generation-inference/">TGI</a>'s 
+   docker image (as a task or a service).</li>
+<li>Llama Index allows us to prompt the LLM automatically incorporating the context from Weaviate. </li>
 </ol>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>Here's the list of Python libraries that we'll use:</p>
@@ -2097,8 +2057,12 @@ it on-premises or sign up for their managed service.</p>
 <span class="n">client</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">delete_class</span><span class="p">(</span><span class="s2">&quot;DstackExample&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Next, prepare the Llama Index classes: <code>llama_index.ServiceContext</code> (for indexing and querying) and
-<code>llama_index.StorageContext</code> (for loading and storing). Note that we're using
+<code>llama_index.StorageContext</code> (for loading and storing). </p>
+<div class="admonition info">
+<p class="admonition-title">Embeddings</p>
+<p>Note that we're using
 <code>langchain.embeddings.huggingface.HuggingFaceEmbeddings</code> for local embeddings instead of OpenAI.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain.embeddings.huggingface</span> <span class="kn">import</span> <span class="n">HuggingFaceEmbeddings</span>
 
 <span class="kn">from</span> <span class="nn">llama_index</span> <span class="kn">import</span> <span class="p">(</span>
@@ -2135,23 +2099,28 @@ it on-premises or sign up for their managed service.</p>
 </code></pre></div>
 <p>The data is in the vector database! Now we can proceed with the part where we invoke an LLM using this data as context.</p>
 <h2 id="deploy-an-llm">Deploy an LLM<a class="headerlink" href="#deploy-an-llm" title="Permanent link">&para;</a></h2>
-<p>This example assumes we're using an LLM deployed with <code>dstack</code> which can be set up either as a task (for development) or
-as a service (for production).</p>
-<p>For a detailed example on how to deploy an LLM as a service, check out
-<a href="../text-generation-inference/">Deploying LLMs using TGI</a>.</p>
-<p>Alternatively, for development purposes, you can also check out <a href="../deploy-python/">Deploying LLMs using Python API</a>. The example comes with a simple
-Streamlit app that allows you to deploy an LLM as a task with just one click.</p>
-<p><img alt="llama-index-weaviate.md" src="../images/python-api/dstack-python-api-streamlit-example.png" /></p>
-<h2 id="generate-response">Generate response<a class="headerlink" href="#generate-response" title="Permanent link">&para;</a></h2>
-<p>Once the LLM is up, we can prompt it through Llama Index to automatically incorporate context from Weaviate.</p>
-<p>Since we'll invoke the actual LLM, when configuring <code>llama_index.ServiceContext</code>, we must include the LLM configuration.</p>
-<p>In our example, using an LLM deployed with dstack via TGI, we'll use the <code>langchain.HuggingFaceTextGenInference</code> wrapper.
-This wrapper requires the LLM's URL and other LLM parameters.</p>
-<div class="admonition info">
-<p class="admonition-title">NOTE:</p>
-<p>If you've deployed the LLM using <a href="../deploy-python/">Deploying LLMs using Python API</a>,
-make sure to set the <code>TGI_ENDPOINT_URL</code> to <code>http://localhost:8080</code>.</p>
+<p>This example assumes we're using an LLM deployed via the <a href="../../docs/guides/text-generation/">text generation</a> API,
+or using <a href="../text-generation-inference/">TGI</a>.</p>
+<p>Once you deployed the model, make sure to set the <code>TGI_ENDPOINT_URL</code> environment variable 
+to its URL, e.g. <code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (or <code>http://localhost:&lt;port&gt;</code> if it's deployed 
+as a task). We'll use this environment variable below.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--location<span class="w"> </span><span class="nv">$TGI_ENDPOINT_URL</span>/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">          &quot;inputs&quot;: &quot;What is Deep Learning?&quot;,</span>
+<span class="s1">          &quot;parameters&quot;: {</span>
+<span class="s1">            &quot;max_new_tokens&quot;: 20</span>
+<span class="s1">          }</span>
+<span class="s1">        }&#39;</span>
+</code></pre></div>
+
 </div>
+
+<h2 id="generate-response">Generate response<a class="headerlink" href="#generate-response" title="Permanent link">&para;</a></h2>
+<p>Once the LLM endpoint is up, we can prompt it through Llama Index to automatically incorporate context from Weaviate.</p>
+<p>Since we'll invoke the actual LLM, when configuring <code>llama_index.ServiceContext</code>, we must include the LLM configuration.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">from</span> <span class="nn">llama_index</span> <span class="kn">import</span> <span class="p">(</span>
@@ -2191,7 +2160,7 @@ make sure to set the <code>TGI_ENDPOINT_URL</code> to <code>http://localhost:808
 </code></pre></div>
 <p>Once <code>llama_index.VectorStoreIndex</code> is ready, we can proceed with querying it.</p>
 <div class="admonition info">
-<p class="admonition-title">NOTE:</p>
+<p class="admonition-title">Prompt format</p>
 <p>If we're deploying Llama 2, we have to ensure that the prompt format is correct.</p>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">llama_index</span> <span class="kn">import</span> <span class="p">(</span><span class="n">QuestionAnswerPrompt</span><span class="p">,</span> <span class="n">RefinePrompt</span><span class="p">)</span>
@@ -2296,13 +2265,13 @@ using <code>dstack</code>. For more in-depth information, we encourage you to ex
         
         
           
-          <a href="../deploy-python/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying LLMs using Python API">
+          <a href="../finetuning-llama-2/" class="md-footer__link md-footer__link--next" aria-label="Next: Fine-tuning LLMs using Tasks">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Deploying LLMs using Python API
+                Fine-tuning LLMs using Tasks
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10+insiders-4.43.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11+insiders-4.44.0">
     
     
       
@@ -1482,39 +1482,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/deploy-python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploying LLMs using Python API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../examples/finetuning-llama-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Fine-tuning Llama 2 using QLoRA
+    Fine-tuning LLMs using Tasks
   
 
     
@@ -1540,7 +1514,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using TGI
+    Deploying LLMs with TGI
   
 
     
@@ -1566,7 +1540,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying SDXL using FastAPI
+    Deploying SDXL using Services
   
 
     
@@ -1592,7 +1566,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using vLLM
+    Deploying LLMs with vLLM
   
 
     
@@ -2113,14 +2087,6 @@
 <h1 id="fine-tuning">Fine-tuning<a class="headerlink" href="#fine-tuning" title="Permanent link">&para;</a></h1>
 <p>For fine-tuning an LLM with <code>dstack</code>'s API, specify a model, dataset, training parameters,
 and required compute resources. The API takes care of everything else.</p>
-<details class="info">
-<summary>Prerequisites</summary>
-<p>To use the fine-tuning API, ensure you have the latest version:</p>
-<div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]==0.12.3rc3&quot;</span>
-</code></pre></div>
-</div>
-</details>
 <blockquote>
 <p>The API currently supports only supervised fine-tuning (SFT). Support for DPO and RLHF is coming soon.</p>
 </blockquote>

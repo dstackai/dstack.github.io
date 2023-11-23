@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dstack.ai/examples/finetuning-llama-2/">
       
       
-        <link rel="prev" href="../deploy-python/">
+        <link rel="prev" href="../llama-index-weaviate/">
       
       
         <link rel="next" href="../text-generation-inference/">
@@ -25,11 +25,11 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10+insiders-4.43.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11+insiders-4.44.0">
     
     
       
-        <title>Fine-tuning Llama 2 using QLoRA - dstack</title>
+        <title>Fine-tuning LLMs using Tasks - dstack</title>
       
     
     
@@ -89,7 +89,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Fine-tuning Llama 2 using QLoRA - dstack" />
+<meta property="og:title" content="Fine-tuning LLMs using Tasks - dstack" />
 <meta property="og:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/examples/finetuning-llama-2.png" />
 <meta property="og:image:type" content="image/png" />
@@ -97,7 +97,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://dstack.ai/examples/finetuning-llama-2/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Fine-tuning Llama 2 using QLoRA - dstack" />
+<meta property="twitter.title" content="Fine-tuning LLMs using Tasks - dstack" />
 <meta property="twitter:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/examples/finetuning-llama-2.png" />
 </head>
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fine-tuning-llama-2-using-qlora" class="md-skip">
+        <a href="#fine-tuning-llms-using-tasks" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fine-tuning Llama 2 using QLoRA
+              Fine-tuning LLMs using Tasks
             
           </span>
         </div>
@@ -1322,32 +1322,6 @@
                 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../deploy-python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploying LLMs using Python API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1365,7 +1339,7 @@
   <span class="md-ellipsis">
     
   
-    Fine-tuning Llama 2 using QLoRA
+    Fine-tuning LLMs using Tasks
   
 
     
@@ -1382,7 +1356,7 @@
   <span class="md-ellipsis">
     
   
-    Fine-tuning Llama 2 using QLoRA
+    Fine-tuning LLMs using Tasks
   
 
     
@@ -1487,11 +1461,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#putting-it-all-together" class="md-nav__link">
+  <a href="#put-it-all-together" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Putting it all together
+          Put it all together
         </span>
       
     </span>
@@ -1551,7 +1525,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using TGI
+    Deploying LLMs with TGI
   
 
     
@@ -1577,7 +1551,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying SDXL using FastAPI
+    Deploying SDXL using Services
   
 
     
@@ -1603,7 +1577,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying LLMs using vLLM
+    Deploying LLMs with vLLM
   
 
     
@@ -2067,11 +2041,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#putting-it-all-together" class="md-nav__link">
+  <a href="#put-it-all-together" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Putting it all together
+          Put it all together
         </span>
       
     </span>
@@ -2134,12 +2108,15 @@
   
 
 
-<h1 id="fine-tuning-llama-2-using-qlora">Fine-tuning Llama 2 using QLoRA<a class="headerlink" href="#fine-tuning-llama-2-using-qlora" title="Permanent link">&para;</a></h1>
-<p>The release of Llama 2 by Meta has caused quite a stir due to its impressive performance and its license that permits commercial use.
-Along with other advancements in the LLM toolchain, such as LangChain and vector databases, Llama 2 has vast potential
-for applications.</p>
-<p>This example demonstrates how to use <code>dstack</code> to fine-tune <a href="https://huggingface.co/meta-llama/Llama-2-7b-chat-hf"><code>llama-2-7b-chat-hf</code></a>, 
-using any cloud of your choice.</p>
+<h1 id="fine-tuning-llms-using-tasks">Fine-tuning LLMs using Tasks<a class="headerlink" href="#fine-tuning-llms-using-tasks" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">NOTE:</p>
+<p>This example demonstrates how to fine-tune <a href="https://huggingface.co/meta-llama/Llama-2-7b-chat-hf"><code>llama-2-7b-chat-hf</code></a>,
+with QLoRA and your own script, using <a href="../../docs/guides/tasks/">Tasks</a>.</p>
+<p>If you'd like to fine-tune an LLM via a simple API,
+consider using the <a href="../docs/guides/task-generation.md">Fine-tuning</a> API. It's a lot simpler and 
+doesn't need your own script.</p>
+</div>
 <h2 id="prepare-a-dataset">Prepare a dataset<a class="headerlink" href="#prepare-a-dataset" title="Permanent link">&para;</a></h2>
 <p>When selecting a dataset, make sure that it is pre-processed to match the prompt format of Llama 2:</p>
 <div class="highlight"><pre><span></span><code>&lt;s&gt;[INST] &lt;&lt;SYS&gt;&gt;
@@ -2285,7 +2262,7 @@ with its tokenizer, based on the script arguments.</p>
     <span class="n">model</span><span class="o">.</span><span class="n">push_to_hub</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">new_model_name</span><span class="p">,</span> <span class="n">use_temp_dir</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">tokenizer</span><span class="o">.</span><span class="n">push_to_hub</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">new_model_name</span><span class="p">,</span> <span class="n">use_temp_dir</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="putting-it-all-together">Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permanent link">&para;</a></h3>
+<h3 id="put-it-all-together">Put it all together<a class="headerlink" href="#put-it-all-together" title="Permanent link">&para;</a></h3>
 <p>Finally, in the main part of the script, we put it all together.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 <span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
@@ -2402,7 +2379,7 @@ the configured port to your local machine.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../deploy-python/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deploying LLMs using Python API">
+          <a href="../llama-index-weaviate/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RAG with Llama Index and Weaviate">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2412,20 +2389,20 @@ the configured port to your local machine.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Deploying LLMs using Python API
+                RAG with Llama Index and Weaviate
               </div>
             </div>
           </a>
         
         
           
-          <a href="../text-generation-inference/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying LLMs using TGI">
+          <a href="../text-generation-inference/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying LLMs with TGI">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Deploying LLMs using TGI
+                Deploying LLMs with TGI
               </div>
             </div>
             <div class="md-footer__button md-icon">
