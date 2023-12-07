@@ -12,20 +12,24 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/examples/deploy-python/">
+        <link rel="canonical" href="https://dstack.ai/learn/text-generation-inference/">
       
       
+        <link rel="prev" href="../finetuning-llama-2/">
+      
+      
+        <link rel="next" href="../stable-diffusion-xl/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14+insiders-4.46.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.0+insiders-4.46.0">
     
     
       
-        <title>Deploying LLMs using Python API - dstack</title>
+        <title>Deploying LLMs with TGI - dstack</title>
       
     
     
@@ -85,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Deploying LLMs using Python API - dstack" />
+<meta property="og:title" content="Deploying LLMs with TGI - dstack" />
 <meta property="og:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/examples/deploy-python.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/learn/text-generation-inference.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/examples/deploy-python/" />
+<meta property="og:url" content="https://dstack.ai/learn/text-generation-inference/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Deploying LLMs using Python API - dstack" />
+<meta property="twitter.title" content="Deploying LLMs with TGI - dstack" />
 <meta property="twitter:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/examples/deploy-python.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/learn/text-generation-inference.png" />
 </head>
   
   
@@ -115,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploying-llms-using-python-api" class="md-skip">
+        <a href="#deploying-llms-with-tgi" class="md-skip">
           Skip to content
         </a>
       
@@ -165,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploying LLMs using Python API
+              Deploying LLMs with TGI
             
           </span>
         </div>
@@ -306,14 +310,16 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
-  Examples
+  Learn
 
         </a>
       </li>
@@ -1129,8 +1135,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1139,12 +1147,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -1153,7 +1161,7 @@
   <span class="md-ellipsis">
     
   
-    Examples
+    Learn
   
 
     
@@ -1164,12 +1172,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Examples
+    Learn
   
 
           </label>
@@ -1188,7 +1196,7 @@
   <span class="md-ellipsis">
     
   
-    Examples
+    Learning center
   
 
     
@@ -1206,8 +1214,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1216,12 +1226,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
@@ -1241,7 +1251,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1292,7 +1302,7 @@
   <span class="md-ellipsis">
     
   
-    Fine-tuning LLMs using Tasks
+    Fine-tuning LLMs with QLoRA
   
 
     
@@ -1310,10 +1320,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../text-generation-inference/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying LLMs with TGI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1328,6 +1364,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Run the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run the configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Quantization
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1346,7 +1447,7 @@
   <span class="md-ellipsis">
     
   
-    Deploying SDXL using Services
+    Deploying SDXL with FastAPI
   
 
     
@@ -1773,11 +1874,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#define-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Prerequisites
+          Define the configuration
         </span>
       
     </span>
@@ -1786,116 +1887,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
+  <a href="#run-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          How does it work?
+          Run the configuration
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How does it work?">
+    <nav class="md-nav" aria-label="Run the configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-a-client" class="md-nav__link">
+  <a href="#quantization" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Create a client
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Create a task
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Create resources
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#submit-the-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Submit the run
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#attach-to-the-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Attach to the run
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wait-for-the-endpoint-to-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Wait for the endpoint to start
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stop-the-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Stop the run
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#retrieve-the-status-of-a-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Retrieve the status of a run
+          Quantization
         </span>
       
     </span>
@@ -1905,19 +1915,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#source-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Source code
-        </span>
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1937,7 +1934,7 @@
                   
 
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/examples/deploy-python.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/learn/text-generation-inference.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -1945,109 +1942,106 @@
   
 
 
-<h1 id="deploying-llms-using-python-api">Deploying LLMs using Python API<a class="headerlink" href="#deploying-llms-using-python-api" title="Permanent link">&para;</a></h1>
-<p>The <a href="../../docs/reference/api/python/">Python API</a> of <code>dstack</code> can be used to run <a href="../../docs/guides/tasks/">tasks</a> and <a href="../../docs/guides/services/">services</a> programmatically.</p>
-<p>To demonstrate how it works, we've created a simple Streamlit app that uses <code>dstack</code>'s API to deploy a quantized 
-version of Llama 2 to your cloud with a click of a button.</p>
-<p><img alt="" src="../images/python-api/dstack-python-api-streamlit-example.png" width="800" /></p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Before you can use <code>dstack</code> Python API, ensure you have<br />
-<a href="../../docs/#set-up-the-server">set up the server</a>.</p>
-<h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
-<h3 id="create-a-client">Create a client<a class="headerlink" href="#create-a-client" title="Permanent link">&para;</a></h3>
-<p>If you're familiar with Docker's Python SDK, you'll find <code>dstack</code>'s <a href="../../docs/reference/api/python/">Python API</a> 
-quite similar, except that it runs your workload in the cloud.</p>
-<p>To get started, create an instance of <code>dstack.Client</code> and use its methods to submit and manage runs.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">ClientError</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">from_config</span><span class="p">()</span>
-<span class="k">except</span> <span class="n">ClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="create-a-task">Create a task<a class="headerlink" href="#create-a-task" title="Permanent link">&para;</a></h3>
+<h1 id="deploying-llms-with-tgi">Deploying LLMs with TGI<a class="headerlink" href="#deploying-llms-with-tgi" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">NOTE:</p>
-<p>With <code>dstack.Client</code>, you can run <a href="../../docs/guides/tasks/">tasks</a> and <a href="../../docs/guides/services/">services</a>.
-Running a task allows you to programmatically access its ports and
-forward traffic to your local machine. For example, if you run an LLM as a task, you can access it on <code>localhost</code>.
-Services on the other hand allow deploying applications as public endpoints.</p>
+<p>This example demonstrates how to deploy an LLM
+using <a href="../../docs/guides/services/">Services</a> and <a href="https://github.com/huggingface/text-generation-inference">TGI</a>,
+an open-source framework by Hugging Face.</p>
+<p>If you'd like to deploy an LLM via a simple API,
+consider using the <a href="../../docs/guides/text-generation/">Text generation</a> API. It's a lot simpler.</p>
 </div>
-<p>In our example, we'll deploy an LLM as a task. To do this, we'll create a <code>dstack.Task</code> instance that configures how the
-LLM should be run.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Task</span>
+<h2 id="define-the-configuration">Define the configuration<a class="headerlink" href="#define-the-configuration" title="Permanent link">&para;</a></h2>
+<p>To deploy an LLM as a service using TGI, you have to define the following configuration file:</p>
+<div editor-title="text-generation-inference/serve.dstack.yml"> 
 
-<span class="n">configuration</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span>
-    <span class="n">image</span><span class="o">=</span><span class="s2">&quot;ghcr.io/huggingface/text-generation-inference:latest&quot;</span><span class="p">,</span>
-    <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;MODEL_ID&quot;</span><span class="p">:</span> <span class="n">model_id</span><span class="p">},</span>
-    <span class="n">commands</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">&quot;text-generation-launcher --trust-remote-code --quantize gptq&quot;</span><span class="p">,</span>
-    <span class="p">],</span>
-    <span class="n">ports</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;8080:80&quot;</span><span class="p">],</span>  <span class="c1"># LLM runs on port 80, forwarded to localhost:8080</span>
-<span class="p">)</span>
-</code></pre></div>
-<h3 id="create-resources">Create resources<a class="headerlink" href="#create-resources" title="Permanent link">&para;</a></h3>
-<p>Then, we'll need to specify the resources our LLM will require. To do this, we'll create a <code>dstack.Resources</code> instance:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Resources</span><span class="p">,</span> <span class="n">GPU</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
-<span class="k">if</span> <span class="n">model_id</span> <span class="o">==</span> <span class="s2">&quot;TheBloke/Llama-2-13B-chat-GPTQ&quot;</span><span class="p">:</span>
-    <span class="n">gpu_memory</span> <span class="o">=</span> <span class="s2">&quot;20GB&quot;</span>
-<span class="k">elif</span> <span class="n">model_id</span> <span class="o">==</span> <span class="s2">&quot;TheBloke/Llama-2-70B-chat-GPTQ&quot;</span><span class="p">:</span>
-    <span class="n">gpu_memory</span> <span class="o">=</span> <span class="s2">&quot;40GB&quot;</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
 
-<span class="n">resources</span> <span class="o">=</span> <span class="n">Resources</span><span class="p">(</span><span class="n">gpu</span><span class="o">=</span><span class="n">GPU</span><span class="p">(</span><span class="n">memory</span><span class="o">=</span><span class="n">gpu_memory</span><span class="p">))</span>
-</code></pre></div>
-<h3 id="submit-the-run">Submit the run<a class="headerlink" href="#submit-the-run" title="Permanent link">&para;</a></h3>
-<p>To deploy the LLM, we submit the task using <code>runs.submit()</code> in <code>dstack.Client</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">run_name</span> <span class="o">=</span> <span class="s2">&quot;deploy-python&quot;</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=NousResearch/Llama-2-7b-hf</span>
 
-<span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">,</span> <span class="n">run_name</span><span class="o">=</span><span class="n">run_name</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="n">resources</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="attach-to-the-run">Attach to the run<a class="headerlink" href="#attach-to-the-run" title="Permanent link">&para;</a></h3>
-<p>Then, we use the <code>attach()</code> method on <code>dstack.Run</code>. This method waits for the task to start, 
-and forwards the configured ports to <code>localhost</code>.</p>
-<div class="highlight"><pre><span></span><code>run.attach()
-</code></pre></div>
-<h3 id="wait-for-the-endpoint-to-start">Wait for the endpoint to start<a class="headerlink" href="#wait-for-the-endpoint-to-start" title="Permanent link">&para;</a></h3>
-<p>Finally, we wait until <code>http://localhost:8080/health</code> returns <code>200</code>, which indicates that the LLM is deployed and ready to
-handle requests.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">requests</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://localhost:8080/health&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-            <span class="k">break</span>
-    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-        <span class="k">pass</span>
+<span class="nt">commands</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --hostname 0.0.0.0 --port 8000 --trust-remote-code</span>
 </code></pre></div>
-<h3 id="stop-the-run">Stop the run<a class="headerlink" href="#stop-the-run" title="Permanent link">&para;</a></h3>
-<p>To undeploy the model, we can use the <code>stop()</code> method on <code>dstack.Run</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+</div>
+
+<h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Gateway</p>
+<p>Before running a service, ensure that you have configured a <a href="../../docs/guides/services/#set-up-a-gateway">gateway</a>.</p>
+</div>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>text-generation-inference/serve.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span>24GB
 </code></pre></div>
-<h3 id="retrieve-the-status-of-a-run">Retrieve the status of a run<a class="headerlink" href="#retrieve-the-status-of-a-run" title="Permanent link">&para;</a></h3>
-<p>Note: If you'd like to retrieve the <code>dstack.Run</code> instance by the name of the run,
-you can use the <code>runs.get()</code> method on <code>dstack.Client</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">run_name</span><span class="p">)</span>
+
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">Endpoint URL</p>
+<p>Once the service is deployed, its endpoint will be available at 
+<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
+<p>If you wish to customize the run name, you can use the <code>-n</code> argument with the <code>dstack run</code> command.</p>
+</div>
+<p>Once the service is up, you can query it:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--location<span class="w"> </span>https://yellow-cat-1.mydomain.com/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">          &quot;inputs&quot;: &quot;What is Deep Learning?&quot;,</span>
+<span class="s1">          &quot;parameters&quot;: {</span>
+<span class="s1">            &quot;max_new_tokens&quot;: 20</span>
+<span class="s1">          }</span>
+<span class="s1">        }&#39;</span>
 </code></pre></div>
-<p>The <code>status</code> property on <code>dstack.Run</code> provides the status of the run.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">run</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">Hugging Face Hub token</p>
+<p>To use a model with gated access, ensure configuring the <code>HUGGING_FACE_HUB_TOKEN</code> environment variable 
+(with <a href="../../docs/reference/cli/#dstack-run"><code>--env</code></a> in <code>dstack run</code> or 
+using <a href="../../docs/reference/dstack.yml/service/#env"><code>env</code></a> in the configuration file).</p>
+<div class="termy">
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>text-generation-inference/serve.dstack.yml<span class="w"> </span>--env<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span><span class="p">&amp;</span>lt<span class="p">;</span>token<span class="p">&amp;</span>gt<span class="p">;</span><span class="w"> </span>--gpu<span class="w"> </span>24GB
 </code></pre></div>
-<p>To get the latest state of the run, you can use the <code>run.refresh()</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+</div></p>
+</div>
+<h3 id="quantization">Quantization<a class="headerlink" href="#quantization" title="Permanent link">&para;</a></h3>
+<p>An LLM typically requires twice the GPU memory compared to its parameter count. For instance, a model with <code>13B</code> parameters
+needs around <code>26GB</code> of GPU memory. To decrease memory usage and fit the model on a smaller GPU, consider using
+quantization, which TGI offers as <code>bitsandbytes</code> and <code>gptq</code> methods. </p>
+<p>Here's an example of the Llama 2 13B model tailored for a <code>24GB</code> GPU (A10 or L4):</p>
+<div editor-title="text-generation-inference/serve.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=TheBloke/Llama-2-13B-GPTQ</span>
+
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+
+<span class="nt">commands</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --hostname 0.0.0.0 --port 8000 --trust-remote-code --quantize gptq</span>
 </code></pre></div>
-<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+
+</div>
+
+<p>A similar approach allows running the Llama 2 70B model on an <code>40GB</code> GPU (A100).</p>
+<p>To calculate the exact GPU memory required for a specific model with different quantization methods, you can use the
+<a href="https://huggingface.co/spaces/hf-accelerate/model-memory-usage">hf-accelerate/memory-model-usage</a> Space.</p>
+<div class="admonition info">
+<p class="admonition-title">Source code</p>
 <p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples">dstackai/dstack-examples</a>.</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/dstackai/dstack-examples
-<span class="nb">cd</span><span class="w"> </span>dstack-examples
-</code></pre></div>
-<p>Once the repository is cloned, feel free to install the requirements and run the app:</p>
-<div class="highlight"><pre><span></span><code>pip install -r deploy-python/requirements.txt
-streamlit run deploy-python/app.py
-</code></pre></div>
+</div>
 
 
 
@@ -2080,6 +2074,44 @@ streamlit run deploy-python/app.py
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../finetuning-llama-2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fine-tuning LLMs with QLoRA">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Fine-tuning LLMs with QLoRA
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../stable-diffusion-xl/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying SDXL with FastAPI">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Deploying SDXL with FastAPI
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -2146,7 +2178,7 @@ streamlit run deploy-python/app.py
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.2f9c8a89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8e8db93a.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

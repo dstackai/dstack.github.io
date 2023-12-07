@@ -12,27 +12,31 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/docs/reference/dstack.yml/">
+        <link rel="canonical" href="https://dstack.ai/learn/llama-index-weaviate/">
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../finetuning-llama-2/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.0+insiders-4.46.0">
     
     
       
-        <title>.dstack.yml - dstack</title>
+        <title>RAG with Llama Index and Weaviate - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0ab26e37.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0ab26e37.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,17 +61,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -85,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content=".dstack.yml - dstack" />
+<meta property="og:title" content="RAG with Llama Index and Weaviate - dstack" />
 <meta property="og:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/reference/dstack.yml/index.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/learn/llama-index-weaviate.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/reference/dstack.yml/" />
+<meta property="og:url" content="https://dstack.ai/learn/llama-index-weaviate/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content=".dstack.yml - dstack" />
+<meta property="twitter.title" content="RAG with Llama Index and Weaviate - dstack" />
 <meta property="twitter:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/reference/dstack.yml/index.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/learn/llama-index-weaviate.png" />
 </head>
   
   
@@ -115,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dstackyml" class="md-skip">
+        <a href="#rag-with-llama-index-and-weaviate" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +152,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -165,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              .dstack.yml
+              RAG with Llama Index and Weaviate
             
           </span>
         </div>
@@ -264,7 +268,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -289,7 +293,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../docs/" class="md-tabs__link">
           
   
   Docs
@@ -306,11 +310,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../learn/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Learn
@@ -326,7 +332,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../pricing/" class="md-tabs__link">
+      <a href="../../pricing/" class="md-tabs__link">
         
   
     
@@ -345,7 +351,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../blog/" class="md-tabs__link">
+        <a href="../../blog/" class="md-tabs__link">
           
   
   Blog
@@ -414,7 +420,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -441,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -567,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/server/" class="md-nav__link">
+      <a href="../../docs/configuration/server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -734,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/dev-environments/" class="md-nav__link">
+      <a href="../../docs/guides/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -761,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/tasks/" class="md-nav__link">
+      <a href="../../docs/guides/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -788,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/services/" class="md-nav__link">
+      <a href="../../docs/guides/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -873,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli/" class="md-nav__link">
+      <a href="../../docs/reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -900,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/python/" class="md-nav__link">
+      <a href="../../docs/reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -974,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dev-environment/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1001,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="task/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1028,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="service/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1063,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server/config.yml/" class="md-nav__link">
+      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1090,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../profiles.yml/" class="md-nav__link">
+      <a href="../../docs/reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1129,8 +1135,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1139,12 +1147,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -1164,7 +1172,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1182,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../learn/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1206,8 +1214,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1216,12 +1226,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
@@ -1241,7 +1251,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1256,10 +1266,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../learn/llama-index-weaviate/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG with Llama Index and Weaviate
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1274,6 +1310,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          How does it work?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-data-to-weaviate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Load data to Weaviate
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-an-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Deploy an LLM
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Generate response
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1286,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../learn/finetuning-llama-2/" class="md-nav__link">
+      <a href="../finetuning-llama-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1313,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../learn/text-generation-inference/" class="md-nav__link">
+      <a href="../text-generation-inference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1340,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../learn/stable-diffusion-xl/" class="md-nav__link">
+      <a href="../stable-diffusion-xl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1367,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../learn/vllm/" class="md-nav__link">
+      <a href="../vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1409,7 +1543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../pricing/" class="md-nav__link">
+      <a href="../../pricing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1487,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/" class="md-nav__link">
+      <a href="../../blog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1568,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/archive/2023/" class="md-nav__link">
+      <a href="../../blog/archive/2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1657,7 +1791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/releases/" class="md-nav__link">
+      <a href="../../blog/category/releases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1766,6 +1900,92 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          How does it work?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-data-to-weaviate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Load data to Weaviate
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-an-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Deploy an LLM
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Generate response
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1779,23 +1999,208 @@
                 
                   
 
+  
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/learn/llama-index-weaviate.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
 
-<h1 id="dstackyml">.dstack.yml<a class="headerlink" href="#dstackyml" title="Permanent link">&para;</a></h1>
-<p>Configurations are YAML files that describe what you want to run with <code>dstack</code>. Configurations can be of three
-types: <code>dev-environment</code>, <code>task</code>, and <code>service</code>.</p>
+
+<h1 id="rag-with-llama-index-and-weaviate">RAG with Llama Index and Weaviate<a class="headerlink" href="#rag-with-llama-index-and-weaviate" title="Permanent link">&para;</a></h1>
+<p>RAG, or retrieval-augmented generation, empowers LLMs by providing them with access to your data.</p>
+<p>Here's an example of how to apply this technique using the <a href="https://www.llamaindex.ai/">Llama Index</a> framework 
+and <a href="https://weaviate.io/">Weaviate</a> vector database.</p>
+<h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Llama Index loads data from local files, structures it into chunks, and ingests it into Weaviate (an open-source vector database).
+   We set up Llama Index to use local embeddings through the <a href="https://www.sbert.net/">SentenceTransformers</a> library.</li>
+<li><code>dstack</code> allows us to deploy LLMs to any cloud provider, e.g.
+   via the <a href="../../docs/guides/text-generation/">text generation</a> API. Alternatively, you can also deploy using <a href="../text-generation-inference/">TGI</a>'s 
+   docker image (as a task or a service).</li>
+<li>Llama Index allows us to prompt the LLM automatically incorporating the context from Weaviate. </li>
+</ol>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p>Here's the list of Python libraries that we'll use:</p>
+<div class="highlight"><pre><span></span><code>weaviate-client
+llama-index
+sentence-transformers
+text_generation
+</code></pre></div>
+<h2 id="load-data-to-weaviate">Load data to Weaviate<a class="headerlink" href="#load-data-to-weaviate" title="Permanent link">&para;</a></h2>
+<p>The first thing we do is load the data from local files and ingest it into Weaviate.</p>
 <div class="admonition info">
-<p class="admonition-title">Filename</p>
-<p>The configuration file must be named with the suffix <code>.dstack.yml</code>. For example,
-you can name the configuration file <code>.dstack.yml</code> or <code>app.dstack.yml</code>. You can define
-these configurations anywhere within your project. </p>
-<p>Each folder may have one default configuration file named <code>.dstack.yml</code>.</p>
+<p class="admonition-title">NOTE:</p>
+<p>To use Weaviate, you need to either <a href="https://weaviate.io/developers/weaviate/installation">install</a> 
+it on-premises or sign up for their managed service.</p>
 </div>
-<p>Read more about configuration types:</p>
-<ul>
-<li><a href="dev-environment/"><code>type: dev-environment</code></a></li>
-<li><a href="task/"><code>type: task</code></a></li>
-<li><a href="service/"><code>type: service</code></a></li>
-</ul>
+<p>Since we're going to load data into or from Weaviate, we'll need a <code>weaviate.Client</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">weaviate</span>
+
+<span class="n">auth_config</span> <span class="o">=</span> <span class="n">weaviate</span><span class="o">.</span><span class="n">AuthApiKey</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;WEAVIATE_API_TOKEN&quot;</span><span class="p">))</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">weaviate</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;WEAVIATE_URL&quot;</span><span class="p">),</span> <span class="n">auth_client_secret</span><span class="o">=</span><span class="n">auth_config</span><span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">delete_class</span><span class="p">(</span><span class="s2">&quot;DstackExample&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Next, prepare the Llama Index classes: <code>llama_index.ServiceContext</code> (for indexing and querying) and
+<code>llama_index.StorageContext</code> (for loading and storing). </p>
+<div class="admonition info">
+<p class="admonition-title">Embeddings</p>
+<p>Note that we're using
+<code>langchain.embeddings.huggingface.HuggingFaceEmbeddings</code> for local embeddings instead of OpenAI.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain.embeddings.huggingface</span> <span class="kn">import</span> <span class="n">HuggingFaceEmbeddings</span>
+
+<span class="kn">from</span> <span class="nn">llama_index</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LangchainEmbedding</span><span class="p">,</span>
+    <span class="n">ServiceContext</span><span class="p">,</span>
+    <span class="n">StorageContext</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">llama_index.vector_stores</span> <span class="kn">import</span> <span class="n">WeaviateVectorStore</span>
+
+<span class="n">embed_model</span> <span class="o">=</span> <span class="n">LangchainEmbedding</span><span class="p">(</span><span class="n">HuggingFaceEmbeddings</span><span class="p">())</span>
+
+<span class="n">service_context</span> <span class="o">=</span> <span class="n">ServiceContext</span><span class="o">.</span><span class="n">from_defaults</span><span class="p">(</span><span class="n">embed_model</span><span class="o">=</span><span class="n">embed_model</span><span class="p">,</span> <span class="n">llm</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">vector_store</span> <span class="o">=</span> <span class="n">WeaviateVectorStore</span><span class="p">(</span><span class="n">weaviate_client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span> <span class="n">index_name</span><span class="o">=</span><span class="s2">&quot;DstackExample&quot;</span><span class="p">)</span>
+
+<span class="n">storage_context</span> <span class="o">=</span> <span class="n">StorageContext</span><span class="o">.</span><span class="n">from_defaults</span><span class="p">(</span><span class="n">vector_store</span><span class="o">=</span><span class="n">vector_store</span><span class="p">)</span>
+</code></pre></div>
+<p>Once the utility classes are configured, we can load the data from local files and pass it to
+<code>llama_index.VectorStoreIndex</code>. Using its <code>from_documents</code> method will then store the data in the vector database.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">llama_index</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SimpleDirectoryReader</span><span class="p">,</span>
+    <span class="n">VectorStoreIndex</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">documents</span> <span class="o">=</span> <span class="n">SimpleDirectoryReader</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+
+<span class="n">index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span>
+    <span class="n">documents</span><span class="p">,</span>
+    <span class="n">service_context</span><span class="o">=</span><span class="n">service_context</span><span class="p">,</span>
+    <span class="n">storage_context</span><span class="o">=</span><span class="n">storage_context</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>The data is in the vector database! Now we can proceed with the part where we invoke an LLM using this data as context.</p>
+<h2 id="deploy-an-llm">Deploy an LLM<a class="headerlink" href="#deploy-an-llm" title="Permanent link">&para;</a></h2>
+<p>This example assumes we're using an LLM deployed via the <a href="../../docs/guides/text-generation/">text generation</a> API,
+or using <a href="../text-generation-inference/">TGI</a>.</p>
+<p>Once you deployed the model, make sure to set the <code>TGI_ENDPOINT_URL</code> environment variable 
+to its URL, e.g. <code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (or <code>http://localhost:&lt;port&gt;</code> if it's deployed 
+as a task). We'll use this environment variable below.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--location<span class="w"> </span><span class="nv">$TGI_ENDPOINT_URL</span>/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">          &quot;inputs&quot;: &quot;What is Deep Learning?&quot;,</span>
+<span class="s1">          &quot;parameters&quot;: {</span>
+<span class="s1">            &quot;max_new_tokens&quot;: 20</span>
+<span class="s1">          }</span>
+<span class="s1">        }&#39;</span>
+</code></pre></div>
+
+</div>
+
+<h2 id="generate-response">Generate response<a class="headerlink" href="#generate-response" title="Permanent link">&para;</a></h2>
+<p>Once the LLM endpoint is up, we can prompt it through Llama Index to automatically incorporate context from Weaviate.</p>
+<p>Since we'll invoke the actual LLM, when configuring <code>llama_index.ServiceContext</code>, we must include the LLM configuration.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">llama_index</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LangchainEmbedding</span><span class="p">,</span>
+    <span class="n">PromptHelper</span><span class="p">,</span>
+    <span class="n">ServiceContext</span><span class="p">,</span>
+    <span class="n">VectorStoreIndex</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">langchain</span> <span class="kn">import</span> <span class="n">HuggingFaceTextGenInference</span>
+<span class="kn">from</span> <span class="nn">langchain.embeddings.huggingface</span> <span class="kn">import</span> <span class="n">HuggingFaceEmbeddings</span>
+
+<span class="kn">from</span> <span class="nn">llama_index.llm_predictor</span> <span class="kn">import</span> <span class="n">LLMPredictor</span>
+<span class="kn">from</span> <span class="nn">llama_index.vector_stores</span> <span class="kn">import</span> <span class="n">WeaviateVectorStore</span>
+
+<span class="n">embed_model</span> <span class="o">=</span> <span class="n">LangchainEmbedding</span><span class="p">(</span><span class="n">HuggingFaceEmbeddings</span><span class="p">())</span>
+
+<span class="n">llm_predictor</span> <span class="o">=</span> <span class="n">LLMPredictor</span><span class="p">(</span>
+    <span class="n">llm</span><span class="o">=</span><span class="n">HuggingFaceTextGenInference</span><span class="p">(</span>
+        <span class="n">inference_server_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TGI_ENDPOINT_URL&quot;</span><span class="p">),</span>
+        <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+        <span class="n">streaming</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">service_context</span> <span class="o">=</span> <span class="n">ServiceContext</span><span class="o">.</span><span class="n">from_defaults</span><span class="p">(</span>
+    <span class="n">embed_model</span><span class="o">=</span><span class="n">embed_model</span><span class="p">,</span>
+    <span class="n">llm_predictor</span><span class="o">=</span><span class="n">llm_predictor</span><span class="p">,</span>
+    <span class="n">prompt_helper</span><span class="o">=</span><span class="n">PromptHelper</span><span class="p">(</span><span class="n">context_window</span><span class="o">=</span><span class="mi">1024</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">vector_store</span> <span class="o">=</span> <span class="n">WeaviateVectorStore</span><span class="p">(</span><span class="n">weaviate_client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span> <span class="n">index_name</span><span class="o">=</span><span class="s2">&quot;DstackExample&quot;</span><span class="p">)</span>
+
+<span class="n">index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="o">.</span><span class="n">from_vector_store</span><span class="p">(</span>
+    <span class="n">vector_store</span><span class="p">,</span> <span class="n">service_context</span><span class="o">=</span><span class="n">service_context</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Once <code>llama_index.VectorStoreIndex</code> is ready, we can proceed with querying it.</p>
+<div class="admonition info">
+<p class="admonition-title">Prompt format</p>
+<p>If we're deploying Llama 2, we have to ensure that the prompt format is correct.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">llama_index</span> <span class="kn">import</span> <span class="p">(</span><span class="n">QuestionAnswerPrompt</span><span class="p">,</span> <span class="n">RefinePrompt</span><span class="p">)</span>
+
+<span class="n">text_qa_template</span> <span class="o">=</span> <span class="n">QuestionAnswerPrompt</span><span class="p">(</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;&lt;s&gt;[INST] &lt;&lt;SYS&gt;&gt;</span>
+<span class="sd">We have provided context information below. </span>
+
+<span class="sd">{context_str}</span>
+
+<span class="sd">Given this information, please answer the question.</span>
+<span class="sd">&lt;&lt;/SYS&gt;&gt;</span>
+
+<span class="sd">{query_str} [/INST]&quot;&quot;&quot;</span>
+    <span class="p">)</span>
+
+<span class="n">refine_template</span> <span class="o">=</span> <span class="n">RefinePrompt</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;&lt;s&gt;[INST] &lt;&lt;SYS&gt;&gt;</span>
+<span class="sd">The original query is as follows: </span>
+
+<span class="sd">{query_str}</span>
+
+<span class="sd">We have provided an existing answer:</span>
+
+<span class="sd">{existing_answer}</span>
+
+<span class="sd">We have the opportunity to refine the existing answer (only if needed) with some more context below.</span>
+
+<span class="sd">{context_msg}</span>
+<span class="sd">&lt;&lt;/SYS&gt;&gt;</span>
+
+<span class="sd">Given the new context, refine the original answer to better answer the query. If the context isn&#39;t useful, return the original answer. [/INST]&quot;&quot;&quot;</span>
+<span class="p">)</span>
+
+<span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">(</span>
+    <span class="n">text_qa_template</span><span class="o">=</span><span class="n">text_qa_template</span><span class="p">,</span>
+    <span class="n">refine_template</span><span class="o">=</span><span class="n">refine_template</span><span class="p">,</span>
+    <span class="n">streaming</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Make a bullet-point timeline of the authors biography?&quot;</span><span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">print_response_stream</span><span class="p">()</span>
+</code></pre></div>
+<p>That's it! This basic example shows how straightforward it is to use Llama Index and Weaviate with the LLMs deployed
+using <code>dstack</code>. For more in-depth information, we encourage you to explore the documentation for each tool.</p>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Source code</p>
+<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples">dstackai/dstack-examples</a>.</p>
+</div>
 
 
 
@@ -1828,6 +2233,44 @@ these configurations anywhere within your project. </p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Learning center">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Learning center
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../finetuning-llama-2/" class="md-footer__link md-footer__link--next" aria-label="Next: Fine-tuning LLMs with QLoRA">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Fine-tuning LLMs with QLoRA
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1888,17 +2331,17 @@ these configurations anywhere within your project. </p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.8e8db93a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8e8db93a.min.js"></script>
       
-        <script src="../../../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../../../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 

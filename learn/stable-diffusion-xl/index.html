@@ -12,20 +12,24 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/examples/llmchat/">
+        <link rel="canonical" href="https://dstack.ai/learn/stable-diffusion-xl/">
       
       
+        <link rel="prev" href="../text-generation-inference/">
+      
+      
+        <link rel="next" href="../vllm/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14+insiders-4.46.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.0+insiders-4.46.0">
     
     
       
-        <title>LLM as Chatbot - dstack</title>
+        <title>Deploying SDXL with FastAPI - dstack</title>
       
     
     
@@ -85,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="LLM as Chatbot - dstack" />
+<meta property="og:title" content="Deploying SDXL with FastAPI - dstack" />
 <meta property="og:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/examples/llmchat.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/learn/stable-diffusion-xl.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/examples/llmchat/" />
+<meta property="og:url" content="https://dstack.ai/learn/stable-diffusion-xl/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="LLM as Chatbot - dstack" />
+<meta property="twitter.title" content="Deploying SDXL with FastAPI - dstack" />
 <meta property="twitter:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/examples/llmchat.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/learn/stable-diffusion-xl.png" />
 </head>
   
   
@@ -115,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#llm-as-chatbot" class="md-skip">
+        <a href="#deploying-sdxl-with-fastapi" class="md-skip">
           Skip to content
         </a>
       
@@ -165,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LLM as Chatbot
+              Deploying SDXL with FastAPI
             
           </span>
         </div>
@@ -306,14 +310,16 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
-  Examples
+  Learn
 
         </a>
       </li>
@@ -1129,8 +1135,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1139,12 +1147,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -1153,7 +1161,7 @@
   <span class="md-ellipsis">
     
   
-    Examples
+    Learn
   
 
     
@@ -1164,12 +1172,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Examples
+    Learn
   
 
           </label>
@@ -1188,7 +1196,7 @@
   <span class="md-ellipsis">
     
   
-    Examples
+    Learning center
   
 
     
@@ -1206,8 +1214,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1216,12 +1226,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
@@ -1241,7 +1251,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1292,7 +1302,7 @@
   <span class="md-ellipsis">
     
   
-    Fine-tuning LLMs using Tasks
+    Fine-tuning LLMs with QLoRA
   
 
     
@@ -1337,16 +1347,42 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../stable-diffusion-xl/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying SDXL with FastAPI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     
   
-    Deploying SDXL using Services
+    Deploying SDXL with FastAPI
   
 
     
@@ -1355,6 +1391,136 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#define-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define endpoints
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Define endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Load the model
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-generate-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the generate endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-download-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the download endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-refine-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the refine endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Run the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1773,11 +1939,95 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-a-profile" class="md-nav__link">
+  <a href="#define-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Define a profile
+          Define endpoints
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Define endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Load the model
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-generate-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the generate endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-download-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the download endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-the-refine-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the refine endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the configuration
         </span>
       
     </span>
@@ -1786,24 +2036,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-the-app" class="md-nav__link">
+  <a href="#run-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Run the app
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-the-discord-bot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Run the Discord bot
+          Run the configuration
         </span>
       
     </span>
@@ -1827,7 +2064,7 @@
                   
 
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/examples/llmchat.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/learn/stable-diffusion-xl.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -1835,107 +2072,200 @@
   
 
 
-<h1 id="llm-as-chatbot">LLM as Chatbot<a class="headerlink" href="#llm-as-chatbot" title="Permanent link">&para;</a></h1>
-<p>This <a href="https://github.com/deep-diver/LLM-As-Chatbot">example</a> is built by Chansung Park. It can run any open-source LLM either as a Gradio chat app or as a Discord bot.
-With <code>dstack</code>, you can run this Gradio chat app or Discord bot in any cloud with a single command.
-To try this example with <code>dstack</code>, follow the instructions below.</p>
-<h2 id="define-a-profile">Define a profile<a class="headerlink" href="#define-a-profile" title="Permanent link">&para;</a></h2>
-<p>Each LLM model requires specific resources. To inform <code>dstack</code> about the required resources, you need to 
-<a href="../../docs/reference/profiles.yml/">define</a> a profile via the <code>.dstack/profiles.yaml</code> file within your project.</p>
-<p>Below is a profile that will provision a cloud instance with <code>24GB</code> of memory and a <code>T4</code> GPU in the <code>gcp</code> project.</p>
-<div editor-title=".dstack/profiles.yml"> 
+<h1 id="deploying-sdxl-with-fastapi">Deploying SDXL with FastAPI<a class="headerlink" href="#deploying-sdxl-with-fastapi" title="Permanent link">&para;</a></h1>
+<p>Stable Diffusion XL (SDXL) 1.0 is the latest version of the open-source model that is capable 
+of generating high-quality images from text.</p>
+<p>The example below demonstrates how to use <code>dstack</code> to serve SDXL as a REST endpoint in a cloud of your choice for image
+generation and refinement.</p>
+<h2 id="define-endpoints">Define endpoints<a class="headerlink" href="#define-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<p>Here's the list of libraries that our example will require:</p>
+<div editor-title="stable-diffusion-xl/requirements.txt">
 
-<div class="highlight"><pre><span></span><code><span class="nt">profiles</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">t4-serve</span>
-
-<span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
-<span class="w">      </span><span class="nt">gpu</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">T4</span>
-
-<span class="w">    </span><span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span><span class="w"> </span><span class="c1"># (Optional) Use spot instances if available</span>
-
-<span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code>transformers
+accelerate
+safetensors
+diffusers
+invisible-watermark&gt;=0.2.0
+opencv-python-headless
+fastapi
+uvicorn
 </code></pre></div>
 
 </div>
 
-<h2 id="run-the-app">Run the app<a class="headerlink" href="#run-the-app" title="Permanent link">&para;</a></h2>
-<p>Here's the configuration that runs the Gradio app:</p>
-<div editor-title="gradio.dstack.yml"> 
+<p>Let's walk through the code of the example.</p>
+<h3 id="load-the-model">Load the model<a class="headerlink" href="#load-the-model" title="Permanent link">&para;</a></h3>
+<p>First of all, let's load the base SDXL model using the <code>diffusers</code> library.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">diffusers</span> <span class="kn">import</span> <span class="n">StableDiffusionXLPipeline</span>
+<span class="kn">import</span> <span class="nn">torch</span>
 
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># (Optional) Specify your Hugging Face token</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN=</span>
-<span class="w">  </span><span class="c1"># (Optional) Specify your Serper API Key</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LLMCHAT_SERPER_API_KEY=</span>
-
-<span class="nt">ports</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6006</span>
-
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LLMCHAT_APP_MODE=GRADIO python entry_point.py</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">StableDiffusionXLPipeline</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+    <span class="s2">&quot;stabilityai/stable-diffusion-xl-base-1.0&quot;</span><span class="p">,</span>
+    <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
+    <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;fp16&quot;</span><span class="p">,</span>
+    <span class="n">use_safetensors</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">base</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="define-the-generate-endpoint">Define the generate endpoint<a class="headerlink" href="#define-the-generate-endpoint" title="Permanent link">&para;</a></h3>
+<p>Now that the model is loaded, let's define the FastAPI app and the <code>/generate</code> REST endpoint that will accept a prompt and
+generate an image.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">uuid</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 
-</div>
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
 
-<p>Here's how you run it with <code>dstack</code>:</p>
-<div class="termy">
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>gradio.dstack.yml
+
+<span class="k">class</span> <span class="nc">GenerateRequest</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">negative_prompt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">width</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">height</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">class</span> <span class="nc">ImageResponse</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+
+
+<span class="n">images_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;images&quot;</span><span class="p">)</span>
+<span class="n">images_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/generate&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">GenerateRequest</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">base</span><span class="p">(</span>
+        <span class="n">prompt</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span>
+        <span class="n">negative_prompt</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">negative_prompt</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+    <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">images_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ImageResponse</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="define-the-download-endpoint">Define the download endpoint<a class="headerlink" href="#define-the-download-endpoint" title="Permanent link">&para;</a></h3>
+<p>Notice that the endpoint only returns the ID of the image. To download images by ID, we'll define another endpoint:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">fastapi.responses</span> <span class="kn">import</span> <span class="n">FileResponse</span>
 
-</div>
 
-<p><code>dstack</code> will provision the cloud instance, run the task, and forward the defined ports to your local
-machine for secure and convenient access.</p>
-<p><img alt="" src="../../assets/images/dstack-llmchat-gallery.png" width="800" /></p>
-<h2 id="run-the-discord-bot">Run the Discord bot<a class="headerlink" href="#run-the-discord-bot" title="Permanent link">&para;</a></h2>
-<p>Here's the configuration that runs the Gradio app:</p>
-<div editor-title="discord.dstack.yml"> 
-
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># (Required) Specify your Discord bot token.</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DISCORD_BOT_TOKEN=</span>
-<span class="w">  </span><span class="c1"># (Required) Specify the name of the model. See `README.md`` for supported models.</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DISCORD_BOT_MODEL_NAME=alpaca-lora-7b</span>
-<span class="w">  </span><span class="c1"># (Optional) Specify your Hugging Face token</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN=</span>
-<span class="w">  </span><span class="c1"># (Optional) Specify your Serper API Key to enable Internet search support.</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LLMCHAT_SERPER_API_KEY=</span>
-
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt --progress-bar off</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LLMCHAT_APP_MODE=DISCORD python entry_point.py</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/download/</span><span class="si">{id}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">.png&quot;</span>
+    <span class="k">return</span> <span class="n">FileResponse</span><span class="p">(</span>
+        <span class="n">images_dir</span> <span class="o">/</span> <span class="n">filename</span><span class="p">,</span> <span class="n">media_type</span><span class="o">=</span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span>
+    <span class="p">)</span>
 </code></pre></div>
+<p>That's it. Once we run the application, we can already utilize the <code>/generate</code> and <code>/download</code> endpoints.</p>
+<h3 id="define-the-refine-endpoint">Define the refine endpoint<a class="headerlink" href="#define-the-refine-endpoint" title="Permanent link">&para;</a></h3>
+<p>Since SDXL allows refining images, let's define the refine endpoint to accept the image ID and the refinement prompt.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
 
-</div>
+<span class="kn">import</span> <span class="nn">PIL</span>
 
+
+<span class="k">class</span> <span class="nc">RefineRequest</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span>
+
+
+<span class="n">refiner</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">refiner_lock</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/refine&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">refine</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">RefineRequest</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">refiner_lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+    <span class="k">global</span> <span class="n">refiner</span>
+    <span class="k">if</span> <span class="n">refiner</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">refiner</span> <span class="o">=</span> <span class="n">DiffusionPipeline</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+            <span class="s2">&quot;stabilityai/stable-diffusion-xl-refiner-1.0&quot;</span><span class="p">,</span>
+            <span class="n">text_encoder_2</span><span class="o">=</span><span class="n">base</span><span class="o">.</span><span class="n">text_encoder_2</span><span class="p">,</span>
+            <span class="n">vae</span><span class="o">=</span><span class="n">base</span><span class="o">.</span><span class="n">vae</span><span class="p">,</span>
+            <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
+            <span class="n">use_safetensors</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;fp16&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">refiner</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">)</span>
+    <span class="n">refiner_lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+    <span class="n">image</span> <span class="o">=</span> <span class="n">refiner</span><span class="p">(</span>
+        <span class="n">prompt</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span>
+        <span class="n">image</span><span class="o">=</span><span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">images_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">),</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nb">id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+    <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">images_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ImageResponse</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+</code></pre></div>
+<p>The code for the endpoints is ready. Now, let's explore how to use <code>dstack</code> to serve it on a cloud account of your choice.</p>
+<h2 id="define-the-configuration">Define the configuration<a class="headerlink" href="#define-the-configuration" title="Permanent link">&para;</a></h2>
 <details class="info">
-<summary>How to acquire a Discord bot token</summary>
-<p>Before running, ensure you have specified your Discord bot token, which you can obtain from the <a href="https://discord.com/developers/docs/intro">Discord Developer
-Portal</a>. If you haven't set up a Discord Bot on the portal yet, 
-follow the <a href="https://www.freecodecamp.org/news/create-a-discord-bot-with-python/">How to Create a Discord Bot Account</a> 
-section of the tutorial from freeCodeCamp.</p>
+<summary>Tasks</summary>
+<p>If you want to serve an application for development purposes only, you can use 
+<a href="../../docs/guides/services/">tasks</a>. 
+In this scenario, while the application runs in the cloud, 
+it is accessible from your local machine only.</p>
 </details>
-<p>Finally, here's how you run it with <code>dstack</code>:</p>
-<div class="termy">
+<p>For production purposes, the optimal approach to serve an application is by using 
+<a href="../../docs/guides/services/">services</a>. In this case, the application can be accessed through a public endpoint.</p>
+<p>Here's the configuration that uses services:</p>
+<div editor-title="stable-diffusion-xl/api.dstack.yml"> 
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>discord.dstack.yml
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="c1"># (Optional) If not specified, it will use your local version</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+
+<span class="nt">commands</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get install libgl1 -y</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r stable-diffusion-xl/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uvicorn stable-diffusion-xl.main:app --port 8000</span>
 </code></pre></div>
 
 </div>
 
-<p>Once you confirm, <code>dstack</code> will provision the cloud instance and run the task. Once it's up, you can freely send messages
-to your bot via Discord.</p>
-<p><img alt="" src="../../assets/images/dstack-llmchat-discord-chat.png" width="800" /></p>
-<p>For advanced commands supported by the bot, check the <a href="https://github.com/deep-diver/LLM-As-Chatbot#discord-bot">README</a> file.</p>
-<p><a class="md-button md-button--github" href="https://github.com/deep-diver/LLM-As-Chatbot">Source code</a></p>
+<h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">NOTE:</p>
+<p>Before running a service, ensure that you have configured a <a href="../../docs/guides/services/#set-up-a-gateway">gateway</a>.</p>
+</div>
+<p>After the gateway is configured, go ahead run the service.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>stable-diffusion-xl/api.dstack.yml
+</code></pre></div>
+
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">Endpoint URL</p>
+<p>Once the service is deployed, its endpoint will be available at 
+<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
+<p>If you wish to customize the run name, you can use the <code>-n</code> argument with the <code>dstack run</code> command.</p>
+</div>
+<p>Once the service is up, you can query the endpoint:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--location<span class="w"> </span>https://yellow-cat-1.mydomain.com/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{ &quot;prompt&quot;: &quot;A cat in a hat&quot; }&#39;</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">Source code</p>
+<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples">dstackai/dstack-examples</a>.</p>
+</div>
 
 
 
@@ -1968,6 +2298,44 @@ to your bot via Discord.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../text-generation-inference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deploying LLMs with TGI">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Deploying LLMs with TGI
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../vllm/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying LLMs with vLLM">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Deploying LLMs with vLLM
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -2034,7 +2402,7 @@ to your bot via Discord.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.2f9c8a89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8e8db93a.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

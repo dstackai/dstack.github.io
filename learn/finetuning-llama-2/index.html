@@ -12,31 +12,31 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/docs/">
+        <link rel="canonical" href="https://dstack.ai/learn/finetuning-llama-2/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../llama-index-weaviate/">
       
       
-        <link rel="next" href="configuration/server/">
+        <link rel="next" href="../text-generation-inference/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.0+insiders-4.46.0">
     
     
       
-        <title>Quickstart - dstack</title>
+        <title>Fine-tuning LLMs with QLoRA - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0ab26e37.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0ab26e37.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -61,17 +61,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Quickstart - dstack" />
+<meta property="og:title" content="Fine-tuning LLMs with QLoRA - dstack" />
 <meta property="og:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/index.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/learn/finetuning-llama-2.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/" />
+<meta property="og:url" content="https://dstack.ai/learn/finetuning-llama-2/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Quickstart - dstack" />
+<meta property="twitter.title" content="Fine-tuning LLMs with QLoRA - dstack" />
 <meta property="twitter:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/index.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/learn/finetuning-llama-2.png" />
 </head>
   
   
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quickstart" class="md-skip">
+        <a href="#fine-tuning-llms-with-qlora" class="md-skip">
           Skip to content
         </a>
       
@@ -152,7 +152,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quickstart
+              Fine-tuning LLMs with QLoRA
             
           </span>
         </div>
@@ -268,7 +268,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -283,21 +283,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../docs/" class="md-tabs__link">
           
   
   Docs
@@ -314,11 +310,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../learn/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Learn
@@ -334,7 +332,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../pricing/" class="md-tabs__link">
+      <a href="../../pricing/" class="md-tabs__link">
         
   
     
@@ -353,7 +351,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../blog/" class="md-tabs__link">
+        <a href="../../blog/" class="md-tabs__link">
           
   
   Blog
@@ -422,7 +420,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -449,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -472,8 +470,6 @@
       
   
   
-    
-  
   
   
     
@@ -484,12 +480,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -509,7 +505,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -524,8 +520,6 @@
                 
   
   
-    
-  
   
   
     
@@ -536,12 +530,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
@@ -561,7 +555,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -576,36 +570,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    Quickstart
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,129 +588,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Installation
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-the-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Install the server
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-the-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Configure the server
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-the-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Start the server
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Using the CLI
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using the CLI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Define a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Run configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -802,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="configuration/server/" class="md-nav__link">
+      <a href="../../docs/configuration/server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/dev-environments/" class="md-nav__link">
+      <a href="../../docs/guides/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -922,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/tasks/" class="md-nav__link">
+      <a href="../../docs/guides/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -949,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/services/" class="md-nav__link">
+      <a href="../../docs/guides/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1034,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/cli/" class="md-nav__link">
+      <a href="../../docs/reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1061,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/python/" class="md-nav__link">
+      <a href="../../docs/reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1135,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/dstack.yml/dev-environment/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1162,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/dstack.yml/task/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1189,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/dstack.yml/service/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1224,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/server/config.yml/" class="md-nav__link">
+      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1251,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/profiles.yml/" class="md-nav__link">
+      <a href="../../docs/reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1290,8 +1135,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1300,12 +1147,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -1325,7 +1172,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1343,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1367,8 +1214,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1377,12 +1226,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
@@ -1402,7 +1251,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1420,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn/llama-index-weaviate/" class="md-nav__link">
+      <a href="../llama-index-weaviate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1444,10 +1293,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../learn/finetuning-llama-2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Fine-tuning LLMs with QLoRA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1462,6 +1337,149 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-a-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Prepare a dataset
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-training-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the training script
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Define the training script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-base-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Load the base model
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-trainer-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Create a trainer instance
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-the-fine-tined-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Publish the fine-tined model
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Put it all together
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Run the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1474,7 +1492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn/text-generation-inference/" class="md-nav__link">
+      <a href="../text-generation-inference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1501,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn/stable-diffusion-xl/" class="md-nav__link">
+      <a href="../stable-diffusion-xl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1528,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learn/vllm/" class="md-nav__link">
+      <a href="../vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1570,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pricing/" class="md-nav__link">
+      <a href="../../pricing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1648,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/" class="md-nav__link">
+      <a href="../../blog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1729,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/archive/2023/" class="md-nav__link">
+      <a href="../../blog/archive/2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1818,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/releases/" class="md-nav__link">
+      <a href="../../blog/category/releases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1934,25 +1952,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#prepare-a-dataset" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Installation
+          Prepare a dataset
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-training-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the training script
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Define the training script">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-the-server" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Install the server
+          Requirements
         </span>
       
     </span>
@@ -1961,11 +1992,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configure-the-server" class="md-nav__link">
+  <a href="#load-the-base-model" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configure the server
+          Load the base model
         </span>
       
     </span>
@@ -1974,11 +2005,37 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#start-the-server" class="md-nav__link">
+  <a href="#create-a-trainer-instance" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Start the server
+          Create a trainer instance
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-the-fine-tined-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Publish the fine-tined model
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Put it all together
         </span>
       
     </span>
@@ -1992,47 +2049,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-cli" class="md-nav__link">
+  <a href="#define-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Using the CLI
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using the CLI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Define a configuration
+          Define the configuration
         </span>
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#run-configuration" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#run-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Run configuration
+          Run the configuration
         </span>
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2052,7 +2090,7 @@
                   
 
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/learn/finetuning-llama-2.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -2060,147 +2098,240 @@
   
 
 
-<h1 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h1>
-<p><code>dstack</code> is an open-source platform that simplifies 
-training, fine-tuning, and deploying generative AI models, leveraging the open-source 
-ecosystem.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>To use <code>dstack</code>, either set up the open-source server (and configure your own cloud accounts)
-or use the cloud version (which provides GPU out of the box).</p>
-<details class="info">
-<summary>Open-source</summary>
-<p>If you wish to use <code>dstack</code> with your own cloud accounts, you can do it 
-by using the open-source server.</p>
-<h3 id="install-the-server">Install the server<a class="headerlink" href="#install-the-server" title="Permanent link">&para;</a></h3>
-<p>The easiest way to install the server, is via <code>pip</code>:</p>
-<div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]&quot;</span><span class="w"> </span>-U
-</code></pre></div>
+<h1 id="fine-tuning-llms-with-qlora">Fine-tuning LLMs with QLoRA<a class="headerlink" href="#fine-tuning-llms-with-qlora" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">NOTE:</p>
+<p>This example demonstrates how to fine-tune <a href="https://huggingface.co/meta-llama/Llama-2-7b-chat-hf"><code>llama-2-7b-chat-hf</code></a>,
+with QLoRA and your own script, using <a href="../../docs/guides/tasks/">Tasks</a>.</p>
+<p>If you'd like to fine-tune an LLM via a simple API,
+consider using the <a href="../../docs/guides/text-generation/">Fine-tuning</a> API. It's a lot simpler and 
+doesn't need your own script.</p>
 </div>
-<blockquote>
-<p>Another way to install the server is through <a href="https://hub.docker.com/r/dstackai/dstack">Docker</a>.</p>
-</blockquote>
-<h3 id="configure-the-server">Configure the server<a class="headerlink" href="#configure-the-server" title="Permanent link">&para;</a></h3>
-<p>If you have default AWS, GCP, or Azure credentials on your machine, the <code>dstack</code> server will pick them up automatically.</p>
-<p>Otherwise, you need to manually specify the cloud credentials in <code>~/.dstack/server/config.yml</code>.
-For further details, refer to <a href="configuration/server/">server configuration</a>.</p>
-<h3 id="start-the-server">Start the server<a class="headerlink" href="#start-the-server" title="Permanent link">&para;</a></h3>
-<p>To start the server, use the <code>dstack server</code> command:</p>
-<div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>server
+<h2 id="prepare-a-dataset">Prepare a dataset<a class="headerlink" href="#prepare-a-dataset" title="Permanent link">&para;</a></h2>
+<p>When selecting a dataset, make sure that it is pre-processed to match the prompt format of Llama 2:</p>
+<div class="highlight"><pre><span></span><code>&lt;s&gt;[INST] &lt;&lt;SYS&gt;&gt;
+System prompt
+&lt;&lt;/SYS&gt;&gt;
 
-Applying<span class="w"> </span>configuration...
----&gt;<span class="w"> </span><span class="m">100</span>%
+User prompt [/INST] Model answer &lt;/s&gt;
+</code></pre></div>
+<p>In our example, we'll use the <a href="https://huggingface.co/datasets/mlabonne/guanaco-llama2-1k"><code>mlabonne/guanaco-llama2-1k</code></a>
+dataset. It is a 1K sample from
+the <a href="https://huggingface.co/datasets/timdettmers/openassistant-guanaco"><code>timdettmers/openassistant-guanaco</code></a> dataset
+converted to Llama 2's format.</p>
+<h2 id="define-the-training-script">Define the training script<a class="headerlink" href="#define-the-training-script" title="Permanent link">&para;</a></h2>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<p>The most notable libraries that we'll use are <a href="https://github.com/huggingface/peft"><code>peft</code></a> (required for using the QLoRA
+technique), <a href="https://github.com/TimDettmers/bitsandbytes"><code>bitsandbytes</code></a> (required for using
+the quantization technique), and <a href="https://github.com/lvwerra/trl"><code>trl</code></a> (required for supervised fine-tuning).</p>
+<div editor-title="llama-2/requirements.txt">
 
-The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/.
-The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </span>is<span class="w"> </span>bbae0f28-d3dd-4820-bf61-8f4bb40815da
+<div class="highlight"><pre><span></span><code>accelerate==0.21.0
+peft==0.4.0
+bitsandbytes==0.40.2
+transformers==4.31.0
+trl==0.4.7
+scipy
+tensorboard
+sentencepiece
+hf-transfer
 </code></pre></div>
-</div>
-<h4 id="client-configuration">Client configuration<a class="headerlink" href="#client-configuration" title="Permanent link">&para;</a></h4>
-<p>At startup, the server automatically configures CLI and API with the server address, user token, and 
-the default project name (<code>main</code>). </p>
-<p>To use CLI and API on different machines or projects,
-use <a href="reference/cli/#dstack-config"><code>dstack config</code></a>.</p>
-<div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>config<span class="w"> </span>--server<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>your<span class="w"> </span>server<span class="w"> </span>adddress<span class="p">&amp;</span>gt<span class="p">;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--project<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>your<span class="w"> </span>project<span class="w"> </span>name<span class="p">&amp;</span>gt<span class="p">;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--token<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>your<span class="w"> </span>user<span class="w"> </span>token<span class="p">&amp;</span>gt<span class="p">;</span>
-</code></pre></div>
-</div>
-<p>The client configuration is stored via <code>~/.dstack/config.yml</code>.</p>
-</details>
-<details class="info">
-<summary>dstack Cloud</summary>
-<p>If you want to use the cloud version of <code>dstack</code>, 
-<a href="#" data-tally-open="w7K17R">sign up</a>, and configure the client 
-with server address, user token, and project name using <code>dstack config</code>.</p>
-<div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>config<span class="w"> </span>--server<span class="w"> </span>https://cloud.dstack.ai<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--project<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>your<span class="w"> </span>project<span class="w"> </span>name<span class="p">&amp;</span>gt<span class="p">;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--token<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>your<span class="w"> </span>user<span class="w"> </span>token<span class="p">&amp;</span>gt<span class="p">;</span>
-</code></pre></div>
-</div>
-<p>The client configuration is stored via <code>~/.dstack/config.yml</code>.</p>
-</details>
-<p>Once <code>dstack</code> is set up, you can use CLI or API.</p>
-<h2 id="using-the-cli">Using the CLI<a class="headerlink" href="#using-the-cli" title="Permanent link">&para;</a></h2>
-<p>The CLI allows you to define configurations (what you want to run) as YAML files and run them using the <code>dstack run</code>
-command.</p>
-<h3 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h3>
-<p>First, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>train.dstack.yml</code>
-are both acceptable).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Dev environment</label><label for="__tabbed_1_2">Task</label><label for="__tabbed_1_3">Service</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span><span class="w"> </span><span class="c1"># (Optional) If not specified, your local version is used</span>
-
-<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
-</code></pre></div>
-<p>A dev environments is a perfect tool for interactive experimentation with your IDE.
-It allows to pre-configure the Python version or a Docker image, etc.
-Go to <a href="guides/dev-environments/">Dev environments</a> to learn more.</p>
 </div>
-<div class="tabbed-block">
+
+<h3 id="load-the-base-model">Load the base model<a class="headerlink" href="#load-the-base-model" title="Permanent link">&para;</a></h3>
+<p>In the first part of our script, we prepare the <code>bitsandbytes</code> config and load the base model along
+with its tokenizer, based on the script arguments.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AutoModelForCausalLM</span><span class="p">,</span>
+    <span class="n">AutoTokenizer</span><span class="p">,</span>
+    <span class="n">BitsAndBytesConfig</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">create_and_prepare_model</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">bnb_config</span> <span class="o">=</span> <span class="n">BitsAndBytesConfig</span><span class="p">(</span>
+        <span class="n">load_in_4bit</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">use_4bit</span><span class="p">,</span>
+        <span class="n">bnb_4bit_quant_type</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">bnb_4bit_quant_type</span><span class="p">,</span>
+        <span class="n">bnb_4bit_compute_dtype</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">bnb_4bit_compute_dtype</span><span class="p">,</span>
+        <span class="n">bnb_4bit_use_double_quant</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">use_nested_quant</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">model_name</span><span class="p">,</span>
+        <span class="n">quantization_config</span><span class="o">=</span><span class="n">bnb_config</span><span class="p">,</span>
+        <span class="n">device_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">use_cache</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">pretraining_tp</span>
+
+    <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">model_name</span><span class="p">,</span> <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">tokenizer</span><span class="o">.</span><span class="n">pad_token</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">eos_token</span>
+    <span class="n">tokenizer</span><span class="o">.</span><span class="n">padding_side</span> <span class="o">=</span> <span class="s2">&quot;right&quot;</span>
+
+    <span class="k">return</span> <span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span>
+</code></pre></div>
+<h3 id="create-a-trainer-instance">Create a trainer instance<a class="headerlink" href="#create-a-trainer-instance" title="Permanent link">&para;</a></h3>
+<p>In the second part of our script, we prepare the <code>peft</code> config and create the trainer based on the script arguments.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">peft</span> <span class="kn">import</span> <span class="n">LoraConfig</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">TrainingArguments</span>
+<span class="kn">from</span> <span class="nn">trl</span> <span class="kn">import</span> <span class="n">SFTTrainer</span>
+
+<span class="k">def</span> <span class="nf">create_and_prepare_trainer</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+    <span class="n">training_arguments</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span>
+        <span class="n">output_dir</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">output_dir</span><span class="p">,</span>
+        <span class="n">num_train_epochs</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num_train_epochs</span><span class="p">,</span>
+        <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">per_device_train_batch_size</span><span class="p">,</span>
+        <span class="n">gradient_accumulation_steps</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">gradient_accumulation_steps</span><span class="p">,</span>
+        <span class="n">optim</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">optim</span><span class="p">,</span>
+        <span class="n">save_steps</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">save_steps</span><span class="p">,</span>
+        <span class="n">logging_steps</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">logging_steps</span><span class="p">,</span>
+        <span class="n">learning_rate</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">learning_rate</span><span class="p">,</span>
+        <span class="n">weight_decay</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">weight_decay</span><span class="p">,</span>
+        <span class="n">fp16</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">fp16</span><span class="p">,</span>
+        <span class="n">bf16</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">bf16</span><span class="p">,</span>
+        <span class="n">max_grad_norm</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">max_grad_norm</span><span class="p">,</span>
+        <span class="n">max_steps</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">max_steps</span><span class="p">,</span>
+        <span class="n">warmup_ratio</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">warmup_ratio</span><span class="p">,</span>
+        <span class="n">group_by_length</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">group_by_length</span><span class="p">,</span>
+        <span class="n">lr_scheduler_type</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">lr_scheduler_type</span><span class="p">,</span>
+        <span class="n">report_to</span><span class="o">=</span><span class="s2">&quot;tensorboard&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">peft_config</span> <span class="o">=</span> <span class="n">LoraConfig</span><span class="p">(</span>
+        <span class="n">lora_alpha</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">lora_alpha</span><span class="p">,</span>
+        <span class="n">lora_dropout</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">lora_dropout</span><span class="p">,</span>
+        <span class="n">r</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">lora_r</span><span class="p">,</span>
+        <span class="n">bias</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+        <span class="n">task_type</span><span class="o">=</span><span class="s2">&quot;CAUSAL_LM&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">trainer</span> <span class="o">=</span> <span class="n">SFTTrainer</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+        <span class="n">train_dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">peft_config</span><span class="o">=</span><span class="n">peft_config</span><span class="p">,</span>
+        <span class="n">dataset_text_field</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+        <span class="n">max_seq_length</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">max_seq_length</span><span class="p">,</span>
+        <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">=</span><span class="n">training_arguments</span><span class="p">,</span>
+        <span class="n">packing</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">packing</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">trainer</span>
+</code></pre></div>
+<h3 id="publish-the-fine-tined-model">Publish the fine-tined model<a class="headerlink" href="#publish-the-fine-tined-model" title="Permanent link">&para;</a></h3>
+<p>In the third part of the script, we merge the base model with the fine-tuned model and push it to the Hugging Face Hub.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">peft</span> <span class="kn">import</span> <span class="n">PeftModel</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AutoModelForCausalLM</span><span class="p">,</span>
+    <span class="n">AutoTokenizer</span>
+<span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">merge_and_push</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1"># Reload model in FP16 and merge it with LoRA weights</span>
+    <span class="n">base_model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">model_name</span><span class="p">,</span>
+        <span class="n">low_cpu_mem_usage</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">return_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
+        <span class="n">device_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">PeftModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">base_model</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">new_model_name</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">merge_and_unload</span><span class="p">()</span>
+
+    <span class="c1"># Reload the new tokenizer</span>
+    <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">model_name</span><span class="p">,</span> <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">tokenizer</span><span class="o">.</span><span class="n">pad_token</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">eos_token</span>
+    <span class="n">tokenizer</span><span class="o">.</span><span class="n">padding_side</span> <span class="o">=</span> <span class="s2">&quot;right&quot;</span>
+
+    <span class="c1"># Publish the new model to Hugging Face Hub</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">push_to_hub</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">new_model_name</span><span class="p">,</span> <span class="n">use_temp_dir</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">tokenizer</span><span class="o">.</span><span class="n">push_to_hub</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">new_model_name</span><span class="p">,</span> <span class="n">use_temp_dir</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="put-it-all-together">Put it all together<a class="headerlink" href="#put-it-all-together" title="Permanent link">&para;</a></h3>
+<p>Finally, in the main part of the script, we put it all together.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">HfArgumentParser</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">ScriptArguments</span><span class="p">:</span>
+    <span class="c1"># ...</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">HfArgumentParser</span><span class="p">(</span><span class="n">ScriptArguments</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args_into_dataclasses</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
+
+    <span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">create_and_prepare_model</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">trainer</span> <span class="o">=</span> <span class="n">create_and_prepare_trainer</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+
+    <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+    <span class="n">trainer</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">new_model_name</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">merge_and_push</span><span class="p">:</span>
+        <span class="n">merge_and_push</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="define-the-configuration">Define the configuration<a class="headerlink" href="#define-the-configuration" title="Permanent link">&para;</a></h2>
+<p>Here's the configuration that runs the training task via <code>dstack</code>:</p>
+<div editor-title="llama-2/train.dstack.yml"> 
+
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 
-<span class="nt">ports</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7860</span>
-
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span><span class="w"> </span><span class="c1"># (Optional) If not specified, your local version is used.</span>
-
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gradio app.py</span>
-</code></pre></div>
-<p>A task may run training scripts, batch jobs, or web apps. It allows to specify the commands, ports, 
-and pre-configure the Python version or a Docker image, etc. Go to <a href="guides/tasks/">Tasks</a> to learn more.</p>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
-
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
+<span class="c1"># (Optional) When not specified, your local Python version is used</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
 
 <span class="nt">env</span><span class="p">:</span><span class="w"> </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=TheBloke/Llama-2-13B-chat-GPTQ</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
+<span class="w">  </span><span class="c1"># (Required) Specify your Hugging Face token to publish the fine-tuned model</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN=</span>
 
-<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="nt">ports</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6006</span>
 
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --hostname 0.0.0.0 --port 80 --trust-remote-code</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Installing requirements...&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip -q install -r llama-2/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tensorboard --logdir results/runs &amp;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python llama-2/train.py --merge_and_push ${{ run.args }}</span>
 </code></pre></div>
-<p>A service makes it very easy to deploy models or web apps. It allows to specify the commands, 
-and the Python version or a Docker image, etc. Go to <a href="guides/services/">Services</a> to learn more.</p>
+
 </div>
-</div>
-</div>
-<h3 id="run-configuration">Run configuration<a class="headerlink" href="#run-configuration" title="Permanent link">&para;</a></h3>
-<p>To run a configuration, use the <code>dstack run</code> command followed by the working directory path, 
-configuration file path, and any other options (e.g., for requesting hardware resources).</p>
+
+<h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
+<p>Here's how you run it with <code>dstack</code>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span>A100
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>llama-2/train.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span>16GB<span class="w"> </span>--num_train_epochs<span class="w"> </span><span class="m">10</span>
 
-<span class="w"> </span>BACKEND<span class="w">     </span>REGION<span class="w">         </span>RESOURCES<span class="w">                     </span>SPOT<span class="w">  </span>PRICE
-<span class="w"> </span>tensordock<span class="w">  </span>unitedkingdom<span class="w">  </span>10xCPU,<span class="w"> </span>80GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">   </span>no<span class="w">    </span><span class="nv">$1</span>.595
-<span class="w"> </span>azure<span class="w">       </span>westus3<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
-<span class="w"> </span>azure<span class="w">       </span>westus2<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
-
-Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
-
-Provisioning...
----&gt;<span class="w"> </span><span class="m">100</span>%
-
-Epoch<span class="w"> </span><span class="m">0</span>:<span class="w">  </span><span class="m">100</span>%<span class="w"> </span><span class="m">1719</span>/1719<span class="w"> </span><span class="o">[</span><span class="m">00</span>:18&lt;<span class="m">00</span>:00,<span class="w"> </span><span class="m">92</span>.32it/s,<span class="w"> </span><span class="nv">loss</span><span class="o">=</span><span class="m">0</span>.0981,<span class="w"> </span><span class="nv">acc</span><span class="o">=</span><span class="m">0</span>.969<span class="o">]</span>
-Epoch<span class="w"> </span><span class="m">1</span>:<span class="w">  </span><span class="m">100</span>%<span class="w"> </span><span class="m">1719</span>/1719<span class="w"> </span><span class="o">[</span><span class="m">00</span>:18&lt;<span class="m">00</span>:00,<span class="w"> </span><span class="m">92</span>.32it/s,<span class="w"> </span><span class="nv">loss</span><span class="o">=</span><span class="m">0</span>.0981,<span class="w"> </span><span class="nv">acc</span><span class="o">=</span><span class="m">0</span>.969<span class="o">]</span>
-Epoch<span class="w"> </span><span class="m">2</span>:<span class="w">  </span><span class="m">100</span>%<span class="w"> </span><span class="m">1719</span>/1719<span class="w"> </span><span class="o">[</span><span class="m">00</span>:18&lt;<span class="m">00</span>:00,<span class="w"> </span><span class="m">92</span>.32it/s,<span class="w"> </span><span class="nv">loss</span><span class="o">=</span><span class="m">0</span>.0981,<span class="w"> </span><span class="nv">acc</span><span class="o">=</span><span class="m">0</span>.969<span class="o">]</span>
+Installing<span class="w"> </span>requirements...
+TensorBoard<span class="w"> </span><span class="m">2</span>.14.0<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:6006/<span class="w"> </span><span class="o">(</span>Press<span class="w"> </span>CTRL+C<span class="w"> </span>to<span class="w"> </span>quit<span class="o">)</span>
+<span class="o">{</span><span class="s1">&#39;loss&#39;</span>:<span class="w"> </span><span class="m">1</span>.3491,<span class="w"> </span><span class="s1">&#39;learning_rate&#39;</span>:<span class="w"> </span><span class="m">0</span>.0002,<span class="w"> </span><span class="s1">&#39;epoch&#39;</span>:<span class="w"> </span><span class="m">0</span>.1<span class="o">}</span>
+<span class="o">{</span><span class="s1">&#39;loss&#39;</span>:<span class="w"> </span><span class="m">1</span>.6299,<span class="w"> </span><span class="s1">&#39;learning_rate&#39;</span>:<span class="w"> </span><span class="m">0</span>.0002,<span class="w"> </span><span class="s1">&#39;epoch&#39;</span>:<span class="w"> </span><span class="m">0</span>.2<span class="o">}</span>
+<span class="o">{</span><span class="s1">&#39;loss&#39;</span>:<span class="w"> </span><span class="m">1</span>.2071,<span class="w"> </span><span class="s1">&#39;learning_rate&#39;</span>:<span class="w"> </span><span class="m">0</span>.0002,<span class="w"> </span><span class="s1">&#39;epoch&#39;</span>:<span class="w"> </span><span class="m">0</span>.3<span class="o">}</span>
 </code></pre></div>
 
 </div>
 
-<p>No need to worry about copying code, setting up environment, IDE, etc. <code>dstack</code> handles it all 
-automatically.</p>
+<p><code>dstack</code> will provision the cloud instance corresponding to the configured project and profile, run the training, and
+tear down the cloud instance once the training is complete.</p>
+<details class="info">
+<summary>Tensorboard</summary>
+<p>Since we've executed <code>tensorboard</code> within our task and configured its port using <code>ports</code>,
+you can access it using the URL provided in the output. <code>dstack</code> automatically forwards
+the configured port to your local machine.</p>
+<p><img alt="" src="../images/finetuning-llama-2/tensorboard.png" /></p>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Source code</p>
+<p>The complete and ready-to-run code for the example is available in our <a href="https://github.com/dstackai/dstack-examples">GitHub repo</a>.</p>
+</div>
 
 
 
@@ -2238,7 +2369,7 @@ automatically.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../llama-index-weaviate/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RAG with Llama Index and Weaviate">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2248,20 +2379,20 @@ automatically.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                RAG with Llama Index and Weaviate
               </div>
             </div>
           </a>
         
         
           
-          <a href="configuration/server/" class="md-footer__link md-footer__link--next" aria-label="Next: Server configuration">
+          <a href="../text-generation-inference/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying LLMs with TGI">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Server configuration
+                Deploying LLMs with TGI
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2331,17 +2462,17 @@ automatically.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../assets/javascripts/bundle.8e8db93a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8e8db93a.min.js"></script>
       
-        <script src="../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 
