@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem.">
+        <meta name="description" content="dstack simplifies training, fine-tuning, and deployment of generative AI models on any cloud, while leveraging the open-source ecosystem.">
       
       
         <meta name="author" content="dstack GmbH">
@@ -18,14 +18,14 @@
         <link rel="prev" href="../docs/reference/profiles.yml/">
       
       
-        <link rel="next" href="llama-index-weaviate/">
+        <link rel="next" href="spot/">
       
       
         
       
       
       <link rel="icon" href="../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.0+insiders-4.46.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1+insiders-4.47.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0ab26e37.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.08b157ab.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -90,7 +90,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Learning center - dstack" />
-<meta property="og:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
+<meta property="og:description" content="dstack simplifies training, fine-tuning, and deployment of generative AI models on any cloud, while leveraging the open-source ecosystem." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/learn/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -98,7 +98,7 @@
 <meta property="og:url" content="https://dstack.ai/learn/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Learning center - dstack" />
-<meta property="twitter:description" content="dstack simplifies training, fine-tuning, and deploying generative AI models, leveraging the open-source ecosystem." />
+<meta property="twitter:description" content="dstack simplifies training, fine-tuning, and deployment of generative AI models on any cloud, while leveraging the open-source ecosystem." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/learn/index.png" />
 </head>
   
@@ -613,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/configuration/server/" class="md-nav__link">
+      <a href="../docs/config/server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1212,7 +1212,7 @@
   <span class="md-ellipsis">
     
   
-    Examples
+    Guides
   
 
     
@@ -1225,6 +1225,91 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Leveraging spot instances effectively
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1241,13 +1326,13 @@
   
   
     <li class="md-nav__item">
-      <a href="llama-index-weaviate/" class="md-nav__link">
+      <a href="llama-index/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    RAG with Llama Index and Weaviate
+    Building RAG with Llama Index
   
 
     
@@ -1268,7 +1353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="finetuning-llama-2/" class="md-nav__link">
+      <a href="qlora/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1295,7 +1380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="text-generation-inference/" class="md-nav__link">
+      <a href="tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1322,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stable-diffusion-xl/" class="md-nav__link">
+      <a href="sdxl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1767,9 +1852,25 @@
             </div>
 
             <div class="tx-landing__highlights_grid">
-                <a href="/learn/llama-index-weaviate" class="feature-cell">
+                <a href="/learn/spot" class="feature-cell">
                     <h3>
-                        RAG with Llama Index and Weaviate
+                        Leveraging spot instances effectively
+                    </h3>
+
+                    <p>
+                        Use spot instances with <strong>AWS</strong>, <strong>GCP</strong>, and
+                        <strong>Azure</strong> to significantly reduce the cost of cloud GPU.
+                    </p>
+
+                    <div class="feature-tags">
+                        <div class="feature-tag">Guide</div>
+                        <div class="feature-tag">GPU</div>
+                    </div>
+                </a>
+
+                <a href="/learn/llama-index" class="feature-cell">
+                    <h3>
+                        Building RAG with Llama Index
                     </h3>
 
                     <p>
@@ -1778,12 +1879,12 @@
                     </p>
 
                     <div class="feature-tags">
-                        <div class="feature-tag">Examples</div>
+                        <div class="feature-tag">Example</div>
                         <div class="feature-tag">RAG</div>
                     </div>
                 </a>
 
-                <a href="/learn/finetuning-llama-2" class="feature-cell">
+                <a href="/learn/qlora" class="feature-cell">
                     <h3>
                         Fine-tuning LLMs with QLoRA
                     </h3>
@@ -1794,12 +1895,13 @@
                     </p>
 
                     <div class="feature-tags">
-                        <div class="feature-tag">Examples</div>
+                        <div class="feature-tag">Example</div>
                         <div class="feature-tag">Fine-tuning</div>
+                        <div class="feature-tag">LLMs</div>
                     </div>
                 </a>
 
-                <a href="/learn/text-generation-inference" class="feature-cell">
+                <a href="/learn/tgi" class="feature-cell">
                     <h3>
                         Deploying LLMs with TGI
                     </h3>
@@ -1810,12 +1912,13 @@
                     </p>
 
                     <div class="feature-tags">
-                        <div class="feature-tag">Examples</div>
-                        <div class="feature-tag">Deployment</div>
+                        <div class="feature-tag">Example</div>
+                        <div class="feature-tag">Inference</div>
+                        <div class="feature-tag">LLMs</div>
                     </div>
                 </a>
 
-                <a href="/learn/stable-diffusion-xl" class="feature-cell">
+                <a href="/learn/sdxl" class="feature-cell">
                     <h3>
                         Deploying SDXL with FastAPI
                     </h3>
@@ -1828,8 +1931,9 @@
                     </p>
 
                     <div class="feature-tags">
-                        <div class="feature-tag">Examples</div>
-                        <div class="feature-tag">Deployment</div>
+                        <div class="feature-tag">Example</div>
+                        <div class="feature-tag">Inference</div>
+                        <div class="feature-tag">Image generation</div>
                     </div>
                 </a>
 
@@ -1846,8 +1950,9 @@
                     </p>
 
                     <div class="feature-tags">
-                        <div class="feature-tag">Examples</div>
-                        <div class="feature-tag">Deployment</div>
+                        <div class="feature-tag">Example</div>
+                        <div class="feature-tag">Inference</div>
+                        <div class="feature-tag">LLMs</div>
                     </div>
                 </a>
             </div>
