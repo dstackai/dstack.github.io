@@ -6,35 +6,37 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="With dstack 0.12.3, you can now develop, train and deploy gen AI models using affordable cloud GPUs.">
+        <meta name="description" content="dstack simplifies training, fine-tuning, and deployment of generative AI models on any cloud, while leveraging the open-source ecosystem.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/blog/2023/11/21/vastai/">
+        <link rel="canonical" href="https://dstack.ai/learn/mixtral/">
       
       
-        <link rel="prev" href="../../../10/31/tensordock/">
+        <link rel="prev" href="../sdxl/">
       
+      
+        <link rel="next" href="../spot/">
       
       
         
       
       
-      <link rel="icon" href="../../../../../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2+insiders-4.47.1">
     
     
       
-        <title>Accessing the GPU marketplace with Vast.ai and dstack - dstack</title>
+        <title>Mixtral - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.78d85e4f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.78d85e4f.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,17 +61,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -87,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Accessing the GPU marketplace with Vast.ai and dstack - dstack" />
-<meta property="og:description" content="With dstack 0.12.3, you can now develop, train and deploy gen AI models using affordable cloud GPUs." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/blog/2023/11/21/vastai.png" />
+<meta property="og:title" content="Mixtral - dstack" />
+<meta property="og:description" content="dstack simplifies training, fine-tuning, and deployment of generative AI models on any cloud, while leveraging the open-source ecosystem." />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/learn/mixtral.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/blog/2023/11/21/vastai/" />
+<meta property="og:url" content="https://dstack.ai/learn/mixtral/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Accessing the GPU marketplace with Vast.ai and dstack - dstack" />
-<meta property="twitter:description" content="With dstack 0.12.3, you can now develop, train and deploy gen AI models using affordable cloud GPUs." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/blog/2023/11/21/vastai.png" />
+<meta property="twitter.title" content="Mixtral - dstack" />
+<meta property="twitter:description" content="dstack simplifies training, fine-tuning, and deployment of generative AI models on any cloud, while leveraging the open-source ecosystem." />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/learn/mixtral.png" />
 </head>
   
   
@@ -117,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#accessing-the-gpu-marketplace-with-vastai-and-dstack" class="md-skip">
+        <a href="#mixtral" class="md-skip">
           Skip to content
         </a>
       
@@ -150,7 +152,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -167,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Accessing the GPU marketplace with Vast.ai and dstack
+              Mixtral
             
           </span>
         </div>
@@ -266,7 +268,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -291,7 +293,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../docs/" class="md-tabs__link">
+        <a href="../../docs/" class="md-tabs__link">
           
   
   Docs
@@ -308,11 +310,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../../learn/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Learn
@@ -328,7 +332,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../pricing/" class="md-tabs__link">
+      <a href="../../pricing/" class="md-tabs__link">
         
   
     
@@ -343,13 +347,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
           
   
   Blog
@@ -405,9 +407,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -420,7 +420,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -447,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/config/server/" class="md-nav__link">
+      <a href="../../docs/config/server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -748,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/guides/dev-environments/" class="md-nav__link">
+      <a href="../../docs/guides/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -775,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/guides/tasks/" class="md-nav__link">
+      <a href="../../docs/guides/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -802,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/guides/services/" class="md-nav__link">
+      <a href="../../docs/guides/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -889,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/reference/cli/" class="md-nav__link">
+      <a href="../../docs/reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -916,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/reference/api/python/" class="md-nav__link">
+      <a href="../../docs/reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -943,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/reference/dstack.yml/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -970,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/reference/server/config.yml/" class="md-nav__link">
+      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -997,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../docs/reference/profiles.yml/" class="md-nav__link">
+      <a href="../../docs/reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1036,8 +1036,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1046,14 +1048,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -1073,7 +1073,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1091,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../learn/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1170,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../learn/llama-index/" class="md-nav__link">
+      <a href="../llama-index/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1257,7 +1257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../learn/qlora/" class="md-nav__link">
+      <a href="../qlora/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1344,7 +1344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../learn/vllm/" class="md-nav__link">
+      <a href="../vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1371,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../learn/tgi/" class="md-nav__link">
+      <a href="../tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1398,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../learn/tei/" class="md-nav__link">
+      <a href="../tei/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1425,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../learn/sdxl/" class="md-nav__link">
+      <a href="../sdxl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1457,8 +1457,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1467,14 +1469,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
@@ -1494,7 +1494,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1509,10 +1509,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../../learn/mixtral/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Mixtral
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1527,6 +1553,78 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Run the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1599,7 +1697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../learn/spot/" class="md-nav__link">
+      <a href="../spot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1641,7 +1739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../pricing/" class="md-nav__link">
+      <a href="../../pricing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1664,8 +1762,6 @@
       
   
   
-    
-  
   
   
     
@@ -1676,12 +1772,14 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1701,7 +1799,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1716,14 +1814,12 @@
                 
   
   
-    
-  
   
     
   
   
-    <li class="md-nav__item md-nav__item--active">
-      <a href="../../../../" class="md-nav__link">
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1806,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2023/" class="md-nav__link">
+      <a href="../../blog/archive/2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1897,7 +1993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/releases/" class="md-nav__link">
+      <a href="../../blog/category/releases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1994,8 +2090,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2008,6 +2102,66 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Run the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2015,78 +2169,14 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-                  <span class="md-ellipsis">
-                    Back to index
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    Metadata
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-21 00:00:00" class="md-ellipsis">November 21, 2023</time>
-                      </div>
-                    </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
-                          <span class="md-ellipsis">
-                            in
-                            
-                              <a href="../../../../category/releases/">Releases</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              2 min read
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-            
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
+<div class="md-content" data-md-component="content">
+  
+  <article class="md-content__inner md-typeset">
+    
       
-        
 
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/blog/posts/vastai.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/learn/mixtral.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -2094,65 +2184,101 @@
   
 
 
-<h1 id="accessing-the-gpu-marketplace-with-vastai-and-dstack">Accessing the GPU marketplace with Vast.ai and dstack<a class="headerlink" href="#accessing-the-gpu-marketplace-with-vastai-and-dstack" title="Permanent link">&para;</a></h1>
-<p><strong>With dstack 0.12.3, you can now use Vast.ai's GPU marketplace as a cloud provider.</strong></p>
-<p><code>dstack</code> simplifies gen AI model development and deployment through its developer-friendly CLI and API. 
-It eliminates cloud infrastructure hassles while supporting top cloud providers (such as AWS, GCP,
-Azure, among others).</p>
-<p>While <code>dstack</code> streamlines infrastructure challenges, GPU costs can still hinder development. To address this, 
-we've integrated <code>dstack</code> with <a href="https://vast.ai/">Vast.ai</a>, a marketplace providing GPUs from independent hosts at 
-notably lower prices compared to other providers.</p>
-<!-- more -->
+<h1 id="mixtral">Mixtral<a class="headerlink" href="#mixtral" title="Permanent link">&para;</a></h1>
+<p>This example demonstrates how to deploy <code>mistralai/Mixtral-8x7B-Instruct-v0.1</code> 
+with <code>dstack</code>'s <a href="../../docs/guides/services/">services</a> and <a href="https://vllm.ai/">vLLM</a>.</p>
+<h2 id="define-the-configuration">Define the configuration<a class="headerlink" href="#define-the-configuration" title="Permanent link">&para;</a></h2>
+<p>To deploy Mixtral as a service using vLLM, define the following configuration file:</p>
+<div editor-title="llms/mixtral/vllm.dstack.yml"> 
 
-<p>With the <code>dstack</code> 0.12.3 release, it's now possible use Vast.ai alongside other cloud providers.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda install cuda</span><span class="w"> </span><span class="c1"># (required by megablocks)</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install torch</span><span class="w"> </span><span class="c1"># (required by megablocks)</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm megablocks</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -m vllm.entrypoints.openai.api_server</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--model mistralai/Mixtral-8X7B-Instruct-v0.1</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--host 0.0.0.0</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--tensor-parallel-size 2</span><span class="w"> </span><span class="c1"># should match the number of GPUs</span>
+
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+</code></pre></div>
+
+</div>
+
+<h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Prerequisites</p>
+<p>Before running a service, make sure to set up a <a href="../../docs/guides/services/#set-up-a-gateway">gateway</a>.
+However, it's not required when using dstack Cloud, as it's set up automatically.</p>
+</div>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>--gpu<span class="w"> </span>24GB<span class="w"> </span>--backend<span class="w"> </span>vastai<span class="w"> </span>--max-price<span class="w"> </span><span class="m">0</span>.4
-
-<span class="w"> </span><span class="c1">#  REGION            INSTANCE  RESOURCES                       PRICE</span>
-<span class="w"> </span><span class="m">1</span><span class="w">  </span>pl-greaterpoland<span class="w">  </span><span class="m">6244171</span><span class="w">   </span>16xCPU,<span class="w"> </span>32GB,<span class="w"> </span>1xRTX3090<span class="w"> </span><span class="o">(</span>24GB<span class="o">)</span><span class="w">  </span><span class="nv">$0</span>.18478
-<span class="w"> </span><span class="m">2</span><span class="w">  </span>ee-harjumaa<span class="w">       </span><span class="m">6648481</span><span class="w">   </span>16xCPU,<span class="w"> </span>64GB,<span class="w"> </span>1xA5000<span class="w"> </span><span class="o">(</span>24GB<span class="o">)</span><span class="w">    </span><span class="nv">$0</span>.29583
-<span class="w"> </span><span class="m">3</span><span class="w">  </span>pl-greaterpoland<span class="w">  </span><span class="m">6244172</span><span class="w">   </span>32xCPU,<span class="w"> </span>64GB,<span class="w"> </span>2xRTX3090<span class="w"> </span><span class="o">(</span>24GB<span class="o">)</span><span class="w">  </span><span class="nv">$0</span>.36678
-<span class="w">    </span>...
-
-Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>llms/mixtral.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span><span class="s2">&quot;80GB:2&quot;</span><span class="w"> </span>--disk<span class="w"> </span>200GB
 </code></pre></div>
 
 </div>
 
-<p>By default, it suggests GPU instances based on their quality score. If you want to, you can control the maximum price.</p>
-<p>You can use Vast.ai to <a href="../../../../../docs/guides/fine-tuning/">fine-tune</a>, and 
-<a href="../../../../../docs/guides/text-generation/">deploy</a> models or
-launch <a href="../../../../../docs/guides/dev-environments/">dev environments</a> (which are highly convenient for interactive coding with your favorite IDE).</p>
-<p>Configuring Vast.ai for use with <code>dstack</code> is easy. Log into your <a href="https://cloud.vast.ai/">Vast AI</a> account, click <code>Account</code> in the sidebar,
-and copy your API Key.</p>
-<p>Then, go ahead and configure the backend:</p>
-<div editor-title="~/.dstack/server/config.yml">
-
-<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
-<span class="w">  </span><span class="nt">backends</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vastai</span>
-<span class="w">    </span><span class="nt">creds</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api_key</span>
-<span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d75789f22f1908e0527c78a283b523dd73051c8c7d05456516fc91e9d4efd8c5</span>
-</code></pre></div>
-
-</div>
-
-<p>Now you can restart the server and proceed to using <code>dstack</code>'s CLI and API.</p>
-<p>If you want an easy way to 
-develop, train and deploy gen AI models using affordable cloud GPUs, 
-give <code>dstack</code> with Vast.ai a try.</p>
 <div class="admonition info">
-<p class="admonition-title">Feedback and support</p>
-<p>Feel free to ask questions or seek help in our 
-<a href="https://discord.gg/u8SmfwPpMd">Discord server</a>.</p>
+<p class="admonition-title">GPU memory</p>
+<p>To deploy Mixtral in <code>fp16</code>, ensure a minimum of <code>100GB</code> total GPU memory, 
+and adjust the <code>--tensor-parallel-size</code> parameter in the YAML configuration 
+to match the number of GPUs.</p>
 </div>
-<blockquote>
-<p>Lastly, take the time to check out the preview of the new <a href="../../../../../docs/guides/fine-tuning/">fine-tuning</a> and 
-<a href="../../../../../docs/guides/text-generation/">text generation</a> APIs.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Disk size</p>
+<p>To deploy Mixtral, ensure a minimum of <code>200GB</code> of disk size.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Endpoint URL</p>
+<p>Once the service is deployed, its endpoint will be available at 
+<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
+<p>If you wish to customize the run name, you can use the <code>-n</code> argument with the <code>dstack run</code> command.</p>
+</div>
+<p>Once the service is up, you can query it via it's OpenAI compatible endpoint:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--location<span class="w"> </span>https://yellow-cat-1.mydomain.com/v1/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">          &quot;model&quot;: &quot;NousResearch/Llama-2-7b-hf&quot;,</span>
+<span class="s1">          &quot;prompt&quot;: &quot;San Francisco is a&quot;,</span>
+<span class="s1">          &quot;max_tokens&quot;: 7,</span>
+<span class="s1">          &quot;temperature&quot;: 0</span>
+<span class="s1">        }&#39;</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">OpenAI-compatible API</p>
+<p>Since vLLM provides an OpenAI-compatible endpoint, feel free to access it using various OpenAI-compatible tools like
+Chat UI, LangChain, Llama Index, etc. </p>
+</div>
+<details class="info">
+<summary>Hugging Face Hub token</summary>
+<p>To use a model with gated access, ensure configuring the <code>HUGGING_FACE_HUB_TOKEN</code> environment variable 
+(with <a href="../../docs/reference/cli/#dstack-run"><code>--env</code></a> in <code>dstack run</code> or 
+using <a href="../../docs/reference/dstack.yml/#service"><code>env</code></a> in the configuration file).</p>
+<div class="termy">
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>--env<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span><span class="p">&amp;</span>lt<span class="p">;</span>token<span class="p">&amp;</span>gt<span class="p">;</span><span class="w"> </span>-f<span class="w"> </span>llms/mixtral.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span><span class="s2">&quot;80GB:2&quot;</span><span class="w"> </span>--disk<span class="w"> </span>200GB
+</code></pre></div>
+</div></p>
+</details>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples">dstackai/dstack-examples</a>.</p>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Check the <a href="../tgi/">vLLM</a> and <a href="../tgi/">Text Generation Inference</a> examples</li>
+<li>Read about <a href="../../docs/guides/services/">services</a></li>
+<li>See all <a href="../">learning materials</a></li>
+<li>Join the <a href="https://discord.gg/u8SmfwPpMd">Discord server</a></li>
+</ol>
+
+
 
 
 
@@ -2161,20 +2287,13 @@ give <code>dstack</code> with Vast.ai a try.</p>
 
 
   
-  
 
 
 
-  
 
-
-  
-
-
-
-      
-    </article>
-  </div>
+    
+  </article>
+</div>
 
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2192,12 +2311,10 @@ give <code>dstack</code> with Vast.ai a try.</p>
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../10/31/tensordock/" class="md-footer__link md-footer__link--prev" aria-label="Previous: World&#39;s cheapest GPUs with TensorDock and dstack">
+          <a href="../sdxl/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SDXL">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2207,11 +2324,27 @@ give <code>dstack</code> with Vast.ai a try.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                World's cheapest GPUs with TensorDock and dstack
+                SDXL
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../spot/" class="md-footer__link md-footer__link--next" aria-label="Next: Spot instances">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Spot instances
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
@@ -2274,17 +2407,17 @@ give <code>dstack</code> with Vast.ai a try.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../../assets/javascripts/bundle.8e8db93a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8e8db93a.min.js"></script>
       
-        <script src="../../../../../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../../../../../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 
