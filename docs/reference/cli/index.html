@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2+insiders-4.47.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3+insiders-4.48.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.78d85e4f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.67c3bdf0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2346,6 +2346,7 @@
       
 
 
+
 <h1 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h1>
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
 <h3 id="dstack-server">dstack server<a class="headerlink" href="#dstack-server" title="Permanent link">&para;</a></h3>
@@ -2353,8 +2354,8 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>server<span class="w"> </span>--help
-Usage:<span class="w"> </span>dstack<span class="w"> </span>server<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--host<span class="w"> </span>HOST<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="w"> </span>PORT<span class="o">]</span><span class="w"> </span><span class="o">[</span>-l<span class="w"> </span>LOG_LEVEL<span class="o">]</span>
-<span class="w">                     </span><span class="o">[</span>--token<span class="w"> </span>TOKEN<span class="o">]</span>
+Usage:<span class="w"> </span>dstack<span class="w"> </span>server<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--host<span class="w"> </span>HOST<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="w"> </span>PORT<span class="o">]</span><span class="w"> </span><span class="o">[</span>-l<span class="w"> </span>LOG_LEVEL<span class="o">]</span><span class="w"> </span><span class="o">[</span>--default<span class="o">]</span>
+<span class="w">                     </span><span class="o">[</span>--no-default<span class="o">]</span><span class="w"> </span><span class="o">[</span>--token<span class="w"> </span>TOKEN<span class="o">]</span>
 
 Options:
 <span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>Show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
@@ -2362,6 +2363,8 @@ Options:
 <span class="w">  </span>-p,<span class="w"> </span>--port<span class="w"> </span>PORT<span class="w">       </span>Bind<span class="w"> </span>socket<span class="w"> </span>to<span class="w"> </span>this<span class="w"> </span>port.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="m">3000</span>.
 <span class="w">  </span>-l,<span class="w"> </span>--log-level<span class="w"> </span>LOG_LEVEL
 <span class="w">                        </span>Server<span class="w"> </span>logging<span class="w"> </span>level.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span>WARNING.
+<span class="w">  </span>--default<span class="w">             </span>Update<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>project<span class="w"> </span>configuration
+<span class="w">  </span>--no-default<span class="w">          </span>Do<span class="w"> </span>not<span class="w"> </span>update<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>project<span class="w"> </span>configuration
 <span class="w">  </span>--token<span class="w"> </span>TOKEN<span class="w">         </span>The<span class="w"> </span>admin<span class="w"> </span>user<span class="w"> </span>token
 </code></pre></div>
 
@@ -2543,7 +2546,7 @@ Options:
 <span class="w">  </span>--default<span class="w">          </span>Set<span class="w"> </span>the<span class="w"> </span>project<span class="w"> </span>as<span class="w"> </span>default.<span class="w"> </span>It<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span>when
 <span class="w">                     </span>--project<span class="w"> </span>is<span class="w"> </span>omitted<span class="w"> </span><span class="k">in</span><span class="w"> </span>commands.
 <span class="w">  </span>--remove<span class="w">           </span>Delete<span class="w"> </span>project<span class="w"> </span>configuration
-<span class="w">  </span>--no-default<span class="w">       </span>Do<span class="w"> </span>not<span class="w"> </span>prompt<span class="w"> </span>to<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>project<span class="w"> </span>as<span class="w"> </span>default.
+<span class="w">  </span>--no-default<span class="w">       </span>Do<span class="w"> </span>not<span class="w"> </span>prompt<span class="w"> </span>to<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>project<span class="w"> </span>as<span class="w"> </span>default
 </code></pre></div>
 
 </div>
