@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3+insiders-4.49.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3+insiders-4.49.2">
     
     
       
@@ -961,10 +961,38 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dstack.api.Client.__init__" class="md-nav__link">
+  <a href="#dstack.api.Client.from_config" class="md-nav__link">
     <span class="md-ellipsis">
       
-        __init__()
+        from_config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.Client.runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RunCollection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RunCollection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.RunCollection.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get
       
     </span>
   </a>
@@ -972,10 +1000,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.Client.from_config" class="md-nav__link">
+  <a href="#dstack.api.RunCollection.list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        from_config()
+        list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.RunCollection.submit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        submit
       
     </span>
   </a>
@@ -1025,7 +1064,7 @@
   <a href="#dstack.api.Run.attach" class="md-nav__link">
     <span class="md-ellipsis">
       
-        attach()
+        attach
       
     </span>
   </a>
@@ -1036,7 +1075,7 @@
   <a href="#dstack.api.Run.detach" class="md-nav__link">
     <span class="md-ellipsis">
       
-        detach()
+        detach
       
     </span>
   </a>
@@ -1047,7 +1086,7 @@
   <a href="#dstack.api.Run.logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        logs()
+        logs
       
     </span>
   </a>
@@ -1058,7 +1097,7 @@
   <a href="#dstack.api.Run.refresh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        refresh()
+        refresh
       
     </span>
   </a>
@@ -1069,7 +1108,7 @@
   <a href="#dstack.api.Run.stop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        stop()
+        stop
       
     </span>
   </a>
@@ -1082,66 +1121,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.Client.runs" class="md-nav__link">
+  <a href="##dstack.api.LocalRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        runs
+        LocalRepo
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="runs">
+    <nav class="md-nav" aria-label="LocalRepo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.exec_plan" class="md-nav__link">
+  <a href="#dstack.api.LocalRepo.from_path" class="md-nav__link">
     <span class="md-ellipsis">
       
-        exec_plan()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.get" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.get_plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_plan()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.list" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        list()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.submit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        submit()
+        from_path
       
     </span>
   </a>
@@ -1154,22 +1149,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.Client.repos" class="md-nav__link">
+  <a href="##dstack.api.RemoteRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        repos
+        RemoteRepo
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="repos">
+    <nav class="md-nav" aria-label="RemoteRepo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dstack.api.RepoCollection.init" class="md-nav__link">
+  <a href="#dstack.api.RemoteRepo.from_path" class="md-nav__link">
     <span class="md-ellipsis">
       
-        init()
+        from_path
       
     </span>
   </a>
@@ -1177,10 +1172,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.RepoCollection.is_initialized" class="md-nav__link">
+  <a href="#dstack.api.RemoteRepo.from_url" class="md-nav__link">
     <span class="md-ellipsis">
       
-        is_initialized()
+        from_url
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="##dstack.api.VirtualRepo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VirtualRepo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VirtualRepo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.VirtualRepo.add_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        add_file
       
     </span>
   </a>
@@ -1188,10 +1211,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.RepoCollection.load" class="md-nav__link">
+  <a href="#dstack.api.VirtualRepo.add_file_from_package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        load()
+        add_file_from_package
       
     </span>
   </a>
@@ -1207,19 +1230,19 @@
   <a href="#dstack.api.Client.backends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        backends
+        BackendCollection
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="backends">
+    <nav class="md-nav" aria-label="BackendCollection">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#dstack.api.BackendCollection.list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        list()
+        list
       
     </span>
   </a>
@@ -1228,6 +1251,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.BackendType" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackendType
+      
+    </span>
+  </a>
   
 </li>
         
@@ -1988,10 +2022,38 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dstack.api.Client.__init__" class="md-nav__link">
+  <a href="#dstack.api.Client.from_config" class="md-nav__link">
     <span class="md-ellipsis">
       
-        __init__()
+        from_config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.Client.runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RunCollection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RunCollection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.RunCollection.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get
       
     </span>
   </a>
@@ -1999,10 +2061,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.Client.from_config" class="md-nav__link">
+  <a href="#dstack.api.RunCollection.list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        from_config()
+        list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.RunCollection.submit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        submit
       
     </span>
   </a>
@@ -2052,7 +2125,7 @@
   <a href="#dstack.api.Run.attach" class="md-nav__link">
     <span class="md-ellipsis">
       
-        attach()
+        attach
       
     </span>
   </a>
@@ -2063,7 +2136,7 @@
   <a href="#dstack.api.Run.detach" class="md-nav__link">
     <span class="md-ellipsis">
       
-        detach()
+        detach
       
     </span>
   </a>
@@ -2074,7 +2147,7 @@
   <a href="#dstack.api.Run.logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        logs()
+        logs
       
     </span>
   </a>
@@ -2085,7 +2158,7 @@
   <a href="#dstack.api.Run.refresh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        refresh()
+        refresh
       
     </span>
   </a>
@@ -2096,7 +2169,7 @@
   <a href="#dstack.api.Run.stop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        stop()
+        stop
       
     </span>
   </a>
@@ -2109,66 +2182,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.Client.runs" class="md-nav__link">
+  <a href="##dstack.api.LocalRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        runs
+        LocalRepo
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="runs">
+    <nav class="md-nav" aria-label="LocalRepo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.exec_plan" class="md-nav__link">
+  <a href="#dstack.api.LocalRepo.from_path" class="md-nav__link">
     <span class="md-ellipsis">
       
-        exec_plan()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.get" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.get_plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_plan()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.list" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        list()
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dstack.api.RunCollection.submit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        submit()
+        from_path
       
     </span>
   </a>
@@ -2181,22 +2210,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.Client.repos" class="md-nav__link">
+  <a href="##dstack.api.RemoteRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        repos
+        RemoteRepo
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="repos">
+    <nav class="md-nav" aria-label="RemoteRepo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dstack.api.RepoCollection.init" class="md-nav__link">
+  <a href="#dstack.api.RemoteRepo.from_path" class="md-nav__link">
     <span class="md-ellipsis">
       
-        init()
+        from_path
       
     </span>
   </a>
@@ -2204,10 +2233,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.RepoCollection.is_initialized" class="md-nav__link">
+  <a href="#dstack.api.RemoteRepo.from_url" class="md-nav__link">
     <span class="md-ellipsis">
       
-        is_initialized()
+        from_url
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="##dstack.api.VirtualRepo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VirtualRepo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VirtualRepo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.VirtualRepo.add_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        add_file
       
     </span>
   </a>
@@ -2215,10 +2272,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack.api.RepoCollection.load" class="md-nav__link">
+  <a href="#dstack.api.VirtualRepo.add_file_from_package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        load()
+        add_file_from_package
       
     </span>
   </a>
@@ -2234,19 +2291,19 @@
   <a href="#dstack.api.Client.backends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        backends
+        BackendCollection
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="backends">
+    <nav class="md-nav" aria-label="BackendCollection">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#dstack.api.BackendCollection.list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        list()
+        list
       
     </span>
   </a>
@@ -2255,6 +2312,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.BackendType" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackendType
+      
+    </span>
+  </a>
   
 </li>
         
@@ -2281,8 +2349,9 @@
 
 
 <h1 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
-<p>The Python API allows for running tasks, services, and managing runs programmatically.</p>
-<h4 id="usage-example">Usage example<a class="headerlink" href="#usage-example" title="Permanent link">&para;</a></h4>
+<p>The Python API enables running tasks, services, and managing runs programmatically.</p>
+<h2 id="usage-example">Usage example<a class="headerlink" href="#usage-example" title="Permanent link">&para;</a></h2>
+<p>Below is a quick example of submitting a task for running and displaying its logs.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="kn">from</span> <span class="nn">dstack.api</span> <span class="kn">import</span> <span class="n">Task</span><span class="p">,</span> <span class="n">GPU</span><span class="p">,</span> <span class="n">Client</span><span class="p">,</span> <span class="n">Resources</span>
@@ -2299,9 +2368,10 @@
 <span class="p">)</span>
 
 <span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
-    <span class="n">run_name</span><span class="o">=</span><span class="s2">&quot;my-awesome-run&quot;</span><span class="p">,</span>  <span class="c1"># (Optional) If not specified, </span>
+    <span class="n">run_name</span><span class="o">=</span><span class="s2">&quot;my-awesome-run&quot;</span><span class="p">,</span>  <span class="c1"># If not specified, a random name is assigned </span>
     <span class="n">configuration</span><span class="o">=</span><span class="n">task</span><span class="p">,</span>
     <span class="n">resources</span><span class="o">=</span><span class="n">Resources</span><span class="p">(</span><span class="n">gpu</span><span class="o">=</span><span class="n">GPU</span><span class="p">(</span><span class="n">memory</span><span class="o">=</span><span class="s2">&quot;24GB&quot;</span><span class="p">)),</span>
+    <span class="n">repo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># Specify to mount additional files</span>
 <span class="p">)</span>
 
 <span class="n">run</span><span class="o">.</span><span class="n">attach</span><span class="p">()</span>
@@ -2315,6 +2385,18 @@
 <span class="k">finally</span><span class="p">:</span>
     <span class="n">run</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">NOTE:</p>
+<ol>
+<li>The <code>configuration</code> argument in the <code>submit</code> method can be either <code>dstack.api.Task</code> or <code>dstack.api.Service</code>. </li>
+<li>If you create <code>dstack.api.Task</code> or <code>dstack.api.Service</code>, you may specify the <code>image</code> argument. If <code>image</code> isn't
+   specified, the default image will be used. For a private Docker registry, ensure you also pass the <code>registry_auth</code> argument.</li>
+<li>The <code>repo</code> argument in the <code>submit</code> method allows the mounting of a local folder, a remote repo, or a
+   programmatically created repo. In this case, the <code>commands</code> argument can refer to the files within this repo.</li>
+<li>The <code>attach</code> method waits for the run to start and, for <code>dstack.api.Task</code> sets up an SSH tunnel and forwards
+configured <code>ports</code> to <code>localhost</code>.</li>
+</ol>
+</div>
 <h2 id="dstack.api"><code>dstack.api</code><a class="headerlink" href="#dstack.api" title="Permanent link">&para;</a></h2>
 <h3 id="dstack.api.Client"><code>dstack.api.Client</code><a class="headerlink" href="#dstack.api.Client" title="Permanent link">&para;</a></h3>
 
@@ -2342,7 +2424,7 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>repos</code></td>
+          <td><code><span title="dstack.api.Client.repos">repos</span></code></td>
           <td>
                 <code><span title="dstack.api._public.repos.RepoCollection">RepoCollection</span></code>
           </td>
@@ -2353,7 +2435,7 @@
           </td>
         </tr>
         <tr>
-          <td><code>backends</code></td>
+          <td><code><span title="dstack.api.Client.backends">backends</span></code></td>
           <td>
                 <code><span title="dstack.api._public.backends.BackendCollection">BackendCollection</span></code>
           </td>
@@ -2364,35 +2446,13 @@
           </td>
         </tr>
         <tr>
-          <td><code>runs</code></td>
+          <td><code><span title="dstack.api.Client.runs">runs</span></code></td>
           <td>
                 <code><span title="dstack.api._public.runs.RunCollection">RunCollection</span></code>
           </td>
           <td>
             <div class="doc-md-description">
               <p>operations with runs</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>client</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="dstack.api.server.APIClient" href="server/#dstack.api.server.APIClient">APIClient</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>low-level server API client</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>project</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>project name</p>
             </div>
           </td>
         </tr>
@@ -2414,84 +2474,6 @@
 
 
 <div class="doc doc-object doc-function">
-
-
-
-
-<h4 id="dstack.api.Client.__init__" class="doc doc-heading">
-          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">api_client</span><span class="p">,</span> <span class="n">project_name</span><span class="p">,</span> <span class="n">ssh_identity_file</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#dstack.api.Client.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>api_client</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="dstack.api.server.APIClient" href="server/#dstack.api.server.APIClient">APIClient</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>low-level server API client</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>project_name</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>project name used for runs</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>ssh_identity_file</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.utils.path.PathLike">PathLike</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>SSH keypair to access instances</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
 
 
 
@@ -2598,7 +2580,7 @@
           </td>
           <td>
             <div class="doc-md-description">
-              <p>dstack Client</p>
+              <p>A client instance</p>
             </div>
           </td>
         </tr>
@@ -2615,7 +2597,8 @@
 
   </div>
 
-</div><h3 id="dstack.api.Task"><code>dstack.api.Task</code><a class="headerlink" href="#dstack.api.Task" title="Permanent link">&para;</a></h3>
+
+</div><h3 id="dstack.api.Client.runs"><code>dstack.api.RunCollection</code><a class="headerlink" href="#dstack.api.Client.runs" title="Permanent link">&para;</a></h3>
 
 
 <div class="doc doc-object doc-class">
@@ -2626,109 +2609,7 @@
   <div class="doc doc-contents first">
 
   
-
-
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>commands</code></td>
-          <td>
-                <code><span title="typing.List">List</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The bash commands to run</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>ports</code></td>
-          <td>
-                <code><span title="typing.List">List</span>[<span title="dstack._internal.core.models.configurations.PortMapping">PortMapping</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Port numbers/mapping to expose</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>env</code></td>
-          <td>
-                <code><span title="typing.Dict">Dict</span>[str, str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The mapping or the list of environment variables</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>image</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The name of the Docker image to run</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>python</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The major version of Python</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>entrypoint</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The Docker entrypoint</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>registry_auth</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.configurations.RegistryAuth">RegistryAuth</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Credentials for pulling a private container</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>home_dir</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The absolute path to the home directory inside the container. Defaults to <code>/root</code>.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      <p>Operations with runs</p>
 
 
   
@@ -2744,143 +2625,407 @@
 
 
 
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="dstack.api.RunCollection.get" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">get</span><span class="p">(</span><span class="n">run_name</span><span class="p">)</span></code>
+
+<a href="#dstack.api.RunCollection.get" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get run by run name</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>run_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>run name</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack.api._public.runs.Run">Run</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>run or <code>None</code> if not found</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="dstack.api.RunCollection.list" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="nb">list</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+<a href="#dstack.api.RunCollection.list" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>List runs</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>all</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>show all runs (active and finished) if <code>True</code></p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.List">List</span>[<span title="dstack.api._public.runs.Run">Run</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>list of runs</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="dstack.api.RunCollection.submit" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">submit</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">configuration_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">backends</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spot_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retry_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_duration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">run_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reserve_ports</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+<a href="#dstack.api.RunCollection.submit" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Submit a run</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>configuration</code></td>
+          <td>
+                <code><span title="typing.Union">Union</span>[<span title="dstack.api.Task">Task</span>, <span title="dstack.api.Service">Service</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A run configuration.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>configuration_path</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The path to the configuration file, relative to the root directory of the repo.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>repo</code></td>
+          <td>
+                <code><span title="typing.Union">Union</span>[<span title="dstack._internal.core.models.repos.local.LocalRepo">LocalRepo</span>, <span title="dstack._internal.core.models.repos.remote.RemoteRepo">RemoteRepo</span>, <span title="dstack._internal.core.models.repos.virtual.VirtualRepo">VirtualRepo</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A repo to mount to the run.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>backends</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of allowed backend for provisioning.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>resources</code></td>
+          <td>
+                <code><span title="dstack.api.Resources">Resources</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The minimal required resources for provisioning.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>spot_policy</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.profiles.SpotPolicy">SpotPolicy</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A spot policy for provisioning.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>retry_policy</code></td>
+          <td>
+                <code>RetryPolicy</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A retry policy.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>max_duration</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="typing.Union">Union</span>[int, str]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The max instance running duration in seconds.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>max_price</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[float]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The max instance price in dollars per hour for provisioning.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>working_dir</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A working directory relative to the repo root directory</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>run_name</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A desired name of the run. Must be unique in the project. If not specified, a random name is assigned.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>reserve_ports</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Whether local ports should be reserved in advance.</p>
+            </div>
+          </td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dstack.api._public.runs.Run">Run</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>submitted run</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div><h3 id="dstack.api.Task"><code>dstack.api.Task</code><a class="headerlink" href="#dstack.api.Task" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+
+  <div class="doc doc-contents first">
   </div>
 
 </div><h3 id="dstack.api.Service"><code>dstack.api.Service</code><a class="headerlink" href="#dstack.api.Service" title="Permanent link">&para;</a></h3>
 
 
-<div class="doc doc-object doc-class">
+<div class="doc doc-object doc-attribute">
+
 
 
 
 
   <div class="doc doc-contents first">
-
-  
-
-
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>commands</code></td>
-          <td>
-                <code><span title="typing.List">List</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The bash commands to run</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>port</code></td>
-          <td>
-                <code><span title="dstack._internal.core.models.configurations.PortMapping">PortMapping</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The port, that application listens to or the mapping</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>env</code></td>
-          <td>
-                <code><span title="typing.Dict">Dict</span>[str, str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The mapping or the list of environment variables</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>image</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The name of the Docker image to run</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>python</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The major version of Python</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>entrypoint</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The Docker entrypoint</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>registry_auth</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.configurations.RegistryAuth">RegistryAuth</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Credentials for pulling a private container</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>home_dir</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The absolute path to the home directory inside the container. Defaults to <code>/root</code>.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
   </div>
 
 </div><h3 id="#dstack.api.Run"><code>dstack.api.Run</code><a class="headerlink" href="##dstack.api.Run" title="Permanent link">&para;</a></h3>
@@ -2908,7 +3053,7 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>name</code></td>
+          <td><code><span title="dstack.api.Run.name">name</span></code></td>
           <td>
                 <code>str</code>
           </td>
@@ -2919,7 +3064,7 @@
           </td>
         </tr>
         <tr>
-          <td><code>ports</code></td>
+          <td><code><span title="dstack.api.Run.ports">ports</span></code></td>
           <td>
                 <code><span title="typing.Optional">Optional</span>[<span title="typing.Dict">Dict</span>[int, int]]</code>
           </td>
@@ -2930,7 +3075,7 @@
           </td>
         </tr>
         <tr>
-          <td><code>backend</code></td>
+          <td><code><span title="dstack.api.Run.backend">backend</span></code></td>
           <td>
                 <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span>]</code>
           </td>
@@ -2941,7 +3086,7 @@
           </td>
         </tr>
         <tr>
-          <td><code>status</code></td>
+          <td><code><span title="dstack.api.Run.status">status</span></code></td>
           <td>
                 <code><span title="dstack._internal.core.models.runs.JobStatus">JobStatus</span></code>
           </td>
@@ -2952,7 +3097,7 @@
           </td>
         </tr>
         <tr>
-          <td><code>hostname</code></td>
+          <td><code><span title="dstack.api.Run.hostname">hostname</span></code></td>
           <td>
                 <code>str</code>
           </td>
@@ -2980,7 +3125,6 @@
 
 
 <div class="doc doc-object doc-function">
-
 
 
 
@@ -3057,7 +3201,6 @@
 
 
 
-
 <h4 id="dstack.api.Run.detach" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">detach</span><span class="p">()</span></code>
 
@@ -3074,7 +3217,6 @@
 
 
 <div class="doc doc-object doc-function">
-
 
 
 
@@ -3165,7 +3307,6 @@
 
 
 
-
 <h4 id="dstack.api.Run.refresh" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">refresh</span><span class="p">()</span></code>
 
@@ -3182,7 +3323,6 @@
 
 
 <div class="doc doc-object doc-function">
-
 
 
 
@@ -3236,7 +3376,8 @@
 
   </div>
 
-</div><h3 id="dstack.api.Client.runs"><code>dstack.api.Client.runs</code><a class="headerlink" href="#dstack.api.Client.runs" title="Permanent link">&para;</a></h3>
+
+</div><h3 id="#dstack.api.LocalRepo"><code>dstack.api.LocalRepo</code><a class="headerlink" href="##dstack.api.LocalRepo" title="Permanent link">&para;</a></h3>
 
 
 <div class="doc doc-object doc-class">
@@ -3247,7 +3388,13 @@
   <div class="doc doc-contents first">
 
   
-      <p>Operations with runs</p>
+      <p>Allows mounting a local folder to a run.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+    <span class="n">configuration</span><span class="o">=...</span><span class="p">,</span>
+    <span class="n">repo</span><span class="o">=</span><span class="n">LocalRepo</span><span class="o">.</span><span class="n">from_path</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">),</span> <span class="c1"># Mount the current folder to the run</span>
+<span class="p">)</span>
+</code></pre></div>
 
 
   
@@ -3267,16 +3414,19 @@
 
 
 
+<h4 id="dstack.api.LocalRepo.from_path" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">from_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
 
-<h4 id="dstack.api.RunCollection.exec_plan" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">exec_plan</span><span class="p">(</span><span class="n">run_plan</span><span class="p">,</span> <span class="n">repo</span><span class="p">,</span> <span class="n">reserve_ports</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
-
-<a href="#dstack.api.RunCollection.exec_plan" class="headerlink" title="Permanent link">&para;</a></h4>
+<a href="#dstack.api.LocalRepo.from_path" class="headerlink" title="Permanent link">&para;</a></h4>
 
 
   <div class="doc doc-contents ">
   
-      <p>Execute run plan</p>
+      <p>Creates an instance of a local repo from a local path.</p>
 
 
 
@@ -3292,803 +3442,17 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>run_plan</code></td>
-          <td>
-                <code><span title="dstack._internal.core.models.runs.RunPlan">RunPlan</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>result of <code>get_plan</code> call</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>repo</code></td>
-          <td>
-                <code><span title="dstack._internal.core.models.repos.base.Repo">Repo</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>repo to use for the run</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>reserve_ports</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>reserve local ports before submit</p>
-            </div>
-          </td>
-          <td>
-                <code>True</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="dstack.api._public.runs.SubmittedRun">SubmittedRun</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>submitted run</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h4 id="dstack.api.RunCollection.get" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">get</span><span class="p">(</span><span class="n">run_name</span><span class="p">)</span></code>
-
-<a href="#dstack.api.RunCollection.get" class="headerlink" title="Permanent link">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get run by run name</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>run_name</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>run name</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack.api._public.runs.Run">Run</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>run or <code>None</code> if not found</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h4 id="dstack.api.RunCollection.get_plan" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">get_plan</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">repo</span><span class="p">,</span> <span class="n">configuration_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">backends</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spot_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retry_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_duration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">run_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#dstack.api.RunCollection.get_plan" class="headerlink" title="Permanent link">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Get run plan. Same arguments as <code>submit</code></p>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="dstack._internal.core.models.runs.RunPlan">RunPlan</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>run plan</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h4 id="dstack.api.RunCollection.list" class="doc doc-heading">
-          <code class="highlight language-python"><span class="nb">list</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-<a href="#dstack.api.RunCollection.list" class="headerlink" title="Permanent link">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>List runs</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>all</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>show all runs (active and finished) if <code>True</code></p>
-            </div>
-          </td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="typing.List">List</span>[<span title="dstack.api._public.runs.Run">Run</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>list of runs</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h4 id="dstack.api.RunCollection.submit" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">submit</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">configuration_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">backends</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spot_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retry_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_duration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">run_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reserve_ports</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
-
-<a href="#dstack.api.RunCollection.submit" class="headerlink" title="Permanent link">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Submit a run</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>configuration</code></td>
-          <td>
-                <code><span title="dstack._internal.core.models.configurations.AnyRunConfiguration">AnyRunConfiguration</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>run configuration</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>configuration_path</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>run configuration path, relative to <code>repo_dir</code></p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>repo</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.repos.base.Repo">Repo</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>repo to use for the run</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>backends</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>list of allowed backend for provisioning</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>resources</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.profiles.ProfileResources">ProfileResources</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>minimal resources for provisioning</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>spot_policy</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.profiles.SpotPolicy">SpotPolicy</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>spot policy for provisioning</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>retry_policy</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.profiles.ProfileRetryPolicy">ProfileRetryPolicy</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>retry policy for interrupted jobs</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>max_duration</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="typing.Union">Union</span>[int, str]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>max instance running duration in seconds</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>max_price</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[float]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>max instance price in dollars per hour for provisioning</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>working_dir</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>working directory relative to <code>repo_dir</code></p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>run_name</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>desired run_name. Must be unique in the project</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>reserve_ports</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>reserve local ports before submit</p>
-            </div>
-          </td>
-          <td>
-                <code>True</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="dstack.api._public.runs.SubmittedRun">SubmittedRun</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>submitted run</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-
-  </div>
-
-  </div>
-
-</div><h3 id="dstack.api.Client.repos"><code>dstack.api.Client.repos</code><a class="headerlink" href="#dstack.api.Client.repos" title="Permanent link">&para;</a></h3>
-
-
-<div class="doc doc-object doc-class">
-
-
-
-
-  <div class="doc doc-contents first">
-
-  
-      <p>Operations with repos</p>
-
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h4 id="dstack.api.RepoCollection.init" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">init</span><span class="p">(</span><span class="n">repo</span><span class="p">,</span> <span class="n">git_identity_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">oauth_token</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#dstack.api.RepoCollection.init" class="headerlink" title="Permanent link">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Upload credentials and initializes the repo in the project</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>repo</code></td>
-          <td>
-                <code><span title="dstack._internal.core.models.repos.base.Repo">Repo</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>repo to initialize</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>git_identity_file</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.utils.path.PathLike">PathLike</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>SSH private key to access the remote repo</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>oauth_token</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>GitHub OAuth token to access the remote repo</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h4 id="dstack.api.RepoCollection.is_initialized" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">is_initialized</span><span class="p">(</span><span class="n">repo</span><span class="p">)</span></code>
-
-<a href="#dstack.api.RepoCollection.is_initialized" class="headerlink" title="Permanent link">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Checks if the remote repo is initialized in the project</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>repo</code></td>
-          <td>
-                <code><span title="dstack._internal.core.models.repos.base.Repo">Repo</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>repo to check</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>repo is initialized</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h4 id="dstack.api.RepoCollection.load" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">load</span><span class="p">(</span><span class="n">repo_dir</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">git_identity_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">oauth_token</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#dstack.api.RepoCollection.load" class="headerlink" title="Permanent link">&para;</a></h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Loads the repo from the local directory using global config</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>repo_dir</code></td>
+          <td><code>path</code></td>
           <td>
                 <code><span title="dstack._internal.utils.path.PathLike">PathLike</span></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>repo root directory</p>
+              <p>The path to a local folder</p>
             </div>
           </td>
           <td>
               <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>local</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>do not try to load <code>RemoteRepo</code> first</p>
-            </div>
-          </td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>init</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>initialize the repo if it's not initialized</p>
-            </div>
-          </td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>git_identity_file</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.utils.path.PathLike">PathLike</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>path to an SSH private key to access the remote repo</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>oauth_token</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>GitHub OAuth token to access the remote repo</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Raises:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="dstack._internal.core.errors.ConfigurationError">ConfigurationError</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>if the repo is not initialized and <code>init</code> is <code>False</code></p>
-            </div>
           </td>
         </tr>
     </tbody>
@@ -4100,18 +3464,18 @@
   <table>
     <thead>
       <tr>
-<th>Name</th>        <th>Type</th>
+        <th>Type</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
         <tr>
-<td><code>repo</code></td>          <td>
-                <code><span title="typing.Union">Union</span>[<span title="dstack._internal.core.models.repos.RemoteRepo">RemoteRepo</span>, <span title="dstack._internal.core.models.repos.LocalRepo">LocalRepo</span>]</code>
+          <td>
+                <code><span title="dstack._internal.core.models.repos.local.LocalRepo">LocalRepo</span></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>initialized repo</p>
+              <p>A local repo instance</p>
             </div>
           </td>
         </tr>
@@ -4128,7 +3492,387 @@
 
   </div>
 
-</div><h3 id="dstack.api.Client.backends"><code>dstack.api.Client.backends</code><a class="headerlink" href="#dstack.api.Client.backends" title="Permanent link">&para;</a></h3>
+
+</div><h3 id="#dstack.api.RemoteRepo"><code>dstack.api.RemoteRepo</code><a class="headerlink" href="##dstack.api.RemoteRepo" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>Allows mounting a remote Git repo to a run.</p>
+<p>Mounting a locally checked-out Git repo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+    <span class="n">configuration</span><span class="o">=...</span><span class="p">,</span>
+    <span class="n">repo</span><span class="o">=</span><span class="n">RemoteRepo</span><span class="o">.</span><span class="n">from_path</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Mounting a remote Git repo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+    <span class="n">configuration</span><span class="o">=...</span><span class="p">,</span>
+    <span class="n">repo</span><span class="o">=</span><span class="n">RemoteRepo</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="s2">&quot;https://github.com/dstackai/dstack-examples&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="dstack.api.RemoteRepo.from_path" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">from_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+<a href="#dstack.api.RemoteRepo.from_path" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Creates an instance of a remote repo from a local path.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code><span title="dstack._internal.utils.path.PathLike">PathLike</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The path to a local folder</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dstack._internal.core.models.repos.remote.RemoteRepo">RemoteRepo</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A remote repo instance</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="dstack.api.RemoteRepo.from_url" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+<a href="#dstack.api.RemoteRepo.from_url" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Creates an instance of a remote repo from a URL.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>url</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The URL of a remote Git repo</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dstack._internal.core.models.repos.remote.RemoteRepo">RemoteRepo</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A remote repo instance</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div><h3 id="#dstack.api.VirtualRepo"><code>dstack.api.VirtualRepo</code><a class="headerlink" href="##dstack.api.VirtualRepo" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>Allows mounting a repo created programmatically.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">virtual_repo</span> <span class="o">=</span> <span class="n">VirtualRepo</span><span class="p">(</span><span class="n">repo_id</span><span class="o">=</span><span class="s2">&quot;some-unique-repo-id&quot;</span><span class="p">)</span>
+<span class="n">virtual_repo</span><span class="o">.</span><span class="n">add_file_from_package</span><span class="p">(</span><span class="n">package</span><span class="o">=</span><span class="n">some_package</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;requirements.txt&quot;</span><span class="p">)</span>
+<span class="n">virtual_repo</span><span class="o">.</span><span class="n">add_file_from_package</span><span class="p">(</span><span class="n">package</span><span class="o">=</span><span class="n">some_package</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;train.py&quot;</span><span class="p">)</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+    <span class="n">configuration</span><span class="o">=...</span><span class="p">,</span>
+    <span class="n">repo</span><span class="o">=</span><span class="n">virtual_repo</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="dstack.api.VirtualRepo.repo_id">repo_id</span></code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A unique identifier of the repo</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="dstack.api.VirtualRepo.add_file" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">add_file</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code>
+
+<a href="#dstack.api.VirtualRepo.add_file" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Adds a given file to the repo.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="dstack.api.VirtualRepo.add_file.path">path</span></code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The path inside the repo to add the file.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.VirtualRepo.add_file.content">content</span></code></td>
+          <td>
+                <code>bytes</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The contents of the file.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="dstack.api.VirtualRepo.add_file_from_package" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">add_file_from_package</span><span class="p">(</span><span class="n">package</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span></code>
+
+<a href="#dstack.api.VirtualRepo.add_file_from_package" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Includes a file from a given package to the repo.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="dstack.api.VirtualRepo.add_file_from_package.package">package</span></code></td>
+          <td>
+                <code><span title="typing.Union">Union</span>[<span title="types.ModuleType">ModuleType</span>, str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A package to include the file from.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.VirtualRepo.add_file_from_package.path">path</span></code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The path to the file to include to the repo. Must be relative to the package directory.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div><h3 id="dstack.api.Client.backends"><code>dstack.api.BackendCollection</code><a class="headerlink" href="#dstack.api.Client.backends" title="Permanent link">&para;</a></h3>
 
 
 <div class="doc doc-object doc-class">
@@ -4156,7 +3900,6 @@
 
 
 <div class="doc doc-object doc-function">
-
 
 
 
@@ -4204,12 +3947,164 @@
 
   </div>
 
+
+</div><h3 id="dstack.api.BackendType"><code>dstack.api.BackendType</code><a class="headerlink" href="#dstack.api.BackendType" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+  <div class="doc doc-contents first">
+
+  
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="dstack.api.BackendType.AWS">AWS</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Amazon Web Services</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.BackendType.AZURE">AZURE</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Microsoft Azure</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.BackendType.DSTACK">DSTACK</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>dstack CLoud</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.BackendType.GCP">GCP</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Google Cloud Platform</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.BackendType.DATACRUNCH">DATACRUNCH</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DataCrunch</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.BackendType.LAMBDA">LAMBDA</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Lambda Cloud</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.BackendType.DSTACK">DSTACK</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>dstack CLoud</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.BackendType.TENSORDOCK">TENSORDOCK</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>TensorDock Marketplace</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api.BackendType.VASTAI">VASTAI</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Vast.ai Marketplace</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
 </div><style>
 .doc-heading .highlight {
     /* TODO pick color */
     --md-code-hl-name-color: var(--md-typeset-color);
     --md-code-hl-constant-color: var(--md-typeset-color);
 }
+
+.doc-symbol:after {
+    display: none
+}
+
 </style>
 
 
