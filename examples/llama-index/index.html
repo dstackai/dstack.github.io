@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3+insiders-4.49.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.49.2">
     
     
       
@@ -561,7 +561,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Introduction
   
 
     
@@ -665,7 +665,7 @@
   <span class="md-ellipsis">
     
   
-    Guides
+    Concepts
   
 
     
@@ -681,7 +681,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Guides
+    Concepts
   
 
           </label>
@@ -694,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/guides/dev-environments/" class="md-nav__link">
+      <a href="../../docs/concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -721,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/guides/tasks/" class="md-nav__link">
+      <a href="../../docs/concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -748,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/guides/services/" class="md-nav__link">
+      <a href="../../docs/concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1850,7 +1850,7 @@ and <a href="https://weaviate.io/">Weaviate</a> vector database.</p>
 <ol>
 <li>Llama Index loads data from local files, structures it into chunks, and ingests it into Weaviate (an open-source vector database).
    We set up Llama Index to use local embeddings through the <a href="https://www.sbert.net/">SentenceTransformers</a> library.</li>
-<li><code>dstack</code> allows us to deploy LLMs to any cloud provider, e.g. via <a href="../../docs/guides/services/">Services</a> using <a href="../tgi/">TGI</a> or <a href="../vllm/">vLLM</a>.</li>
+<li><code>dstack</code> allows us to deploy LLMs to any cloud provider, e.g. via <a href="../../docs/concepts/services/">Services</a> using <a href="../tgi/">TGI</a> or <a href="../vllm/">vLLM</a>.</li>
 <li>Llama Index allows us to prompt the LLM automatically incorporating the context from Weaviate. </li>
 </ol>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
@@ -1921,8 +1921,7 @@ it on-premises or sign up for their managed service.</p>
 </code></pre></div>
 <p>The data is in the vector database! Now we can proceed with the part where we invoke an LLM using this data as context.</p>
 <h2 id="deploy-an-llm">Deploy an LLM<a class="headerlink" href="#deploy-an-llm" title="Permanent link">&para;</a></h2>
-<p>This example assumes we're using an LLM deployed via the <a href="../../docs/guides/text-generation/">text generation</a> API,
-or using <a href="../tgi/">TGI</a>.</p>
+<p>This example assumes we're using an LLM deployed using <a href="../tgi/">TGI</a>.</p>
 <p>Once you deployed the model, make sure to set the <code>TGI_ENDPOINT_URL</code> environment variable 
 to its URL, e.g. <code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (or <code>http://localhost:&lt;port&gt;</code> if it's deployed 
 as a task). We'll use this environment variable below.</p>
@@ -2033,7 +2032,7 @@ using <code>dstack</code>. For more in-depth information, we encourage you to ex
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../tgi/">Text Generation Inference</a> and <a href="../vllm/">vLLM</a> examples</li>
-<li>Read about <a href="../../docs/guides/services/">services</a></li>
+<li>Read about <a href="../../docs/concepts/services/">services</a></li>
 <li>Browse all <a href="../">examples</a></li>
 <li>Join the <a href="https://discord.gg/u8SmfwPpMd">Discord server</a></li>
 </ol>
@@ -2162,7 +2161,7 @@ using <code>dstack</code>. For more in-depth information, we encourage you to ex
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.8e8db93a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a0279539.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

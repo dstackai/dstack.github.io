@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3+insiders-4.49.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.49.2">
     
     
       
@@ -565,7 +565,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Introduction
   
 
     
@@ -669,7 +669,7 @@
   <span class="md-ellipsis">
     
   
-    Guides
+    Concepts
   
 
     
@@ -685,7 +685,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Guides
+    Concepts
   
 
           </label>
@@ -698,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/dev-environments/" class="md-nav__link">
+      <a href="../../concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -725,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/tasks/" class="md-nav__link">
+      <a href="../../concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/services/" class="md-nav__link">
+      <a href="../../concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1743,7 +1743,7 @@ Configuration files can be placed either in the project's root directory or in a
 <p>Configurations can be of three types: <code>dev-environment</code>, <code>task</code>, and <code>service</code>.</p>
 <p>Below, you'll find the complete reference detailing all available properties for each type of configuration.</p>
 <h2 id="dev-environment">dev-environment<a class="headerlink" href="#dev-environment" title="Permanent link">&para;</a></h2>
-<p>This configuration type allows you to provision a <a href="../../guides/dev-environments/">dev environment</a> with the required cloud resources, 
+<p>This configuration type allows you to provision a <a href="../../concepts/dev-environments/">dev environment</a> with the required cloud resources, 
 code, and environment.</p>
 <table>
 <thead>
@@ -1830,7 +1830,7 @@ code, and environment.</p>
 </tbody>
 </table>
 <h2 id="task">task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h2>
-<p>This configuration type allows you to run <a href="../../guides/tasks/">tasks</a> like training scripts, batch jobs, or web apps.</p>
+<p>This configuration type allows you to run <a href="../../concepts/tasks/">tasks</a> like training scripts, batch jobs, or web apps.</p>
 <table>
 <thead>
 <tr>
@@ -1904,7 +1904,7 @@ code, and environment.</p>
 </tbody>
 </table>
 <h2 id="service">service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h2>
-<p>This configuration type allows you to deploy models or web apps as <a href="../../guides/services/">services</a>.</p>
+<p>This configuration type allows you to deploy models or web apps as <a href="../../concepts/services/">services</a>.</p>
 <table>
 <thead>
 <tr>
@@ -1974,6 +1974,12 @@ code, and environment.</p>
 <td>The port, that application listens to or the mapping</td>
 <td><code>Union[ConstrainedIntValue,ConstrainedStrValue,PortMapping]</code></td>
 <td><em>required</em></td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>The model info for OpenAI interface</td>
+<td><code>Optional[ModelInfo]</code></td>
+<td><code>None</code></td>
 </tr>
 </tbody>
 </table>
@@ -2102,7 +2108,7 @@ code, and environment.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.8e8db93a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a0279539.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
