@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.49.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
     
     
       
@@ -131,7 +131,7 @@
               </button>
             
             
-🔥 dstack 0.13.0 just dropped! Explore new features and our guide on Mixtral 8x7B! <a href="/blog/2023/12/22/disk-size-cuda-12-1-mixtral-and-more/">Learn more</a>.
+🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -1594,6 +1594,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#dstack-0140rc1-openai-compatible-endpoints-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dstack 0.14.0rc1: OpenAI-compatible endpoints preview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dstack-0130-disk-size-cuda-121-mixtral-and-more" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1692,17 +1703,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#dstack-070-introducing-dstack-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        dstack 0.7.0: Introducing dstack server
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1722,6 +1722,47 @@
       </header>
 
       <!-- Posts -->
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-01-19 00:00:00">January 19, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/previews/" class="md-meta__link">Previews</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="dstack-0140rc1-openai-compatible-endpoints-preview"><a class="toclink" href="2024/01/19/openai-endpoints-preview/">dstack 0.14.0rc1: OpenAI-compatible endpoints preview</a></h2>
+<p><strong>Making it easier to deploy custom LLMs as OpenAI-compatible endpoints.</strong></p>
+<p>The <code>service</code> configuration deploys any application as a public endpoint. For instance, you can use HuggingFace's 
+<a href="https://github.com/huggingface/text-generation-inference">TGI</a> or frameworks to deploy 
+custom LLMs. While this is simple and customizable, using different frameworks and LLMs complicates 
+the integration of LLMs.</p>
+
+    <nav class="md-post__action">
+      <a href="2024/01/19/openai-endpoints-preview/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -2071,46 +2112,6 @@ apps on any cloud. With the latest update, we take another significant step in t
 
     <nav class="md-post__action">
       <a href="2023/05/22/azure-support-better-ui-and-more/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-04-11 00:00:00">April 11, 2023</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/releases/" class="md-meta__link">Releases</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="dstack-070-introducing-dstack-server"><a class="toclink" href="2023/04/11/introducing-dstack-hub/">dstack 0.7.0: Introducing dstack server</a></h2>
-<p><strong>The latest update introduces the server with UI, team management, and more.</strong></p>
-<p>Last October, we open-sourced the <code>dstack</code> CLI for defining ML workflows as code and running them easily on any cloud or
-locally. The tool abstracts ML engineers from vendor APIs and infrastructure, making it convenient to run scripts,
-development environments, and applications.</p>
-
-    <nav class="md-post__action">
-      <a href="2023/04/11/introducing-dstack-hub/">
         Continue reading
       </a>
     </nav>
