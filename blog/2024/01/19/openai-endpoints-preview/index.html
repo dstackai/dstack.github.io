@@ -23,15 +23,15 @@
       
       
       <link rel="icon" href="../../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
-        <title>dstack 0.14.0rc1: OpenAI-compatible endpoints preview - dstack</title>
+        <title>dstack 0.14.0: OpenAI-compatible endpoints preview - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,7 +87,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="dstack 0.14.0rc1: OpenAI-compatible endpoints preview - dstack" />
+<meta property="og:title" content="dstack 0.14.0: OpenAI-compatible endpoints preview - dstack" />
 <meta property="og:description" content="Making it easier to deploy custom LLMs as OpenAI-compatible endpoints." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/blog/2024/01/19/openai-endpoints-preview.png" />
 <meta property="og:image:type" content="image/png" />
@@ -95,7 +95,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://dstack.ai/blog/2024/01/19/openai-endpoints-preview/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="dstack 0.14.0rc1: OpenAI-compatible endpoints preview - dstack" />
+<meta property="twitter.title" content="dstack 0.14.0: OpenAI-compatible endpoints preview - dstack" />
 <meta property="twitter:description" content="Making it easier to deploy custom LLMs as OpenAI-compatible endpoints." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/blog/2024/01/19/openai-endpoints-preview.png" />
 </head>
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dstack-0140rc1-openai-compatible-endpoints-preview" class="md-skip">
+        <a href="#dstack-0140-openai-compatible-endpoints-preview" class="md-skip">
           Skip to content
         </a>
       
@@ -133,7 +133,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -167,7 +167,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              dstack 0.14.0rc1: OpenAI-compatible endpoints preview
+              dstack 0.14.0: OpenAI-compatible endpoints preview
             
           </span>
         </div>
@@ -1278,13 +1278,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../examples/vllm/" class="md-nav__link">
+      <a href="../../../../../examples/tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    vLLM
+    Text Generation Inference
   
 
     
@@ -1305,13 +1305,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../examples/tgi/" class="md-nav__link">
+      <a href="../../../../../examples/vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Text Generation Inference
+    vLLM
   
 
     
@@ -1586,37 +1586,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#try-the-preview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Try the preview
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#migration-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
           Migration guide
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-does-this-matter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Why does this matter?
         </span>
       
     </span>
@@ -1685,7 +1659,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/previews/">Previews</a></span>
+                              <a href="../../../../category/releases/">Releases</a></span>
                         </div>
                       </li>
                     
@@ -1728,15 +1702,14 @@
   
 
 
-<h1 id="dstack-0140rc1-openai-compatible-endpoints-preview">dstack 0.14.0rc1: OpenAI-compatible endpoints preview<a class="headerlink" href="#dstack-0140rc1-openai-compatible-endpoints-preview" title="Permanent link">&para;</a></h1>
+<h1 id="dstack-0140-openai-compatible-endpoints-preview">dstack 0.14.0: OpenAI-compatible endpoints preview<a class="headerlink" href="#dstack-0140-openai-compatible-endpoints-preview" title="Permanent link">&para;</a></h1>
 <p><strong>Making it easier to deploy custom LLMs as OpenAI-compatible endpoints.</strong></p>
 <p>The <code>service</code> configuration deploys any application as a public endpoint. For instance, you can use HuggingFace's 
-<a href="https://github.com/huggingface/text-generation-inference">TGI</a> or frameworks to deploy 
-custom LLMs. While this is simple and customizable, using different frameworks and LLMs complicates 
-the integration of LLMs.</p>
+<a href="https://github.com/huggingface/text-generation-inference">TGI</a> or other frameworks to deploy custom LLMs. 
+While this is simple and customizable, using different frameworks and LLMs complicates the integration of LLMs.</p>
 <!-- more -->
 
-<p>With the upcoming <code>dstack 0.14.0</code>, we are extending the <code>service</code> configuration in <code>dstack</code> to enable you to optionally map your
+<p>With <code>dstack 0.14.0</code>, we are extending the <code>service</code> configuration in <code>dstack</code> to enable you to optionally map your
 custom LLM to an OpenAI-compatible endpoint.</p>
 <p>Here's how it works: you define a <code>service</code> (as before) and include the <code>model</code> property with 
 the model's <code>type</code>, <code>name</code>, <code>format</code>, and other settings.</p>
@@ -1756,7 +1729,7 @@ the model's <code>type</code>, <code>name</code>, <code>format</code>, and other
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mistralai/Mistral-7B-Instruct-v0.1</span>
 <span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tgi</span>
 </code></pre></div>
-<p>When you deploy this service using <code>dstack run</code>, <code>dstack</code> will automatically publish the OpenAI-compatible endpoint,
+<p>When you deploy the service using <code>dstack run</code>, <code>dstack</code> will automatically publish the OpenAI-compatible endpoint,
 converting the prompt and response format between your LLM and OpenAI interface.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
@@ -1774,25 +1747,17 @@ converting the prompt and response format between your LLM and OpenAI interface.
 
 <span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">NOTE:</p>
-<p>By default, dstack loads the model's <code>chat_template</code> and <code>eos_token</code> from Hugging Face. However, you can override them using
-the corresponding properties under <code>model</code>.</p>
-</div>
 <p>Here's a live demo of how it works:</p>
 <p><img src="https://raw.githubusercontent.com/dstackai/static-assets/main/static-assets/images/dstack-openai-python.gif" style="width:100%; max-width: 800px;" /></p>
-<h2 id="try-the-preview">Try the preview<a class="headerlink" href="#try-the-preview" title="Permanent link">&para;</a></h2>
-<p>To try the preview of this new upcoming feature, make sure to install <code>0.14.0rc1</code> and restart your server.</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]==0.14.0rc1&quot;</span>
-</code></pre></div>
+<p>For more details on how to use the new feature, be sure to check the updated documentation on <a href="../../../../../docs/concepts/services/">services</a>,
+and the <a href="../../../../../examples/tgi/">TGI</a> example.</p>
 <h2 id="migration-guide">Migration guide<a class="headerlink" href="#migration-guide" title="Permanent link">&para;</a></h2>
-<p>Note: In order to use the new feature, it's important to delete your existing gateway (if any)
-using <code>dstack gateway delete</code> and then create it again with <code>dstack gateway create</code>.</p>
-<h2 id="why-does-this-matter">Why does this matter?<a class="headerlink" href="#why-does-this-matter" title="Permanent link">&para;</a></h2>
-<p>With <code>dstack</code>, you can train and deploy models using any cloud providers, easily leveraging GPU availability across
-providers, spot instances, multiple regions, and more.</p>
+<p>Note: After you update to <code>0.14.0</code>, it's important to delete your existing gateways (if any)
+using <code>dstack gateway delete</code> and create them again with <code>dstack gateway create</code>.</p>
 <h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
-<p>Do you have any questions or need assistance? Feel free to join our <a href="https://discord.gg/u8SmfwPpMd">Discord server</a>.</p>
+<p>In case you have any questions, experience bugs, or need help, 
+drop us a message on our <a href="https://discord.gg/u8SmfwPpMd">Discord server</a> or submit it as a 
+<a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a>.</p>
 
 
 
@@ -1909,7 +1874,7 @@ providers, spot instances, multiple regions, and more.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../../../../assets/javascripts/extra.js"></script>
       

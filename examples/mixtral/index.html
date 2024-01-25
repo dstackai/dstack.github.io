@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -1198,6 +1198,38 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#access-the-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Access the endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access the endpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          OpenAI interface
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1382,13 +1414,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../vllm/" class="md-nav__link">
+      <a href="../tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    vLLM
+    Text Generation Inference
   
 
     
@@ -1409,13 +1441,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../tgi/" class="md-nav__link">
+      <a href="../vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Text Generation Inference
+    vLLM
   
 
     
@@ -1714,6 +1746,38 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#access-the-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Access the endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access the endpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          OpenAI interface
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1770,8 +1834,52 @@ with <code>dstack</code>'s <a href="../../docs/concepts/services/">services</a>.
 <h2 id="define-the-configuration">Define the configuration<a class="headerlink" href="#define-the-configuration" title="Permanent link">&para;</a></h2>
 <p>To deploy Mixtral as a service, you have to define the corresponding configuration file.
 Below are multiple variants: via vLLM (<code>fp16</code>), TGI (<code>fp16</code>), or TGI (<code>int4</code>).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">vLLM <code>fp16</code></label><label for="__tabbed_1_2">TGI <code>fp16</code></label><label for="__tabbed_1_3">TGI <code>int4</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TGI <code>fp16</code></label><label for="__tabbed_1_2">TGI <code>int4</code></label><label for="__tabbed_1_3">vLLM <code>fp16</code></label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<p><div editor-title="llms/mixtral/tgi.dstack.yml"> </p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=mistralai/Mixtral-8x7B-Instruct-v0.1</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher</span><span class="w"> </span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--port 80</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--trust-remote-code</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num-shard 2</span><span class="w"> </span><span class="c1"># Should match the number of GPUs </span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+
+<span class="c1"># Optional mapping for OpenAI-compatible endpoint</span>
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TheBloke/Mixtral-8x7B-Instruct-v0.1-GPTQ</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tgi</span>
+</code></pre></div>
+</div>
+</div>
+<div class="tabbed-block">
+<p><div editor-title="llms/mixtral/tgi-gptq.dstack.yml"> </p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span><span class="w"> </span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=TheBloke/Mixtral-8x7B-Instruct-v0.1-GPTQ</span><span class="w"> </span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--port 80</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--trust-remote-code</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--quantize gptq</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+
+<span class="c1"># Optional mapping for OpenAI-compatible endpoint</span>
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TheBloke/Mixtral-8x7B-Instruct-v0.1-GPTQ</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tgi</span>
+</code></pre></div>
+</div>
+</div>
 <div class="tabbed-block">
 <p><div editor-title="llms/mixtral/vllm.dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
@@ -1789,75 +1897,25 @@ Below are multiple variants: via vLLM (<code>fp16</code>), TGI (<code>fp16</code
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 </code></pre></div>
 </div>
-</div>
-<div class="tabbed-block">
-<p><div editor-title="llms/mixtral/tgi.dstack.yml"> </p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
-<span class="c1"># This configuration deploys Mixtral in fp16 using TGI</span>
-
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
-
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=mistralai/Mixtral-8x7B-Instruct-v0.1</span>
-
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher</span><span class="w"> </span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--hostname 0.0.0.0</span><span class="w"> </span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--port 8000</span><span class="w"> </span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--trust-remote-code</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num-shard 2</span><span class="w"> </span><span class="c1"># Should match the number of GPUs</span>
-
-<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
-</code></pre></div>
-</div>
-</div>
-<div class="tabbed-block">
-<p><div editor-title="llms/mixtral/tgi-gptq.dstack.yml"> </p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
-<span class="c1"># This configuration deploys Mixtral in int4 using TGI</span>
-
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
-
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=TheBloke/Mixtral-8x7B-Instruct-v0.1-GPTQ</span>
-
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher</span><span class="w"> </span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--hostname 0.0.0.0</span><span class="w"> </span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--port 8000</span><span class="w"> </span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--trust-remote-code</span><span class="w"> </span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--quantize gptq</span>
-
-<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
-</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">NOTE:</p>
+<p>The <a href="../../docs/concepts/services/#model-mapping">model mapping</a> to access the model via the 
+gateway's OpenAI-compatible endpoint is not yet supported for vLLM.</p>
+<p>Also, support for quantized Mixtral in vLLM is not yet stable.</p>
 </div>
 </div>
 </div>
 </div>
-<blockquote>
-<p>vLLM's support for quantized Mixtral is not yet stable. </p>
-</blockquote>
 <h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Prerequisites</p>
 <p>Before running a service, make sure to set up a <a href="../../docs/concepts/services/#set-up-a-gateway">gateway</a>.
 However, it's not required when using dstack Cloud, as it's set up automatically.</p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">Resources</p>
 <p>For <code>fp16</code>, deployment of Mixtral, ensure a minimum total GPU memory of <code>100GB</code> and disk size of <code>200GB</code>.
-Also, make sure to adjust the <code>--tensor-parallel-size</code> and <code>--num-shard</code> parameters in the YAML configuration to align
-with the number of GPUs used.
 For <code>int4</code>, request at least <code>25GB</code> of GPU memory.</p>
-</div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">vLLM <code>fp16</code></label><label for="__tabbed_2_2">TGI <code>fp16</code></label><label for="__tabbed_2_3">TGI <code>int4</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">TGI <code>fp16</code></label><label for="__tabbed_2_2">TGI <code>int4</code></label><label for="__tabbed_2_3">vLLM <code>fp16</code></label></div>
 <div class="tabbed-content">
-<div class="tabbed-block">
-<div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>llms/mixtral/vllm.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span><span class="s2">&quot;80GB:2&quot;</span><span class="w"> </span>--disk<span class="w"> </span>200GB
-</code></pre></div>
-</div>
-</div>
 <div class="tabbed-block">
 <div class="termy">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>llms/mixtral/tgi.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span><span class="s2">&quot;80GB:2&quot;</span><span class="w"> </span>--disk<span class="w"> </span>200GB
@@ -1870,14 +1928,36 @@ For <code>int4</code>, request at least <code>25GB</code> of GPU memory.</p>
 </code></pre></div>
 </div>
 </div>
+<div class="tabbed-block">
+<div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>llms/mixtral/vllm.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span><span class="s2">&quot;80GB:2&quot;</span><span class="w"> </span>--disk<span class="w"> </span>200GB
+</code></pre></div>
 </div>
 </div>
-<div class="admonition info">
-<p class="admonition-title">Endpoint URL</p>
-<p>Once the service is deployed, its endpoint will be available at 
-<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
-<p>If you wish to customize the run name, you can use the <code>-n</code> argument with the <code>dstack run</code> command.</p>
 </div>
+</div>
+<h2 id="access-the-endpoint">Access the endpoint<a class="headerlink" href="#access-the-endpoint" title="Permanent link">&para;</a></h2>
+<p>Once the service is up, you'll be able to access it at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
+<h4 id="openai-interface">OpenAI interface<a class="headerlink" href="#openai-interface" title="Permanent link">&para;</a></h4>
+<p>In case the service has the <a href="../../docs/concepts/services/#model-mapping">model mapping</a> configured, you will also be able 
+to access the model at <code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+  <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://gateway.example.com&quot;</span><span class="p">,</span>
+  <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;none&quot;</span>
+<span class="p">)</span>
+
+<span class="n">completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistralai/Mixtral-8x7B-Instruct-v0.1&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Compose a poem that explains the concept of recursion in programming.&quot;</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div>
 <details class="info">
 <summary>Hugging Face Hub token</summary>
 <p>To use a model with gated access, ensure configuring the <code>HUGGING_FACE_HUB_TOKEN</code> environment variable 
@@ -1885,10 +1965,10 @@ For <code>int4</code>, request at least <code>25GB</code> of GPU memory.</p>
 using <a href="../../docs/reference/dstack.yml/#service"><code>env</code></a> in the configuration file).</p>
 </details>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
-<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples">dstackai/dstack-examples</a>.</p>
+<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples"><code>dstackai/dstack-examples</code></a>.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Check the <a href="../tgi/">vLLM</a> and <a href="../tgi/">Text Generation Inference</a> examples</li>
+<li>Check the <a href="../tgi/">Text Generation Inference</a> and <a href="../vllm/">vLLM</a> examples</li>
 <li>Read about <a href="../../docs/concepts/services/">services</a></li>
 <li>Browse <a href="../">examples</a></li>
 <li>Join the <a href="https://discord.gg/u8SmfwPpMd">Discord server</a></li>
@@ -2018,7 +2098,7 @@ using <a href="../../docs/reference/dstack.yml/#service"><code>env</code></a> in
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

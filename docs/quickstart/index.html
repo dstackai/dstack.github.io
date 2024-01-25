@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -1384,13 +1384,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/vllm/" class="md-nav__link">
+      <a href="../../examples/tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    vLLM
+    Text Generation Inference
   
 
     
@@ -1411,13 +1411,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tgi/" class="md-nav__link">
+      <a href="../../examples/vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Text Generation Inference
+    vLLM
   
 
     
@@ -1788,8 +1788,7 @@ or <code>train.dstack.yml</code> are both acceptable).</p>
 <p><div editor-title=".dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span><span class="w"> </span><span class="c1"># (Optional) If not specified, your local version is used</span>
-
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 </code></pre></div>
 </div>
@@ -1799,14 +1798,15 @@ or <code>train.dstack.yml</code> are both acceptable).</p>
 <p><div editor-title="train.dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span><span class="w"> </span><span class="c1"># (Optional) If not specified, your local version is used</span>
-
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python train.py</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
 </code></pre></div>
 </div>
-<p>Ensure <code>requirements.txt</code> and <code>train.py</code> are in your folder; you can take them from our <a href="https://github.com/dstackai/dstack-examples/tree/main/fine-tuning/qlora"><code>examples</code></a>.</p>
+<p>Ensure <code>requirements.txt</code> and <code>train.py</code> are in your folder. You can take them from <a href="https://github.com/dstackai/dstack-examples/tree/main/fine-tuning/qlora"><code>dstack-examples</code></a>.</p>
 </div>
 <div class="tabbed-block">
 <p>Services make it easy to deploy models and apps cost-effectively as public endpoints, allowing you to use any frameworks.</p>
@@ -1814,14 +1814,11 @@ or <code>train.dstack.yml</code> are both acceptable).</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
 <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
-
-<span class="nt">env</span><span class="p">:</span><span class="w"> </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=TheBloke/Llama-2-13B-chat-GPTQ</span><span class="w"> </span>
-
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=mistralai/Mistral-7B-Instruct-v0.1</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
-
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --hostname 0.0.0.0 --port 80 --trust-remote-code</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --port 80 --trust-remote-code</span>
 </code></pre></div>
 </div>
 </div>
@@ -1829,7 +1826,7 @@ or <code>train.dstack.yml</code> are both acceptable).</p>
 </div>
 <h2 id="run-configuration">Run configuration<a class="headerlink" href="#run-configuration" title="Permanent link">&para;</a></h2>
 <p>Run a configuration using the <a href="../reference/cli/#dstack-run"><code>dstack run</code></a> command, followed by the working directory path (e.g., <code>.</code>), the path to the
-configuration file, and  run options (e.g., configuring hardware resources, spot policy, etc.)</p>
+configuration file, and run options (e.g., configuring hardware resources, spot policy, etc.)</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span>A100
@@ -1985,7 +1982,7 @@ To exclude any files from uploading, use <code>.gitignore</code>.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

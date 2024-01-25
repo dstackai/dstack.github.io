@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -825,20 +825,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Using the CLI
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using the CLI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -849,9 +835,47 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Define a configuration">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#model-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Model mapping
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Chat template
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -862,10 +886,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Run the configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Service endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service endpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          OpenAI interface
+        </span>
+      
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1390,13 +1460,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/vllm/" class="md-nav__link">
+      <a href="../../../examples/tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    vLLM
+    Text Generation Inference
   
 
     
@@ -1417,13 +1487,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tgi/" class="md-nav__link">
+      <a href="../../../examples/vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Text Generation Inference
+    vLLM
   
 
     
@@ -1709,20 +1779,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Using the CLI
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using the CLI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1733,9 +1789,47 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Define a configuration">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#model-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Model mapping
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Chat template
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1746,10 +1840,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Run the configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Service endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service endpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          OpenAI interface
+        </span>
+      
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1779,9 +1919,8 @@
 
 
 <h1 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h1>
-<p>With <code>dstack</code>, you can use the CLI or API to deploy models or web apps.
-Provide the commands, port, and choose the Python version or a Docker image.</p>
-<p><code>dstack</code> handles the deployment on configured cloud GPU provider(s) with the necessary resources.</p>
+<p>Services make it easy to deploy models and apps as public endpoints, allowing you to use any
+frameworks.</p>
 <details class="info">
 <summary>Prerequisites</summary>
 <p>If you're using the open-source server, you first have to set up a gateway.</p>
@@ -1800,12 +1939,13 @@ Creating<span class="w"> </span>gateway...
 </div>
 <p>Afterward, in your domain's DNS settings, add an <code>A</code> DNS record for <code>*.example.com</code> 
 pointing to the IP address of the gateway.</p>
-<p>This way, if you run a service, <code>dstack</code> will make its endpoint available at 
-<code>https://&lt;run-name&gt;.example.com</code>.</p>
+<p>Now, if you run a service, <code>dstack</code> will make its endpoint available at 
+<code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
+<p>In case your service has the <a href="#model-mapping">model mapping</a> configured, <code>dstack</code> will 
+automatically make your model available at <code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface.</p>
 </details>
 <p>If you're using the cloud version of <code>dstack</code>, the gateway is set up for you.</p>
-<h2 id="using-the-cli">Using the CLI<a class="headerlink" href="#using-the-cli" title="Permanent link">&para;</a></h2>
-<h3 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h3>
+<h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
 <p>First, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>train.dstack.yml</code>
 are both acceptable).</p>
 <div editor-title="serve.dstack.yml"> 
@@ -1813,27 +1953,78 @@ are both acceptable).</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
 <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
-
-<span class="nt">env</span><span class="p">:</span><span class="w"> </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=TheBloke/Llama-2-13B-chat-GPTQ</span><span class="w"> </span>
-
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=mistralai/Mistral-7B-Instruct-v0.1</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
-
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --hostname 0.0.0.0 --port 80 --trust-remote-code</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --port 80 --trust-remote-code</span>
 </code></pre></div>
 
 </div>
 
-<p>By default, <code>dstack</code> uses its own Docker images to run dev environments, 
-which are pre-configured with Python, Conda, and essential CUDA drivers.</p>
+<p>The <code>image</code> property is optional. If not specified, <code>dstack</code> uses its own Docker image, 
+pre-configured with Python, Conda, and essential CUDA drivers.</p>
+<p>If you run such a configuration, once the service is up, you'll be able to 
+access it at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code> (see how to <a href="#set-up-a-gateway">set up a gateway</a>).</p>
 <div class="admonition info">
 <p class="admonition-title">Configuration options</p>
-<p>Configuration file allows you to specify a custom Docker image, environment variables, and many other 
-options.
-For more details, refer to the <a href="../../reference/dstack.yml/#service">Reference</a>.</p>
+<p>Configuration file allows you to specify a custom Docker image, environment variables, and many other
+options. For more details, refer to the <a href="../../reference/dstack.yml/#service">Reference</a>.</p>
 </div>
-<h3 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h3>
+<h3 id="model-mapping">Model mapping<a class="headerlink" href="#model-mapping" title="Permanent link">&para;</a></h3>
+<p>If your service is running a model, you can configure the model mapping to be able to access it via the
+OpenAI-compatible interface.</p>
+<div editor-title="serve.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=mistralai/Mistral-7B-Instruct-v0.1</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --port 80 --trust-remote-code</span>
+
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mistralai/Mistral-7B-Instruct-v0.1</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tgi</span>
+</code></pre></div>
+
+</div>
+
+<p>In this case, with such a configuration, once the service is up, you'll be able to access the model at
+<code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface.</p>
+<h4 id="chat-template">Chat template<a class="headerlink" href="#chat-template" title="Permanent link">&para;</a></h4>
+<p>By default, <code>dstack</code> loads the <a href="https://huggingface.co/docs/transformers/main/en/chat_templating">chat template</a> 
+from the model's repository. If it is not present there, manual configuration is required.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=TheBloke/Llama-2-13B-chat-GPTQ</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --port 80 --trust-remote-code --quantize gptq</span>
+
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TheBloke/Llama-2-13B-chat-GPTQ</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tgi</span>
+<span class="w">  </span><span class="nt">chat_template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">messages[0][&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;system&#39;</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">loop_messages</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">messages[1:]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">messages[0][&#39;content&#39;]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">loop_messages</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">messages</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">false</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">loop_messages</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(message[&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;user&#39;)</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">(loop.index0</span><span class="nv"> </span><span class="s">%</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0)</span><span class="nv"> </span><span class="s">%}{{</span><span class="nv"> </span><span class="s">raise_exception(&#39;Conversation</span><span class="nv"> </span><span class="s">roles</span><span class="nv"> </span><span class="s">must</span><span class="nv"> </span><span class="s">alternate</span><span class="nv"> </span><span class="s">user/assistant/user/assistant/...&#39;)</span><span class="nv"> </span><span class="s">}}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">loop.index0</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">false</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">&#39;&lt;&lt;SYS&gt;&gt;\\n&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;\\n&lt;&lt;/SYS&gt;&gt;\\n\\n&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">message[&#39;content&#39;]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">message[&#39;content&#39;]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">message[&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;user&#39;</span><span class="nv"> </span><span class="s">%}{{</span><span class="nv"> </span><span class="s">&#39;&lt;s&gt;[INST]</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">content.strip()</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">[/INST]&#39;</span><span class="nv"> </span><span class="s">}}{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">message[&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;assistant&#39;</span><span class="nv"> </span><span class="s">%}{{</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv">  </span><span class="s">+</span><span class="nv"> </span><span class="s">content.strip()</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&lt;/s&gt;&#39;</span><span class="nv"> </span><span class="s">}}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">endfor</span><span class="nv"> </span><span class="s">%}&quot;</span>
+<span class="w">  </span><span class="nt">eos_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;/s&gt;&quot;</span>
+</code></pre></div>
+<details class="info">
+<summary>Limitations</summary>
+<p>Note that model mapping is an experimental feature, and it has the following limitations:</p>
+<ol>
+<li>Doesn't work if your <code>chat_template</code> uses <code>bos_token</code>. As a workaround, replace <code>bos_token</code> inside <code>chat_template</code> with the token content itself.</li>
+<li>Doesn't work if <code>eos_token</code> is defined in the model repository as a dictionary. As a workaround, set <code>eos_token</code> manually, as shown in the example above (see Chat template).</li>
+<li>Only works if you're using Text Generation Inference. Support for vLLM and other serving frameworks is coming later.</li>
+</ol>
+<p>If you encounter any other issues, please make sure to file a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a>.</p>
+</details>
+<h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
 <p>To run a configuration, use the <code>dstack run</code> command followed by the working directory path, 
 configuration file path, and any other options (e.g., for requesting hardware resources).</p>
 <div class="termy">
@@ -1850,20 +2041,51 @@ Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</s
 Provisioning...
 ---&gt;<span class="w"> </span><span class="m">100</span>%
 
-Serving<span class="w"> </span>HTTP<span class="w"> </span>on<span class="w"> </span>https://yellow-cat-1.example.com<span class="w"> </span>...
+Service<span class="w"> </span>is<span class="w"> </span>published<span class="w"> </span>at<span class="w"> </span>https://yellow-cat-1.example.com
 </code></pre></div>
 
 </div>
 
-<p>Once the service is deployed, its endpoint will be available at
-<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain <a href="#set-up-a-gateway">set up for the gateway</a>).</p>
 <div class="admonition info">
 <p class="admonition-title">Run options</p>
 <p>The <code>dstack run</code> command allows you to use <code>--gpu</code> to request GPUs (e.g. <code>--gpu A100</code> or <code>--gpu 80GB</code> or <code>--gpu A100:4</code>, etc.),
 and many other options (incl. spot instances, disk size, max price, max duration, retry policy, etc.).
 For more details, refer to the <a href="../../reference/cli/#dstack-run">Reference</a>.</p>
 </div>
-<p>What's next?</p>
+<h3 id="service-endpoint">Service endpoint<a class="headerlink" href="#service-endpoint" title="Permanent link">&para;</a></h3>
+<p>Once the service is up, you'll be able to 
+access it at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://yellow-cat-1.example.com/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;inputs&quot;:&quot;&amp;lt;s&amp;gt;[INST] What is your favourite condiment?[/INST]&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span>
+</code></pre></div>
+
+</div>
+
+<h4 id="openai-interface">OpenAI interface<a class="headerlink" href="#openai-interface" title="Permanent link">&para;</a></h4>
+<p>In case the service has the <a href="#model-mapping">model mapping</a> configured, you will also be able 
+to access the model at <code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+  <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://gateway.example.com&quot;</span><span class="p">,</span>
+  <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;none&quot;</span>
+<span class="p">)</span>
+
+<span class="n">completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistralai/Mistral-7B-Instruct-v0.1&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Compose a poem that explains the concept of recursion in programming.&quot;</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../../../examples/tgi/">Text Generation Inference</a> and <a href="../../../examples/vllm/">vLLM</a> examples</li>
 <li>Read about <a href="../dev-environments/">dev environments</a> 
@@ -1996,7 +2218,7 @@ For more details, refer to the <a href="../../reference/cli/#dstack-run">Referen
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

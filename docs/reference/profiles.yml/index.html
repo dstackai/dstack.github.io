@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -1045,32 +1045,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#profileresources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          ProfileResources
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#profilegpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          ProfileGPU
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#profileretrypolicy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1416,13 +1390,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/vllm/" class="md-nav__link">
+      <a href="../../../examples/tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    vLLM
+    Text Generation Inference
   
 
     
@@ -1443,13 +1417,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tgi/" class="md-nav__link">
+      <a href="../../../examples/vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Text Generation Inference
+    vLLM
   
 
     
@@ -1762,32 +1736,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#profileresources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          ProfileResources
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#profilegpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          ProfileGPU
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#profileretrypolicy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1823,20 +1771,13 @@
 
 
 <h1 id="profilesyml">profiles.yml<a class="headerlink" href="#profilesyml" title="Permanent link">&para;</a></h1>
-<p>Instead of configuring resources and other run options through<a href="../cli/#dstack-run"><code>dstack run</code></a>, 
+<p>Instead of configuring run options through<a href="../cli/#dstack-run"><code>dstack run</code></a>, 
 you can do so via <code>.dstack/profiles.yml</code> in the root folder of the project. </p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <div editor-title=".dstack/profiles.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">profiles</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">large</span>
-
-<span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span><span class="w">  </span><span class="c1"># (Optional) The minimum amount of RAM memory</span>
-<span class="w">      </span><span class="nt">gpu</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A100</span><span class="w"> </span><span class="c1"># (Optional) The name of the GPU</span>
-<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB</span><span class="w"> </span><span class="c1"># (Optional) The minimum amount of GPU memory </span>
-<span class="w">      </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8GB</span><span class="w"> </span><span class="c1"># (Optional) The size of shared memory</span>
 
 <span class="w">    </span><span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span><span class="w"> </span><span class="c1"># (Optional) The spot policy. Supports `spot`, `on-demand, and `auto`.</span>
 
@@ -1880,12 +1821,6 @@ you can do so via <code>.dstack/profiles.yml</code> in the root folder of the pr
 <td><code>None</code></td>
 </tr>
 <tr>
-<td><code>resources</code></td>
-<td>The minimum resources of the instance to be provisioned</td>
-<td><code>ProfileResources</code></td>
-<td><code>cpu=2 memory=8192 gpu=None shm_size=None disk=ProfileDisk(size=102400)</code></td>
-</tr>
-<tr>
 <td><code>spot_policy</code></td>
 <td>The policy for provisioning spot or on-demand instances: spot, on-demand, or auto</td>
 <td><code>Optional[SpotPolicy]</code></td>
@@ -1914,92 +1849,6 @@ you can do so via <code>.dstack/profiles.yml</code> in the root folder of the pr
 <td>If set to true, <code>dstack run</code> will use this profile by default.</td>
 <td><code>bool</code></td>
 <td><code>False</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="profileresources">ProfileResources<a class="headerlink" href="#profileresources" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-<th>Type</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>cpu</code></td>
-<td>The minimum number of CPUs</td>
-<td><code>Optional[int]</code></td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td><code>memory</code></td>
-<td>The minimum size of RAM memory (e.g., "16GB")</td>
-<td><code>Union[int,str,NoneType]</code></td>
-<td><code>8GB</code></td>
-</tr>
-<tr>
-<td><code>gpu</code></td>
-<td>The minimum number of GPUs or a GPU spec</td>
-<td><code>Union[int,ProfileGPU,NoneType]</code></td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>shm_size</code></td>
-<td>The size of shared memory (e.g., "8GB"). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this.</td>
-<td><code>Union[int,str,NoneType]</code></td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>disk</code></td>
-<td>The minimum size of disk or a disk spec</td>
-<td><code>Union[int,str,ProfileDisk,NoneType]</code></td>
-<td><code>size=102400</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="profilegpu">ProfileGPU<a class="headerlink" href="#profilegpu" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-<th>Type</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>The name of the GPU (e.g., "A100" or "H100")</td>
-<td><code>Optional[str]</code></td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>count</code></td>
-<td>The minimum number of GPUs</td>
-<td><code>int</code></td>
-<td><code>1</code></td>
-</tr>
-<tr>
-<td><code>memory</code></td>
-<td>The minimum size of a single GPU memory (e.g., "16GB")</td>
-<td><code>Union[int,str,NoneType]</code></td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>total_memory</code></td>
-<td>The minimum total size of all GPUs memory (e.g., "32GB")</td>
-<td><code>Union[int,str,NoneType]</code></td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>compute_capability</code></td>
-<td>The minimum compute capability of the GPU (e.g., 7.5)</td>
-<td><code>Union[float,str,Tuple,NoneType]</code></td>
-<td><code>None</code></td>
 </tr>
 </tbody>
 </table>
@@ -2153,7 +2002,7 @@ you can do so via <code>.dstack/profiles.yml</code> in the root folder of the pr
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

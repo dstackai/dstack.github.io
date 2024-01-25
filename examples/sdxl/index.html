@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -1284,13 +1284,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../vllm/" class="md-nav__link">
+      <a href="../tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    vLLM
+    Text Generation Inference
   
 
     
@@ -1311,13 +1311,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../tgi/" class="md-nav__link">
+      <a href="../vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Text Generation Inference
+    vLLM
   
 
     
@@ -1525,6 +1525,19 @@
       
         <span class="md-typeset">
           Run the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-the-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Access the endpoint
         </span>
       
     </span>
@@ -1882,6 +1895,19 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#access-the-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Access the endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2107,13 +2133,9 @@ If you're using dstack Cloud, the default gateway is configured automatically fo
 
 </div>
 
-<div class="admonition info">
-<p class="admonition-title">Endpoint URL</p>
-<p>Once the service is deployed, its endpoint will be available at 
-<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
-<p>If you wish to customize the run name, you can use the <code>-n</code> argument with the <code>dstack run</code> command.</p>
-</div>
-<p>Once the service is up, you can query the endpoint:</p>
+<h2 id="access-the-endpoint">Access the endpoint<a class="headerlink" href="#access-the-endpoint" title="Permanent link">&para;</a></h2>
+<p>Once the service is up, you can query it at 
+<code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code> (using the domain set up for the gateway):</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--location<span class="w"> </span>https://yellow-cat-1.mydomain.com/generate<span class="w"> </span><span class="se">\</span>
@@ -2124,7 +2146,7 @@ If you're using dstack Cloud, the default gateway is configured automatically fo
 </div>
 
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
-<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples">dstackai/dstack-examples</a>.</p>
+<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples"><code>dstackai/dstack-examples</code></a>.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../tgi/">Text Generation Inference</a> and <a href="../vllm/">vLLM</a> examples</li>
@@ -2257,7 +2279,7 @@ If you're using dstack Cloud, the default gateway is configured automatically fo
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

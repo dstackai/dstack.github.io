@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dstack.ai/examples/tei/">
       
       
-        <link rel="prev" href="../tgi/">
+        <link rel="prev" href="../vllm/">
       
       
         <link rel="next" href="../sdxl/">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -1284,13 +1284,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../vllm/" class="md-nav__link">
+      <a href="../tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    vLLM
+    Text Generation Inference
   
 
     
@@ -1311,13 +1311,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../tgi/" class="md-nav__link">
+      <a href="../vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Text Generation Inference
+    vLLM
   
 
     
@@ -1414,6 +1414,45 @@
       
         <span class="md-typeset">
           Run the configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-the-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Access the endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
         </span>
       
     </span>
@@ -1687,6 +1726,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#access-the-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Access the endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1717,19 +1795,16 @@
 <a href="../../docs/concepts/services/">services</a> to deploy embeddings.</p>
 <h2 id="define-the-configuration">Define the configuration<a class="headerlink" href="#define-the-configuration" title="Permanent link">&para;</a></h2>
 <p>To deploy a text embeddings model as a service using TEI, define the following configuration file:</p>
-<div editor-title="text-embeddings-inference/serve.dstack.yml"> 
+<div editor-title="deployment/tae/serve.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
 <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-embeddings-inference:latest</span>
-
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=thenlper/gte-base</span>
-
-<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
-
 <span class="nt">commands</span><span class="p">:</span><span class="w"> </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-embeddings-router --hostname 0.0.0.0 --port 8000</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-embeddings-router --port 80</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
 </code></pre></div>
 
 </div>
@@ -1742,21 +1817,17 @@ If you're using dstack Cloud, the default gateway is configured automatically fo
 </div>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>text-embeddings-inference/embeddings.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span>24GB
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>deployment/tae/serve.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span>24GB
 </code></pre></div>
 
 </div>
 
-<div class="admonition info">
-<p class="admonition-title">Endpoint URL</p>
-<p>Once the service is deployed, its endpoint will be available at 
-<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
-<p>If you wish to customize the run name, you can use the <code>-n</code> argument with the <code>dstack run</code> command.</p>
-</div>
-<p>Once the service is up, you can query it:</p>
+<h2 id="access-the-endpoint">Access the endpoint<a class="headerlink" href="#access-the-endpoint" title="Permanent link">&para;</a></h2>
+<p>Once the service is up, you can query it at 
+<code>https://&lt;run name&gt;.&lt;gatewy domain&gt;</code> (using the domain set up for the gateway):</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://yellow-cat-1.mydomain.com<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://yellow-cat-1.example.com<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;inputs&quot;:&quot;What is Deep Learning?&quot;}&#39;</span>
@@ -1778,10 +1849,15 @@ using <a href="../../docs/reference/dstack.yml/#service"><code>env</code></a> in
 </code></pre></div>
 </div></p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">Source code</p>
-<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples">dstackai/dstack-examples</a>.</p>
-</div>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples"><code>dstackai/dstack-examples</code></a>.</p>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Check the <a href="../tgi/">Text Generation Inference</a> and <a href="../vllm/">vLLM</a> examples</li>
+<li>Read about <a href="../../docs/concepts/services/">services</a></li>
+<li>Browse all <a href="../">examples</a></li>
+<li>Join the <a href="https://discord.gg/u8SmfwPpMd">Discord server</a></li>
+</ol>
 
 
 
@@ -1819,7 +1895,7 @@ using <a href="../../docs/reference/dstack.yml/#service"><code>env</code></a> in
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../tgi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Text Generation Inference">
+          <a href="../vllm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: vLLM">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1829,7 +1905,7 @@ using <a href="../../docs/reference/dstack.yml/#service"><code>env</code></a> in
                 Previous
               </span>
               <div class="md-ellipsis">
-                Text Generation Inference
+                vLLM
               </div>
             </div>
           </a>
@@ -1907,7 +1983,7 @@ using <a href="../../docs/reference/dstack.yml/#service"><code>env</code></a> in
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

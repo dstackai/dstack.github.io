@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -1723,13 +1723,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../examples/vllm/" class="md-nav__link">
+      <a href="../../../../examples/tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    vLLM
+    Text Generation Inference
   
 
     
@@ -1750,13 +1750,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../examples/tgi/" class="md-nav__link">
+      <a href="../../../../examples/vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Text Generation Inference
+    vLLM
   
 
     
@@ -2453,12 +2453,12 @@
         <span class="s2">&quot;text-generation-launcher --trust-remote-code --quantize gptq&quot;</span><span class="p">,</span>
     <span class="p">],</span>
     <span class="n">ports</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;80&quot;</span><span class="p">],</span>
+    <span class="n">resources</span><span class="o">=</span><span class="n">Resources</span><span class="p">(</span><span class="n">gpu</span><span class="o">=</span><span class="n">GPU</span><span class="p">(</span><span class="n">memory</span><span class="o">=</span><span class="s2">&quot;24GB&quot;</span><span class="p">)),</span>
 <span class="p">)</span>
 
 <span class="n">run</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
     <span class="n">run_name</span><span class="o">=</span><span class="s2">&quot;my-awesome-run&quot;</span><span class="p">,</span>  <span class="c1"># If not specified, a random name is assigned </span>
     <span class="n">configuration</span><span class="o">=</span><span class="n">task</span><span class="p">,</span>
-    <span class="n">resources</span><span class="o">=</span><span class="n">Resources</span><span class="p">(</span><span class="n">gpu</span><span class="o">=</span><span class="n">GPU</span><span class="p">(</span><span class="n">memory</span><span class="o">=</span><span class="s2">&quot;24GB&quot;</span><span class="p">)),</span>
     <span class="n">repo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># Specify to mount additional files</span>
 <span class="p">)</span>
 
@@ -2945,11 +2945,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
         <tr>
           <td><code>resources</code></td>
           <td>
-                <code><span title="dstack.api.Resources">Resources</span></code>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Resources">Resources</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The minimal required resources for provisioning.</p>
+              <p>The requirements to run the configuration. Overrides the configuration's resources.</p>
             </div>
           </td>
           <td>
@@ -3330,6 +3330,17 @@ You can override these credentials via the <code>git_identity_file</code> or <co
             </div>
           </td>
         </tr>
+        <tr>
+          <td><code><span title="dstack.api._TaskConfiguration.resources">resources</span></code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Resources">Resources</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The requirements to run the configuration.</p>
+            </div>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -3462,6 +3473,28 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <td>
             <div class="doc-md-description">
               <p>The absolute path to the home directory inside the container. Defaults to <code>/root</code>.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api._ServiceConfiguration.resources">resources</span></code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Resources">Resources</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The requirements to run the configuration.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api._ServiceConfiguration.model">model</span></code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[ModelMapping]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Mapping of the model for the OpenAI-compatible endpoint.</p>
             </div>
           </td>
         </tr>
@@ -3863,31 +3896,31 @@ You can override these credentials via the <code>git_identity_file</code> or <co
     </thead>
     <tbody>
         <tr>
-          <td><code><span title="dstack.api._ProfileResources.cpu">cpu</span></code></td>
+          <td><code><span title="dstack.api.Resources.cpu">cpu</span></code></td>
           <td>
-                <code><span title="typing.Optional">Optional</span>[int]</code>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Range">Range</span>[int]]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The minimum number of CPUs</p>
+              <p>The number of CPUs</p>
             </div>
           </td>
         </tr>
         <tr>
-          <td><code><span title="dstack.api._ProfileResources.memory">memory</span></code></td>
+          <td><code><span title="dstack.api.Resources.memory">memory</span></code></td>
           <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Range">Range</span>[<span title="dstack._internal.core.models.resources.Memory">Memory</span>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The minimum size of RAM memory (e.g., <code>"16GB"</code>)</p>
+              <p>The size of RAM memory (e.g., <code>"16GB"</code>)</p>
             </div>
           </td>
         </tr>
         <tr>
-          <td><code><span title="dstack.api._ProfileResources.gpu">gpu</span></code></td>
+          <td><code><span title="dstack.api.Resources.gpu">gpu</span></code></td>
           <td>
-                <code><span title="typing.Optional">Optional</span>[GPU]</code>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.GPU">GPU</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3896,20 +3929,20 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           </td>
         </tr>
         <tr>
-          <td><code><span title="dstack.api._ProfileResources.shm_size">shm_size</span></code></td>
+          <td><code><span title="dstack.api.Resources.shm_size">shm_size</span></code></td>
           <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Range">Range</span>[<span title="dstack._internal.core.models.resources.Memory">Memory</span>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The size of shared memory (e.g., <code>"8GB"</code>). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this.</p>
+              <p>The of shared memory (e.g., <code>"8GB"</code>). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this.</p>
             </div>
           </td>
         </tr>
         <tr>
-          <td><code><span title="dstack.api._ProfileResources.disk">disk</span></code></td>
+          <td><code><span title="dstack.api.Resources.disk">disk</span></code></td>
           <td>
-                <code><span title="typing.Optional">Optional</span>[Disk]</code>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Disk">Disk</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3966,9 +3999,9 @@ You can override these credentials via the <code>git_identity_file</code> or <co
     </thead>
     <tbody>
         <tr>
-          <td><code><span title="dstack.api._ProfileGPU.name">name</span></code></td>
+          <td><code><span title="dstack.api.GPU.name">name</span></code></td>
           <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[str]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3977,42 +4010,42 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           </td>
         </tr>
         <tr>
-          <td><code><span title="dstack.api._ProfileGPU.count">count</span></code></td>
+          <td><code><span title="dstack.api.GPU.count">count</span></code></td>
           <td>
-                <code>int</code>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Range">Range</span>[int]]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The minimum number of GPUs</p>
+              <p>The number of GPUs</p>
             </div>
           </td>
         </tr>
         <tr>
-          <td><code><span title="dstack.api._ProfileGPU.memory">memory</span></code></td>
+          <td><code><span title="dstack.api.GPU.memory">memory</span></code></td>
           <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Range">Range</span>[<span title="dstack._internal.core.models.resources.Memory">Memory</span>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The minimum size of a single GPU memory (e.g., <code>"16GB"</code>)</p>
+              <p>The size of a single GPU memory (e.g., <code>"16GB"</code>)</p>
             </div>
           </td>
         </tr>
         <tr>
-          <td><code><span title="dstack.api._ProfileGPU.total_memory">total_memory</span></code></td>
+          <td><code><span title="dstack.api.GPU.total_memory">total_memory</span></code></td>
           <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.Range">Range</span>[<span title="dstack._internal.core.models.resources.Memory">Memory</span>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The minimum total size of all GPUs memory (e.g., <code>"32GB"</code>)</p>
+              <p>The total size of all GPUs memory (e.g., <code>"32GB"</code>)</p>
             </div>
           </td>
         </tr>
         <tr>
-          <td><code><span title="dstack.api._ProfileGPU.compute_capability">compute_capability</span></code></td>
+          <td><code><span title="dstack.api.GPU.compute_capability">compute_capability</span></code></td>
           <td>
-                <code>float</code>
+                <code><span title="typing.Optional">Optional</span>[float]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4069,13 +4102,13 @@ You can override these credentials via the <code>git_identity_file</code> or <co
     </thead>
     <tbody>
         <tr>
-          <td><code><span title="dstack.api._ProfileDisk.size">size</span></code></td>
+          <td><code><span title="dstack.api.Disk.size">size</span></code></td>
           <td>
-                <code>str</code>
+                <code><span title="dstack._internal.core.models.resources.Range">Range</span>[<span title="dstack._internal.core.models.resources.Memory">Memory</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The minimum size of the disk (e.g., <code>"100GB"</code>)</p>
+              <p>The size of the disk (e.g., <code>"100GB"</code>)</p>
             </div>
           </td>
         </tr>
@@ -4975,7 +5008,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

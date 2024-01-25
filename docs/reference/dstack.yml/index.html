@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -1371,13 +1371,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/vllm/" class="md-nav__link">
+      <a href="../../../examples/tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    vLLM
+    Text Generation Inference
   
 
     
@@ -1398,13 +1398,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tgi/" class="md-nav__link">
+      <a href="../../../examples/vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Text Generation Inference
+    vLLM
   
 
     
@@ -1804,6 +1804,12 @@ code, and environment.</p>
 <td><code>[]</code></td>
 </tr>
 <tr>
+<td><code>resources</code></td>
+<td>The resources requirements to run the configuration</td>
+<td><code>Resources</code></td>
+<td><code>cpu=Range[int](min=2, max=None) memory=Range[Memory](min=8GB, max=None) shm_size=None gpu=None disk=None</code></td>
+</tr>
+<tr>
 <td><code>ports</code></td>
 <td>Port numbers/mapping to expose</td>
 <td><code>List[Union[ConstrainedIntValue,ConstrainedStrValue,PortMapping]]</code></td>
@@ -1890,6 +1896,12 @@ code, and environment.</p>
 <td><code>[]</code></td>
 </tr>
 <tr>
+<td><code>resources</code></td>
+<td>The resources requirements to run the configuration</td>
+<td><code>Resources</code></td>
+<td><code>cpu=Range[int](min=2, max=None) memory=Range[Memory](min=8GB, max=None) shm_size=None gpu=None disk=None</code></td>
+</tr>
+<tr>
 <td><code>ports</code></td>
 <td>Port numbers/mapping to expose</td>
 <td><code>List[Union[ConstrainedIntValue,ConstrainedStrValue,PortMapping]]</code></td>
@@ -1964,6 +1976,12 @@ code, and environment.</p>
 <td><code>[]</code></td>
 </tr>
 <tr>
+<td><code>resources</code></td>
+<td>The resources requirements to run the configuration</td>
+<td><code>Resources</code></td>
+<td><code>cpu=Range[int](min=2, max=None) memory=Range[Memory](min=8GB, max=None) shm_size=None gpu=None disk=None</code></td>
+</tr>
+<tr>
 <td><code>commands</code></td>
 <td>The bash commands to run</td>
 <td><code>List[str]</code></td>
@@ -1977,7 +1995,7 @@ code, and environment.</p>
 </tr>
 <tr>
 <td><code>model</code></td>
-<td>The model info for OpenAI interface</td>
+<td>Mapping of the model for the OpenAI-compatible endpoint</td>
 <td><code>Optional[ModelInfo]</code></td>
 <td><code>None</code></td>
 </tr>
@@ -2108,7 +2126,7 @@ code, and environment.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

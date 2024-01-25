@@ -15,17 +15,17 @@
         <link rel="canonical" href="https://dstack.ai/examples/tgi/">
       
       
-        <link rel="prev" href="../vllm/">
+        <link rel="prev" href="../qlora/">
       
       
-        <link rel="next" href="../tei/">
+        <link rel="next" href="../vllm/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4+insiders-4.50.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.67c3bdf0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.116e191e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0rc1 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
 
           </div>
           
@@ -1281,33 +1281,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../vllm/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    vLLM
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1396,11 +1369,25 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#quantization" class="md-nav__link">
+  <a href="#access-the-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Quantization
+          Access the endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access the endpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          OpenAI interface
         </span>
       
     </span>
@@ -1410,6 +1397,24 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Quantization
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1443,6 +1448,33 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vllm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    vLLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1734,11 +1766,25 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#quantization" class="md-nav__link">
+  <a href="#access-the-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Quantization
+          Access the endpoint
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access the endpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          OpenAI interface
         </span>
       
     </span>
@@ -1748,6 +1794,24 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Quantization
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1811,18 +1875,27 @@
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
 <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
-
 <span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=NousResearch/Llama-2-7b-hf</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=mistralai/Mistral-7B-Instruct-v0.1</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --port 80 --trust-remote-code</span>
 
-<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
-
-<span class="nt">commands</span><span class="p">:</span><span class="w"> </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --hostname 0.0.0.0 --port 8000 --trust-remote-code</span>
+<span class="c1"># Optional mapping for OpenAI interface</span>
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mistralai/Mistral-7B-Instruct-v0.1</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tgi</span>
 </code></pre></div>
 
 </div>
 
+<div class="admonition info">
+<p class="admonition-title">Model mapping</p>
+<p>Note the <code>model</code> property is optional and is only required
+if you're running a chat model and want to access it via an OpenAI-compatible endpoint.
+For more details on how to use it feature, check the documentation on <a href="../../docs/concepts/services/">services</a>.</p>
+</div>
 <h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Gateway</p>
@@ -1836,27 +1909,39 @@ If you're using dstack Cloud, the default gateway is configured automatically fo
 
 </div>
 
-<div class="admonition info">
-<p class="admonition-title">Endpoint URL</p>
-<p>Once the service is deployed, its endpoint will be available at 
-<code>https://&lt;run-name&gt;.&lt;domain-name&gt;</code> (using the domain set up for the gateway).</p>
-<p>If you wish to customize the run name, you can use the <code>-n</code> argument with the <code>dstack run</code> command.</p>
-</div>
-<p>Once the service is up, you can query it:</p>
+<h3 id="access-the-endpoint">Access the endpoint<a class="headerlink" href="#access-the-endpoint" title="Permanent link">&para;</a></h3>
+<p>Once the service is up, you'll be able to 
+access it at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--location<span class="w"> </span>https://yellow-cat-1.mydomain.com/generate<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">          &quot;inputs&quot;: &quot;What is Deep Learning?&quot;,</span>
-<span class="s1">          &quot;parameters&quot;: {</span>
-<span class="s1">            &quot;max_new_tokens&quot;: 20</span>
-<span class="s1">          }</span>
-<span class="s1">        }&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://yellow-cat-1.example.com/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;inputs&quot;:&quot;&amp;lt;s&amp;gt;[INST] What is your favourite condiment?[/INST]&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span>
 </code></pre></div>
 
 </div>
 
+<h4 id="openai-interface">OpenAI interface<a class="headerlink" href="#openai-interface" title="Permanent link">&para;</a></h4>
+<p>Because we've configured the model mapping, it will also be possible 
+to access the model at <code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+  <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://gateway.example.com&quot;</span><span class="p">,</span>
+  <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;none&quot;</span>
+<span class="p">)</span>
+
+<span class="n">completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistralai/Mistral-7B-Instruct-v0.1&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Compose a poem that explains the concept of recursion in programming.&quot;</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Hugging Face Hub token</p>
 <p>To use a model with gated access, ensure configuring the <code>HUGGING_FACE_HUB_TOKEN</code> environment variable 
@@ -1869,33 +1954,31 @@ using <a href="../../docs/reference/dstack.yml/#service"><code>env</code></a> in
 </code></pre></div>
 </div></p>
 </div>
-<h3 id="quantization">Quantization<a class="headerlink" href="#quantization" title="Permanent link">&para;</a></h3>
-<p>An LLM typically requires twice the GPU memory compared to its parameter count. For instance, a model with <code>13B</code> parameters
-needs around <code>26GB</code> of GPU memory. To decrease memory usage and fit the model on a smaller GPU, consider using
-quantization, which TGI offers as <code>bitsandbytes</code> and <code>gptq</code> methods. </p>
-<p>Here's an example of the Llama 2 13B model tailored for a <code>24GB</code> GPU (A10 or L4):</p>
+<h2 id="quantization">Quantization<a class="headerlink" href="#quantization" title="Permanent link">&para;</a></h2>
+<p>Here's an example of using TGI with quantization:</p>
 <div editor-title="text-generation-inference/serve.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
 <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
-
 <span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=TheBloke/Llama-2-13B-GPTQ</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=TheBloke/Llama-2-13B-chat-GPTQ</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --port 80 --trust-remote-code --quantize gptq</span>
 
-<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
-
-<span class="nt">commands</span><span class="p">:</span><span class="w"> </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --hostname 0.0.0.0 --port 8000 --trust-remote-code --quantize gptq</span>
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TheBloke/Llama-2-13B-chat-GPTQ</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tgi</span>
+<span class="w">  </span><span class="nt">chat_template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">messages[0][&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;system&#39;</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">loop_messages</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">messages[1:]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">messages[0][&#39;content&#39;]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">loop_messages</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">messages</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">false</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">loop_messages</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(message[&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;user&#39;)</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">(loop.index0</span><span class="nv"> </span><span class="s">%</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0)</span><span class="nv"> </span><span class="s">%}{{</span><span class="nv"> </span><span class="s">raise_exception(&#39;Conversation</span><span class="nv"> </span><span class="s">roles</span><span class="nv"> </span><span class="s">must</span><span class="nv"> </span><span class="s">alternate</span><span class="nv"> </span><span class="s">user/assistant/user/assistant/...&#39;)</span><span class="nv"> </span><span class="s">}}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">loop.index0</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">false</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">&#39;&lt;&lt;SYS&gt;&gt;\\n&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;\\n&lt;&lt;/SYS&gt;&gt;\\n\\n&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">message[&#39;content&#39;]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">message[&#39;content&#39;]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">message[&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;user&#39;</span><span class="nv"> </span><span class="s">%}{{</span><span class="nv"> </span><span class="s">&#39;&lt;s&gt;[INST]</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">content.strip()</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">[/INST]&#39;</span><span class="nv"> </span><span class="s">}}{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">message[&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;assistant&#39;</span><span class="nv"> </span><span class="s">%}{{</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv">  </span><span class="s">+</span><span class="nv"> </span><span class="s">content.strip()</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&lt;/s&gt;&#39;</span><span class="nv"> </span><span class="s">}}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">endfor</span><span class="nv"> </span><span class="s">%}&quot;</span>
+<span class="w">  </span><span class="nt">eos_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;/s&gt;&quot;</span>
 </code></pre></div>
 
 </div>
 
-<p>A similar approach allows running the Llama 2 70B model on an <code>40GB</code> GPU (A100).</p>
-<p>To calculate the exact GPU memory required for a specific model with different quantization methods, you can use the
-<a href="https://huggingface.co/spaces/hf-accelerate/model-memory-usage">hf-accelerate/memory-model-usage</a> Space.</p>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
-<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples">dstackai/dstack-examples</a>.</p>
+<p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples"><code>dstackai/dstack-examples</code></a>.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../tei/">Text Embeddings Inference</a> and <a href="../vllm/">vLLM</a> examples</li>
@@ -1940,7 +2023,7 @@ quantization, which TGI offers as <code>bitsandbytes</code> and <code>gptq</code
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../vllm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: vLLM">
+          <a href="../qlora/" class="md-footer__link md-footer__link--prev" aria-label="Previous: QLoRA">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1950,20 +2033,20 @@ quantization, which TGI offers as <code>bitsandbytes</code> and <code>gptq</code
                 Previous
               </span>
               <div class="md-ellipsis">
-                vLLM
+                QLoRA
               </div>
             </div>
           </a>
         
         
           
-          <a href="../tei/" class="md-footer__link md-footer__link--next" aria-label="Next: Text Embedding Interface">
+          <a href="../vllm/" class="md-footer__link md-footer__link--next" aria-label="Next: vLLM">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Text Embedding Interface
+                vLLM
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2028,7 +2111,7 @@ quantization, which TGI offers as <code>bitsandbytes</code> and <code>gptq</code
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.a0279539.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       
