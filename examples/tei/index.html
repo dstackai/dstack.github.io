@@ -1496,6 +1496,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infinity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Infinity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1824,7 +1851,7 @@ If you're using dstack Cloud, the default gateway is configured automatically fo
 
 <h2 id="access-the-endpoint">Access the endpoint<a class="headerlink" href="#access-the-endpoint" title="Permanent link">&para;</a></h2>
 <p>Once the service is up, you can query it at 
-<code>https://&lt;run name&gt;.&lt;gatewy domain&gt;</code> (using the domain set up for the gateway):</p>
+<code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code> (using the domain set up for the gateway):</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://yellow-cat-1.example.com<span class="w"> </span><span class="se">\</span>
@@ -1842,12 +1869,6 @@ If you're using dstack Cloud, the default gateway is configured automatically fo
 <p>To use a model with gated access, ensure configuring the <code>HUGGING_FACE_HUB_TOKEN</code> environment variable 
 (with <a href="../../docs/reference/cli/#dstack-run"><code>--env</code></a> in <code>dstack run</code> or 
 using <a href="../../docs/reference/dstack.yml/#service"><code>env</code></a> in the configuration file).</p>
-<div class="termy">
-<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>text-embeddings-inference/serve.dstack.yml<span class="w"> </span><span class="se">\ </span>
-<span class="w">    </span>--env<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span><span class="p">&amp;</span>lt<span class="p">;</span>token<span class="p">&amp;</span>gt<span class="p">;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--gpu<span class="w"> </span>24GB
-</code></pre></div>
-</div></p>
 </div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
 <p>The complete, ready-to-run code is available in <a href="https://github.com/dstackai/dstack-examples"><code>dstackai/dstack-examples</code></a>.</p>
