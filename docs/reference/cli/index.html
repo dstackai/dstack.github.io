@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5+insiders-4.51.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7+insiders-4.52.1">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.116e191e.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ede334a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1047,9 +1047,21 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../api/python/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     
@@ -1062,7 +1074,77 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2015,12 +2097,15 @@ You can override this key via <code>--ssh-identity</code>.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>--help
+A<span class="w"> </span>new<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>dstack<span class="w"> </span>is<span class="w"> </span>available:<span class="w"> </span><span class="m">0</span>.15.0rc1
+
 Usage:<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="w"> </span><span class="o">[</span>TYPE<span class="o">]]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>RUN_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="o">]</span>
-<span class="w">                  </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-offers<span class="w"> </span>MAX_OFFERS<span class="o">]</span><span class="w"> </span><span class="o">[</span>--profile<span class="w"> </span>NAME<span class="o">]</span>
-<span class="w">                  </span><span class="o">[</span>--max-price<span class="w"> </span>PRICE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-duration<span class="w"> </span>DURATION<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="w"> </span>NAME<span class="o">]</span>
+<span class="w">                  </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-offers<span class="w"> </span>MAX_OFFERS<span class="o">]</span><span class="w"> </span><span class="o">[</span>--profile<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--gpu<span class="w"> </span>SPEC<span class="o">]</span>
+<span class="w">                  </span><span class="o">[</span>--disk<span class="w"> </span>SIZE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-price<span class="w"> </span>PRICE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-duration<span class="w"> </span>DURATION<span class="o">]</span>
+<span class="w">                  </span><span class="o">[</span>-b<span class="w"> </span>NAME<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>--spot<span class="w"> </span><span class="p">|</span><span class="w"> </span>--on-demand<span class="w"> </span><span class="p">|</span><span class="w"> </span>--spot-auto<span class="w"> </span><span class="p">|</span><span class="w"> </span>--spot-policy<span class="w"> </span>POLICY<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>--retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--no-retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--retry-limit<span class="w"> </span>DURATION<span class="o">]</span>
-<span class="w">                  </span><span class="o">[</span>-e<span class="w"> </span><span class="nv">KEY</span><span class="o">=</span>VALUE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--gpu<span class="w"> </span>SPEC<span class="o">]</span><span class="w"> </span><span class="o">[</span>--disk<span class="w"> </span>RANGE<span class="o">]</span>
+<span class="w">                  </span><span class="o">[</span>-e<span class="w"> </span><span class="nv">KEY</span><span class="o">=</span>VALUE<span class="o">]</span>
 <span class="w">                  </span>working_dir
 
 Positional<span class="w"> </span>Arguments:
@@ -2039,13 +2124,13 @@ Options:
 <span class="w">  </span>--max-offers<span class="w"> </span>MAX_OFFERS
 <span class="w">                        </span>Number<span class="w"> </span>of<span class="w"> </span>offers<span class="w"> </span>to<span class="w"> </span>show<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>plan
 <span class="w">  </span>-e,<span class="w"> </span>--env<span class="w"> </span><span class="nv">KEY</span><span class="o">=</span>VALUE<span class="w">   </span>Environment<span class="w"> </span>variables
-<span class="w">  </span>--gpu<span class="w"> </span>SPEC<span class="w">            </span>Request<span class="w"> </span>GPU<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run.<span class="w"> </span>The<span class="w"> </span>format<span class="w"> </span>is
-<span class="w">                        </span>NAME:COUNT:MEMORY<span class="w"> </span><span class="o">(</span>all<span class="w"> </span>parts<span class="w"> </span>are<span class="w"> </span>optional<span class="o">)</span>
-<span class="w">  </span>--disk<span class="w"> </span>RANGE<span class="w">          </span>Request<span class="w"> </span>the<span class="w"> </span>size<span class="w"> </span>range<span class="w"> </span>of<span class="w"> </span>disk<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run.<span class="w"> </span>Example
-<span class="w">                        </span>--disk<span class="w"> </span>100GB...
 
 Profile:
 <span class="w">  </span>--profile<span class="w"> </span>NAME<span class="w">        </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>profile.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="nv">$DSTACK_PROFILE</span>
+<span class="w">  </span>--gpu<span class="w"> </span>SPEC<span class="w">            </span>Request<span class="w"> </span>a<span class="w"> </span>GPU<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run.<span class="w"> </span>The<span class="w"> </span>format<span class="w"> </span>is
+<span class="w">                        </span>NAME:COUNT:MEMORY<span class="w"> </span><span class="o">(</span>all<span class="w"> </span>parts<span class="w"> </span>are<span class="w"> </span>optional<span class="o">)</span>
+<span class="w">  </span>--disk<span class="w"> </span>SIZE<span class="w">           </span>Request<span class="w"> </span>the<span class="w"> </span>minimum<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span>disk<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run.<span class="w"> </span>Example
+<span class="w">                        </span>--disk<span class="w"> </span>100GB.
 <span class="w">  </span>--max-price<span class="w"> </span>PRICE<span class="w">     </span>The<span class="w"> </span>maximum<span class="w"> </span>price<span class="w"> </span>per<span class="w"> </span>hour,<span class="w"> </span><span class="k">in</span><span class="w"> </span>dollars
 <span class="w">  </span>--max-duration<span class="w"> </span>DURATION
 <span class="w">  </span>-b,<span class="w"> </span>--backend<span class="w"> </span>NAME<span class="w">    </span>The<span class="w"> </span>backends<span class="w"> </span>that<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>tried<span class="w"> </span><span class="k">for</span><span class="w"> </span>provisioning
@@ -2356,13 +2441,13 @@ Options:
         
         
           
-          <a href="../api/python/" class="md-footer__link md-footer__link--next" aria-label="Next: API">
+          <a href="../api/python/" class="md-footer__link md-footer__link--next" aria-label="Next: Python API">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                API
+                Python API
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2427,7 +2512,7 @@ Options:
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.9b5b4ad4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.0e2aa882.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

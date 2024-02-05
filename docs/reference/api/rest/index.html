@@ -12,27 +12,31 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/examples/spot/">
+        <link rel="canonical" href="https://dstack.ai/docs/reference/api/rest/">
       
       
+        <link rel="prev" href="../python/">
+      
+      
+        <link rel="next" href="../../dstack.yml/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7+insiders-4.52.1">
     
     
       
-        <title>Spot instances - dstack</title>
+        <title>REST API - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ede334a4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ede334a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,17 +61,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -85,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Spot instances - dstack" />
+<meta property="og:title" content="REST API - dstack" />
 <meta property="og:description" content="dstack is an open-source toolkit for running GPU workloads on any cloud. It simplifies development, training, and deployment of gen AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/examples/spot.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/reference/api/rest/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/examples/spot/" />
+<meta property="og:url" content="https://dstack.ai/docs/reference/api/rest/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Spot instances - dstack" />
+<meta property="twitter.title" content="REST API - dstack" />
 <meta property="twitter:description" content="dstack is an open-source toolkit for running GPU workloads on any cloud. It simplifies development, training, and deployment of gen AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/examples/spot.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/reference/api/rest/index.png" />
 </head>
   
   
@@ -113,11 +117,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#spot-instances" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -148,7 +147,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -165,7 +164,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Spot instances
+              REST API
             
           </span>
         </div>
@@ -264,7 +263,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -279,17 +278,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../docs/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
   Docs
@@ -310,7 +313,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../" class="md-tabs__link">
+        <a href="../../../../examples/" class="md-tabs__link">
           
   
   Examples
@@ -343,7 +346,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../platform/" class="md-tabs__link">
+      <a href="../../../../platform/" class="md-tabs__link">
         
   
     
@@ -396,7 +399,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -423,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -446,8 +449,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -456,12 +461,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -481,7 +486,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -549,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -576,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/installation/" class="md-nav__link">
+      <a href="../../../installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -603,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/quickstart/" class="md-nav__link">
+      <a href="../../../quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -688,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/concepts/dev-environments/" class="md-nav__link">
+      <a href="../../../concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -715,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/concepts/tasks/" class="md-nav__link">
+      <a href="../../../concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -742,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/concepts/services/" class="md-nav__link">
+      <a href="../../../concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -774,8 +779,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -784,12 +791,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
@@ -809,7 +816,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -827,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/cli/" class="md-nav__link">
+      <a href="../../cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -851,19 +858,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
@@ -883,7 +892,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -901,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/api/python/" class="md-nav__link">
+      <a href="../python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -925,10 +934,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../docs/reference/api/rest/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -943,6 +959,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -963,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/dstack.yml/" class="md-nav__link">
+      <a href="../../dstack.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -990,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
+      <a href="../../server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1017,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/profiles.yml/" class="md-nav__link">
+      <a href="../../profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1109,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1186,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mixtral/" class="md-nav__link">
+      <a href="../../../../examples/mixtral/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1271,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qlora/" class="md-nav__link">
+      <a href="../../../../examples/qlora/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1356,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tgi/" class="md-nav__link">
+      <a href="../../../../examples/tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1383,7 +1400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vllm/" class="md-nav__link">
+      <a href="../../../../examples/vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1410,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tei/" class="md-nav__link">
+      <a href="../../../../examples/tei/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sdxl/" class="md-nav__link">
+      <a href="../../../../examples/sdxl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1464,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infinity/" class="md-nav__link">
+      <a href="../../../../examples/infinity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1549,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llama-index/" class="md-nav__link">
+      <a href="../../../../examples/llama-index/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1617,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/" class="md-nav__link">
+      <a href="../../../../platform/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1679,55 +1696,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#setting-a-spot-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Setting a spot policy
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-a-retry-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Setting a retry policy
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips-and-tricks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Tips and tricks
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1743,88 +1711,59 @@
       
 
 
+
+  <h1>REST API</h1>
+
+<style>
+    .md-typeset h1 {
+        display: none;
+    }
+    .swagger-ui .info {
+        margin: 0 !important;
+    }
+
+    .swagger-ui .info h1, .swagger-ui .info h2, .swagger-ui .info h3, .swagger-ui .info h4, .swagger-ui .info h5 {
+        font-weight: 800 !important;
+        letter-spacing: -1px !important;
+        color: rgb(0, 0, 0) !important;
+        text-transform: none !important;
+        font-family: var(--md-text-font-family) !important;
+    }
+
+    .swagger-ui .info .title {
+        padding: 0 !important;
+    }
+
+    .md-content__inner > p:nth-of-type(1) {
+        display: none;
+    }
+
+    .swagger-ui .info li, .swagger-ui .info p, .swagger-ui .info table {
+        line-height: 1.3rem !important;
+        font-size: 0.8rem !important;
+        font-family: var(--md-text-font-family) !important;
+    }
+</style>
+
+<p><link type="text/css" rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"></p>
+<div id="swagger-ui-1">
+</div>
+<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
+<script>
+    SwaggerUIBundle({
+      url: 'openapi.json',
+      dom_id: '#swagger-ui-1',
+    })
+</script>
+
+
+
+
+
+
+
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/examples/spot.md" title="Edit this page" class="md-content__button md-icon">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-    </a>
   
-  
-
-
-<h1 id="spot-instances">Spot instances<a class="headerlink" href="#spot-instances" title="Permanent link">&para;</a></h1>
-<p>Cloud instances come in three types: <code>reserved</code> (for long-term commitments at a cheaper rate), <code>on-demand</code> (used as needed but
-more expensive), and <code>spot</code> (cheapest, provided when available, but can be taken away when requested by someone else).</p>
-<p>There are three cloud providers that offer spot instances: AWS, GCP, and Azure. 
-Once you've <a href="../../docs/installation/">configured</a> any of these, you can use spot instances 
-for <a href="../../docs/concepts/dev-environments/">dev environments</a>, <a href="../../docs/concepts/tasks/">tasks</a>, and 
-<a href="../../docs/concepts/services/">services</a>.</p>
-<div class="admonition info">
-<p class="admonition-title">NOTE:</p>
-<p>Before you can use spot instances with AWS, GCP, and Azure, ensure you request the necessary quota 
-in the corresponding regions via a support ticket.</p>
-</div>
-<h2 id="setting-a-spot-policy">Setting a spot policy<a class="headerlink" href="#setting-a-spot-policy" title="Permanent link">&para;</a></h2>
-<p>By default, for dev environments, <code>dstack</code> doesn't use spot instances. For
-tasks and services, <code>dstack</code> uses spot instances only if they are available (falling back to on-demand otherwise).
-This default behavior can be overriden. </p>
-<p>To use only spot instances, pass <code>--spot</code> to <code>dstack run</code>. 
-To use spot instances only if they are available (and fallback to on-demand instances otherwise),
-pass <code>--spot-auto</code>:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>--gpu<span class="w"> </span>24GB<span class="w"> </span>--spot-auto
-<span class="w"> </span>Max<span class="w"> </span>price<span class="w">      </span>-
-<span class="w"> </span>Max<span class="w"> </span>duration<span class="w">   </span>6h
-<span class="w"> </span>Spot<span class="w"> </span>policy<span class="w">    </span>auto
-<span class="w"> </span>Retry<span class="w"> </span>policy<span class="w">   </span>no
-
-<span class="w"> </span><span class="c1">#  BACKEND  REGION       RESOURCES               SPOT  PRICE</span>
-<span class="w"> </span><span class="m">1</span><span class="w">  </span>gcp<span class="w">      </span>us-central1<span class="w">  </span>4xCPU,<span class="w"> </span>16GB,<span class="w"> </span>L4<span class="w"> </span><span class="o">(</span>24GB<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.223804
-<span class="w"> </span><span class="m">2</span><span class="w">  </span>gcp<span class="w">      </span>us-east1<span class="w">     </span>4xCPU,<span class="w"> </span>16GB,<span class="w"> </span>L4<span class="w"> </span><span class="o">(</span>24GB<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.223804
-<span class="w"> </span><span class="m">3</span><span class="w">  </span>gcp<span class="w">      </span>us-west1<span class="w">     </span>4xCPU,<span class="w"> </span>16GB,<span class="w"> </span>L4<span class="w"> </span><span class="o">(</span>24GB<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.223804
-<span class="w">    </span>...
-
-Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:
-</code></pre></div>
-
-</div>
-
-<h2 id="setting-a-retry-policy">Setting a retry policy<a class="headerlink" href="#setting-a-retry-policy" title="Permanent link">&para;</a></h2>
-<p>If the requested instance is unavailable, the <code>dstack run</code> command will fail – unless you specify a retry policy.
-This can be done via <code>--retry-limit</code>:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>--gpu<span class="w"> </span>24GB<span class="w"> </span>--spot<span class="w"> </span>--retry-limit<span class="w"> </span>1h
-</code></pre></div>
-
-</div>
-
-<p>In this case, <code>dstack</code> will retry to find spot instances within one hour. All that time, the run will be marked as
-pending.</p>
-<div class="admonition info">
-<p class="admonition-title">NOTE:</p>
-<p>If you've set the retry duration and the spot instance is taken while your run was not 
-finished, <code>dstack</code> will restart it from scratch.</p>
-</div>
-<p>If you run a service using spot instances, the default retry duration is set to infinity.  </p>
-<h2 id="tips-and-tricks">Tips and tricks<a class="headerlink" href="#tips-and-tricks" title="Permanent link">&para;</a></h2>
-<ol>
-<li>The <code>--spot-auto</code> policy allows for the automatic use of spot instances when available, seamlessly reverting to
-   on-demand instances if spots aren't accessible. You can enable it via <code>dstack run</code> or 
-   via <a href="../../docs/reference/profiles.yml/"><code>profiles.yml</code></a>.</li>
-<li>You can use multiple cloud providers (incl. AWS, GCP, and Azure) and regions to increase the likelihood of
-   obtaining a spot instance. However, in doing so, beware of data transfer costs if large volumes of data
-   need to be loaded.</li>
-<li>When using spot instances for training, ensure you save checkpoints regularly and load them if the run is restarted
-   due to interruption.</li>
-</ol>
-
-
-
-
-
-
 
 
 
@@ -1851,6 +1790,44 @@ finished, <code>dstack</code> will restart it from scratch.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../python/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python API">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Python API
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../dstack.yml/" class="md-footer__link md-footer__link--next" aria-label="Next: .dstack.yml">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                .dstack.yml
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1900,17 +1877,17 @@ finished, <code>dstack</code> will restart it from scratch.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.0e2aa882.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.0e2aa882.min.js"></script>
       
-        <script src="../../assets/javascripts/extra.js"></script>
+        <script src="../../../../assets/javascripts/extra.js"></script>
       
-        <script src="../../assets/javascripts/pricing.js"></script>
+        <script src="../../../../assets/javascripts/pricing.js"></script>
       
     
 
