@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7+insiders-4.52.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8+insiders-4.52.2">
     
     
       
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.14.0 is here! Deploy custom LLMs via OpenAI-compatible endpoints! <a href="/blog/2024/01/19/openai-endpoints-preview/">Learn more</a>.
+🔥 dstack 0.15.0 is here! Resources, authentication, and other improvements! <a href="/blog/2024/02/08/resources-authentication-and-more/">Learn more</a>.
 
           </div>
           
@@ -246,9 +246,9 @@
       </div>
     -->
 
-    <!--<div class="md-header__buttons">
-      <a href="/docs" class="md-button md-button-secondary">Get stated</a>
-    </div>-->
+    <div class="md-header__buttons">
+      <a href="/platform" class="md-button md-button-secondary">Platform</a>
+    </div>
   </nav>
   
 </header>
@@ -333,16 +333,17 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="https://discord.gg/u8SmfwPpMd" class="md-tabs__link">
-        
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
   
-  Discord
+  Blog
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -351,12 +352,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../platform/" class="md-tabs__link">
+      <a href="https://discord.gg/u8SmfwPpMd" class="md-tabs__link">
         
   
     
   
-  Platform
+  Discord
 
       </a>
     </li>
@@ -825,6 +826,19 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#configure-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Configure ports
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#parametrize-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -852,6 +866,19 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Using the API
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1732,14 +1759,68 @@
   
   
   
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
     <li class="md-nav__item">
-      <a href="https://discord.gg/u8SmfwPpMd" class="md-nav__link">
+      <a href="../../../blog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Discord
+    <span class="md-typeset">
+      Blog
+    </span>
   
 
     
@@ -1751,6 +1832,223 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    <span class="md-typeset">
+      2024
+    </span>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    <span class="md-typeset">
+      2023
+    </span>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    <span class="md-typeset">
+      Releases
+    </span>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -1759,13 +2057,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platform/" class="md-nav__link">
+      <a href="https://discord.gg/u8SmfwPpMd" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Platform
+    Discord
   
 
     
@@ -1871,6 +2169,19 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#configure-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Configure ports
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#parametrize-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1898,6 +2209,19 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Using the API
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1951,48 +2275,33 @@ are both acceptable).</p>
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span><span class="w"> </span><span class="c1"># (Optional) If not specified, your local version is used</span>
-
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python train.py</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
+
+<span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80GB</span>
 </code></pre></div>
 
 </div>
 
-<p>A task can configure ports:</p>
-<div editor-title="serve.dstack.yml"> 
-
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-
-<span class="nt">ports</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7860</span>
-
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span><span class="w"> </span><span class="c1"># (Optional) If not specified, your local version is used.</span>
-
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gradio app.py</span>
-</code></pre></div>
-
-</div>
-
-<p>When running a task, <code>dstack</code> forwards the remote ports to <code>localhost</code> for secure 
-and convenient access.</p>
 <p>By default, <code>dstack</code> uses its own Docker images to run dev environments, 
 which are pre-configured with Python, Conda, and essential CUDA drivers.</p>
 <div class="admonition info">
 <p class="admonition-title">Configuration options</p>
 <p>Configuration file allows you to specify a custom Docker image, ports, environment variables, and many other 
-options.
-For more details, refer to the <a href="../../reference/dstack.yml/#task">Reference</a>.</p>
+options. For more details, refer to the <a href="../../reference/dstack.yml/#task">Reference</a>.</p>
 </div>
 <h3 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h3>
 <p>To run a configuration, use the <code>dstack run</code> command followed by the working directory path, 
 configuration file path, and any other options (e.g., for requesting hardware resources).</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span>A100
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml
 
 <span class="w"> </span>BACKEND<span class="w">     </span>REGION<span class="w">         </span>RESOURCES<span class="w">                     </span>SPOT<span class="w">  </span>PRICE
 <span class="w"> </span>tensordock<span class="w">  </span>unitedkingdom<span class="w">  </span>10xCPU,<span class="w"> </span>80GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">   </span>no<span class="w">    </span><span class="nv">$1</span>.595
@@ -2013,33 +2322,60 @@ Epoch<span class="w"> </span><span class="m">2</span>:<span class="w">  </span><
 
 <div class="admonition info">
 <p class="admonition-title">Run options</p>
-<p>The <code>dstack run</code> command allows you to use <code>--gpu</code> to request GPUs (e.g. <code>--gpu A100</code> or <code>--gpu 80GB</code> or <code>--gpu A100:4</code>, etc.),
-and many other options (incl. spot instances, disk size, max price, max duration, retry policy, etc.).
+<p>The <code>dstack run</code> command allows you to use specify the spot policy (e.g. <code>--spot-auto</code>, <code>--spot</code>, or <code>--on-demand</code>), 
+max duration of the run (e.g. <code>--max-duration 1h</code>), and many other options.
 For more details, refer to the <a href="../../reference/cli/#dstack-run">Reference</a>.</p>
 </div>
-<details class="info">
-<summary>Port mapping</summary>
-<p>When running a task, <code>dstack</code> forwards the remote ports to <code>localhost</code> for secure 
-and convenient access.
-You can override local ports via <code>--port</code>:</p>
-<div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>serve.dstack.yml<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span>:7860
-</code></pre></div>
-</div>
-<p>This will forward the task's port <code>7860</code> to <code>localhost:8080</code>.</p>
-</details>
-<h3 id="parametrize-tasks">Parametrize tasks<a class="headerlink" href="#parametrize-tasks" title="Permanent link">&para;</a></h3>
-<p>You can parameterize tasks with user arguments using <code>${{ run.args }}</code> in the configuration.</p>
-<p>Example:</p>
+<h3 id="configure-ports">Configure ports<a class="headerlink" href="#configure-ports" title="Permanent link">&para;</a></h3>
+<p>A task can configure ports. In this case, if the task is running an application on a port, <code>dstack run</code> 
+will securely allow you to access this port from your local machine through port forwarding.</p>
 <div editor-title="train.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span><span class="w"> </span><span class="c1"># (Optional) If not specified, your local version is used</span>
-
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python train.py ${{ run.args }}</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tensorboard --logdir results/runs &amp;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
+<span class="nt">ports</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6000</span>
+
+<span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80GB</span>
+</code></pre></div>
+
+</div>
+
+<p>When running it, <code>dstack run</code> forwards <code>6000</code> port to <code>localhost:6000</code>, enabling secure access. </p>
+<details class="info">
+<summary>Override port mapping</summary>
+<p>By default, <code>dstack</code> uses the same ports on your local machine for port forwarding. However, you can override local ports using <code>--port</code>:</p>
+<div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml<span class="w"> </span>--port<span class="w"> </span><span class="m">6000</span>:6001
+</code></pre></div>
+</div>
+<p>This will forward the task's port <code>6000</code> to <code>localhost:6001</code>.</p>
+</details>
+<h3 id="parametrize-tasks">Parametrize tasks<a class="headerlink" href="#parametrize-tasks" title="Permanent link">&para;</a></h3>
+<p>You can parameterize tasks with user arguments using <code>${{ run.args }}</code> in the configuration.</p>
+<div editor-title="train.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py ${{ run.args }}</span>
+
+<span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80GB</span>
 </code></pre></div>
 
 </div>
@@ -2047,7 +2383,7 @@ You can override local ports via <code>--port</code>:</p>
 <p>Now, you can pass your arguments to the <code>dstack run</code> command:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml<span class="w"> </span>--gpu<span class="w"> </span>A100<span class="w"> </span>--train_batch_size<span class="o">=</span><span class="m">1</span><span class="w"> </span>--num_train_epochs<span class="o">=</span><span class="m">100</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml<span class="w"> </span>--train_batch_size<span class="o">=</span><span class="m">1</span><span class="w"> </span>--num_train_epochs<span class="o">=</span><span class="m">100</span>
 </code></pre></div>
 
 </div>
@@ -2066,6 +2402,9 @@ capacity and automatically resubmit the run.</p>
 </div>
 
 <p>For more details on the <code>dstack run</code> command, refer to the <a href="../../reference/cli/#dstack-run">Reference</a>.</p>
+<h2 id="using-the-api">Using the API<a class="headerlink" href="#using-the-api" title="Permanent link">&para;</a></h2>
+<p>Submitting and managing tasks is also possible programmatically via the <a href="../../reference/api/python/">Python API</a> or 
+<a href="../../reference/api/rest/">REST API</a>.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../../../examples/qlora/">QLoRA</a> example</li>
