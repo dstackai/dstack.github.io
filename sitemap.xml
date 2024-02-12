@@ -2,272 +2,277 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dstack.ai/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/platform/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/pricing/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/privacy/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/terms/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/05/22/azure-support-better-ui-and-more/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/12/22/disk-size-cuda-12-1-mixtral-and-more/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/03/13/gcp-support-just-landed/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/04/11/introducing-dstack-hub/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/07/14/lambda-cloud-ga-and-docker-support/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/08/22/multiple-clouds/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2024/01/19/openai-endpoints-preview/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2024/02/08/resources-authentication-and-more/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/06/29/say-goodbye-to-managed-notebooks/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/08/07/services-preview/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/10/18/simplified-cloud-setup/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/10/31/tensordock/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/2023/11/21/vastai/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/quickstart/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/concepts/dev-environments/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/concepts/services/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/concepts/tasks/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/guides/fine-tuning/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/guides/text-generation/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/installation/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/dstack.yml/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/profiles.yml/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/api/python/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/api/python/_artifacts_archived/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/api/python/server/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/api/rest/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/backends/aws/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/backends/azure/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/backends/gcp/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/backends/lambda/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/cli/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dstack.ai/docs/reference/pool/</loc>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/docs/reference/server/config.yml/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/examples/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/examples/infinity/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/examples/llama-index/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/examples/mixtral/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/examples/qlora/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/examples/sdxl/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/examples/tei/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/examples/tgi/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/examples/vllm/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/archive/2024/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/archive/2023/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/category/releases/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/page/2/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/archive/2023/page/2/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dstack.ai/blog/category/releases/page/2/</loc>
-         <lastmod>2024-02-08</lastmod>
+         <lastmod>2024-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
