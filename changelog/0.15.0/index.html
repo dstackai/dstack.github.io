@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The latest update brings the initial integration with Kubernetes, and adds the possibility to configure custom VPC for AWS.">
+        <meta name="description" content="Resource configuration, authentication in services, model mapping for vLLM, and other improvements.">
       
       
         <meta name="author" content="dstack GmbH">
@@ -15,8 +15,10 @@
         <link rel="canonical" href="https://dstack.ai/changelog/0.15.0/">
       
       
-        <link rel="prev" href="./">
+        <link rel="prev" href="../0.14.0/">
       
+      
+        <link rel="next" href="../0.15.1/">
       
       
         
@@ -27,7 +29,7 @@
     
     
       
-        <title>dstack 0.15.1: Kubernetes integration preview - dstack</title>
+        <title>dstack 0.15.0: Resources, authentication, and more - dstack</title>
       
     
     
@@ -87,16 +89,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="dstack 0.15.1: Kubernetes integration preview - dstack" />
-<meta property="og:description" content="The latest update brings the initial integration with Kubernetes, and adds the possibility to configure custom VPC for AWS." />
+<meta property="og:title" content="dstack 0.15.0: Resources, authentication, and more - dstack" />
+<meta property="og:description" content="Resource configuration, authentication in services, model mapping for vLLM, and other improvements." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/changelog/0.15.0.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://dstack.ai/changelog/0.15.0/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="dstack 0.15.1: Kubernetes integration preview - dstack" />
-<meta property="twitter:description" content="The latest update brings the initial integration with Kubernetes, and adds the possibility to configure custom VPC for AWS." />
+<meta property="twitter.title" content="dstack 0.15.0: Resources, authentication, and more - dstack" />
+<meta property="twitter:description" content="Resource configuration, authentication in services, model mapping for vLLM, and other improvements." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/changelog/0.15.0.png" />
 </head>
   
@@ -117,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dstack-0151-kubernetes-integration-preview" class="md-skip">
+        <a href="#dstack-0150-resources-authentication-and-more" class="md-skip">
           Skip to content
         </a>
       
@@ -167,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              dstack 0.15.1: Kubernetes integration preview
+              dstack 0.15.0: Resources, authentication, and more
             
           </span>
         </div>
@@ -1893,11 +1895,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuring-a-kubernetes-backend" class="md-nav__link">
+  <a href="#resource-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configuring a Kubernetes backend
+          Resource configuration
         </span>
       
     </span>
@@ -1906,11 +1908,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#specifying-a-custom-vpc-for-aws" class="md-nav__link">
+  <a href="#authentication-in-services" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Specifying a custom VPC for AWS
+          Authentication in services
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication in services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openai-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          OpenAI interface
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-mapping-for-vllm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Model mapping for vLLM
         </span>
       
     </span>
@@ -1968,7 +2002,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-02-14 00:00:00" class="md-ellipsis">February 14, 2024</time>
+                        <time datetime="2024-02-08 00:00:00" class="md-ellipsis">February 8, 2024</time>
                       </div>
                     </li>
                     
@@ -2004,7 +2038,7 @@
 
 
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/changelog/posts/0.15.1.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/changelog/posts/0.15.0.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -2012,103 +2046,118 @@
   
 
 
-<h1 id="dstack-0151-kubernetes-integration-preview">dstack 0.15.1: Kubernetes integration preview<a class="headerlink" href="#dstack-0151-kubernetes-integration-preview" title="Permanent link">&para;</a></h1>
-<p>In addition to a few bug fixes, the latest update brings initial integration with Kubernetes (experimental) and adds the
-possibility to configure a custom VPC for AWS. Read below for more details.</p>
+<h1 id="dstack-0150-resources-authentication-and-more">dstack 0.15.0: Resources, authentication, and more<a class="headerlink" href="#dstack-0150-resources-authentication-and-more" title="Permanent link">&para;</a></h1>
+<p>The latest update brings many improvements, enabling the configuration of resources in YAML files, requiring
+authentication in services, supporting OpenAI-compatible endpoints for vLLM, and more. </p>
 <!-- more -->
 
-<h2 id="configuring-a-kubernetes-backend">Configuring a Kubernetes backend<a class="headerlink" href="#configuring-a-kubernetes-backend" title="Permanent link">&para;</a></h2>
-<p>With the latest update, it's now possible to configure a Kubernetes backend. In this case, if you run a
-workload, <code>dstack</code>
-will provision infrastructure within your Kubernetes cluster. This may work with both self-managed and managed clusters.</p>
-<details class="info">
-<summary>Prerequisite</summary>
-</details>
-<p>To use GPUs with Kubernetes, the cluster must be installed with the
-<a href="https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html">NVIDIA GPU Operator</a>.</p>
-<p>To configure a Kubernetes backend, you need to specify the path to the kubeconfig file,
-and the port that <code>dstack</code> can use for proxying SSH traffic.
-In case of a self-managed cluster, also specify the IP address of any node in the cluster.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Self-managed</label><label for="__tabbed_1_2">Managed</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Here's how to configure the backend to use a self-managed cluster.</p>
-<div editor-title="~/.dstack/server/config.yml">
-<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
-<span class="w">  </span><span class="nt">backends</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes</span>
-<span class="w">    </span><span class="nt">kubeconfig</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.kube/config</span>
-<span class="w">    </span><span class="nt">networking</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">ssh_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"> </span><span class="c1"># The external IP address of any node</span>
-<span class="w">      </span><span class="nt">ssh_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32000</span><span class="w"> </span><span class="c1"># Any port accessible outside of the cluster</span>
-</code></pre></div>
-</div>
-<p>The port specified to <code>ssh_port</code> must be accessible outside of the cluster.</p>
-<p>For example, if you are using Kind, make sure to add it via <code>extraPortMappings</code>:</p>
-<p><div editor-title="installation/kind-config.yml"> </p>
-<div class="highlight"><pre><span></span><code><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cluster</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kind.x-k8s.io/v1alpha4</span>
-<span class="nt">nodes</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">control-plane</span>
-<span class="w">  </span><span class="nt">extraPortMappings</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32000</span><span class="w"> </span><span class="c1"># Must be same as `ssh_port`</span>
-<span class="w">    </span><span class="nt">hostPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32000</span><span class="w"> </span><span class="c1"># Must be same as `ssh_port`</span>
-</code></pre></div>
-</div>
-</div>
-<div class="tabbed-block">
-<p>Here's how to configure the backend to use a managed cluster (AWS, GCP, Azure).</p>
-<div editor-title="~/.dstack/server/config.yml">
-<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
-<span class="w">  </span><span class="nt">backends</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes</span>
-<span class="w">    </span><span class="nt">kubeconfig</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.kube/config</span>
-<span class="w">    </span><span class="nt">networking</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">ssh_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32000</span><span class="w"> </span><span class="c1"># Any port accessible outside of the cluster</span>
-</code></pre></div>
-</div>
-<p>The port specified to <code>ssh_port</code> must be accessible outside of the cluster.</p>
-<p>For example, if you are using EKS, make sure to add it via an ingress rule
-of the corresponding security group:</p>
-<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>ec2<span class="w"> </span>authorize-security-group-ingress<span class="w"> </span>--group-id<span class="w"> </span>&lt;cluster-security-group-id&gt;<span class="w"> </span>--protocol<span class="w"> </span>tcp<span class="w"> </span>--port<span class="w"> </span><span class="m">32000</span><span class="w"> </span>--cidr<span class="w"> </span><span class="m">0</span>.0.0.0/0
-</code></pre></div>
-</div>
-</div>
-</div>
-<div class="admonition info">
-<p class="admonition-title">NOTE:</p>
-<p>While <code>dstack</code> supports both self-managed and managed clusters, if you're using AWS, GCP, or Azure, it's generally
-recommended to corresponding backends directly for greater efficiency and ease of use.</p>
-</div>
-<h2 id="specifying-a-custom-vpc-for-aws">Specifying a custom VPC for AWS<a class="headerlink" href="#specifying-a-custom-vpc-for-aws" title="Permanent link">&para;</a></h2>
-<p>If you're using <code>dstack</code> with AWS, it's now possible to configure a custom VPC via <code>~/.dstack/server/config.yml</code>:</p>
-<div editor-title="~/.dstack/server/config.yml">
+<h2 id="resource-configuration">Resource configuration<a class="headerlink" href="#resource-configuration" title="Permanent link">&para;</a></h2>
+<p>Previously, if you wanted to request hardware resources, you had to either use the corresponding arguments with
+<code>dstack run</code> (e.g. <code>--gpu GPU_SPEC</code>) or use <code>.dstack/profiles.yml</code>.</p>
+<p>With <code>0.15.0</code>, it is now possible to configure resources in the YAML configuration file:</p>
+<div editor-title=".dstack.yml">
 
-<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
-<span class="w">  </span><span class="nt">backends</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span>
-<span class="w">    </span><span class="nt">vpc_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-custom-vpc</span>
-<span class="w">    </span><span class="nt">regions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">us-west-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">eu-west-1</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">creds</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.11</span>
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc </span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 </code></pre></div>
 
 </div>
 
-<p>In this case, <code>dstack</code> will attempt to utilize the VPC with the configured name in each region. If any region lacks a VPC
-with that name, it will be skipped.</p>
-<div class="admonition info">
-<p class="admonition-title">NOTE:</p>
-<p>All subnets of the configured VPC should be public; otherwise, <code>dstack</code> won't be able to manage workloads.</p>
+<p>Supported properties include: <code>gpu</code>, <code>cpu</code>, <code>memory</code>, <code>disk</code>, and <code>shm_size</code>.</p>
+<p>If you specify memory size, you can either specify an explicit size (e.g. <code>24GB</code>) or a 
+range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</code>).</p>
+<p>The <code>gpu</code> property allows specifying not only memory size but also GPU names
+and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</code> (either A10G or A100), 
+<code>A100:80GB</code> (one A100 of 80GB), <code>A100:2</code> (two A100), <code>24GB..40GB:2</code> (two GPUs between 24GB and 40GB), etc.</p>
+<p>It's also possible to configure <code>gpu</code> as an object:</p>
+<div editor-title=".dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.11</span>
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="c1"># Require 2 GPUs of at least 40GB with CUDA compute compatibility of 7.5</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB..</span>
+<span class="w">    </span><span class="nt">compute_capability</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7.5</span>
+</code></pre></div>
+
 </div>
+
+<p>For more details on <code>resources</code> schema, refer to the <a href="../../docs/reference/dstack.yml/">Reference</a>.</p>
+<h2 id="authentication-in-services">Authentication in services<a class="headerlink" href="#authentication-in-services" title="Permanent link">&para;</a></h2>
+<p>Previously, when deploying a service, the public endpoint didn't support authentication, 
+meaning anyone with access to the gateway could call it.</p>
+<p>With <code>0.15.0</code>, by default, service endpoints require the <code>Authentication</code> header with <code>"Bearer &lt;dstack token&gt;"</code>. </p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://yellow-cat-1.example.com/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;inputs&quot;:&quot;&amp;lt;s&amp;gt;[INST] What is your favourite condiment?[/INST]&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authentication: &quot;Bearer &amp;lt;dstack token&amp;gt;&quot;&#39;</span>
+</code></pre></div>
+
+</div>
+
+<p>Authentication can be disabled by setting <code>auth</code> to <code>false</code> in the service configuration file.</p>
+<h4 id="openai-interface">OpenAI interface<a class="headerlink" href="#openai-interface" title="Permanent link">&para;</a></h4>
+<p>In case the service has <a href="../../docs/concepts/services/#model-mapping">model mapping</a> configured, 
+the OpenAI-compatible endpoint requires authentication.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+  <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://gateway.example.com&quot;</span><span class="p">,</span>
+  <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;&lt;dstack token&gt;&quot;</span>
+<span class="p">)</span>
+
+<span class="n">completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistralai/Mistral-7B-Instruct-v0.1&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Compose a poem that explains the concept of recursion in programming.&quot;</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="model-mapping-for-vllm">Model mapping for vLLM<a class="headerlink" href="#model-mapping-for-vllm" title="Permanent link">&para;</a></h2>
+<p>Last but not least, we've added one more format for <a href="../../docs/concepts/services/#model-mapping">model mapping</a>: <code>openai</code>.</p>
+<p>For example, if you run vLLM using the OpenAI mode, it's possible to configure model mapping for it.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL=NousResearch/Llama-2-7b-chat-hf</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -m vllm.entrypoints.openai.api_server --model $MODEL --port 8000</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NousResearch/Llama-2-7b-chat-hf</span>
+</code></pre></div>
+<p>When we run such a service, it will be possible to access the model at<br />
+<code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface 
+and using your <code>dstack</code> user token.</p>
 <h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
-<p>Have questions or need help? Drop us a message on our <a href="https://discord.gg/u8SmfwPpMd">Discord server</a>.
-See a bug? Report it to <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issues</a>.</p>
+<p>In case you have any questions, experience bugs, or need help, 
+drop us a message on our <a href="https://discord.gg/u8SmfwPpMd">Discord server</a> or submit it as a 
+<a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a>.</p>
 
 
 
@@ -2153,7 +2202,7 @@ See a bug? Report it to <a href="https://github.com/dstackai/dstack/issues/new/c
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="./" class="md-footer__link md-footer__link--prev" aria-label="Previous: dstack 0.15.0: Resources, authentication, and more">
+          <a href="../0.14.0/" class="md-footer__link md-footer__link--prev" aria-label="Previous: dstack 0.14.0: OpenAI-compatible endpoints preview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2163,11 +2212,27 @@ See a bug? Report it to <a href="https://github.com/dstackai/dstack/issues/new/c
                 Previous
               </span>
               <div class="md-ellipsis">
-                dstack 0.15.0: Resources, authentication, and more
+                dstack 0.14.0: OpenAI-compatible endpoints preview
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../0.15.1/" class="md-footer__link md-footer__link--next" aria-label="Next: dstack 0.15.1: Kubernetes integration preview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                dstack 0.15.1: Kubernetes integration preview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
