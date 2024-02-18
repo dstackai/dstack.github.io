@@ -18,7 +18,7 @@
         <link rel="prev" href="../../concepts/services/">
       
       
-        <link rel="next" href="../api/python/">
+        <link rel="next" href="../dstack.yml/">
       
       
         
@@ -572,7 +572,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    Overview
   
 
     
@@ -1060,118 +1060,6 @@
   
   
   
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    API
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Python API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/rest/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    REST API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../dstack.yml/" class="md-nav__link">
         
@@ -1242,6 +1130,118 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2295,6 +2295,8 @@ You can override this key via <code>--ssh-identity</code>.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>--help
+A<span class="w"> </span>new<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>dstack<span class="w"> </span>is<span class="w"> </span>available:<span class="w"> </span><span class="m">0</span>.15.2rc1
+
 Usage:<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="w"> </span><span class="o">[</span>TYPE<span class="o">]]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>RUN_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-offers<span class="w"> </span>MAX_OFFERS<span class="o">]</span><span class="w"> </span><span class="o">[</span>--profile<span class="w"> </span>NAME<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>--max-price<span class="w"> </span>PRICE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-duration<span class="w"> </span>DURATION<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="w"> </span>NAME<span class="o">]</span>
@@ -2636,13 +2638,13 @@ Options:
         
         
           
-          <a href="../api/python/" class="md-footer__link md-footer__link--next" aria-label="Next: Python API">
+          <a href="../dstack.yml/" class="md-footer__link md-footer__link--next" aria-label="Next: .dstack.yml">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Python API
+                .dstack.yml
               </div>
             </div>
             <div class="md-footer__button md-icon">

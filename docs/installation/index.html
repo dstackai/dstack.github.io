@@ -574,7 +574,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    Overview
   
 
     
@@ -667,17 +667,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#configure-credentials" class="md-nav__link">
+  <a href="#configure-backends" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configure credentials
+          Configure backends
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Configure credentials">
+    <nav class="md-nav" aria-label="Configure backends">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1092,118 +1092,6 @@
   
   
   
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    API
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reference/api/python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Python API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reference/api/rest/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    REST API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../reference/dstack.yml/" class="md-nav__link">
         
@@ -1274,6 +1162,118 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/api/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/api/rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2127,17 +2127,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#configure-credentials" class="md-nav__link">
+  <a href="#configure-backends" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configure credentials
+          Configure backends
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Configure credentials">
+    <nav class="md-nav" aria-label="Configure backends">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2315,10 +2315,10 @@
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]&quot;</span><span class="w"> </span>-U
 $<span class="w"> </span>dstack<span class="w"> </span>server
 
-Applying<span class="w"> </span>configuration<span class="w"> </span>from<span class="w"> </span>~/.dstack/server/config.yml...
+Applying<span class="w"> </span>~/.dstack/server/config.yml...
 
-The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/
 The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;bbae0f28-d3dd-4820-bf61-8f4bb40815da&quot;</span>
+The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/
 </code></pre></div>
 </div>
 </div>
@@ -2326,10 +2326,10 @@ The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </
 <div class="termy">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/.dstack/server/:/root/.dstack/server<span class="w"> </span>dstackai/dstack
 
-Applying<span class="w"> </span>configuration<span class="w"> </span>from<span class="w"> </span>~/.dstack/server/config.yml...
+Applying<span class="w"> </span>~/.dstack/server/config.yml...
 
-The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/.
 The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;bbae0f28-d3dd-4820-bf61-8f4bb40815da&quot;</span>
+The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/.
 </code></pre></div>
 </div>
 </div>
@@ -2339,7 +2339,7 @@ The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </
 <p class="admonition-title">NOTE:</p>
 <p>For flexibility, <code>dstack</code> server allows you to configure multiple project. The default project is <code>main</code>.</p>
 </div>
-<h3 id="configure-credentials">Configure credentials<a class="headerlink" href="#configure-credentials" title="Permanent link">&para;</a></h3>
+<h3 id="configure-backends">Configure backends<a class="headerlink" href="#configure-backends" title="Permanent link">&para;</a></h3>
 <p>To let <code>dstack</code> run workloads in your cloud account(s), you need to configure cloud credentials 
 in <code>~/.dstack/server/config.yml</code> under the <code>backends</code> property of the respective project.</p>
 <div editor-title="~/.dstack/server/config.yml">
@@ -2769,7 +2769,7 @@ Configurated<span class="w"> </span>is<span class="w"> </span>updated<span class
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2779,7 +2779,7 @@ Configurated<span class="w"> </span>is<span class="w"> </span>updated<span class
                 Previous
               </span>
               <div class="md-ellipsis">
-                Introduction
+                Overview
               </div>
             </div>
           </a>

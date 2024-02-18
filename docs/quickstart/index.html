@@ -574,7 +574,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    Overview
   
 
     
@@ -711,19 +711,6 @@
       
         <span class="md-typeset">
           Run configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
         </span>
       
     </span>
@@ -976,118 +963,6 @@
   
   
   
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    API
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    API
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reference/api/python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Python API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reference/api/rest/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    REST API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../reference/dstack.yml/" class="md-nav__link">
         
@@ -1158,6 +1033,118 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/api/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/api/rest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2035,19 +2022,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2074,6 +2048,13 @@
 
 
 <h1 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h1>
+<details class="info">
+<summary>Set up the CLI</summary>
+<p>To use the open-source version, make sure to <a href="../installation/">install the server</a> and configure backends.</p>
+<p>To use the cloud version, install the CLI and run the <code>dstack config</code> command:</p>
+<p><img alt="" src="../../assets/images/dstack-cloud-config.png" width="800" /></p>
+<p>Once the CLI is set up, follow the quickstart.</p>
+</details>
 <h2 id="initialize-a-repo">Initialize a repo<a class="headerlink" href="#initialize-a-repo" title="Permanent link">&para;</a></h2>
 <p>To use <code>dstack</code>'s CLI in a folder, first run <a href="../reference/cli/#dstack-init"><code>dstack init</code></a> within that folder.</p>
 <div class="termy">
@@ -2172,13 +2153,15 @@ Epoch<span class="w"> </span><span class="m">2</span>:<span class="w">  </span><
 
 <p>The <code>dstack run</code> command automatically uploads your code, including any local uncommitted changes. 
 To exclude any files from uploading, use <code>.gitignore</code>.</p>
-<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">What's next?</p>
 <ol>
-<li>Learn more about <a href="../concepts/dev-environments/">dev environments</a>, <a href="../concepts/tasks/">tasks</a>, 
+<li>Read about <a href="../concepts/dev-environments/">dev environments</a>, <a href="../concepts/tasks/">tasks</a>, 
     and <a href="../concepts/services/">services</a></li>
 <li>Browse <a href="../../examples/">examples</a></li>
 <li>Join the <a href="https://discord.gg/u8SmfwPpMd">Discord server</a></li>
 </ol>
+</div>
 
 
 
