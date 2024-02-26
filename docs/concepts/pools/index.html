@@ -6,37 +6,37 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The latest update introduces Azure support, enables browsing of logs and artifacts through UI, and includes other improvements.">
+        <meta name="description" content="dstack is an open-source toolkit for running GPU workloads on any cloud. It simplifies development, training, and deployment of gen AI models.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/changelog/0.9.1/">
+        <link rel="canonical" href="https://dstack.ai/docs/concepts/pools/">
       
       
-        <link rel="prev" href="../0.7.0/">
+        <link rel="prev" href="../services/">
       
       
-        <link rel="next" href="../0.10.5/">
+        <link rel="next" href="../../reference/cli/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11+insiders-4.53.0">
     
     
       
-        <title>dstack 0.9.1: Azure integration - dstack</title>
+        <title>Pools - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.458d28d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.458d28d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -61,17 +61,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="dstack 0.9.1: Azure integration - dstack" />
-<meta property="og:description" content="The latest update introduces Azure support, enables browsing of logs and artifacts through UI, and includes other improvements." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/changelog/0.9.1.png" />
+<meta property="og:title" content="Pools - dstack" />
+<meta property="og:description" content="dstack is an open-source toolkit for running GPU workloads on any cloud. It simplifies development, training, and deployment of gen AI models." />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/concepts/pools.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/changelog/0.9.1/" />
+<meta property="og:url" content="https://dstack.ai/docs/concepts/pools/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="dstack 0.9.1: Azure integration - dstack" />
-<meta property="twitter:description" content="The latest update introduces Azure support, enables browsing of logs and artifacts through UI, and includes other improvements." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/changelog/0.9.1.png" />
+<meta property="twitter.title" content="Pools - dstack" />
+<meta property="twitter:description" content="dstack is an open-source toolkit for running GPU workloads on any cloud. It simplifies development, training, and deployment of gen AI models." />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/concepts/pools.png" />
 </head>
   
   
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dstack-091-azure-integration" class="md-skip">
+        <a href="#pools" class="md-skip">
           Skip to content
         </a>
       
@@ -152,7 +152,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              dstack 0.9.1: Azure integration
+              Pools
             
           </span>
         </div>
@@ -268,7 +268,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -283,17 +283,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../docs/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   Docs
@@ -314,7 +318,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../examples/" class="md-tabs__link">
+        <a href="../../../examples/" class="md-tabs__link">
           
   
   Examples
@@ -328,13 +332,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../changelog/" class="md-tabs__link">
           
   
   Changelog
@@ -390,9 +392,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -405,7 +405,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -432,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -455,25 +455,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -490,7 +495,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -513,17 +518,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -558,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -585,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/installation/" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -612,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/quickstart/" class="md-nav__link">
+      <a href="../../quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -644,25 +652,30 @@
                 
   
   
+    
   
   
+  
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -679,7 +692,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -697,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/concepts/dev-environments/" class="md-nav__link">
+      <a href="../dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -724,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/concepts/tasks/" class="md-nav__link">
+      <a href="../tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -751,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/concepts/services/" class="md-nav__link">
+      <a href="../services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -775,10 +788,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../docs/concepts/pools/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Pools
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -793,6 +832,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dstack-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>dstack run</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dstack-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>dstack pool</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dstack pool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          List instances
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Add instances
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Remove instances
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -818,17 +948,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -863,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/cli/" class="md-nav__link">
+      <a href="../../reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -890,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/dstack.yml/" class="md-nav__link">
+      <a href="../../reference/dstack.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
+      <a href="../../reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -944,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/profiles.yml/" class="md-nav__link">
+      <a href="../../reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1021,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/api/python/" class="md-nav__link">
+      <a href="../../reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1048,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/reference/api/rest/" class="md-nav__link">
+      <a href="../../reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1148,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/" class="md-nav__link">
+      <a href="../../../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1225,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tgi/" class="md-nav__link">
+      <a href="../../../examples/tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1252,7 +1385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/vllm/" class="md-nav__link">
+      <a href="../../../examples/vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1279,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/ollama/" class="md-nav__link">
+      <a href="../../../examples/ollama/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1306,7 +1439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tei/" class="md-nav__link">
+      <a href="../../../examples/tei/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1333,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/sdxl/" class="md-nav__link">
+      <a href="../../../examples/sdxl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1360,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/infinity/" class="md-nav__link">
+      <a href="../../../examples/infinity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1445,7 +1578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/qlora/" class="md-nav__link">
+      <a href="../../../examples/qlora/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1530,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/llama-index/" class="md-nav__link">
+      <a href="../../../examples/llama-index/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1615,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/mixtral/" class="md-nav__link">
+      <a href="../../../examples/mixtral/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1654,30 +1787,25 @@
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1694,7 +1822,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1709,14 +1837,12 @@
                 
   
   
-    
-  
   
     
   
   
-    <li class="md-nav__item md-nav__item--active">
-      <a href="../" class="md-nav__link">
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1750,20 +1876,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1800,7 +1923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archive/2024/" class="md-nav__link">
+      <a href="../../../changelog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1831,7 +1954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archive/2023/" class="md-nav__link">
+      <a href="../../../changelog/archive/2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1928,8 +2051,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1949,11 +2070,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#azure-support" class="md-nav__link">
+  <a href="#dstack-run" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Azure support
+          <code>dstack run</code>
         </span>
       
     </span>
@@ -1962,41 +2083,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#logs-and-artifacts-in-ui" class="md-nav__link">
+  <a href="#dstack-pool" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Logs and artifacts in UI
+          <code>dstack pool</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dstack pool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          List instances
         </span>
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#better-documentation" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#add-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Better documentation
+          Add instances
         </span>
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#try-it-out" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#remove-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Try it out
+          Remove instances
         </span>
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2009,71 +2149,15 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-                  <span class="md-ellipsis">
-                    Back to index
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    Metadata
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-05-22 00:00:00" class="md-ellipsis">May 22, 2023</time>
-                      </div>
-                    </li>
-                    
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              2 min read
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-            
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
+<div class="md-content" data-md-component="content">
+  
+  <article class="md-content__inner md-typeset">
+    
       
-        
-  
-
 
 
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/changelog/posts/0.9.1.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/docs/concepts/pools.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -2081,46 +2165,66 @@
   
 
 
-<h1 id="dstack-091-azure-integration">dstack 0.9.1: Azure integration<a class="headerlink" href="#dstack-091-azure-integration" title="Permanent link">&para;</a></h1>
-<p>At <code>dstack</code>, our goal is to create a simple and unified interface for ML engineers to run dev environments, pipelines, and
-apps on any cloud. With the latest update, we take another significant step in this direction.</p>
-<!-- more -->
-
-<p>We are thrilled to announce that the latest update introduces Azure support, among other things, making it incredibly
-easy to run dev environments, pipelines, and apps in Azure. Read on for more details.</p>
-<h2 id="azure-support">Azure support<a class="headerlink" href="#azure-support" title="Permanent link">&para;</a></h2>
-<p>Using Azure with <code>dstack</code> is very straightforward. All you need to do is create the corresponding project via the UI and 
-provide your Azure credentials.</p>
-<p><img alt="dstack-hub-create-azure-project.png" src="../../assets/images/dstack-hub-create-azure-project.png" width="800" /></p>
+<h1 id="pools">Pools<a class="headerlink" href="#pools" title="Permanent link">&para;</a></h1>
+<p>Pools enable efficient lifecycle management of cloud instances and their reuse across runs.</p>
+<ul>
+<li>When an instance is provisioned in a configured backend, it is added to a pool.</li>
+<li>The instance is marked as busy while it runs the workload.</li>
+<li>Once the workload is finished, the instance is marked as ready (to run other workloads).</li>
+<li>If the instance remains idle for the configured duration, <code>dstack</code> tears it down.</li>
+</ul>
+<h2 id="dstack-run"><code>dstack run</code><a class="headerlink" href="#dstack-run" title="Permanent link">&para;</a></h2>
+<p>By default, when you use the <code>dstack run</code> command, it attempts to reuse an instance from a pool. If there is no ready
+instance that meets the requirements, <code>dstack</code> automatically provisions a new instance.</p>
+<p>To solely use existing instances, pass the <code>--reuse</code> argument. In this scenario, the run will be assigned to an instance
+once it's ready.</p>
 <div class="admonition info">
-<p class="admonition-title">NOTE:</p>
-<p>For detailed instructions on setting up <code>dstack</code> for Azure, refer to the <a href="../../docs/installation/#azure">documentation</a>.</p>
+<p class="admonition-title">Idle duration</p>
+<p>By default, if <code>dstack run</code> provisions a new instance, its idle duration is set to <code>5m</code>. This means the instance waits for a
+new workload for only five minutes before getting torn down.
+To override it, use the <code>--idle-duration DURATION</code> argument.</p>
 </div>
-<p>Once the project is set up, you can define dev environments, pipelines, and apps as code, and easily run them with just
-a single command. <code>dstack</code> will automatically provision the infrastructure for you.</p>
-<h2 id="logs-and-artifacts-in-ui">Logs and artifacts in UI<a class="headerlink" href="#logs-and-artifacts-in-ui" title="Permanent link">&para;</a></h2>
-<p>Secondly, with the new update, you now have the ability to browse the logs and artifacts of any run through the user interface.</p>
-<p><img alt="dstack-run-artifacts.png" src="../../assets/images/dstack-run-artifacts.png" /></p>
-<h2 id="better-documentation">Better documentation<a class="headerlink" href="#better-documentation" title="Permanent link">&para;</a></h2>
-<p>Last but not least, with the update, we have reworked the <a href="../../docs/">documentation</a> to provide a greater
-emphasis on specific use cases: <a href="../../docs/concepts/dev-environments/">dev environments</a>, 
-<a href="../../docs/concepts/tasks/">tasks</a>, and <a href="../../docs/concepts/services/">services</a>.</p>
-<h2 id="try-it-out">Try it out<a class="headerlink" href="#try-it-out" title="Permanent link">&para;</a></h2>
-<p>Please note that when installing <code>dstack</code> via <code>pip</code>, you now need to specify the exact list of cloud providers you intend to use:</p>
+<h2 id="dstack-pool"><code>dstack pool</code><a class="headerlink" href="#dstack-pool" title="Permanent link">&para;</a></h2>
+<p>The <code>dstack pool</code> command allows for managing instances within pools as well as managing the pools themselves.</p>
+<h4 id="list-instances">List instances<a class="headerlink" href="#list-instances" title="Permanent link">&para;</a></h4>
+<p>The <a href="../../reference/cli/#dstack-pool-ps"><code>dstack pool ps</code></a> command lists all active instances and their status.</p>
+<h4 id="add-instances">Add instances<a class="headerlink" href="#add-instances" title="Permanent link">&para;</a></h4>
+<p>To manually add an instance to a pool, use <a href="../../reference/cli/#dstack-pool-add"><code>dstack pool add</code></a>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[aws,gcp,azure]&quot;</span><span class="w"> </span>-U
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span>--gpu<span class="w"> </span>80GB<span class="w"> </span>--idle-duration<span class="w"> </span>1d
+
+<span class="w"> </span>BACKEND<span class="w">     </span>REGION<span class="w">         </span>RESOURCES<span class="w">                     </span>SPOT<span class="w">  </span>PRICE
+<span class="w"> </span>tensordock<span class="w">  </span>unitedkingdom<span class="w">  </span>10xCPU,<span class="w"> </span>80GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">   </span>no<span class="w">    </span><span class="nv">$1</span>.595
+<span class="w"> </span>azure<span class="w">       </span>westus3<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
+<span class="w"> </span>azure<span class="w">       </span>westus2<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
+
+Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
 </code></pre></div>
 
 </div>
 
-<p>This requirement applies only when you start the server locally. If you connect to a server hosted elsewhere, 
-you can use the shorter syntax:<code>pip install dstack</code>.</p>
+<p>The <code>dstack pool add</code> command allows specifying resource requirements, along with the spot policy, idle duration, max
+price, retry policy, and other policies.</p>
+<p>Alternatively, you can specify these policies via <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a> instead of passing them as arguments.
+For more details on policies and their defaults, refer to <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.</p>
+<details class="info">
+<summary>Limitations</summary>
+<p>The <code>dstack pool add</code> command is not yet supported for Lambda, Azure, TensorDock, Kubernetes, and VastAI backends. Support
+for them is coming in version <code>0.16.1</code>.</p>
+</details>
+<h4 id="remove-instances">Remove instances<a class="headerlink" href="#remove-instances" title="Permanent link">&para;</a></h4>
+<p>To remove an instance from a pool, use the <code>dstack pool remove</code> command. </p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>remove<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>instance<span class="w"> </span>name<span class="p">&amp;</span>gt<span class="p">;</span>
+</code></pre></div>
+
+</div>
+
 <div class="admonition info">
-<p class="admonition-title">Feedback</p>
-<p>If you have any feedback, including issues or questions, please share them in
-our <a href="https://discord.gg/u8SmfwPpMd">Discord community</a> or file it as
-a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a>.</p>
+<p class="admonition-title">Idle time</p>
+<p>If the instance remains idle for the configured duration, <code>dstack</code> removes it and deletes all cloud resources.</p>
 </div>
 
 
@@ -2129,21 +2233,16 @@ a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a
 
 
 
-  
-  
-
-
-
-  
 
 
   
 
 
 
-      
-    </article>
-  </div>
+
+    
+  </article>
+</div>
 
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2161,12 +2260,10 @@ a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../0.7.0/" class="md-footer__link md-footer__link--prev" aria-label="Previous: dstack 0.7.0: Introducing dstack server">
+          <a href="../services/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Services">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2176,20 +2273,20 @@ a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a
                 Previous
               </span>
               <div class="md-ellipsis">
-                dstack 0.7.0: Introducing dstack server
+                Services
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0.10.5/" class="md-footer__link md-footer__link--next" aria-label="Next: dstack 0.10.5: Lambda integration, Docker support, and more">
+          <a href="../../reference/cli/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                dstack 0.10.5: Lambda integration, Docker support, and more
+                CLI
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2248,17 +2345,17 @@ a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.82b033e4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.82b033e4.min.js"></script>
       
-        <script src="../../assets/javascripts/extra.js"></script>
+        <script src="../../../assets/javascripts/extra.js"></script>
       
-        <script src="../../assets/javascripts/pricing.js"></script>
+        <script src="../../../assets/javascripts/pricing.js"></script>
       
     
 

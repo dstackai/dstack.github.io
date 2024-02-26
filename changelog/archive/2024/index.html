@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10+insiders-4.52.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11+insiders-4.53.0">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fc8cf87c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.458d28d0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 dstack 0.15.1 is here! Kubernetes integration preview. <a href="/changelog/0.15.1/">Learn more</a>.
+🔥 dstack 0.16.0 is here! Introducing pools. <a href="/changelog/0.16.0/">Learn more</a>.
 
           </div>
           
@@ -756,6 +756,33 @@
     
   
     Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/concepts/pools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Pools
   
 
     
@@ -1835,10 +1862,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dstack-0151-kubernetes-integration-preview" class="md-nav__link">
+  <a href="#dstack-0160-pools" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dstack 0.15.1: Kubernetes integration preview
+        dstack 0.16.0: Pools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dstack-0151-kubernetes-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dstack 0.15.1: Kubernetes integration
       
     </span>
   </a>
@@ -2001,10 +2039,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dstack-0151-kubernetes-integration-preview" class="md-nav__link">
+  <a href="#dstack-0160-pools" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dstack 0.15.1: Kubernetes integration preview
+        dstack 0.16.0: Pools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dstack-0151-kubernetes-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dstack 0.15.1: Kubernetes integration
       
     </span>
   </a>
@@ -2054,6 +2103,45 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2024-02-26 00:00:00">February 26, 2024</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="dstack-0160-pools"><a class="toclink" href="../../0.16.0/">dstack 0.16.0: Pools</a></h2>
+<p>Previously, when running a dev environment, task, or service, <code>dstack</code> provisioned an instance in a configured
+backend, and upon completion of the run, deleted the instance.</p>
+<p>In the latest update, we introduce <a href="../../../docs/concepts/pools/">pools</a>, a significantly more efficient way to manage
+instance lifecycles and reuse instances across runs.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../0.16.0/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2024-02-14 00:00:00">February 14, 2024</time></li>
         
         
@@ -2064,12 +2152,13 @@
             
           </li>
         
+        
       </ul>
       
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="dstack-0151-kubernetes-integration-preview"><a class="toclink" href="../../0.15.1/">dstack 0.15.1: Kubernetes integration preview</a></h2>
+    <h2 id="dstack-0151-kubernetes-integration"><a class="toclink" href="../../0.15.1/">dstack 0.15.1: Kubernetes integration</a></h2>
 <p>In addition to a few bug fixes, the latest update brings initial integration with Kubernetes (experimental) and adds the
 possibility to configure a custom VPC for AWS. Read below for more details.</p>
 
@@ -2079,6 +2168,7 @@ possibility to configure a custom VPC for AWS. Read below for more details.</p>
           Continue reading
         </a>
       </nav>
+    
     
   </div>
 </article>
@@ -2099,6 +2189,7 @@ possibility to configure a custom VPC for AWS. Read below for more details.</p>
             
           </li>
         
+        
       </ul>
       
     </div>
@@ -2114,6 +2205,7 @@ authentication in services, supporting OpenAI-compatible endpoints for vLLM, and
           Continue reading
         </a>
       </nav>
+    
     
   </div>
 </article>
@@ -2134,6 +2226,7 @@ authentication in services, supporting OpenAI-compatible endpoints for vLLM, and
             
           </li>
         
+        
       </ul>
       
     </div>
@@ -2150,6 +2243,7 @@ While this is simple and customizable, using different frameworks and LLMs compl
           Continue reading
         </a>
       </nav>
+    
     
   </div>
 </article>

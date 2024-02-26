@@ -6,19 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The latest update introduces Azure support, enables browsing of logs and artifacts through UI, and includes other improvements.">
+        <meta name="description" content="The new feature enables efficient lifecycle management of cloud instances and their reuse across runs.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/changelog/0.9.1/">
+        <link rel="canonical" href="https://dstack.ai/changelog/0.16.0/">
       
       
-        <link rel="prev" href="../0.7.0/">
+        <link rel="prev" href="../0.15.1/">
       
-      
-        <link rel="next" href="../0.10.5/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>dstack 0.9.1: Azure integration - dstack</title>
+        <title>dstack 0.16.0: Pools - dstack</title>
       
     
     
@@ -89,17 +87,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="dstack 0.9.1: Azure integration - dstack" />
-<meta property="og:description" content="The latest update introduces Azure support, enables browsing of logs and artifacts through UI, and includes other improvements." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/changelog/0.9.1.png" />
+<meta property="og:title" content="dstack 0.16.0: Pools - dstack" />
+<meta property="og:description" content="The new feature enables efficient lifecycle management of cloud instances and their reuse across runs." />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/changelog/0.16.0.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/changelog/0.9.1/" />
+<meta property="og:url" content="https://dstack.ai/changelog/0.16.0/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="dstack 0.9.1: Azure integration - dstack" />
-<meta property="twitter:description" content="The latest update introduces Azure support, enables browsing of logs and artifacts through UI, and includes other improvements." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/changelog/0.9.1.png" />
+<meta property="twitter.title" content="dstack 0.16.0: Pools - dstack" />
+<meta property="twitter:description" content="The new feature enables efficient lifecycle management of cloud instances and their reuse across runs." />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/changelog/0.16.0.png" />
 </head>
   
   
@@ -119,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dstack-091-azure-integration" class="md-skip">
+        <a href="#dstack-0160-pools" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +167,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              dstack 0.9.1: Azure integration
+              dstack 0.16.0: Pools
             
           </span>
         </div>
@@ -1949,11 +1947,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#azure-support" class="md-nav__link">
+  <a href="#dstack-run" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Azure support
+          <code>dstack run</code>
         </span>
       
     </span>
@@ -1962,11 +1960,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#logs-and-artifacts-in-ui" class="md-nav__link">
+  <a href="#dstack-pool" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Logs and artifacts in UI
+          <code>dstack pool</code>
         </span>
       
     </span>
@@ -1975,11 +1973,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#better-documentation" class="md-nav__link">
+  <a href="#why-does-this-matter" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Better documentation
+          Why does this matter?
         </span>
       
     </span>
@@ -1988,11 +1986,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#try-it-out" class="md-nav__link">
+  <a href="#feedback" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Try it out
+          Feedback
         </span>
       
     </span>
@@ -2037,7 +2035,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-05-22 00:00:00" class="md-ellipsis">May 22, 2023</time>
+                        <time datetime="2024-02-26 00:00:00" class="md-ellipsis">February 26, 2024</time>
                       </div>
                     </li>
                     
@@ -2073,7 +2071,7 @@
 
 
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/changelog/posts/0.9.1.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/changelog/posts/0.16.0.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -2081,47 +2079,62 @@
   
 
 
-<h1 id="dstack-091-azure-integration">dstack 0.9.1: Azure integration<a class="headerlink" href="#dstack-091-azure-integration" title="Permanent link">&para;</a></h1>
-<p>At <code>dstack</code>, our goal is to create a simple and unified interface for ML engineers to run dev environments, pipelines, and
-apps on any cloud. With the latest update, we take another significant step in this direction.</p>
+<h1 id="dstack-0160-pools">dstack 0.16.0: Pools<a class="headerlink" href="#dstack-0160-pools" title="Permanent link">&para;</a></h1>
+<p>Previously, when running a dev environment, task, or service, <code>dstack</code> provisioned an instance in a configured
+backend, and upon completion of the run, deleted the instance.</p>
+<p>In the latest update, we introduce <a href="../../docs/concepts/pools/">pools</a>, a significantly more efficient way to manage
+instance lifecycles and reuse instances across runs.</p>
 <!-- more -->
 
-<p>We are thrilled to announce that the latest update introduces Azure support, among other things, making it incredibly
-easy to run dev environments, pipelines, and apps in Azure. Read on for more details.</p>
-<h2 id="azure-support">Azure support<a class="headerlink" href="#azure-support" title="Permanent link">&para;</a></h2>
-<p>Using Azure with <code>dstack</code> is very straightforward. All you need to do is create the corresponding project via the UI and 
-provide your Azure credentials.</p>
-<p><img alt="dstack-hub-create-azure-project.png" src="../../assets/images/dstack-hub-create-azure-project.png" width="800" /></p>
+<h2 id="dstack-run"><code>dstack run</code><a class="headerlink" href="#dstack-run" title="Permanent link">&para;</a></h2>
+<p>Now, when using the <code>dstack run</code> command, it tries to reuse an instance from a pool. If no ready instance meets the
+requirements, <code>dstack</code> automatically provisions a new one and adds it to the pool.</p>
+<p>Once the workload finishes, the instance is marked as ready (to run other workloads).
+If the instance remains idle for the configured duration, <code>dstack</code> tears it down.</p>
 <div class="admonition info">
-<p class="admonition-title">NOTE:</p>
-<p>For detailed instructions on setting up <code>dstack</code> for Azure, refer to the <a href="../../docs/installation/#azure">documentation</a>.</p>
+<p class="admonition-title">Idle duration</p>
+<p>By default, if <code>dstack run</code> provisions a new instance, its idle duration is set to <code>5m</code>. This means the instance waits for a
+new workload for only five minutes before getting torn down.
+To override it, use the <code>--idle-duration DURATION</code> argument.</p>
 </div>
-<p>Once the project is set up, you can define dev environments, pipelines, and apps as code, and easily run them with just
-a single command. <code>dstack</code> will automatically provision the infrastructure for you.</p>
-<h2 id="logs-and-artifacts-in-ui">Logs and artifacts in UI<a class="headerlink" href="#logs-and-artifacts-in-ui" title="Permanent link">&para;</a></h2>
-<p>Secondly, with the new update, you now have the ability to browse the logs and artifacts of any run through the user interface.</p>
-<p><img alt="dstack-run-artifacts.png" src="../../assets/images/dstack-run-artifacts.png" /></p>
-<h2 id="better-documentation">Better documentation<a class="headerlink" href="#better-documentation" title="Permanent link">&para;</a></h2>
-<p>Last but not least, with the update, we have reworked the <a href="../../docs/">documentation</a> to provide a greater
-emphasis on specific use cases: <a href="../../docs/concepts/dev-environments/">dev environments</a>, 
-<a href="../../docs/concepts/tasks/">tasks</a>, and <a href="../../docs/concepts/services/">services</a>.</p>
-<h2 id="try-it-out">Try it out<a class="headerlink" href="#try-it-out" title="Permanent link">&para;</a></h2>
-<p>Please note that when installing <code>dstack</code> via <code>pip</code>, you now need to specify the exact list of cloud providers you intend to use:</p>
+<h2 id="dstack-pool"><code>dstack pool</code><a class="headerlink" href="#dstack-pool" title="Permanent link">&para;</a></h2>
+<p>The <code>dstack pool</code> command allows for managing instances within pools.</p>
+<p>To manually add an instance to a pool, use <a href="../../docs/reference/cli/#dstack-pool-add"><code>dstack pool add</code></a>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[aws,gcp,azure]&quot;</span><span class="w"> </span>-U
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span>--gpu<span class="w"> </span>80GB<span class="w"> </span>--idle-duration<span class="w"> </span>1d
+
+<span class="w"> </span>BACKEND<span class="w">     </span>REGION<span class="w">         </span>RESOURCES<span class="w">                     </span>SPOT<span class="w">  </span>PRICE
+<span class="w"> </span>tensordock<span class="w">  </span>unitedkingdom<span class="w">  </span>10xCPU,<span class="w"> </span>80GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">   </span>no<span class="w">    </span><span class="nv">$1</span>.595
+<span class="w"> </span>azure<span class="w">       </span>westus3<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
+<span class="w"> </span>azure<span class="w">       </span>westus2<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
+
+Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
 </code></pre></div>
 
 </div>
 
-<p>This requirement applies only when you start the server locally. If you connect to a server hosted elsewhere, 
-you can use the shorter syntax:<code>pip install dstack</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">Feedback</p>
-<p>If you have any feedback, including issues or questions, please share them in
-our <a href="https://discord.gg/u8SmfwPpMd">Discord community</a> or file it as
-a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a>.</p>
-</div>
+<p>The <code>dstack pool add</code> command allows specifying resource requirements, along with the spot policy, idle duration, max
+price, retry policy, and other policies.</p>
+<p>If no idle duration is configured, by default, <code>dstack</code> sets it to <code>72h</code>. 
+To override it, use the <code>--idle-duration DURATION</code> argument.</p>
+<details class="info">
+<summary>Limitations</summary>
+<p>The <code>dstack pool add</code> command is not yet supported for Lambda, Azure, TensorDock, Kubernetes, and VastAI backends. Support
+for them is coming in version <code>0.16.1</code>.</p>
+</details>
+<p>Refer to <a href="../../docs/concepts/pools/">pools</a> for more details on the new feature and how to use it.</p>
+<h2 id="why-does-this-matter">Why does this matter?<a class="headerlink" href="#why-does-this-matter" title="Permanent link">&para;</a></h2>
+<p>With this new feature, using the cloud can be a lot more predictable and convenient:</p>
+<ol>
+<li>Now, you can provision instances in advance and ensure they are available for the entire duration of the project.
+   This saves you from the risk of not having a GPU when you need it most.</li>
+<li>If you reuse an instance from a pool, <code>dstack run</code> starts much faster.
+   For example, you can provision an instance and reuse it for running a dev environment, task, or service.</li>
+</ol>
+<h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
+<p>Have questions or need help? Drop us a message on our <a href="https://discord.gg/u8SmfwPpMd">Discord server</a>.
+See a bug? Report it to <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issues</a>.</p>
 
 
 
@@ -2166,7 +2179,7 @@ a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../0.7.0/" class="md-footer__link md-footer__link--prev" aria-label="Previous: dstack 0.7.0: Introducing dstack server">
+          <a href="../0.15.1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: dstack 0.15.1: Kubernetes integration">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2176,27 +2189,11 @@ a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a
                 Previous
               </span>
               <div class="md-ellipsis">
-                dstack 0.7.0: Introducing dstack server
+                dstack 0.15.1: Kubernetes integration
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../0.10.5/" class="md-footer__link md-footer__link--next" aria-label="Next: dstack 0.10.5: Lambda integration, Docker support, and more">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                dstack 0.10.5: Lambda integration, Docker support, and more
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
