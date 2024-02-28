@@ -2619,7 +2619,7 @@ Options:
 </div>
 
 <h5 id="dstack-pool-list">dstack pool list<a class="headerlink" href="#dstack-pool-list" title="Permanent link">&para;</a></h5>
-<p>The <code>dstack pool delete</code> lists all existing pools.</p>
+<p>The <code>dstack pool list</code> lists all existing pools.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>delete<span class="w"> </span>--help
@@ -2637,16 +2637,13 @@ Options:
 <p>The <code>dstack pool delete</code> command deletes a specified pool.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>gateway<span class="w"> </span>update<span class="w"> </span>--help
-Usage:<span class="w"> </span>dstack<span class="w"> </span>gateway<span class="w"> </span>update<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--set-default<span class="o">]</span><span class="w"> </span><span class="o">[</span>--domain<span class="w"> </span>DOMAIN<span class="o">]</span><span class="w"> </span>name
-
-Positional<span class="w"> </span>Arguments:
-<span class="w">  </span>name<span class="w">             </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>gateway
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>delete<span class="w"> </span>--help
+Usage:<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span>-n<span class="w"> </span>POOL_NAME<span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FORCE<span class="o">]</span>
 
 Options:
-<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">       </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
-<span class="w">  </span>--set-default<span class="w">    </span>Set<span class="w"> </span>it<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>gateway<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>project
-<span class="w">  </span>--domain<span class="w"> </span>DOMAIN<span class="w">  </span>Set<span class="w"> </span>the<span class="w"> </span>domain<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>gateway
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+<span class="w">  </span>-n,<span class="w"> </span>--name<span class="w"> </span>POOL_NAME<span class="w">  </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>pool
+<span class="w">  </span>-f,<span class="w"> </span>--force<span class="w"> </span>FORCE<span class="w">     </span>Force<span class="w"> </span>remove
 </code></pre></div>
 
 </div>
