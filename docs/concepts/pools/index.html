@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source engine that streamlines the development, training, and deployment of AI models across any cloud provider.">
+        <meta name="description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models.">
       
       
         <meta name="author" content="dstack GmbH">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11+insiders-4.53.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12+insiders-4.53.0">
     
     
       
@@ -90,7 +90,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Pools - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that streamlines the development, training, and deployment of AI models across any cloud provider." />
+<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/docs/concepts/pools.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -98,7 +98,7 @@
 <meta property="og:url" content="https://dstack.ai/docs/concepts/pools/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Pools - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that streamlines the development, training, and deployment of AI models across any cloud provider." />
+<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/concepts/pools.png" />
 </head>
   
@@ -247,7 +247,7 @@
     -->
 
     <div class="md-header__buttons">
-      <a href="/#get-started" class="md-button md-button--primary">Get started</a>
+      <a href="/#get-started" class="md-button md-button--primary sky">Get started</a>
     </div>
   </nav>
   
@@ -849,6 +849,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#adding-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Adding instances
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#dstack-run" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -860,53 +874,13 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#dstack-pool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>dstack pool</code>
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="dstack pool">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#list-instances" class="md-nav__link">
+  <a href="#dstack-pool-add" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          List instances
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-instances" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Add instances
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove-instances" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Remove instances
+          <code>dstack pool add</code>
         </span>
       
     </span>
@@ -916,6 +890,51 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Removing instances
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Removing instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dstack-pool-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>dstack pool remove</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Listing instances
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2070,6 +2089,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#adding-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Adding instances
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#dstack-run" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2081,53 +2114,13 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#dstack-pool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>dstack pool</code>
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="dstack pool">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#list-instances" class="md-nav__link">
+  <a href="#dstack-pool-add" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          List instances
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-instances" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Add instances
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove-instances" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Remove instances
+          <code>dstack pool add</code>
         </span>
       
     </span>
@@ -2137,6 +2130,51 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Removing instances
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Removing instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dstack-pool-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>dstack pool remove</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Listing instances
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2166,33 +2204,26 @@
 
 
 <h1 id="pools">Pools<a class="headerlink" href="#pools" title="Permanent link">&para;</a></h1>
-<p>Pools enable efficient lifecycle management of cloud instances and their reuse across runs.</p>
-<ul>
-<li>When an instance is provisioned in a configured backend, it is added to a pool.</li>
-<li>The instance is marked as busy while it runs the workload.</li>
-<li>Once the workload is finished, the instance is marked as ready (to run other workloads).</li>
-<li>If the instance remains idle for the configured duration, <code>dstack</code> tears it down.</li>
-</ul>
-<h2 id="dstack-run"><code>dstack run</code><a class="headerlink" href="#dstack-run" title="Permanent link">&para;</a></h2>
-<p>By default, when you use the <code>dstack run</code> command, it attempts to reuse an instance from a pool. If there is no ready
-instance that meets the requirements, <code>dstack</code> automatically provisions a new instance.</p>
-<p>To solely use existing instances, pass the <code>--reuse</code> argument. In this scenario, the run will be assigned to an instance
-once it's ready.</p>
+<p>Pools simplify managing the lifecycle of cloud instances and enable their efficient reuse across runs.</p>
+<p>You can have instances provisioned in the configured backend automatically when you run a workload, or add them
+manually, configuring the required resources, idle duration, etc.</p>
+<h2 id="adding-instances">Adding instances<a class="headerlink" href="#adding-instances" title="Permanent link">&para;</a></h2>
+<h3 id="dstack-run"><code>dstack run</code><a class="headerlink" href="#dstack-run" title="Permanent link">&para;</a></h3>
+<p>By default, when using the <code>dstack run</code> command, it tries to reuse an instance from a pool. If no idle instance meets the
+requirements, <code>dstack</code> automatically provisions a new one and adds it to the pool.</p>
+<p>To avoid provisioning new instances with <code>dstack run</code>, use <code>--reuse</code>. Your run will be assigned to an idle instance in 
+the pool.</p>
 <div class="admonition info">
 <p class="admonition-title">Idle duration</p>
-<p>By default, if <code>dstack run</code> provisions a new instance, its idle duration is set to <code>5m</code>. This means the instance waits for a
-new workload for only five minutes before getting torn down.
-To override it, use the <code>--idle-duration DURATION</code> argument.</p>
+<p>By default, <code>dstack run</code> sets the idle duration of a newly provisioned instance to <code>5m</code>.
+This means that if the run is finished and the instance remains idle for longer than five minutes, it is automatically
+removed from the pool. To override the default idle duration, use  <code>--idle-duration DURATION</code> with <code>dstack run</code>.</p>
 </div>
-<h2 id="dstack-pool"><code>dstack pool</code><a class="headerlink" href="#dstack-pool" title="Permanent link">&para;</a></h2>
-<p>The <code>dstack pool</code> command allows for managing instances within pools as well as managing the pools themselves.</p>
-<h4 id="list-instances">List instances<a class="headerlink" href="#list-instances" title="Permanent link">&para;</a></h4>
-<p>The <a href="../../reference/cli/#dstack-pool-ps"><code>dstack pool ps</code></a> command lists all active instances and their status.</p>
-<h4 id="add-instances">Add instances<a class="headerlink" href="#add-instances" title="Permanent link">&para;</a></h4>
+<h3 id="dstack-pool-add"><code>dstack pool add</code><a class="headerlink" href="#dstack-pool-add" title="Permanent link">&para;</a></h3>
 <p>To manually add an instance to a pool, use <a href="../../reference/cli/#dstack-pool-add"><code>dstack pool add</code></a>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span>--gpu<span class="w"> </span>80GB<span class="w"> </span>--idle-duration<span class="w"> </span>1d
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span>--gpu<span class="w"> </span>80GB
 
 <span class="w"> </span>BACKEND<span class="w">     </span>REGION<span class="w">         </span>RESOURCES<span class="w">                     </span>SPOT<span class="w">  </span>PRICE
 <span class="w"> </span>tensordock<span class="w">  </span>unitedkingdom<span class="w">  </span>10xCPU,<span class="w"> </span>80GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">   </span>no<span class="w">    </span><span class="nv">$1</span>.595
@@ -2206,15 +2237,20 @@ Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</s
 
 <p>The <code>dstack pool add</code> command allows specifying resource requirements, along with the spot policy, idle duration, max
 price, retry policy, and other policies.</p>
-<p>Alternatively, you can specify these policies via <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a> instead of passing them as arguments.
+<p>The default idle duration if you're using <code>dstack pool add</code> is <code>72h</code>. To override it, use the <code>--idle-duration DURATION</code> argument.</p>
+<p>You can also specify the policies via <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a> instead of passing them as arguments.
 For more details on policies and their defaults, refer to <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.</p>
 <details class="info">
 <summary>Limitations</summary>
-<p>The <code>dstack pool add</code> command is not yet supported for Lambda, Azure, TensorDock, Kubernetes, and VastAI backends. Support
-for them is coming in version <code>0.16.1</code>.</p>
+<p>The <code>dstack pool add</code> command is not supported for Kubernetes, and VastAI backends yet.</p>
 </details>
-<h4 id="remove-instances">Remove instances<a class="headerlink" href="#remove-instances" title="Permanent link">&para;</a></h4>
-<p>To remove an instance from a pool, use the <code>dstack pool remove</code> command. </p>
+<h2 id="removing-instances">Removing instances<a class="headerlink" href="#removing-instances" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Idle duration</p>
+<p>If the instance remains idle for the configured duration, <code>dstack</code> removes it and deletes all cloud resources.</p>
+</div>
+<h3 id="dstack-pool-remove"><code>dstack pool remove</code><a class="headerlink" href="#dstack-pool-remove" title="Permanent link">&para;</a></h3>
+<p>To remove an instance from the pool manually, use the <code>dstack pool remove</code> command. </p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>remove<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>instance<span class="w"> </span>name<span class="p">&amp;</span>gt<span class="p">;</span>
@@ -2222,10 +2258,9 @@ for them is coming in version <code>0.16.1</code>.</p>
 
 </div>
 
-<div class="admonition info">
-<p class="admonition-title">Idle time</p>
-<p>If the instance remains idle for the configured duration, <code>dstack</code> removes it and deletes all cloud resources.</p>
-</div>
+<h2 id="listing-instances">Listing instances<a class="headerlink" href="#listing-instances" title="Permanent link">&para;</a></h2>
+<p>The <a href="../../reference/cli/#dstack-pool-ps"><code>dstack pool ps</code></a> command lists active instances and their status (<code>busy</code>
+or <code>idle</code>).</p>
 
 
 
@@ -2240,6 +2275,46 @@ for them is coming in version <code>0.16.1</code>.</p>
 
 
 
+
+      
+          
+          <nav class="md-footer__inner md-grid" aria-label="Footer" >
+            
+              
+              <a href="../services/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Services">
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                </div>
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Previous
+                  </span>
+                  <div class="md-ellipsis">
+                    Services
+                  </div>
+                </div>
+              </a>
+            
+            
+              
+              <a href="../../reference/cli/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Next
+                  </span>
+                  <div class="md-ellipsis">
+                    CLI
+                  </div>
+                </div>
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+                </div>
+              </a>
+            
+          </nav>
+        
     
   </article>
 </div>
@@ -2256,51 +2331,11 @@ for them is coming in version <code>0.16.1</code>.</p>
         
       </main>
       
-        <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../services/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Services">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Services
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../reference/cli/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                CLI
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
+    <footer class="tx-footer">
+        <div class="md-main__inner md-grid">
+            <div class="tx-footer__left-side">
+                <div class="tx-footer__copyright">
+                    <div class="md-copyright">
   
     <div class="md-copyright__highlight">
       © 2024 dstack GmbH
@@ -2308,8 +2343,8 @@ for them is coming in version <code>0.16.1</code>.</p>
   
   
 </div>
-      
-        <div class="md-social">
+                    
+                        <div class="md-social">
   
     
     
@@ -2334,11 +2369,40 @@ for them is coming in version <code>0.16.1</code>.</p>
     </a>
   
 </div>
-      
-    </div>
-  </div>
-</footer>
-      
+                    
+                </div>
+            </div>
+
+            <div class="tx-footer__right-side">
+                <!--<div class="tx-footer__section">
+                    <div class="tx-footer__section-title">Contact</div>
+                    <a href="mailto:hello@dstack.ai" class="tx-footer__section-link">hello@dstack.ai</a>
+                    &lt;!&ndash;<a class="tx-footer__section-link" href="javascript:void(0)" onclick="$crisp.push(['do', 'chat:show'])">Open chat</a>&ndash;&gt;
+                </div>-->
+
+                <div class="tx-footer__section">
+                    <div class="tx-footer__section-title">Community</div>
+                    <a href="https://discord.gg/u8SmfwPpMd" class="tx-footer__section-link external">Discord</a>
+                    <a href="https://github.com/dstackai/dstack" class="tx-footer__section-link external">GitHub</a>
+                    <a href="https://twitter.com/dstackai/" class="tx-footer__section-link external">X</a>
+                </div>
+
+                <div class="tx-footer__section">
+                    <div class="tx-footer__section-title">Resources</div>
+                    <a href="/docs" class="tx-footer__section-link">Docs</a>
+                    <a href="/examples" class="tx-footer__section-link">Examples</a>
+                    <a href="/changelog" class="tx-footer__section-link">Changelog</a>
+                </div>
+
+                <div class="tx-footer__section">
+                    <div class="tx-footer__section-title">Legal</div>
+                    <a href="/terms" class="tx-footer__section-link">Terms</a>
+                    <a href="/privacy" class="tx-footer__section-link">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
@@ -2351,7 +2415,7 @@ for them is coming in version <code>0.16.1</code>.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.82b033e4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.cd25cebc.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
