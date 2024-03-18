@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13+insiders-4.53.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
     
     
       
@@ -2360,7 +2360,7 @@ meaning anyone with access to the gateway could call it.</p>
 
 <p>Authentication can be disabled by setting <code>auth</code> to <code>false</code> in the service configuration file.</p>
 <h4 id="openai-interface">OpenAI interface<a class="headerlink" href="#openai-interface" title="Permanent link">&para;</a></h4>
-<p>In case the service has <a href="../../docs/concepts/services/#model-mapping">model mapping</a> configured, 
+<p>In case the service has <a href="../../docs/concepts/services/#configure-model-mapping">model mapping</a> configured, 
 the OpenAI-compatible endpoint requires authentication.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
@@ -2380,7 +2380,7 @@ the OpenAI-compatible endpoint requires authentication.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="model-mapping-for-vllm">Model mapping for vLLM<a class="headerlink" href="#model-mapping-for-vllm" title="Permanent link">&para;</a></h2>
-<p>Last but not least, we've added one more format for <a href="../../docs/concepts/services/#model-mapping">model mapping</a>: <code>openai</code>.</p>
+<p>Last but not least, we've added one more format for <a href="../../docs/concepts/services/#configure-model-mapping">model mapping</a>: <code>openai</code>.</p>
 <p>For example, if you run vLLM using the OpenAI mode, it's possible to configure model mapping for it.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
@@ -2526,7 +2526,7 @@ drop us a message on our <a href="https://discord.gg/u8SmfwPpMd">Discord server<
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.cd25cebc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a255a381.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

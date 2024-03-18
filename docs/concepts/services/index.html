@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13+insiders-4.53.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
     
     
       
@@ -895,6 +895,19 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-replicas-and-auto-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Configure replicas and auto-scaling
+        </span>
+      
+    </span>
+  </a>
   
 </li>
         
@@ -2438,6 +2451,19 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#configure-replicas-and-auto-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Configure replicas and auto-scaling
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2593,7 +2619,7 @@
 <h1 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h1>
 <p>Services make it very easy to deploy any kind of model or web application as public endpoints.</p>
 <p>Use any serving frameworks and specify required resources. <code>dstack</code> deploys it in the configured backend, handles
-authentication, and provides an OpenAI-compatible interface if needed.</p>
+authentication, replicas, and provides an OpenAI-compatible interface if needed.</p>
 <details class="info">
 <summary>Prerequisites</summary>
 <p>If you're using the open-source server, you first have to set up a gateway.</p>
@@ -2614,7 +2640,7 @@ Creating<span class="w"> </span>gateway...
 pointing to the IP address of the gateway.</p>
 <p>Now, if you run a service, <code>dstack</code> will make its endpoint available at 
 <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
-<p>In case your service has the <a href="#model-mapping">model mapping</a> configured, <code>dstack</code> will 
+<p>In case your service has the <a href="#configure-model-mapping">model mapping</a> configured, <code>dstack</code> will 
 automatically make your model available at <code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface.</p>
 <p>If you're using <a href="https://sky.dstack.ai">dstack Sky</a>, the gateway is set up for you.</p>
 </details>
@@ -2708,6 +2734,42 @@ from the model's repository. If it is not present there, manual configuration is
 </ol>
 <p>If you encounter any other issues, please make sure to file a <a href="https://github.com/dstackai/dstack/issues/new/choose">GitHub issue</a>.</p>
 </details>
+<h3 id="configure-replicas-and-auto-scaling">Configure replicas and auto-scaling<a class="headerlink" href="#configure-replicas-and-auto-scaling" title="Permanent link">&para;</a></h3>
+<p>By default, <code>dstack</code> runs a single replica of the service.
+You can configure the number of replicas at the top level of the configuration file.</p>
+<div editor-title="serve.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+
+<span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</code></pre></div>
+
+</div>
+
+<p>You also can specify a range of replicas with a scaling policy,
+and dstack will automatically scale the service up and down based on the load.
+Currently, the only supported metric is <code>rps</code> — requests per second per replica.</p>
+<div editor-title="serve.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+
+<span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0..3</span>
+<span class="nt">scaling</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rps</span>
+<span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.5</span>
+<span class="w">  </span><span class="c1"># (Optional) Configure `scale_up_delay` and `scale_down_delay`</span>
+<span class="w">  </span><span class="nt">scale_up_delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">  </span><span class="nt">scale_down_delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+</code></pre></div>
+
+</div>
+
+<p>Specifying minimum replicas as <code>0</code> means that the service will be scaled down to zero when there are no requests.</p>
+<div class="admonition info">
+<p class="admonition-title">Cold start time</p>
+<p>Scaling up from zero could take from tens of seconds if there is an available instance in the pool,
+up to several tens of minutes if a new instance has to be provisioned and a large model has to be pulled.</p>
+</div>
 <h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
 <p>To run a configuration, use the <a href="../../reference/cli/#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
 configuration file path, and any other options.</p>
@@ -2753,7 +2815,7 @@ you can list them in either <code>.gitignore</code> or <code>.dstackignore</code
 
 <p>Authentication can be disabled by setting <code>auth</code> to <code>false</code> in the service configuration file.</p>
 <h4 id="openai-interface">OpenAI interface<a class="headerlink" href="#openai-interface" title="Permanent link">&para;</a></h4>
-<p>In case the service has the <a href="#model-mapping">model mapping</a> configured, you will also be able 
+<p>In case the service has the <a href="#configure-model-mapping">model mapping</a> configured, you will also be able 
 to access the model at <code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
@@ -2945,7 +3007,7 @@ For more details on policies and their defaults, refer to <a href="../../referen
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.cd25cebc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a255a381.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
