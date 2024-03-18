@@ -777,6 +777,19 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#cudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          CUDO
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#datacrunch" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2481,6 +2494,19 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#cudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          CUDO
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#datacrunch" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2896,6 +2922,23 @@ API Key.</p>
 <p class="admonition-title">NOTE:</p>
 <p>Also, the <code>vastai</code> backend supports on-demand instances only. Spot instance support coming soon.</p>
 </div>
+<h4 id="cudo">CUDO<a class="headerlink" href="#cudo" title="Permanent link">&para;</a></h4>
+<p>Log into your <a href="https://compute.cudo.org/">CUDO Compute</a> account, click API keys in the sidebar, and click the <code>Create an API key</code> button.</p>
+<p>Ensure you've created a project with CUDO Compute, then proceed to configuring the backend.</p>
+<div editor-title="~/.dstack/server/config.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">  </span><span class="nt">backends</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cudo</span>
+<span class="w">    </span><span class="nt">project_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-cudo-project</span>
+<span class="w">    </span><span class="nt">creds</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api_key</span>
+<span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7487240a466624b48de22865589</span>
+</code></pre></div>
+
+</div>
+
 <h4 id="datacrunch">DataCrunch<a class="headerlink" href="#datacrunch" title="Permanent link">&para;</a></h4>
 <p>Log into your <a href="https://cloud.datacrunch.io/signin">DataCrunch</a> account, click Account Settings in the sidebar, find <code>REST API Credentials</code> area and then click the <code>Generate Credentials</code> button.</p>
 <p>Then, go ahead and configure the backend:</p>
