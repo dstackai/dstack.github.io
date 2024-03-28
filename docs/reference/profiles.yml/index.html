@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15+insiders-4.53.3">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.003a5498.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.458d28d0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,20 +87,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="profiles.yml - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/reference/profiles.yml.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/reference/profiles.yml/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="profiles.yml - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/reference/profiles.yml.png" />
-</head>
+  </head>
   
   
     
@@ -2374,6 +2361,18 @@ you can do so via <code>.dstack/profiles.yml</code> in the root folder of the pr
 <td><code>backends</code></td>
 <td>The backends to consider for provisionig (e.g., "[aws, gcp]")</td>
 <td><code>Optional[List[BackendType]]</code></td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>regions</code></td>
+<td>The regions to consider for provisionig (e.g., "[eu-west-1, us-west4, westeurope]")</td>
+<td><code>Optional[List[str]]</code></td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>instance_types</code></td>
+<td>The cloud-specific instance types to consider for provisionig (e.g., "[p3.8xlarge, n1-standard-4]")</td>
+<td><code>Optional[List[str]]</code></td>
 <td><code>None</code></td>
 </tr>
 <tr>

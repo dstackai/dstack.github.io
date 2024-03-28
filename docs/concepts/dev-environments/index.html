@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15+insiders-4.53.3">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.003a5498.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.458d28d0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,20 +87,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Dev environments - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/concepts/dev-environments.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/concepts/dev-environments/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Dev environments - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/concepts/dev-environments.png" />
-</head>
+  </head>
   
   
     
@@ -844,11 +831,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-policies" class="md-nav__link">
+  <a href="#configure-profiles" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configure policies
+          Configure profiles
         </span>
       
     </span>
@@ -2381,11 +2368,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-policies" class="md-nav__link">
+  <a href="#configure-profiles" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configure policies
+          Configure profiles
         </span>
       
     </span>
@@ -2492,7 +2479,6 @@ both acceptable).</p>
 <span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
 
 <span class="c1"># image: ghcr.io/huggingface/text-generation-inference:latest</span>
-
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
 <span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc</span>
@@ -2505,6 +2491,25 @@ both acceptable).</p>
 <p>The YAML file allows you to specify your own Docker image, environment variables, 
 resource requirements, etc.
 If image is not specified, <code>dstack</code> uses its own (pre-configured with Python, Conda, and essential CUDA drivers).</p>
+<details class="info">
+<summary>Environment variables</summary>
+<p>Environment variables can be set either within the configuration file or passed via the CLI.</p>
+<p>If you only specify the name of the environment variable without specifying the value, 
+<code>dstack</code> will require that the value is passed via the CLI or set for the current process.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80GB</span>
+</code></pre></div>
+<p>This way, you can define environment variables in a <code>.env</code> file and also use tools such as <code>direnv</code> and similar.</p>
+</details>
 <p>For more details on the file syntax, refer to <a href="../../reference/dstack.yml/"><code>.dstack.yml</code></a>.</p>
 <h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
 <p>To run a configuration, use the <a href="../../reference/cli/#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
@@ -2535,6 +2540,8 @@ To<span class="w"> </span>open<span class="w"> </span><span class="k">in</span><
 <p>If there are large files or folders you'd like to avoid uploading, 
 you can list them in either <code>.gitignore</code> or <code>.dstackignore</code>.</p>
 </div>
+<p>The <code>dstack run</code> command allows specifying many things, including spot policy, retry and max duration, 
+max price, regions, instance types, and <a href="../../reference/cli/#dstack-run">much more</a>.</p>
 <h3 id="ide">IDE<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h3>
 <p>To open the dev environment in your desktop IDE, use the link from the output 
 (such as <code>vscode://vscode-remote/ssh-remote+fast-moth-1/workflow</code>).</p>
@@ -2548,11 +2555,9 @@ you can list them in either <code>.gitignore</code> or <code>.dstackignore</code
 
 </div>
 
-<h2 id="configure-policies">Configure policies<a class="headerlink" href="#configure-policies" title="Permanent link">&para;</a></h2>
-<p>For a run, multiple policies can be configured, such as spot policy, retry policy, max duration, max price, etc.</p>
-<p>Policies can be configured either via <a href="../../reference/cli/#dstack-run"><code>dstack run</code></a>
-or <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.
-For more details on policies and their defaults, refer to <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.</p>
+<h2 id="configure-profiles">Configure profiles<a class="headerlink" href="#configure-profiles" title="Permanent link">&para;</a></h2>
+<p>In case you'd like to reuse certain parameters (such as spot policy, retry and max duration, 
+max price, regions, instance types, etc.) across runs, you can define them via <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.</p>
 <h2 id="manage-runs">Manage runs<a class="headerlink" href="#manage-runs" title="Permanent link">&para;</a></h2>
 <h3 id="stop-a-run">Stop a run<a class="headerlink" href="#stop-a-run" title="Permanent link">&para;</a></h3>
 <p>Once the run exceeds the max duration,

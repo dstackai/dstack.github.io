@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15+insiders-4.53.3">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.003a5498.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.458d28d0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,20 +87,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Pools - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/concepts/pools.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/concepts/pools/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Pools - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/concepts/pools.png" />
-</head>
+  </head>
   
   
     
@@ -867,17 +854,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-instances" class="md-nav__link">
+  <a href="#add-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Adding instances
+          Add instances
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Adding instances">
+    <nav class="md-nav" aria-label="Add instances">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -912,17 +899,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#removing-instances" class="md-nav__link">
+  <a href="#remove-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Removing instances
+          Remove instances
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Removing instances">
+    <nav class="md-nav" aria-label="Remove instances">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -944,11 +931,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#listing-instances" class="md-nav__link">
+  <a href="#list-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Listing instances
+          List instances
         </span>
       
     </span>
@@ -2284,17 +2271,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-instances" class="md-nav__link">
+  <a href="#add-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Adding instances
+          Add instances
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Adding instances">
+    <nav class="md-nav" aria-label="Add instances">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2329,17 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#removing-instances" class="md-nav__link">
+  <a href="#remove-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Removing instances
+          Remove instances
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Removing instances">
+    <nav class="md-nav" aria-label="Remove instances">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2361,11 +2348,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#listing-instances" class="md-nav__link">
+  <a href="#list-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Listing instances
+          List instances
         </span>
       
     </span>
@@ -2402,7 +2389,7 @@
 <p>Pools simplify managing the lifecycle of cloud instances and enable their efficient reuse across runs.</p>
 <p>You can have instances provisioned in the configured backend automatically when you run a workload, or add them
 manually, configuring the required resources, idle duration, etc.</p>
-<h2 id="adding-instances">Adding instances<a class="headerlink" href="#adding-instances" title="Permanent link">&para;</a></h2>
+<h2 id="add-instances">Add instances<a class="headerlink" href="#add-instances" title="Permanent link">&para;</a></h2>
 <h3 id="dstack-run"><code>dstack run</code><a class="headerlink" href="#dstack-run" title="Permanent link">&para;</a></h3>
 <p>By default, when using the <code>dstack run</code> command, it tries to reuse an instance from a pool. If no idle instance meets the
 requirements, <code>dstack</code> automatically provisions a new one and adds it to the pool.</p>
@@ -2439,7 +2426,7 @@ For more details on policies and their defaults, refer to <a href="../../referen
 <summary>Limitations</summary>
 <p>The <code>dstack pool add</code> command is not supported for Kubernetes, and VastAI backends yet.</p>
 </details>
-<h2 id="removing-instances">Removing instances<a class="headerlink" href="#removing-instances" title="Permanent link">&para;</a></h2>
+<h2 id="remove-instances">Remove instances<a class="headerlink" href="#remove-instances" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Idle duration</p>
 <p>If the instance remains idle for the configured duration, <code>dstack</code> removes it and deletes all cloud resources.</p>
@@ -2453,7 +2440,7 @@ For more details on policies and their defaults, refer to <a href="../../referen
 
 </div>
 
-<h2 id="listing-instances">Listing instances<a class="headerlink" href="#listing-instances" title="Permanent link">&para;</a></h2>
+<h2 id="list-instances">List instances<a class="headerlink" href="#list-instances" title="Permanent link">&para;</a></h2>
 <p>The <a href="../../reference/cli/#dstack-pool-ps"><code>dstack pool ps</code></a> command lists active instances and their status (<code>busy</code>
 or <code>idle</code>).</p>
 

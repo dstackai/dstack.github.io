@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15+insiders-4.53.3">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.003a5498.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.458d28d0.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,20 +87,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Installation - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/installation/index.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/installation/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Installation - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/installation/index.png" />
-</head>
+  </head>
   
   
     
@@ -820,30 +807,17 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#configure-regions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Configure regions
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-cli" class="md-nav__link">
+  <a href="#set-up-the-client" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Set up the CLI
+          Set up the client
         </span>
       
     </span>
@@ -2537,30 +2511,17 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#configure-regions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Configure regions
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-cli" class="md-nav__link">
+  <a href="#set-up-the-client" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Set up the CLI
+          Set up the client
         </span>
       
     </span>
@@ -3016,27 +2977,8 @@ of the corresponding security group:</p>
 </div>
 </div>
 </div>
-<h3 id="configure-regions">Configure regions<a class="headerlink" href="#configure-regions" title="Permanent link">&para;</a></h3>
-<p>In addition to credentials, each backend (except TensorDock, Vast AI, DataCrunch, and Kubernetes) 
-optionally allows for region configuration.</p>
-<div editor-title="~/.dstack/server/config.yml">
-
-<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
-<span class="w">  </span><span class="nt">backends</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span>
-<span class="w">    </span><span class="nt">regions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">us-west-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">eu-west-1</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">creds</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">access_key</span>
-<span class="w">      </span><span class="nt">access_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIZKISCVKUKO5AAKLAEH</span>
-<span class="w">      </span><span class="nt">secret_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QSbmpqJIUBn1V5U3pyM9S6lwwiu8/fOJ2dgfwFdW</span>
-</code></pre></div>
-
-</div>
-
-<p>If regions aren't specified, <code>dstack</code> will use all available regions.</p>
 <p>After you update <code>~/.dstack/server/config.yml</code>, make sure to restart the server.</p>
-<h2 id="set-up-the-cli">Set up the CLI<a class="headerlink" href="#set-up-the-cli" title="Permanent link">&para;</a></h2>
+<h2 id="set-up-the-client">Set up the client<a class="headerlink" href="#set-up-the-client" title="Permanent link">&para;</a></h2>
 <p>The client is configured via <code>~/.dstack/config.yml</code> with the server address, user token, and
 the project name. </p>
 <p>If you run <code>dstack server</code> on the same machine, it automatically

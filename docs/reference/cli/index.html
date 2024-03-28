@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15+insiders-4.53.3">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.003a5498.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.458d28d0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,20 +87,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="CLI - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/reference/cli/index.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/reference/cli/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="CLI - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/reference/cli/index.png" />
-</head>
+  </head>
   
   
     
@@ -2573,9 +2560,10 @@ You can override this key via <code>--ssh-identity</code>.</p>
 Usage:<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="w"> </span><span class="o">[</span>TYPE<span class="o">]]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>RUN_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-offers<span class="w"> </span>MAX_OFFERS<span class="o">]</span><span class="w"> </span><span class="o">[</span>--profile<span class="w"> </span>NAME<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>--max-price<span class="w"> </span>PRICE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-duration<span class="w"> </span>DURATION<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="w"> </span>NAME<span class="o">]</span>
+<span class="w">                  </span><span class="o">[</span>-r<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--instance-type<span class="w"> </span>NAME<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>--pool<span class="w"> </span>POOL_NAME<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse<span class="w"> </span><span class="p">|</span><span class="w"> </span>--dont-destroy<span class="w"> </span><span class="p">|</span><span class="w"> </span>--idle-duration<span class="w"> </span>IDLE_DURATION<span class="w"> </span><span class="p">|</span><span class="w"> </span>--instance<span class="w"> </span>NAME<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>--spot<span class="w"> </span><span class="p">|</span><span class="w"> </span>--on-demand<span class="w"> </span><span class="p">|</span><span class="w"> </span>--spot-auto<span class="w"> </span><span class="p">|</span><span class="w"> </span>--spot-policy<span class="w"> </span>POLICY<span class="o">]</span>
-<span class="w">                  </span><span class="o">[</span>--retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--no-retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--retry-limit<span class="w"> </span>DURATION<span class="o">]</span>
+<span class="w">                  </span><span class="o">[</span>--retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--no-retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--retry-duration<span class="w"> </span>DURATION<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>-e<span class="w"> </span><span class="nv">KEY</span><span class="o">=</span>VALUE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--gpu<span class="w"> </span>SPEC<span class="o">]</span><span class="w"> </span><span class="o">[</span>--disk<span class="w"> </span>RANGE<span class="o">]</span>
 <span class="w">                  </span>working_dir
 
@@ -2606,6 +2594,9 @@ Profile:
 <span class="w">  </span>--max-duration<span class="w"> </span>DURATION
 <span class="w">                        </span>The<span class="w"> </span>maximum<span class="w"> </span>duration<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>run
 <span class="w">  </span>-b,<span class="w"> </span>--backend<span class="w"> </span>NAME<span class="w">    </span>The<span class="w"> </span>backends<span class="w"> </span>that<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>tried<span class="w"> </span><span class="k">for</span><span class="w"> </span>provisioning
+<span class="w">  </span>-r,<span class="w"> </span>--region<span class="w"> </span>NAME<span class="w">     </span>The<span class="w"> </span>regions<span class="w"> </span>that<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>tried<span class="w"> </span><span class="k">for</span><span class="w"> </span>provisioning
+<span class="w">  </span>--instance-type<span class="w"> </span>NAME<span class="w">  </span>The<span class="w"> </span>cloud-specific<span class="w"> </span>instance<span class="w"> </span>types<span class="w"> </span>that<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>tried
+<span class="w">                        </span><span class="k">for</span><span class="w"> </span>provisioning
 
 Pools:
 <span class="w">  </span>--pool<span class="w"> </span>POOL_NAME<span class="w">      </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>pool.<span class="w"> </span>If<span class="w"> </span>not<span class="w"> </span>set,<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>pool
@@ -2625,7 +2616,7 @@ Spot<span class="w"> </span>Policy:
 Retry<span class="w"> </span>Policy:
 <span class="w">  </span>--retry
 <span class="w">  </span>--no-retry
-<span class="w">  </span>--retry-limit<span class="w"> </span>DURATION
+<span class="w">  </span>--retry-duration<span class="w"> </span>DURATION
 </code></pre></div>
 
 </div>
@@ -2731,9 +2722,11 @@ The default pool is created automatically.</p>
 Usage:<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span><span class="o">[</span>--remote<span class="o">]</span><span class="w"> </span><span class="o">[</span>--remote-host<span class="w"> </span>REMOTE_HOST<span class="o">]</span>
 <span class="w">                       </span><span class="o">[</span>--remote-port<span class="w"> </span>REMOTE_PORT<span class="o">]</span><span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>INSTANCE_NAME<span class="o">]</span>
 <span class="w">                       </span><span class="o">[</span>--profile<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-price<span class="w"> </span>PRICE<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="w"> </span>NAME<span class="o">]</span>
-<span class="w">                       </span><span class="o">[</span>--pool<span class="w"> </span>POOL_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--reuse<span class="o">]</span><span class="w"> </span><span class="o">[</span>--dont-destroy<span class="o">]</span>
+<span class="w">                       </span><span class="o">[</span>-r<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--instance-type<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--pool<span class="w"> </span>POOL_NAME<span class="o">]</span>
+<span class="w">                       </span><span class="o">[</span>--reuse<span class="o">]</span><span class="w"> </span><span class="o">[</span>--dont-destroy<span class="o">]</span>
 <span class="w">                       </span><span class="o">[</span>--idle-duration<span class="w"> </span>IDLE_DURATION<span class="o">]</span>
 <span class="w">                       </span><span class="o">[</span>--spot<span class="w"> </span><span class="p">|</span><span class="w"> </span>--on-demand<span class="w"> </span><span class="p">|</span><span class="w"> </span>--spot-auto<span class="w"> </span><span class="p">|</span><span class="w"> </span>--spot-policy<span class="w"> </span>POLICY<span class="o">]</span>
+<span class="w">                       </span><span class="o">[</span>--retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--no-retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--retry-duration<span class="w"> </span>DURATION<span class="o">]</span>
 <span class="w">                       </span><span class="o">[</span>--cpu<span class="w"> </span>SPEC<span class="o">]</span><span class="w"> </span><span class="o">[</span>--memory<span class="w"> </span>SIZE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--shared-memory<span class="w"> </span>SIZE<span class="o">]</span>
 <span class="w">                       </span><span class="o">[</span>--gpu<span class="w"> </span>SPEC<span class="o">]</span><span class="w"> </span><span class="o">[</span>--disk<span class="w"> </span>SIZE<span class="o">]</span>
 
@@ -2757,12 +2750,20 @@ Profile:
 <span class="w">  </span>--profile<span class="w"> </span>NAME<span class="w">        </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>profile.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="nv">$DSTACK_PROFILE</span>
 <span class="w">  </span>--max-price<span class="w"> </span>PRICE<span class="w">     </span>The<span class="w"> </span>maximum<span class="w"> </span>price<span class="w"> </span>per<span class="w"> </span>hour,<span class="w"> </span><span class="k">in</span><span class="w"> </span>dollars
 <span class="w">  </span>-b,<span class="w"> </span>--backend<span class="w"> </span>NAME<span class="w">    </span>The<span class="w"> </span>backends<span class="w"> </span>that<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>tried<span class="w"> </span><span class="k">for</span><span class="w"> </span>provisioning
+<span class="w">  </span>-r,<span class="w"> </span>--region<span class="w"> </span>NAME<span class="w">     </span>The<span class="w"> </span>regions<span class="w"> </span>that<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>tried<span class="w"> </span><span class="k">for</span><span class="w"> </span>provisioning
+<span class="w">  </span>--instance-type<span class="w"> </span>NAME<span class="w">  </span>The<span class="w"> </span>cloud-specific<span class="w"> </span>instance<span class="w"> </span>types<span class="w"> </span>that<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>tried
+<span class="w">                        </span><span class="k">for</span><span class="w"> </span>provisioning
 
 Spot<span class="w"> </span>Policy:
 <span class="w">  </span>--spot<span class="w">                </span>Consider<span class="w"> </span>only<span class="w"> </span>spot<span class="w"> </span>instances
 <span class="w">  </span>--on-demand<span class="w">           </span>Consider<span class="w"> </span>only<span class="w"> </span>on-demand<span class="w"> </span>instances
 <span class="w">  </span>--spot-auto<span class="w">           </span>Consider<span class="w"> </span>both<span class="w"> </span>spot<span class="w"> </span>and<span class="w"> </span>on-demand<span class="w"> </span>instances
 <span class="w">  </span>--spot-policy<span class="w"> </span>POLICY<span class="w">  </span>One<span class="w"> </span>of<span class="w"> </span>spot,<span class="w"> </span>on-demand,<span class="w"> </span>auto
+
+Retry<span class="w"> </span>Policy:
+<span class="w">  </span>--retry
+<span class="w">  </span>--no-retry
+<span class="w">  </span>--retry-duration<span class="w"> </span>DURATION
 
 Resources:
 <span class="w">  </span>--cpu<span class="w"> </span>SPEC<span class="w">            </span>Request<span class="w"> </span>the<span class="w"> </span>CPU<span class="w"> </span>count.<span class="w"> </span>Default:<span class="w"> </span><span class="m">2</span>..

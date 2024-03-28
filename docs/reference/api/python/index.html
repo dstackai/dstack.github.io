@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15+insiders-4.53.3">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.003a5498.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.458d28d0.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,20 +87,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Python API - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/reference/api/python/index.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/reference/api/python/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Python API - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/reference/api/python/index.png" />
-</head>
+  </head>
   
   
     
@@ -3171,7 +3158,7 @@ configured <code>ports</code> to <code>localhost</code>.</li>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The dstack server URL (e.g. <code>http://localhost:3000/</code> or <code>https://cloud.dstack.ai</code>)</p>
+              <p>The dstack server URL (e.g. <code>http://localhost:3000/</code> or <code>https://sky.dstack.ai</code>)</p>
             </div>
           </td>
           <td>
@@ -3422,7 +3409,7 @@ configured <code>ports</code> to <code>localhost</code>.</li>
 
 
 <h4 id="dstack.api.RunCollection.submit" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">submit</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">configuration_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">backends</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spot_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retry_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_duration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">run_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reserve_ports</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>          <code class="highlight language-python"><span class="n">submit</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">configuration_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">backends</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">instance_types</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spot_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retry_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_duration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_price</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">run_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reserve_ports</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 <a href="#dstack.api.RunCollection.submit" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -3494,6 +3481,20 @@ configured <code>ports</code> to <code>localhost</code>.</li>
           <td>
             <div class="doc-md-description">
               <p>A list of allowed backend for provisioning.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>regions</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[str]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of cloud regions for provisioning.</p>
             </div>
           </td>
           <td>
@@ -4067,6 +4068,28 @@ You can override these credentials via the <code>git_identity_file</code> or <co
             </div>
           </td>
         </tr>
+        <tr>
+          <td><code><span title="dstack.api._ServiceConfiguration.replicas">replicas</span></code></td>
+          <td>
+                <code><span title="dstack._internal.core.models.resources.Range">Range</span>[int]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The range of the number of replicas. Defaults to <code>1</code>.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="dstack.api._ServiceConfiguration.scaling">scaling</span></code></td>
+          <td>
+                <code><span title="typing_extensions.Annotated">Annotated</span>[<span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.configurations.ScalingSpec">ScalingSpec</span>], <span title="pydantic.Field">Field</span>(description=&#39;The auto-scaling configuration&#39;)]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional[ScalingSpec]: The auto-scaling configuration.</p>
+            </div>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -4150,7 +4173,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
         <tr>
           <td><code><span title="dstack.api.Run.status">status</span></code></td>
           <td>
-                <code><span title="dstack._internal.core.models.runs.JobStatus">JobStatus</span></code>
+                <code><span title="dstack._internal.core.models.runs.RunStatus">RunStatus</span></code>
           </td>
           <td>
             <div class="doc-md-description">

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15+insiders-4.53.3">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.003a5498.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.458d28d0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,20 +87,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content=".dstack.yml - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/reference/dstack.yml.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/reference/dstack.yml/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content=".dstack.yml - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/reference/dstack.yml.png" />
-</head>
+  </head>
   
   
     
@@ -2350,7 +2337,7 @@ code, and environment.</p>
 <tr>
 <td><code>env</code></td>
 <td>The mapping or the list of environment variables</td>
-<td><code>Union[List[ConstrainedStrValue],Dict[str, str]]</code></td>
+<td><code>Union[List[ConstrainedStrValue],Dict[str, Union[str,EnvSentinel]]]</code></td>
 <td><code>{}</code></td>
 </tr>
 <tr>
@@ -2442,7 +2429,7 @@ code, and environment.</p>
 <tr>
 <td><code>env</code></td>
 <td>The mapping or the list of environment variables</td>
-<td><code>Union[List[ConstrainedStrValue],Dict[str, str]]</code></td>
+<td><code>Union[List[ConstrainedStrValue],Dict[str, Union[str,EnvSentinel]]]</code></td>
 <td><code>{}</code></td>
 </tr>
 <tr>
@@ -2522,7 +2509,7 @@ code, and environment.</p>
 <tr>
 <td><code>env</code></td>
 <td>The mapping or the list of environment variables</td>
-<td><code>Union[List[ConstrainedStrValue],Dict[str, str]]</code></td>
+<td><code>Union[List[ConstrainedStrValue],Dict[str, Union[str,EnvSentinel]]]</code></td>
 <td><code>{}</code></td>
 </tr>
 <tr>
@@ -2560,6 +2547,18 @@ code, and environment.</p>
 <td>Enable the authorization</td>
 <td><code>bool</code></td>
 <td><code>True</code></td>
+</tr>
+<tr>
+<td><code>replicas</code></td>
+<td>The range</td>
+<td><code>Range[int]</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>scaling</code></td>
+<td>The auto-scaling configuration</td>
+<td><code>Optional[ScalingSpec]</code></td>
+<td><code>None</code></td>
 </tr>
 </tbody>
 </table>

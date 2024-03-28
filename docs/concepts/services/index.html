@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15+insiders-4.53.3">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.003a5498.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.458d28d0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,20 +87,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Services - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/concepts/services.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/concepts/services/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Services - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/concepts/services.png" />
-</head>
+  </head>
   
   
     
@@ -877,25 +864,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Configure model mapping">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Limitations
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -981,11 +949,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-policies" class="md-nav__link">
+  <a href="#configure-profiles" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configure policies
+          Configure profiles
         </span>
       
     </span>
@@ -1035,6 +1003,19 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2430,25 +2411,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Configure model mapping">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Limitations
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -2534,11 +2496,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-policies" class="md-nav__link">
+  <a href="#configure-profiles" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configure policies
+          Configure profiles
         </span>
       
     </span>
@@ -2591,6 +2553,19 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2619,7 +2594,7 @@
 <h1 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h1>
 <p>Services make it very easy to deploy any kind of model or web application as public endpoints.</p>
 <p>Use any serving frameworks and specify required resources. <code>dstack</code> deploys it in the configured backend, handles
-authentication, replicas, and provides an OpenAI-compatible interface if needed.</p>
+authentication, auto-scaling, and provides an OpenAI-compatible interface if needed.</p>
 <details class="info">
 <summary>Prerequisites</summary>
 <p>If you're using the open-source server, you first have to set up a gateway.</p>
@@ -2668,6 +2643,27 @@ are both acceptable).</p>
 <p>The YAML file allows you to specify your own Docker image, environment variables, 
 resource requirements, etc.
 If image is not specified, <code>dstack</code> uses its own (pre-configured with Python, Conda, and essential CUDA drivers).</p>
+<details class="info">
+<summary>Environment variables</summary>
+<p>Environment variables can be set either within the configuration file or passed via the CLI.</p>
+<p>If you only specify the name of the environment variable without specifying the value, 
+<code>dstack</code> will require that the value is passed via the CLI or set for the current process.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=mistralai/Mistral-7B-Instruct-v0.1</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --port 80 --trust-remote-code</span>
+
+<span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80GB</span>
+</code></pre></div>
+<p>This way, you can define environment variables in a <code>.env</code> file and also use tools such as <code>direnv</code> and similar.</p>
+</details>
 <p>For more details on the file syntax, refer to <a href="../../reference/dstack.yml/"><code>.dstack.yml</code></a>.</p>
 <h3 id="configure-model-mapping">Configure model mapping<a class="headerlink" href="#configure-model-mapping" title="Permanent link">&para;</a></h3>
 <p>By default, if you run a service, its endpoint is accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
@@ -2726,7 +2722,7 @@ from the model's repository. If it is not present there, manual configuration is
 <span class="w">  </span><span class="nt">chat_template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">messages[0][&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;system&#39;</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">loop_messages</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">messages[1:]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">messages[0][&#39;content&#39;]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">loop_messages</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">messages</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">false</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">loop_messages</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(message[&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;user&#39;)</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">(loop.index0</span><span class="nv"> </span><span class="s">%</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0)</span><span class="nv"> </span><span class="s">%}{{</span><span class="nv"> </span><span class="s">raise_exception(&#39;Conversation</span><span class="nv"> </span><span class="s">roles</span><span class="nv"> </span><span class="s">must</span><span class="nv"> </span><span class="s">alternate</span><span class="nv"> </span><span class="s">user/assistant/user/assistant/...&#39;)</span><span class="nv"> </span><span class="s">}}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">loop.index0</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">false</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">&#39;&lt;&lt;SYS&gt;&gt;\\n&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">system_message</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;\\n&lt;&lt;/SYS&gt;&gt;\\n\\n&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">message[&#39;content&#39;]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">message[&#39;content&#39;]</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">message[&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;user&#39;</span><span class="nv"> </span><span class="s">%}{{</span><span class="nv"> </span><span class="s">&#39;&lt;s&gt;[INST]</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">content.strip()</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">[/INST]&#39;</span><span class="nv"> </span><span class="s">}}{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">message[&#39;role&#39;]</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&#39;assistant&#39;</span><span class="nv"> </span><span class="s">%}{{</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv">  </span><span class="s">+</span><span class="nv"> </span><span class="s">content.strip()</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&lt;/s&gt;&#39;</span><span class="nv"> </span><span class="s">}}{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}{%</span><span class="nv"> </span><span class="s">endfor</span><span class="nv"> </span><span class="s">%}&quot;</span>
 <span class="w">  </span><span class="nt">eos_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;/s&gt;&quot;</span>
 </code></pre></div>
-<h4 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h4>
+<h5 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h5>
 <p>Please note that model mapping is an experimental feature with the following limitations:</p>
 <ol>
 <li>Doesn't work if your <code>chat_template</code> uses <code>bos_token</code>. As a workaround, replace <code>bos_token</code> inside <code>chat_template</code> with the token content itself.</li>
@@ -2736,40 +2732,34 @@ from the model's repository. If it is not present there, manual configuration is
 </details>
 <h3 id="configure-replicas-and-auto-scaling">Configure replicas and auto-scaling<a class="headerlink" href="#configure-replicas-and-auto-scaling" title="Permanent link">&para;</a></h3>
 <p>By default, <code>dstack</code> runs a single replica of the service.
-You can configure the number of replicas at the top level of the configuration file.</p>
+You can configure the number of replicas as well as the auto-scaling policy.</p>
 <div editor-title="serve.dstack.yml"> 
 
-<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
-<span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
-</code></pre></div>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL=NousResearch/Llama-2-7b-chat-hf</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -m vllm.entrypoints.openai.api_server --model $MODEL --port 8000</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
-</div>
-
-<p>You also can specify a range of replicas with a scaling policy,
-and dstack will automatically scale the service up and down based on the load.
-Currently, the only supported metric is <code>rps</code> — requests per second per replica.</p>
-<div editor-title="serve.dstack.yml"> 
-
-<div class="highlight"><pre><span></span><code><span class="nn">...</span>
-
-<span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0..3</span>
+<span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1..4</span>
 <span class="nt">scaling</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rps</span>
-<span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.5</span>
-<span class="w">  </span><span class="c1"># (Optional) Configure `scale_up_delay` and `scale_down_delay`</span>
-<span class="w">  </span><span class="nt">scale_up_delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
-<span class="w">  </span><span class="nt">scale_down_delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+<span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+
+<span class="c1"># (Optional) Enable the OpenAI-compatible endpoint</span>
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NousResearch/Llama-2-7b-chat-hf</span>
 </code></pre></div>
 
 </div>
 
-<p>Specifying minimum replicas as <code>0</code> means that the service will be scaled down to zero when there are no requests.</p>
-<div class="admonition info">
-<p class="admonition-title">Cold start time</p>
-<p>Scaling up from zero could take from tens of seconds if there is an available instance in the pool,
-up to several tens of minutes if a new instance has to be provisioned and a large model has to be pulled.</p>
-</div>
+<p>If you specify the minimum number of replicas as <code>0</code>, the service will scale down to zero when there are no requests.</p>
 <h2 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h2>
 <p>To run a configuration, use the <a href="../../reference/cli/#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
 configuration file path, and any other options.</p>
@@ -2798,6 +2788,8 @@ Service<span class="w"> </span>is<span class="w"> </span>published<span class="w
 <p>If there are large files or folders you'd like to avoid uploading, 
 you can list them in either <code>.gitignore</code> or <code>.dstackignore</code>.</p>
 </div>
+<p>The <code>dstack run</code> command allows specifying many things, including spot policy, retry and max duration, 
+max price, regions, instance types, and <a href="../../reference/cli/#dstack-run">much more</a>.</p>
 <h3 id="service-endpoint">Service endpoint<a class="headerlink" href="#service-endpoint" title="Permanent link">&para;</a></h3>
 <p>One the service is up, its endpoint is accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
 <h4 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h4>
@@ -2834,25 +2826,21 @@ to access the model at <code>https://gateway.&lt;gateway domain&gt;</code> via t
 
 <span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="configure-policies">Configure policies<a class="headerlink" href="#configure-policies" title="Permanent link">&para;</a></h2>
-<p>For a run, multiple policies can be configured, such as spot policy, retry policy, max duration, max price, etc.</p>
-<p>Policies can be configured either via <a href="../../reference/cli/#dstack-run"><code>dstack run</code></a>
-or <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.
-For more details on policies and their defaults, refer to <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.</p>
+<h2 id="configure-profiles">Configure profiles<a class="headerlink" href="#configure-profiles" title="Permanent link">&para;</a></h2>
+<p>In case you'd like to reuse certain parameters (such as spot policy, retry and max duration, 
+max price, regions, instance types, etc.) across runs, you can define them via <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.</p>
 <h2 id="manage-runs">Manage runs<a class="headerlink" href="#manage-runs" title="Permanent link">&para;</a></h2>
 <h3 id="stop-a-run">Stop a run<a class="headerlink" href="#stop-a-run" title="Permanent link">&para;</a></h3>
 <p>When you use <a href="../../reference/cli/#dstack-stop"><code>dstack stop</code></a>, the service and its cloud resources are deleted.</p>
 <h3 id="list-runs">List runs<a class="headerlink" href="#list-runs" title="Permanent link">&para;</a></h3>
 <p>The <a href="../../reference/cli/#dstack-ps"><code>dstack ps</code></a> command lists all running runs and their status.</p>
-<div class="admonition info">
-<p class="admonition-title">What's next?</p>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../../../examples/tgi/">Text Generation Inference</a> and <a href="../../../examples/vllm/">vLLM</a> examples</li>
 <li>Read about <a href="../dev-environments/">dev environments</a>, <a href="../tasks/">tasks</a>, and <a href="../pools/">pools</a></li>
 <li>Browse <a href="../../../examples/">examples</a></li>
 <li>Check the <a href="../../reference/dstack.yml/">reference</a></li>
 </ol>
-</div>
 
 
 
