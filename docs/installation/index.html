@@ -671,20 +671,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Set up the server
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Set up the server">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#configure-backends" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -819,18 +805,26 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Start the server
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-client" class="md-nav__link">
+  <a href="#configure-the-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Set up the client
+          Configure the CLI
         </span>
       
     </span>
@@ -2513,20 +2507,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Set up the server
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Set up the server">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#configure-backends" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2661,18 +2641,26 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Start the server
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-client" class="md-nav__link">
+  <a href="#configure-the-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Set up the client
+          Configure the CLI
         </span>
       
     </span>
@@ -2719,42 +2707,19 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>Follow this guide to install the open-source version of <code>dstack</code> server.</p>
-<h2 id="set-up-the-server">Set up the server<a class="headerlink" href="#set-up-the-server" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">Docker</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p>To install <code>dstack</code>, use <code>pip</code>:</p>
 <div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]&quot;</span><span class="w"> </span>-U
-$<span class="w"> </span>dstack<span class="w"> </span>server
 
-Applying<span class="w"> </span>~/.dstack/server/config.yml...
-
-The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;bbae0f28-d3dd-4820-bf61-8f4bb40815da&quot;</span>
-The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/
+    <div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]&quot;</span><span class="w"> </span>-U
 </code></pre></div>
-</div>
-</div>
-<div class="tabbed-block">
-<div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/.dstack/server/:/root/.dstack/server<span class="w"> </span>dstackai/dstack
 
-Applying<span class="w"> </span>~/.dstack/server/config.yml...
+</div>
 
-The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;bbae0f28-d3dd-4820-bf61-8f4bb40815da&quot;</span>
-The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/.
-</code></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="admonition info">
-<p class="admonition-title">NOTE:</p>
-<p>For flexibility, <code>dstack</code> server allows you to configure multiple project. The default project is <code>main</code>.</p>
-</div>
-<h3 id="configure-backends">Configure backends<a class="headerlink" href="#configure-backends" title="Permanent link">&para;</a></h3>
-<p>To let <code>dstack</code> run workloads in your cloud account(s), you need to configure cloud credentials 
-in <code>~/.dstack/server/config.yml</code> under the <code>backends</code> property of the respective project.</p>
+<p>To use the open-source version of <code>dstack</code>, you have to configure 
+your cloud accounts via <code>~/.dstack/server/config.yml</code> and start the <code>dstack</code> server.</p>
+<h2 id="configure-backends">Configure backends<a class="headerlink" href="#configure-backends" title="Permanent link">&para;</a></h2>
+<p>To configure cloud accounts, create the  <br />
+<code>~/.dstack/server/config.yml</code> file, and configure each cloud under the <code>backends</code> property.</p>
 <div editor-title="~/.dstack/server/config.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
@@ -2769,14 +2734,15 @@ in <code>~/.dstack/server/config.yml</code> under the <code>backends</code> prop
 
 </div>
 
-<div class="admonition info">
-<p class="admonition-title">Default credentials</p>
-<p>If you have default AWS, GCP, or Azure credentials on your machine, the <code>dstack</code> server will pick them up automatically.
-Otherwise, you have to configure them manually.</p>
-</div>
-<h4 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h4>
+<p>Refer below for examples on how to configure a specific cloud provider.</p>
+<details class="info">
+<summary>Projects</summary>
+<p>For flexibility, <code>dstack</code> server permits you to configure backends for multiple projects. 
+If you intend to use only one project, name it <code>main</code>.</p>
+</details>
+<h3 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
 <p>There are two ways to configure AWS: using an access key or using the default credentials.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Access key</label><label for="__tabbed_2_2">Default credentials</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Access key</label><label for="__tabbed_1_2">Default credentials</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Create an access key by following the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-user.html#cli-authentication-user-get">this guide</a>.
@@ -2861,9 +2827,9 @@ configure the backend.</p>
 }
 </code></pre></div>
 </details>
-<h4 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h4>
+<h3 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h3>
 <p>There are two ways to configure Azure: using a client secret or using the default credentials.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Client secret</label><label for="__tabbed_3_2">Default credentials</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Client secret</label><label for="__tabbed_2_2">Default credentials</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>A client secret can be created using the <a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli">Azure CLI</a>:</p>
@@ -2919,7 +2885,7 @@ az<span class="w"> </span>ad<span class="w"> </span>sp<span class="w"> </span>cr
 <p>You must have the <code>Owner</code> permission for the Azure subscription.
 Please, <a href="https://discord.gg/u8SmfwPpMd">let us know</a> if your use case requires more granular Azure permissions.</p>
 </details>
-<h4 id="gcp">GCP<a class="headerlink" href="#gcp" title="Permanent link">&para;</a></h4>
+<h3 id="gcp">GCP<a class="headerlink" href="#gcp" title="Permanent link">&para;</a></h3>
 <details class="info">
 <summary>Enable APIs</summary>
 <p>First, ensure the required APIs are enabled in your GCP <code>project_id</code>.</p>
@@ -2930,7 +2896,7 @@ gcloud<span class="w"> </span>services<span class="w"> </span><span class="nb">e
 </code></pre></div>
 </details>
 <p>There are two ways to configure GCP: using a service account or using the default credentials.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Service account</label><label for="__tabbed_4_2">Default credentials</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Service account</label><label for="__tabbed_3_2">Default credentials</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>To create a service account, follow <a href="https://cloud.google.com/iam/docs/service-accounts-create">this guide</a>.
@@ -2974,7 +2940,7 @@ and download the corresponding JSON file.</p>
 <summary>Required GCP permissions</summary>
 <p>The <code>Service Account User</code> and <code>Compute Admin</code> roles are sufficient for <code>dstack</code> to work.</p>
 </details>
-<h4 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h4>
+<h3 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
 <p>Log into your <a href="https://lambdalabs.com/service/gpu-cloud">Lambda Cloud</a> account, click API keys in the sidebar, and then click the <code>Generate API key</code>
 button to create a new API key.</p>
 <p>Then, go ahead and configure the backend:</p>
@@ -2991,7 +2957,7 @@ button to create a new API key.</p>
 
 </div>
 
-<h4 id="tensordock">TensorDock<a class="headerlink" href="#tensordock" title="Permanent link">&para;</a></h4>
+<h3 id="tensordock">TensorDock<a class="headerlink" href="#tensordock" title="Permanent link">&para;</a></h3>
 <p>Log into your <a href="https://marketplace.tensordock.com/">TensorDock</a> account, click API in the sidebar, and use the <code>Create an Authorization</code>
 section to create a new authorization key.</p>
 <p>Then, go ahead and configure the backend:</p>
@@ -3013,7 +2979,7 @@ section to create a new authorization key.</p>
 <p class="admonition-title">NOTE:</p>
 <p>The <code>tensordock</code> backend supports on-demand instances only. Spot instance support coming soon.</p>
 </div>
-<h4 id="vast-ai">Vast AI<a class="headerlink" href="#vast-ai" title="Permanent link">&para;</a></h4>
+<h3 id="vast-ai">Vast AI<a class="headerlink" href="#vast-ai" title="Permanent link">&para;</a></h3>
 <p>Log into your <a href="https://cloud.vast.ai/">Vast AI</a> account, click Account in the sidebar, and copy your
 API Key.</p>
 <p>Then, go ahead and configure the backend:</p>
@@ -3034,7 +3000,7 @@ API Key.</p>
 <p class="admonition-title">NOTE:</p>
 <p>Also, the <code>vastai</code> backend supports on-demand instances only. Spot instance support coming soon.</p>
 </div>
-<h4 id="cudo">CUDO<a class="headerlink" href="#cudo" title="Permanent link">&para;</a></h4>
+<h3 id="cudo">CUDO<a class="headerlink" href="#cudo" title="Permanent link">&para;</a></h3>
 <p>Log into your <a href="https://compute.cudo.org/">CUDO Compute</a> account, click API keys in the sidebar, and click the <code>Create an API key</code> button.</p>
 <p>Ensure you've created a project with CUDO Compute, then proceed to configuring the backend.</p>
 <div editor-title="~/.dstack/server/config.yml">
@@ -3051,7 +3017,7 @@ API Key.</p>
 
 </div>
 
-<h4 id="datacrunch">DataCrunch<a class="headerlink" href="#datacrunch" title="Permanent link">&para;</a></h4>
+<h3 id="datacrunch">DataCrunch<a class="headerlink" href="#datacrunch" title="Permanent link">&para;</a></h3>
 <p>Log into your <a href="https://cloud.datacrunch.io/signin">DataCrunch</a> account, click Account Settings in the sidebar, find <code>REST API Credentials</code> area and then click the <code>Generate Credentials</code> button.</p>
 <p>Then, go ahead and configure the backend:</p>
 <div editor-title="~/.dstack/server/config.yml">
@@ -3068,7 +3034,7 @@ API Key.</p>
 
 </div>
 
-<h4 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h4>
+<h3 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h3>
 <p><code>dstack</code> supports both self-managed, and managed Kubernetes clusters.</p>
 <details class="info">
 <summary>Prerequisite</summary>
@@ -3078,7 +3044,7 @@ API Key.</p>
 <p>To configure a Kubernetes backend, specify the path to the kubeconfig file, 
 and the port that <code>dstack</code> can use for proxying SSH traffic.
 In case of a self-managed cluster, also specify the IP address of any node in the cluster.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Self-managed</label><label for="__tabbed_5_2">Managed</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Self-managed</label><label for="__tabbed_4_2">Managed</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Here's how to configure the backend to use a self-managed cluster.</p>
@@ -3128,18 +3094,44 @@ of the corresponding security group:</p>
 </div>
 </div>
 </div>
-<p>After you update <code>~/.dstack/server/config.yml</code>, make sure to restart the server.</p>
-<h2 id="set-up-the-client">Set up the client<a class="headerlink" href="#set-up-the-client" title="Permanent link">&para;</a></h2>
-<p>The client is configured via <code>~/.dstack/config.yml</code> with the server address, user token, and
-the project name. </p>
-<p>If you run <code>dstack server</code> on the same machine, it automatically
-updates the client configuration for the default project (<code>main</code>).</p>
-<p>To configure the client on a different machine or for other projects, use <a href="../reference/cli/#dstack-config"><code>dstack config</code></a>.</p>
+<h2 id="start-the-server">Start the server<a class="headerlink" href="#start-the-server" title="Permanent link">&para;</a></h2>
+<p>Once the <code>~/.dstack/server/config.yml</code> file is configured, proceed to start the server:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">pip</label><label for="__tabbed_5_2">Docker</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>server
+
+Applying<span class="w"> </span>~/.dstack/server/config.yml...
+
+The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;bbae0f28-d3dd-4820-bf61-8f4bb40815da&quot;</span>
+The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/
+</code></pre></div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/.dstack/server/:/root/.dstack/server<span class="w"> </span>dstackai/dstack
+
+Applying<span class="w"> </span>~/.dstack/server/config.yml...
+
+The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;bbae0f28-d3dd-4820-bf61-8f4bb40815da&quot;</span>
+The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="configure-the-cli">Configure the CLI<a class="headerlink" href="#configure-the-cli" title="Permanent link">&para;</a></h2>
+<p>To point the CLI to the <code>dstack</code> server, you need to configure <code>~/.dstack/config.yml</code> 
+with the server address, user token and project name.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>config<span class="w"> </span>--url<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>your<span class="w"> </span>server<span class="w"> </span>adddress<span class="p">&amp;</span>gt<span class="p">;</span><span class="w"> </span>--project<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>your<span class="w"> </span>project<span class="w"> </span>name<span class="p">&amp;</span>gt<span class="p">;</span><span class="w"> </span>--token<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>your<span class="w"> </span>user<span class="w"> </span>token<span class="p">&amp;</span>gt<span class="p">;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>config<span class="w"> </span>--url<span class="w"> </span>http://127.0.0.1:3000<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--project<span class="w"> </span>main<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--token<span class="w"> </span>bbae0f28-d3dd-4820-bf61-8f4bb40815da
 
-Configurated<span class="w"> </span>is<span class="w"> </span>updated<span class="w"> </span>at<span class="w"> </span>~/.dstack/config.yml
+Configuration<span class="w"> </span>is<span class="w"> </span>updated<span class="w"> </span>at<span class="w"> </span>~/.dstack/config.yml
 </code></pre></div>
 
 </div>
