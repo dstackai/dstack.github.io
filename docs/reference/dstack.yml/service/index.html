@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.16+insiders-4.53.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17+insiders-4.53.5">
     
     
       
@@ -1131,12 +1131,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#required-resources" class="md-nav__link">
+  <a href="#_resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        <span class="md-typeset">
-          Required resources
-        </span>
+        Resources
       
     </span>
   </a>
@@ -1162,17 +1160,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties-reference" class="md-nav__link">
+  <a href="#root-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Properties reference
+          Root reference
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Properties reference">
+    <nav class="md-nav" aria-label="Root reference">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1518,15 +1516,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu" class="md-nav__link">
+  <a href="#resources-gpu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        gpu
+        resources.gpu
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="gpu">
+    <nav class="md-nav" aria-label="resources.gpu">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1590,15 +1588,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disk" class="md-nav__link">
+  <a href="#resources-disk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        disk
+        resources.disk
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="disk">
+    <nav class="md-nav" aria-label="resources.disk">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2990,12 +2988,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#required-resources" class="md-nav__link">
+  <a href="#_resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        <span class="md-typeset">
-          Required resources
-        </span>
+        Resources
       
     </span>
   </a>
@@ -3021,17 +3017,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties-reference" class="md-nav__link">
+  <a href="#root-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Properties reference
+          Root reference
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Properties reference">
+    <nav class="md-nav" aria-label="Root reference">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3377,15 +3373,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu" class="md-nav__link">
+  <a href="#resources-gpu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        gpu
+        resources.gpu
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="gpu">
+    <nav class="md-nav" aria-label="resources.gpu">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3449,15 +3445,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disk" class="md-nav__link">
+  <a href="#resources-disk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        disk
+        resources.disk
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="disk">
+    <nav class="md-nav" aria-label="resources.disk">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3661,7 +3657,7 @@ You can configure the number of replicas as well as the auto-scaling policy.</p>
 </div>
 
 <p>If you specify the minimum number of replicas as <code>0</code>, the service will scale down to zero when there are no requests.</p>
-<h4 id="required-resources">Required resources<a class="headerlink" href="#required-resources" title="Permanent link">&para;</a></h4>
+<h4 id="_resources">Resources<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
 <p>If you specify memory size, you can either specify an explicit size (e.g. <code>24GB</code>) or a 
 range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</code>).</p>
 <div editor-title="serve.dstack.yml"> 
@@ -3718,7 +3714,7 @@ Authentication can be disabled by setting <code>auth</code> to <code>false</code
 
 </div>
 
-<h3 id="properties-reference">Properties reference<a class="headerlink" href="#properties-reference" title="Permanent link">&para;</a></h3>
+<h3 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="home_dir"><code>home_dir</code> - (Optional) The absolute path to the home directory inside the container. Defaults to <code>/root</code>.<a class="headerlink" href="#home_dir" title="Permanent link">&para;</a></h4>
@@ -3733,30 +3729,30 @@ Authentication can be disabled by setting <code>auth</code> to <code>false</code
 <h4 class="reference-item" id="auth"><code>auth</code> - (Optional) Enable the authorization. Defaults to <code>True</code>.<a class="headerlink" href="#auth" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="replicas"><code>replicas</code> - (Optional) The range . Defaults to <code>1</code>.<a class="headerlink" href="#replicas" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_scaling"><a href="#scaling"><code>scaling</code></a> - (Optional) The auto-scaling configuration.<a class="headerlink" href="#_scaling" title="Permanent link">&para;</a></h4>
-<h3 id="model_1">model<a class="headerlink" href="#model_1" title="Permanent link">&para;</a></h3>
+<h3 id="model_1"><code>model</code><a class="headerlink" href="#model_1" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="type"><code>type</code> -  The type of the model.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="name"><code>name</code> -  The name of the model.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="format"><code>format</code> -  The serving format.<a class="headerlink" href="#format" title="Permanent link">&para;</a></h4>
-<h3 id="scaling">scaling<a class="headerlink" href="#scaling" title="Permanent link">&para;</a></h3>
+<h3 id="scaling"><code>scaling</code><a class="headerlink" href="#scaling" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="metric"><code>metric</code> -  The target metric to track.<a class="headerlink" href="#metric" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="target"><code>target</code> -  The target value of the metric.<a class="headerlink" href="#target" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="scale_up_delay"><code>scale_up_delay</code> - (Optional) The delay in seconds before scaling up. Defaults to <code>300</code>.<a class="headerlink" href="#scale_up_delay" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="scale_down_delay"><code>scale_down_delay</code> - (Optional) The delay in seconds before scaling down. Defaults to <code>600</code>.<a class="headerlink" href="#scale_down_delay" title="Permanent link">&para;</a></h4>
-<h3 id="resources">resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
+<h3 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., 8GB). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="shm_size"><code>shm_size</code> - (Optional) The size of shared memory (e.g., 8GB). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this..<a class="headerlink" href="#shm_size" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_gpu"><a href="#gpu"><code>gpu</code></a> - (Optional) The GPU resources.<a class="headerlink" href="#_gpu" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_disk"><a href="#disk"><code>disk</code></a> - (Optional) The disk resources.<a class="headerlink" href="#_disk" title="Permanent link">&para;</a></h4>
-<h3 id="gpu">gpu<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="_gpu"><a href="#resources-gpu"><code>gpu</code></a> - (Optional) The GPU resources.<a class="headerlink" href="#_gpu" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_disk"><a href="#resources-disk"><code>disk</code></a> - (Optional) The disk resources.<a class="headerlink" href="#_disk" title="Permanent link">&para;</a></h4>
+<h3 id="resources-gpu"><code>resouces.gpu</code><a class="headerlink" href="#resources-gpu" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The GPU name or list of names.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="count"><code>count</code> - (Optional) The number of GPUs. Defaults to <code>1</code>.<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The VRAM size (e.g., 16GB).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total VRAM size (e.g., 32GB).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="compute_capability"><code>compute_capability</code> - (Optional) The minimum compute capability of the GPU (e.g., 7.5).<a class="headerlink" href="#compute_capability" title="Permanent link">&para;</a></h4>
-<h3 id="disk">disk<a class="headerlink" href="#disk" title="Permanent link">&para;</a></h3>
+<h3 id="resources-disk"><code>resouces.disk</code><a class="headerlink" href="#resources-disk" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="size"><code>size</code> -  The disk size (e.g., 100GB).<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
-<h3 id="registry_auth">registry_auth<a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h3>
+<h3 id="registry_auth"><code>registry_auth</code><a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="username"><code>username</code> - (Optional) The username.<a class="headerlink" href="#username" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="password"><code>password</code> -  The password or access token.<a class="headerlink" href="#password" title="Permanent link">&para;</a></h4>
 
@@ -3913,7 +3909,7 @@ Authentication can be disabled by setting <code>auth</code> to <code>false</code
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.a255a381.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.1135ae9f.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.16+insiders-4.53.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17+insiders-4.53.5">
     
     
       
@@ -1051,12 +1051,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#required-resources" class="md-nav__link">
+  <a href="#_resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        <span class="md-typeset">
-          Required resources
-        </span>
+        Resources
       
     </span>
   </a>
@@ -1082,17 +1080,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties-reference" class="md-nav__link">
+  <a href="#root-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Properties reference
+          Root reference
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Properties reference">
+    <nav class="md-nav" aria-label="Root reference">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1305,15 +1303,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu" class="md-nav__link">
+  <a href="#resources-gpu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        gpu
+        resources.gpu
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="gpu">
+    <nav class="md-nav" aria-label="resources.gpu">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1377,15 +1375,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disk" class="md-nav__link">
+  <a href="#resources-disk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        disk
+        resources.disk
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="disk">
+    <nav class="md-nav" aria-label="resources.disk">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2805,12 +2803,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#required-resources" class="md-nav__link">
+  <a href="#_resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        <span class="md-typeset">
-          Required resources
-        </span>
+        Resources
       
     </span>
   </a>
@@ -2836,17 +2832,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties-reference" class="md-nav__link">
+  <a href="#root-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Properties reference
+          Root reference
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Properties reference">
+    <nav class="md-nav" aria-label="Root reference">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3059,15 +3055,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu" class="md-nav__link">
+  <a href="#resources-gpu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        gpu
+        resources.gpu
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="gpu">
+    <nav class="md-nav" aria-label="resources.gpu">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3131,15 +3127,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disk" class="md-nav__link">
+  <a href="#resources-disk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        disk
+        resources.disk
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="disk">
+    <nav class="md-nav" aria-label="resources.disk">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3268,7 +3264,7 @@ To install it, use <code>conda install cuda</code>.</p>
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 </code></pre></div>
 </details>
-<h4 id="required-resources">Required resources<a class="headerlink" href="#required-resources" title="Permanent link">&para;</a></h4>
+<h4 id="_resources">Resources<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
 <p>If you specify memory size, you can either specify an explicit size (e.g. <code>24GB</code>) or a 
 range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</code>).</p>
 <div editor-title=".dstack.yml"> 
@@ -3313,7 +3309,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <p>If you don't assign a value to an environment variable (see <code>HUGGING_FACE_HUB_TOKEN</code> above), 
 <code>dstack</code> will require the value to be passed via the CLI or set in the current process.</p>
 <p>For instance, you can define environment variables in a <code>.env</code> file and utilize tools like <code>direnv</code>.</p>
-<h3 id="properties-reference">Properties reference<a class="headerlink" href="#properties-reference" title="Permanent link">&para;</a></h3>
+<h3 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="home_dir"><code>home_dir</code> - (Optional) The absolute path to the home directory inside the container. Defaults to <code>/root</code>.<a class="headerlink" href="#home_dir" title="Permanent link">&para;</a></h4>
@@ -3326,21 +3322,21 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <h4 class="reference-item" id="ide"><code>ide</code> -  The IDE to run.<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="version"><code>version</code> - (Optional) The version of the IDE.<a class="headerlink" href="#version" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="init"><code>init</code> - (Optional) The bash commands to run.<a class="headerlink" href="#init" title="Permanent link">&para;</a></h4>
-<h3 id="resources">resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
+<h3 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., 8GB). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="shm_size"><code>shm_size</code> - (Optional) The size of shared memory (e.g., 8GB). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this..<a class="headerlink" href="#shm_size" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_gpu"><a href="#gpu"><code>gpu</code></a> - (Optional) The GPU resources.<a class="headerlink" href="#_gpu" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_disk"><a href="#disk"><code>disk</code></a> - (Optional) The disk resources.<a class="headerlink" href="#_disk" title="Permanent link">&para;</a></h4>
-<h3 id="gpu">gpu<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="_gpu"><a href="#resources-gpu"><code>gpu</code></a> - (Optional) The GPU resources.<a class="headerlink" href="#_gpu" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_disk"><a href="#resources-disk"><code>disk</code></a> - (Optional) The disk resources.<a class="headerlink" href="#_disk" title="Permanent link">&para;</a></h4>
+<h3 id="resources-gpu"><code>resources.gpu</code><a class="headerlink" href="#resources-gpu" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The GPU name or list of names.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="count"><code>count</code> - (Optional) The number of GPUs. Defaults to <code>1</code>.<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The VRAM size (e.g., 16GB).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total VRAM size (e.g., 32GB).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="compute_capability"><code>compute_capability</code> - (Optional) The minimum compute capability of the GPU (e.g., 7.5).<a class="headerlink" href="#compute_capability" title="Permanent link">&para;</a></h4>
-<h3 id="disk">disk<a class="headerlink" href="#disk" title="Permanent link">&para;</a></h3>
+<h3 id="resources-disk"><code>resources.disk</code><a class="headerlink" href="#resources-disk" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="size"><code>size</code> -  The disk size (e.g., 100GB).<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
-<h3 id="registry_auth">registry_auth<a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h3>
+<h3 id="registry_auth"><code>registry_auth</code><a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="username"><code>username</code> - (Optional) The username.<a class="headerlink" href="#username" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="password"><code>password</code> -  The password or access token.<a class="headerlink" href="#password" title="Permanent link">&para;</a></h4>
 
@@ -3497,7 +3493,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.a255a381.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.1135ae9f.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       
