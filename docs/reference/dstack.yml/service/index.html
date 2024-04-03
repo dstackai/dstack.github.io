@@ -3740,20 +3740,20 @@ Authentication can be disabled by setting <code>auth</code> to <code>false</code
 <h4 class="reference-item" id="scale_down_delay"><code>scale_down_delay</code> - (Optional) The delay in seconds before scaling down. Defaults to <code>600</code>.<a class="headerlink" href="#scale_down_delay" title="Permanent link">&para;</a></h4>
 <h3 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., 8GB). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="shm_size"><code>shm_size</code> - (Optional) The size of shared memory (e.g., 8GB). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this..<a class="headerlink" href="#shm_size" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_gpu"><a href="#resources-gpu"><code>gpu</code></a> - (Optional) The GPU resources.<a class="headerlink" href="#_gpu" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>8GB</code>). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="shm_size"><code>shm_size</code> - (Optional) The size of shared memory (e.g., <code>8GB</code>). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this.<a class="headerlink" href="#shm_size" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_gpu"><a href="#resources-gpu"><code>gpu</code></a> - (Optional) The GPU requirements. Can be set to a number, a string (e.g. <code>A100</code>, <code>80GB:2</code>, etc.), or an object; see <a href="#examples">examples</a>.<a class="headerlink" href="#_gpu" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_disk"><a href="#resources-disk"><code>disk</code></a> - (Optional) The disk resources.<a class="headerlink" href="#_disk" title="Permanent link">&para;</a></h4>
 <h3 id="resources-gpu"><code>resouces.gpu</code><a class="headerlink" href="#resources-gpu" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The GPU name or list of names.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="count"><code>count</code> - (Optional) The number of GPUs. Defaults to <code>1</code>.<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The VRAM size (e.g., 16GB).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total VRAM size (e.g., 32GB).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="compute_capability"><code>compute_capability</code> - (Optional) The minimum compute capability of the GPU (e.g., 7.5).<a class="headerlink" href="#compute_capability" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The VRAM size (e.g., <code>16GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total VRAM size (e.g., 32GB). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="compute_capability"><code>compute_capability</code> - (Optional) The minimum compute capability of the GPU (e.g., <code>7.5</code>).<a class="headerlink" href="#compute_capability" title="Permanent link">&para;</a></h4>
 <h3 id="resources-disk"><code>resouces.disk</code><a class="headerlink" href="#resources-disk" title="Permanent link">&para;</a></h3>
-<h4 class="reference-item" id="size"><code>size</code> -  The disk size (e.g., 100GB).<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="size"><code>size</code> -  The disk size. Can be a string (e.g., <code>100GB</code> or <code>100GB..</code>) or an object; see <a href="#examples">examples</a>.<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
 <h3 id="registry_auth"><code>registry_auth</code><a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h3>
-<h4 class="reference-item" id="username"><code>username</code> - (Optional) The username.<a class="headerlink" href="#username" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="username"><code>username</code> -  The username.<a class="headerlink" href="#username" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="password"><code>password</code> -  The password or access token.<a class="headerlink" href="#password" title="Permanent link">&para;</a></h4>
 
 
