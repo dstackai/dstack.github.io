@@ -1325,10 +1325,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#limit" class="md-nav__link">
+  <a href="#duration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        limit
+        duration
       
     </span>
   </a>
@@ -2803,10 +2803,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#limit" class="md-nav__link">
+  <a href="#duration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        limit
+        duration
       
     </span>
   </a>
@@ -2856,7 +2856,7 @@ you can do so via <code>.dstack/profiles.yml</code> in the root folder of the pr
 <span class="w">    </span><span class="nt">max_duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1d</span><span class="w"> </span><span class="c1"># (Optional) The maximum duration of the run.</span>
 
 <span class="w">    </span><span class="nt">retry</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">retry-limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3h</span><span class="w"> </span><span class="c1"># (Optional) To wait for capacity</span>
+<span class="w">      </span><span class="nt">retry-duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3h</span><span class="w"> </span><span class="c1"># (Optional) To wait for capacity</span>
 
 <span class="w">    </span><span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">azure</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">lambda</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># (Optional) Use only listed backends </span>
 
@@ -2884,7 +2884,7 @@ you can do so via <code>.dstack/profiles.yml</code> in the root folder of the pr
 <h4 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Time to wait before destroying the idle instance. Defaults to <code>300</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h4>
 <h3 id="profileretrypolicyrequest">ProfileRetryPolicyRequest<a class="headerlink" href="#profileretrypolicyrequest" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="retry"><code>retry</code> - (Optional) Whether to retry the run on failure or not.<a class="headerlink" href="#retry" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="limit"><code>limit</code> - (Optional) The maximum period of retrying the run, e.g., 4h or 1d.<a class="headerlink" href="#limit" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="duration"><code>duration</code> - (Optional) The maximum period of retrying the run, e.g., 4h or 1d.<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h4>
 
 
 
