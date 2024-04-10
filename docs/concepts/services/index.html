@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Get GPUs at competitive rates through dstack Sky! <a href="/blog/dstack-sky/">Learn more</a>.
+🔥 Get the best rate for cloud GPU with dstack Sky! <a href="/#get-started">Learn more</a>.
 
           </div>
           
@@ -941,11 +941,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
+  <a href="#authorization" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Authentication
+          Authorization
         </span>
       
     </span>
@@ -2637,11 +2637,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
+  <a href="#authorization" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Authentication
+          Authorization
         </span>
       
     </span>
@@ -2771,7 +2771,7 @@
 <h1 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h1>
 <p>Services make it very easy to deploy any kind of model or web application as public endpoints.</p>
 <p>Use any serving frameworks and specify required resources. <code>dstack</code> deploys it in the configured backend, handles
-authentication, auto-scaling, and provides an OpenAI-compatible interface if needed.</p>
+authorization, auto-scaling, and provides an OpenAI-compatible interface if needed.</p>
 <details class="info">
 <summary>Prerequisites</summary>
 <p>If you're using the open-source server, you first have to set up a gateway.</p>
@@ -2966,20 +2966,20 @@ you can list them in either <code>.gitignore</code> or <code>.dstackignore</code
 max price, regions, instance types, and <a href="../../reference/cli/#dstack-run">much more</a>.</p>
 <h3 id="service-endpoint">Service endpoint<a class="headerlink" href="#service-endpoint" title="Permanent link">&para;</a></h3>
 <p>One the service is up, its endpoint is accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
-<h4 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h4>
-<p>By default, the service endpoint requires the <code>Authentication</code> header with <code>"Bearer &lt;dstack token&gt;"</code>. </p>
+<h4 id="authorization">Authorization<a class="headerlink" href="#authorization" title="Permanent link">&para;</a></h4>
+<p>By default, the service endpoint requires the <code>Authorization</code> header with <code>"Bearer &lt;dstack token&gt;"</code>. </p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://yellow-cat-1.example.com/generate<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;inputs&quot;:&quot;&amp;lt;s&amp;gt;[INST] What is your favourite condiment?[/INST]&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authentication: &quot;Bearer &amp;lt;dstack token&amp;gt;&quot;&#39;</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: &quot;Bearer &amp;lt;dstack token&amp;gt;&quot;&#39;</span>
 </code></pre></div>
 
 </div>
 
-<p>Authentication can be disabled by setting <code>auth</code> to <code>false</code> in the service configuration file.</p>
+<p>Authorization can be disabled by setting <code>auth</code> to <code>false</code> in the service configuration file.</p>
 <h4 id="openai-interface">OpenAI interface<a class="headerlink" href="#openai-interface" title="Permanent link">&para;</a></h4>
 <p>In case the service has the <a href="#configure-model-mapping">model mapping</a> configured, you will also be able 
 to access the model at <code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface.</p>
@@ -3145,6 +3145,7 @@ max price, regions, instance types, etc.) across runs, you can define them via <
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
                     <a href="/examples" class="tx-footer__section-link">Examples</a>
                     <a href="/changelog" class="tx-footer__section-link">Changelog</a>
+                    <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
 
                 <div class="tx-footer__section">

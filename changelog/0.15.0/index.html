@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Resource configuration, authentication in services, model mapping for vLLM, and other improvements.">
+        <meta name="description" content="Resource configuration, authorization in services, model mapping for vLLM, and other improvements.">
       
       
         <meta name="author" content="dstack GmbH">
@@ -29,7 +29,7 @@
     
     
       
-        <title>dstack 0.15.0: Resources, authentication, and more - dstack</title>
+        <title>dstack 0.15.0: Resources, authorization, and more - dstack</title>
       
     
     
@@ -89,16 +89,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="dstack 0.15.0: Resources, authentication, and more - dstack" />
-<meta property="og:description" content="Resource configuration, authentication in services, model mapping for vLLM, and other improvements." />
+<meta property="og:title" content="dstack 0.15.0: Resources, authorization, and more - dstack" />
+<meta property="og:description" content="Resource configuration, authorization in services, model mapping for vLLM, and other improvements." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/changelog/0.15.0.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://dstack.ai/changelog/0.15.0/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="dstack 0.15.0: Resources, authentication, and more - dstack" />
-<meta property="twitter:description" content="Resource configuration, authentication in services, model mapping for vLLM, and other improvements." />
+<meta property="twitter.title" content="dstack 0.15.0: Resources, authorization, and more - dstack" />
+<meta property="twitter:description" content="Resource configuration, authorization in services, model mapping for vLLM, and other improvements." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/changelog/0.15.0.png" />
 </head>
   
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dstack-0150-resources-authentication-and-more" class="md-skip">
+        <a href="#dstack-0150-resources-authorization-and-more" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Get GPUs at competitive rates through dstack Sky! <a href="/blog/dstack-sky/">Learn more</a>.
+🔥 Get the best rate for cloud GPU with dstack Sky! <a href="/#get-started">Learn more</a>.
 
           </div>
           
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              dstack 0.15.0: Resources, authentication, and more
+              dstack 0.15.0: Resources, authorization, and more
             
           </span>
         </div>
@@ -2297,17 +2297,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#authentication-in-services" class="md-nav__link">
+  <a href="#authorization-in-services" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Authentication in services
+          Authorization in services
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Authentication in services">
+    <nav class="md-nav" aria-label="Authorization in services">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2435,9 +2435,9 @@
   
 
 
-<h1 id="dstack-0150-resources-authentication-and-more">dstack 0.15.0: Resources, authentication, and more<a class="headerlink" href="#dstack-0150-resources-authentication-and-more" title="Permanent link">&para;</a></h1>
+<h1 id="dstack-0150-resources-authorization-and-more">dstack 0.15.0: Resources, authorization, and more<a class="headerlink" href="#dstack-0150-resources-authorization-and-more" title="Permanent link">&para;</a></h1>
 <p>The latest update brings many improvements, enabling the configuration of resources in YAML files, requiring
-authentication in services, supporting OpenAI-compatible endpoints for vLLM, and more. </p>
+authorization in services, supporting OpenAI-compatible endpoints for vLLM, and more. </p>
 <!-- more -->
 
 <h2 id="resource-configuration">Resource configuration<a class="headerlink" href="#resource-configuration" title="Permanent link">&para;</a></h2>
@@ -2482,25 +2482,25 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 
 </div>
 
-<h2 id="authentication-in-services">Authentication in services<a class="headerlink" href="#authentication-in-services" title="Permanent link">&para;</a></h2>
-<p>Previously, when deploying a service, the public endpoint didn't support authentication, 
+<h2 id="authorization-in-services">Authorization in services<a class="headerlink" href="#authorization-in-services" title="Permanent link">&para;</a></h2>
+<p>Previously, when deploying a service, the public endpoint didn't support authorization, 
 meaning anyone with access to the gateway could call it.</p>
-<p>With <code>0.15.0</code>, by default, service endpoints require the <code>Authentication</code> header with <code>"Bearer &lt;dstack token&gt;"</code>. </p>
+<p>With <code>0.15.0</code>, by default, service endpoints require the <code>Authorization</code> header with <code>"Bearer &lt;dstack token&gt;"</code>. </p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://yellow-cat-1.example.com/generate<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;inputs&quot;:&quot;&amp;lt;s&amp;gt;[INST] What is your favourite condiment?[/INST]&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authentication: &quot;Bearer &amp;lt;dstack token&amp;gt;&quot;&#39;</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: &quot;Bearer &amp;lt;dstack token&amp;gt;&quot;&#39;</span>
 </code></pre></div>
 
 </div>
 
-<p>Authentication can be disabled by setting <code>auth</code> to <code>false</code> in the service configuration file.</p>
+<p>Authorization can be disabled by setting <code>auth</code> to <code>false</code> in the service configuration file.</p>
 <h4 id="openai-interface">OpenAI interface<a class="headerlink" href="#openai-interface" title="Permanent link">&para;</a></h4>
 <p>In case the service has <a href="../../docs/concepts/services/#configure-model-mapping">model mapping</a> configured, 
-the OpenAI-compatible endpoint requires authentication.</p>
+the OpenAI-compatible endpoint requires authorization.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
 
@@ -2642,6 +2642,7 @@ drop us a message on our <a href="https://discord.gg/u8SmfwPpMd">Discord server<
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
                     <a href="/examples" class="tx-footer__section-link">Examples</a>
                     <a href="/changelog" class="tx-footer__section-link">Changelog</a>
+                    <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
 
                 <div class="tx-footer__section">

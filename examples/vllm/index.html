@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Get GPUs at competitive rates through dstack Sky! <a href="/blog/dstack-sky/">Learn more</a>.
+🔥 Get the best rate for cloud GPU with dstack Sky! <a href="/#get-started">Learn more</a>.
 
           </div>
           
@@ -2507,12 +2507,12 @@
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vllm/vllm-openai:latest</span>
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL=NousResearch/Llama-2-7b-chat-hf</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PYTHONPATH=/workspace</span><span class="w"> </span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -m vllm.entrypoints.openai.api_server --model $MODEL --port 8000</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m vllm.entrypoints.openai.api_server --model $MODEL --port 8000</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
 <span class="nt">resources</span><span class="p">:</span>
@@ -2544,8 +2544,8 @@ If you're using <a href="https://sky.dstack.ai">dstack Sky</a>, the default gate
 <p>Once the service is up, you can query it at 
 <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code> (using the domain set up for the gateway):</p>
 <div class="admonition info">
-<p class="admonition-title">Authentication</p>
-<p>By default, the service endpoint requires the <code>Authentication</code> header with <code>"Bearer &lt;dstack token&gt;"</code>.</p>
+<p class="admonition-title">Authorization</p>
+<p>By default, the service endpoint requires the <code>Authorization</code> header with <code>"Bearer &lt;dstack token&gt;"</code>.</p>
 </div>
 <h4 id="openai-interface">OpenAI interface<a class="headerlink" href="#openai-interface" title="Permanent link">&para;</a></h4>
 <p>Because we've configured the model mapping, it will also be possible 
@@ -2720,6 +2720,7 @@ using <a href="../../docs/reference/dstack.yml/service/"><code>env</code></a> in
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
                     <a href="/examples" class="tx-footer__section-link">Examples</a>
                     <a href="/changelog" class="tx-footer__section-link">Changelog</a>
+                    <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
 
                 <div class="tx-footer__section">

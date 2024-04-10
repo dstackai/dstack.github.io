@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Get GPUs at competitive rates through dstack Sky! <a href="/blog/dstack-sky/">Learn more</a>.
+🔥 Get the best rate for cloud GPU with dstack Sky! <a href="/#get-started">Learn more</a>.
 
           </div>
           
@@ -2938,7 +2938,22 @@ and download the corresponding JSON file.</p>
 </div>
 <details class="info">
 <summary>Required GCP permissions</summary>
-<p>The <code>Service Account User</code> and <code>Compute Admin</code> roles are sufficient for <code>dstack</code> to work.</p>
+<p>The following GCP permissions are sufficient for <code>dstack</code> to work:</p>
+<div class="highlight"><pre><span></span><code>compute.disks.create
+compute.firewalls.create
+compute.images.useReadOnly
+compute.instances.create
+compute.instances.delete
+compute.instances.get
+compute.instances.setLabels
+compute.instances.setMetadata
+compute.instances.setTags
+compute.networks.updatePolicy
+compute.regions.list
+compute.subnetworks.use
+compute.subnetworks.useExternalIp
+compute.zoneOperations.get
+</code></pre></div>
 </details>
 <h3 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
 <p>Log into your <a href="https://lambdalabs.com/service/gpu-cloud">Lambda Cloud</a> account, click API keys in the sidebar, and then click the <code>Generate API key</code>
@@ -3273,6 +3288,7 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
                     <a href="/examples" class="tx-footer__section-link">Examples</a>
                     <a href="/changelog" class="tx-footer__section-link">Changelog</a>
+                    <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
 
                 <div class="tx-footer__section">

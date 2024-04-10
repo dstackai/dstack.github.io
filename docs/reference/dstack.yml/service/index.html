@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Get GPUs at competitive rates through dstack Sky! <a href="/blog/dstack-sky/">Learn more</a>.
+🔥 Get the best rate for cloud GPU with dstack Sky! <a href="/#get-started">Learn more</a>.
 
           </div>
           
@@ -1142,11 +1142,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
+  <a href="#authorization" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Authentication
+          Authorization
         </span>
       
     </span>
@@ -2999,11 +2999,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
+  <a href="#authorization" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Authentication
+          Authorization
         </span>
       
     </span>
@@ -3695,9 +3695,9 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <p>If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure 
 <code>shm_size</code>, e.g. set it to <code>16GB</code>.</p>
 </details>
-<h4 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h4>
-<p>By default, the service endpoint requires the <code>Authentication</code> header with <code>"Bearer &lt;dstack token&gt;"</code>.
-Authentication can be disabled by setting <code>auth</code> to <code>false</code>.</p>
+<h4 id="authorization">Authorization<a class="headerlink" href="#authorization" title="Permanent link">&para;</a></h4>
+<p>By default, the service endpoint requires the <code>Authorization</code> header with <code>"Bearer &lt;dstack token&gt;"</code>.
+Authorization can be disabled by setting <code>auth</code> to <code>false</code>.</p>
 <div editor-title="serve.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
@@ -3723,7 +3723,7 @@ Authentication can be disabled by setting <code>auth</code> to <code>false</code
 <h4 class="reference-item" id="env"><code>env</code> - (Optional) The mapping or the list of environment variables.<a class="headerlink" href="#env" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="setup"><code>setup</code> - (Optional) The bash commands to run on the boot.<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_resources"><a href="#resources"><code>resources</code></a> - (Optional) The resources requirements to run the configuration.<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="commands"><code>commands</code> -  The bash commands to run.<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="commands"><code>commands</code> - (Optional) The bash commands to run.<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="port"><code>port</code> -  The port, that application listens to or the mapping.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="model"><code>model</code> - (Optional) Mapping of the model for the OpenAI-compatible endpoint.<a class="headerlink" href="#model" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="auth"><code>auth</code> - (Optional) Enable the authorization. Defaults to <code>True</code>.<a class="headerlink" href="#auth" title="Permanent link">&para;</a></h4>
@@ -3886,6 +3886,7 @@ Authentication can be disabled by setting <code>auth</code> to <code>false</code
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
                     <a href="/examples" class="tx-footer__section-link">Examples</a>
                     <a href="/changelog" class="tx-footer__section-link">Changelog</a>
+                    <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
 
                 <div class="tx-footer__section">

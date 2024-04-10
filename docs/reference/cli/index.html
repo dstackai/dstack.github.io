@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Get GPUs at competitive rates through dstack Sky! <a href="/blog/dstack-sky/">Learn more</a>.
+🔥 Get the best rate for cloud GPU with dstack Sky! <a href="/#get-started">Learn more</a>.
 
           </div>
           
@@ -2820,7 +2820,8 @@ Options:
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>logs<span class="w"> </span>--help
 Usage:<span class="w"> </span>dstack<span class="w"> </span>logs<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="o">]</span><span class="w"> </span><span class="o">[</span>-a<span class="o">]</span>
-<span class="w">                   </span><span class="o">[</span>--ssh-identity<span class="w"> </span>SSH_PRIVATE_KEY<span class="o">]</span>
+<span class="w">                   </span><span class="o">[</span>--ssh-identity<span class="w"> </span>SSH_PRIVATE_KEY<span class="o">]</span><span class="w"> </span><span class="o">[</span>--replica<span class="w"> </span>REPLICA<span class="o">]</span>
+<span class="w">                   </span><span class="o">[</span>--job<span class="w"> </span>JOB<span class="o">]</span>
 <span class="w">                   </span>run_name
 
 Positional<span class="w"> </span>Arguments:
@@ -2833,6 +2834,8 @@ Options:
 <span class="w">  </span>-a,<span class="w"> </span>--attach<span class="w">          </span>Set<span class="w"> </span>up<span class="w"> </span>an<span class="w"> </span>SSH<span class="w"> </span>tunnel,<span class="w"> </span>and<span class="w"> </span>print<span class="w"> </span>logs<span class="w"> </span>as<span class="w"> </span>they<span class="w"> </span>follow.
 <span class="w">  </span>--ssh-identity<span class="w"> </span>SSH_PRIVATE_KEY
 <span class="w">                        </span>The<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>SSH<span class="w"> </span>tunneling
+<span class="w">  </span>--replica<span class="w"> </span>REPLICA<span class="w">     </span>The<span class="w"> </span>relica<span class="w"> </span>number.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="m">0</span>.
+<span class="w">  </span>--job<span class="w"> </span>JOB<span class="w">             </span>The<span class="w"> </span>job<span class="w"> </span>number<span class="w"> </span>inside<span class="w"> </span>the<span class="w"> </span>replica.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="m">0</span>.
 </code></pre></div>
 
 </div>
@@ -2992,7 +2995,7 @@ Options:
 </div>
 
 <h3 id="dstack-gateway">dstack gateway<a class="headerlink" href="#dstack-gateway" title="Permanent link">&para;</a></h3>
-<p>A gateway is required for running services. It handles ingress traffic, authentication, domain mapping, model mapping
+<p>A gateway is required for running services. It handles ingress traffic, authorization, domain mapping, model mapping
 for the OpenAI-compatible endpoint, and so on.</p>
 <h5 id="dstack-gateway-list">dstack gateway list<a class="headerlink" href="#dstack-gateway-list" title="Permanent link">&para;</a></h5>
 <p>The <code>dstack gateway list</code> command displays the names and addresses of the gateways configured in the project.</p>
@@ -3276,6 +3279,7 @@ Options:
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
                     <a href="/examples" class="tx-footer__section-link">Examples</a>
                     <a href="/changelog" class="tx-footer__section-link">Changelog</a>
+                    <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
 
                 <div class="tx-footer__section">
