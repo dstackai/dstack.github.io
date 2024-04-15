@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ab3d5eaf.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3e2cd012.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -768,6 +768,19 @@
       
         <span class="md-typeset">
           CUDO
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runpod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          RunPod
         </span>
       
     </span>
@@ -2612,6 +2625,19 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#runpod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          RunPod
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#datacrunch" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3032,6 +3058,32 @@ API Key.</p>
 
 </div>
 
+<h3 id="runpod">RunPod<a class="headerlink" href="#runpod" title="Permanent link">&para;</a></h3>
+<p>Log into your <a href="https://www.runpod.io/console/">RunPod</a> console, click Settings in the sidebar, expand the <code>API Keys</code> section, and click 
+the button to create a key.</p>
+<p>Then proceed to configuring the backend.</p>
+<div editor-title="~/.dstack/server/config.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">  </span><span class="nt">backends</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">runpod</span>
+<span class="w">    </span><span class="nt">creds</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api_key</span>
+<span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">US9XTPDIV8AR42MMINY8TCKRB8S4E7LNRQ6CAUQ9</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition warning">
+<p class="admonition-title">NOTE:</p>
+<p>If you're using a custom Docker image, its entrypoint cannot be anything other than <code>/bin/bash</code> or <code>/bin/sh</code>. 
+See the <a href="https://github.com/dstackai/dstack/issues/1137">issue</a> for more details.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">NOTE:</p>
+<p>The <code>runpod</code> backend supports on-demand instances only. Spot instance support coming soon.</p>
+</div>
 <h3 id="datacrunch">DataCrunch<a class="headerlink" href="#datacrunch" title="Permanent link">&para;</a></h3>
 <p>Log into your <a href="https://cloud.datacrunch.io/signin">DataCrunch</a> account, click Account Settings in the sidebar, find <code>REST API Credentials</code> area and then click the <code>Generate Credentials</code> button.</p>
 <p>Then, go ahead and configure the backend:</p>
@@ -3312,7 +3364,7 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.1135ae9f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.14eee8cc.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       
