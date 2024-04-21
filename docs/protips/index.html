@@ -12,27 +12,31 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/docs/reference/dstack.yml/">
+        <link rel="canonical" href="https://dstack.ai/docs/protips/">
       
       
+        <link rel="prev" href="../quickstart/">
+      
+      
+        <link rel="next" href="../concepts/dev-environments/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18+insiders-4.53.6">
     
     
       
-        <title>.dstack.yml - dstack</title>
+        <title>Protips - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d5b5f0fd.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d5b5f0fd.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,17 +61,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -85,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content=".dstack.yml - dstack" />
+<meta property="og:title" content="Protips - dstack" />
 <meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/reference/dstack.yml.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/protips.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/reference/dstack.yml/" />
+<meta property="og:url" content="https://dstack.ai/docs/protips/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content=".dstack.yml - dstack" />
+<meta property="twitter.title" content="Protips - dstack" />
 <meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/reference/dstack.yml.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/protips.png" />
 </head>
   
   
@@ -115,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dstackyml" class="md-skip">
+        <a href="#protips" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +152,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -165,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              .dstack.yml
+              Protips
             
           </span>
         </div>
@@ -264,7 +268,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -279,17 +283,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Docs
@@ -344,7 +352,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../blog/" class="md-tabs__link">
+        <a href="../../blog/" class="md-tabs__link">
           
   
   Blog
@@ -413,7 +421,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -440,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -463,25 +471,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -498,7 +511,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -513,25 +526,30 @@
                 
   
   
+    
   
   
+  
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -548,7 +566,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -566,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -593,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/" class="md-nav__link">
+      <a href="../quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -644,10 +662,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../protips/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Protips
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -662,6 +706,143 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dev-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dev environments
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tasks
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idle-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Idle instances
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Profiles
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attached-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Attached mode
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          GPU
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-quotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Service quotas
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-and-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Data and models
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -687,17 +868,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -732,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/dev-environments/" class="md-nav__link">
+      <a href="../concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -759,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/tasks/" class="md-nav__link">
+      <a href="../concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -786,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/services/" class="md-nav__link">
+      <a href="../concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -813,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/pools/" class="md-nav__link">
+      <a href="../concepts/pools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -853,17 +1037,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -948,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dev-environment/" class="md-nav__link">
+      <a href="../reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -975,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="task/" class="md-nav__link">
+      <a href="../reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1002,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="service/" class="md-nav__link">
+      <a href="../reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1037,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../profiles.yml/" class="md-nav__link">
+      <a href="../reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1064,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli/" class="md-nav__link">
+      <a href="../reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server/config.yml/" class="md-nav__link">
+      <a href="../reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1168,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/python/" class="md-nav__link">
+      <a href="../reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1195,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/rest/" class="md-nav__link">
+      <a href="../reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1349,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/" class="md-nav__link">
+      <a href="../../blog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1430,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/archive/2024/" class="md-nav__link">
+      <a href="../../blog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1539,6 +1726,131 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dev-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dev environments
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tasks
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idle-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Idle instances
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Profiles
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attached-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Attached mode
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          GPU
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-quotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Service quotas
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-and-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Data and models
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1553,13 +1865,195 @@
       
 
 
+  
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/docs/protips.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
 
-<h1 id="dstackyml">.dstack.yml<a class="headerlink" href="#dstackyml" title="Permanent link">&para;</a></h1>
+
+<h1 id="protips">Protips<a class="headerlink" href="#protips" title="Permanent link">&para;</a></h1>
+<p>Below are tips and tricks to use <code>dstack</code> more efficiently.</p>
+<h3 id="dev-environments">Dev environments<a class="headerlink" href="#dev-environments" title="Permanent link">&para;</a></h3>
+<p>Before running a task or service, it's recommended that you first start with a dev environment. Dev environments
+allow you to run commands interactively.</p>
+<p>Once the commands work, go ahead and run them as a task or a service.</p>
+<details class="tip">
+<summary>Jupyter</summary>
+<p><strong>VS Code</strong></p>
+<p>When you access a dev environment using your desktop VS Code, it allows you to work with Jupyter notebooks via its
+pre-configured and easy-to-use extension.</p>
+<p><strong>JupyterLab</strong></p>
+<p>If you prefer to use JupyterLab, you can run it as a task:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install jupyterlab</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jupyter lab --allow-root</span>
+
+<span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8888</span>
+</code></pre></div>
+</details>
+<h3 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h3>
+<p>Tasks can be used not only for batch jobs but also for web applications.</p>
+<div editor-title="app.dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip3 install streamlit</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamlit hello</span>
+
+<span class="nt">ports</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8501</span>
+</code></pre></div>
+
+</div>
+
+<p>While you run a task, <code>dstack</code> forwards the remote ports to <code>localhost</code>.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>app.dstack.yml
+
+<span class="w">  </span>Welcome<span class="w"> </span>to<span class="w"> </span>Streamlit.<span class="w"> </span>Check<span class="w"> </span>out<span class="w"> </span>our<span class="w"> </span>demo<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>browser.
+
+<span class="w">  </span>Local<span class="w"> </span>URL:<span class="w"> </span>http://localhost:8501
+</code></pre></div>
+
+</div>
+
+<p>This allows you to access the remote <code>8501</code> port on <code>localhost:8501</code> while you the CLI is attached.</p>
+<details class="info">
+<summary>Port mapping</summary>
+<p>If you want to override the local port, use the <code>--port</code> option:</p>
+<div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>app.dstack.yml<span class="w"> </span>--port<span class="w"> </span><span class="m">3000</span>:8501
+</code></pre></div>
+</div>
+<p>This will forward the remote <code>8501</code> port to <code>localhost:3000</code>.</p>
+</details>
+<p>If the task works, go ahead and run it as a service.</p>
+<h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<p>If a configuration requires an environment variable that you don't want to hardcode in the YAML, you can define it
+without assigning a value:</p>
+<div editor-title=".dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+</code></pre></div>
+
+</div>
+
+<p>Then, you can pass the environment variable either via the shell:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>.dstack.yml
+</code></pre></div>
+<p>Or via the <code>-e</code> option of the <code>dstack run</code> command:</p>
+<div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>.dstack.yml<span class="w"> </span>-e<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">.env</p>
+<p>A better way to configure environment variables not hardcoded in YAML is by specifying them in a <code>.env</code> file:</p>
+<div class="highlight"><pre><span></span><code>HUGGING_FACE_HUB_TOKEN=...
+</code></pre></div>
+<p>If you install <a href="https://direnv.net/" target="_blank"><code>direnv</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
+it will automatically pass the environment variables from the <code>.env</code> file to the <code>dstack run</code> command.</p>
+<p>Remember to add <code>.env</code> to <code>.gitignore</code> to avoid pushing it to the repo.    </p>
+</div>
+<h3 id="idle-instances">Idle instances<a class="headerlink" href="#idle-instances" title="Permanent link">&para;</a></h3>
+<p>By default, the <code>dstack</code> run command reuses an idle instance from the pool. If no instance matches the requirements, it creates a new one.</p>
+<p>When the run finishes, the instance remains idle for the configured time (by default, <code>5m</code>) before it gets destroyed.</p>
+<p>You can change the default idle duration by using <code>--idle-duration DURATION</code> with <code>dstack run</code>, or
+set <code>termination_idle_duration</code> in the configuration or profile.</p>
+<p>An idle instance can be destroyed at any time via <code>dstack pool remove INSTANCE_NAME</code>.</p>
+<h3 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">&para;</a></h3>
+<p>If you don't want to specify the same parameters for each configuration, you can define them once via <a href="../reference/profiles.yml/">profiles</a>
+and reuse them across configurations.</p>
+<p>This can be handy, for example, for configuring parameters such as <code>max_duration</code>, <code>max_price</code>, <code>termination_idle_duration</code>,
+<code>regions</code>, etc.</p>
+<p>Set <code>d</code>efault to true in your profile, and it will be applied automatically to any run.</p>
+<h2 id="attached-mode">Attached mode<a class="headerlink" href="#attached-mode" title="Permanent link">&para;</a></h2>
+<p>By default, <code>dstack run</code> runs in attached mode.
+This means it streams the logs as they come in and, in the case of a task, forwards its ports to <code>localhost</code>.</p>
+<p>If you detach the CLI, you can re-attach it using <code>dstack logs -a RUN_NAME</code>.</p>
+<p>To run in detached mode, use <code>-d</code> with <code>dstack run</code>.</p>
+<h2 id="gpu">GPU<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h2>
+<p>The <code>gpu</code> property withing <code>resources</code> (or the <code>--gpu</code> option with <code>dstack run</code>)
+allows specifying not only memory size but also GPU names, their memory, and quantity.</p>
+<p>Examples:</p>
 <ul>
-<li><a href="dev-environment/"><code>dev-environment</code></a></li>
-<li><a href="task/"><code>task</code></a></li>
-<li><a href="service/"><code>service</code></a></li>
+<li><code>1</code> (any GPU)</li>
+<li><code>A100</code> (A100)</li>
+<li><code>24GB..</code> (any GPU starting from 24GB)</li>
+<li><code>24GB..40GB:2</code> (two GPUs between 24GB and 40GB)</li>
+<li><code>A10G,A100</code> (either A10G or A100)</li>
+<li><code>A100:80GB</code> (one A100 of 80GB)</li>
+<li><code>A100:2</code> (two A100)</li>
+<li><code>A100:40GB:2</code> (two A100 40GB)</li>
 </ul>
+<h2 id="service-quotas">Service quotas<a class="headerlink" href="#service-quotas" title="Permanent link">&para;</a></h2>
+<p>If you're using your own AWS, GCP, or Azure accounts, before you can use GPUs or spot instances, you have to request the
+corresponding service quotas for each type of instance in each region.</p>
+<details class="info">
+<summary>AWS</summary>
+<p>Check this <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html" target="_blank">guide  <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> on EC2 service quotas.
+The relevant service quotas include:</p>
+<ul>
+<li><code>Running On-Demand P instances</code> (on-demand V100, A100 80GB x8)</li>
+<li><code>All P4, P3 and P2 Spot Instance Requests</code> (spot V100, A100 80GB x8)</li>
+<li><code>Running On-Demand G and VT instances</code> (on-demand T4, A10G, L4)</li>
+<li><code>All G and VT Spot Instance Requests</code> (spot T4, A10G, L4)</li>
+<li><code>Running Dedicated p5 Hosts</code> (on-demand H100)</li>
+<li><code>All P5 Spot Instance Requests</code> (spot H100)</li>
+</ul>
+</details>
+<details class="info">
+<summary>GCP</summary>
+<p>Check this <a href="https://cloud.google.com/compute/resource-usage" target="_blank">guide  <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> on Compute Engine service quotas.
+The relevant service quotas include:</p>
+<ul>
+<li><code>NVIDIA V100 GPUs</code> (on-demand V100)</li>
+<li><code>Preemtible V100 GPUs</code> (spot V100)</li>
+<li><code>NVIDIA T4 GPUs</code> (on-demand T4)</li>
+<li><code>Preemtible T4 GPUs</code> (spot T4)</li>
+<li><code>NVIDIA L4 GPUs</code> (on-demand L4)</li>
+<li><code>Preemtible L4 GPUs</code> (spot L4)</li>
+<li><code>NVIDIA A100 GPUs</code> (on-demand A100)</li>
+<li><code>Preemtible A100 GPUs</code> (spot A100)</li>
+<li><code>NVIDIA A100 80GB GPUs</code> (on-demand A100 80GB)</li>
+<li><code>Preemtible A100 80GB GPUs</code> (spot A100 80GB)</li>
+<li><code>NVIDIA H100 GPUs</code> (on-demand H100)</li>
+<li><code>Preemtible H100 GPUs</code> (spot H100)</li>
+</ul>
+</details>
+<details class="info">
+<summary>Azure</summary>
+<p>Check this <a href="https://cloud.google.com/compute/resource-usage" target="_blank">guide  <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> on Compute Engine service quotas.
+The relevant service quotas include:</p>
+<ul>
+<li><code>Total Regional Spot vCPUs</code> (any spot instances)</li>
+<li><code>Standard NCASv3_T4 Family vCPUs</code> (on-demand T4)</li>
+<li><code>Standard NVADSA10v5 Family vCPUs</code> (on-demand A10)</li>
+<li><code>Standard NCADS_A100_v4 Family vCPUs</code> (on-demand A100 80GB)</li>
+<li><code>Standard NDASv4_A100 Family vCPUs</code> (on-demand A100 40GB x8)</li>
+<li><code>Standard NDAMSv4_A100Family vCPUs</code> (on-demand A100 80GB x8)</li>
+<li><code>Standard NCadsH100v5 Family vCPUs</code> (on-demand H100)</li>
+<li><code>Standard NDSH100v5 Family vCPUs</code> (on-demand H100 x8)</li>
+</ul>
+</details>
+<p>Note, for AWS, GCP, and Azure, service quota values are measured with the number of CPUs rather than GPUs.</p>
+<h2 id="data-and-models">Data and models<a class="headerlink" href="#data-and-models" title="Permanent link">&para;</a></h2>
+<p>For loading and saving data, it's best to use object storage like S3 or HuggingFace Datasets.</p>
+<p>For models, it's best to use services like HuggingFace Hub.</p>
 
 
 
@@ -1576,6 +2070,44 @@
 
 
       
+          
+          <nav class="md-footer__inner md-grid" aria-label="Footer" >
+            
+              
+              <a href="../quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quickstart">
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                </div>
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Previous
+                  </span>
+                  <div class="md-ellipsis">
+                    Quickstart
+                  </div>
+                </div>
+              </a>
+            
+            
+              
+              <a href="../concepts/dev-environments/" class="md-footer__link md-footer__link--next" aria-label="Next: Dev environments">
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Next
+                  </span>
+                  <div class="md-ellipsis">
+                    Dev environments
+                  </div>
+                </div>
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+                </div>
+              </a>
+            
+          </nav>
+        
     
   </article>
 </div>
@@ -1671,17 +2203,17 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.e1f28405.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e1f28405.min.js"></script>
       
-        <script src="../../../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../../../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 
