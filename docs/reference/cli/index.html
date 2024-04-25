@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18+insiders-4.53.6">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19+insiders-4.53.7">
     
     
       
@@ -2157,11 +2157,9 @@ The default pool is created automatically.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span>--help
-Usage:<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span><span class="o">[</span>--remote<span class="o">]</span><span class="w"> </span><span class="o">[</span>--remote-host<span class="w"> </span>REMOTE_HOST<span class="o">]</span>
-<span class="w">                       </span><span class="o">[</span>--remote-port<span class="w"> </span>REMOTE_PORT<span class="o">]</span><span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>INSTANCE_NAME<span class="o">]</span>
-<span class="w">                       </span><span class="o">[</span>--profile<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-price<span class="w"> </span>PRICE<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="w"> </span>NAME<span class="o">]</span>
-<span class="w">                       </span><span class="o">[</span>-r<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--instance-type<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--pool<span class="w"> </span>POOL_NAME<span class="o">]</span>
-<span class="w">                       </span><span class="o">[</span>--reuse<span class="o">]</span><span class="w"> </span><span class="o">[</span>--dont-destroy<span class="o">]</span>
+Usage:<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span><span class="o">[</span>--profile<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-price<span class="w"> </span>PRICE<span class="o">]</span>
+<span class="w">                       </span><span class="o">[</span>-b<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-r<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--instance-type<span class="w"> </span>NAME<span class="o">]</span>
+<span class="w">                       </span><span class="o">[</span>--pool<span class="w"> </span>POOL_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--reuse<span class="o">]</span><span class="w"> </span><span class="o">[</span>--dont-destroy<span class="o">]</span>
 <span class="w">                       </span><span class="o">[</span>--idle-duration<span class="w"> </span>IDLE_DURATION<span class="o">]</span>
 <span class="w">                       </span><span class="o">[</span>--spot<span class="w"> </span><span class="p">|</span><span class="w"> </span>--on-demand<span class="w"> </span><span class="p">|</span><span class="w"> </span>--spot-auto<span class="w"> </span><span class="p">|</span><span class="w"> </span>--spot-policy<span class="w"> </span>POLICY<span class="o">]</span>
 <span class="w">                       </span><span class="o">[</span>--retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--no-retry<span class="w"> </span><span class="p">|</span><span class="w"> </span>--retry-duration<span class="w"> </span>DURATION<span class="o">]</span>
@@ -2171,12 +2169,6 @@ Usage:<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w">
 Options:
 <span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
 <span class="w">  </span>-y,<span class="w"> </span>--yes<span class="w">             </span>Don<span class="err">&#39;</span>t<span class="w"> </span>ask<span class="w"> </span><span class="k">for</span><span class="w"> </span>confirmation
-<span class="w">  </span>--remote<span class="w">              </span>Add<span class="w"> </span>remote<span class="w"> </span>runner<span class="w"> </span>as<span class="w"> </span>an<span class="w"> </span>instance
-<span class="w">  </span>--remote-host<span class="w"> </span>REMOTE_HOST
-<span class="w">                        </span>Remote<span class="w"> </span>runner<span class="w"> </span>host
-<span class="w">  </span>--remote-port<span class="w"> </span>REMOTE_PORT
-<span class="w">                        </span>Remote<span class="w"> </span>runner<span class="w"> </span>port
-<span class="w">  </span>--name<span class="w"> </span>INSTANCE_NAME<span class="w">  </span>Set<span class="w"> </span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>instance
 <span class="w">  </span>--pool<span class="w"> </span>POOL_NAME<span class="w">      </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>pool.<span class="w"> </span>If<span class="w"> </span>not<span class="w"> </span>set,<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>pool
 <span class="w">                        </span>will<span class="w"> </span>be<span class="w"> </span>used
 <span class="w">  </span>--reuse<span class="w">               </span>Reuse<span class="w"> </span>instance<span class="w"> </span>from<span class="w"> </span>pool
@@ -2568,6 +2560,7 @@ Options:
 
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Company</div>
+                    <a href="https://calendly.com/dstackai/discovery-call" target="_blank" class="tx-footer__section-link external">Book a demo</a>
                     <a href="/terms" class="tx-footer__section-link">Terms</a>
                     <a href="/privacy" class="tx-footer__section-link">Privacy</a>
                 </div>
@@ -2587,7 +2580,7 @@ Options:
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.e1f28405.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.0d59af3e.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
