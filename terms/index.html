@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19+insiders-4.53.7">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20+insiders-4.53.8">
     
     
       
@@ -114,6 +114,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#terms-of-service" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -141,8 +146,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/" title="dstack"
-       class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
+    <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
   <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
 
@@ -168,8 +172,8 @@
       </div>
     </div>
     
-    
-    <form class="md-header__option" data-md-component="palette">
+      
+        <form class="md-header__option" data-md-component="palette">
   
     
     
@@ -178,14 +182,50 @@
     
   
 </form>
+      
     
     
-    
-    <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
-    <div class="md-search"></div>
+
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
 
     <!--
@@ -201,13 +241,8 @@
 </a>
       </div>
     -->
+
     <div class="md-header__buttons">
-      <script>
-        function sign_in_on_click() {
-          window.open("https://sky.dstack.ai", '_blank').focus();
-        }
-      </script>
-      <a href="javascript:void(0)" class="md-button md-button-secondary external" onclick="sign_in_on_click()">Sign in</a>
       <a href="/#get-started" class="md-button md-button--primary">Get started</a>
     </div>
   </nav>
@@ -1496,7 +1531,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1505,6 +1540,380 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agreement-to-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Agreement to terms
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-our-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Our services
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-intelliectual-property-rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Intelliectual property rights
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-user-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. User representations
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-user-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. User registration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-purchases-and-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Purchases and payment
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Subscriptions
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Software
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-prohibited-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Prohibited activities
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-user-generated-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. User generated contributions
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-contribution-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. Contribution license
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-social-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          11. Social media
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-third-party-websites-and-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          12. Third-party websites and content
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-services-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          13. Services management
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-privacy-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          14. Privacy policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-term-and-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          15. Term and termination
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-modifications-and-interruptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          16. Modifications and interruptions
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-governing-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          17. Governing law
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-dispute-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          18. Dispute resolution
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          19. Corrections
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          20. Disclaimer
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-limitations-of-liability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          21. Limitations of liability
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-indemnification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          22. Indemnification
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-user-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          23. User data
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-electronic-communications-transactions-and-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          24. Electronic communications, transactions, and signatures
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-california-users-and-residents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          25. California users and residents
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          26. Miscellaneous
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-contact-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          27. Contact us
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1513,375 +1922,414 @@
             
           
           
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-<section class="tx-container">
-    <div class="md-grid md-typeset">
-        <div class="-landing__highlights">
-            <div class="tx-landing__highlights_text">
-                <h2>Terms of service</h2>
-            </div>
+<div class="md-content" data-md-component="content">
+  
+  <article class="md-content__inner md-typeset">
+    
+      
+  
 
-            <div><p>Welcome to dstack.ai. The dstack.ai
-        website and services located at <a href="https://dstack.ai">https://dstack.ai</a> (the Site) is a copyrighted
-        work belonging to dstack GmbH (the Company). Certain features of the Site may be subject to additional
-        guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
-        <p>All such additional terms, guidelines, and rules are
-            incorporated by reference into these Terms.</p>
-        <p>These Terms of Use described the legally binding terms and
-            conditions that oversee your use of the Site. BY LOGGING INTO THE SITE, YOU ARE BEING COMPLIANT THAT THESE
-            TERMS and you represent that you have the authority and capacity to enter into these Terms. YOU SHOULD BE AT
-            LEAST 18 YEARS OF AGE TO ACCESS THE SITE. IF YOU DISAGREE WITH ALL OF THE PROVISIONS OF THESE TERMS, DO NOT
-            LOG INTO AND/OR USE THE SITE.</p>
-        <p>These terms require the use of arbitration Section 10.2 on
-            an individual basis to resolve disputes and also limit the remedies available to you in the event of a
-            dispute.</p>
-        <h2><strong>Access to the Site</strong></h2>
-        <p><strong>Subject to these Terms.</strong> Company grants
-            you a non-transferable, non-exclusive, revocable, limited license to access the Site solely for your own
-            personal, noncommercial use.</p>
-        <p><strong>Certain Restrictions.</strong> The rights approved
-            to you in these Terms are subject to the following restrictions: (a) you shall not sell, rent, lease,
-            transfer, assign, distribute, host, or otherwise commercially exploit the Site; (b) you shall not change,
-            make derivative works of, disassemble, reverse compile or reverse engineer any part of the Site; (c) you
-            shall not access the Site in order to build a similar or competitive website; and (d) except as expressly
-            stated herein, no part of the Site may be copied, reproduced, distributed, republished, downloaded,
-            displayed, posted or transmitted in any form or by any means unless otherwise indicated, any future release,
-            update, or other addition to functionality of the Site shall be subject to these Terms.  All copyright and
-            other proprietary notices on the Site must be retained on all copies thereof.</p>
-        <p>Company reserves the right to change, suspend, or cease
-            the Site with or without notice to you.  You approved that Company will not be held liable to you or any
-            third-party for any change, interruption, or termination of the Site or any part.</p>
-        <p><strong>No Support or Maintenance.</strong> You agree that
-            Company will have no obligation to provide you with any support in connection with the Site.</p>
-        <p>Excluding any User Content that you may provide, you are
-            aware that all the intellectual property rights, including copyrights, patents, trademarks, and trade
-            secrets, in the Site and its content are owned by Company or Company’s suppliers. Note that these Terms and
-            access to the Site do not give you any rights, title or interest in or to any intellectual property rights,
-            except for the limited access rights expressed in Section 2.1. Company and its suppliers reserve all rights
-            not granted in these Terms.</p>
-        <h2><strong>User Content</strong></h2>
-        <p><strong>User Content.</strong> &quot;User Content&quot;
-            means any and all information and content that a user submits to the Site. You are exclusively responsible
-            for your User Content. You bear all risks associated with the use of your User Content.  You hereby certify
-            that your User Content does not violate our Acceptable Use Policy.  You may not represent or imply to others
-            that your User Content is in any way provided, sponsored, or endorsed by Company. Because you alone are
-            responsible for your User Content, you may expose yourself to liability. Company is not obliged to backup
-            any User Content that you post; also, your User Content may be deleted at any time without prior notice to
-            you. You are solely responsible for making your own backup copies of your User Content if you desire.</p>
-        <p>You hereby grant to Company an irreversible, nonexclusive,
-            royalty-free and fully-paid, worldwide license to reproduce, distribute, publicly display and perform,
-            prepare derivative works of, incorporate into other works, and otherwise use and exploit your User Content,
-            and to grant sublicenses of the foregoing rights, solely for the purposes of including your User Content in
-            the Site.  You hereby irreversibly waive any claims and assertions of moral rights or attribution with
-            respect to your User Content.</p>
-        <p><strong>Acceptable Use Policy.</strong> The following
-            terms constitute our &quot;Acceptable Use Policy&quot;: You agree not to use the Site to collect, upload,
-            transmit, display, or distribute any User Content (i) that violates any third-party right or any
-            intellectual property or proprietary right; (ii) that is unlawful, harassing, abusive, tortious,
-            threatening, harmful, invasive of another’s privacy, vulgar, defamatory, false, intentionally misleading,
-            trade libelous, pornographic, obscene, patently offensive, promotes racism, bigotry, hatred, or physical
-            harm of any kind against any group or individual; (iii) that is harmful to minors in any way; or (iv) that
-            is in violation of any law, regulation, or obligations or restrictions imposed by any third party.</p>
-        <p>In addition, you agree not to: (i) upload, transmit, or
-            distribute to or through the Site any software intended to damage or alter a computer system or data; (ii)
-            send through the Site unsolicited or unauthorized advertising, promotional materials, junk mail, spam, chain
-            letters, pyramid schemes, or any other form of duplicative or unsolicited messages; (iii) use the Site to
-            harvest, collect, gather or assemble information or data regarding other users without their consent; (iv)
-            interfere with, disrupt, or create an undue burden on servers or networks connected to the Site, or violate
-            the regulations, policies or procedures of such networks; (v) attempt to gain unauthorized access to the
-            Site, whether through password mining or any other means; (vi) harass or interfere with any other user’s use
-            and enjoyment of the Site; or (vi) use software or automated agents or scripts to produce multiple accounts
-            on the Site, or to generate automated searches, requests, or queries to the Site.</p>
-        <p>We reserve the right to review any User Content, and to
-            investigate and/or take appropriate action against you in our sole discretion if you violate the Acceptable
-            Use Policy or any other provision of these Terms or otherwise create liability for us or any other person.
-            Such action may include removing or modifying your User Content, terminating your Account in accordance with
-            Section 8, and/or reporting you to law enforcement authorities.</p>
-        <p>If you provide Company with any feedback or suggestions
-            regarding the Site, you hereby assign to Company all rights in such Feedback and agree that Company shall
-            have the right to use and fully exploit such Feedback and related information in any manner it believes
-            appropriate.  Company will treat any Feedback you provide to Company as non-confidential and
-            non-proprietary.</p>
-        <p>You agree to indemnify and hold Company and its officers,
-            employees, and agents harmless, including costs and attorneys’ fees, from any claim or demand made by any
-            third-party due to or arising out of (a) your use of the Site, (b) your violation of these Terms, (c) your
-            violation of applicable laws or regulations or (d) your User Content.  Company reserves the right to assume
-            the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to
-            cooperate with our defense of these claims.  You agree not to settle any matter without the prior written
-            consent of Company.  Company will use reasonable efforts to notify you of any such claim, action or
-            proceeding upon becoming aware of it.</p>
-        <h2><strong>Third-Party Links &amp; Ads; Other Users</strong>
-        </h2>
-        <p><strong>Third-Party Links &amp; Ads.</strong> The Site may
-            contain links to third-party websites and services, and/or display advertisements for third-parties.  Such
-            Third-Party Links &amp; Ads are not under the control of Company, and Company is not responsible for any
-            Third-Party Links &amp; Ads.  Company provides access to these Third-Party Links &amp; Ads only as a
-            convenience to you, and does not review, approve, monitor, endorse, warrant, or make any representations
-            with respect to Third-Party Links &amp; Ads.  You use all Third-Party Links &amp; Ads at your own risk, and
-            should apply a suitable level of caution and discretion in doing so. When you click on any of the
-            Third-Party Links &amp; Ads, the applicable third party’s terms and policies apply, including the third
-            party’s privacy and data gathering practices.</p>
-        <p><strong>Other Users.</strong> Each Site user is solely
-            responsible for any and all of its own User Content.  Because we do not control User Content, you
-            acknowledge and agree that we are not responsible for any User Content, whether provided by you or by
-            others.  You agree that Company will not be responsible for any loss or damage incurred as the result of any
-            such interactions.  If there is a dispute between you and any Site user, we are under no obligation to
-            become involved.</p>
-        <p>You hereby release and forever discharge the Company and
-            our officers, employees, agents, successors, and assigns from, and hereby waive and relinquish, each and
-            every past, present and future dispute, claim, controversy, demand, right, obligation, liability, action and
-            cause of action of every kind and nature, that has arisen or arises directly or indirectly out of, or that
-            relates directly or indirectly to, the Site. If you are a California resident, you hereby waive California
-            civil code section 1542 in connection with the foregoing, which states: &quot;a general release does not
-            extend to claims which the creditor does not know or suspect to exist in his or her favor at the time of
-            executing the release, which if known by him or her must have materially affected his or her settlement with
-            the debtor.&quot;</p>
-        <p><strong>Cookies and Web Beacons.</strong> Like any other
-            website, dstack.ai uses ‘cookies’. These cookies are used to store information including visitors’
-            preferences, and the pages on the website that the visitor accessed or visited. The information is used to
-            optimize the users’ experience by customizing our web page content based on visitors’ browser type and/or
-            other information.</p>
-        <h2><strong>Disclaimers</strong></h2>
-        <p>The site is provided on an &quot;as-is&quot; and &quot;as
-            available&quot; basis, and company and our suppliers expressly disclaim any and all warranties and
-            conditions of any kind, whether express, implied, or statutory, including all warranties or conditions of
-            merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. 
-            We and our suppliers make not guarantee that the site will meet your requirements, will be available on an
-            uninterrupted, timely, secure, or error-free basis, or will be accurate, reliable, free of viruses or other
-            harmful code, complete, legal, or safe.  If applicable law requires any warranties with respect to the site,
-            all such warranties are limited in duration to ninety (90) days from the date of first use.</p>
-        <p>Some jurisdictions do not allow the exclusion of implied
-            warranties, so the above exclusion may not apply to you.  Some jurisdictions do not allow limitations on how
-            long an implied warranty lasts, so the above limitation may not apply to you.</p>
-        <h2><strong>Limitation on Liability</strong></h2>
-        <p>To the maximum extent permitted by law, in no event shall
-            company or our suppliers be liable to you or any third-party for any lost profits, lost data, costs of
-            procurement of substitute products, or any indirect, consequential, exemplary, incidental, special or
-            punitive damages arising from or relating to these terms or your use of, or incapability to use the site
-            even if company has been advised of the possibility of such damages.  Access to and use of the site is at
-            your own discretion and risk, and you will be solely responsible for any damage to your device or computer
-            system, or loss of data resulting therefrom.</p>
-        <p>To the maximum extent permitted by law, notwithstanding
-            anything to the contrary contained herein, our liability to you for any damages arising from or related to
-            this agreement, will at all times be limited to a maximum of fifty U.S. dollars (u.s. $50). The existence of
-            more than one claim will not enlarge this limit.  You agree that our suppliers will have no liability of any
-            kind arising from or relating to this agreement.</p>
-        <p>Some jurisdictions do not allow the limitation or
-            exclusion of liability for incidental or consequential damages, so the above limitation or exclusion may not
-            apply to you.</p>
-        <p><strong>Term and Termination.</strong> Subject to this
-            Section, these Terms will remain in full force and effect while you use the Site.  We may suspend or
-            terminate your rights to use the Site at any time for any reason at our sole discretion, including for any
-            use of the Site in violation of these Terms.  Upon termination of your rights under these Terms, your
-            Account and right to access and use the Site will terminate immediately.  You understand that any
-            termination of your Account may involve deletion of your User Content associated with your Account from our
-            live databases.  Company will not have any liability whatsoever to you for any termination of your rights
-            under these Terms.  Even after your rights under these Terms are terminated, the following provisions of
-            these Terms will remain in effect: Sections 2 through 2.5, Section 3 and Sections 4 through 10.</p>
-        <h2><strong>Copyright Policy.</strong></h2>
-        <p>Company respects the intellectual property of others and
-            asks that users of our Site do the same.  In connection with our Site, we have adopted and implemented a
-            policy respecting copyright law that provides for the removal of any infringing materials and for the
-            termination of users of our online Site who are repeated infringers of intellectual property rights,
-            including copyrights.  If you believe that one of our users is, through the use of our Site, unlawfully
-            infringing the copyright(s) in a work, and wish to have the allegedly infringing material removed, the
-            following information in the form of a written notification (pursuant to 17 U.S.C. § 512(c)) must be
-            provided to our designated Copyright Agent:</p>
-        <ul>
-            <li>your physical or electronic signature;</li>
-        </ul>
-        <ul>
-            <li>identification of the copyrighted work(s) that you claim to have been
-                infringed;
-            </li>
-        </ul>
-        <ul>
-            <li>identification of the material on our services that you claim is infringing
-                and that you request us to remove;
-            </li>
-        </ul>
-        <ul>
-            <li>sufficient information to permit us to locate such material;</li>
-        </ul>
-        <ul>
-            <li>your address, telephone number, and e-mail address;</li>
-        </ul>
-        <ul>
-            <li>a statement that you have a good faith belief that use of the objectionable
-                material is not authorized by the copyright owner, its agent, or under the law; and
-            </li>
-        </ul>
-        <ul>
-            <li>a statement that the information in the notification is accurate, and under
-                penalty of perjury, that you are either the owner of the copyright that has allegedly been infringed or
-                that you are authorized to act on behalf of the copyright owner.
-            </li>
-        </ul>
-        <p>Please note that, pursuant to 17 U.S.C. § 512(f), any
-            misrepresentation of material fact in a written notification automatically subjects the complaining party to
-            liability for any damages, costs and attorney’s fees incurred by us in connection with the written
-            notification and allegation of copyright infringement.</p>
-        <h2><strong>General</strong></h2>
-        <p>These Terms are subject to occasional revision, and if we
-            make any substantial changes, we may notify you by sending you an e-mail to the last e-mail address you
-            provided to us and/or by prominently posting notice of the changes on our Site.  You are responsible for
-            providing us with your most current e-mail address.  In the event that the last e-mail address that you have
-            provided us is not valid our dispatch of the e-mail containing such notice will nonetheless constitute
-            effective notice of the changes described in the notice.  Any changes to these Terms will be effective upon
-            the earliest of thirty (30) calendar days following our dispatch of an e-mail notice to you or thirty (30)
-            calendar days following our posting of notice of the changes on our Site.  These changes will be effective
-            immediately for new users of our Site.  Continued use of our Site following notice of such changes shall
-            indicate your acknowledgement of such changes and agreement to be bound by the terms and conditions of such
-            changes. Dispute Resolution. Please read this Arbitration Agreement carefully. It is part of your contract
-            with Company and affects your rights.  It contains procedures for MANDATORY BINDING ARBITRATION AND A CLASS
-            ACTION WAIVER.</p>
-        <p><strong>Applicability of Arbitration Agreement.</strong> All
-            claims and disputes in connection with the Terms or the use of any product or service provided by the
-            Company that cannot be resolved informally or in small claims court shall be resolved by binding arbitration
-            on an individual basis under the terms of this Arbitration Agreement.  Unless otherwise agreed to, all
-            arbitration proceedings shall be held in English.  This Arbitration Agreement applies to you and the
-            Company, and to any subsidiaries, affiliates, agents, employees, predecessors in interest, successors, and
-            assigns, as well as all authorized or unauthorized users or beneficiaries of services or goods provided
-            under the Terms.</p>
-        <p><strong>Notice Requirement and Informal Dispute
-            Resolution.</strong> Before either party may seek arbitration, the party must first send to the other party
-            a written Notice of Dispute describing the nature and basis of the claim or dispute, and the requested
-            relief.  A Notice to the Company should be sent to: Munich, 81379, Constanze-Hallgarten-Str., 14. After the
-            Notice is received, you and the Company may attempt to resolve the claim or dispute informally.  If you and
-            the Company do not resolve the claim or dispute within thirty (30) days after the Notice is received, either
-            party may begin an arbitration proceeding.  The amount of any settlement offer made by any party may not be
-            disclosed to the arbitrator until after the arbitrator has determined the amount of the award to which
-            either party is entitled.</p>
-        <p><strong>Arbitration Rules.</strong> Arbitration shall be
-            initiated through the American Arbitration Association, an established alternative dispute resolution
-            provider that offers arbitration as set forth in this section.  If AAA is not available to arbitrate, the
-            parties shall agree to select an alternative ADR Provider.  The rules of the ADR Provider shall govern all
-            aspects of the arbitration except to the extent such rules are in conflict with the Terms.  The AAA Consumer
-            Arbitration Rules governing the arbitration are available online at adr.org or by calling the AAA at
-            1-800-778-7879.  The arbitration shall be conducted by a single, neutral arbitrator.  Any claims or disputes
-            where the total amount of the award sought is less than Ten Thousand U.S. Dollars (US $10,000.00) may be
-            resolved through binding non-appearance-based arbitration, at the option of the party seeking relief.  For
-            claims or disputes where the total amount of the award sought is Ten Thousand U.S. Dollars (US $10,000.00)
-            or more, the right to a hearing will be determined by the Arbitration Rules.  Any hearing will be held in a
-            location within 100 miles of your residence, unless you reside outside of the United States, and unless the
-            parties agree otherwise.  If you reside outside of the U.S., the arbitrator shall give the parties
-            reasonable notice of the date, time and place of any oral hearings. Any judgment on the award rendered by
-            the arbitrator may be entered in any court of competent jurisdiction.  If the arbitrator grants you an award
-            that is greater than the last settlement offer that the Company made to you prior to the initiation of
-            arbitration, the Company will pay you the greater of the award or $2,500.00.  Each party shall bear its own
-            costs and disbursements arising out of the arbitration and shall pay an equal share of the fees and costs of
-            the ADR Provider.</p>
-        <p><strong>Additional Rules for Non-Appearance Based
-            Arbitration.</strong> If non-appearance based arbitration is elected, the arbitration shall be conducted by
-            telephone, online and/or based solely on written submissions; the specific manner shall be chosen by the
-            party initiating the arbitration.  The arbitration shall not involve any personal appearance by the parties
-            or witnesses unless otherwise agreed by the parties.</p>
-        <p><strong>Time Limits.</strong> If you or the Company
-            pursues arbitration, the arbitration action must be initiated and/or demanded within the statute of
-            limitations and within any deadline imposed under the AAA Rules for the pertinent claim.</p>
-        <p><strong>Authority of Arbitrator.</strong> If arbitration
-            is initiated, the arbitrator will decide the rights and liabilities of you and the Company, and the dispute
-            will not be consolidated with any other matters or joined with any other cases or parties.  The arbitrator
-            shall have the authority to grant motions dispositive of all or part of any claim.  The arbitrator shall
-            have the authority to award monetary damages, and to grant any non-monetary remedy or relief available to an
-            individual under applicable law, the AAA Rules, and the Terms.  The arbitrator shall issue a written award
-            and statement of decision describing the essential findings and conclusions on which the award is based. 
-            The arbitrator has the same authority to award relief on an individual basis that a judge in a court of law
-            would have.  The award of the arbitrator is final and binding upon you and the Company.</p>
-        <p><strong>Waiver of Jury Trial.</strong> THE PARTIES HEREBY
-            WAIVE THEIR CONSTITUTIONAL AND STATUTORY RIGHTS TO GO TO COURT AND HAVE A TRIAL IN FRONT OF A JUDGE OR A
-            JURY, instead electing that all claims and disputes shall be resolved by arbitration under this Arbitration
-            Agreement.  Arbitration procedures are typically more limited, more efficient and less expensive than rules
-            applicable in a court and are subject to very limited review by a court.  In the event any litigation should
-            arise between you and the Company in any state or federal court in a suit to vacate or enforce an
-            arbitration award or otherwise, YOU AND THE COMPANY WAIVE ALL RIGHTS TO A JURY TRIAL, instead electing that
-            the dispute be resolved by a judge.</p>
-        <p><strong>Waiver of Class or Consolidated Actions.</strong> All
-            claims and disputes within the scope of this arbitration agreement must be arbitrated or litigated on an
-            individual basis and not on a class basis, and claims of more than one customer or user cannot be arbitrated
-            or litigated jointly or consolidated with those of any other customer or user.</p>
-        <p><strong>Confidentiality.</strong> All aspects of the
-            arbitration proceeding shall be strictly confidential.  The parties agree to maintain confidentiality unless
-            otherwise required by law.  This paragraph shall not prevent a party from submitting to a court of law any
-            information necessary to enforce this Agreement, to enforce an arbitration award, or to seek injunctive or
-            equitable relief.</p>
-        <p><strong>Severability.</strong> If any part or parts of
-            this Arbitration Agreement are found under the law to be invalid or unenforceable by a court of competent
-            jurisdiction, then such specific part or parts shall be of no force and effect and shall be severed and the
-            remainder of the Agreement shall continue in full force and effect.</p>
-        <p><strong>Right to Waive.</strong> Any or all of the rights
-            and limitations set forth in this Arbitration Agreement may be waived by the party against whom the claim is
-            asserted.  Such waiver shall not waive or affect any other portion of this Arbitration Agreement.</p>
-        <p><strong>Survival of Agreement.</strong> This Arbitration
-            Agreement will survive the termination of your relationship with Company.</p>
-        <p><strong>Small Claims Court.</strong> Nonetheless the
-            foregoing, either you or the Company may bring an individual action in small claims court.</p>
-        <p><strong>Emergency Equitable Relief.</strong> Anyhow the
-            foregoing, either party may seek emergency equitable relief before a state or federal court in order to
-            maintain the status quo pending arbitration.  A request for interim measures shall not be deemed a waiver of
-            any other rights or obligations under this Arbitration Agreement.</p>
-        <p><strong>Claims Not Subject to Arbitration.</strong> Notwithstanding
-            the foregoing, claims of defamation, violation of the Computer Fraud and Abuse Act, and infringement or
-            misappropriation of the other party’s patent, copyright, trademark or trade secrets shall not be subject to
-            this Arbitration Agreement.</p>
-        <p>In any circumstances where the foregoing Arbitration
-            Agreement permits the parties to litigate in court, the parties hereby agree to submit to the personal
-            jurisdiction of the courts located within Netherlands County, California, for such purposes.</p>
-        <p>The Site may be subject to U.S. export control laws and
-            may be subject to export or import regulations in other countries. You agree not to export, re-export, or
-            transfer, directly or indirectly, any U.S. technical data acquired from Company, or any products utilizing
-            such data, in violation of the United States export laws or regulations.</p>
-        <p>Company is located at the address in Section 10.8. If you
-            are a California resident, you may report complaints to the Complaint Assistance Unit of the Division of
-            Consumer Product of the California Department of Consumer Affairs by contacting them in writing at 400 R
-            Street, Sacramento, CA 95814, or by telephone at (800) 952-5210.</p>
-        <p><strong>Electronic Communications.</strong> The
-            communications between you and Company use electronic means, whether you use the Site or send us emails, or
-            whether Company posts notices on the Site or communicates with you via email. For contractual purposes, you
-            (a) consent to receive communications from Company in an electronic form; and (b) agree that all terms and
-            conditions, agreements, notices, disclosures, and other communications that Company provides to you
-            electronically satisfy any legal obligation that such communications would satisfy if it were in a hard copy
-            writing.</p>
-        <p><strong>Entire Terms.</strong> These Terms constitute the
-            entire agreement between you and us regarding the use of the Site. Our failure to exercise or enforce any
-            right or provision of these Terms shall not operate as a waiver of such right or provision. The section
-            titles in these Terms are for convenience only and have no legal or contractual effect. The word &quot;including&quot;
-            means &quot;including without limitation&quot;. If any provision of these Terms is held to be invalid or
-            unenforceable, the other provisions of these Terms will be unimpaired and the invalid or unenforceable
-            provision will be deemed modified so that it is valid and enforceable to the maximum extent permitted by
-            law.  Your relationship to Company is that of an independent contractor, and neither party is an agent or
-            partner of the other.  These Terms, and your rights and obligations herein, may not be assigned,
-            subcontracted, delegated, or otherwise transferred by you without Company’s prior written consent, and any
-            attempted assignment, subcontract, delegation, or transfer in violation of the foregoing will be null and
-            void. Company may freely assign these Terms.  The terms and conditions set forth in these Terms shall be
-            binding upon assignees.</p>
-        <p><strong>Your Privacy.</strong> Please read <a
-                href="https://privacypolicytemplate.net/">our Privacy Policy</a>.</p>
-        <p><strong>Copyright/Trademark Information.</strong> Copyright
-            ©. All rights reserved.  All trademarks, logos, and service marks displayed on the Site are our property or
-            the property of other third parties. You are not permitted to use these Marks without our prior written
-            consent or the consent of such a third party that may own the Marks.</p>
-        <h2><strong>Contact Information</strong></h2>
-        <p>Address:</p>
-        <p>dstack GmbH</p>
-        <p>Franz-Joseph-Straße 11</p>
-        <p>80801 München</p>
-        <p>Email:` <a
-                href="mailto:hello@dstack.ai">hello@dstack.ai</a></p></div>
-        </div>
-    </div>
-</section>
-<br>
-<br>
-<br>
-<br>
 
-              </article>
-            </div>
-          
+
+  
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/terms.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="terms-of-service">Terms of service<a class="headerlink" href="#terms-of-service" title="Permanent link">&para;</a></h1>
+<h2 id="agreement-to-terms">Agreement to terms<a class="headerlink" href="#agreement-to-terms" title="Permanent link">&para;</a></h2>
+<p>We are dstack GmbH ("<strong>Company</strong>," "<strong>we</strong>," "<strong>us</strong>," "<strong>our</strong>"), a company registered in Germany at Franz-Joseph-Straße, 11, Munich,
+Bayern 80801.</p>
+<p>These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an
+entity ("<strong>you</strong>"), and dstack GmbH, concerning your access to and use of the Services. You agree that by accessing the
+Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF
+THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</p>
+<p>Supplemental terms and conditions or documents that may be posted on the Services from time to time are hereby expressly
+incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to
+these Legal Terms from time to time. We will alert you about any changes by updating the "Last updated" date of these
+Legal Terms, and you waive any right to receive specific notice of each such change. It is your responsibility to
+periodically review these Legal Terms to stay informed of updates. You will be subject to, and will be deemed to have
+been made aware of and to have accepted, the changes in any revised Legal Terms by your continued use of the Services
+after the date such revised Legal Terms are posted.</p>
+<h2 id="1-our-services">1. Our services<a class="headerlink" href="#1-our-services" title="Permanent link">&para;</a></h2>
+<p>The information provided when using the Services is not intended for distribution to or use by any person or entity in
+any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject
+us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access
+the Services from other locations do so on their own initiative and are solely responsible for compliance with local
+laws, if and to the extent local laws are applicable.</p>
+<p>The Services are not tailored to comply with industry-specific regulations (Health Insurance Portability and
+Accountability Act (HIPAA), Federal Information Security Management Act (FISMA), etc.), so if your interactions would be
+subjected to such laws, you may not use the Services. You may not use the Services in a way that would violate the
+Gramm-Leach-Bliley Act (GLBA).</p>
+<h2 id="2-intelliectual-property-rights">2. Intelliectual property rights<a class="headerlink" href="#2-intelliectual-property-rights" title="Permanent link">&para;</a></h2>
+<p><strong>Our intellectual property</strong></p>
+<p>We are the owner or the licensee of all intellectual property rights in our Services, including all source code,
+databases, functionality, software, website designs, audio, video, text, photographs, and graphics in the Services (
+collectively, the "Content"), as well as the trademarks, service marks, and logos contained therein (the "Marks").</p>
+<p>Our Content and Marks are protected by copyright and trademark laws (and various other intellectual property rights and
+unfair competition laws) and treaties in the United States and around the world.</p>
+<p>The Content and Marks are provided in or through the Services "AS IS" for your personal, non-commercial use or internal
+business purpose only.</p>
+<p><strong>Your use of our Services</strong></p>
+<p>Subject to your compliance with these Legal Terms, including the "Prohibited activities" section below, we grant you a
+non-exclusive, non-transferable, revocable license to:</p>
+<ul>
+<li>access the Services; and</li>
+<li>download or print a copy of any portion of the Content to which you have properly gained access.
+solely for your personal, non-commercial use or internal business purpose.</li>
+</ul>
+<p>Except as set out in this section or elsewhere in our Legal Terms, no part of the Services and no Content or Marks may
+be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted,
+distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior
+written permission.</p>
+<p>If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our
+Legal Terms, please address your request to: hello@dstack.ai. If we ever grant you the permission to post, reproduce, or
+publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services,
+Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or
+displaying our Content.</p>
+<p>We reserve all rights not expressly granted to you in and to the Services, Content, and Marks.</p>
+<p>Any breach of these Intellectual Property Rights will constitute a material breach of our Legal Terms and your right to
+use our Services will terminate immediately.</p>
+<p><strong>Your submissions</strong></p>
+<p>Please review this section and the "Prohibited activities" section carefully prior to using our Services to understand
+the (a) rights you give us and (b) obligations you have when you post or upload any content through the Services.</p>
+<p><strong>Submissions</strong>: By directly sending us any question, comment, suggestion, idea, feedback, or other information about the
+Services ("Submissions"), you agree to assign to us all intellectual property rights in such Submission. You agree that
+we shall own this Submission and be entitled to its unrestricted use and dissemination for any lawful purpose,
+commercial or otherwise, without acknowledgment or compensation to you.</p>
+<p><strong>You are responsible for what you post or upload</strong>: By sending us Submissions through any part of the Services you:
+* confirm that you have read and agree with our "Prohibited activities" and will not post, send, publish, upload, or
+* transmit through the Services any Submission that is illegal, harassing, hateful, harmful, defamatory, obscene,
+* bullying, abusive, discriminatory, threatening to any person or group, sexually explicit, false, inaccurate, deceitful,
+  or misleading;
+* to the extent permissible by applicable law, waive any and all moral rights to any such Submission;
+* warrant that any such Submission are original to you or that you have the necessary rights and licenses to submit such
+   Submissions and that you have full authority to grant us the above-mentioned rights in relation to your Submissions; and
+* warrant and represent that your Submissions do not constitute confidential information.</p>
+<p>You are solely responsible for your Submissions and you expressly agree to reimburse us for any and all losses that we
+may suffer because of your breach of (a) this section, (b) any third party’s intellectual property rights, or (c)
+applicable law.</p>
+<h2 id="3-user-representations">3. User representations<a class="headerlink" href="#3-user-representations" title="Permanent link">&para;</a></h2>
+<p>By using the Services, you represent and warrant that: (1) all registration information you submit will be true,
+accurate, current, and complete; (2) you will maintain the accuracy of such information and promptly update such
+registration information as necessary; (3) you have the legal capacity and you agree to comply with these Legal Terms; (
+4) you are not a minor in the jurisdiction in which you reside; (5) you will not access the Services through automated
+or non-human means, whether through a bot, script or otherwise; (6) you will not use the Services for any illegal or
+unauthorized purpose; and (7) your use of the Services will not violate any applicable law or regulation.</p>
+<p>If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or
+terminate your account and refuse any and all current or future use of the Services (or any portion thereof).</p>
+<h2 id="4-user-registration">4. User registration<a class="headerlink" href="#4-user-registration" title="Permanent link">&para;</a></h2>
+<p>You may be required to register to use the Services. You agree to keep your password confidential and will be
+responsible for all use of your account and password. We reserve the right to remove, reclaim, or change a username you
+select if we determine, in our sole discretion, that such username is inappropriate, obscene, or otherwise
+objectionable.</p>
+<h2 id="5-purchases-and-payment">5. Purchases and payment<a class="headerlink" href="#5-purchases-and-payment" title="Permanent link">&para;</a></h2>
+<p>We accept the following forms of payment:</p>
+<ul>
+<li>Visa</li>
+<li>Mastercard</li>
+</ul>
+<p>You agree to provide current, complete, and accurate purchase and account information for all purchases made via the
+Services. You further agree to promptly update account and payment information, including email address, payment method,
+and payment card expiration date, so that we can complete your transactions and contact you as needed. Sales tax will be
+added to the price of purchases as deemed required by us. We may change prices at any time. All payments shall be in US
+dollars.</p>
+<p>You agree to pay all charges at the prices then in effect for your purchases and any applicable shipping fees, and you
+authorize us to charge your chosen payment provider for any such amounts upon placing your order. We reserve the right
+to correct any errors or mistakes in pricing, even if we have already requested or received payment.</p>
+<p>We reserve the right to refuse any order placed through the Services. We may, in our sole discretion, limit or cancel
+quantities purchased per person, per household, or per order. These restrictions may include orders placed by or under
+the same customer account, the same payment method, and/or orders that use the same billing or shipping address. We
+reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers, or
+distributors.</p>
+<h2 id="6-subscriptions">6. Subscriptions<a class="headerlink" href="#6-subscriptions" title="Permanent link">&para;</a></h2>
+<p><strong>Billing and Renewal</strong></p>
+<p>e.g. by topping up their balance manually using their credit card.</p>
+<p><strong>Cancellation</strong></p>
+<p>You can cancel your subscription at any time by contacting us using the contact information provided below. Your
+cancellation will take effect at the end of the current paid term. If you have any questions or are unsatisfied with our
+Services, please email us at hello@dstack.ai .</p>
+<p><strong>Fee Changes</strong></p>
+<p>We may, from time to time, make changes to the subscription fee and will communicate any price changes to you in
+accordance with applicable law.</p>
+<h2 id="7-software">7. Software<a class="headerlink" href="#7-software" title="Permanent link">&para;</a></h2>
+<p>We may include software for use in connection with our Services. If such software is accompanied by an end user license
+agreement ("EULA"), the terms of the EULA will govern your use of the software. If such software is not accompanied by a
+EULA, then we grant to you a non-exclusive, revocable, personal, and non-transferable license to use such software
+solely in connection with our services and in accordance with these Legal Terms. Any software and any related
+documentation is provided "AS IS" without warranty of any kind, either express or implied, including, without
+limitation, the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. You accept
+any and all risk arising out of use or performance of any software. You may not reproduce or redistribute any software
+except in accordance with the EULA or these Legal Terms.</p>
+<h2 id="8-prohibited-activities">8. Prohibited activities<a class="headerlink" href="#8-prohibited-activities" title="Permanent link">&para;</a></h2>
+<p>You may not access or use the Services for any purpose other than that for which we make the Services available. The
+Services may not be used in connection with any commercial endeavors except those that are specifically endorsed or
+approved by us.</p>
+<p>As a user of the Services, you agree not to:</p>
+<ul>
+<li>Systematically retrieve data or other content from the Services to create or compile, directly or indirectly, a
+  collection, compilation, database, or directory without written permission from us.</li>
+<li>Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such
+  as user passwords.</li>
+<li>Circumvent, disable, or otherwise interfere with security-related features of the Services, including features that
+  prevent or restrict the use or copying of any Content or enforce limitations on the use of the Services and/or the
+  Content contained therein.</li>
+<li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Services.</li>
+<li>Use any information obtained from the Services in order to harass, abuse, or harm another person.</li>
+<li>Make improper use of our support services or submit false reports of abuse or misconduct.</li>
+<li>Use the Services in a manner inconsistent with any applicable laws or regulations.</li>
+<li>Engage in unauthorized framing of or linking to the Services.</li>
+<li>Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including
+  excessive use of capital letters and spamming (continuous posting of repetitive text), that interferes with any
+  party’s uninterrupted use and enjoyment of the Services or modifies, impairs, disrupts, alters, or interferes with the
+  use, features, functions, operation, or maintenance of the Services.</li>
+<li>Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data
+  mining, robots, or similar data gathering and extraction tools.</li>
+<li>Delete the copyright or other proprietary rights notice from any Content.</li>
+<li>Attempt to impersonate another user or person or use the username of another user.</li>
+<li>Upload or transmit (or attempt to upload or to transmit) any material that acts as a passive or active information
+  collection or transmission mechanism, including without limitation, clear graphics interchange formats ("gifs"), 1×1
+  pixels, web bugs, cookies, or other similar devices (sometimes referred to as "spyware" or "passive collection
+  mechanisms" or "pcms").</li>
+<li>Interfere with, disrupt, or create an undue burden on the Services or the networks or services connected to the
+  Services.</li>
+<li>Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of the Services
+  to you.</li>
+<li>Attempt to bypass any measures of the Services designed to prevent or restrict access to the Services, or any portion
+  of the Services.</li>
+<li>Copy or adapt the Services' software, including but not limited to Flash, PHP, HTML, JavaScript, or other code.</li>
+<li>Except as permitted by applicable law, decipher, decompile, disassemble, or reverse engineer any of the software
+  comprising or in any way making up a part of the Services.</li>
+<li>Except as may be the result of standard search engine or Internet browser usage, use, launch, develop, or distribute
+  any automated system, including without limitation, any spider, robot, cheat utility, scraper, or offline reader that
+  accesses the Services, or use or launch any unauthorized script or other software.</li>
+<li>Use a buying agent or purchasing agent to make purchases on the Services.</li>
+<li>Make any unauthorized use of the Services, including collecting usernames and/or email addresses of users by
+  electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means
+  or under false pretenses.</li>
+<li>Use the Services as part of any effort to compete with us or otherwise use the Services and/or the Content for any
+  revenue-generating endeavor or commercial enterprise.</li>
+</ul>
+<h2 id="9-user-generated-contributions">9. User generated contributions<a class="headerlink" href="#9-user-generated-contributions" title="Permanent link">&para;</a></h2>
+<p>The Services does not offer users to submit or post content.</p>
+<h2 id="10-contribution-license">10. Contribution license<a class="headerlink" href="#10-contribution-license" title="Permanent link">&para;</a></h2>
+<p>You and Services agree that we may access, store, process, and use any information and personal data that you provide
+following the terms of the Privacy Policy and your choices (including settings).</p>
+<p>By submitting suggestions or other feedback regarding the Services, you agree that we can use and share such feedback
+for any purpose without compensation to you.</p>
+<h2 id="11-social-media">11. Social media<a class="headerlink" href="#11-social-media" title="Permanent link">&para;</a></h2>
+<p>As part of the functionality of the Services, you may link your account with online accounts you have with third-party
+service providers (each such account, a "Third-Party Account") by either: (1) providing your Third-Party Account login
+information through the Services; or (2) allowing us to access your Third-Party Account, as is permitted under the
+applicable terms and conditions that govern your use of each Third-Party Account. You represent and warrant that you are
+entitled to disclose your Third-Party Account login information to us and/or grant us access to your Third-Party
+Account, without breach by you of any of the terms and conditions that govern your use of the applicable Third-Party
+Account, and without obligating us to pay any fees or making us subject to any usage limitations imposed by the
+third-party service provider of the Third-Party Account. By granting us access to any Third-Party Accounts, you
+understand that (1) we may access, make available, and store (if applicable) any content that you have provided to and
+stored in your Third-Party Account (the "Social Network Content") so that it is available on and through the Services
+via your account, including without limitation any friend lists and (2) we may submit to and receive from your
+Third-Party Account additional information to the extent you are notified when you link your account with the
+Third-Party Account. Depending on the Third-Party Accounts you choose and subject to the privacy settings that you have
+set in such Third-Party Accounts, personally identifiable information that you post to your Third-Party Accounts may be
+available on and through your account on the Services. Please note that if a Third-Party Account or associated service
+becomes unavailable or our access to such Third-Party Account is terminated by the third-party service provider, then
+Social Network Content may no longer be available on and through the Services. You will have the ability to disable the
+connection between your account on the Services and your Third-Party Accounts at any time. PLEASE NOTE THAT YOUR
+RELATIONSHIP WITH THE THIRD-PARTY SERVICE PROVIDERS ASSOCIATED WITH YOUR THIRD-PARTY ACCOUNTS IS GOVERNED SOLELY BY YOUR
+AGREEMENT(S) WITH SUCH THIRD-PARTY SERVICE PROVIDERS. We make no effort to review any Social Network Content for any
+purpose, including but not limited to, for accuracy, legality, or non-infringement, and we are not responsible for any
+Social Network Content. You acknowledge and agree that we may access your email address book associated with a
+Third-Party Account and your contacts list stored on your mobile device or tablet computer solely for purposes of
+identifying and informing you of those contacts who have also registered to use the Services. You can deactivate the
+connection between the Services and your Third-Party Account by contacting us using the contact information below or
+through your account settings (if applicable). We will attempt to delete any information stored on our servers that was
+obtained through such Third-Party Account, except the username and profile picture that become associated with your
+account.</p>
+<h2 id="12-third-party-websites-and-content">12. Third-party websites and content<a class="headerlink" href="#12-third-party-websites-and-content" title="Permanent link">&para;</a></h2>
+<p>The Services may contain (or you may be sent via the Site) links to other websites ("Third-Party Websites") as well as
+articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software, and
+other content or items belonging to or originating from third parties ("Third-Party Content"). Such Third-Party Websites
+and Third-Party Content are not investigated, monitored, or checked for accuracy, appropriateness, or completeness by
+us, and we are not responsible for any Third-Party Websites accessed through the Services or any Third-Party Content
+posted on, available through, or installed from the Services, including the content, accuracy, offensiveness, opinions,
+reliability, privacy practices, or other policies of or contained in the Third-Party Websites or the Third-Party
+Content. Inclusion of, linking to, or permitting the use or installation of any Third-Party Websites or any Third-Party
+Content does not imply approval or endorsement thereof by us. If you decide to leave the Services and access the
+Third-Party Websites or to use or install any Third-Party Content, you do so at your own risk, and you should be aware
+these Legal Terms no longer govern. You should review the applicable terms and policies, including privacy and data
+gathering practices, of any website to which you navigate from the Services or relating to any applications you use or
+install from the Services. Any purchases you make through Third-Party Websites will be through other websites and from
+other companies, and we take no responsibility whatsoever in relation to such purchases which are exclusively between
+you and the applicable third party. You agree and acknowledge that we do not endorse the products or services offered on
+Third-Party Websites and you shall hold us blameless from any harm caused by your purchase of such products or services.
+Additionally, you shall hold us blameless from any losses sustained by you or harm caused to you relating to or
+resulting in any way from any Third-Party Content or any contact with Third-Party Websites.</p>
+<h2 id="13-services-management">13. Services management<a class="headerlink" href="#13-services-management" title="Permanent link">&para;</a></h2>
+<p>We reserve the right, but not the obligation, to: (1) monitor the Services for violations of these Legal Terms; (2) take
+appropriate legal action against anyone who, in our sole discretion, violates the law or these Legal Terms, including
+without limitation, reporting such user to law enforcement authorities; (3) in our sole discretion and without
+limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible)
+any of your Contributions or any portion thereof; (4) in our sole discretion and without limitation, notice, or
+liability, to remove from the Services or otherwise disable all files and content that are excessive in size or are in
+any way burdensome to our systems; and (5) otherwise manage the Services in a manner designed to protect our rights and
+property and to facilitate the proper functioning of the Services.</p>
+<h2 id="14-privacy-policy">14. Privacy policy<a class="headerlink" href="#14-privacy-policy" title="Permanent link">&para;</a></h2>
+<p>We care about data privacy and security. Please review our <a href="https://dstack.ai/privacy/">Privacy Policy</a>. By using the
+Services, you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms. Please be advised
+the Services are hosted in Germany and United States. If you access the Services from any other region of the world with
+laws or other requirements governing personal data collection, use, or disclosure that differ from applicable laws in
+Germany and United States, then through your continued use of the Services, you are transferring your data to Germany
+and United States, and you expressly consent to have your data transferred to and processed in Germany and United
+States.</p>
+<h2 id="15-term-and-termination">15. Term and termination<a class="headerlink" href="#15-term-and-termination" title="Permanent link">&para;</a></h2>
+<p>These Legal Terms shall remain in full force and effect while you use the Services. WITHOUT LIMITING ANY OTHER PROVISION OF THESE LEGAL TERMS, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SERVICES (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE LEGAL TERMS OR OF ANY APPLICABLE LAW OR REGULATION. WE MAY TERMINATE YOUR USE OR PARTICIPATION IN THE SERVICES OR DELETE YOUR ACCOUNT AND ANY CONTENT OR INFORMATION THAT YOU POSTED AT ANY TIME, WITHOUT WARNING, IN OUR SOLE DISCRETION.</p>
+<p>If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name, a fake or borrowed name, or the name of any third party, even if you may be acting on behalf of the third party. In addition to terminating or suspending your account, we reserve the right to take appropriate legal action, including without limitation pursuing civil, criminal, and injunctive redress.</p>
+<h2 id="16-modifications-and-interruptions">16. Modifications and interruptions<a class="headerlink" href="#16-modifications-and-interruptions" title="Permanent link">&para;</a></h2>
+<p>We reserve the right to change, modify, or remove the contents of the Services at any time or for any reason at our sole
+discretion without notice. However, we have no obligation to update any information on our Services. We will not be
+liable to you or any third party for any modification, price change, suspension, or discontinuance of the Services.</p>
+<p>We cannot guarantee the Services will be available at all times. We may experience hardware, software, or other problems
+or need to perform maintenance related to the Services, resulting in interruptions, delays, or errors. We reserve the
+right to change, revise, update, suspend, discontinue, or otherwise modify the Services at any time or for any reason
+without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by
+your inability to access or use the Services during any downtime or discontinuance of the Services. Nothing in these
+Legal Terms will be construed to obligate us to maintain and support the Services or to supply any corrections, updates,
+or releases in connection therewith.</p>
+<h2 id="17-governing-law">17. Governing law<a class="headerlink" href="#17-governing-law" title="Permanent link">&para;</a></h2>
+<p>These Legal Terms are governed by and interpreted following the laws of Germany, and the use of the United Nations
+Convention of Contracts for the International Sales of Goods is expressly excluded. If your habitual residence is in the
+EU, and you are a consumer, you additionally possess the protection provided to you by obligatory provisions of the law
+in your country to residence. dstack GmbH and yourself both agree to submit to the non-exclusive jurisdiction of the
+courts of Bayern, which means that you may make a claim to defend your consumer protection rights in regards to these
+Legal Terms in Germany, or in the EU country in which you reside.</p>
+<h2 id="18-dispute-resolution">18. Dispute resolution<a class="headerlink" href="#18-dispute-resolution" title="Permanent link">&para;</a></h2>
+<p><strong>Informal Negotiations</strong></p>
+<p>To expedite resolution and control the cost of any dispute, controversy, or claim related to these Legal Terms (each a "
+Dispute" and collectively, the "Disputes") brought by either you or us (individually, a "Party" and collectively, the "
+Parties"), the Parties agree to first attempt to negotiate any Dispute (except those Disputes expressly provided below)
+informally for at least thirty (30) days before initiating arbitration. Such informal negotiations commence upon written
+notice from one Party to the other Party.</p>
+<p><strong>Binding Arbitration</strong></p>
+<p>Any dispute arising from the relationships between the Parties to these Legal Terms shall be determined by one
+arbitrator who will be chosen in accordance with the Arbitration and Internal Rules of the European Court of Arbitration
+being part of the European Centre of Arbitration having its seat in Strasbourg, and which are in force at the time the
+application for arbitration is filed, and of which adoption of this clause constitutes acceptance. The seat of
+arbitration shall be Munich , Germany . The language of the proceedings shall be German . Applicable rules of
+substantive law shall be the law of Germany .</p>
+<p><strong>Restrictions</strong></p>
+<p>The Parties agree that any arbitration shall be limited to the Dispute between the Parties individually. To the full
+extent permitted by law, (a) no arbitration shall be joined with any other proceeding; (b) there is no right or
+authority for any Dispute to be arbitrated on a class-action basis or to utilize class action procedures; and (c) there
+is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general
+public or any other persons.</p>
+<p><strong>Exceptions to Informal Negotiations and Arbitration</strong></p>
+<p>The Parties agree that the following Disputes are not subject to the above provisions concerning informal negotiations
+binding arbitration: (a) any Disputes seeking to enforce or protect, or concerning the validity of, any of the
+intellectual property rights of a Party; (b) any Dispute related to, or arising from, allegations of theft, piracy,
+invasion of privacy, or unauthorized use; and (c) any claim for injunctive relief. If this provision is found to be
+illegal or unenforceable, then neither Party will elect to arbitrate any Dispute falling within that portion of this
+provision found to be illegal or unenforceable and such Dispute shall be decided by a court of competent jurisdiction
+within the courts listed for jurisdiction above, and the Parties agree to submit to the personal jurisdiction of that
+court.</p>
+<h2 id="19-corrections">19. Corrections<a class="headerlink" href="#19-corrections" title="Permanent link">&para;</a></h2>
+<p>There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including
+descriptions, pricing, availability, and various other information. We reserve the right to correct any errors,
+inaccuracies, or omissions and to change or update the information on the Services at any time, without prior notice.</p>
+<h2 id="20-disclaimer">20. Disclaimer<a class="headerlink" href="#20-disclaimer" title="Permanent link">&para;</a></h2>
+<p>THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SERVICES WILL BE AT YOUR
+SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH
+THE SERVICES AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS
+OF THE SERVICES' CONTENT OR THE CONTENT OF ANY WEBSITES OR MOBILE APPLICATIONS LINKED TO THE SERVICES AND WE WILL ASSUME
+NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL
+INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SERVICES, (3) ANY
+UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION
+STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SERVICES, (5) ANY BUGS, VIRUSES, TROJAN
+HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SERVICES BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR
+OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY
+CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR
+ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SERVICES, ANY
+HYPERLINKED WEBSITE, OR ANY WEBSITE OR MOBILE APPLICATION FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WE WILL NOT
+BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY PROVIDERS OF
+PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD
+USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE.</p>
+<h2 id="21-limitations-of-liability">21. Limitations of liability<a class="headerlink" href="#21-limitations-of-liability" title="Permanent link">&para;</a></h2>
+<p>IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT,
+CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA,
+OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER AND REGARDLESS
+OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE LIMITED TO THE LESSER OF THE AMOUNT PAID, IF ANY, BY YOU TO US DURING
+THE zero (0) MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION ARISING OR $0.00 USD. CERTAIN US STATE LAWS AND INTERNATIONAL
+LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS
+APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MAY HAVE ADDITIONAL
+RIGHTS.</p>
+<h2 id="22-indemnification">22. Indemnification<a class="headerlink" href="#22-indemnification" title="Permanent link">&para;</a></h2>
+<p>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses, made by any third party due to or arising out of: (1) use of the Services; (2) breach of these Legal Terms; (3) any breach of your representations and warranties set forth in these Legal Terms; (4) your violation of the rights of a third party, including but not limited to intellectual property rights; or (5) any overt harmful act toward any other user of the Services with whom you connected via the Services. Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.</p>
+<h2 id="23-user-data">23. User data<a class="headerlink" href="#23-user-data" title="Permanent link">&para;</a></h2>
+<p>We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the
+Services, as well as data relating to your use of the Services. Although we perform regular routine backups of data, you
+are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the
+Services. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby
+waive any right of action against us arising from any such loss or corruption of such data.</p>
+<h2 id="24-electronic-communications-transactions-and-signatures">24. Electronic communications, transactions, and signatures<a class="headerlink" href="#24-electronic-communications-transactions-and-signatures" title="Permanent link">&para;</a></h2>
+<p>Visiting the Services, sending us emails, and completing online forms constitute electronic communications. You consent
+to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications
+we provide to you electronically, via email and on the Services, satisfy any legal requirement that such communication
+be in writing. YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO
+ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE SERVICES.
+You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any
+jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or
+the granting of credits by any means other than electronic means.</p>
+<h2 id="25-california-users-and-residents">25. California users and residents<a class="headerlink" href="#25-california-users-and-residents" title="Permanent link">&para;</a></h2>
+<p>If any complaint with us is not satisfactorily resolved, you can contact the Complaint Assistance Unit of the Division
+of Consumer Services of the California Department of Consumer Affairs in writing at 1625 North Market Blvd., Suite N
+112, Sacramento, California 95834 or by telephone at (800) 952-5210 or (916) 445-1254.</p>
+<h2 id="26-miscellaneous">26. Miscellaneous<a class="headerlink" href="#26-miscellaneous" title="Permanent link">&para;</a></h2>
+<p>These Legal Terms and any policies or operating rules posted by us on the Services or in respect to the Services
+constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or
+provision of these Legal Terms shall not operate as a waiver of such right or provision. These Legal Terms operate to
+the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We
+shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our
+reasonable control. If any provision or part of a provision of these Legal Terms is determined to be unlawful, void, or
+unenforceable, that provision or part of the provision is deemed severable from these Legal Terms and does not affect
+the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or
+agency relationship created between you and us as a result of these Legal Terms or use of the Services. You agree that
+these Legal Terms will not be construed against us by virtue of having drafted them. You hereby waive any and all
+defenses you may have based on the electronic form of these Legal Terms and the lack of signing by the parties hereto to
+execute these Legal Terms.</p>
+<h2 id="27-contact-us">27. Contact us<a class="headerlink" href="#27-contact-us" title="Permanent link">&para;</a></h2>
+<p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services,
+please contact us at <strong>hello@dstack.ai</strong>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+
+      
+    
+  </article>
+</div>
+
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19+insiders-4.53.7">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20+insiders-4.53.8">
     
     
       
@@ -1136,11 +1136,24 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#run-arguments" class="md-nav__link">
+  <a href="#nodes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Run arguments
+          Nodes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Arguments
         </span>
       
     </span>
@@ -1154,6 +1167,45 @@
       
         <span class="md-typeset">
           Web applications
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Spot policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Backends
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Regions
         </span>
       
     </span>
@@ -2286,11 +2338,24 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#run-arguments" class="md-nav__link">
+  <a href="#nodes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Run arguments
+          Nodes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Arguments
         </span>
       
     </span>
@@ -2304,6 +2369,45 @@
       
         <span class="md-typeset">
           Web applications
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Spot policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Backends
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Regions
         </span>
       
     </span>
@@ -2818,14 +2922,13 @@
 
 <h1 id="task">task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h1>
 <p>The <code>task</code> configuration type allows running <a href="../../../concepts/tasks/">tasks</a>.</p>
-<div class="admonition info">
-<p class="admonition-title">Filename</p>
+<blockquote>
 <p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>train.dstack.yml</code> are both acceptable)
 and can be located in the project's root directory or any nested folder.
-Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run</code></a>.</p>
-</div>
-<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
-<h4 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h4>
+Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run . -f PATH</code></a>.</p>
+</blockquote>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h3>
 <p>If you don't specify <code>image</code>, <code>dstack</code> uses the default Docker image pre-configured with 
 <code>python</code>, <code>pip</code>, <code>conda</code> (Miniforge), and essential CUDA drivers. 
 The <code>python</code> property determines which default Docker image is used.</p>
@@ -2842,12 +2945,12 @@ The <code>python</code> property determines which default Docker image is used.<
 
 </div>
 
-<details class="info">
-<summary>nvcc</summary>
+<div class="admonition info">
+<p class="admonition-title">nvcc</p>
 <p>Note that the default Docker image doesn't bundle <code>nvcc</code>, which is required for building custom CUDA kernels. 
 To install it, use <code>conda install cuda</code>.</p>
-</details>
-<h4 id="_ports">Ports<a class="headerlink" href="#_ports" title="Permanent link">&para;</a></h4>
+</div>
+<h3 id="_ports">Ports<a class="headerlink" href="#_ports" title="Permanent link">&para;</a></h3>
 <p>A task can configure ports. In this case, if the task is running an application on a port, <code>dstack run</code> 
 will securely allow you to access this port from your local machine through port forwarding.</p>
 <div editor-title="train.dstack.yml"> 
@@ -2869,7 +2972,7 @@ will securely allow you to access this port from your local machine through port
 
 <p>When running it, <code>dstack run</code> forwards <code>6000</code> port to <code>localhost:6000</code>, enabling secure access.
 See <a href="../../../concepts/tasks/#configure-ports">tasks</a> for more detail.</p>
-<h4 id="docker-image">Docker image<a class="headerlink" href="#docker-image" title="Permanent link">&para;</a></h4>
+<h3 id="docker-image">Docker image<a class="headerlink" href="#docker-image" title="Permanent link">&para;</a></h3>
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
@@ -2898,7 +3001,7 @@ See <a href="../../../concepts/tasks/#configure-ports">tasks</a> for more detail
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
 </code></pre></div>
 </details>
-<h4 id="_resources">Resources<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
+<h3 id="_resources">Resources<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h3>
 <p>If you specify memory size, you can either specify an explicit size (e.g. <code>24GB</code>) or a 
 range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</code>).</p>
 <div editor-title=".dstack.yml"> 
@@ -2910,10 +3013,15 @@ range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</co
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
 
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16..</span><span class="w"> </span><span class="c1"># 16 or more CPUs</span>
-<span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200GB..</span><span class="w"> </span><span class="c1"># 200GB or more RAM</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB..80GB:4</span><span class="w"> </span><span class="c1"># 4 GPUs from 40GB to 80GB</span>
-<span class="w">  </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16GB</span><span class="w"> </span><span class="c1"># 16GB of shared memory</span>
+<span class="w">  </span><span class="c1"># 200GB or more RAM</span>
+<span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200GB..</span>
+
+<span class="w">  </span><span class="c1"># 4 GPUs from 40GB to 80GB</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB..80GB:4</span>
+
+<span class="w">  </span><span class="c1"># Shared memory</span>
+<span class="w">  </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16GB</span>
+
 <span class="w">  </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500GB</span>
 </code></pre></div>
 
@@ -2928,7 +3036,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <p>If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure 
 <code>shm_size</code>, e.g. set it to <code>16GB</code>.</p>
 </details>
-<h4 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h4>
+<h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
 <div editor-title="train.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
@@ -2949,7 +3057,80 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <p>If you don't assign a value to an environment variable (see <code>HUGGING_FACE_HUB_TOKEN</code> above), 
 <code>dstack</code> will require the value to be passed via the CLI or set in the current process.</p>
 <p>For instance, you can define environment variables in a <code>.env</code> file and utilize tools like <code>direnv</code>.</p>
-<h4 id="run-arguments">Run arguments<a class="headerlink" href="#run-arguments" title="Permanent link">&para;</a></h4>
+<h5 id="default-environment-variables">Default environment variables<a class="headerlink" href="#default-environment-variables" title="Permanent link">&para;</a></h5>
+<p>The following environment variables are available in any run and are passed by <code>dstack</code> by default:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DSTACK_RUN_NAME</code></td>
+<td>The name of the run</td>
+</tr>
+<tr>
+<td><code>DSTACK_REPO_ID</code></td>
+<td>The ID of the repo</td>
+</tr>
+<tr>
+<td><code>DSTACK_GPUS_NUM</code></td>
+<td>The total number of GPUs in the run</td>
+</tr>
+<tr>
+<td><code>DSTACK_NODES_NUM</code></td>
+<td>The number of nodes in the run</td>
+</tr>
+<tr>
+<td><code>DSTACK_NODE_RANK</code></td>
+<td>The rank of the node</td>
+</tr>
+<tr>
+<td><code>DSTACK_MASTER_NODE_IP</code></td>
+<td>The internal IP address the master node</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nodes_1">Nodes<a class="headerlink" href="#nodes_1" title="Permanent link">&para;</a></h3>
+<p>By default, the task runs on a single node. However, you can run it on a cluster of nodes.</p>
+<div editor-title="train.dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="c1"># The size of the cluster</span>
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">torchrun</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--nproc_per_node=$DSTACK_GPUS_PER_NODE</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--node_rank=$DSTACK_NODE_RANK</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--nnodes=$DSTACK_NODES_NUM</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--master_addr=$DSTACK_MASTER_NODE_IP</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--master_port=8008 resnet_ddp.py</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num_epochs 20</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+</code></pre></div>
+
+</div>
+
+<p>If you run the task, <code>dstack</code> first provisions the master node and then runs the other nodes of the cluster.
+All nodes are provisioned in the same region.</p>
+<p><code>dstack</code> is easy to use with <code>accelerate</code>, <code>torchrun</code>, and other distributed frameworks. All you need to do
+is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NODE</code>, <code>DSTACK_NODE_RANK</code>, <code>DSTACK_NODES_NUM</code>,
+<code>DSTACK_MASTER_NODE_IP</code>, and <code>DSTACK_GPUS_NUM</code> (see <a href="#default-environment-variables">System environment variables</a>).</p>
+<details class="info">
+<summary>Backends</summary>
+<p>Running on multiple nodes is supported only with AWS, GCP, and Azure.</p>
+</details>
+<h3 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">&para;</a></h3>
 <p>You can parameterize tasks with user arguments using <code>${{ run.args }}</code> in the configuration.</p>
 <div editor-title="train.dstack.yml"> 
 
@@ -2966,7 +3147,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 
 <p>Now, you can pass your arguments to the <code>dstack run</code> command. 
 See <a href="../../../concepts/tasks/#parametrize-tasks">tasks</a> for more detail.</p>
-<h4 id="web-applications">Web applications<a class="headerlink" href="#web-applications" title="Permanent link">&para;</a></h4>
+<h3 id="web-applications">Web applications<a class="headerlink" href="#web-applications" title="Permanent link">&para;</a></h3>
 <p>Here's an example of using <code>ports</code> to run web apps with <code>tasks</code>. </p>
 <div editor-title="app.dstack.yml"> 
 
@@ -2984,7 +3165,54 @@ See <a href="../../../concepts/tasks/#parametrize-tasks">tasks</a> for more deta
 
 </div>
 
-<h3 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h3>
+<h3 id="spot-policy">Spot policy<a class="headerlink" href="#spot-policy" title="Permanent link">&para;</a></h3>
+<p>You can choose whether to use spot instances, on-demand instances, or any available type.</p>
+<div editor-title="train.dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
+
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+</code></pre></div>
+
+</div>
+
+<p>The <code>spot_policy</code> accepts <code>spot</code>, <code>on-demand</code>, and <code>auto</code>. The default for tasks is <code>auto</code>.</p>
+<h3 id="backends_1">Backends<a class="headerlink" href="#backends_1" title="Permanent link">&para;</a></h3>
+<p>By default, <code>dstack</code> provisions instances in all configured backends. However, you can specify the list of backends:</p>
+<div editor-title="train.dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
+
+<span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">aws</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gcp</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+
+</div>
+
+<h3 id="regions_1">Regions<a class="headerlink" href="#regions_1" title="Permanent link">&para;</a></h3>
+<p>By default, <code>dstack</code> uses all configured regions. However, you can specify the list of regions:</p>
+<div editor-title="train.dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
+
+<span class="nt">regions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">eu-west-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">eu-west-2</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+
+</div>
+
+<p>The <code>task</code> configuration type supports many other options. See below.</p>
+<h2 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="nodes"><code>nodes</code> - (Optional) Number of nodes. Defaults to <code>1</code>.<a class="headerlink" href="#nodes" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
@@ -3008,21 +3236,21 @@ See <a href="../../../concepts/tasks/#parametrize-tasks">tasks</a> for more deta
 <h4 class="reference-item" id="creation_policy"><code>creation_policy</code> - (Optional) The policy for using instances from the pool. Defaults to <code>reuse-or-create</code>.<a class="headerlink" href="#creation_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="termination_policy"><code>termination_policy</code> - (Optional) The policy for termination instances. Defaults to <code>destroy-after-idle</code>.<a class="headerlink" href="#termination_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Time to wait before destroying the idle instance. Defaults to <code>5m</code> for <code>dstack run</code> and to <code>3d</code> for <code>dstack pool add</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h4>
-<h3 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
+<h2 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>8GB</code>). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="shm_size"><code>shm_size</code> - (Optional) The size of shared memory (e.g., <code>8GB</code>). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this.<a class="headerlink" href="#shm_size" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_gpu"><a href="#resources-gpu"><code>gpu</code></a> - (Optional) The GPU requirements. Can be set to a number, a string (e.g. <code>A100</code>, <code>80GB:2</code>, etc.), or an object; see <a href="#examples">examples</a>.<a class="headerlink" href="#_gpu" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_disk"><a href="#resources-disk"><code>disk</code></a> - (Optional) The disk resources.<a class="headerlink" href="#_disk" title="Permanent link">&para;</a></h4>
-<h3 id="resources-gpu"><code>resouces.gpu</code><a class="headerlink" href="#resources-gpu" title="Permanent link">&para;</a></h3>
+<h2 id="resources-gpu"><code>resouces.gpu</code><a class="headerlink" href="#resources-gpu" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The GPU name or list of names.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="count"><code>count</code> - (Optional) The number of GPUs. Defaults to <code>1</code>.<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The VRAM size (e.g., <code>16GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total VRAM size (e.g., <code>32GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="compute_capability"><code>compute_capability</code> - (Optional) The minimum compute capability of the GPU (e.g., <code>7.5</code>).<a class="headerlink" href="#compute_capability" title="Permanent link">&para;</a></h4>
-<h3 id="resources-disk"><code>resouces.disk</code><a class="headerlink" href="#resources-disk" title="Permanent link">&para;</a></h3>
+<h2 id="resources-disk"><code>resouces.disk</code><a class="headerlink" href="#resources-disk" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="size"><code>size</code> -  The disk size. Can be a string (e.g., <code>100GB</code> or <code>100GB..</code>) or an object; see <a href="#examples">examples</a>.<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
-<h3 id="registry_auth"><code>registry_auth</code><a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h3>
+<h2 id="registry_auth"><code>registry_auth</code><a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="username"><code>username</code> -  The username.<a class="headerlink" href="#username" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="password"><code>password</code> -  The password or access token.<a class="headerlink" href="#password" title="Permanent link">&para;</a></h4>
 

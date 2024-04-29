@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19+insiders-4.53.7">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20+insiders-4.53.8">
     
     
       
@@ -1861,9 +1861,9 @@
 
 
 <h1 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h1>
-<p>Tasks allow for convenient scheduling of various batch jobs, such as training, fine-tuning, or data processing, as well as running web applications. You can run tasks on a single machine or on clusters.</p>
-<p>You simply specify the commands, required environment, and resources, and then submit it. <code>dstack</code> provisions the required
-resources in a configured backend and runs the task.</p>
+<p>Tasks allow for convenient scheduling of various batch jobs, such as training, fine-tuning, or
+data processing, as well as running web applications.</p>
+<p>You can run tasks on a single machine or on a cluster of nodes.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>First, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>train.dstack.yml</code>
 are both acceptable).</p>
@@ -1871,26 +1871,30 @@ are both acceptable).</p>
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 
+<span class="c1"># Specify the Python version, or your Docker image</span>
 <span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+
+<span class="c1"># Specify environment variables</span>
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
+
+<span class="c1"># The commands to run on start of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
 
+<span class="c1"># Specify GPU, disk, and other resource requirements</span>
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80GB</span>
 </code></pre></div>
 
 </div>
 
-<p>The YAML file allows you to specify your own Docker image, environment variables, 
-resource requirements, etc.
-If image is not specified, <code>dstack</code> uses its own (pre-configured with Python, Conda, and essential CUDA drivers).</p>
-<div class="admonition info">
-<p class="admonition-title">.dstack.yml</p>
-<p>For more details on the file syntax, refer to the <a href="../../reference/dstack.yml/task/"><code>.dstack.yml</code> reference</a>.</p>
-</div>
+<blockquote>
+<p>See the <a href="../../reference/dstack.yml/task/">.dstack.yml reference</a> for more details.</p>
+</blockquote>
+<p>If you don't specify your Docker image, <code>dstack</code> uses the <a href="https://hub.docker.com/r/dstackai/base/tags">base</a> image
+(pre-configured with Python, Conda, and essential CUDA drivers).</p>
 <h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
 <p>Environment variables can be set either within the configuration file or passed via the CLI.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
@@ -1971,15 +1975,12 @@ will securely allow you to access this port from your local machine through port
 
 </div>
 
-<p>If you run the task, <code>dstack</code> first provisions the master node and then runs the other nodes.
+<p>If you run the task, <code>dstack</code> first provisions the master node and then runs the other nodes of the cluster.
 All nodes are provisioned in the same region.</p>
-<div class="admonition info">
-<p class="admonition-title">Backends</p>
+<details class="info">
+<summary>Backends</summary>
 <p>Running on multiple nodes is supported only with AWS, GCP, and Azure.</p>
-</div>
-<p><code>dstack</code> is easy to use with <code>accelerate</code>, <code>torchrun</code>, and other distributed frameworks. All you need to do
-is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NODE</code>, <code>DSTACK_NODE_RANK</code>, <code>DSTACK_NODES_NUM</code>,
-and <code>DSTACK_MASTER_NODE_IP</code>.</p>
+</details>
 <h3 id="args">Args<a class="headerlink" href="#args" title="Permanent link">&para;</a></h3>
 <p>You can parameterize tasks with user arguments using <code>${{ run.args }}</code> in the configuration.</p>
 <div editor-title="train.dstack.yml"> 

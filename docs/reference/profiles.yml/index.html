@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19+insiders-4.53.7">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20+insiders-4.53.8">
     
     
       
@@ -1129,10 +1129,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#root-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1304,8 +1303,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#retry_policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1336,11 +1335,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1857,10 +1851,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#root-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2032,8 +2025,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#retry_policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2071,11 +2064,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
@@ -2095,41 +2083,37 @@
 
 
 <h1 id="profilesyml">profiles.yml<a class="headerlink" href="#profilesyml" title="Permanent link">&para;</a></h1>
-<p>Instead of configuring run options as <a href="../cli/#dstack-run"><code>dstack run</code></a> arguments 
-or <code>.dstack.yml</code> parameters, you can defines those options in <code>profiles.yml</code>
-and reuse them across different run configurations.
-<code>dstack</code> supports repository-level profiles defined in <code>$REPO_ROOT/.dstack/profiles.yml</code>
-and global profiles defined in <code>~/.dstack/profiles.yml</code>.</p>
-<p>Profiles parameters are resolved with the following priority:</p>
-<ol>
-<li><code>dstack run</code> arguments</li>
-<li><code>.dstack.yml</code> parameters</li>
-<li>Repository-level profiles from <code>$REPO_ROOT/.dstack/profiles.yml</code></li>
-<li>Global profiles from <code>~/.dstack/profiles.yml</code></li>
-</ol>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>Sometimes, you may want to reuse the same parameters across different <a href="../dstack.yml/"><code>.dstack.yml</code></a> configurations.</p>
+<p>This can be achieved by defining those parameters in a profile.</p>
+<p>Profiles can be defined on the repository level (via the <code>.dstack/profiles.yml</code> file in the root directory of the
+repository) or on the global level (via the <code>~/.dstack/profiles.yml</code> file).</p>
+<p>Any profile can be marked as default so that it will be applied automatically for any run. Otherwise, you can refer to a specific profile
+via <code>--profile NAME</code> in <code>dstack run</code>.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <div editor-title=".dstack/profiles.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">profiles</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">large</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-profile</span>
 
-<span class="w">    </span><span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span><span class="w"> </span><span class="c1"># (Optional) The spot policy. Supports `spot`, `on-demand, and `auto`.</span>
+<span class="w">    </span><span class="c1"># The spot pololicy can be &quot;spot&quot;, &quot;on-demand&quot;, or &quot;auto&quot;</span>
+<span class="w">    </span><span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 
-<span class="w">    </span><span class="nt">max_price</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.5</span><span class="w"> </span><span class="c1"># (Optional) The maximum price per instance per hour</span>
+<span class="w">    </span><span class="c1"># Limit the maximum price of the instance per hour</span>
+<span class="w">    </span><span class="nt">max_price</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.5</span>
 
-<span class="w">    </span><span class="nt">max_duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1d</span><span class="w"> </span><span class="c1"># (Optional) The maximum duration of the run.</span>
+<span class="w">    </span><span class="c1"># Stop any run if it runs longer that this duration</span>
+<span class="w">    </span><span class="nt">max_duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1d</span>
 
-<span class="w">    </span><span class="nt">retry</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">retry-duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3h</span><span class="w"> </span><span class="c1"># (Optional) To wait for capacity</span>
+<span class="w">    </span><span class="c1"># Use only these backends</span>
+<span class="w">    </span><span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">azure</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">lambda</span><span class="p p-Indicator">]</span>
 
-<span class="w">    </span><span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">azure</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">lambda</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># (Optional) Use only listed backends </span>
-
-<span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># (Optional) Activate the profile by default</span>
+<span class="w">    </span><span class="c1"># If set to true, this profile will be applied automatically</span>
+<span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 
 </div>
 
-<p>You can mark any profile as default or pass its name via <code>--profile</code> to <code>dstack run</code>.</p>
+<p>The profile configuration supports many properties. See below.</p>
 <h3 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisionig (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisionig (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>

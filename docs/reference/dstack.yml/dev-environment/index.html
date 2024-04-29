@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19+insiders-4.53.7">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20+insiders-4.53.8">
     
     
       
@@ -1088,6 +1088,64 @@
       
         <span class="md-typeset">
           Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Default environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Spot policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Backends
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Regions
         </span>
       
     </span>
@@ -2242,6 +2300,64 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Environment variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Default environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Spot policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Backends
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Regions
+        </span>
+      
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -2762,14 +2878,13 @@
 
 <h1 id="dev-environment">dev-environment<a class="headerlink" href="#dev-environment" title="Permanent link">&para;</a></h1>
 <p>The <code>dev-environment</code> configuration type allows running <a href="../../../concepts/dev-environments/">dev environments</a>.</p>
-<div class="admonition info">
-<p class="admonition-title">Filename</p>
+<blockquote>
 <p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>dev.dstack.yml</code> are both acceptable)
 and can be located in the project's root directory or any nested folder.
-Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run</code></a>.</p>
-</div>
-<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
-<h4 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h4>
+Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run . -f PATH</code></a>.</p>
+</blockquote>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h3>
 <p>If you don't specify <code>image</code>, <code>dstack</code> uses the default Docker image pre-configured with 
 <code>python</code>, <code>pip</code>, <code>conda</code> (Miniforge), and essential CUDA drivers. 
 The <code>python</code> property determines which default Docker image is used.</p>
@@ -2784,12 +2899,12 @@ The <code>python</code> property determines which default Docker image is used.<
 
 </div>
 
-<details class="info">
-<summary>nvcc</summary>
+<div class="admonition info">
+<p class="admonition-title">nvcc</p>
 <p>Note that the default Docker image doesn't bundle <code>nvcc</code>, which is required for building custom CUDA kernels. 
 To install it, use <code>conda install cuda</code>.</p>
-</details>
-<h4 id="docker-image">Docker image<a class="headerlink" href="#docker-image" title="Permanent link">&para;</a></h4>
+</div>
+<h3 id="docker-image">Docker image<a class="headerlink" href="#docker-image" title="Permanent link">&para;</a></h3>
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
@@ -2814,7 +2929,7 @@ To install it, use <code>conda install cuda</code>.</p>
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 </code></pre></div>
 </details>
-<h4 id="_resources">Resources<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
+<h3 id="_resources">Resources<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h3>
 <p>If you specify memory size, you can either specify an explicit size (e.g. <code>24GB</code>) or a 
 range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</code>).</p>
 <div editor-title=".dstack.yml"> 
@@ -2824,10 +2939,15 @@ range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</co
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16..</span><span class="w"> </span><span class="c1"># 16 or more CPUs</span>
-<span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200GB..</span><span class="w"> </span><span class="c1"># 200GB or more RAM</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB..80GB:4</span><span class="w"> </span><span class="c1"># 4 GPUs from 40GB to 80GB</span>
-<span class="w">  </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16GB</span><span class="w"> </span><span class="c1"># 16GB of shared memory</span>
+<span class="w">  </span><span class="c1"># 200GB or more RAM</span>
+<span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200GB..</span>
+
+<span class="w">  </span><span class="c1"># 4 GPUs from 40GB to 80GB</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB..80GB:4</span>
+
+<span class="w">  </span><span class="c1"># Shared memory</span>
+<span class="w">  </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16GB</span>
+
 <span class="w">  </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500GB</span>
 </code></pre></div>
 
@@ -2842,7 +2962,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <p>If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure 
 <code>shm_size</code>, e.g. set it to <code>16GB</code>.</p>
 </details>
-<h4 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h4>
+<h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
@@ -2859,7 +2979,72 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <p>If you don't assign a value to an environment variable (see <code>HUGGING_FACE_HUB_TOKEN</code> above), 
 <code>dstack</code> will require the value to be passed via the CLI or set in the current process.</p>
 <p>For instance, you can define environment variables in a <code>.env</code> file and utilize tools like <code>direnv</code>.</p>
-<h3 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h3>
+<h4 id="default-environment-variables">Default environment variables<a class="headerlink" href="#default-environment-variables" title="Permanent link">&para;</a></h4>
+<p>The following environment variables are available in any run and are passed by <code>dstack</code> by default:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DSTACK_RUN_NAME</code></td>
+<td>The name of the run</td>
+</tr>
+<tr>
+<td><code>DSTACK_REPO_ID</code></td>
+<td>The ID of the repo</td>
+</tr>
+<tr>
+<td><code>DSTACK_GPUS_NUM</code></td>
+<td>The total number of GPUs in the run</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spot-policy">Spot policy<a class="headerlink" href="#spot-policy" title="Permanent link">&para;</a></h3>
+<p>You can choose whether to use spot instances, on-demand instances, or any available type.</p>
+<div editor-title=".dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+</code></pre></div>
+
+</div>
+
+<p>The <code>spot_policy</code> accepts <code>spot</code>, <code>on-demand</code>, and <code>auto</code>. The default for dev environments is <code>on-demand</code>.</p>
+<h3 id="backends_1">Backends<a class="headerlink" href="#backends_1" title="Permanent link">&para;</a></h3>
+<p>By default, <code>dstack</code> provisions instances in all configured backends. However, you can specify the list of backends:</p>
+<div editor-title=".dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">aws</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gcp</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+
+</div>
+
+<h3 id="regions_1">Regions<a class="headerlink" href="#regions_1" title="Permanent link">&para;</a></h3>
+<p>By default, <code>dstack</code> uses all configured regions. However, you can specify the list of regions:</p>
+<div editor-title=".dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="nt">regions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">eu-west-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">eu-west-2</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+
+</div>
+
+<p>The <code>dev-environment</code> configuration type supports many other options. See below.</p>
+<h2 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="ide"><code>ide</code> -  The IDE to run.<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="version"><code>version</code> - (Optional) The version of the IDE.<a class="headerlink" href="#version" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="init"><code>init</code> - (Optional) The bash commands to run.<a class="headerlink" href="#init" title="Permanent link">&para;</a></h4>
@@ -2884,21 +3069,21 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <h4 class="reference-item" id="creation_policy"><code>creation_policy</code> - (Optional) The policy for using instances from the pool. Defaults to <code>reuse-or-create</code>.<a class="headerlink" href="#creation_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="termination_policy"><code>termination_policy</code> - (Optional) The policy for termination instances. Defaults to <code>destroy-after-idle</code>.<a class="headerlink" href="#termination_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Time to wait before destroying the idle instance. Defaults to <code>5m</code> for <code>dstack run</code> and to <code>3d</code> for <code>dstack pool add</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h4>
-<h3 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
+<h2 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>8GB</code>). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="shm_size"><code>shm_size</code> - (Optional) The size of shared memory (e.g., <code>8GB</code>). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this.<a class="headerlink" href="#shm_size" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_gpu"><a href="#resources-gpu"><code>gpu</code></a> - (Optional) The GPU requirements. Can be set to a number, a string (e.g. <code>A100</code>, <code>80GB:2</code>, etc.), or an object; see <a href="#examples">examples</a>.<a class="headerlink" href="#_gpu" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_disk"><a href="#resources-disk"><code>disk</code></a> - (Optional) The disk resources.<a class="headerlink" href="#_disk" title="Permanent link">&para;</a></h4>
-<h3 id="resources-gpu"><code>resources.gpu</code><a class="headerlink" href="#resources-gpu" title="Permanent link">&para;</a></h3>
+<h2 id="resources-gpu"><code>resources.gpu</code><a class="headerlink" href="#resources-gpu" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The GPU name or list of names.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="count"><code>count</code> - (Optional) The number of GPUs. Defaults to <code>1</code>.<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The VRAM size (e.g., <code>16GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total VRAM size (e.g., <code>32GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="compute_capability"><code>compute_capability</code> - (Optional) The minimum compute capability of the GPU (e.g., <code>7.5</code>).<a class="headerlink" href="#compute_capability" title="Permanent link">&para;</a></h4>
-<h3 id="resources-disk"><code>resources.disk</code><a class="headerlink" href="#resources-disk" title="Permanent link">&para;</a></h3>
+<h2 id="resources-disk"><code>resources.disk</code><a class="headerlink" href="#resources-disk" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="size"><code>size</code> -  The disk size. Can be a string (e.g., <code>100GB</code> or <code>100GB..</code>) or an object; see <a href="#examples">examples</a>.<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
-<h3 id="registry_auth"><code>registry_auth</code><a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h3>
+<h2 id="registry_auth"><code>registry_auth</code><a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="username"><code>username</code> -  The username.<a class="headerlink" href="#username" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="password"><code>password</code> -  The password or access token.<a class="headerlink" href="#password" title="Permanent link">&para;</a></h4>
 

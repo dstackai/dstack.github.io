@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19+insiders-4.53.7">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20+insiders-4.53.8">
     
     
       
@@ -857,11 +857,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ide" class="md-nav__link">
+  <a href="#vs-code" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          IDE
+          VS Code
         </span>
       
     </span>
@@ -1765,11 +1765,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ide" class="md-nav__link">
+  <a href="#vs-code" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          IDE
+          VS Code
         </span>
       
     </span>
@@ -1856,23 +1856,24 @@ both acceptable).</p>
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
 
+<span class="c1"># Specify the Python version, or your Docker image</span>
 <span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
 
+<span class="c1"># This pre-configures the IDE with required extensions</span>
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
+<span class="c1"># Specify GPU, disk, and other resource requirements</span>
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80GB</span>
 </code></pre></div>
 
 </div>
 
-<p>The YAML file allows you to specify your own Docker image, environment variables, 
-resource requirements, etc.
-If image is not specified, <code>dstack</code> uses its own (pre-configured with Python, Conda, and essential CUDA drivers).</p>
-<div class="admonition info">
-<p class="admonition-title">.dstack.yml</p>
-<p>For more details on the file syntax, refer to the <a href="../../reference/dstack.yml/dev-environment/"><code>.dstack.yml</code> reference</a>.</p>
-</div>
+<blockquote>
+<p>See the <a href="../../reference/dstack.yml/dev-environment/">.dstack.yml reference</a> for more details.</p>
+</blockquote>
+<p>If you don't specify your Docker image, <code>dstack</code> uses the <a href="https://hub.docker.com/r/dstackai/base/tags">base</a> image
+(pre-configured with Python, Conda, and essential CUDA drivers).</p>
 <h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
 <p>Environment variables can be set either within the configuration file or passed via the CLI.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
@@ -1890,11 +1891,11 @@ If image is not specified, <code>dstack</code> uses its own (pre-configured with
 <p>If you don't assign a value to an environment variable (see <code>HUGGING_FACE_HUB_TOKEN</code> above), 
 <code>dstack</code> will require the value to be passed via the CLI or set in the current process.</p>
 <p>For instance, you can define environment variables in a <code>.env</code> file and utilize tools like <code>direnv</code>.</p>
-<details class="info">
-<summary>Profiles</summary>
+<div class="admonition info">
+<p class="admonition-title">Profiles</p>
 <p>In case you'd like to reuse certain parameters (such as spot policy, retry and max duration,
 max price, regions, instance types, etc.) across runs, you can define them via <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.</p>
-</details>
+</div>
 <h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
 <p>To run a configuration, use the <a href="../../reference/cli/#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
 configuration file path, and other options.</p>
@@ -1926,12 +1927,12 @@ you can list them in <code>.gitignore</code>.</p>
 </div>
 <p>The <code>dstack run</code> command allows specifying many things, including spot policy, retry and max duration, 
 max price, regions, instance types, and <a href="../../reference/cli/#dstack-run">much more</a>.</p>
-<h3 id="ide">IDE<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h3>
+<h3 id="vs-code">VS Code<a class="headerlink" href="#vs-code" title="Permanent link">&para;</a></h3>
 <p>To open the dev environment in your desktop IDE, use the link from the output 
 (such as <code>vscode://vscode-remote/ssh-remote+fast-moth-1/workflow</code>).</p>
 <p><img alt="" src="../../../assets/images/dstack-vscode-jupyter.png" width="800" /></p>
 <h3 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
-<p>Alternatively, you can connect to the dev environment via SSH:</p>
+<p>Alternatively, while the CLI is attached to the run, you can connect to the dev environment via SSH:</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>fast-moth-1

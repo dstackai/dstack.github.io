@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19+insiders-4.53.7">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20+insiders-4.53.8">
     
     
       
@@ -1719,14 +1719,24 @@
 
 
 <h1 id="what-is-dstack">What is dstack?<a class="headerlink" href="#what-is-dstack" title="Permanent link">&para;</a></h1>
-<p><code>dstack</code> is an open-source orchestration engine for running AI workloads. It supports a wide range of cloud providers (such as AWS, GCP, Azure,
-Lambda, TensorDock, Vast.ai, CUDO, RunPod, etc.) as well as on-premises infrastructure.</p>
+<p><code>dstack</code> is an open-source container orchestration engine designed for AI workloads across any cloud or data center.</p>
+<blockquote>
+<p>The supported cloud providers include AWS, GCP, Azure, Lambda, TensorDock, Vast.ai, CUDO, and RunPod.
+You can also use <code>dstack</code> ro run workloads on on-prem servers.</p>
+</blockquote>
+<p>Think of <code>dstack</code> as a lightweight alternative to Kubernetes or Slurm that provides a
+straightforward interface for AI model development, training, and deployment.</p>
+<p><code>dstack</code> supports dev environements, running tasks on clusters, and deployment with auto-scaling and built-in
+authorization, all right out of the box.</p>
+<p><code>dstack</code> is vendor-agnostic, allowing you to utilize any open-source libraries, frameworks, or tools
+from your container.</p>
 <h2 id="why-use-dstack">Why use dstack?<a class="headerlink" href="#why-use-dstack" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Designed for development, training, and deployment of gen AI models.</li>
-<li>Efficiently utilizes compute across cloud providers and on-prem servers.</li>
-<li>Compatible with any training, fine-tuning, and serving frameworks, as well as other third-party tools.</li>
-<li>100% open-source.</li>
+<li>Lightweight and easy-to-use compared to Kubernetes and Slurm</li>
+<li>Supports all major GPU cloud providers</li>
+<li>Scalable and reliable for production environments</li>
+<li>Enables management of AI infrastructure across multiple clouds without vendor lock-in</li>
+<li>Fully open-source</li>
 </ol>
 <h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
 <ol>
