@@ -2574,7 +2574,9 @@ The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </sp
 </div>
 <div class="tabbed-block">
 <div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/.dstack/server/:/root/.dstack/server<span class="w"> </span>dstackai/dstack
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$HOME</span>/.dstack/server/:/root/.dstack/server<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>dstackai/dstack
 
 Applying<span class="w"> </span>~/.dstack/server/config.yml...
 
@@ -2582,6 +2584,9 @@ The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </
 The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/
 </code></pre></div>
 </div>
+<blockquote>
+<p>For more details on how to deploy <code>dstack</code> using Docker, check its <a href="https://hub.docker.com/r/dstackai/dstack">Docker repo</a>.</p>
+</blockquote>
 </div>
 </div>
 </div>
