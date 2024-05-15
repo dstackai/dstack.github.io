@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21+insiders-4.53.8">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23+insiders-4.53.8">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d5b5f0fd.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.c0d16a3a.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -316,7 +316,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="md-tabs__link">
+      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-tabs__link">
         
   
     
@@ -936,6 +936,33 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../server/config.yml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    server/config.yml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -953,10 +980,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -973,8 +1000,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_3_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1153,7 +1180,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nodes_1" class="md-nav__link">
+  <a href="#_nodes" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -1823,13 +1850,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../server/config.yml/" class="md-nav__link">
+      <a href="../../profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    server/config.yml
+    profiles.yml
   
 
     
@@ -1862,10 +1889,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1882,8 +1909,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1977,7 +2004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="md-nav__link">
+      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2381,7 +2408,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nodes_1" class="md-nav__link">
+  <a href="#_nodes" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -2965,11 +2992,12 @@
 
 <h1 id="task">task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h1>
 <p>The <code>task</code> configuration type allows running <a href="../../../concepts/tasks/">tasks</a>.</p>
-<blockquote>
-<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>train.dstack.yml</code> are both acceptable)
+<div class="admonition info">
+<p class="admonition-title">Filename</p>
+<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>serve.dstack.yml</code> are both acceptable)
 and can be located in the project's root directory or any nested folder.
-Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run . -f PATH</code></a>.</p>
-</blockquote>
+Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run</code></a>.</p>
+</div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h3>
 <p>If you don't specify <code>image</code>, <code>dstack</code> uses the default Docker image pre-configured with 
@@ -3136,7 +3164,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 </tr>
 </tbody>
 </table>
-<h3 id="nodes_1">Nodes<a class="headerlink" href="#nodes_1" title="Permanent link">&para;</a></h3>
+<h3 id="_nodes">Nodes<a class="headerlink" href="#_nodes" title="Permanent link">&para;</a></h3>
 <p>By default, the task runs on a single node. However, you can run it on a cluster of nodes.</p>
 <div editor-title="train.dstack.yml">
 
@@ -3188,8 +3216,14 @@ is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NO
 
 </div>
 
-<p>Now, you can pass your arguments to the <code>dstack run</code> command. 
-See <a href="../../../concepts/tasks/#parametrize-tasks">tasks</a> for more detail.</p>
+<p>Now, you can pass your arguments to the <code>dstack run</code> command:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml<span class="w"> </span>--train_batch_size<span class="o">=</span><span class="m">1</span><span class="w"> </span>--num_train_epochs<span class="o">=</span><span class="m">100</span>
+</code></pre></div>
+
+</div>
+
 <h3 id="web-applications">Web applications<a class="headerlink" href="#web-applications" title="Permanent link">&para;</a></h3>
 <p>Here's an example of using <code>ports</code> to run web apps with <code>tasks</code>. </p>
 <div editor-title="app.dstack.yml"> 
@@ -3425,7 +3459,7 @@ See <a href="../../../concepts/tasks/#parametrize-tasks">tasks</a> for more deta
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Resources</div>
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
-                    <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="tx-footer__section-link external">Examples</a>
+                    <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="tx-footer__section-link external">Examples</a>
                     <a href="https://github.com/dstackai/dstack/releases" target="_blank" class="tx-footer__section-link external">Changelog</a>
                     <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
@@ -3452,7 +3486,7 @@ See <a href="../../../concepts/tasks/#parametrize-tasks">tasks</a> for more deta
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.10eaffea.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.8d004be9.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

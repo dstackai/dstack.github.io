@@ -18,14 +18,14 @@
         <link rel="prev" href="../services/">
       
       
-        <link rel="next" href="../../reference/dstack.yml/dev-environment/">
+        <link rel="next" href="../../reference/server/config.yml/">
       
       
         
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21+insiders-4.53.8">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23+insiders-4.53.8">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d5b5f0fd.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c0d16a3a.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -316,7 +316,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="md-tabs__link">
+      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-tabs__link">
         
   
     
@@ -923,11 +923,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dstack-run" class="md-nav__link">
+  <a href="#automatic-provisioning" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          <code>dstack run</code>
+          Automatic provisioning
         </span>
       
     </span>
@@ -936,11 +936,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack-pool-add" class="md-nav__link">
+  <a href="#manual-provisioning" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          <code>dstack pool add</code>
+          Manual provisioning
         </span>
       
     </span>
@@ -949,11 +949,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack-pool-add-ssh" class="md-nav__link">
+  <a href="#adding-on-prem-servers" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          <code>dstack pool add-ssh</code>
+          Adding on-prem servers
         </span>
       
     </span>
@@ -977,25 +977,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Removing instances">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dstack-pool-remove" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>dstack pool remove</code>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1008,25 +989,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="List instances">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dstack-pool-ps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>dstack pool ps</code>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1106,6 +1068,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../reference/server/config.yml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    server/config.yml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -1119,10 +1108,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1139,8 +1128,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1300,13 +1289,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/server/config.yml/" class="md-nav__link">
+      <a href="../../reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    server/config.yml
+    profiles.yml
   
 
     
@@ -1339,10 +1328,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1359,8 +1348,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1454,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="md-nav__link">
+      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1795,11 +1784,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dstack-run" class="md-nav__link">
+  <a href="#automatic-provisioning" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          <code>dstack run</code>
+          Automatic provisioning
         </span>
       
     </span>
@@ -1808,11 +1797,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack-pool-add" class="md-nav__link">
+  <a href="#manual-provisioning" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          <code>dstack pool add</code>
+          Manual provisioning
         </span>
       
     </span>
@@ -1821,11 +1810,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dstack-pool-add-ssh" class="md-nav__link">
+  <a href="#adding-on-prem-servers" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          <code>dstack pool add-ssh</code>
+          Adding on-prem servers
         </span>
       
     </span>
@@ -1849,25 +1838,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Removing instances">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dstack-pool-remove" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>dstack pool remove</code>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1880,25 +1850,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="List instances">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dstack-pool-ps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>dstack pool ps</code>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1930,7 +1881,7 @@
 <h1 id="pools">Pools<a class="headerlink" href="#pools" title="Permanent link">&para;</a></h1>
 <p>Pools enable the efficient reuse of cloud instances and on-premises servers across runs, simplifying their management.</p>
 <h2 id="adding-instances">Adding instances<a class="headerlink" href="#adding-instances" title="Permanent link">&para;</a></h2>
-<h3 id="dstack-run"><code>dstack run</code><a class="headerlink" href="#dstack-run" title="Permanent link">&para;</a></h3>
+<h3 id="automatic-provisioning">Automatic provisioning<a class="headerlink" href="#automatic-provisioning" title="Permanent link">&para;</a></h3>
 <p>By default, when using the <code>dstack run</code> command, it tries to reuse an instance from a pool. If no idle instance meets the
 requirements, <code>dstack</code> automatically provisions a new cloud instance and adds it to the pool.</p>
 <details class="info">
@@ -1944,7 +1895,7 @@ the pool.</p>
 This means that if the run is finished and the instance remains idle for longer than five minutes, it is automatically
 removed from the pool. To override the default idle duration, use  <code>--idle-duration DURATION</code> with <code>dstack run</code>.</p>
 </details>
-<h3 id="dstack-pool-add"><code>dstack pool add</code><a class="headerlink" href="#dstack-pool-add" title="Permanent link">&para;</a></h3>
+<h3 id="manual-provisioning">Manual provisioning<a class="headerlink" href="#manual-provisioning" title="Permanent link">&para;</a></h3>
 <p>To manually provision a cloud instance and add it to a pool, use <a href="../../reference/cli/#dstack-pool-add"><code>dstack pool add</code></a>:</p>
 <div class="termy">
 
@@ -1972,13 +1923,13 @@ For more details on policies and their defaults, refer to <a href="../../referen
 <summary>Limitations</summary>
 <p>The <code>dstack pool add</code> command is not supported for Kubernetes, VastAI, and RunPod backends yet.</p>
 </details>
-<h3 id="dstack-pool-add-ssh"><code>dstack pool add-ssh</code><a class="headerlink" href="#dstack-pool-add-ssh" title="Permanent link">&para;</a></h3>
+<h3 id="adding-on-prem-servers">Adding on-prem servers<a class="headerlink" href="#adding-on-prem-servers" title="Permanent link">&para;</a></h3>
 <p>Any on-prem server that can be accessed via SSH can be added to a pool and used to run workloads.</p>
 <p>To add on-prem servers to the pool, use the <code>dstack pool add-ssh</code> command and pass the hostname of your server along with
 the SSH key.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add-ssh<span class="w"> </span>ubuntu@54.73.155.119<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_rsa
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add-ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_rsa<span class="w"> </span>ubuntu@54.73.155.119
 </code></pre></div>
 
 </div>
@@ -1991,7 +1942,6 @@ the SSH key.</p>
 <p>Once the instance is provisioned, you'll see it in the pool and will be able to run workloads on it.</p>
 <h2 id="removing-instances">Removing instances<a class="headerlink" href="#removing-instances" title="Permanent link">&para;</a></h2>
 <p>If the instance remains idle for the configured idle duration, <code>dstack</code> removes it and deletes all cloud resources.</p>
-<h3 id="dstack-pool-remove"><code>dstack pool remove</code><a class="headerlink" href="#dstack-pool-remove" title="Permanent link">&para;</a></h3>
 <p>To remove an instance from the pool manually, use the <code>dstack pool remove</code> command. </p>
 <div class="termy">
 
@@ -2001,7 +1951,6 @@ the SSH key.</p>
 </div>
 
 <h2 id="list-instances">List instances<a class="headerlink" href="#list-instances" title="Permanent link">&para;</a></h2>
-<h3 id="dstack-pool-ps"><code>dstack pool ps</code><a class="headerlink" href="#dstack-pool-ps" title="Permanent link">&para;</a></h3>
 <p>The <a href="../../reference/cli/#dstack-pool-ps"><code>dstack pool ps</code></a> command lists active instances and their status (<code>busy</code>
 or <code>idle</code>).</p>
 
@@ -2041,13 +1990,13 @@ or <code>idle</code>).</p>
             
             
               
-              <a href="../../reference/dstack.yml/dev-environment/" class="md-footer__link md-footer__link--next" aria-label="Next: dev-environment">
+              <a href="../../reference/server/config.yml/" class="md-footer__link md-footer__link--next" aria-label="Next: server/config.yml">
                 <div class="md-footer__title">
                   <span class="md-footer__direction">
                     Next
                   </span>
                   <div class="md-ellipsis">
-                    dev-environment
+                    server/config.yml
                   </div>
                 </div>
                 <div class="md-footer__button md-icon">
@@ -2133,7 +2082,7 @@ or <code>idle</code>).</p>
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Resources</div>
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
-                    <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="tx-footer__section-link external">Examples</a>
+                    <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="tx-footer__section-link external">Examples</a>
                     <a href="https://github.com/dstackai/dstack/releases" target="_blank" class="tx-footer__section-link external">Changelog</a>
                     <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
@@ -2160,7 +2109,7 @@ or <code>idle</code>).</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.10eaffea.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.8d004be9.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

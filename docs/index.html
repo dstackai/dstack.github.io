@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21+insiders-4.53.8">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23+insiders-4.53.8">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d5b5f0fd.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.c0d16a3a.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -316,7 +316,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="md-tabs__link">
+      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-tabs__link">
         
   
     
@@ -1023,6 +1023,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="reference/server/config.yml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    server/config.yml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -1036,10 +1063,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1056,8 +1083,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1217,13 +1244,13 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/server/config.yml/" class="md-nav__link">
+      <a href="reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    server/config.yml
+    profiles.yml
   
 
     
@@ -1256,10 +1283,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1276,8 +1303,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1371,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="md-nav__link">
+      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1767,19 +1794,15 @@
 <p>The supported cloud providers include AWS, GCP, Azure, Lambda, TensorDock, Vast.ai, CUDO, and RunPod.
 You can also use <code>dstack</code> ro run workloads on on-prem servers.</p>
 </blockquote>
-<p>Think of <code>dstack</code> as a lightweight alternative to Kubernetes or Slurm that provides a
-straightforward interface for AI model development, training, and deployment.</p>
-<p><code>dstack</code> supports dev environements, running tasks on clusters, and deployment with auto-scaling and built-in
-authorization, all right out of the box.</p>
-<p><code>dstack</code> is vendor-agnostic, allowing you to utilize any open-source libraries, frameworks, or tools
-from your container.</p>
+<p><code>dstack</code> supports dev environements, running tasks on clusters, and deployment with auto-scaling and
+authorization out of the box.</p>
 <h2 id="why-use-dstack">Why use dstack?<a class="headerlink" href="#why-use-dstack" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Lightweight and easy-to-use compared to Kubernetes and Slurm</li>
-<li>Supports all major GPU cloud providers</li>
-<li>Scalable and reliable for production environments</li>
-<li>Enables management of AI infrastructure across multiple clouds without vendor lock-in</li>
-<li>Fully open-source</li>
+<li>Simplifies development, training, and deployment of AI</li>
+<li>Supports major GPU cloud providers as well as on-prem servers</li>
+<li>Leverages the open-source AI ecosystem of libraries, frameworks, and models</li>
+<li>Reduces GPU costs and improves workload efficiency</li>
+<li>Allows the use of multiple cloud providers</li>
 </ol>
 <h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1787,12 +1810,12 @@ from your container.</p>
 <li>Define configurations such as <a href="concepts/dev-environments/">dev environments</a>, <a href="concepts/tasks/">tasks</a>, 
    and <a href="concepts/services/">services</a>.</li>
 <li>Run configurations via <code>dstack</code>'s CLI or API.</li>
-<li>Use <a href="concepts/pools/">pools</a> to manage instances and on-prem servers.</li>
+<li>Use <a href="concepts/pools/">pools</a> to manage cloud instances and on-prem servers.</li>
 </ol>
 <h2 id="where-do-i-start">Where do I start?<a class="headerlink" href="#where-do-i-start" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Follow <a href="quickstart/">quickstart</a></li>
-<li>Browse <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank">examples <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a></li>
+<li>Browse <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank">examples <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a></li>
 <li>Join the community via <a href="https://discord.gg/u8SmfwPpMd" target="_blank">Discord <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a></li>
 </ol>
 
@@ -1924,7 +1947,7 @@ from your container.</p>
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Resources</div>
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
-                    <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="tx-footer__section-link external">Examples</a>
+                    <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="tx-footer__section-link external">Examples</a>
                     <a href="https://github.com/dstackai/dstack/releases" target="_blank" class="tx-footer__section-link external">Changelog</a>
                     <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
@@ -1951,7 +1974,7 @@ from your container.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../assets/javascripts/bundle.10eaffea.min.js"></script>
+      <script src="../assets/javascripts/bundle.8d004be9.min.js"></script>
       
         <script src="../assets/javascripts/extra.js"></script>
       

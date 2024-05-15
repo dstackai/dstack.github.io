@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dstack.ai/docs/reference/dstack.yml/dev-environment/">
       
       
-        <link rel="prev" href="../../../concepts/pools/">
+        <link rel="prev" href="../../server/config.yml/">
       
       
         <link rel="next" href="../task/">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21+insiders-4.53.8">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23+insiders-4.53.8">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d5b5f0fd.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.c0d16a3a.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -316,7 +316,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="md-tabs__link">
+      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-tabs__link">
         
   
     
@@ -936,6 +936,33 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../server/config.yml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    server/config.yml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -953,10 +980,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -973,8 +1000,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_3_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1801,13 +1828,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../server/config.yml/" class="md-nav__link">
+      <a href="../../profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    server/config.yml
+    profiles.yml
   
 
     
@@ -1840,10 +1867,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1860,8 +1887,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1955,7 +1982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="md-nav__link">
+      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2921,11 +2948,12 @@
 
 <h1 id="dev-environment">dev-environment<a class="headerlink" href="#dev-environment" title="Permanent link">&para;</a></h1>
 <p>The <code>dev-environment</code> configuration type allows running <a href="../../../concepts/dev-environments/">dev environments</a>.</p>
-<blockquote>
-<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>dev.dstack.yml</code> are both acceptable)
+<div class="admonition info">
+<p class="admonition-title">Filename</p>
+<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>serve.dstack.yml</code> are both acceptable)
 and can be located in the project's root directory or any nested folder.
-Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run . -f PATH</code></a>.</p>
-</blockquote>
+Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run</code></a>.</p>
+</div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h3>
 <p>If you don't specify <code>image</code>, <code>dstack</code> uses the default Docker image pre-configured with 
@@ -3149,7 +3177,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
           <nav class="md-footer__inner md-grid" aria-label="Footer" >
             
               
-              <a href="../../../concepts/pools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pools">
+              <a href="../../server/config.yml/" class="md-footer__link md-footer__link--prev" aria-label="Previous: server/config.yml">
                 <div class="md-footer__button md-icon">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3159,7 +3187,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
                     Previous
                   </span>
                   <div class="md-ellipsis">
-                    Pools
+                    server/config.yml
                   </div>
                 </div>
               </a>
@@ -3258,7 +3286,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Resources</div>
                     <a href="/docs" class="tx-footer__section-link">Docs</a>
-                    <a href="https://github.com/dstackai/dstack/blob/master/examples/README.md" target="_blank" class="tx-footer__section-link external">Examples</a>
+                    <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="tx-footer__section-link external">Examples</a>
                     <a href="https://github.com/dstackai/dstack/releases" target="_blank" class="tx-footer__section-link external">Changelog</a>
                     <a href="/blog" class="tx-footer__section-link">Blog</a>
                 </div>
@@ -3285,7 +3313,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.10eaffea.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.8d004be9.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       
