@@ -3885,21 +3885,17 @@ az<span class="w"> </span>ad<span class="w"> </span>sp<span class="w"> </span>cr
 <div class="highlight"><pre><span></span><code>az<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>--query<span class="w"> </span><span class="s2">&quot;{subscription_id: id, tenant_id: tenantId}&quot;</span>
 </code></pre></div>
 <p>Then proceed to configure the backend:</p>
-<div class="highlight"><pre><span></span><code>&lt;div editor-title=&quot;~/.dstack/server/config.yml&quot;&gt;
-
-```yaml
-projects:
-- name: main
-backends:
-- type: azure
-    subscription_id: 06c82ce3-28ff-4285-a146-c5e981a9d808
-    tenant_id: f84a7584-88e4-4fd2-8e97-623f0a715ee1
-    creds:
-    type: default
-```
-
-&lt;/div&gt;
+<div editor-title="~/.dstack/server/config.yml">
+<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="nt">backends</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">subscription_id</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">06c82ce3-28ff-4285-a146-c5e981a9d808</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">tenant_id</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f84a7584-88e4-4fd2-8e97-623f0a715ee1</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">creds</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 </code></pre></div>
+</div>
 <div class="admonition info">
 <p class="admonition-title">NOTE:</p>
 <p>If you don't know your <code>subscription_id</code>, run</p>
@@ -3946,6 +3942,9 @@ backends:
 }
 </code></pre></div></p>
 </details>
+</div>
+</div>
+</div>
 <h3 id="gcp_1">GCP<a class="headerlink" href="#gcp_1" title="Permanent link">&para;</a></h3>
 <details class="info">
 <summary>Enable APIs</summary>
@@ -4021,6 +4020,7 @@ compute.zoneOperations.get
 button to create a new API key.</p>
 <p>Then, go ahead and configure the backend:</p>
 <div editor-title="~/.dstack/server/config.yml">
+
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="nt">backends</span><span class="p">:</span>
@@ -4029,12 +4029,15 @@ button to create a new API key.</p>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api_key</span>
 <span class="w">    </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eersct_yrpiey-naaeedst-tk-_cb6ba38e1128464aea9bcc619e4ba2a5.iijPMi07obgt6TZ87v5qAEj61RVxhd0p</span>
 </code></pre></div>
+
 </div>
+
 <h3 id="tensordock_1">TensorDock<a class="headerlink" href="#tensordock_1" title="Permanent link">&para;</a></h3>
 <p>Log into your <a href="https://marketplace.tensordock.com/">TensorDock <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> account, click API in the sidebar, and use the <code>Create an Authorization</code>
 section to create a new authorization key.</p>
 <p>Then, go ahead and configure the backend:</p>
 <div editor-title="~/.dstack/server/config.yml">
+
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="nt">backends</span><span class="p">:</span>
@@ -4044,7 +4047,9 @@ section to create a new authorization key.</p>
 <span class="w">    </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">248e621d-9317-7494-dc1557fa5825b-98b</span>
 <span class="w">    </span><span class="nt">api_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FyBI3YbnFEYXdth2xqYRnQI7hiusssBC</span>
 </code></pre></div>
+
 </div>
+
 <div class="admonition info">
 <p class="admonition-title">NOTE:</p>
 <p>The <code>tensordock</code> backend supports on-demand instances only. Spot instance support coming soon.</p>
@@ -4054,6 +4059,7 @@ section to create a new authorization key.</p>
 API Key.</p>
 <p>Then, go ahead and configure the backend:</p>
 <div editor-title="~/.dstack/server/config.yml">
+
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="nt">backends</span><span class="p">:</span>
@@ -4062,7 +4068,9 @@ API Key.</p>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api_key</span>
 <span class="w">    </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d75789f22f1908e0527c78a283b523dd73051c8c7d05456516fc91e9d4efd8c5</span>
 </code></pre></div>
+
 </div>
+
 <div class="admonition info">
 <p class="admonition-title">NOTE:</p>
 <p>Also, the <code>vastai</code> backend supports on-demand instances only. Spot instance support coming soon.</p>
@@ -4071,6 +4079,7 @@ API Key.</p>
 <p>Log into your <a href="https://compute.cudo.org/">CUDO Compute <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> account, click API keys in the sidebar, and click the <code>Create an API key</code> button.</p>
 <p>Ensure you've created a project with CUDO Compute, then proceed to configuring the backend.</p>
 <div editor-title="~/.dstack/server/config.yml">
+
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="nt">backends</span><span class="p">:</span>
@@ -4080,12 +4089,15 @@ API Key.</p>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api_key</span>
 <span class="w">    </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7487240a466624b48de22865589</span>
 </code></pre></div>
+
 </div>
+
 <h3 id="runpod">RunPod<a class="headerlink" href="#runpod" title="Permanent link">&para;</a></h3>
 <p>Log into your <a href="https://www.runpod.io/console/">RunPod <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> console, click Settings in the sidebar, expand the <code>API Keys</code> section, and click
 the button to create a key.</p>
 <p>Then proceed to configuring the backend.</p>
 <div editor-title="~/.dstack/server/config.yml">
+
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="nt">backends</span><span class="p">:</span>
@@ -4094,7 +4106,9 @@ the button to create a key.</p>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api_key</span>
 <span class="w">    </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">US9XTPDIV8AR42MMINY8TCKRB8S4E7LNRQ6CAUQ9</span>
 </code></pre></div>
+
 </div>
+
 <div class="admonition warning">
 <p class="admonition-title">NOTE:</p>
 <p>If you're using a custom Docker image, its entrypoint cannot be anything other than <code>/bin/bash</code> or <code>/bin/sh</code>.
@@ -4108,6 +4122,7 @@ See the <a href="https://github.com/dstackai/dstack/issues/1137">issue <span cla
 <p>Log into your <a href="https://cloud.datacrunch.io/signin">DataCrunch <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> account, click Account Settings in the sidebar, find <code>REST API Credentials</code> area and then click the <code>Generate Credentials</code> button.</p>
 <p>Then, go ahead and configure the backend:</p>
 <div editor-title="~/.dstack/server/config.yml">
+
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="nt">backends</span><span class="p">:</span>
@@ -4117,7 +4132,9 @@ See the <a href="https://github.com/dstackai/dstack/issues/1137">issue <span cla
 <span class="w">    </span><span class="nt">client_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xfaHBqYEsArqhKWX-e52x3HH7w8T</span>
 <span class="w">    </span><span class="nt">client_secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">B5ZU5Qx9Nt8oGMlmMhNI3iglK8bjMhagTbylZy4WzncZe39995f7Vxh8</span>
 </code></pre></div>
+
 </div>
+
 <h3 id="kubernetes_1">Kubernetes<a class="headerlink" href="#kubernetes_1" title="Permanent link">&para;</a></h3>
 <p><code>dstack</code> supports both self-managed, and managed Kubernetes clusters.</p>
 <details class="info">
@@ -4175,9 +4192,6 @@ In case of a self-managed cluster, also specify the IP address of any node in th
 of the corresponding security group:</p>
 <div class="highlight"><pre><span></span><code>aws<span class="w"> </span>ec2<span class="w"> </span>authorize-security-group-ingress<span class="w"> </span>--group-id<span class="w"> </span>&lt;cluster-security-group-id&gt;<span class="w"> </span>--protocol<span class="w"> </span>tcp<span class="w"> </span>--port<span class="w"> </span><span class="m">32000</span><span class="w"> </span>--cidr<span class="w"> </span><span class="m">0</span>.0.0.0/0
 </code></pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
