@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23+insiders-4.53.8">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24+insiders-4.53.10">
     
     
       
@@ -686,6 +686,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#set-up-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Set up the server
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configure-backends" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -697,8 +711,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#start-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -710,13 +724,18 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#configure-the-cli" class="md-nav__link">
+  <a href="#set-up-the-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configure the CLI
+          Set up the CLI
         </span>
       
     </span>
@@ -1738,6 +1757,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#set-up-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Set up the server
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configure-backends" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1749,8 +1782,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#start-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1762,13 +1795,18 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#configure-the-cli" class="md-nav__link">
+  <a href="#set-up-the-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configure the CLI
+          Set up the CLI
         </span>
       
     </span>
@@ -1815,17 +1853,13 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>To install <code>dstack</code>, use <code>pip</code>:</p>
-<div class="termy">
-
-    <div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]&quot;</span><span class="w"> </span>-U
-</code></pre></div>
-
-</div>
-
-<h2 id="configure-backends">Configure backends<a class="headerlink" href="#configure-backends" title="Permanent link">&para;</a></h2>
-<p>Before you can start the <code>dstack</code> server and let it provision instances in your cloud accounts, you have to
-create the <code>~/.dstack/server/config.yml</code> file and configure a backend for each cloud account.</p>
+<h2 id="set-up-the-server">Set up the server<a class="headerlink" href="#set-up-the-server" title="Permanent link">&para;</a></h2>
+<p>To use the open-source version of <code>dstack</code>, you first have to set up the server.
+If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
+skip this section and proceed to <a href="#set-up-the-cli">set up the CLI</a>.</p>
+<h3 id="configure-backends">Configure backends<a class="headerlink" href="#configure-backends" title="Permanent link">&para;</a></h3>
+<p>Before starting the <code>dstack</code> server, create <code>~/.dstack/server/config.yml</code> and
+configure a backend for each cloud account that you'd like to use.</p>
 <div editor-title="~/.dstack/server/config.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
@@ -1842,15 +1876,16 @@ create the <code>~/.dstack/server/config.yml</code> file and configure a backend
 
 <blockquote>
 <p>See the <a href="../reference/server/config.yml/#examples">server/config.yml reference</a>
-for more details on how to configure backends for all supported cloud providers.</p>
+for details on how to configure backends for all supported cloud providers.</p>
 </blockquote>
-<h2 id="start-the-server">Start the server<a class="headerlink" href="#start-the-server" title="Permanent link">&para;</a></h2>
+<h3 id="start-the-server">Start the server<a class="headerlink" href="#start-the-server" title="Permanent link">&para;</a></h3>
 <p>Once the <code>~/.dstack/server/config.yml</code> file is configured, proceed to start the server:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>server
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]&quot;</span><span class="w"> </span>-U
+$<span class="w"> </span>dstack<span class="w"> </span>server
 
 Applying<span class="w"> </span>~/.dstack/server/config.yml...
 
@@ -1878,12 +1913,13 @@ The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </sp
 </div>
 </div>
 <p>Once the <code>dstack</code> server is up, feel free to use the CLI or API to work with it.</p>
-<h2 id="configure-the-cli">Configure the CLI<a class="headerlink" href="#configure-the-cli" title="Permanent link">&para;</a></h2>
-<p>To point the CLI to the <code>dstack</code> server, configure <code>~/.dstack/config.yml</code>
+<h2 id="set-up-the-cli">Set up the CLI<a class="headerlink" href="#set-up-the-cli" title="Permanent link">&para;</a></h2>
+<p>To point the CLI to the <code>dstack</code> server, configure it
 with the server address, user token and project name:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>config<span class="w"> </span>--url<span class="w"> </span>http://127.0.0.1:3000<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dstack
+$<span class="w"> </span>dstack<span class="w"> </span>config<span class="w"> </span>--url<span class="w"> </span>http://127.0.0.1:3000<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--project<span class="w"> </span>main<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--token<span class="w"> </span>bbae0f28-d3dd-4820-bf61-8f4bb40815da
 
@@ -1892,6 +1928,11 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 
 </div>
 
+<p>This configuration is stored in <code>~/.dstack/config.yml</code>.</p>
+<blockquote>
+<p>If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
+find the server address, your project name, and user token in the settings of your project.</p>
+</blockquote>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../reference/server/config.yml/"><code>server/config.yml</code> reference</a> on how to configure backends</li>
@@ -2055,7 +2096,7 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.8d004be9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e3055991.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       
