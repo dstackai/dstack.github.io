@@ -849,6 +849,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../concepts/gateways/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../concepts/pools/" class="md-nav__link">
         
   
@@ -1090,6 +1117,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dstack.yml/gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1248,6 +1302,19 @@
       
         <span class="md-typeset">
           dstack apply
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack-destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          dstack destroy
         </span>
       
     </span>
@@ -1914,6 +1981,19 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dstack-destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          dstack destroy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dstack-ps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2158,21 +2238,20 @@ Retry<span class="w"> </span>Policy:
 <p>If there are large files, consider creating a <code>.gitignore</code> file to exclude them for better performance.</p>
 </details>
 <h3 id="dstack-apply">dstack apply<a class="headerlink" href="#dstack-apply" title="Permanent link">&para;</a></h3>
-<p>This command applies a given configuration. If a resources does not exist, <code>dstack apply</code> creates the resource.
+<p>This command applies a given configuration. If a resource does not exist, <code>dstack apply</code> creates the resource.
 If a resource exists, <code>dstack apply</code> updates the resource in-place or re-creates the resource if the update is not possible.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>--help
-Usage:<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--force<span class="o">]</span><span class="w"> </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span>configuration_file
-
-Positional<span class="w"> </span>Arguments:
-<span class="w">  </span>configuration_file<span class="w">  </span>The<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span>file
+Usage:<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--force<span class="o">]</span><span class="w"> </span><span class="o">[</span>-y<span class="o">]</span>
 
 Options:
-<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">          </span>Show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
-<span class="w">  </span>--project<span class="w"> </span>NAME<span class="w">      </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>project.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="nv">$DSTACK_PROJECT</span>
-<span class="w">  </span>--force<span class="w">             </span>Force<span class="w"> </span>apply<span class="w"> </span>when<span class="w"> </span>no<span class="w"> </span>changes<span class="w"> </span>detected
-<span class="w">  </span>-y,<span class="w"> </span>--yes<span class="w">           </span>Do<span class="w"> </span>not<span class="w"> </span>ask<span class="w"> </span><span class="k">for</span><span class="w"> </span>confirmation
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>Show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+<span class="w">  </span>--project<span class="w"> </span>NAME<span class="w">        </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>project.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="nv">$DSTACK_PROJECT</span>
+<span class="w">  </span>-f,<span class="w"> </span>--file<span class="w"> </span>FILE<span class="w">       </span>The<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span>file.<span class="w"> </span>Defaults<span class="w"> </span>to
+<span class="w">                        </span><span class="nv">$PWD</span>/.dstack.yml
+<span class="w">  </span>--force<span class="w">               </span>Force<span class="w"> </span>apply<span class="w"> </span>when<span class="w"> </span>no<span class="w"> </span>changes<span class="w"> </span>detected
+<span class="w">  </span>-y,<span class="w"> </span>--yes<span class="w">             </span>Do<span class="w"> </span>not<span class="w"> </span>ask<span class="w"> </span><span class="k">for</span><span class="w"> </span>confirmation
 </code></pre></div>
 
 </div>
@@ -2180,6 +2259,28 @@ Options:
 <div class="admonition info">
 <p class="admonition-title">NOTE:</p>
 <p>The <code>dstack apply</code> command currently supports only <code>gateway</code> configurations.
+Support for other configuration types is coming soon.</p>
+</div>
+<h3 id="dstack-destroy">dstack destroy<a class="headerlink" href="#dstack-destroy" title="Permanent link">&para;</a></h3>
+<p>This command destroys the resources defined by a given configuration.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>destroy<span class="w"> </span>--help
+Usage:<span class="w"> </span>dstack<span class="w"> </span>destroy<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>-y<span class="o">]</span>
+
+Options:
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>Show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+<span class="w">  </span>--project<span class="w"> </span>NAME<span class="w">        </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>project.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="nv">$DSTACK_PROJECT</span>
+<span class="w">  </span>-f,<span class="w"> </span>--file<span class="w"> </span>FILE<span class="w">       </span>The<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span>file.<span class="w"> </span>Defaults<span class="w"> </span>to
+<span class="w">                        </span><span class="nv">$PWD</span>/.dstack.yml
+<span class="w">  </span>-y,<span class="w"> </span>--yes<span class="w">             </span>Do<span class="w"> </span>not<span class="w"> </span>ask<span class="w"> </span><span class="k">for</span><span class="w"> </span>confirmation
+</code></pre></div>
+
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">NOTE:</p>
+<p>The <code>dstack destroy</code> command currently supports only <code>gateway</code> configurations.
 Support for other configuration types is coming soon.</p>
 </div>
 <h3 id="dstack-ps">dstack ps<a class="headerlink" href="#dstack-ps" title="Permanent link">&para;</a></h3>

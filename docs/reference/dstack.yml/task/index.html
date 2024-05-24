@@ -849,6 +849,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../concepts/gateways/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../concepts/pools/" class="md-nav__link">
         
   
@@ -1768,6 +1795,33 @@
     
   
     service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    gateway
   
 
     
@@ -3199,7 +3253,8 @@ is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NO
 <code>DSTACK_MASTER_NODE_IP</code>, and <code>DSTACK_GPUS_NUM</code> (see <a href="#default-environment-variables">System environment variables</a>).</p>
 <details class="info">
 <summary>Backends</summary>
-<p>Running on multiple nodes is supported only with AWS, GCP, and Azure.</p>
+<p>Running on multiple nodes is supported only with the <code>aws</code>, <code>gcp</code>, <code>azure</code>, and instances added via
+<a href="../../../concepts/pools/#adding-on-prem-servers"><code>dstack pool add-ssh</code></a>.</p>
 </details>
 <h3 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">&para;</a></h3>
 <p>You can parameterize tasks with user arguments using <code>${{ run.args }}</code> in the configuration.</p>

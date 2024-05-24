@@ -849,6 +849,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../concepts/gateways/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../concepts/pools/" class="md-nav__link">
         
   
@@ -2147,6 +2174,33 @@
     
   
     service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dstack.yml/gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    gateway
   
 
     
@@ -3837,20 +3891,57 @@ configure the backend.</p>
         {
             &quot;Effect&quot;: &quot;Allow&quot;,
             &quot;Action&quot;: [
-                &quot;ec2:*&quot;
+                &quot;ec2:AuthorizeSecurityGroupEgress&quot;,
+                &quot;ec2:AuthorizeSecurityGroupIngress&quot;,
+                &quot;ec2:CancelSpotInstanceRequests&quot;,
+                &quot;ec2:CreateSecurityGroup&quot;,
+                &quot;ec2:CreateTags&quot;,
+                &quot;ec2:DescribeImages&quot;,
+                &quot;ec2:DescribeInstances&quot;,
+                &quot;ec2:DescribeRouteTables&quot;,
+                &quot;ec2:DescribeSecurityGroups&quot;,
+                &quot;ec2:DescribeSubnets&quot;,
+                &quot;ec2:DescribeVpcs&quot;,
+                &quot;ec2:RunInstances&quot;,
+                &quot;ec2:TerminateInstances&quot;
             ],
             &quot;Resource&quot;: &quot;*&quot;
         },
         {
             &quot;Effect&quot;: &quot;Allow&quot;,
             &quot;Action&quot;: [
-                &quot;servicequotas:*&quot;
+                &quot;servicequotas:ListServiceQuotas&quot;,
+                &quot;servicequotas:GetServiceQuota&quot;
+            ],
+            &quot;Resource&quot;: &quot;*&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;elasticloadbalancing:CreateLoadBalancer&quot;,
+                &quot;elasticloadbalancing:CreateTargetGroup&quot;,
+                &quot;elasticloadbalancing:CreateListener&quot;,
+                &quot;elasticloadbalancing:RegisterTargets&quot;,
+                &quot;elasticloadbalancing:AddTags&quot;,
+                &quot;elasticloadbalancing:DeleteLoadBalancer&quot;,
+                &quot;elasticloadbalancing:DeleteTargetGroup&quot;,
+                &quot;elasticloadbalancing:DeleteListener&quot;,
+                &quot;elasticloadbalancing:DeregisterTargets&quot;
+            ],
+            &quot;Resource&quot;: &quot;*&quot;
+        },
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;acm:DescribeCertificate&quot;,
+                &quot;acm:ListCertificates&quot;
             ],
             &quot;Resource&quot;: &quot;*&quot;
         }
     ]
 }
 </code></pre></div>
+<p>The <code>elasticloadbalancing:*</code> and <code>acm:*</code> permissions are only needed for provisioning gateways with ACM (AWS Certificate Manager) certificates.</p>
 </details>
 <h3 id="azure_1">Azure<a class="headerlink" href="#azure_1" title="Permanent link">&para;</a></h3>
 <p>There are two ways to configure Azure: using a client secret or using the default credentials.</p>
