@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dstack.ai/docs/reference/api/python/">
       
       
-        <link rel="prev" href="../../profiles.yml/">
+        <link rel="prev" href="../../cli/">
       
       
         <link rel="next" href="../rest/">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24+insiders-4.53.10">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25+insiders-4.53.11">
     
     
       
@@ -1210,33 +1210,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../profiles.yml/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    profiles.yml
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1254,10 +1227,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1274,8 +1247,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_3_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1489,6 +1462,276 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Task">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        entrypoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        home_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_registry_auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registry_auth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        env
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        spot_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_retry_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max_duration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max_price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pool_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pool_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        creation_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        termination_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination_idle_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        termination_idle_time
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1500,10 +1743,324 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        port
+      
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.Run" class="md-nav__link">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        https
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        entrypoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        home_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_registry_auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registry_auth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        env
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        spot_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_retry_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max_duration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max_price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pool_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pool_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        creation_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        termination_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination_idle_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        termination_idle_time
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.Run" class="md-nav__link">
     <span class="md-ellipsis">
       
         Run
@@ -1575,7 +2132,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.Resources" class="md-nav__link">
+  <a href="#dstack.api.Resources" class="md-nav__link">
     <span class="md-ellipsis">
       
         Resources
@@ -1583,10 +2140,71 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cpu
+      
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.GPU" class="md-nav__link">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shm_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shm_size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gpu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.GPU" class="md-nav__link">
     <span class="md-ellipsis">
       
         GPU
@@ -1594,13 +2212,14 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="GPU">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="##dstack.api.Disk" class="md-nav__link">
+  <a href="#name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disk
+        name
       
     </span>
   </a>
@@ -1608,7 +2227,84 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.LocalRepo" class="md-nav__link">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total_memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        total_memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute_capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compute_capability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.Disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        size
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.LocalRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
         LocalRepo
@@ -1636,7 +2332,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.RemoteRepo" class="md-nav__link">
+  <a href="#dstack.api.RemoteRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
         RemoteRepo
@@ -1675,7 +2371,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.VirtualRepo" class="md-nav__link">
+  <a href="#dstack.api.VirtualRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
         VirtualRepo
@@ -1714,13 +2410,102 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.RegistryAuth" class="md-nav__link">
+  <a href="#dstack.api.RegistryAuth" class="md-nav__link">
     <span class="md-ellipsis">
       
         RegistryAuth
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="RegistryAuth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        username
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        password
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.Scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        metric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale_up_delay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scale_up_delay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale_down_delay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scale_down_delay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2272,6 +3057,276 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Task">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        entrypoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        home_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_registry_auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registry_auth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        env
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        spot_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_retry_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max_duration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max_price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pool_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pool_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        creation_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        termination_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination_idle_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        termination_idle_time
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2283,10 +3338,324 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        port
+      
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.Run" class="md-nav__link">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        https
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        auth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        entrypoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        home_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_registry_auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        registry_auth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        env
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        spot_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_retry_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max_duration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max_price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pool_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pool_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        creation_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        termination_policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination_idle_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        termination_idle_time
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.Run" class="md-nav__link">
     <span class="md-ellipsis">
       
         Run
@@ -2358,7 +3727,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.Resources" class="md-nav__link">
+  <a href="#dstack.api.Resources" class="md-nav__link">
     <span class="md-ellipsis">
       
         Resources
@@ -2366,10 +3735,71 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cpu
+      
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.GPU" class="md-nav__link">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shm_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shm_size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gpu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.GPU" class="md-nav__link">
     <span class="md-ellipsis">
       
         GPU
@@ -2377,13 +3807,14 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="GPU">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="##dstack.api.Disk" class="md-nav__link">
+  <a href="#name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disk
+        name
       
     </span>
   </a>
@@ -2391,7 +3822,84 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.LocalRepo" class="md-nav__link">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total_memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        total_memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute_capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compute_capability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.Disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        size
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.LocalRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
         LocalRepo
@@ -2419,7 +3927,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.RemoteRepo" class="md-nav__link">
+  <a href="#dstack.api.RemoteRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
         RemoteRepo
@@ -2458,7 +3966,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.VirtualRepo" class="md-nav__link">
+  <a href="#dstack.api.VirtualRepo" class="md-nav__link">
     <span class="md-ellipsis">
       
         VirtualRepo
@@ -2497,13 +4005,102 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="##dstack.api.RegistryAuth" class="md-nav__link">
+  <a href="#dstack.api.RegistryAuth" class="md-nav__link">
     <span class="md-ellipsis">
       
         RegistryAuth
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="RegistryAuth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        username
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        password
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dstack.api.Scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        metric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale_up_delay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scale_up_delay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale_down_delay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scale_down_delay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3314,349 +4911,60 @@ You can override these credentials via the <code>git_identity_file</code> or <co
     </div>
 
 </div><h3 id="dstack.api.Task"><code>dstack.api.Task</code><a class="headerlink" href="#dstack.api.Task" title="Permanent link">&para;</a></h3>
-
-
-<div class="doc doc-object doc-class">
-
-
-
-
-    <div class="doc doc-contents first">
-
-
-
-
-<p><span class="doc-section-title">Attributes:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._TaskConfiguration.commands">commands</span></code></td>
-            <td>
-                  <code><span title="typing.List">List</span>[str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The bash commands to run</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._TaskConfiguration.ports">ports</span></code></td>
-            <td>
-                  <code><span title="typing.List">List</span>[<span title="dstack._internal.core.models.configurations.PortMapping">PortMapping</span>]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Port numbers/mapping to expose</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._TaskConfiguration.env">env</span></code></td>
-            <td>
-                  <code><span title="typing.Dict">Dict</span>[str, str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The mapping or the list of environment variables</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._TaskConfiguration.image">image</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The name of the Docker image to run</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._TaskConfiguration.python">python</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The major version of Python</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._TaskConfiguration.entrypoint">entrypoint</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The Docker entrypoint</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._TaskConfiguration.registry_auth">registry_auth</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.configurations.RegistryAuth">RegistryAuth</span>]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Credentials for pulling a private Docker image</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._TaskConfiguration.home_dir">home_dir</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The absolute path to the home directory inside the container. Defaults to <code>/root</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._TaskConfiguration.resources">resources</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.ResourcesSpec">ResourcesSpec</span>]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The requirements to run the configuration.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div><h3 id="dstack.api.Service"><code>dstack.api.Service</code><a class="headerlink" href="#dstack.api.Service" title="Permanent link">&para;</a></h3>
-
-
-<div class="doc doc-object doc-class">
-
-
-
-
-    <div class="doc doc-contents first">
-
-
-
-
-<p><span class="doc-section-title">Attributes:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.commands">commands</span></code></td>
-            <td>
-                  <code><span title="typing.List">List</span>[str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The bash commands to run</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.port">port</span></code></td>
-            <td>
-                  <code><span title="dstack._internal.core.models.configurations.PortMapping">PortMapping</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The port, that application listens to or the mapping</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.env">env</span></code></td>
-            <td>
-                  <code><span title="typing.Dict">Dict</span>[str, str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The mapping or the list of environment variables</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.image">image</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The name of the Docker image to run</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.python">python</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The major version of Python</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.entrypoint">entrypoint</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The Docker entrypoint</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.registry_auth">registry_auth</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.configurations.RegistryAuth">RegistryAuth</span>]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Credentials for pulling a private Docker image</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.home_dir">home_dir</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The absolute path to the home directory inside the container. Defaults to <code>/root</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.resources">resources</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.ResourcesSpec">ResourcesSpec</span>]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The requirements to run the configuration.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.model">model</span></code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[ModelMapping]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Mapping of the model for the OpenAI-compatible endpoint.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.https">https</span></code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Enable HTTPS. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.auth">auth</span></code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Enable the authorization. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.replicas">replicas</span></code></td>
-            <td>
-                  <code><span title="dstack._internal.core.models.resources.Range">Range</span>[int]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The range of the number of replicas. Defaults to <code>1</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api._ServiceConfiguration.scaling">scaling</span></code></td>
-            <td>
-                  <code><span title="dstack._internal.core.models.resources.Range">Range</span>[int]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Optional[ScalingSpec]: The auto-scaling configuration.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div><h3 id="#dstack.api.Run"><code>dstack.api.Run</code><a class="headerlink" href="##dstack.api.Run" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="nodes"><code>nodes</code> - (Optional) Number of nodes. Defaults to <code>1</code>.<a class="headerlink" href="#nodes" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="home_dir"><code>home_dir</code> - (Optional) The absolute path to the home directory inside the container. Defaults to <code>/root</code>.<a class="headerlink" href="#home_dir" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_registry_auth"><a href="#dstack.api.RegistryAuth"><code>registry_auth</code></a> - (Optional) Credentials for pulling a private Docker image.<a class="headerlink" href="#_registry_auth" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="python"><code>python</code> - (Optional) The major version of Python. Mutually exclusive with <code>image</code>.<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="env"><code>env</code> - (Optional) The mapping or the list of environment variables.<a class="headerlink" href="#env" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="setup"><code>setup</code> - (Optional) The bash commands to run on the boot.<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_resources"><a href="#dstack.api.Resources"><code>resources</code></a> - (Optional) The resources requirements to run the configuration.<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="ports"><code>ports</code> - (Optional) Port numbers/mapping to expose.<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="commands"><code>commands</code> - (Optional) The bash commands to run.<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisionig (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisionig (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisionig (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for resubmitting the run. Deprecated in favor of <code>retry</code>.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="max_duration"><code>max_duration</code> - (Optional) The maximum duration of a run (e.g., <code>2h</code>, <code>1d</code>, etc). After it elapses, the run is forced to stop. Defaults to <code>off</code>.<a class="headerlink" href="#max_duration" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="max_price"><code>max_price</code> - (Optional) The maximum price per hour, in dollars.<a class="headerlink" href="#max_price" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="pool_name"><code>pool_name</code> - (Optional) The name of the pool. If not set, dstack will use the default name.<a class="headerlink" href="#pool_name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="instance_name"><code>instance_name</code> - (Optional) The name of the instance.<a class="headerlink" href="#instance_name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="creation_policy"><code>creation_policy</code> - (Optional) The policy for using instances from the pool. Defaults to <code>reuse-or-create</code>.<a class="headerlink" href="#creation_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="termination_policy"><code>termination_policy</code> - (Optional) The policy for termination instances. Defaults to <code>destroy-after-idle</code>.<a class="headerlink" href="#termination_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Time to wait before destroying the idle instance. Defaults to <code>5m</code> for <code>dstack run</code> and to <code>3d</code> for <code>dstack pool add</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h4>
+<h3 id="dstack.api.Service"><code>dstack.api.Service</code><a class="headerlink" href="#dstack.api.Service" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="port"><code>port</code> -  The port, that application listens on or the mapping.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="model"><code>model</code> - (Optional) Mapping of the model for the OpenAI-compatible endpoint.<a class="headerlink" href="#model" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="https"><code>https</code> - (Optional) Enable HTTPS. Defaults to <code>True</code>.<a class="headerlink" href="#https" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="auth"><code>auth</code> - (Optional) Enable the authorization. Defaults to <code>True</code>.<a class="headerlink" href="#auth" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="replicas"><code>replicas</code> - (Optional) The number of replicas. Can be a number (e.g. <code>2</code>) or a range (<code>0..4</code> or <code>1..8</code>). If it's a range, the <code>scaling</code> property is required. Defaults to <code>1</code>.<a class="headerlink" href="#replicas" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_scaling"><a href="#dstack.api.Scaling"><code>scaling</code></a> - (Optional) The auto-scaling rules. Required if <code>replicas</code> is set to a range.<a class="headerlink" href="#_scaling" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="home_dir"><code>home_dir</code> - (Optional) The absolute path to the home directory inside the container. Defaults to <code>/root</code>.<a class="headerlink" href="#home_dir" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_registry_auth"><a href="#dstack.api.RegistryAuth"><code>registry_auth</code></a> - (Optional) Credentials for pulling a private Docker image.<a class="headerlink" href="#_registry_auth" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="python"><code>python</code> - (Optional) The major version of Python. Mutually exclusive with <code>image</code>.<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="env"><code>env</code> - (Optional) The mapping or the list of environment variables.<a class="headerlink" href="#env" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="setup"><code>setup</code> - (Optional) The bash commands to run on the boot.<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_resources"><a href="#dstack.api.Resources"><code>resources</code></a> - (Optional) The resources requirements to run the configuration.<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="commands"><code>commands</code> - (Optional) The bash commands to run.<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisionig (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisionig (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisionig (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for resubmitting the run. Deprecated in favor of <code>retry</code>.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="max_duration"><code>max_duration</code> - (Optional) The maximum duration of a run (e.g., <code>2h</code>, <code>1d</code>, etc). After it elapses, the run is forced to stop. Defaults to <code>off</code>.<a class="headerlink" href="#max_duration" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="max_price"><code>max_price</code> - (Optional) The maximum price per hour, in dollars.<a class="headerlink" href="#max_price" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="pool_name"><code>pool_name</code> - (Optional) The name of the pool. If not set, dstack will use the default name.<a class="headerlink" href="#pool_name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="instance_name"><code>instance_name</code> - (Optional) The name of the instance.<a class="headerlink" href="#instance_name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="creation_policy"><code>creation_policy</code> - (Optional) The policy for using instances from the pool. Defaults to <code>reuse-or-create</code>.<a class="headerlink" href="#creation_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="termination_policy"><code>termination_policy</code> - (Optional) The policy for termination instances. Defaults to <code>destroy-after-idle</code>.<a class="headerlink" href="#termination_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Time to wait before destroying the idle instance. Defaults to <code>5m</code> for <code>dstack run</code> and to <code>3d</code> for <code>dstack pool add</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h4>
+<h3 id="dstack.api.Run"><code>dstack.api.Run</code><a class="headerlink" href="#dstack.api.Run" title="Permanent link">&para;</a></h3>
 
 
 <div class="doc doc-object doc-class">
@@ -3988,317 +5296,21 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 
     </div>
 
-</div><h3 id="#dstack.api.Resources"><code>dstack.api.Resources</code><a class="headerlink" href="##dstack.api.Resources" title="Permanent link">&para;</a></h3>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-    <div class="doc doc-contents first">
-
-      <p>Creates required resources specification.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>cpu</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[Range[int]]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The number of CPUs</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="dstack._internal.core.models.resources.DEFAULT_CPU_COUNT">DEFAULT_CPU_COUNT</span></code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>memory</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[Range[Memory]]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The size of RAM memory (e.g., <code>"16GB"</code>)</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="dstack._internal.core.models.resources.DEFAULT_MEMORY_SIZE">DEFAULT_MEMORY_SIZE</span></code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>gpu</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.GPUSpec">GPUSpec</span>]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The GPU spec</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>shm_size</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[Range[Memory]]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The of shared memory (e.g., <code>"8GB"</code>). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>disk</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.DiskSpec">DiskSpec</span>]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The disk spec</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dstack._internal.core.models.resources.ResourcesSpec">ResourcesSpec</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>resources specification</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div><h3 id="#dstack.api.GPU"><code>dstack.api.GPU</code><a class="headerlink" href="##dstack.api.GPU" title="Permanent link">&para;</a></h3>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-    <div class="doc doc-contents first">
-
-      <p>Creates GPU specification.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>name</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[str]]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The name of the GPU (e.g., <code>"A100"</code> or <code>"H100"</code>)</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>count</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[Range[int]]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The number of GPUs</p>
-              </div>
-            </td>
-            <td>
-                  <code><span title="dstack._internal.core.models.resources.DEFAULT_GPU_COUNT">DEFAULT_GPU_COUNT</span></code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>memory</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[Range[Memory]]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The size of a single GPU memory (e.g., <code>"16GB"</code>)</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>total_memory</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[Range[Memory]]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The total size of all GPUs memory (e.g., <code>"32GB"</code>)</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>compute_capability</code></td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[float]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The minimum compute capability of the GPU (e.g., <code>7.5</code>)</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dstack._internal.core.models.resources.GPUSpec">GPUSpec</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>GPU specification</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div><h3 id="#dstack.api.Disk"><code>dstack.api.Disk</code><a class="headerlink" href="##dstack.api.Disk" title="Permanent link">&para;</a></h3>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-    <div class="doc doc-contents first">
-
-      <p>Creates disk specification.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>size</code></td>
-            <td>
-                  <code>Range[Memory]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The size of the disk (e.g., <code>"100GB"</code>)</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="dstack._internal.core.models.resources.DiskSpec">DiskSpec</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>disk specification</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div><h3 id="#dstack.api.LocalRepo"><code>dstack.api.LocalRepo</code><a class="headerlink" href="##dstack.api.LocalRepo" title="Permanent link">&para;</a></h3>
+</div><h3 id="dstack.api.Resources"><code>dstack.api.Resources</code><a class="headerlink" href="#dstack.api.Resources" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>8GB</code>). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="shm_size"><code>shm_size</code> - (Optional) The size of shared memory (e.g., <code>8GB</code>). If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure this.<a class="headerlink" href="#shm_size" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_gpu"><a href="#dstack.api.GPU"><code>gpu</code></a> - (Optional) The GPU requirements.<a class="headerlink" href="#_gpu" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_disk"><a href="#disk"><code>disk</code></a> - (Optional) The disk resources.<a class="headerlink" href="#_disk" title="Permanent link">&para;</a></h4>
+<h3 id="dstack.api.GPU"><code>dstack.api.GPU</code><a class="headerlink" href="#dstack.api.GPU" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="name"><code>name</code> - (Optional) The name of the GPU (e.g., <code>A100</code> or <code>H100</code>).<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="count"><code>count</code> - (Optional) The number of GPUs. Defaults to <code>1</code>.<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>16GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total RAM size (e.g., <code>32GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="compute_capability"><code>compute_capability</code> - (Optional) The minimum compute capability of the GPU (e.g., <code>7.5</code>).<a class="headerlink" href="#compute_capability" title="Permanent link">&para;</a></h4>
+<h3 id="dstack.api.Disk"><code>dstack.api.Disk</code><a class="headerlink" href="#dstack.api.Disk" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="size"><code>size</code> -  Disk size.<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
+<h3 id="dstack.api.LocalRepo"><code>dstack.api.LocalRepo</code><a class="headerlink" href="#dstack.api.LocalRepo" title="Permanent link">&para;</a></h3>
 
 
 <div class="doc doc-object doc-class">
@@ -4409,7 +5421,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 
     </div>
 
-</div><h3 id="#dstack.api.RemoteRepo"><code>dstack.api.RemoteRepo</code><a class="headerlink" href="##dstack.api.RemoteRepo" title="Permanent link">&para;</a></h3>
+</div><h3 id="dstack.api.RemoteRepo"><code>dstack.api.RemoteRepo</code><a class="headerlink" href="#dstack.api.RemoteRepo" title="Permanent link">&para;</a></h3>
 
 
 <div class="doc doc-object doc-class">
@@ -4635,7 +5647,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 
     </div>
 
-</div><h3 id="#dstack.api.VirtualRepo"><code>dstack.api.VirtualRepo</code><a class="headerlink" href="##dstack.api.VirtualRepo" title="Permanent link">&para;</a></h3>
+</div><h3 id="dstack.api.VirtualRepo"><code>dstack.api.VirtualRepo</code><a class="headerlink" href="#dstack.api.VirtualRepo" title="Permanent link">&para;</a></h3>
 
 
 <div class="doc doc-object doc-class">
@@ -4807,75 +5819,15 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 
     </div>
 
-</div><h3 id="#dstack.api.RegistryAuth"><code>dstack.api.RegistryAuth</code><a class="headerlink" href="##dstack.api.RegistryAuth" title="Permanent link">&para;</a></h3>
-
-
-<div class="doc doc-object doc-class">
-
-
-
-
-    <div class="doc doc-contents first">
-
-
-      <p>Credentials for pulling a private Docker image.</p>
-
-
-<p><span class="doc-section-title">Attributes:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api.RegistryAuth.username">username</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The username</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="dstack.api.RegistryAuth.password">password</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The password or access token</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div><h3 id="dstack.api.BackendType"><code>dstack.api.BackendType</code><a class="headerlink" href="#dstack.api.BackendType" title="Permanent link">&para;</a></h3>
+</div><h3 id="dstack.api.RegistryAuth"><code>dstack.api.RegistryAuth</code><a class="headerlink" href="#dstack.api.RegistryAuth" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="username"><code>username</code> -  The username.<a class="headerlink" href="#username" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="password"><code>password</code> -  The password or access token.<a class="headerlink" href="#password" title="Permanent link">&para;</a></h4>
+<h3 id="dstack.api.Scaling"><code>dstack.api.Scaling</code><a class="headerlink" href="#dstack.api.Scaling" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="metric"><code>metric</code> -  The target metric to track. Currently, the only supported value is <code>rps</code> (meaning requests per second).<a class="headerlink" href="#metric" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="target"><code>target</code> -  The target value of the metric. The number of replicas is calculated based on this number and automatically adjusts (scales up or down) as this metric changes.<a class="headerlink" href="#target" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="scale_up_delay"><code>scale_up_delay</code> - (Optional) The delay in seconds before scaling up. Defaults to <code>300</code>.<a class="headerlink" href="#scale_up_delay" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="scale_down_delay"><code>scale_down_delay</code> - (Optional) The delay in seconds before scaling down. Defaults to <code>600</code>.<a class="headerlink" href="#scale_down_delay" title="Permanent link">&para;</a></h4>
+<h3 id="dstack.api.BackendType"><code>dstack.api.BackendType</code><a class="headerlink" href="#dstack.api.BackendType" title="Permanent link">&para;</a></h3>
 
 
 <div class="doc doc-object doc-class">
@@ -5073,7 +6025,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <nav class="md-footer__inner md-grid" aria-label="Footer" >
             
               
-              <a href="../../profiles.yml/" class="md-footer__link md-footer__link--prev" aria-label="Previous: profiles.yml">
+              <a href="../../cli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CLI">
                 <div class="md-footer__button md-icon">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -5083,7 +6035,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
                     Previous
                   </span>
                   <div class="md-ellipsis">
-                    profiles.yml
+                    CLI
                   </div>
                 </div>
               </a>

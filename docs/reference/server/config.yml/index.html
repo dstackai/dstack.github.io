@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24+insiders-4.53.10">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25+insiders-4.53.11">
     
     
       
@@ -1265,6 +1265,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#vpc_name" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1280,6 +1291,17 @@
     <span class="md-ellipsis">
       
         vpc_ids
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default_vpcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_vpcs
       
     </span>
   </a>
@@ -2282,33 +2304,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../profiles.yml/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    profiles.yml
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -2322,10 +2317,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2342,8 +2337,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3005,6 +3000,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#vpc_name" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3020,6 +3026,17 @@
     <span class="md-ellipsis">
       
         vpc_ids
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default_vpcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        default_vpcs
       
     </span>
   </a>
@@ -4293,9 +4310,11 @@ of the corresponding security group:</p>
 <h4 class="reference-item" id="backends"><code>backends</code> -  The list of backends.<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
 <h2 id="aws"><code>projects[n].backends[type=aws]</code><a class="headerlink" href="#aws" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="type"><code>type</code> -  The type of the backend. Must be <code>aws</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="vpc_name"><code>vpc_name</code> - (Optional) The VPC name.<a class="headerlink" href="#vpc_name" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="vpc_ids"><code>vpc_ids</code> - (Optional) The mapping from AWS regions to VPC IDs.<a class="headerlink" href="#vpc_ids" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. Defaults to <code>true</code>..<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The list of AWS regions.<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="vpc_name"><code>vpc_name</code> - (Optional) The VPC name. All configured regions must have a VPC with this name.<a class="headerlink" href="#vpc_name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="vpc_ids"><code>vpc_ids</code> - (Optional) The mapping from AWS regions to VPC IDs. If <code>default_vpcs: true</code>, omitted regions will use default VPCs.<a class="headerlink" href="#vpc_ids" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="default_vpcs"><code>default_vpcs</code> - (Optional) A flag to enable/disable using default VPCs in regions not configured by <code>vpc_ids</code>. Set to <code>false</code> if default VPCs should never be used. Defaults to <code>true</code>.<a class="headerlink" href="#default_vpcs" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#aws-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="aws-creds"><code>projects[n].backends[type=aws].creds</code><a class="headerlink" href="#aws-creds" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Access key</label><label for="__tabbed_6_2">Default</label></div>

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24+insiders-4.53.10">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25+insiders-4.53.11">
     
     
       
@@ -1546,6 +1546,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_retry_policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2064,33 +2075,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../profiles.yml/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    profiles.yml
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -2104,10 +2088,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2124,8 +2108,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2935,6 +2919,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_retry_policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3495,7 +3490,7 @@ from the model's repository. If it is not present there, manual configuration is
 </details>
 <h3 id="replicas-and-auto-scaling">Replicas and auto-scaling<a class="headerlink" href="#replicas-and-auto-scaling" title="Permanent link">&para;</a></h3>
 <p>By default, <code>dstack</code> runs a single replica of the service.
-You can configure the number of replicas as well as the auto-scaling policy.</p>
+You can configure the number of replicas as well as the auto-scaling rules.</p>
 <div editor-title="serve.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
@@ -3526,7 +3521,12 @@ You can configure the number of replicas as well as the auto-scaling policy.</p>
 
 </div>
 
-<p>If you specify the minimum number of replicas as <code>0</code>, the service will scale down to zero when there are no requests.</p>
+<p>The <a href="#replicas"><code>replicas</code></a> property can be a number or a range.</p>
+<blockquote>
+<p>The <a href="#metric"><code>metric</code></a> property of <a href="#scaling"><code>scaling</code></a> only supports the <code>rps</code> metric (requests per second). In this 
+case <code>dstack</code> adjusts the number of replicas (scales up or down) automatically based on the load. </p>
+</blockquote>
+<p>Setting the minimum number of replicas to <code>0</code> allows the service to scale down to zero when there are no requests.</p>
 <h3 id="_resources">Resources<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h3>
 <p>If you specify memory size, you can either specify an explicit size (e.g. <code>24GB</code>) or a 
 range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</code>).</p>
@@ -3689,8 +3689,8 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <h4 class="reference-item" id="model"><code>model</code> - (Optional) Mapping of the model for the OpenAI-compatible endpoint.<a class="headerlink" href="#model" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="https"><code>https</code> - (Optional) Enable HTTPS. Defaults to <code>True</code>.<a class="headerlink" href="#https" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="auth"><code>auth</code> - (Optional) Enable the authorization. Defaults to <code>True</code>.<a class="headerlink" href="#auth" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="replicas"><code>replicas</code> - (Optional) The range . Defaults to <code>1</code>.<a class="headerlink" href="#replicas" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_scaling"><a href="#scaling"><code>scaling</code></a> - (Optional) The auto-scaling configuration.<a class="headerlink" href="#_scaling" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="replicas"><code>replicas</code> - (Optional) The number of replicas. Can be a number (e.g. <code>2</code>) or a range (<code>0..4</code> or <code>1..8</code>). If it's a range, the <code>scaling</code> property is required. Defaults to <code>1</code>.<a class="headerlink" href="#replicas" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_scaling"><a href="#scaling"><code>scaling</code></a> - (Optional) The auto-scaling rules. Required if <code>replicas</code> is set to a range.<a class="headerlink" href="#_scaling" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="home_dir"><code>home_dir</code> - (Optional) The absolute path to the home directory inside the container. Defaults to <code>/root</code>.<a class="headerlink" href="#home_dir" title="Permanent link">&para;</a></h4>
@@ -3704,7 +3704,8 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisionig (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisionig (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for re-submitting the run.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for resubmitting the run. Deprecated in favor of <code>retry</code>.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="max_duration"><code>max_duration</code> - (Optional) The maximum duration of a run (e.g., <code>2h</code>, <code>1d</code>, etc). After it elapses, the run is forced to stop. Defaults to <code>off</code>.<a class="headerlink" href="#max_duration" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="max_price"><code>max_price</code> - (Optional) The maximum price per hour, in dollars.<a class="headerlink" href="#max_price" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="pool_name"><code>pool_name</code> - (Optional) The name of the pool. If not set, dstack will use the default name.<a class="headerlink" href="#pool_name" title="Permanent link">&para;</a></h4>
@@ -3715,10 +3716,10 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <h2 id="model_1"><code>model</code><a class="headerlink" href="#model_1" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="type"><code>type</code> -  The type of the model.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="name"><code>name</code> -  The name of the model.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="format"><code>format</code> -  The serving format.<a class="headerlink" href="#format" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="format"><code>format</code> -  The serving format. Supported values include <code>openai</code> and <code>tgi</code>.<a class="headerlink" href="#format" title="Permanent link">&para;</a></h4>
 <h2 id="scaling"><code>scaling</code><a class="headerlink" href="#scaling" title="Permanent link">&para;</a></h2>
-<h4 class="reference-item" id="metric"><code>metric</code> -  The target metric to track.<a class="headerlink" href="#metric" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="target"><code>target</code> -  The target value of the metric.<a class="headerlink" href="#target" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="metric"><code>metric</code> -  The target metric to track. Currently, the only supported value is <code>rps</code> (meaning requests per second).<a class="headerlink" href="#metric" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="target"><code>target</code> -  The target value of the metric. The number of replicas is calculated based on this number and automatically adjusts (scales up or down) as this metric changes.<a class="headerlink" href="#target" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="scale_up_delay"><code>scale_up_delay</code> - (Optional) The delay in seconds before scaling up. Defaults to <code>300</code>.<a class="headerlink" href="#scale_up_delay" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="scale_down_delay"><code>scale_down_delay</code> - (Optional) The delay in seconds before scaling down. Defaults to <code>600</code>.<a class="headerlink" href="#scale_down_delay" title="Permanent link">&para;</a></h4>
 <h2 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
@@ -3730,8 +3731,8 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <h2 id="resources-gpu"><code>resouces.gpu</code><a class="headerlink" href="#resources-gpu" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The GPU name or list of names.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="count"><code>count</code> - (Optional) The number of GPUs. Defaults to <code>1</code>.<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The VRAM size (e.g., <code>16GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total VRAM size (e.g., <code>32GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>16GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total RAM size (e.g., <code>32GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="compute_capability"><code>compute_capability</code> - (Optional) The minimum compute capability of the GPU (e.g., <code>7.5</code>).<a class="headerlink" href="#compute_capability" title="Permanent link">&para;</a></h4>
 <h2 id="resources-disk"><code>resouces.disk</code><a class="headerlink" href="#resources-disk" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="size"><code>size</code> -  The disk size. Can be a string (e.g., <code>100GB</code> or <code>100GB..</code>) or an object; see <a href="#examples">examples</a>.<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>

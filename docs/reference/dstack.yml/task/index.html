@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24+insiders-4.53.10">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25+insiders-4.53.11">
     
     
       
@@ -1469,6 +1469,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_retry_policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1903,33 +1914,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../profiles.yml/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    profiles.yml
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -1943,10 +1927,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1963,8 +1947,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2724,6 +2708,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_retry_policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3360,7 +3355,8 @@ is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NO
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisionig (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisionig (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for re-submitting the run.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for resubmitting the run. Deprecated in favor of <code>retry</code>.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="max_duration"><code>max_duration</code> - (Optional) The maximum duration of a run (e.g., <code>2h</code>, <code>1d</code>, etc). After it elapses, the run is forced to stop. Defaults to <code>off</code>.<a class="headerlink" href="#max_duration" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="max_price"><code>max_price</code> - (Optional) The maximum price per hour, in dollars.<a class="headerlink" href="#max_price" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="pool_name"><code>pool_name</code> - (Optional) The name of the pool. If not set, dstack will use the default name.<a class="headerlink" href="#pool_name" title="Permanent link">&para;</a></h4>
@@ -3377,8 +3373,8 @@ is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NO
 <h2 id="resources-gpu"><code>resouces.gpu</code><a class="headerlink" href="#resources-gpu" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The GPU name or list of names.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="count"><code>count</code> - (Optional) The number of GPUs. Defaults to <code>1</code>.<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The VRAM size (e.g., <code>16GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total VRAM size (e.g., <code>32GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>16GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="total_memory"><code>total_memory</code> - (Optional) The total RAM size (e.g., <code>32GB</code>). Can be set to a range (e.g. <code>16GB..</code>, or <code>16GB..80GB</code>).<a class="headerlink" href="#total_memory" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="compute_capability"><code>compute_capability</code> - (Optional) The minimum compute capability of the GPU (e.g., <code>7.5</code>).<a class="headerlink" href="#compute_capability" title="Permanent link">&para;</a></h4>
 <h2 id="resources-disk"><code>resouces.disk</code><a class="headerlink" href="#resources-disk" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="size"><code>size</code> -  The disk size. Can be a string (e.g., <code>100GB</code> or <code>100GB..</code>) or an object; see <a href="#examples">examples</a>.<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>

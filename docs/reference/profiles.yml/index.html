@@ -15,17 +15,17 @@
         <link rel="canonical" href="https://dstack.ai/docs/reference/profiles.yml/">
       
       
-        <link rel="prev" href="../cli/">
+        <link rel="prev" href="../dstack.yml/gateway/">
       
       
-        <link rel="next" href="../api/python/">
+        <link rel="next" href="../cli/">
       
       
         
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24+insiders-4.53.10">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25+insiders-4.53.11">
     
     
       
@@ -1288,6 +1288,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_retry_policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1403,22 +1414,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#retry_policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        retry_policy
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="retry_policy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#retry" class="md-nav__link">
     <span class="md-ellipsis">
       
         retry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="retry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_events
       
     </span>
   </a>
@@ -1481,304 +1492,6 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    profiles.yml
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    profiles.yml
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Example
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#root-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Root reference
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Root reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#backends" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        backends
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        regions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instance_types" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        instance_types
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spot_policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        spot_policy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_retry_policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        retry_policy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#max_duration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        max_duration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#max_price" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        max_price
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pool_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        pool_name
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instance_name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        instance_name
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creation_policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        creation_policy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#termination_policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        termination_policy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#termination_idle_time" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        termination_idle_time
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#name" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        name
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        default
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#retry_policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        retry_policy
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="retry_policy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#retry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        retry
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#duration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        duration
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     
@@ -1794,10 +1507,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1814,8 +1527,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2307,6 +2020,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_retry_policy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2422,22 +2146,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#retry_policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        retry_policy
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="retry_policy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#retry" class="md-nav__link">
     <span class="md-ellipsis">
       
         retry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="retry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_events
       
     </span>
   </a>
@@ -2514,7 +2238,8 @@ via <code>--profile NAME</code> in <code>dstack run</code>.</p>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisionig (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisionig (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for re-submitting the run.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for resubmitting the run. Deprecated in favor of <code>retry</code>.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="max_duration"><code>max_duration</code> - (Optional) The maximum duration of a run (e.g., <code>2h</code>, <code>1d</code>, etc). After it elapses, the run is forced to stop. Defaults to <code>off</code>.<a class="headerlink" href="#max_duration" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="max_price"><code>max_price</code> - (Optional) The maximum price per hour, in dollars.<a class="headerlink" href="#max_price" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="pool_name"><code>pool_name</code> - (Optional) The name of the pool. If not set, dstack will use the default name.<a class="headerlink" href="#pool_name" title="Permanent link">&para;</a></h4>
@@ -2524,8 +2249,8 @@ via <code>--profile NAME</code> in <code>dstack run</code>.</p>
 <h4 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Time to wait before destroying the idle instance. Defaults to <code>5m</code> for <code>dstack run</code> and to <code>3d</code> for <code>dstack pool add</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="name"><code>name</code> -  The name of the profile that can be passed as <code>--profile</code> to <code>dstack run</code>.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="default"><code>default</code> - (Optional) If set to true, <code>dstack run</code> will use this profile by default..<a class="headerlink" href="#default" title="Permanent link">&para;</a></h4>
-<h3 id="retry_policy"><code>retry_policy</code><a class="headerlink" href="#retry_policy" title="Permanent link">&para;</a></h3>
-<h4 class="reference-item" id="retry"><code>retry</code> - (Optional) Whether to retry the run on failure or not.<a class="headerlink" href="#retry" title="Permanent link">&para;</a></h4>
+<h3 id="retry"><code>retry</code><a class="headerlink" href="#retry" title="Permanent link">&para;</a></h3>
+<h4 class="reference-item" id="on_events"><code>on_events</code> -  The list of events that should be handled with retry. Supported events are <code>no-capacity</code>, <code>interruption</code>, and <code>error</code>.<a class="headerlink" href="#on_events" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="duration"><code>duration</code> - (Optional) The maximum period of retrying the run, e.g., <code>4h</code> or <code>1d</code>.<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h4>
 
 
@@ -2547,7 +2272,7 @@ via <code>--profile NAME</code> in <code>dstack run</code>.</p>
           <nav class="md-footer__inner md-grid" aria-label="Footer" >
             
               
-              <a href="../cli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CLI">
+              <a href="../dstack.yml/gateway/" class="md-footer__link md-footer__link--prev" aria-label="Previous: gateway">
                 <div class="md-footer__button md-icon">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2557,20 +2282,20 @@ via <code>--profile NAME</code> in <code>dstack run</code>.</p>
                     Previous
                   </span>
                   <div class="md-ellipsis">
-                    CLI
+                    gateway
                   </div>
                 </div>
               </a>
             
             
               
-              <a href="../api/python/" class="md-footer__link md-footer__link--next" aria-label="Next: Python API">
+              <a href="../cli/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
                 <div class="md-footer__title">
                   <span class="md-footer__direction">
                     Next
                   </span>
                   <div class="md-ellipsis">
-                    Python API
+                    CLI
                   </div>
                 </div>
                 <div class="md-footer__button md-icon">
