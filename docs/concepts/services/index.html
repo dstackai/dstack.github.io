@@ -219,7 +219,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -1987,12 +1987,12 @@ on how <code>dstack run</code> works.</p>
 </blockquote>
 <h2 id="service-endpoint">Service endpoint<a class="headerlink" href="#service-endpoint" title="Permanent link">&para;</a></h2>
 <p>One the service is up, its endpoint is accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
-<p>By default, the service endpoint requires the <code>Authorization</code> header with <code>"Bearer &lt;dstack token&gt;"</code>. </p>
+<p>By default, the service endpoint requires the <code>Authorization</code> header with <code>Bearer &lt;dstack token&gt;</code>. </p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://yellow-cat-1.example.com/v1/chat/completions<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: &quot;Bearer &amp;lt;dstack token&amp;gt;&quot;&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &amp;lt;dstack token&amp;gt;&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">        &quot;model&quot;: &quot;NousResearch/Llama-2-7b-chat-hf&quot;,</span>
 <span class="s1">        &quot;messages&quot;: [</span>
