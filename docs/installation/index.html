@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26+insiders-4.53.11">
     
     
       
@@ -725,12 +725,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#set-up-the-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -741,15 +736,46 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Set up the CLI">
-      <ul class="md-nav__list">
+</li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dstack-sky" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
           dstack Sky
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dstack Sky">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-cli_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Set up the CLI
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-backends_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Configure backends
         </span>
       
     </span>
@@ -1842,12 +1868,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#set-up-the-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1858,15 +1879,46 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Set up the CLI">
-      <ul class="md-nav__list">
+</li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dstack-sky" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
           dstack Sky
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dstack Sky">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-cli_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Set up the CLI
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-backends_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Configure backends
         </span>
       
     </span>
@@ -1918,10 +1970,12 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<p>To use the open-source version of <code>dstack</code> (which is self-hosted to use your own cloud accounts or data centers), 
+go ahead and <a href="#set-up-the-server">set up the server</a>. </p>
+<p>To use <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>
+(a managed service that allows you to use either GPUs via marketplace, or connect to your own cloud accounts or data centers), 
+proceed to <a href="#dstack-sky">dstack Sky</a>.</p>
 <h2 id="set-up-the-server">Set up the server<a class="headerlink" href="#set-up-the-server" title="Permanent link">&para;</a></h2>
-<p>To use the open-source version of <code>dstack</code>, you first have to set up the server.
-If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
-skip this section and proceed to <a href="#set-up-the-cli">set up the CLI</a>.</p>
 <h3 id="configure-backends">Configure backends<a class="headerlink" href="#configure-backends" title="Permanent link">&para;</a></h3>
 <p>Before starting the <code>dstack</code> server, create <code>~/.dstack/server/config.yml</code> and
 configure a backend for each cloud account that you'd like to use.</p>
@@ -1978,7 +2032,7 @@ The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </sp
 </div>
 </div>
 <p>Once the <code>dstack</code> server is up, feel free to use the CLI or API to work with it.</p>
-<h2 id="set-up-the-cli">Set up the CLI<a class="headerlink" href="#set-up-the-cli" title="Permanent link">&para;</a></h2>
+<h3 id="set-up-the-cli">Set up the CLI<a class="headerlink" href="#set-up-the-cli" title="Permanent link">&para;</a></h3>
 <p>To point the CLI to the <code>dstack</code> server, configure it
 with the server address, user token and project name:</p>
 <div class="termy">
@@ -1994,10 +2048,30 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 </div>
 
 <p>This configuration is stored in <code>~/.dstack/config.yml</code>.</p>
-<h3 id="dstack-sky">dstack Sky<a class="headerlink" href="#dstack-sky" title="Permanent link">&para;</a></h3>
-<p>If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
-find the server address, your project name, and user token in the settings of your project.</p>
-<p><img alt="" src="../../assets/images/dstack-cloud-config.png" width="800" /></p>
+<h2 id="dstack-sky">dstack Sky<a class="headerlink" href="#dstack-sky" title="Permanent link">&para;</a></h2>
+<h3 id="set-up-the-cli_1">Set up the CLI<a class="headerlink" href="#set-up-the-cli_1" title="Permanent link">&para;</a></h3>
+<p>If you've signed up with <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
+open the project settings, and copy the <code>dstack config</code> command to point the CLI to the project.</p>
+<p><img alt="" src="https://raw.githubusercontent.com/dstackai/static-assets/main/static-assets/images/dstack-sky-project-config.png" width="800" /></p>
+<p>Then, install the CLI on your machine and use the copied command.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dstack
+$<span class="w"> </span>dstack<span class="w"> </span>config<span class="w"> </span>--url<span class="w"> </span>https://sky.dstack.ai<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--project<span class="w"> </span>peterschmidt85<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--token<span class="w"> </span>bbae0f28-d3dd-4820-bf61-8f4bb40815da
+
+Configuration<span class="w"> </span>is<span class="w"> </span>updated<span class="w"> </span>at<span class="w"> </span>~/.dstack/config.yml
+</code></pre></div>
+
+</div>
+
+<h3 id="configure-backends_1">Configure backends<a class="headerlink" href="#configure-backends_1" title="Permanent link">&para;</a></h3>
+<p>By default, <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> 
+uses the GPU from its marketplace, which requires a credit card to be attached in your account
+settings.</p>
+<p>To use your own cloud accounts, click the settings icon of the corresponding backend and specify credentials:</p>
+<p><img alt="" src="https://raw.githubusercontent.com/dstackai/static-assets/main/static-assets/images/dstack-sky-edit-backend-config.png" width="800" /></p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../reference/server/config.yml/"><code>server/config.yml</code> reference</a> on how to configure backends</li>
@@ -2161,7 +2235,7 @@ find the server address, your project name, and user token in the settings of yo
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.e3055991.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6e7f53b1.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26+insiders-4.53.11">
     
     
       
@@ -1938,10 +1938,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#key_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        key_file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#key_content" class="md-nav__link">
     <span class="md-ellipsis">
       
         key_content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass_phrase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pass_phrase
       
     </span>
   </a>
@@ -3885,10 +3907,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#key_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        key_file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#key_content" class="md-nav__link">
     <span class="md-ellipsis">
       
         key_content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass_phrase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pass_phrase
       
     </span>
   </a>
@@ -4388,7 +4432,7 @@ configure the backend.</p>
 <details class="info">
 <summary>Private subnets</summary>
 <p>By default, <code>dstack</code> utilizes public subnets and permits inbound SSH traffic exclusively for any provisioned instances.
-If you want <code>dstack</code> to use private subnets, set <code>private_ips</code> to <code>false</code>."</p>
+If you want <code>dstack</code> to use private subnets, set <code>public_ips</code> to <code>false</code>."</p>
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="w">    </span><span class="nt">backends</span><span class="p">:</span>
@@ -4396,7 +4440,7 @@ If you want <code>dstack</code> to use private subnets, set <code>private_ips</c
 <span class="w">        </span><span class="nt">creds</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 
-<span class="w">        </span><span class="nt">private_ips</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="nt">public_ips</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 <p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets 
 (e.g., through VPC peering).</p>
@@ -4604,8 +4648,8 @@ compute.zoneOperations.get
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Log into the <a href="https://cloud.oracle.com">OCI Console <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>, go to <code>My profile</code>, 
-select <code>API keys</code>, anc click <code>Add API key</code>.</p>
-<p>Once created, you'll see the configuration file. Copy its values to configure the backend as follows:</p>
+select <code>API keys</code>, and click <code>Add API key</code>.</p>
+<p>Once you add a key, you'll see the configuration file. Copy its values to configure the backend as follows:</p>
 <div editor-title="~/.dstack/server/config.yml">
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
@@ -4617,17 +4661,10 @@ select <code>API keys</code>, anc click <code>Add API key</code>.</p>
 <span class="w">      </span><span class="nt">tenancy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ocid1.tenancy.oc1..ajqsftvk4qarcfaak3ha4ycdsaahxmaita5frdwg3tqo2bcokpd3n7oizwai</span>
 <span class="w">      </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eu-frankfurt-1</span>
 <span class="w">      </span><span class="nt">fingerprint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">77:32:77:00:49:7c:cb:56:84:75:8e:77:96:7d:53:17</span>
-<span class="w">      </span><span class="nt">key_content</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">        </span><span class="no">-----BEGIN PRIVATE KEY-----</span>
-<span class="w">        </span><span class="no">MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDcp9beQPfM/Kwj</span>
-<span class="w">        </span><span class="no">DkE2ZrtFJccWxzMEQLn5ulDkNIhsx1q2t3KbYMHht0UgrtdWzCujxE1kg3fDxUuQ</span>
-<span class="w">        </span><span class="no">...</span>
-<span class="w">        </span><span class="no">msDimnquNtbXho5QP0GhWXcJwbHvS2u+Kp0V1HX2jY3r78479hfveTvC4yQ5/kBr</span>
-<span class="w">        </span><span class="no">aFbZPi45n5lKl+ElwK+YNAQ=</span>
-<span class="w">        </span><span class="no">-----END PRIVATE KEY-----</span>
+<span class="w">      </span><span class="nt">key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.oci/private_key.pem</span>
 </code></pre></div>
 </div>
-<p>Make sure to include the contents of your private key in the backend configuration via <code>key_content</code>.</p>
+<p>Make sure to include either the path to your private key via <code>key_file</code> or the contents of the key via <code>key_content</code>.</p>
 </div>
 <div class="tabbed-block">
 <p>If you have default credentials set up in <code>~/.oci/config</code>, configure the backend like this:</p>
@@ -4892,8 +4929,8 @@ of the corresponding security group:</p>
 <h2 id="oci"><code>projects[n].backends[type=oci]</code><a class="headerlink" href="#oci" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="type"><code>type</code> -  The type of backend. Must be <code>oci</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#oci-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="regions"><code>regions</code> - (Optional) List of region names for running dstack jobs. Omit to use all regions.<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="compartment_id"><code>compartment_id</code> - (Optional) Compartment where dstack will create all resources. Omit to instruct dstack to create a new compartment.<a class="headerlink" href="#compartment_id" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="regions"><code>regions</code> - (Optional) List of region names for running <code>dstack</code> jobs. Omit to use all regions.<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="compartment_id"><code>compartment_id</code> - (Optional) Compartment where <code>dstack</code> will create all resources. Omit to instruct <code>dstack</code> to create a new compartment.<a class="headerlink" href="#compartment_id" title="Permanent link">&para;</a></h4>
 <h2 id="oci-creds"><code>projects[n].backends[type=oci].creds</code><a class="headerlink" href="#oci-creds" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Client</label><label for="__tabbed_11_2">Default</label></div>
 <div class="tabbed-content">
@@ -4901,7 +4938,9 @@ of the corresponding security group:</p>
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>client</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="user"><code>user</code> -  User OCID.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="tenancy"><code>tenancy</code> -  Tenancy OCID.<a class="headerlink" href="#tenancy" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="key_content"><code>key_content</code> -  Content of the user's private PEM key.<a class="headerlink" href="#key_content" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="key_file"><code>key_file</code> - (Optional) Path to the user's private PEM key. Either this or <code>key_content</code> should be set.<a class="headerlink" href="#key_file" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="key_content"><code>key_content</code> - (Optional) Content of the user's private PEM key. Either this or <code>key_file</code> should be set.<a class="headerlink" href="#key_content" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="pass_phrase"><code>pass_phrase</code> - (Optional) Passphrase for the private PEM key if it is encrypted.<a class="headerlink" href="#pass_phrase" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="fingerprint"><code>fingerprint</code> -  User's public key fingerprint.<a class="headerlink" href="#fingerprint" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="region"><code>region</code> -  Name or key of any region the tenancy is subscribed to.<a class="headerlink" href="#region" title="Permanent link">&para;</a></h4>
 </div>
@@ -5091,7 +5130,7 @@ of the corresponding security group:</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.e3055991.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.6e7f53b1.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       
