@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models.">
+        <meta name="description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center.">
       
       
         <meta name="author" content="dstack GmbH">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27+insiders-4.53.11">
     
     
       
@@ -90,7 +90,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="server/config.yml - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
+<meta property="og:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/docs/reference/server/config.yml.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -98,7 +98,7 @@
 <meta property="og:url" content="https://dstack.ai/docs/reference/server/config.yml/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="server/config.yml - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
+<meta property="twitter:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/reference/server/config.yml.png" />
 </head>
   
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Get the best rate for cloud GPU with dstack Sky! <a href="/#get-started">Learn more</a>.
+🔥 Access GPUs at the best rate with dstack Sky! <a href="/#get-started">Learn more</a>.
 
           </div>
           
@@ -1670,6 +1670,17 @@
     <span class="md-ellipsis">
       
         vpc_project_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public_ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        public_ips
       
     </span>
   </a>
@@ -3646,6 +3657,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#public_ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        public_ips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_creds" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4432,7 +4454,7 @@ configure the backend.</p>
 <details class="info">
 <summary>Private subnets</summary>
 <p>By default, <code>dstack</code> utilizes public subnets and permits inbound SSH traffic exclusively for any provisioned instances.
-If you want <code>dstack</code> to use private subnets, set <code>public_ips</code> to <code>false</code>."</p>
+If you want <code>dstack</code> to use private subnets, set <code>public_ips</code> to <code>false</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="w">    </span><span class="nt">backends</span><span class="p">:</span>
@@ -4549,10 +4571,7 @@ gcloud<span class="w"> </span>services<span class="w"> </span><span class="nb">e
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Service account</label><label for="__tabbed_4_2">Default credentials</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>To create a service account, follow <a href="https://cloud.google.com/iam/docs/service-accounts-create">this guide <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>.
-Make sure to grant it the <code>Service Account User</code> and <code>Compute Admin</code> roles.</p>
-<p>After setting up the service account <a href="https://cloud.google.com/iam/docs/keys-create-delete">create a key <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> for it
-and download the corresponding JSON file.</p>
+<p>To create a service account, follow <a href="https://cloud.google.com/iam/docs/service-accounts-create">this guide <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>. After setting up the service account <a href="https://cloud.google.com/iam/docs/keys-create-delete">create a key <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> for it and download the corresponding JSON file.</p>
 <p>Then go ahead and configure the backend by specifying the downloaded file path.</p>
 <div editor-title="~/.dstack/server/config.yml">
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
@@ -4567,6 +4586,10 @@ and download the corresponding JSON file.</p>
 </div>
 </div>
 <div class="tabbed-block">
+<p>Enable GCP application default credentials:</p>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>auth<span class="w"> </span>application-default<span class="w"> </span>login<span class="w"> </span>
+</code></pre></div>
+<p>Then configure the backend like this:</p>
 <div editor-title="~/.dstack/server/config.yml">
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
@@ -4642,6 +4665,33 @@ compute.subnetworks.useExternalIp
 compute.zoneOperations.get
 </code></pre></div>
 </details>
+<details class="info">
+<summary>Permissions for running TPUs</summary>
+<p>Running TPUs also requires the following permissions:</p>
+<div class="highlight"><pre><span></span><code>tpu.nodes.create
+tpu.nodes.delete
+tpu.nodes.get
+tpu.operations.get
+tpu.operations.list
+</code></pre></div>
+<p>You also need to have the <code>serviceAccountUser</code> role granted.
+<code>dstack</code> will run TPUs under the default service account, so you don't need to create one.</p>
+</details>
+<details class="info">
+<summary>Private subnets</summary>
+<p>By default, <code>dstack</code> utilizes public subnets and permits inbound SSH traffic exclusively for any provisioned instances.
+If you want <code>dstack</code> to use private subnets, set <code>public_ips</code> to <code>false</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">    </span><span class="nt">backends</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp</span>
+<span class="w">        </span><span class="nt">creds</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+
+<span class="w">        </span><span class="nt">public_ips</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets (e.g., through VPC peering). Additionally, <a href="https://cloud.google.com/nat/docs/overview">Cloud NAT</a> must be configured to provide access to external resources for provisioned instances.</p>
+</details>
 <h3 id="oci_1">OCI<a class="headerlink" href="#oci_1" title="Permanent link">&para;</a></h3>
 <p>There are two ways to configure OCI: using client credentials or using the default credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Client credentials</label><label for="__tabbed_6_2">Default credentials</label></div>
@@ -4682,7 +4732,24 @@ select <code>API keys</code>, and click <code>Add API key</code>.</p>
 </div>
 <details class="info">
 <summary>Required OCI permissions</summary>
-<div class="highlight"><pre><span></span><code>ALLOW GROUP Administrators to manage all-resources IN TENANCY
+<p>This is an example of a restrictive policy for a group of <code>dstack</code> users:</p>
+<div class="highlight"><pre><span></span><code>Allow group &lt;dstack-users&gt; to read compartments in tenancy where target.compartment.name = &#39;&lt;dstack-compartment&gt;&#39;
+Allow group &lt;dstack-users&gt; to read marketplace-community-listings in compartment &lt;dstack-compartment&gt;
+Allow group &lt;dstack-users&gt; to manage app-catalog-listing in compartment &lt;dstack-compartment&gt;
+Allow group &lt;dstack-users&gt; to manage instances in compartment &lt;dstack-compartment&gt;
+Allow group &lt;dstack-users&gt; to manage compute-capacity-reports in compartment &lt;dstack-compartment&gt;
+Allow group &lt;dstack-users&gt; to manage volumes in compartment &lt;dstack-compartment&gt;
+Allow group &lt;dstack-users&gt; to manage volume-attachments in compartment &lt;dstack-compartment&gt;
+Allow group &lt;dstack-users&gt; to manage virtual-network-family in compartment &lt;dstack-compartment&gt;
+</code></pre></div>
+<p>To use this policy, create a compartment for <code>dstack</code> and specify it in <code>~/.dstack/server/config.yml</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">  </span><span class="nt">backends</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oci</span>
+<span class="w">    </span><span class="nt">creds</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">    </span><span class="nt">compartment_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ocid1.compartment.oc1..aaaaaaaa</span>
 </code></pre></div>
 </details>
 <h3 id="lambda_1">Lambda<a class="headerlink" href="#lambda_1" title="Permanent link">&para;</a></h3>
@@ -4906,6 +4973,7 @@ of the corresponding security group:</p>
 <h4 class="reference-item" id="project_id"><code>project_id</code> -  The project ID.<a class="headerlink" href="#project_id" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="vpc_name"><code>vpc_name</code> - (Optional) The VPC name.<a class="headerlink" href="#vpc_name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="vpc_project_id"><code>vpc_project_id</code> - (Optional) The shared VPC hosted project ID. Required for shared VPC only.<a class="headerlink" href="#vpc_project_id" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#gcp-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="gcp-creds"><code>projects[n].backends[type=gcp].creds</code><a class="headerlink" href="#gcp-creds" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Service account</label><label for="__tabbed_10_2">Default</label></div>
@@ -5110,7 +5178,7 @@ of the corresponding security group:</p>
 
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Company</div>
-                    <a href="https://calendly.com/dstackai/discovery-call" target="_blank" class="tx-footer__section-link external">Book a demo</a>
+                    <a href="https://calendly.com/dstackai/discovery-call" target="_blank" class="tx-footer__section-link external">Talk to an expert</a>
                     <a href="/terms" class="tx-footer__section-link">Terms</a>
                     <a href="/privacy" class="tx-footer__section-link">Privacy</a>
                 </div>

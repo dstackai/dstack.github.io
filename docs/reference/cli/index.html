@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models.">
+        <meta name="description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center.">
       
       
         <meta name="author" content="dstack GmbH">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27+insiders-4.53.11">
     
     
       
@@ -90,7 +90,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="CLI - dstack" />
-<meta property="og:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
+<meta property="og:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/docs/reference/cli/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -98,7 +98,7 @@
 <meta property="og:url" content="https://dstack.ai/docs/reference/cli/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="CLI - dstack" />
-<meta property="twitter:description" content="dstack is an open-source engine that automates infrastructure provisioning on any cloud — for development, training, and deployment of AI models." />
+<meta property="twitter:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/reference/cli/index.png" />
 </head>
   
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Get the best rate for cloud GPU with dstack Sky! <a href="/#get-started">Learn more</a>.
+🔥 Access GPUs at the best rate with dstack Sky! <a href="/#get-started">Learn more</a>.
 
           </div>
           
@@ -2348,7 +2348,7 @@ Options:
 <p>Pools allow for managing the lifecycle of instances and reusing them across runs. 
 The default pool is created automatically.</p>
 <h5 id="dstack-pool-add">dstack pool add<a class="headerlink" href="#dstack-pool-add" title="Permanent link">&para;</a></h5>
-<p>The <code>dstack pool add</code> command adds an instance to a pool. If no pool name is specified, the instance goes to the default pool.</p>
+<p>The <code>dstack pool add</code> command provisions a cloud instance and adds it to a pool. If no pool name is specified, the instance goes to the default pool.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span>--help
@@ -2404,6 +2404,35 @@ Resources:
 
 </div>
 
+<h5 id="dstack-pool-add-ssh">dstack pool add-ssh<a class="headerlink" href="#dstack-pool-add-ssh" title="Permanent link">&para;</a></h5>
+<p>The <code>dstack pool add-ssh</code> command adds an existing remote instance to a pool.
+If no pool name is specified, the instance goes to the default pool.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add-ssh<span class="w"> </span>--help
+Usage:<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add-ssh<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span>-i<span class="w"> </span>SSH_PRIVATE_KEY<span class="w"> </span><span class="o">[</span>-p<span class="w"> </span>SSH_PORT<span class="o">]</span>
+<span class="w">                           </span><span class="o">[</span>-l<span class="w"> </span>LOGIN_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--region<span class="w"> </span>REGION<span class="o">]</span>
+<span class="w">                           </span><span class="o">[</span>--pool<span class="w"> </span>POOL_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>INSTANCE_NAME<span class="o">]</span>
+<span class="w">                           </span><span class="o">[</span>--network<span class="w"> </span>NETWORK<span class="o">]</span>
+<span class="w">                           </span>destination
+
+Positional<span class="w"> </span>Arguments:
+<span class="w">  </span>destination
+
+Options:
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+<span class="w">  </span>-i<span class="w"> </span>SSH_PRIVATE_KEY<span class="w">    </span>The<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>SSH
+<span class="w">  </span>-p<span class="w"> </span>SSH_PORT<span class="w">           </span>SSH<span class="w"> </span>port<span class="w"> </span>to<span class="w"> </span>connect
+<span class="w">  </span>-l<span class="w"> </span>LOGIN_NAME<span class="w">         </span>User<span class="w"> </span>to<span class="w"> </span>login
+<span class="w">  </span>--region<span class="w"> </span>REGION<span class="w">       </span>Host<span class="w"> </span>region
+<span class="w">  </span>--pool<span class="w"> </span>POOL_NAME<span class="w">      </span>Pool<span class="w"> </span>name
+<span class="w">  </span>--name<span class="w"> </span>INSTANCE_NAME<span class="w">  </span>Set<span class="w"> </span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>instance
+<span class="w">  </span>--network<span class="w"> </span>NETWORK<span class="w">     </span>Network<span class="w"> </span>address<span class="w"> </span><span class="k">for</span><span class="w"> </span>multinode<span class="w"> </span>setup.<span class="w"> </span>Format<span class="w"> </span>&lt;ip
+<span class="w">                        </span>address&gt;/&lt;netmask&gt;
+</code></pre></div>
+
+</div>
+
 <h5 id="dstack-pool-ps">dstack pool ps<a class="headerlink" href="#dstack-pool-ps" title="Permanent link">&para;</a></h5>
 <p>The <code>dstack pool ps</code> command lists all active instances of a pool.
 If no pool name is specified, default pool instances are displayed.</p>
@@ -2423,6 +2452,27 @@ Options:
 
 </div>
 
+<h5 id="dstack-pool-rm">dstack pool rm<a class="headerlink" href="#dstack-pool-rm" title="Permanent link">&para;</a></h5>
+<p>The <code>dstack pool rm</code> command removes an instance from a pool.
+Cloud instances are terminated upon removal.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>rm<span class="w"> </span>--help
+Usage:<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>rm<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--pool<span class="w"> </span>POOL_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--force<span class="o">]</span><span class="w"> </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span>instance_name
+
+Positional<span class="w"> </span>Arguments:
+<span class="w">  </span>instance_name<span class="w">     </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>instance
+
+Options:
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">        </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+<span class="w">  </span>--pool<span class="w"> </span>POOL_NAME<span class="w">  </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>pool.<span class="w"> </span>If<span class="w"> </span>not<span class="w"> </span>set,<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>pool<span class="w"> </span>will<span class="w"> </span>be
+<span class="w">                    </span>used
+<span class="w">  </span>--force<span class="w">           </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>instance
+<span class="w">  </span>-y,<span class="w"> </span>--yes<span class="w">         </span>Don<span class="err">&#39;</span>t<span class="w"> </span>ask<span class="w"> </span><span class="k">for</span><span class="w"> </span>confirmation
+</code></pre></div>
+
+</div>
+
 <h5 id="dstack-pool-create">dstack pool create<a class="headerlink" href="#dstack-pool-create" title="Permanent link">&para;</a></h5>
 <p>The <code>dstack pool create</code> command creates a new pool.</p>
 <div class="termy">
@@ -2438,7 +2488,7 @@ Options:
 </div>
 
 <h5 id="dstack-pool-list">dstack pool list<a class="headerlink" href="#dstack-pool-list" title="Permanent link">&para;</a></h5>
-<p>The <code>dstack pool list</code> lists all existing pools.</p>
+<p>The <code>dstack pool list</code> command lists all existing pools.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>delete<span class="w"> </span>--help
@@ -2447,6 +2497,20 @@ Usage:<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w">
 Options:
 <span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
 <span class="w">  </span>-n,<span class="w"> </span>--name<span class="w"> </span>POOL_NAME<span class="w">  </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>pool
+</code></pre></div>
+
+</div>
+
+<h5 id="dstack-pool-set-default">dstack pool set-default<a class="headerlink" href="#dstack-pool-set-default" title="Permanent link">&para;</a></h5>
+<p>The <code>dstack pool set-default</code> command sets the project's default pool.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>set-default<span class="w"> </span>--help
+Usage:<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>set-default<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span>--pool<span class="w"> </span>POOL_NAME
+
+Options:
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">        </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+<span class="w">  </span>--pool<span class="w"> </span>POOL_NAME<span class="w">  </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>pool
 </code></pre></div>
 
 </div>
@@ -2755,7 +2819,7 @@ Options:
 
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Company</div>
-                    <a href="https://calendly.com/dstackai/discovery-call" target="_blank" class="tx-footer__section-link external">Book a demo</a>
+                    <a href="https://calendly.com/dstackai/discovery-call" target="_blank" class="tx-footer__section-link external">Talk to an expert</a>
                     <a href="/terms" class="tx-footer__section-link">Terms</a>
                     <a href="/privacy" class="tx-footer__section-link">Privacy</a>
                 </div>
