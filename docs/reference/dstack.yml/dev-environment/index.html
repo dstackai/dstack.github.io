@@ -316,7 +316,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-tabs__link">
+      <a href="/#examples" class="md-tabs__link">
         
   
     
@@ -2020,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-nav__link">
+      <a href="/#examples" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3077,6 +3077,17 @@ range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</co
 and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</code> (either A10G or A100), 
 <code>A100:80GB</code> (one A100 of 80GB), <code>A100:2</code> (two A100), <code>24GB..40GB:2</code> (two GPUs between 24GB and 40GB), 
 <code>A100:40GB:2</code> (two A100 GPUs of 40GB).</p>
+<details class="info">
+<summary>Google Cloud TPU</summary>
+<p>To use TPUs, specify its architecture prefixed by <code>tpu-</code> via the <code>gpu</code> property.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">tpu-v2-8</span>
+</code></pre></div>
+</details>
 <details class="info">
 <summary>Shared memory</summary>
 <p>If you are using parallel communicating processes (e.g., dataloaders in PyTorch), you may need to configure 

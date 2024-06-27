@@ -316,7 +316,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-tabs__link">
+      <a href="/#examples" class="md-tabs__link">
         
   
     
@@ -976,25 +976,25 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-on-prem-servers" class="md-nav__link">
+  <a href="#adding-on-prem-clusters" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Adding on-prem servers
+          Adding on-prem clusters
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Adding on-prem servers">
+    <nav class="md-nav" aria-label="Adding on-prem clusters">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#network" class="md-nav__link">
+  <a href="#clusters" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Network
+          Clusters
         </span>
       
     </span>
@@ -1489,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank" class="md-nav__link">
+      <a href="/#examples" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1856,25 +1856,25 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-on-prem-servers" class="md-nav__link">
+  <a href="#adding-on-prem-clusters" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Adding on-prem servers
+          Adding on-prem clusters
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Adding on-prem servers">
+    <nav class="md-nav" aria-label="Adding on-prem clusters">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#network" class="md-nav__link">
+  <a href="#clusters" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Network
+          Clusters
         </span>
       
     </span>
@@ -1952,7 +1952,7 @@ requirements, <code>dstack</code> automatically provisions a new cloud instance 
 <details class="info">
 <summary>Reuse policy</summary>
 <p>To avoid provisioning new cloud instances with <code>dstack run</code>, use <code>--reuse</code>. Your run will be assigned to an idle instance in
-the pool.</p>
+the pool. If there are no available idle instances in the pool, the run will fail.</p>
 </details>
 <details class="info">
 <summary>Idle duration</summary>
@@ -1988,7 +1988,7 @@ For more details on policies and their defaults, refer to <a href="../../referen
 <summary>Limitations</summary>
 <p>The <code>dstack pool add</code> command is not supported for Kubernetes, VastAI, and RunPod backends yet.</p>
 </details>
-<h3 id="adding-on-prem-servers">Adding on-prem servers<a class="headerlink" href="#adding-on-prem-servers" title="Permanent link">&para;</a></h3>
+<h3 id="adding-on-prem-clusters">Adding on-prem clusters<a class="headerlink" href="#adding-on-prem-clusters" title="Permanent link">&para;</a></h3>
 <p>Any on-prem server that can be accessed via SSH can be added to a pool and used to run workloads.</p>
 <p>To add on-prem servers to the pool, use the <code>dstack pool add-ssh</code> command and pass the hostname of your server along with
 the SSH key.</p>
@@ -2005,7 +2005,7 @@ the SSH key.</p>
 <p>The on-prem server should be pre-installed with CUDA 12.1 and NVIDIA Docker.</p>
 </div>
 <p>Once the instance is provisioned, you'll see it in the pool and will be able to run workloads on it.</p>
-<h4 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h4>
+<h4 id="clusters">Clusters<a class="headerlink" href="#clusters" title="Permanent link">&para;</a></h4>
 <p>If you want on-prem instances to run multi-node tasks, ensure these on-prem servers share the same private network.
 Additionally, you need to pass the <code>--network</code> option to <code>dstack pool add-ssh</code>:</p>
 <div class="termy">
