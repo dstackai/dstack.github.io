@@ -1930,10 +1930,11 @@ both acceptable).</p>
 
 <p>If you don't specify your Docker image, <code>dstack</code> uses the <a href="https://hub.docker.com/r/dstackai/base/tags">base</a> image
 (pre-configured with Python, Conda, and essential CUDA drivers).</p>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
 <p>See the <a href="../../reference/dstack.yml/dev-environment/">.dstack.yml reference</a>
-for many examples on dev envioronment configuration.</p>
-</blockquote>
+for all supported configuration options and multiple examples.</p>
+</div>
 <h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
 <p>To run a configuration, use the <a href="../../reference/cli/#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
 configuration file path, and other options.</p>
@@ -1963,10 +1964,11 @@ To<span class="w"> </span>open<span class="w"> </span><span class="k">in</span><
 <p>If there are large files or folders you'd like to avoid uploading, 
 you can list them in <code>.gitignore</code>.</p>
 </div>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
 <p>See the <a href="../../reference/cli/#dstack-run">CLI reference</a> for more details
 on how <code>dstack run</code> works.</p>
-</blockquote>
+</div>
 <h3 id="vs-code">VS Code<a class="headerlink" href="#vs-code" title="Permanent link">&para;</a></h3>
 <p>To open the dev environment in your desktop IDE, use the link from the output 
 (such as <code>vscode://vscode-remote/ssh-remote+fast-moth-1/workflow</code>).</p>

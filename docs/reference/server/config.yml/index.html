@@ -4842,18 +4842,15 @@ compute.subnetworks.use
 compute.subnetworks.useExternalIp
 compute.zoneOperations.get
 </code></pre></div>
-</details>
-<details class="info">
-<summary>Permissions for running TPUs</summary>
-<p>Running TPUs also requires the following permissions:</p>
+<p>If you plan to use TPUs, additional permissions are required:</p>
 <div class="highlight"><pre><span></span><code>tpu.nodes.create
 tpu.nodes.delete
 tpu.nodes.get
 tpu.operations.get
 tpu.operations.list
 </code></pre></div>
-<p>You also need to have the <code>serviceAccountUser</code> role granted.
-<code>dstack</code> will run TPUs under the default service account, so you don't need to create one.</p>
+<p>Also, the use of TPUs requires the <code>serviceAccountUser</code> role.
+For TPU VMs, dstack will use the default service account.</p>
 </details>
 <details class="info">
 <summary>Private subnets</summary>

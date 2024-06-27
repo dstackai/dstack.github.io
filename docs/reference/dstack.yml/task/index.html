@@ -3041,12 +3041,11 @@
 
 <h1 id="task">task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h1>
 <p>The <code>task</code> configuration type allows running <a href="../../../concepts/tasks/">tasks</a>.</p>
-<div class="admonition info">
-<p class="admonition-title">Filename</p>
+<blockquote>
 <p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>serve.dstack.yml</code> are both acceptable)
 and can be located in the project's root directory or any nested folder.
 Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run</code></a>.</p>
-</div>
+</blockquote>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h3>
 <p>If you don't specify <code>image</code>, <code>dstack</code> uses the default Docker image pre-configured with 
@@ -3166,10 +3165,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">tpu-v2-8</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Limitations</p>
-<p>Multi-node tasks aren't supported yet with TPU, but this support is coming soon.</p>
-</div>
+<p>Currently, only 8 TPU cores can be specified, supporting single TPU device workloads. Multi-TPU support is coming soon.</p>
 </details>
 <details class="info">
 <summary>Shared memory</summary>

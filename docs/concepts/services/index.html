@@ -1949,10 +1949,11 @@ are both acceptable).</p>
 <a href="../../reference/dstack.yml/service/#replicas-and-auto-scaling">number of replicas and scaling policy</a>.
 In this case, <code>dstack</code> auto-scales it based on the load.</p>
 </div>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
 <p>See the <a href="../../reference/dstack.yml/service/">.dstack.yml reference</a>
-for many examples on service configuration.</p>
-</blockquote>
+for all supported configuration options and multiple examples.</p>
+</div>
 <h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
 <p>To run a configuration, use the <a href="../../reference/cli/#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
 configuration file path, and any other options.</p>
@@ -1981,10 +1982,11 @@ Service<span class="w"> </span>is<span class="w"> </span>published<span class="w
 <p>If there are large files or folders you'd like to avoid uploading, 
 you can list them in <code>.gitignore</code>.</p>
 </div>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
 <p>See the <a href="../../reference/cli/#dstack-run">CLI reference</a> for more details
 on how <code>dstack run</code> works.</p>
-</blockquote>
+</div>
 <h2 id="service-endpoint">Service endpoint<a class="headerlink" href="#service-endpoint" title="Permanent link">&para;</a></h2>
 <p>One the service is up, its endpoint is accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
 <p>By default, the service endpoint requires the <code>Authorization</code> header with <code>Bearer &lt;dstack token&gt;</code>. </p>

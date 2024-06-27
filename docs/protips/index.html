@@ -1977,8 +1977,8 @@
 <p>Before running a task or service, it's recommended that you first start with a dev environment. Dev environments
 allow you to run commands interactively.</p>
 <p>Once the commands work, go ahead and run them as a task or a service.</p>
-<details class="tip">
-<summary>Jupyter</summary>
+<details class="info">
+<summary>Notebooks</summary>
 <p><strong>VS Code</strong></p>
 <p>When you access a dev environment using your desktop VS Code, it allows you to work with Jupyter notebooks via its
 pre-configured and easy-to-use extension.</p>
@@ -2057,15 +2057,15 @@ without assigning a value:</p>
 <p>Or via the <code>-e</code> option of the <code>dstack run</code> command:</p>
 <div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>.dstack.yml<span class="w"> </span>-e<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">.env</p>
+<details class="info">
+<summary>.env</summary>
 <p>A better way to configure environment variables not hardcoded in YAML is by specifying them in a <code>.env</code> file:</p>
 <div class="highlight"><pre><span></span><code>HUGGING_FACE_HUB_TOKEN=...
 </code></pre></div>
 <p>If you install <a href="https://direnv.net/" target="_blank"><code>direnv</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
 it will automatically pass the environment variables from the <code>.env</code> file to the <code>dstack run</code> command.</p>
 <p>Remember to add <code>.env</code> to <code>.gitignore</code> to avoid pushing it to the repo.    </p>
-</div>
+</details>
 <h3 id="idle-instances">Idle instances<a class="headerlink" href="#idle-instances" title="Permanent link">&para;</a></h3>
 <p>By default, the <code>dstack</code> run command reuses an idle instance from the pool. If no instance matches the requirements, it creates a new one.</p>
 <p>When the run finishes, the instance remains idle for the configured time (by default, <code>5m</code>) before it gets destroyed.</p>
@@ -2084,6 +2084,7 @@ This means it streams the logs as they come in and, in the case of a task, forwa
 <p>If you detach the CLI, you can re-attach it using <code>dstack logs -a RUN_NAME</code>.</p>
 <p>To run in detached mode, use <code>-d</code> with <code>dstack run</code>.</p>
 <h2 id="gpu">GPU<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h2>
+<p><code>dstack</code> natively supports NVIDIA GPU, and Google Cloud TPU accelerator chips.</p>
 <p>The <code>gpu</code> property withing <code>resources</code> (or the <code>--gpu</code> option with <code>dstack run</code>)
 allows specifying not only memory size but also GPU names, their memory, and quantity.</p>
 <p>Examples:</p>
@@ -2096,7 +2097,13 @@ allows specifying not only memory size but also GPU names, their memory, and qua
 <li><code>A100:80GB</code> (one A100 of 80GB)</li>
 <li><code>A100:2</code> (two A100)</li>
 <li><code>A100:40GB:2</code> (two A100 40GB)</li>
+<li><code>tpu-v5-8</code> (<code>v5</code> with 8 TPU cores)</li>
 </ul>
+<details class="info">
+<summary>Google Cloud TPU</summary>
+<p>Currently, you can't specify other than 8 TPU cores. This means only single TPU device workloads are supported.
+Support for multiple TPU devices is coming soon.</p>
+</details>
 <h2 id="service-quotas">Service quotas<a class="headerlink" href="#service-quotas" title="Permanent link">&para;</a></h2>
 <p>If you're using your own AWS, GCP, Azure, or OCI accounts, before you can use GPUs or spot instances, you have to request the
 corresponding service quotas for each type of instance in each region.</p>

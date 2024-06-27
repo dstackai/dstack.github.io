@@ -935,11 +935,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-dns-reconds" class="md-nav__link">
+  <a href="#updating-dns-records" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Updating DNS reconds
+          Updating DNS records
         </span>
       
     </span>
@@ -1804,11 +1804,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-dns-reconds" class="md-nav__link">
+  <a href="#updating-dns-records" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Updating DNS reconds
+          Updating DNS records
         </span>
       
     </span>
@@ -1888,10 +1888,11 @@ are both acceptable).</p>
 </div>
 
 <p>A domain name is required to create a gateway.</p>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
 <p>See the <a href="../../reference/dstack.yml/gateway/">.dstack.yml reference</a>
-for many examples on gateway configuration.</p>
-</blockquote>
+for all supported configuration options and examples.</p>
+</div>
 <h2 id="creating-and-updating-gateways">Creating and updating gateways<a class="headerlink" href="#creating-and-updating-gateways" title="Permanent link">&para;</a></h2>
 <p>To create or update the gateway, simply call the <a href="../../reference/cli/#dstack-apply"><code>dstack apply</code></a> command:</p>
 <div class="termy">
@@ -1906,7 +1907,7 @@ The<span class="w"> </span>example-gateway<span class="w"> </span>doesn<span cla
 
 </div>
 
-<h2 id="updating-dns-reconds">Updating DNS reconds<a class="headerlink" href="#updating-dns-reconds" title="Permanent link">&para;</a></h2>
+<h2 id="updating-dns-records">Updating DNS records<a class="headerlink" href="#updating-dns-records" title="Permanent link">&para;</a></h2>
 <p>Once the gateway is assigned a hostname, go to your domain's DNS settings
 and add an <code>A</code> DNS record for <code>*.&lt;gateway domain&gt;</code> (e.g., <code>*.example.com</code>) pointing to the gateway's hostname.</p>
 <p>This will allow you to access runs and models using this domain.</p>
