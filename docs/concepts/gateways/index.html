@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28+insiders-4.53.11">
     
     
       
@@ -1009,6 +1009,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volumes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Volumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1242,6 +1269,33 @@
     
   
     gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/dstack.yml/volume/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    volume
   
 
     
@@ -1868,10 +1922,14 @@
 
 
 <h1 id="gateways">Gateways<a class="headerlink" href="#gateways" title="Permanent link">&para;</a></h1>
-<p>Gateways handle the ingress traffic of running services. In order to run a service, you need to have at least one
-gateway set up.</p>
+<p>Gateways handle the ingress traffic of running services.
+They provide <a href="../services/">services</a> with HTTPS domains, handle authentication, distribute load, and perform auto-scaling.
+In order to run a service, you need to have at least one gateway set up.</p>
+<div class="admonition info">
+<p class="admonition-title">dstack Sky</p>
 <p>If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
 the gateway is already set up for you.</p>
+</div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>First, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>gateway.dstack.yml</code>
 are both acceptable).</p>
@@ -1912,11 +1970,11 @@ The<span class="w"> </span>example-gateway<span class="w"> </span>doesn<span cla
 and add an <code>A</code> DNS record for <code>*.&lt;gateway domain&gt;</code> (e.g., <code>*.example.com</code>) pointing to the gateway's hostname.</p>
 <p>This will allow you to access runs and models using this domain.</p>
 <h2 id="managing-gateways">Managing gateways<a class="headerlink" href="#managing-gateways" title="Permanent link">&para;</a></h2>
-<p><strong>Destroying gateways</strong></p>
-<p>To delete a gateway, use <a href="../../reference/cli/#dstack-destroy"><code>dstack destroy</code></a>:</p>
+<p><strong>Deleting gateways</strong></p>
+<p>To delete a gateway, pass gateway configuration to <a href="../../reference/cli/#dstack-delete"><code>dstack delete</code></a>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>destroy<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>examples/deployment/gateway.dstack.yml
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>delete<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>examples/deployment/gateway.dstack.yml
 </code></pre></div>
 
 </div>
@@ -2084,7 +2142,7 @@ and add an <code>A</code> DNS record for <code>*.&lt;gateway domain&gt;</code> (
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.6e7f53b1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d249fdc4.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

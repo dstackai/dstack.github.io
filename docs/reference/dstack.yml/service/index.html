@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28+insiders-4.53.11">
     
     
       
@@ -896,6 +896,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/volumes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Volumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1317,6 +1344,19 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Volumes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1484,6 +1524,17 @@
     <span class="md-ellipsis">
       
         resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        volumes
       
     </span>
   </a>
@@ -1971,6 +2022,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#volumes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        volumes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1994,6 +2084,33 @@
     
   
     gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volume/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    volume
   
 
     
@@ -2690,6 +2807,19 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Volumes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2857,6 +2987,17 @@
     <span class="md-ellipsis">
       
         resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        volumes
       
     </span>
   </a>
@@ -3344,6 +3485,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#volumes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        volumes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3397,7 +3577,7 @@ To install it, use <code>conda install cuda</code>.</p>
 
     <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.11-0.4rc4-cuda-12.1</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.11-0.4-cuda-12.1</span>
 
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
@@ -3412,7 +3592,7 @@ To install it, use <code>conda install cuda</code>.</p>
 <p>Use the <code>registry_auth</code> property to provide credentials for a private Docker registry.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
 
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.11-0.4rc4-cuda-12.1</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.11-0.4-cuda-12.1</span>
 
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
@@ -3683,6 +3863,27 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 
 </div>
 
+<h3 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h3>
+<p>Volumes allow you to persist data between runs.
+To attach a volume, simply specify its name using the <code>volumes</code> property and specify where to mount its contents:</p>
+<div editor-title="serve.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
+
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-new-volume</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/volume_data</span>
+</code></pre></div>
+
+</div>
+
+<p>Once you run this configuration, the contents of the volume will be attached to <code>/volume_data</code> inside the service, 
+and its contents will persist across runs.</p>
 <p>The <code>service</code> configuration type supports many other options. See below.</p>
 <h2 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="port"><code>port</code> -  The port, that application listens on or the mapping.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h4>
@@ -3699,6 +3900,7 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <h4 class="reference-item" id="env"><code>env</code> - (Optional) The mapping or the list of environment variables.<a class="headerlink" href="#env" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="setup"><code>setup</code> - (Optional) The bash commands to run on the boot.<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_resources"><a href="#resources"><code>resources</code></a> - (Optional) The resources requirements to run the configuration.<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_volumes"><a href="#volumes"><code>volumes</code></a> - (Optional) The volumes mount points.<a class="headerlink" href="#_volumes" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="commands"><code>commands</code> - (Optional) The bash commands to run.<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
@@ -3739,6 +3941,9 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <h2 id="registry_auth"><code>registry_auth</code><a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="username"><code>username</code> -  The username.<a class="headerlink" href="#username" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="password"><code>password</code> -  The password or access token.<a class="headerlink" href="#password" title="Permanent link">&para;</a></h4>
+<h2 id="volumes_1"><code>volumes</code><a class="headerlink" href="#volumes_1" title="Permanent link">&para;</a></h2>
+<h4 class="reference-item" id="name"><code>name</code> -  The name of the volume to mount.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="path"><code>path</code> -  The container path to mount the volume at.<a class="headerlink" href="#path" title="Permanent link">&para;</a></h4>
 
 
 
@@ -3895,7 +4100,7 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.6e7f53b1.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d249fdc4.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

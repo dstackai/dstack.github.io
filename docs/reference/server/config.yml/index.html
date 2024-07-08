@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dstack.ai/docs/reference/server/config.yml/">
       
       
-        <link rel="prev" href="../../../concepts/pools/">
+        <link rel="prev" href="../../../concepts/volumes/">
       
       
         <link rel="next" href="../../dstack.yml/dev-environment/">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28+insiders-4.53.11">
     
     
       
@@ -883,6 +883,33 @@
     
   
     Pools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/volumes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Volumes
   
 
     
@@ -2557,6 +2584,33 @@
     
   
     gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dstack.yml/volume/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    volume
   
 
     
@@ -4577,17 +4631,24 @@ configure the backend.</p>
         {
             &quot;Effect&quot;: &quot;Allow&quot;,
             &quot;Action&quot;: [
+                &quot;ec2:AttachVolume&quot;,
                 &quot;ec2:AuthorizeSecurityGroupEgress&quot;,
                 &quot;ec2:AuthorizeSecurityGroupIngress&quot;,
                 &quot;ec2:CancelSpotInstanceRequests&quot;,
                 &quot;ec2:CreateSecurityGroup&quot;,
                 &quot;ec2:CreateTags&quot;,
+                &quot;ec2:CreateVolume&quot;,
+                &quot;ec2:DeleteVolume&quot;,
+                &quot;ec2:DescribeAvailabilityZones&quot;,
                 &quot;ec2:DescribeImages&quot;,
                 &quot;ec2:DescribeInstances&quot;,
+                &quot;ec2:DescribeInstanceAttribute&quot;,
                 &quot;ec2:DescribeRouteTables&quot;,
                 &quot;ec2:DescribeSecurityGroups&quot;,
                 &quot;ec2:DescribeSubnets&quot;,
                 &quot;ec2:DescribeVpcs&quot;,
+                &quot;ec2:DescribeVolumes&quot;,
+                &quot;ec2:DetachVolume&quot;,
                 &quot;ec2:RunInstances&quot;,
                 &quot;ec2:TerminateInstances&quot;
             ],
@@ -5250,7 +5311,7 @@ of the corresponding security group:</p>
           <nav class="md-footer__inner md-grid" aria-label="Footer" >
             
               
-              <a href="../../../concepts/pools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pools">
+              <a href="../../../concepts/volumes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Volumes">
                 <div class="md-footer__button md-icon">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -5260,7 +5321,7 @@ of the corresponding security group:</p>
                     Previous
                   </span>
                   <div class="md-ellipsis">
-                    Pools
+                    Volumes
                   </div>
                 </div>
               </a>
@@ -5386,7 +5447,7 @@ of the corresponding security group:</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.6e7f53b1.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d249fdc4.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

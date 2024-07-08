@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28+insiders-4.53.11">
     
     
       
@@ -896,6 +896,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/volumes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Volumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1131,6 +1158,33 @@
     
   
     gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dstack.yml/volume/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    volume
   
 
     
@@ -1565,6 +1619,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        volumes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ports" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1894,6 +1959,17 @@
     <span class="md-ellipsis">
       
         resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        volumes
       
     </span>
   </a>
@@ -3160,6 +3236,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        volumes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ports" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3489,6 +3576,17 @@
     <span class="md-ellipsis">
       
         resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        volumes
       
     </span>
   </a>
@@ -4920,6 +5018,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <h4 class="reference-item" id="env"><code>env</code> - (Optional) The mapping or the list of environment variables.<a class="headerlink" href="#env" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="setup"><code>setup</code> - (Optional) The bash commands to run on the boot.<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_resources"><a href="#dstack.api.Resources"><code>resources</code></a> - (Optional) The resources requirements to run the configuration.<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_volumes"><a href="#volumes"><code>volumes</code></a> - (Optional) The volumes mount points.<a class="headerlink" href="#_volumes" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="ports"><code>ports</code> - (Optional) Port numbers/mapping to expose.<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="commands"><code>commands</code> - (Optional) The bash commands to run.<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
@@ -4950,6 +5049,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <h4 class="reference-item" id="env"><code>env</code> - (Optional) The mapping or the list of environment variables.<a class="headerlink" href="#env" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="setup"><code>setup</code> - (Optional) The bash commands to run on the boot.<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_resources"><a href="#dstack.api.Resources"><code>resources</code></a> - (Optional) The resources requirements to run the configuration.<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_volumes"><a href="#volumes"><code>volumes</code></a> - (Optional) The volumes mount points.<a class="headerlink" href="#_volumes" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="commands"><code>commands</code> - (Optional) The bash commands to run.<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
@@ -6161,7 +6261,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.6e7f53b1.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d249fdc4.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

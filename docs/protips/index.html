@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28+insiders-4.53.11">
     
     
       
@@ -753,11 +753,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
+  <a href="#tasks-vs-services-for-web-applications" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Tasks
+          Tasks vs Services for web applications
         </span>
       
     </span>
@@ -771,6 +771,19 @@
       
         <span class="md-typeset">
           Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-and-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Data and models
         </span>
       
     </span>
@@ -836,19 +849,6 @@
       
         <span class="md-typeset">
           Service quotas
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-and-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Data and models
         </span>
       
     </span>
@@ -1048,6 +1048,33 @@
     
   
     Pools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/volumes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Volumes
   
 
     
@@ -1294,6 +1321,33 @@
     
   
     gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dstack.yml/volume/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    volume
   
 
     
@@ -1843,11 +1897,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
+  <a href="#tasks-vs-services-for-web-applications" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Tasks
+          Tasks vs Services for web applications
         </span>
       
     </span>
@@ -1861,6 +1915,19 @@
       
         <span class="md-typeset">
           Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-and-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Data and models
         </span>
       
     </span>
@@ -1933,19 +2000,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#data-and-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Data and models
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1973,7 +2027,7 @@
 
 <h1 id="protips">Protips<a class="headerlink" href="#protips" title="Permanent link">&para;</a></h1>
 <p>Below are tips and tricks to use <code>dstack</code> more efficiently.</p>
-<h3 id="dev-environments">Dev environments<a class="headerlink" href="#dev-environments" title="Permanent link">&para;</a></h3>
+<h2 id="dev-environments">Dev environments<a class="headerlink" href="#dev-environments" title="Permanent link">&para;</a></h2>
 <p>Before running a task or service, it's recommended that you first start with a dev environment. Dev environments
 allow you to run commands interactively.</p>
 <p>Once the commands work, go ahead and run them as a task or a service.</p>
@@ -1994,7 +2048,7 @@ pre-configured and easy-to-use extension.</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8888</span>
 </code></pre></div>
 </details>
-<h3 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h3>
+<h2 id="tasks-vs-services-for-web-applications">Tasks vs Services for web applications<a class="headerlink" href="#tasks-vs-services-for-web-applications" title="Permanent link">&para;</a></h2>
 <p>Tasks can be used not only for batch jobs but also for web applications.</p>
 <div editor-title="app.dstack.yml">
 
@@ -2034,8 +2088,10 @@ pre-configured and easy-to-use extension.</p>
 </div>
 <p>This will forward the remote <code>8501</code> port to <code>localhost:3000</code>.</p>
 </details>
-<p>If the task works, go ahead and run it as a service.</p>
-<h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<p><a href="../concepts/services/">Services</a> require a gateway but they also provide additional features for
+production-grade service deployment not offered by tasks, such as HTTPS domains and auto-scaling.
+If you run a web app as a task and it works, go ahead and run it as a service.</p>
+<h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
 <p>If a configuration requires an environment variable that you don't want to hardcode in the YAML, you can define it
 without assigning a value:</p>
 <div editor-title=".dstack.yml">
@@ -2066,13 +2122,21 @@ without assigning a value:</p>
 it will automatically pass the environment variables from the <code>.env</code> file to the <code>dstack run</code> command.</p>
 <p>Remember to add <code>.env</code> to <code>.gitignore</code> to avoid pushing it to the repo.    </p>
 </details>
-<h3 id="idle-instances">Idle instances<a class="headerlink" href="#idle-instances" title="Permanent link">&para;</a></h3>
+<h2 id="data-and-models">Data and models<a class="headerlink" href="#data-and-models" title="Permanent link">&para;</a></h2>
+<p><code>dstack</code> has support for <a href="../concepts/volumes/">volumes</a>
+to persist data across different runs and instance interruptions.
+Volumes are ideal for storing intermediate work and data that should be quickly accessible.</p>
+<p>You can also load and save data using an object storage like S3 or HuggingFace Datasets.
+For models, it's best to use services like HuggingFace Hub.
+<code>dstack</code> has no explicit support for object storage.
+You can load and save data directly from your code.</p>
+<h2 id="idle-instances">Idle instances<a class="headerlink" href="#idle-instances" title="Permanent link">&para;</a></h2>
 <p>By default, the <code>dstack</code> run command reuses an idle instance from the pool. If no instance matches the requirements, it creates a new one.</p>
 <p>When the run finishes, the instance remains idle for the configured time (by default, <code>5m</code>) before it gets destroyed.</p>
 <p>You can change the default idle duration by using <code>--idle-duration DURATION</code> with <code>dstack run</code>, or
 set <code>termination_idle_duration</code> in the configuration or profile.</p>
 <p>An idle instance can be destroyed at any time via <code>dstack pool rm INSTANCE_NAME</code>.</p>
-<h3 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">&para;</a></h3>
+<h2 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">&para;</a></h2>
 <p>If you don't want to specify the same parameters for each configuration, you can define them once via <a href="../reference/profiles.yml/">profiles</a>
 and reuse them across configurations.</p>
 <p>This can be handy, for example, for configuring parameters such as <code>max_duration</code>, <code>max_price</code>, <code>termination_idle_duration</code>,
@@ -2165,9 +2229,6 @@ The relevant service category is compute. The relevant resources include:</p>
 </ul>
 </details>
 <p>Note, for AWS, GCP, and Azure, service quota values are measured with the number of CPUs rather than GPUs.</p>
-<h2 id="data-and-models">Data and models<a class="headerlink" href="#data-and-models" title="Permanent link">&para;</a></h2>
-<p>For loading and saving data, it's best to use object storage like S3 or HuggingFace Datasets.</p>
-<p>For models, it's best to use services like HuggingFace Hub.</p>
 
 
 
@@ -2324,7 +2385,7 @@ The relevant service category is compute. The relevant resources include:</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.6e7f53b1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d249fdc4.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       
