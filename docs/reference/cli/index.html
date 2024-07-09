@@ -2183,7 +2183,11 @@ Options:
 </div>
 
 <h3 id="dstack-init">dstack init<a class="headerlink" href="#dstack-init" title="Permanent link">&para;</a></h3>
-<p>This command initializes the current folder as a repo.</p>
+<p>This command must be called inside a folder before you can use <code>dstack run</code> or <code>dstack apply</code>.</p>
+<p><strong>Git credentials</strong></p>
+<p>If the current folder is a remote Git repository, <code>dstack init</code> ensures that <code>dstack</code> can access it.
+By default, the command uses the remote repo's default Git credentials. These can be overridden with 
+<code>--git-identity</code> (private SSH key) or <code>--token</code> (OAuth token).</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>init<span class="w"> </span>--help
@@ -2205,17 +2209,9 @@ Options:
 
 </div>
 
-<details class="info">
-<summary>Git credentials</summary>
-<p>If the current folder is a Git repo, the command authorizes <code>dstack</code> to access it.
-By default, the command uses the default Git credentials configured for the repo. 
-You can override these credentials via <code>--token</code> (OAuth token) or <code>--git-identity</code>.</p>
-</details>
-<details class="info">
-<summary>Custom SSH key</summary>
-<p>By default, this command generates an SSH key that will be used for port forwarding and SSH access to running workloads. 
-You can override this key via <code>--ssh-identity</code>.</p>
-</details>
+<p><strong>User SSH key</strong></p>
+<p>By default, <code>dstack</code> uses its own SSH key to access instances (<code>~/.dstack/ssh/id_rsa</code>). 
+It is possible to override this key via the <code>--ssh-identity</code> argument.</p>
 <h3 id="dstack-run">dstack run<a class="headerlink" href="#dstack-run" title="Permanent link">&para;</a></h3>
 <p>This command runs a given configuration.</p>
 <div class="termy">
@@ -2698,87 +2694,28 @@ Options:
 </div>
 
 <h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>DSTACK_CLI_LOG_LEVEL</code></td>
-<td>Configures CLI logging level</td>
-<td><code>INFO</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_PROFILE</code></td>
-<td>Has the same effect as <code>--profile</code></td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_PROJECT</code></td>
-<td>Has the same effect as <code>--project</code></td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_DEFAULT_CREDS_DISABLED</code></td>
-<td>Disables default credentials detection if set</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_LOCAL_BACKEND_ENABLED</code></td>
-<td>Enables local backend for debug if set</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_RUNNER_VERSION</code></td>
-<td>Sets exact runner version for debug</td>
-<td><code>latest</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_SERVER_ADMIN_TOKEN</code></td>
-<td>Has the same effect as <code>--token</code></td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_SERVER_DIR</code></td>
-<td>Sets path to store data and server configs</td>
-<td><code>~/.dstack/server</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_SERVER_HOST</code></td>
-<td>Has the same effect as <code>--host</code></td>
-<td><code>127.0.0.1</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_SERVER_LOG_LEVEL</code></td>
-<td>Has the same effect as <code>--log-level</code></td>
-<td><code>INFO</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_SERVER_LOG_FORMAT</code></td>
-<td>Sets format of log output. Can be <code>rich</code>, <code>standard</code>, <code>json</code>.</td>
-<td><code>rich</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_SERVER_PORT</code></td>
-<td>Has the same effect as <code>--port</code></td>
-<td><code>3000</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_SERVER_ROOT_LOG_LEVEL</code></td>
-<td>Sets root logger log level</td>
-<td><code>ERROR</code></td>
-</tr>
-<tr>
-<td><code>DSTACK_SERVER_UVICORN_LOG_LEVEL</code></td>
-<td>Sets uvicorn logger log level</td>
-<td><code>ERROR</code></td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>DSTACK_CLI_LOG_LEVEL</code> – (Optional) Configures CLI logging level. Defaults to <code>INFO</code>.</li>
+<li><code>DSTACK_SERVER_LOG_LEVEL</code> – (Optional) Has the same effect as <code>--log-level</code>. Defaults to <code>INFO</code>.</li>
+<li><code>DSTACK_SERVER_HOST</code> – (Optional) Has the same effect as <code>--host</code>. Defaults to <code>127.0.0.1</code>.</li>
+<li><code>DSTACK_SERVER_PORT</code> – (Optional) Has the same effect as <code>--port</code>. Defaults to <code>3000</code>.</li>
+<li><code>DSTACK_SERVER_ADMIN_TOKEN</code> – (Optional) Has the same effect as <code>--token</code>. Defaults to <code>None</code>.</li>
+<li><code>DSTACK_DATABASE_URL</code> – (Optional) The database URL to use instead of default SQLite. Currently <code>dstack</code> supports Postgres. Example: <code>postgresql+asyncpg://myuser:mypassword@localhost:5432/mydatabase</code>. Defaults to <code>None</code>.</li>
+<li><code>DSTACK_SERVER_DIR</code> – (Optional) Sets path to store data and server configs. Defaults to <code>~/.dstack/server</code>.</li>
+</ul>
+<details class="info">
+<summary>Internal environment variables</summary>
+<ul>
+<li><code>DSTACK_SERVER_ROOT_LOG_LEVEL</code> – (Optional) Sets root logger log level. Defaults to <code>ERROR</code>.</li>
+<li><code>DSTACK_SERVER_LOG_FORMAT</code> – (Optional) Sets format of log output. Can be <code>rich</code>, <code>standard</code>, <code>json</code>.. Defaults to <code>rich</code>.</li>
+<li><code>DSTACK_SERVER_UVICORN_LOG_LEVEL</code> – (Optional) Sets uvicorn logger log level. Defaults to <code>ERROR</code>.</li>
+<li><code>DSTACK_PROFILE</code> – (Optional) Has the same effect as <code>--profile</code>. Defaults to <code>None</code>.</li>
+<li><code>DSTACK_PROJECT</code> – (Optional) Has the same effect as <code>--project</code>. Defaults to <code>None</code>.</li>
+<li><code>DSTACK_RUNNER_VERSION</code> – (Optional) Sets exact runner version for debug. Defaults to <code>latest</code>.</li>
+<li><code>DSTACK_DEFAULT_CREDS_DISABLED</code> – (Optional) Disables default credentials detection if set. Defaults to <code>None</code>.</li>
+<li><code>DSTACK_LOCAL_BACKEND_ENABLED</code> – (Optional) Enables local backend for debug if set. Defaults to <code>None</code>.</li>
+</ul>
+</details>
 
 
 
@@ -2918,6 +2855,7 @@ Options:
                     <a href="https://calendly.com/dstackai/discovery-call" target="_blank" class="tx-footer__section-link external">Talk to an expert</a>
                     <a href="/terms" class="tx-footer__section-link">Terms</a>
                     <a href="/privacy" class="tx-footer__section-link">Privacy</a>
+                    <a href="https://dstackai.notion.site/Jobs-at-dstack-ff01a450c3174904b70c36124f2d8f4b" target="_blank" class="tx-footer__section-link external">Careers</a>
                 </div>
             </div>
         </div>
@@ -2929,7 +2867,7 @@ Options:
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>

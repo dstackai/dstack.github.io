@@ -739,11 +739,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-on-prem-clusters" class="md-nav__link">
+  <a href="#add-on-prem-clusters" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Adding on-prem clusters
+          Add on-prem clusters
         </span>
       
     </span>
@@ -1949,11 +1949,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-on-prem-clusters" class="md-nav__link">
+  <a href="#add-on-prem-clusters" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Adding on-prem clusters
+          Add on-prem clusters
         </span>
       
     </span>
@@ -2112,6 +2112,10 @@ The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </sp
 </div>
 </div>
 </div>
+<blockquote>
+<p>By default, <code>dstack</code> stores its state in <code>~/.dstack/server/data</code> using SQLite.
+To use a database, set the <a href="../reference/cli/#environment-variables"><code>DSTACK_DATABASE_URL</code></a> environment variable.</p>
+</blockquote>
 <p>Once the <code>dstack</code> server is up, feel free to use the CLI or API to work with it.</p>
 <h3 id="set-up-the-cli">Set up the CLI<a class="headerlink" href="#set-up-the-cli" title="Permanent link">&para;</a></h3>
 <p>To point the CLI to the <code>dstack</code> server, configure it
@@ -2129,7 +2133,7 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 </div>
 
 <p>This configuration is stored in <code>~/.dstack/config.yml</code>.</p>
-<h3 id="adding-on-prem-clusters">Adding on-prem clusters<a class="headerlink" href="#adding-on-prem-clusters" title="Permanent link">&para;</a></h3>
+<h3 id="add-on-prem-clusters">Add on-prem clusters<a class="headerlink" href="#add-on-prem-clusters" title="Permanent link">&para;</a></h3>
 <p>If you'd like to use <code>dstack</code> to run workloads on your on-prem clusters,
 check out the <a href="../concepts/pools/#adding-on-prem-clusters">dstack pool add-ssh</a> command.</p>
 <h2 id="dstack-sky">dstack Sky<a class="headerlink" href="#dstack-sky" title="Permanent link">&para;</a></h2>
@@ -2302,6 +2306,7 @@ settings.</p>
                     <a href="https://calendly.com/dstackai/discovery-call" target="_blank" class="tx-footer__section-link external">Talk to an expert</a>
                     <a href="/terms" class="tx-footer__section-link">Terms</a>
                     <a href="/privacy" class="tx-footer__section-link">Privacy</a>
+                    <a href="https://dstackai.notion.site/Jobs-at-dstack-ff01a450c3174904b70c36124f2d8f4b" target="_blank" class="tx-footer__section-link external">Careers</a>
                 </div>
             </div>
         </div>
@@ -2313,7 +2318,7 @@ settings.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
