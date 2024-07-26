@@ -6,33 +6,37 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Discover how cloud dev environments can benefit ML engineers and why why they are gaining popularity over managed notebooks .">
+        <meta name="description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/blog/archive/say-goodbye-to-managed-notebooks/">
+        <link rel="canonical" href="https://dstack.ai/docs/fleets/">
       
       
+        <link rel="prev" href="../services/">
+      
+      
+        <link rel="next" href="../concepts/gateways/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30+insiders-4.53.11">
     
     
       
-        <title>Say goodbye to managed notebooks - dstack</title>
+        <title>Fleets - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0e8c34cb.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e8c34cb.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,17 +61,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -85,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Say goodbye to managed notebooks - dstack" />
-<meta property="og:description" content="Discover how cloud dev environments can benefit ML engineers and why why they are gaining popularity over managed notebooks ." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/blog/archive/say-goodbye-to-managed-notebooks.png" />
+<meta property="og:title" content="Fleets - dstack" />
+<meta property="og:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/fleets.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/blog/archive/say-goodbye-to-managed-notebooks/" />
+<meta property="og:url" content="https://dstack.ai/docs/fleets/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Say goodbye to managed notebooks - dstack" />
-<meta property="twitter:description" content="Discover how cloud dev environments can benefit ML engineers and why why they are gaining popularity over managed notebooks ." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/blog/archive/say-goodbye-to-managed-notebooks.png" />
+<meta property="twitter.title" content="Fleets - dstack" />
+<meta property="twitter:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/fleets.png" />
 </head>
   
   
@@ -115,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#say-goodbye-to-managed-notebooks" class="md-skip">
+        <a href="#fleets" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +152,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -165,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Say goodbye to managed notebooks
+              Fleets
             
           </span>
         </div>
@@ -264,7 +268,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -279,17 +283,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../docs/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Docs
@@ -344,7 +352,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../blog/" class="md-tabs__link">
           
   
   Blog
@@ -430,7 +438,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -457,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -480,25 +488,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -515,7 +528,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -538,17 +551,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -583,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -610,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -642,25 +658,30 @@
                 
   
   
+    
   
   
+  
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -677,7 +698,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -695,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/dev-environments/" class="md-nav__link">
+      <a href="../dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -722,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/tasks/" class="md-nav__link">
+      <a href="../tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -749,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/services/" class="md-nav__link">
+      <a href="../services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -773,10 +794,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../docs/fleets/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Fleets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -791,6 +838,110 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-updating-fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Creating and updating fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-fleet-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Automatic fleet creation
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Managing fleets
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing fleets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listing-fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Listing fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Deleting fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -816,17 +967,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -911,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/concepts/gateways/" class="md-nav__link">
+      <a href="../concepts/gateways/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -938,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/concepts/volumes/" class="md-nav__link">
+      <a href="../concepts/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1023,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/guides/protips/" class="md-nav__link">
+      <a href="../guides/protips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1071,17 +1225,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1116,7 +1273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/server/config.yml/" class="md-nav__link">
+      <a href="../reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1193,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
+      <a href="../reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1220,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/task/" class="md-nav__link">
+      <a href="../reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1247,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/service/" class="md-nav__link">
+      <a href="../reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1274,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/fleet/" class="md-nav__link">
+      <a href="../reference/dstack.yml/fleet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1301,7 +1458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/gateway/" class="md-nav__link">
+      <a href="../reference/dstack.yml/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1328,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/volume/" class="md-nav__link">
+      <a href="../reference/dstack.yml/volume/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1363,7 +1520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/profiles.yml/" class="md-nav__link">
+      <a href="../reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1390,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/cli/" class="md-nav__link">
+      <a href="../reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1467,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/api/python/" class="md-nav__link">
+      <a href="../reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1494,7 +1651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/api/rest/" class="md-nav__link">
+      <a href="../reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1648,7 +1805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../blog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1729,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2024/" class="md-nav__link">
+      <a href="../../blog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1871,11 +2028,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#notebooks-are-here-to-stay" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Notebooks are here to stay
+          Configuration
         </span>
       
     </span>
@@ -1884,11 +2041,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reproducibility-challenge" class="md-nav__link">
+  <a href="#creating-and-updating-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Reproducibility challenge
+          Creating and updating fleets
         </span>
       
     </span>
@@ -1897,11 +2054,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ides-get-equipped-for-ml" class="md-nav__link">
+  <a href="#automatic-fleet-creation" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          IDEs get equipped for ML
+          Automatic fleet creation
         </span>
       
     </span>
@@ -1910,28 +2067,47 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-rise-of-app-ecosystem" class="md-nav__link">
+  <a href="#managing-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          The rise of app ecosystem
+          Managing fleets
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing fleets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listing-fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Listing fleets
         </span>
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#say-hello-to-cloud-dev-environments" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#deleting-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Say hello to cloud dev environments!
+          Deleting fleets
         </span>
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1952,7 +2128,7 @@
 
 
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/blog/archive/say-goodbye-to-managed-notebooks.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/docs/fleets.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -1960,82 +2136,123 @@
   
 
 
-<h1 id="say-goodbye-to-managed-notebooks">Say goodbye to managed notebooks<a class="headerlink" href="#say-goodbye-to-managed-notebooks" title="Permanent link">&para;</a></h1>
-<p>Data science and ML tools have made significant advancements in recent years. This blog post aims to examine the
-advantages of cloud dev environments (CDE) for ML engineers and compare them with web-based managed notebooks.</p>
-<!-- more -->
-
-<h2 id="notebooks-are-here-to-stay">Notebooks are here to stay<a class="headerlink" href="#notebooks-are-here-to-stay" title="Permanent link">&para;</a></h2>
-<p>Jupyter notebooks are instrumental for interactive work with data. They provide numerous advantages such as high
-interactivity, visualization support, remote accessibility, and effortless sharing.</p>
-<p>Managed notebook platforms, like Google Colab and AWS SageMaker have become popular thanks to their easy integration with clouds.
-With pre-configured environments, managed notebooks remove the need to worry about infrastructure.</p>
-<p><img alt="" src="../../../assets/images/dstack-google-colab.png" width="800" /></p>
-<h2 id="reproducibility-challenge">Reproducibility challenge<a class="headerlink" href="#reproducibility-challenge" title="Permanent link">&para;</a></h2>
-<p>As the code evolves, it needs to be converted into Python scripts and stored in Git for improved organization and
-version control. Notebooks alone cannot handle this task, which is why they must be a part of a developer
-environment that also supports Python scripts and Git.</p>
-<p>The JupyterLab project attempts to address this by turning notebooks into an IDE by adding a file browser,
-terminal, and Git support.</p>
-<p><img alt="" src="../../../assets/images/dstack-jupyterlab.png" width="800" /></p>
-<h2 id="ides-get-equipped-for-ml">IDEs get equipped for ML<a class="headerlink" href="#ides-get-equipped-for-ml" title="Permanent link">&para;</a></h2>
-<p>Recently, IDEs have improved in their ability to support machine learning. They have started to combine the benefits of
-traditional IDEs and managed notebooks. </p>
-<p>IDEs have upgraded their remote capabilities, with better SSH support. Additionally, they now offer built-in support for editing notebooks.</p>
-<p>Two popular IDEs, VS Code and PyCharm, have both integrated remote capabilities and seamless notebook editing features.</p>
-<p><img alt="" src="../../../assets/images/dstack-vscode.png" width="800" /></p>
-<h2 id="the-rise-of-app-ecosystem">The rise of app ecosystem<a class="headerlink" href="#the-rise-of-app-ecosystem" title="Permanent link">&para;</a></h2>
-<p>Notebooks have been beneficial for their interactivity and sharing features. However, there are new alternatives like
-Streamlit and Gradio that allow developers to build data apps using Python code. These frameworks not only simplify
-app-building but also enhance reproducibility by integrating with Git. </p>
-<p>Hugging Face Spaces, for example, is a popular tool today for sharing Streamlit and Gradio apps with others.</p>
-<p><img alt="" class="border" src="../../../assets/images/dstack-huggingface-space.png" width="800" /></p>
-<h2 id="say-hello-to-cloud-dev-environments">Say hello to cloud dev environments!<a class="headerlink" href="#say-hello-to-cloud-dev-environments" title="Permanent link">&para;</a></h2>
-<p>Remote development within IDEs is becoming increasingly popular, and as a result, cloud dev environments have emerged as
-a new concept. Various managed services, such as Codespaces and GitPod, offer scalable infrastructure while maintaining
-the familiar IDE experience.</p>
-<p>One such open-source tool is <code>dstack</code>, which enables you to define your dev environment declaratively as code and run it on any cloud.</p>
-<div editor-title=".dstack.yml"> 
-
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
-<span class="nt">build</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get install -y ffmpeg</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
-</code></pre></div>
-
-</div>
-
-<p>With this tool, provisioning the required hardware, setting up the pre-built environment (no Docker is needed), and
-fetching your local code is automated.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.
-
-<span class="w"> </span>RUN<span class="w">                 </span>CONFIGURATION<span class="w">  </span>USER<span class="w">   </span>PROJECT<span class="w">  </span>INSTANCE<span class="w">       </span>SPOT<span class="w"> </span>POLICY
-<span class="w"> </span>honest-jellyfish-1<span class="w">  </span>.dstack.yml<span class="w">    </span>peter<span class="w">  </span>gcp<span class="w">      </span>a2-highgpu-1g<span class="w">  </span>on-demand
-
-Starting<span class="w"> </span>SSH<span class="w"> </span>tunnel...
-
-To<span class="w"> </span>open<span class="w"> </span><span class="k">in</span><span class="w"> </span>VS<span class="w"> </span>Code<span class="w"> </span>Desktop,<span class="w"> </span>use<span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span>these<span class="w"> </span>link:
-<span class="w">  </span>vscode://vscode-remote/ssh-remote+honest-jellyfish-1/workflow
-
-To<span class="w"> </span>exit,<span class="w"> </span>press<span class="w"> </span>Ctrl+C.
-</code></pre></div>
-<p>You can securely access the cloud development environment with the desktop IDE of your choice.</p>
-<p><img alt="" src="../../../assets/images/dstack-vscode-jupyter.png" width="800" /></p>
+<h1 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h1>
+<p>Fleets enable efficient provisioning and management of clusters and instances, both in the cloud and on-prem. Once a
+fleet is created, it can be reused by dev environments, tasks, and services.</p>
 <div class="admonition info">
-<p class="admonition-title">Learn more</p>
-<p>Check out our <a href="../../../docs/dev-environments/">guide</a> for running dev environments in your cloud.</p>
+<p class="admonition-title">Experimental</p>
+<p>Fleets is an experimental feature. To use it, you have to install the <code>0.18.6rc1</code> version.</p>
+</div>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>To create a fleet, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code>
+are both acceptable).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cloud fleets</label><label for="__tabbed_1_2">On-prem fleets</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To provision a fleet in the cloud using the configured backends, specify the required resources, number of nodes, 
+and other optional parameters.</p>
+<div editor-title="cluster.dstack.yml">
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+</code></pre></div>
+</div>
+<p>Set <code>placement</code> to <code>cluster</code> if the nodes should be interconnected (e.g. if you'd like to use them for multi-node tasks). 
+In that case, <code>dstack</code> will provision all nodes in the same backend and region.</p>
+<blockquote>
+<p>Fleets aren't supported yet for the <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code> backends.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p>To create a fleet from on-prem servers, specify their hosts along with the user, port, and SSH key for connection via SSH.</p>
+<p><div editor-title="cluster-ssh.dstack.yml"> </p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
+<span class="nt">ssh_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
+<span class="w">  </span><span class="nt">identity_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/id_rsa</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.51</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.52</span>
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Requirements</p>
+<p>The on-prem servers should be pre-installed with CUDA 12.1 and NVIDIA Docker. 
+The user should have <code>sudo</code> access.</p>
+</div>
+<p>Set <code>placement</code> to <code>cluster</code> if the nodes are interconnected (e.g. if you'd like to use them for multi-node tasks).
+In that case, by default, <code>dstack</code> will automatically detect the private network. 
+You can specify the <a href="../reference/dstack.yml/fleet.md#network"><code>network</code></a> parameter manually.</p>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
+<p>See the <a href="../reference/dstack.yml/fleet/">.dstack.yml reference</a>
+for all supported configuration options and multiple examples.</p>
+</div>
+<h2 id="creating-and-updating-fleets">Creating and updating fleets<a class="headerlink" href="#creating-and-updating-fleets" title="Permanent link">&para;</a></h2>
+<p>To create or update the fleet, simply call the <a href="../reference/cli/#dstack-apply"><code>dstack apply</code></a> command:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>my-gcp-fleet.dstack.yml
+Fleet<span class="w"> </span>my-fleet<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist<span class="w"> </span>yet.<span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>fleet?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+<span class="w"> </span>FLEET<span class="w">     </span>INSTANCE<span class="w">  </span>BACKEND<span class="w">  </span>RESOURCES<span class="w">  </span>PRICE<span class="w">  </span>STATUS<span class="w">   </span>CREATED<span class="w"> </span>
+<span class="w"> </span>my-fleet<span class="w">  </span><span class="m">0</span><span class="w">                                    </span>pending<span class="w">  </span>now<span class="w">     </span>
+<span class="w">           </span><span class="m">1</span><span class="w">                                    </span>pending<span class="w">  </span>now<span class="w">     </span>
+</code></pre></div>
+
 </div>
 
+<p>Once the status of instances change to <code>idle</code>, they can be used by <code>dstack run</code>.</p>
+<h2 id="automatic-fleet-creation">Automatic fleet creation<a class="headerlink" href="#automatic-fleet-creation" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>By default, <code>dstack run</code> tries to reuse <code>idle</code> instances from existing fleets. 
+If no <code>idle</code> instances meet the requirements, <code>dstack run</code> creates a new fleet automatically.
+To avoid creating new fleet, specify pass <code>--reuse</code> to <code>dstack run</code>.</p>
+</blockquote>
+<h2 id="managing-fleets">Managing fleets<a class="headerlink" href="#managing-fleets" title="Permanent link">&para;</a></h2>
+<h3 id="listing-fleets">Listing fleets<a class="headerlink" href="#listing-fleets" title="Permanent link">&para;</a></h3>
+<p>The <a href="../reference/cli/#dstack-gateway-list"><code>dstack fleet</code></a> command lists fleet instances and theri status:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$ dstack fleet
+ FLEET     INSTANCE  BACKEND              GPU             PRICE    STATUS  CREATED 
+ my-fleet  0         gcp (europe-west-1)  L4:24GB (spot)  $0.1624  idle    3 mins ago      
+           1         gcp (europe-west-1)  L4:24GB (spot)  $0.1624  idle    3 mins ago    
+</code></pre></div>
+
+</div>
+
+<h3 id="deleting-fleets">Deleting fleets<a class="headerlink" href="#deleting-fleets" title="Permanent link">&para;</a></h3>
+<p>When a fleet isn't used by run, you can delete it via <code>dstack delete</code>:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>cluster.dstack.yaml
+Delete<span class="w"> </span>the<span class="w"> </span>fleet<span class="w"> </span>my-gcp-fleet?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+Fleet<span class="w"> </span>my-gcp-fleet<span class="w"> </span>deleted
+</code></pre></div>
+
+</div>
+
+<p>You can pass either the path to the configuration file or the fleet name directly.</p>
+<p>To terminate and delete specific instances from a fleet, pass <code>-i INSTANCE_NUM</code>.</p>
+<details class="info">
+<summary>Idle duration</summary>
+<p>If you want a fleet to be automatically deleted after a certain idle time, you can set the 
+you can set the <a href="../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a> property.</p>
+</details>
 
 
 
 
 
 
-  
-  
 
 
 
@@ -2046,6 +2263,44 @@ To<span class="w"> </span>exit,<span class="w"> </span>press<span class="w"> </s
 
 
       
+          
+          <nav class="md-footer__inner md-grid" aria-label="Footer" >
+            
+              
+              <a href="../services/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Services">
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                </div>
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Previous
+                  </span>
+                  <div class="md-ellipsis">
+                    Services
+                  </div>
+                </div>
+              </a>
+            
+            
+              
+              <a href="../concepts/gateways/" class="md-footer__link md-footer__link--next" aria-label="Next: Gateways">
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Next
+                  </span>
+                  <div class="md-ellipsis">
+                    Gateways
+                  </div>
+                </div>
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+                </div>
+              </a>
+            
+          </nav>
+        
     
   </article>
 </div>
@@ -2143,17 +2398,17 @@ To<span class="w"> </span>exit,<span class="w"> </span>press<span class="w"> </s
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.d249fdc4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d249fdc4.min.js"></script>
       
-        <script src="../../../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../../../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 
