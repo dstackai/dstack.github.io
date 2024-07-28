@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center.">
+        <meta name="description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center.">
       
       
         <meta name="author" content="dstack GmbH">
@@ -90,7 +90,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Services - dstack" />
-<meta property="og:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
+<meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/docs/services.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -98,7 +98,7 @@
 <meta property="og:url" content="https://dstack.ai/docs/services/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Services - dstack" />
-<meta property="twitter:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
+<meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/services.png" />
 </head>
   
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Access GPUs at the best rate with dstack Sky! <a href="/#get-started">Learn more</a>.
+🔥 Introducing a new way to manage cloud and on-prem clusters! <a href="/docs/fleets">Learn more</a>.
 
           </div>
           
@@ -633,6 +633,33 @@
     
   
     Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
   
 
     
@@ -2248,7 +2275,7 @@ In this case, <code>dstack</code> auto-scales it based on the load.</p>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
 <p>See the <a href="../reference/dstack.yml/service/">.dstack.yml reference</a>
-for all supported configuration options and multiple examples.</p>
+for all supported configuration options and examples.</p>
 </div>
 <h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
 <p>To run a configuration, use the <a href="../reference/cli/#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
@@ -2281,8 +2308,8 @@ you can list them in <code>.gitignore</code>.</p>
 <details class="info">
 <summary>Fleets</summary>
 <p>By default, <code>dstack run</code> reuses <code>idle</code> instances from one of the existing <a href="../fleets/">fleets</a>. 
-If no <code>idle</code> instances meet the requirements, it creates a new fleet.
-To have the fleet deleted after a certain idle time automatically, set
+If no <code>idle</code> instances meet the requirements, it creates a new fleet using one of the configured backends.</p>
+<p>To have the fleet deleted after a certain idle time automatically, set
 <a href="../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a>.
 By default, it's set to <code>5min</code>.</p>
 </details>

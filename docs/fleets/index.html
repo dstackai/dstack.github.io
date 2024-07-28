@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center.">
+        <meta name="description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center.">
       
       
         <meta name="author" content="dstack GmbH">
@@ -90,7 +90,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Fleets - dstack" />
-<meta property="og:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
+<meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/docs/fleets.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -98,7 +98,7 @@
 <meta property="og:url" content="https://dstack.ai/docs/fleets/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Fleets - dstack" />
-<meta property="twitter:description" content="dstack is an open-source orchestration platform for development, training, and deployment of AI models in any cloud or data center." />
+<meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/fleets.png" />
 </head>
   
@@ -135,7 +135,7 @@
               </button>
             
             
-🔥 Access GPUs at the best rate with dstack Sky! <a href="/#get-started">Learn more</a>.
+🔥 Introducing a new way to manage cloud and on-prem clusters! <a href="/docs/fleets">Learn more</a>.
 
           </div>
           
@@ -646,6 +646,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -881,11 +908,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automatic-fleet-creation" class="md-nav__link">
+  <a href="#creation-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Automatic fleet creation
+          Creation policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#termination-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Termination policy
         </span>
       
     </span>
@@ -2054,11 +2094,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automatic-fleet-creation" class="md-nav__link">
+  <a href="#creation-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Automatic fleet creation
+          Creation policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#termination-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Termination policy
         </span>
       
     </span>
@@ -2139,10 +2192,9 @@
 <h1 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h1>
 <p>Fleets enable efficient provisioning and management of clusters and instances, both in the cloud and on-prem. Once a
 fleet is created, it can be reused by dev environments, tasks, and services.</p>
-<div class="admonition info">
-<p class="admonition-title">Experimental</p>
+<blockquote>
 <p>Fleets is an experimental feature. To use it, you have to install the <code>0.18.6rc1</code> version.</p>
-</div>
+</blockquote>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>To create a fleet, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code>
 are both acceptable).</p>
@@ -2162,9 +2214,7 @@ and other optional parameters.</p>
 </div>
 <p>Set <code>placement</code> to <code>cluster</code> if the nodes should be interconnected (e.g. if you'd like to use them for multi-node tasks). 
 In that case, <code>dstack</code> will provision all nodes in the same backend and region.</p>
-<blockquote>
-<p>Fleets aren't supported yet for the <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code> backends.</p>
-</blockquote>
+<p>Defining fleets with YAML isn't supported yet for the <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code> backends.</p>
 </div>
 <div class="tabbed-block">
 <p>To create a fleet from on-prem servers, specify their hosts along with the user, port, and SSH key for connection via SSH.</p>
@@ -2194,7 +2244,7 @@ You can specify the <a href="../reference/dstack.yml/fleet.md#network"><code>net
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
 <p>See the <a href="../reference/dstack.yml/fleet/">.dstack.yml reference</a>
-for all supported configuration options and multiple examples.</p>
+for all supported configuration options and examples.</p>
 </div>
 <h2 id="creating-and-updating-fleets">Creating and updating fleets<a class="headerlink" href="#creating-and-updating-fleets" title="Permanent link">&para;</a></h2>
 <p>To create or update the fleet, simply call the <a href="../reference/cli/#dstack-apply"><code>dstack apply</code></a> command:</p>
@@ -2210,11 +2260,16 @@ Fleet<span class="w"> </span>my-fleet<span class="w"> </span>does<span class="w"
 </div>
 
 <p>Once the status of instances change to <code>idle</code>, they can be used by <code>dstack run</code>.</p>
-<h2 id="automatic-fleet-creation">Automatic fleet creation<a class="headerlink" href="#automatic-fleet-creation" title="Permanent link">&para;</a></h2>
+<h2 id="creation-policy">Creation policy<a class="headerlink" href="#creation-policy" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>By default, <code>dstack run</code> tries to reuse <code>idle</code> instances from existing fleets. 
 If no <code>idle</code> instances meet the requirements, <code>dstack run</code> creates a new fleet automatically.
 To avoid creating new fleet, specify pass <code>--reuse</code> to <code>dstack run</code>.</p>
+</blockquote>
+<h2 id="termination-policy">Termination policy<a class="headerlink" href="#termination-policy" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>If you want a fleet to be automatically deleted after a certain idle time, you can set the 
+you can set the <a href="../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a> property.</p>
 </blockquote>
 <h2 id="managing-fleets">Managing fleets<a class="headerlink" href="#managing-fleets" title="Permanent link">&para;</a></h2>
 <h3 id="listing-fleets">Listing fleets<a class="headerlink" href="#listing-fleets" title="Permanent link">&para;</a></h3>
@@ -2242,11 +2297,6 @@ Fleet<span class="w"> </span>my-gcp-fleet<span class="w"> </span>deleted
 
 <p>You can pass either the path to the configuration file or the fleet name directly.</p>
 <p>To terminate and delete specific instances from a fleet, pass <code>-i INSTANCE_NUM</code>.</p>
-<details class="info">
-<summary>Idle duration</summary>
-<p>If you want a fleet to be automatically deleted after a certain idle time, you can set the 
-you can set the <a href="../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a> property.</p>
-</details>
 
 
 
