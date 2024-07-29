@@ -2197,16 +2197,16 @@ are both acceptable).</p>
 <div class="admonition info">
 <p class="admonition-title">Distributed tasks</p>
 <p>By default, tasks run on a single instance. However, you can specify
-the <a href="../reference/dstack.yml/task.md#_nodes">number of nodes</a>.
+the <a href="../reference/dstack.yml/task/#_nodes">number of nodes</a>.
 In this case, <code>dstack</code> provisions a cluster of instances.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
-<p>See the <a href="../reference/dstack.yml/task.md">.dstack.yml reference</a>
+<p>See the <a href="../reference/dstack.yml/task/">.dstack.yml reference</a>
 for all supported configuration options and examples.</p>
 </div>
 <h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
-<p>To run a configuration, use the <a href="../reference/cli/index.md#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
+<p>To run a configuration, use the <a href="../reference/cli/#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
 configuration file path, and other options.</p>
 <div class="termy">
 
@@ -2249,15 +2249,15 @@ By default, it's set to <code>5min</code>.</p>
 </details>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
-<p>See the <a href="../reference/cli/index.md#dstack-run">CLI reference</a> for more details
+<p>See the <a href="../reference/cli/#dstack-run">CLI reference</a> for more details
 on how <code>dstack run</code> works.</p>
 </div>
 <h2 id="managing-runs">Managing runs<a class="headerlink" href="#managing-runs" title="Permanent link">&para;</a></h2>
 <h3 id="listing-runs">Listing runs<a class="headerlink" href="#listing-runs" title="Permanent link">&para;</a></h3>
-<p>The <a href="../reference/cli/index.md#dstack-ps"><code>dstack ps</code></a> command lists all running runs and their status.</p>
+<p>The <a href="../reference/cli/#dstack-ps"><code>dstack ps</code></a> command lists all running runs and their status.</p>
 <h3 id="stopping-runs">Stopping runs<a class="headerlink" href="#stopping-runs" title="Permanent link">&para;</a></h3>
-<p>Once you use <a href="../reference/cli/index.md#dstack-stop"><code>dstack stop</code></a> (or when the run exceeds the
-<code>max_duration</code>), the instances return to the <a href="pools.md">pool</a>.</p>
+<p>Once you use <a href="../reference/cli/#dstack-stop"><code>dstack stop</code></a> (or when the run exceeds the
+<code>max_duration</code>), the instances return to the <a href="../fleets/">fleet</a>.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/qlora/README.md" target="_blank">QLoRA <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> example</li>
