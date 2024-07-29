@@ -2203,11 +2203,15 @@ are both acceptable).</p>
 <div class="tabbed-block">
 <p>To provision a fleet in the cloud using the configured backends, specify the required resources, number of nodes, 
 and other optional parameters.</p>
-<div editor-title="cluster.dstack.yml">
+<div editor-title="examples/fleets/cluster.dstack.yml">
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
-<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
+
 <span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
+
+<span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">aws</span><span class="p p-Indicator">]</span>
+
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 </code></pre></div>
@@ -2218,10 +2222,12 @@ In that case, <code>dstack</code> will provision all nodes in the same backend a
 </div>
 <div class="tabbed-block">
 <p>To create a fleet from on-prem servers, specify their hosts along with the user, port, and SSH key for connection via SSH.</p>
-<p><div editor-title="cluster-ssh.dstack.yml"> </p>
+<p><div editor-title="examples/fleets/cluster.dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+
 <span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
+
 <span class="nt">ssh_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
 <span class="w">  </span><span class="nt">identity_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/id_rsa</span>
@@ -2250,7 +2256,7 @@ for all supported configuration options and examples.</p>
 <p>To create or update the fleet, simply call the <a href="../reference/cli/#dstack-apply"><code>dstack apply</code></a> command:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>my-gcp-fleet.dstack.yml
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fleets/cluster.dstack.yml
 Fleet<span class="w"> </span>my-fleet<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist<span class="w"> </span>yet.<span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>fleet?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
 <span class="w"> </span>FLEET<span class="w">     </span>INSTANCE<span class="w">  </span>BACKEND<span class="w">  </span>RESOURCES<span class="w">  </span>PRICE<span class="w">  </span>STATUS<span class="w">   </span>CREATED<span class="w"> </span>
 <span class="w"> </span>my-fleet<span class="w">  </span><span class="m">0</span><span class="w">                                    </span>pending<span class="w">  </span>now<span class="w">     </span>
