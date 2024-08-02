@@ -18,14 +18,14 @@
         <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../../../../blog/">
+        <link rel="next" href="../axolotl/">
       
       
         
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31+insiders-4.53.12">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0e8c34cb.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.dad623df.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1927,6 +1927,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../axolotl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Axolotl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2388,10 +2415,12 @@
 scripts for fine-tuning LLMs. It includes all the code needed to run CPT, SFT, DPO, and ORPO leveraging HuggingFace's
 libraries like <code>transformers</code>, <code>peft</code>, <code>accelerate</code>, and <code>trl</code>. You just need to modify the recipes and run the 
 appropriate script.</p>
-<p>This example shows how use Alignment Handbook to fine-tune Gemma 7B on your SFT dataset 
-with Alignment Handbook and <code>dstack</code>. </p>
+<blockquote>
+<p>This example shows how use Alignment Handbook with <code>dstack</code> to fine-tune Gemma 7B on your 
+SFT dataset using one node or multiple nodes. </p>
+</blockquote>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Once <code>dstack</code> is <a href="https://dstack.ai/docs/installation">installed</a>, clone the repo and run <code>dstack init</code></p>
+<p>Once <code>dstack</code> is <a href="https://dstack.ai/docs/installation">installed</a>, clone the repo and run <code>dstack init</code>:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/dstackai/dstack
 <span class="nb">cd</span><span class="w"> </span>dstack
 dstack<span class="w"> </span>init
@@ -2401,6 +2430,10 @@ dstack<span class="w"> </span>init
 as trainer configuration from a YAML file.
 This file can be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/config.yaml"><code>examples/fine-tuning/alignment-handbook/config.yaml</code></a>.
 You can modify it as needed.</p>
+<blockquote>
+<p>Before you proceed with training, make sure to update the <code>hub_model_id</code> in <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/config.yaml"><code>examples/fine-tuning/alignment-handbook/config.yaml</code></a>
+with your HuggingFace username.</p>
+</blockquote>
 <h2 id="single-node-training">Single-node training<a class="headerlink" href="#single-node-training" title="Permanent link">&para;</a></h2>
 <p>The easiest way to run a training script with <code>dstack</code> is by creating a task configuration file.
 This file can be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/train.dstack.yml"><code>examples/fine-tuning/alignment-handbook/train.dstack.yml</code></a>. Below is its content: </p>
@@ -2428,9 +2461,9 @@ This file can be found at <a href="https://github.com/dstackai/dstack/blob/maste
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num_processes=$DSTACK_GPUS_NUM</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">scripts/run_sft.py</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">../examples/fine-tuning/alignment-handbook/config.yaml</span>
-<span class="c1"># Expose 6006 to access TensorBoard</span>
-<span class="nt">ports</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6006</span>
+<span class="c1"># Uncomment to access TensorBoard</span>
+<span class="c1">#ports:</span>
+<span class="c1">#  - 6006</span>
 
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Required resources</span>
@@ -2442,7 +2475,6 @@ and runs the script.</p>
 according to the <code>resoruce</code> property.</p>
 <p>To run the task, use <code>dstack apply</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
-<span class="nv">ACCELERATE_LOG_LEVEL</span><span class="o">=</span>...
 <span class="nv">WANDB_API_KEY</span><span class="o">=</span>...
 
 dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/alignment-handbook/train.dstack.yml
@@ -2523,7 +2555,7 @@ The default policy is <code>reuse_or_create</code>.</p>
 </blockquote>
 <h2 id="dev-environment">Dev environment<a class="headerlink" href="#dev-environment" title="Permanent link">&para;</a></h2>
 <p>If you'd like to play with the example using a dev environment, run
-<a href=".dstack.yml">.dstack.yml</a> via <code>dstack apply</code>:</p>
+<a href="https://github.com/dstackai/dstack/examples/fine-tuning/alignment-handbook/.dstack.yml">.dstack.yml</a> via <code>dstack apply</code>:</p>
 <div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/alignment-handbook/.dstack.yaml<span class="w"> </span>
 </code></pre></div>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
@@ -2574,13 +2606,13 @@ The default policy is <code>reuse_or_create</code>.</p>
             
             
               
-              <a href="../../../../blog/" class="md-footer__link md-footer__link--next" aria-label="Next: Blog">
+              <a href="../axolotl/" class="md-footer__link md-footer__link--next" aria-label="Next: Axolotl">
                 <div class="md-footer__title">
                   <span class="md-footer__direction">
                     Next
                   </span>
                   <div class="md-ellipsis">
-                    Blog
+                    Axolotl
                   </div>
                 </div>
                 <div class="md-footer__button md-icon">
@@ -2694,7 +2726,7 @@ The default policy is <code>reuse_or_create</code>.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.d249fdc4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ef37796b.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

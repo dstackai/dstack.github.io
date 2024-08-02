@@ -15,13 +15,17 @@
         <link rel="canonical" href="https://dstack.ai/docs/examples/fine-tuning/axolotl/">
       
       
+        <link rel="prev" href="../alignment-handbook/">
+      
+      
+        <link rel="next" href="../../../../blog/">
       
       
         
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31+insiders-4.53.12">
     
     
       
@@ -29,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0e8c34cb.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.dad623df.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -306,10 +310,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../" class="md-tabs__link">
           
   
@@ -1596,25 +1602,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1631,7 +1642,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1675,25 +1686,30 @@
                 
   
   
+    
   
   
+  
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1710,7 +1726,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1743,6 +1759,183 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Axolotl
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Axolotl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Prerequisites
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-configuration-recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Training configuration recipe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-node-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Single-node training
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dev-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dev environment
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Contributing
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2071,34 +2264,106 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#running-with-dstack" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Running with <code>dstack</code>
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Running with dstack">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#building-axolotl-from-sources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Building <code>axolotl</code> from sources
+          Prerequisites
         </span>
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#training-configuration-recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Training configuration recipe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-node-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Single-node training
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dev-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dev environment
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Contributing
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2120,73 +2385,97 @@
 
 
 <h1 id="axolotl">Axolotl<a class="headerlink" href="#axolotl" title="Permanent link">&para;</a></h1>
-<p><a href="https://github.com/OpenAccess-AI-Collective/axolotl"><code>axolotl</code></a> streamlines the fine-tuning of AI models, offering support for multiple configurations and architectures.</p>
-<p>Furthermore, <code>axolotl</code> provides a set of <a href="https://github.com/OpenAccess-AI-Collective/axolotl/tree/main/examples"><code>yaml</code> examples</a> for almost all kinds of LLMs such as LLaMA2 family, Gemma family, LLaMA3 family, Jamba, and so on. It's recommended to navigate through the examples to get a sense about the role of each parameters, and adjust them for your specific use cases. Also, it is worth checking out all configs/parameters options with a brief description from <a href="https://github.com/OpenAccess-AI-Collective/axolotl/blob/main/docs/config.qmd">this doc</a>.</p>
-<p>The example below replicates the <a href="https://github.com/OpenAccess-AI-Collective/axolotl/blob/main/examples/llama-3/qlora-fsdp-70b.yaml">FSDP+QLoRA on LLaMA3 70B</a>, except that here we use Llama3 8B. You can see the <a href="config.yaml"><code>config.yaml</code></a>.</p>
-<h2 id="running-with-dstack">Running with <code>dstack</code><a class="headerlink" href="#running-with-dstack" title="Permanent link">&para;</a></h2>
-<p>Running <code>axolotl</code> with <code>dstack</code> is very straightforward.</p>
-<p>First, define the <a href="train.dstack.yaml"><code>train.dstack.yaml</code></a> task configuration file as follows:</p>
+<p><a href="https://github.com/OpenAccess-AI-Collective/axolotl">Axolotl</a> streamlines the fine-tuning of AI models It not only
+supports multiple configurations and architectures but also provides many
+ready-to-use <a href="https://github.com/axolotl-ai-cloud/axolotl/tree/main/examples">recipes</a>. You just need to pick a suitable
+recipe and adjust it for your use case.</p>
+<blockquote>
+<p>This example shows how use Axolotl with <code>dstack</code> to fine-tune Llama3 8B using FSDP and QLoRA
+on one node.</p>
+</blockquote>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Once <code>dstack</code> is <a href="https://dstack.ai/docs/installation">installed</a>, clone the repo and run <code>dstack init</code>:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/dstackai/dstack
+<span class="nb">cd</span><span class="w"> </span>dstack
+dstack<span class="w"> </span>init
+</code></pre></div>
+<h2 id="training-configuration-recipe">Training configuration recipe<a class="headerlink" href="#training-configuration-recipe" title="Permanent link">&para;</a></h2>
+<p>Axolotl reads the model, LoRA, and dataset arguments, as well as trainer configuration from a YAML file. This file can
+be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/config.yaml"><code>examples/fine-tuning/axolotl/config.yaml</code></a>.
+You can modify it as needed.</p>
+<blockquote>
+<p>Before you proceed with training, make sure to update the <code>hub_model_id</code> in <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/config.yaml"><code>examples/fine-tuning/axolotl/config.yaml</code></a>
+with your HuggingFace username.</p>
+</blockquote>
+<h2 id="single-node-training">Single-node training<a class="headerlink" href="#single-node-training" title="Permanent link">&para;</a></h2>
+<p>The easiest way to run a training script with <code>dstack</code> is by creating a task configuration file.
+This file can be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/train.dstack.yml"><code>examples/fine-tuning/axolotl/train.dstack.yml</code></a>. Below is its content: </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">axolotl-train</span>
 
+<span class="c1"># Using the official Axolotl&#39;s Docker image</span>
 <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">winglian/axolotl-cloud:main-20240429-py3.11-cu121-2.2.1</span>
 
+<span class="c1"># Required environment variables</span>
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WANDB_API_KEY</span>
-
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch -m axolotl.cli.train config.yaml</span>
-
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch -m axolotl.cli.train examples/fine-tuning/axolotl/config.yaml</span>
+<span class="c1"># Expose 6006 to access TensorBoard</span>
 <span class="nt">ports</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6006</span>
 
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB..</span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="c1"># Two or more 24GB GPUs (required by FSDP)</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB:2..</span>
 </code></pre></div>
+<p>The task uses Axolotl's Docker image, where Axolotl is already pre-installed.</p>
+<p>To run the task, use <code>dstack apply</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
+<span class="nv">WANDB_API_KEY</span><span class="o">=</span>...
+
+dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/train.dstack.yml
+</code></pre></div>
+<p>If you list <code>tensorbord</code> via <code>report_to</code> in <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/config.yaml"><code>examples/fine-tuning/axolotl/config.yaml</code></a>,
+you'll be able to access experiment metrics via <code>http://localhost:6006</code> (while the task is running).</p>
+<h2 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>[!NOTE]
-Feel free to adjust <code>resources</code> to specify the required resources.</p>
+<p>By default, <code>dstack run</code> reuses <code>idle</code> instances from one of the existing <a href="https://dstack.ai/docs/fleets">fleets</a>.
+If no <code>idle</code> instances meet the requirements, it creates a new fleet using one of the configured backends.</p>
 </blockquote>
-<p>We are using the official Docker image provided by Axolotl team (<code>winglian/axolotl-cloud:main-20240429-py3.11-cu121-2.2.1</code>). If you want to see other images, their official <a href="https://hub.docker.com/r/winglian/axolotl-cloud/tags">repo</a>. Note, <code>dstack</code> requires the CUDA driver to be 12.1+.</p>
-<p>To run the task, use the following command:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>&lt;...&gt;<span class="w"> </span><span class="se">\</span>
-<span class="nv">WANDB_API_KEY</span><span class="o">=</span>&lt;...&gt;<span class="w"> </span><span class="se">\</span>
-dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/train.dstack.yaml
+<p>The example folder includes a fleet configuration: 
+<a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/fleet.dstack.yml"> <code>examples/fine-tuning/axolotl/fleet.dstack.yml</code></a> 
+( a single node with a <code>24GB</code> GPU).</p>
+<p>You can update the fleet configuration to change the vRAM size, GPU model, number of GPUs per node, or number of nodes. </p>
+<p>A fleet can be provisioned with <code>dstack apply</code>:</p>
+<div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/fleet.dstack.yml
 </code></pre></div>
-<p>To push the final fine-tuned model to Hugging Face Hub, set <code>hub_model_id</code> in <a href="config.yaml"><code>config.yaml</code></a>.</p>
-<h3 id="building-axolotl-from-sources">Building <code>axolotl</code> from sources<a class="headerlink" href="#building-axolotl-from-sources" title="Permanent link">&para;</a></h3>
-<p>If you'd like to build <code>axolot</code> from sources (e.g. if you intend to modify its source code), follow its <a href="https://github.com/OpenAccess-AI-Collective/axolotl?tab=readme-ov-file#condapip-venv">installation guide</a>.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.11</span>
-
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WANDB_API_KEY</span>
-
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda install cuda</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip3 install torch torchvision torchaudio</span>
-
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/OpenAccess-AI-Collective/axolotl.git</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd axolotl</span>
-
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip3 install packaging</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip3 install -e &#39;.[flash-attn,deepspeed]&#39;</span>
-
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch -m axolotl.cli.train ../config.yaml</span>
-
-<span class="nt">ports</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6006</span>
-
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB..</span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<p>Once provisioned, the fleet can run dev environments and fine-tuning tasks.
+To delete the fleet, use <code>dstack fleet delete</code>.</p>
+<blockquote>
+<p>To ensure <code>dstack apply</code> always reuses an existing fleet,
+pass <code>--reuse</code> to <code>dstack apply</code> (or set <code>creation_policy</code> to <code>reuse</code> in the task configuration).
+The default policy is <code>reuse_or_create</code>.</p>
+</blockquote>
+<h2 id="dev-environment">Dev environment<a class="headerlink" href="#dev-environment" title="Permanent link">&para;</a></h2>
+<p>If you'd like to play with the example using a dev environment, run
+<a href="https://github.com/dstackai/dstack/examples/fine-tuning/axolotl/.dstack.yml">.dstack.yml</a> via <code>dstack apply</code>:</p>
+<div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/.dstack.yaml<span class="w"> </span>
 </code></pre></div>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<p>The source-code of this example can be found in  <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl"><code>https://github.com/dstackai/dstack/examples/fine-tuning/axolotl</code></a>.</p>
+<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p>Find a mistake or can't find an important example? Raise an <a href="https://github.com/dstackai/dstack/issues">issue</a> or send a <a href="https://github.com/dstackai/dstack/tree/master/examples">pull request</a>!</p>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Browse <a href="https://github.com/OpenAccess-AI-Collective/axolotl">Axolotl</a>.</li>
+<li>Check <a href="https://dstack.ai/docs/dev-environments">dev environments</a>, <a href="https://dstack.ai/docs/tasks">tasks</a>, 
+   <a href="https://dstack.ai/docs/services">services</a>, and <a href="https://dstack.ai/docs/fleets">fleets</a>.</li>
+<li>See other <a href="https://github.com/dstackai/dstack/blob/master/examples/">examples</a>.</li>
+</ol>
 
 
 
@@ -2203,6 +2492,44 @@ dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </spa
 
 
       
+          
+          <nav class="md-footer__inner md-grid" aria-label="Footer" >
+            
+              
+              <a href="../alignment-handbook/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Alignment Handbook">
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                </div>
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Previous
+                  </span>
+                  <div class="md-ellipsis">
+                    Alignment Handbook
+                  </div>
+                </div>
+              </a>
+            
+            
+              
+              <a href="../../../../blog/" class="md-footer__link md-footer__link--next" aria-label="Next: Blog">
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Next
+                  </span>
+                  <div class="md-ellipsis">
+                    Blog
+                  </div>
+                </div>
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+                </div>
+              </a>
+            
+          </nav>
+        
     
   </article>
 </div>
@@ -2306,7 +2633,7 @@ dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </spa
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.d249fdc4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ef37796b.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       
