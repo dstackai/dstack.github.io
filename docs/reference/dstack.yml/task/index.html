@@ -1093,6 +1093,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1439,24 +1466,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_nodes" class="md-nav__link">
+  <a href="#distributed-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
           Distributed tasks
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Arguments
         </span>
       
     </span>
@@ -1483,6 +1497,19 @@
       
         <span class="md-typeset">
           Spot policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queueing-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Queueing tasks
         </span>
       
     </span>
@@ -1850,6 +1877,45 @@
     <span class="md-ellipsis">
       
         termination_idle_time
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="retry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        duration
       
     </span>
   </a>
@@ -3002,24 +3068,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_nodes" class="md-nav__link">
+  <a href="#distributed-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
           Distributed tasks
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Arguments
         </span>
       
     </span>
@@ -3046,6 +3099,19 @@
       
         <span class="md-typeset">
           Spot policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queueing-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Queueing tasks
         </span>
       
     </span>
@@ -3425,6 +3491,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        retry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="retry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        on_events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        duration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3696,9 +3801,9 @@
 <h1 id="task">task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h1>
 <p>The <code>task</code> configuration type allows running <a href="../../../tasks/">tasks</a>.</p>
 <blockquote>
-<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>serve.dstack.yml</code> are both acceptable)
-and can be located in the project's root directory or any nested folder.
-Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run</code></a>.</p>
+<p>Configuration files must be inside the project repo, and their names must end with <code>.dstack.yml</code> 
+(e.g. <code>.dstack.yml</code> or <code>train.dstack.yml</code> are both acceptable).
+Any configuration can be run via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
 </blockquote>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h3>
@@ -3708,9 +3813,13 @@ The <code>python</code> property determines which default Docker image is used.<
 <div editor-title="train.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span><span class="w">    </span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="c1"># If `image` is not specified, dstack uses its base image</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
@@ -3718,25 +3827,40 @@ The <code>python</code> property determines which default Docker image is used.<
 
 </div>
 
-<div class="admonition info">
-<p class="admonition-title">nvcc</p>
+<details class="info">
+<summary>nvcc</summary>
 <p>Note that the default Docker image doesn't bundle <code>nvcc</code>, which is required for building custom CUDA kernels. 
 To install it, use <code>conda install cuda</code>.</p>
-</div>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span><span class="w">    </span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+
+<span class="c1"># Before other commands, install `nvcc` (via `conda install cuda`)</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda install cuda</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
+</code></pre></div>
+</details>
 <h3 id="_ports">Ports<a class="headerlink" href="#_ports" title="Permanent link">&para;</a></h3>
 <p>A task can configure ports. In this case, if the task is running an application on a port, <code>dstack run</code> 
 will securely allow you to access this port from your local machine through port forwarding.</p>
 <div editor-title="train.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span><span class="w">    </span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tensorboard --logdir results/runs &amp;</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
-
+<span class="c1"># Expose the port to access TensorBoard</span>
 <span class="nt">ports</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6000</span>
 </code></pre></div>
@@ -3748,9 +3872,13 @@ will securely allow you to access this port from your local machine through port
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span><span class="w">    </span>
 
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.11-0.4-cuda-12.1</span>
+<span class="c1"># Any custom Docker image</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.10-0.4-cuda-12.1</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
@@ -3762,12 +3890,17 @@ will securely allow you to access this port from your local machine through port
 <summary>Private registry</summary>
 <p>Use the <code>registry_auth</code> property to provide credentials for a private Docker registry.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span>
 
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.11-0.4-cuda-12.1</span>
+<span class="c1"># Any private Docker image</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.10-0.4-cuda-12.1</span>
+<span class="c1"># Credentials of the private Docker registry</span>
 <span class="nt">registry_auth</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peterschmidt85</span>
 <span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghp_e49HcZ9oYwBzUbcSk2080gXZOU2hiT9AeSR5</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
@@ -3779,7 +3912,10 @@ range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</co
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span><span class="w">    </span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
@@ -3787,13 +3923,11 @@ range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</co
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># 200GB or more RAM</span>
 <span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200GB..</span>
-
 <span class="w">  </span><span class="c1"># 4 GPUs from 40GB to 80GB</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB..80GB:4</span>
-
-<span class="w">  </span><span class="c1"># Shared memory</span>
+<span class="w">  </span><span class="c1"># Shared memory (required by multi-gpu)</span>
 <span class="w">  </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16GB</span>
-
+<span class="w">  </span><span class="c1"># Disk size</span>
 <span class="w">  </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500GB</span>
 </code></pre></div>
 
@@ -3807,9 +3941,12 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <summary>Google Cloud TPU</summary>
 <p>To use TPUs, specify its architecture prefixed by <code>tpu-</code> via the <code>gpu</code> property.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install torch~=2.3.0 torch_xla[tpu]~=2.3.0 torchvision -f https://storage.googleapis.com/libtpu-releases/index.html</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone --recursive https://github.com/pytorch/xla.git</span>
@@ -3830,12 +3967,14 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
+<span class="c1"># Environment variables</span>
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
@@ -3843,10 +3982,12 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 
 </div>
 
+<blockquote>
 <p>If you don't assign a value to an environment variable (see <code>HUGGING_FACE_HUB_TOKEN</code> above), 
 <code>dstack</code> will require the value to be passed via the CLI or set in the current process.</p>
+</blockquote>
 <p>For instance, you can define environment variables in a <code>.env</code> file and utilize tools like <code>direnv</code>.</p>
-<h5 id="default-environment-variables">Default environment variables<a class="headerlink" href="#default-environment-variables" title="Permanent link">&para;</a></h5>
+<h5 id="system-environment-variables">System environment variables<a class="headerlink" href="#system-environment-variables" title="Permanent link">&para;</a></h5>
 <p>The following environment variables are available in any run and are passed by <code>dstack</code> by default:</p>
 <table>
 <thead>
@@ -3882,18 +4023,20 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 </tr>
 </tbody>
 </table>
-<h3 id="_nodes">Distributed tasks<a class="headerlink" href="#_nodes" title="Permanent link">&para;</a></h3>
+<h3 id="distributed-tasks">Distributed tasks<a class="headerlink" href="#distributed-tasks" title="Permanent link">&para;</a></h3>
 <p>By default, the task runs on a single node. However, you can run it on a cluster of nodes.</p>
 <div editor-title="train.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train-distrib</span>
 
 <span class="c1"># The size of the cluster</span>
 <span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">torchrun</span>
@@ -3912,49 +4055,31 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 
 <p>If you run the task, <code>dstack</code> first provisions the master node and then runs the other nodes of the cluster.
 All nodes are provisioned in the same region.</p>
+<blockquote>
 <p><code>dstack</code> is easy to use with <code>accelerate</code>, <code>torchrun</code>, and other distributed frameworks. All you need to do
 is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NODE</code>, <code>DSTACK_NODE_RANK</code>, <code>DSTACK_NODES_NUM</code>,
-<code>DSTACK_MASTER_NODE_IP</code>, and <code>DSTACK_GPUS_NUM</code> (see <a href="#default-environment-variables">System environment variables</a>).</p>
+<code>DSTACK_MASTER_NODE_IP</code>, and <code>DSTACK_GPUS_NUM</code> (see <a href="#system-environment-variables">System environment variables</a>).</p>
+</blockquote>
 <details class="info">
 <summary>Backends</summary>
-<p>Running on multiple nodes is supported only with <code>aws</code>, <code>gcp</code>, <code>azure</code>, <code>oci</code>, and instances added via
-<a href="../../../fleets/#__tabbed_1_2"><code>dstack pool add-ssh</code></a>.</p>
+<p>Running on multiple nodes is supported only with the <code>aws</code>, <code>gcp</code>, <code>azure</code>, <code>oci</code> backends, or
+<a href="../../../fleets/#__tabbed_1_2">on-prem fleets</a>.</p>
 </details>
-<h3 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">&para;</a></h3>
-<p>You can parameterize tasks with user arguments using <code>${{ run.args }}</code> in the configuration.</p>
-<div editor-title="train.dstack.yml"> 
-
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
-
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py ${{ run.args }}</span>
-</code></pre></div>
-
-</div>
-
-<p>Now, you can pass your arguments to the <code>dstack run</code> command:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml<span class="w"> </span>--train_batch_size<span class="o">=</span><span class="m">1</span><span class="w"> </span>--num_train_epochs<span class="o">=</span><span class="m">100</span>
-</code></pre></div>
-
-</div>
-
 <h3 id="web-applications">Web applications<a class="headerlink" href="#web-applications" title="Permanent link">&para;</a></h3>
 <p>Here's an example of using <code>ports</code> to run web apps with <code>tasks</code>. </p>
 <div editor-title="app.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamlit-hello</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip3 install streamlit</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamlit hello</span>
-
+<span class="c1"># Expose the port to access the web app</span>
 <span class="nt">ports</span><span class="p">:</span><span class="w"> </span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8501</span>
 </code></pre></div>
@@ -3966,27 +4091,59 @@ is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NO
 <div editor-title="train.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span><span class="w">    </span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
 
+<span class="c1"># Use either spot or on-demand instances</span>
 <span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 </code></pre></div>
 
 </div>
 
 <p>The <code>spot_policy</code> accepts <code>spot</code>, <code>on-demand</code>, and <code>auto</code>. The default for tasks is <code>auto</code>.</p>
+<h3 id="queueing-tasks">Queueing tasks<a class="headerlink" href="#queueing-tasks" title="Permanent link">&para;</a></h3>
+<p>By default, if <code>dstack apply</code> cannot find capacity, the task fails. </p>
+<p>To queue the task and wait for capacity, specify the <a href="#retry"><code>retry</code></a> 
+property:</p>
+<div editor-title="train.dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span>
+
+<span class="c1"># Commands of the task</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
+
+<span class="nt">retry</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Retry on no-capacity errors</span>
+<span class="w">  </span><span class="nt">on_events</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">no-capacity</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="c1"># Retry within 1 day</span>
+<span class="w">  </span><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1d</span>
+</code></pre></div>
+
+</div>
+
 <h3 id="backends_1">Backends<a class="headerlink" href="#backends_1" title="Permanent link">&para;</a></h3>
 <p>By default, <code>dstack</code> provisions instances in all configured backends. However, you can specify the list of backends:</p>
 <div editor-title="train.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
 
+<span class="c1"># Use only listed backends</span>
 <span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">aws</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gcp</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
@@ -3997,11 +4154,15 @@ is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NO
 <div editor-title="train.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
 
+<span class="c1"># Use only listed regions</span>
 <span class="nt">regions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">eu-west-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">eu-west-2</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
@@ -4013,13 +4174,17 @@ To attach a volume, simply specify its name using the <code>volumes</code> prope
 <div editor-title="train.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
 
+<span class="c1"># Map the name of the volume to any path</span>
 <span class="nt">volumes</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-new-volume</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/volume_data</span>
@@ -4065,6 +4230,9 @@ attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
 <h4 class="reference-item" id="creation_policy"><code>creation_policy</code> - (Optional) The policy for using instances from the pool. Defaults to <code>reuse-or-create</code>.<a class="headerlink" href="#creation_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="termination_policy"><code>termination_policy</code> - (Optional) The policy for instance termination. Defaults to <code>destroy-after-idle</code>.<a class="headerlink" href="#termination_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Time to wait before destroying the idle instance. Defaults to <code>5m</code> for <code>dstack run</code> and to <code>3d</code> for <code>dstack pool add</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h4>
+<h2 id="retry"><code>retry</code><a class="headerlink" href="#retry" title="Permanent link">&para;</a></h2>
+<h4 class="reference-item" id="on_events"><code>on_events</code> -  The list of events that should be handled with retry. Supported events are <code>no-capacity</code>, <code>interruption</code>, and <code>error</code>.<a class="headerlink" href="#on_events" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="duration"><code>duration</code> - (Optional) The maximum period of retrying the run, e.g., <code>4h</code> or <code>1d</code>.<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h4>
 <h2 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>8GB</code>). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
@@ -4242,7 +4410,11 @@ attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

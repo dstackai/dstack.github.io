@@ -1023,11 +1023,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configuration
+          Define a configuration
         </span>
       
     </span>
@@ -1036,11 +1036,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-and-updating-gateways" class="md-nav__link">
+  <a href="#create-or-update-a-gateway" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Creating and updating gateways
+          Create or update a gateway
         </span>
       
     </span>
@@ -1049,11 +1049,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-dns-records" class="md-nav__link">
+  <a href="#update-dns-records" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Updating DNS records
+          Update DNS records
         </span>
       
     </span>
@@ -1062,25 +1062,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-gateways" class="md-nav__link">
+  <a href="#manage-gateways" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Managing gateways
+          Manage gateways
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Managing gateways">
+    <nav class="md-nav" aria-label="Manage gateways">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#listing-gateways" class="md-nav__link">
+  <a href="#list-gateways" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Listing gateways
+          List gateways
         </span>
       
     </span>
@@ -1089,11 +1089,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deleting-gateways" class="md-nav__link">
+  <a href="#delete-a-gateway" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Deleting gateways
+          Delete a gateway
         </span>
       
     </span>
@@ -1227,6 +1227,33 @@
     
   
     Protips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
   
 
     
@@ -2270,11 +2297,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configuration
+          Define a configuration
         </span>
       
     </span>
@@ -2283,11 +2310,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-and-updating-gateways" class="md-nav__link">
+  <a href="#create-or-update-a-gateway" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Creating and updating gateways
+          Create or update a gateway
         </span>
       
     </span>
@@ -2296,11 +2323,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-dns-records" class="md-nav__link">
+  <a href="#update-dns-records" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Updating DNS records
+          Update DNS records
         </span>
       
     </span>
@@ -2309,25 +2336,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-gateways" class="md-nav__link">
+  <a href="#manage-gateways" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Managing gateways
+          Manage gateways
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Managing gateways">
+    <nav class="md-nav" aria-label="Manage gateways">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#listing-gateways" class="md-nav__link">
+  <a href="#list-gateways" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Listing gateways
+          List gateways
         </span>
       
     </span>
@@ -2336,11 +2363,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deleting-gateways" class="md-nav__link">
+  <a href="#delete-a-gateway" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Deleting gateways
+          Delete a gateway
         </span>
       
     </span>
@@ -2392,23 +2419,27 @@
 
 
 <h1 id="gateways">Gateways<a class="headerlink" href="#gateways" title="Permanent link">&para;</a></h1>
-<p>Gateways handle the ingress traffic of running services.
-They provide <a href="services.md">services</a> with HTTPS domains, handle authentication, distribute load, and perform auto-scaling.
-In order to run a service, you need to have at least one gateway set up.</p>
+<p>Gateways manage the ingress traffic of running services and provide them with an HTTPS endpoint mapped to your domain,
+handling authentication, load distribution, and auto-scaling.</p>
+<p>To run a service, you need at least one gateway set up.</p>
 <blockquote>
 <p>If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
 the gateway is already set up for you.</p>
 </blockquote>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
 <p>First, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>gateway.dstack.yml</code>
 are both acceptable).</p>
 <div editor-title="gateway.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway</span>
+<span class="c1"># A name of the gateway</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-gateway</span>
 
+<span class="c1"># Gateways are bound to a specific backend and region</span>
 <span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span>
 <span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eu-west-1</span>
+
+<span class="c1"># This domain will be used to access the endpoint</span>
 <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span>
 </code></pre></div>
 
@@ -2417,15 +2448,14 @@ are both acceptable).</p>
 <p>A domain name is required to create a gateway.</p>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
-<p>See the <a href="../../reference/dstack.yml/gateway/">.dstack.yml reference</a>
-for all supported configuration options and examples.</p>
+<p>See <a href="../../reference/dstack.yml/gateway/">.dstack.yml</a> for all the options supported by
+gateways, along with multiple examples.</p>
 </div>
-<h2 id="creating-and-updating-gateways">Creating and updating gateways<a class="headerlink" href="#creating-and-updating-gateways" title="Permanent link">&para;</a></h2>
+<h2 id="create-or-update-a-gateway">Create or update a gateway<a class="headerlink" href="#create-or-update-a-gateway" title="Permanent link">&para;</a></h2>
 <p>To create or update the gateway, simply call the <a href="../../reference/cli/#dstack-apply"><code>dstack apply</code></a> command:</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>examples/deployment/gateway.dstack.yml
-
 The<span class="w"> </span>example-gateway<span class="w"> </span>doesn<span class="err">&#39;</span>t<span class="w"> </span>exist.<span class="w"> </span>Create<span class="w"> </span>it?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
 
 <span class="w"> </span>BACKEND<span class="w">  </span>REGION<span class="w">     </span>NAME<span class="w">             </span>HOSTNAME<span class="w">  </span>DOMAIN<span class="w">       </span>DEFAULT<span class="w">  </span>STATUS
@@ -2434,18 +2464,17 @@ The<span class="w"> </span>example-gateway<span class="w"> </span>doesn<span cla
 
 </div>
 
-<h2 id="updating-dns-records">Updating DNS records<a class="headerlink" href="#updating-dns-records" title="Permanent link">&para;</a></h2>
+<h2 id="update-dns-records">Update DNS records<a class="headerlink" href="#update-dns-records" title="Permanent link">&para;</a></h2>
 <p>Once the gateway is assigned a hostname, go to your domain's DNS settings
 and add an <code>A</code> DNS record for <code>*.&lt;gateway domain&gt;</code> (e.g., <code>*.example.com</code>) pointing to the gateway's hostname.</p>
-<p>This will allow you to access runs and models using this domain.</p>
-<h2 id="managing-gateways">Managing gateways<a class="headerlink" href="#managing-gateways" title="Permanent link">&para;</a></h2>
-<h3 id="listing-gateways">Listing gateways<a class="headerlink" href="#listing-gateways" title="Permanent link">&para;</a></h3>
+<h2 id="manage-gateways">Manage gateways<a class="headerlink" href="#manage-gateways" title="Permanent link">&para;</a></h2>
+<h3 id="list-gateways">List gateways<a class="headerlink" href="#list-gateways" title="Permanent link">&para;</a></h3>
 <p>The <a href="../../reference/cli/#dstack-gateway-list"><code>dstack gateway list</code></a> command lists existing gateways and their status.</p>
-<h3 id="deleting-gateways">Deleting gateways<a class="headerlink" href="#deleting-gateways" title="Permanent link">&para;</a></h3>
+<h3 id="delete-a-gateway">Delete a gateway<a class="headerlink" href="#delete-a-gateway" title="Permanent link">&para;</a></h3>
 <p>To delete a gateway, pass gateway configuration to <a href="../../reference/cli/#dstack-delete"><code>dstack delete</code></a>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>delete<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>examples/deployment/gateway.dstack.yml
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>examples/deployment/gateway.dstack.yml
 </code></pre></div>
 
 </div>
@@ -2453,8 +2482,12 @@ and add an <code>A</code> DNS record for <code>*.&lt;gateway domain&gt;</code> (
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>See <a href="../../services/">services</a> on how to run services</li>
-<li>Check the <a href="../../reference/dstack.yml/gateway/"><code>.dstack.yml</code> reference</a> for more details and examples</li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
+<p>See <a href="../../reference/dstack.yml/gateway/">.dstack.yml</a> for all the options supported by
+gateways, along with multiple examples.</p>
+</div>
 
 
 
@@ -2612,7 +2645,11 @@ and add an <code>A</code> DNS record for <code>*.&lt;gateway domain&gt;</code> (
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

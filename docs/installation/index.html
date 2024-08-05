@@ -740,56 +740,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-add-on-prem-servers" class="md-nav__link">
+  <a href="#4-create-on-prem-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          4. Add on-prem servers
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dstack-sky" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          dstack Sky
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="dstack Sky">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set-up-the-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Set up the CLI
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-clouds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Configure clouds
+          4. Create on-prem fleets
         </span>
       
     </span>
@@ -1257,6 +1212,33 @@
     
   
     Protips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
   
 
     
@@ -2353,56 +2335,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-add-on-prem-servers" class="md-nav__link">
+  <a href="#4-create-on-prem-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          4. Add on-prem servers
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dstack-sky" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          dstack Sky
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="dstack Sky">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set-up-the-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Set up the CLI
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-clouds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Configure clouds
+          4. Create on-prem fleets
         </span>
       
     </span>
@@ -2459,10 +2396,8 @@ you have to set up the server. </p>
 <h2 id="set-up-the-server">Set up the server<a class="headerlink" href="#set-up-the-server" title="Permanent link">&para;</a></h2>
 <p>Follow the steps below to set up the server.</p>
 <h3 id="1-configure-backends">1. Configure backends<a class="headerlink" href="#1-configure-backends" title="Permanent link">&para;</a></h3>
-<blockquote>
 <p>If you want the <code>dstack</code> server to run containers or manage clusters in your cloud accounts (or use Kubernetes),
 create the <a href="../reference/server/config.yml/">~/.dstack/server/config.yml</a> file and configure backends.</p>
-</blockquote>
 <h3 id="2-start-the-server">2. Start the server<a class="headerlink" href="#2-start-the-server" title="Permanent link">&para;</a></h3>
 <p>Once the <code>~/.dstack/server/config.yml</code> file is configured, proceed to start the server:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">Docker</label></div>
@@ -2497,15 +2432,13 @@ The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </sp
 </div>
 </div>
 </div>
-<blockquote>
 <p>By default, the <code>dstack</code> server stores its state in <code>~/.dstack/server/data</code> using SQLite.
 To use a database, set the <a href="../reference/cli/#environment-variables"><code>DSTACK_DATABASE_URL</code></a> environment variable.</p>
-</blockquote>
-<p>The server can be set up anywhere: on your laptop, a dedicated server, or in the cloud.
-Once the <code>dstack</code> server is up, you can use the CLI or API.</p>
+<p>The <code>dstack</code> server can run anywhere: on your laptop, a dedicated server, or in the cloud. Once it's up, you
+can use either the CLI or the API.</p>
 <h3 id="3-set-up-the-cli">3. Set up the CLI<a class="headerlink" href="#3-set-up-the-cli" title="Permanent link">&para;</a></h3>
 <p>To point the CLI to the <code>dstack</code> server, configure it
-with the server address, user token and project name:</p>
+with the server address, user token, and project name:</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dstack
@@ -2519,38 +2452,9 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 </div>
 
 <p>This configuration is stored in <code>~/.dstack/config.yml</code>.</p>
-<h3 id="4-add-on-prem-servers">4. Add on-prem servers<a class="headerlink" href="#4-add-on-prem-servers" title="Permanent link">&para;</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Fleets</p>
+<h3 id="4-create-on-prem-fleets">4. Create on-prem fleets<a class="headerlink" href="#4-create-on-prem-fleets" title="Permanent link">&para;</a></h3>
 <p>If you want the <code>dstack</code> server to run containers on your on-prem servers,
 use <a href="../fleets/#__tabbed_1_2">fleets</a>.</p>
-</div>
-<h2 id="dstack-sky">dstack Sky<a class="headerlink" href="#dstack-sky" title="Permanent link">&para;</a></h2>
-<p>If you don't want to host the <code>dstack</code> server yourself or would like to access GPU from the <code>dstack</code> marketplace, sign up with
-<a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>.</p>
-<h3 id="set-up-the-cli">Set up the CLI<a class="headerlink" href="#set-up-the-cli" title="Permanent link">&para;</a></h3>
-<p>If you've signed up,
-open your project settings, and copy the <code>dstack config</code> command to point the CLI to the project.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/dstackai/static-assets/main/static-assets/images/dstack-sky-project-config.png" width="800" /></p>
-<p>Then, install the CLI on your machine and use the copied command.</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dstack
-$<span class="w"> </span>dstack<span class="w"> </span>config<span class="w"> </span>--url<span class="w"> </span>https://sky.dstack.ai<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--project<span class="w"> </span>peterschmidt85<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--token<span class="w"> </span>bbae0f28-d3dd-4820-bf61-8f4bb40815da
-
-Configuration<span class="w"> </span>is<span class="w"> </span>updated<span class="w"> </span>at<span class="w"> </span>~/.dstack/config.yml
-</code></pre></div>
-
-</div>
-
-<h3 id="configure-clouds">Configure clouds<a class="headerlink" href="#configure-clouds" title="Permanent link">&para;</a></h3>
-<p>By default, <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> 
-uses the GPU from its marketplace, which requires a credit card to be attached in your account
-settings.</p>
-<p>To use your own cloud accounts, click the settings icon of the corresponding backend and specify credentials:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/dstackai/static-assets/main/static-assets/images/dstack-sky-edit-backend-config.png" width="800" /></p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../reference/server/config.yml/">server/config.yml reference</a> on how to configure backends</li>
@@ -2558,6 +2462,11 @@ settings.</p>
 <li>Browse <a href="https://github.com/dstackai/dstack/tree/master/examples">examples <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a></li>
 <li>Join the community via <a href="https://discord.gg/u8SmfwPpMd">Discord <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a></li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">dstack Sky</p>
+<p>If you don't want to host the <code>dstack</code> server or would like to access GPU from the <code>dstack</code> marketplace, 
+check <a href="../guides/dstack-sky/">dstack Sky</a>.</p>
+</div>
 
 
 
@@ -2715,7 +2624,11 @@ settings.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../assets/javascripts/extra.js"></script>
       

@@ -1093,6 +1093,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1430,11 +1457,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-cloud-fleet" class="md-nav__link">
+  <a href="#cloud-fleet" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Creating a cloud fleet
+          Cloud fleet
         </span>
       
     </span>
@@ -1443,11 +1470,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-ssh-fleet" class="md-nav__link">
+  <a href="#on-prem-fleet" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Creating an on-prem fleet
+          On-prem fleet
         </span>
       
     </span>
@@ -2740,11 +2767,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-cloud-fleet" class="md-nav__link">
+  <a href="#cloud-fleet" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Creating a cloud fleet
+          Cloud fleet
         </span>
       
     </span>
@@ -2753,11 +2780,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-ssh-fleet" class="md-nav__link">
+  <a href="#on-prem-fleet" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Creating an on-prem fleet
+          On-prem fleet
         </span>
       
     </span>
@@ -3298,30 +3325,47 @@
 <h1 id="fleet">fleet<a class="headerlink" href="#fleet" title="Permanent link">&para;</a></h1>
 <p>The <code>fleet</code> configuration type allows creating and updating fleets.</p>
 <blockquote>
-<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>fleet.dstack.yml</code> are both acceptable)
-and can be located in the project's root directory or any nested folder.
-Any configuration can be applied via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
+<p>Configuration files must be inside the project repo, and their names must end with <code>.dstack.yml</code> 
+(e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code> are both acceptable).
+Any configuration can be run via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
 </blockquote>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<h3 id="create-cloud-fleet">Creating a cloud fleet<a class="headerlink" href="#create-cloud-fleet" title="Permanent link">&para;</a></h3>
-<div editor-title="gcp-fleet.dstack.yml"> 
+<h3 id="cloud-fleet">Cloud fleet<a class="headerlink" href="#cloud-fleet" title="Permanent link">&para;</a></h3>
+<div editor-title="fleet-distrib.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-gcp-fleet</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+
+<span class="c1"># The number of instances</span>
 <span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="c1"># Ensure the instances are interconnected</span>
 <span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
-<span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">gcp</span><span class="p p-Indicator">]</span>
+
+<span class="c1"># Use either spot or on-demand instances</span>
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 24GB or more vRAM</span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB..</span>
+<span class="w">    </span><span class="c1"># One or more GPU</span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1..</span>
 </code></pre></div>
 
 </div>
 
-<h3 id="create-ssh-fleet">Creating an on-prem fleet<a class="headerlink" href="#create-ssh-fleet" title="Permanent link">&para;</a></h3>
-<div editor-title="ssh-fleet.dstack.yml"> 
+<h3 id="on-prem-fleet">On-prem fleet<a class="headerlink" href="#on-prem-fleet" title="Permanent link">&para;</a></h3>
+<div editor-title="fleet-on-prem.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-ssh-fleet</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-on-prem-fleet</span>
+
+<span class="c1"># Ensure instances are interconnected</span>
+<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
+
+<span class="c1"># The user, private SSH key, and hostnames of the on-prem servers</span>
 <span class="nt">ssh_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
 <span class="w">  </span><span class="nt">identity_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/id_rsa</span>
@@ -3531,7 +3575,11 @@ Any configuration can be applied via <a href="../../cli/#dstack-apply"><code>dst
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

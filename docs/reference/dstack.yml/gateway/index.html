@@ -1093,6 +1093,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1452,6 +1479,25 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Creating a new gateway
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2363,6 +2409,25 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Creating a new gateway
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2552,18 +2617,23 @@
 <h1 id="gateway">gateway<a class="headerlink" href="#gateway" title="Permanent link">&para;</a></h1>
 <p>The <code>gateway</code> configuration type allows creating and updating <a href="../../../services/">gateways</a>.</p>
 <blockquote>
-<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>gateway.dstack.yml</code> are both acceptable)
-and can be located in the project's root directory or any nested folder.
-Any configuration can be applied via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
+<p>Configuration files must be inside the project repo, and their names must end with <code>.dstack.yml</code> 
+(e.g. <code>.dstack.yml</code> or <code>gateway.dstack.yml</code> are both acceptable).
+Any configuration can be run via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
 </blockquote>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="new-gateway">Creating a new gateway<a class="headerlink" href="#new-gateway" title="Permanent link">&para;</a></h3>
 <div editor-title="gateway.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway</span>
+<span class="c1"># A name of the gateway</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-gateway</span>
 
+<span class="c1"># Gateways are bound to a specific backend and region</span>
 <span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span>
 <span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eu-west-1</span>
+
+<span class="c1"># This domain will be used to access the endpoint</span>
 <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span>
 </code></pre></div>
 
@@ -2739,7 +2809,11 @@ Any configuration can be applied via <a href="../../cli/#dstack-apply"><code>dst
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

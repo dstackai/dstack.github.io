@@ -1093,6 +1093,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1400,11 +1427,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#default-environment-variables" class="md-nav__link">
+  <a href="#system-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Default environment variables
+          System environment variables
         </span>
       
     </span>
@@ -2966,11 +2993,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#default-environment-variables" class="md-nav__link">
+  <a href="#system-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Default environment variables
+          System environment variables
         </span>
       
     </span>
@@ -3648,9 +3675,9 @@
 <h1 id="dev-environment">dev-environment<a class="headerlink" href="#dev-environment" title="Permanent link">&para;</a></h1>
 <p>The <code>dev-environment</code> configuration type allows running <a href="../../../dev-environments/">dev environments</a>.</p>
 <blockquote>
-<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>serve.dstack.yml</code> are both acceptable)
-and can be located in the project's root directory or any nested folder.
-Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run</code></a>.</p>
+<p>Configuration files must be inside the project repo, and their names must end with <code>.dstack.yml</code> 
+(e.g. <code>.dstack.yml</code> or <code>dev.dstack.yml</code> are both acceptable).
+Any configuration can be run via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
 </blockquote>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h3>
@@ -3660,24 +3687,42 @@ The <code>python</code> property determines which default Docker image is used.<
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="c1"># If `image` is not specified, dstack uses its base image</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 </code></pre></div>
 
 </div>
 
-<div class="admonition info">
-<p class="admonition-title">nvcc</p>
+<details class="info">
+<summary>nvcc</summary>
 <p>Note that the default Docker image doesn't bundle <code>nvcc</code>, which is required for building custom CUDA kernels. 
 To install it, use <code>conda install cuda</code>.</p>
-</div>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="c1"># Run this command on start</span>
+<span class="nt">init</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda install cuda</span>
+</code></pre></div>
+</details>
 <h3 id="docker-image">Docker image<a class="headerlink" href="#docker-image" title="Permanent link">&para;</a></h3>
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
+<span class="c1"># Any custom Docker image</span>
 <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
 
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
@@ -3689,8 +3734,12 @@ To install it, use <code>conda install cuda</code>.</p>
 <summary>Private registry</summary>
 <p>Use the <code>registry_auth</code> property to provide credentials for a private Docker registry. </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
+<span class="c1"># Any private Docker image</span>
 <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
+<span class="c1"># Credentials of the private Docker registry</span>
 <span class="nt">registry_auth</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peterschmidt85</span>
 <span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghp_e49HcZ9oYwBzUbcSk2080gXZOU2hiT9AeSR5</span>
@@ -3704,19 +3753,19 @@ range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</co
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># 200GB or more RAM</span>
 <span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200GB..</span>
-
 <span class="w">  </span><span class="c1"># 4 GPUs from 40GB to 80GB</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB..80GB:4</span>
-
-<span class="w">  </span><span class="c1"># Shared memory</span>
+<span class="w">  </span><span class="c1"># Shared memory (required by multi-gpu)</span>
 <span class="w">  </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16GB</span>
-
+<span class="w">  </span><span class="c1"># Disk size</span>
 <span class="w">  </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500GB</span>
 </code></pre></div>
 
@@ -3730,6 +3779,8 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <summary>Google Cloud TPU</summary>
 <p>To use TPUs, specify its architecture prefixed by <code>tpu-</code> via the <code>gpu</code> property.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
@@ -3747,7 +3798,10 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
+<span class="c1"># Environment variables</span>
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
@@ -3757,10 +3811,12 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 
 </div>
 
+<blockquote>
 <p>If you don't assign a value to an environment variable (see <code>HUGGING_FACE_HUB_TOKEN</code> above), 
 <code>dstack</code> will require the value to be passed via the CLI or set in the current process.</p>
+</blockquote>
 <p>For instance, you can define environment variables in a <code>.env</code> file and utilize tools like <code>direnv</code>.</p>
-<h4 id="default-environment-variables">Default environment variables<a class="headerlink" href="#default-environment-variables" title="Permanent link">&para;</a></h4>
+<h4 id="system-environment-variables">System environment variables<a class="headerlink" href="#system-environment-variables" title="Permanent link">&para;</a></h4>
 <p>The following environment variables are available in any run and are passed by <code>dstack</code> by default:</p>
 <table>
 <thead>
@@ -3789,9 +3845,12 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <div editor-title=".dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
+<span class="c1"># Use either spot or on-demand instances</span>
 <span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 </code></pre></div>
 
@@ -3803,9 +3862,12 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <div editor-title=".dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
+<span class="c1"># Use only listed backends</span>
 <span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">aws</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gcp</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
@@ -3816,9 +3878,12 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <div editor-title=".dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
+<span class="c1"># Use only listed regions</span>
 <span class="nt">regions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">eu-west-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">eu-west-2</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
@@ -3830,9 +3895,12 @@ To attach a volume, simply specify its name using the <code>volumes</code> prope
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span><span class="w">    </span>
 
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
+<span class="c1"># Map the name of the volume to any path</span>
 <span class="nt">volumes</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-new-volume</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/volume_data</span>
@@ -3842,12 +3910,12 @@ To attach a volume, simply specify its name using the <code>volumes</code> prope
 
 <p>Once you run this configuration, the contents of the volume will be attached to <code>/volume_data</code> inside the dev
 environment, and its contents will persist across runs.</p>
-<div class="admonition info">
-<p class="admonition-title">Limitations</p>
+<details class="info">
+<summary>Limitations</summary>
 <p>When you're running a dev environment, task, or service with <code>dstack</code>, it automatically mounts the project folder contents
 to <code>/workflow</code> (and sets that as the current working directory). Right now, <code>dstack</code> doesn't allow you to 
 attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
-</div>
+</details>
 <p>The <code>dev-environment</code> configuration type supports many other options. See below.</p>
 <h2 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="ide"><code>ide</code> -  The IDE to run.<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h4>
@@ -4056,7 +4124,11 @@ attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

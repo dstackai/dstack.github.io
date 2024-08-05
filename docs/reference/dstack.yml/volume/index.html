@@ -1093,6 +1093,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1484,7 +1511,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-volume" class="md-nav__link">
+  <a href="#new-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -1497,7 +1524,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#register-volume" class="md-nav__link">
+  <a href="#existing-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -2306,7 +2333,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-volume" class="md-nav__link">
+  <a href="#new-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -2319,7 +2346,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#register-volume" class="md-nav__link">
+  <a href="#existing-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -2430,30 +2457,40 @@
 <h1 id="volume">volume<a class="headerlink" href="#volume" title="Permanent link">&para;</a></h1>
 <p>The <code>volume</code> configuration type allows creating, registering, and updating volumes.</p>
 <blockquote>
-<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>vol.dstack.yml</code> are both acceptable)
-and can be located in the project's root directory or any nested folder.
-Any configuration can be applied via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
+<p>Configuration files must be inside the project repo, and their names must end with <code>.dstack.yml</code> 
+(e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code> are both acceptable).
+Any configuration can be run via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
 </blockquote>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<h3 id="create-volume">Creating a new volume<a class="headerlink" href="#create-volume" title="Permanent link">&para;</a></h3>
+<h3 id="new-volume">Creating a new volume<a class="headerlink" href="#new-volume" title="Permanent link">&para;</a></h3>
 <div editor-title="vol.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">volume</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-aws-volume</span>
+<span class="c1"># The name of the volume</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-new-volume</span>
+
+<span class="c1"># Volumes are bound to a specific backend and region</span>
 <span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span>
 <span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eu-central-1</span>
+
+<span class="c1"># The size of the volume</span>
 <span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100GB</span>
 </code></pre></div>
 
 </div>
 
-<h3 id="register-volume">Registering an existing volume<a class="headerlink" href="#register-volume" title="Permanent link">&para;</a></h3>
-<div editor-title="ext-vol.dstack.yml"> 
+<h3 id="existing-volume">Registering an existing volume<a class="headerlink" href="#existing-volume" title="Permanent link">&para;</a></h3>
+<div editor-title="vol-exist.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">volume</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-external-volume</span>
+<span class="c1"># The name of the volume</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-existing-volume</span>
+
+<span class="c1"># Volumes are bound to a specific backend and region</span>
 <span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span>
 <span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eu-central-1</span>
+
+<span class="c1"># The ID of the volume in AWS</span>
 <span class="nt">volume_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vol1235</span>
 </code></pre></div>
 
@@ -2622,7 +2659,11 @@ Any configuration can be applied via <a href="../../cli/#dstack-apply"><code>dst
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

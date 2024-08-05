@@ -829,11 +829,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configuration
+          Define a configuration
         </span>
       
     </span>
@@ -842,11 +842,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running" class="md-nav__link">
+  <a href="#run-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Running
+          Run a configuration
         </span>
       
     </span>
@@ -855,25 +855,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-runs" class="md-nav__link">
+  <a href="#manage-runs" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Managing runs
+          Manage runs
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Managing runs">
+    <nav class="md-nav" aria-label="Manage runs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#listing-runs" class="md-nav__link">
+  <a href="#list-runs" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Listing runs
+          List runs
         </span>
       
     </span>
@@ -882,11 +882,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stopping-runs" class="md-nav__link">
+  <a href="#stop-a-run" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Stopping runs
+          Stop a run
         </span>
       
     </span>
@@ -896,6 +896,19 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manage-fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Manage fleets
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1212,6 +1225,33 @@
     
   
     Protips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
   
 
     
@@ -2255,11 +2295,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configuration
+          Define a configuration
         </span>
       
     </span>
@@ -2268,11 +2308,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running" class="md-nav__link">
+  <a href="#run-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Running
+          Run a configuration
         </span>
       
     </span>
@@ -2281,25 +2321,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-runs" class="md-nav__link">
+  <a href="#manage-runs" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Managing runs
+          Manage runs
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Managing runs">
+    <nav class="md-nav" aria-label="Manage runs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#listing-runs" class="md-nav__link">
+  <a href="#list-runs" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Listing runs
+          List runs
         </span>
       
     </span>
@@ -2308,11 +2348,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stopping-runs" class="md-nav__link">
+  <a href="#stop-a-run" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Stopping runs
+          Stop a run
         </span>
       
     </span>
@@ -2322,6 +2362,19 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manage-fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Manage fleets
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2364,30 +2417,36 @@
 
 
 <h1 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h1>
-<p>Tasks allow for convenient scheduling of various batch jobs, such as training, fine-tuning, or
-data processing. They can also be used to run web applications
-when features offered by <a href="../services/">services</a> are not needed, such as for debugging.</p>
-<p>You can run tasks on a single machine or on a cluster of nodes.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>A task allows you to schedule a job or run a web app. It lets you configure dependencies, resources, ports, and more.
+Tasks can be distributed and run on clusters.</p>
+<p>Tasks are ideal for training and fine-tuning jobs. They can also be used instead of services if you want to run a web
+app but don't need a public endpoint.</p>
+<h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
 <p>First, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>train.dstack.yml</code>
 are both acceptable).</p>
-<div editor-title="train.dstack.yml"> 
+<div editor-title="examples/fine-tuning/axolotl/train.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">axolotl-train</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="c1"># Using the official Axolotl&#39;s Docker image</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">winglian/axolotl-cloud:main-20240429-py3.11-cu121-2.2.1</span>
+
+<span class="c1"># Required environment variables</span>
 <span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WANDB_API_KEY</span>
+<span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tensorboard --logdir results/runs &amp;</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
-<span class="nt">ports</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6000</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch -m axolotl.cli.train examples/fine-tuning/axolotl/config.yaml</span>
 
-<span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc</span>
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80GB</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 24GB or more vRAM</span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB..</span>
+<span class="w">    </span><span class="c1"># Two or more GPU</span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2..</span>
 </code></pre></div>
 
 </div>
@@ -2397,74 +2456,86 @@ are both acceptable).</p>
 <div class="admonition info">
 <p class="admonition-title">Distributed tasks</p>
 <p>By default, tasks run on a single instance. However, you can specify
-the <a href="../reference/dstack.yml/task/#_nodes">number of nodes</a>.
-In this case, <code>dstack</code> provisions a cluster of instances.</p>
+the <a href="../reference/dstack.yml/task/#distributed-tasks">number of nodes</a>.
+In this case, the task will run a cluster of instances.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
-<p>See the <a href="../reference/dstack.yml/task/">.dstack.yml reference</a>
-for all supported configuration options and examples.</p>
+<p>See <a href="../reference/dstack.yml/task/">.dstack.yml</a> for all the options supported by
+tasks, along with multiple examples.</p>
 </div>
-<h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
-<p>To run a configuration, use the <a href="../reference/cli/#dstack-run"><code>dstack run</code></a> command followed by the working directory path, 
-configuration file path, and other options.</p>
+<h2 id="run-a-configuration">Run a configuration<a class="headerlink" href="#run-a-configuration" title="Permanent link">&para;</a></h2>
+<p>To run a configuration, use the <a href="../reference/cli/#dstack-apply"><code>dstack apply</code></a> command.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
+$<span class="w"> </span><span class="nv">WANDB_API_KEY</span><span class="o">=</span>...
 
-<span class="w"> </span>BACKEND<span class="w">     </span>REGION<span class="w">         </span>RESOURCES<span class="w">                     </span>SPOT<span class="w">  </span>PRICE
-<span class="w"> </span>tensordock<span class="w">  </span>unitedkingdom<span class="w">  </span>10xCPU,<span class="w"> </span>80GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">   </span>no<span class="w">    </span><span class="nv">$1</span>.595
-<span class="w"> </span>azure<span class="w">       </span>westus3<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
-<span class="w"> </span>azure<span class="w">       </span>westus2<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
+$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/.dstack.yml
 
-Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+<span class="w"> </span><span class="c1">#  BACKEND  REGION    RESOURCES                    SPOT  PRICE</span>
+<span class="w"> </span><span class="m">1</span><span class="w">  </span>runpod<span class="w">   </span>CA-MTL-1<span class="w">  </span>18xCPU,<span class="w"> </span>100GB,<span class="w"> </span>A5000:24GB:2<span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.22
+<span class="w"> </span><span class="m">2</span><span class="w">  </span>runpod<span class="w">   </span>EU-SE-1<span class="w">   </span>18xCPU,<span class="w"> </span>100GB,<span class="w"> </span>A5000:24GB:2<span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.22
+<span class="w"> </span><span class="m">3</span><span class="w">  </span>gcp<span class="w">      </span>us-west4<span class="w">  </span>27xCPU,<span class="w"> </span>150GB,<span class="w"> </span>A5000:24GB:3<span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.33
 
-Provisioning...
+Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>axolotl-train?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+
+Launching<span class="w"> </span><span class="sb">`</span>axolotl-train<span class="sb">`</span>...
 ---&gt;<span class="w"> </span><span class="m">100</span>%
 
-TensorBoard<span class="w"> </span><span class="m">2</span>.13.0<span class="w"> </span>at<span class="w"> </span>http://localhost:6006/<span class="w"> </span><span class="o">(</span>Press<span class="w"> </span>CTRL+C<span class="w"> </span>to<span class="w"> </span>quit<span class="o">)</span>
-
-Epoch<span class="w"> </span><span class="m">0</span>:<span class="w">  </span><span class="m">100</span>%<span class="w"> </span><span class="m">1719</span>/1719<span class="w"> </span><span class="o">[</span><span class="m">00</span>:18&lt;<span class="m">00</span>:00,<span class="w"> </span><span class="m">92</span>.32it/s,<span class="w"> </span><span class="nv">loss</span><span class="o">=</span><span class="m">0</span>.0981,<span class="w"> </span><span class="nv">acc</span><span class="o">=</span><span class="m">0</span>.969<span class="o">]</span>
-Epoch<span class="w"> </span><span class="m">1</span>:<span class="w">  </span><span class="m">100</span>%<span class="w"> </span><span class="m">1719</span>/1719<span class="w"> </span><span class="o">[</span><span class="m">00</span>:18&lt;<span class="m">00</span>:00,<span class="w"> </span><span class="m">92</span>.32it/s,<span class="w"> </span><span class="nv">loss</span><span class="o">=</span><span class="m">0</span>.0981,<span class="w"> </span><span class="nv">acc</span><span class="o">=</span><span class="m">0</span>.969<span class="o">]</span>
-Epoch<span class="w"> </span><span class="m">2</span>:<span class="w">  </span><span class="m">100</span>%<span class="w"> </span><span class="m">1719</span>/1719<span class="w"> </span><span class="o">[</span><span class="m">00</span>:18&lt;<span class="m">00</span>:00,<span class="w"> </span><span class="m">92</span>.32it/s,<span class="w"> </span><span class="nv">loss</span><span class="o">=</span><span class="m">0</span>.0981,<span class="w"> </span><span class="nv">acc</span><span class="o">=</span><span class="m">0</span>.969<span class="o">]</span>
+<span class="o">{</span><span class="s1">&#39;loss&#39;</span>:<span class="w"> </span><span class="m">1</span>.4967,<span class="w"> </span><span class="s1">&#39;grad_norm&#39;</span>:<span class="w"> </span><span class="m">1</span>.2734375,<span class="w"> </span><span class="s1">&#39;learning_rate&#39;</span>:<span class="w"> </span><span class="m">1</span>.0000000000000002e-06,<span class="w"> </span><span class="s1">&#39;epoch&#39;</span>:<span class="w"> </span><span class="m">0</span>.0<span class="o">}</span>
+<span class="w">  </span><span class="m">0</span>%<span class="w"> </span><span class="m">1</span>/24680<span class="w"> </span><span class="o">[</span><span class="m">00</span>:13&lt;<span class="m">95</span>:34:17,<span class="w"> </span><span class="m">13</span>.94s/it<span class="o">]</span>
+<span class="w">  </span><span class="m">6</span>%<span class="w"> </span><span class="m">73</span>/1300<span class="w"> </span><span class="o">[</span><span class="m">00</span>:48&lt;<span class="m">13</span>:57,<span class="w">  </span><span class="m">1</span>.47it/s<span class="o">]</span>
 </code></pre></div>
 
 </div>
 
-<p>If the task specifies <code>ports</code>, <code>dstack run</code> automatically forwards them to your local machine for
-convenient and secure access.</p>
-<p>When running the task, <code>dstack run</code> mounts the current folder's contents.</p>
-<details class="info">
-<summary>.gitignore</summary>
-<p>If there are large files or folders you'd like to avoid uploading, 
-you can list them in <code>.gitignore</code>.</p>
-</details>
-<details class="info">
-<summary>Fleets</summary>
-<p>By default, <code>dstack run</code> reuses <code>idle</code> instances from one of the existing <a href="../fleets/">fleets</a>. 
-If no <code>idle</code> instances meet the requirements, it creates a new fleet using one of the configured backends.</p>
-<p>To have the fleet deleted after a certain idle time automatically, set
-<a href="../reference/dstack.yml/fleet.md#termination_idle_time"><code>termination_idle_time</code></a>.
-By default, it's set to <code>5min</code>.</p>
-</details>
+<p><code>dstack apply</code> automatically uploads the code from the current repo, including your local uncommitted changes.
+To avoid uploading large files, ensure they are listed in <code>.gitignore</code>.</p>
 <div class="admonition info">
-<p class="admonition-title">Reference</p>
-<p>See the <a href="../reference/cli/#dstack-run">CLI reference</a> for more details
-on how <code>dstack run</code> works.</p>
+<p class="admonition-title">Ports</p>
+<p>If the task specifies <a href="../reference/dstack.yml/task/#_ports"><code>ports</code></a>, <code>dstack run</code> automatically forwards them to your
+local machine for convenient and secure access.</p>
 </div>
-<h2 id="managing-runs">Managing runs<a class="headerlink" href="#managing-runs" title="Permanent link">&para;</a></h2>
-<h3 id="listing-runs">Listing runs<a class="headerlink" href="#listing-runs" title="Permanent link">&para;</a></h3>
-<p>The <a href="../reference/cli/#dstack-ps"><code>dstack ps</code></a> command lists all running runs and their status.</p>
-<h3 id="stopping-runs">Stopping runs<a class="headerlink" href="#stopping-runs" title="Permanent link">&para;</a></h3>
-<p>Once you use <a href="../reference/cli/#dstack-stop"><code>dstack stop</code></a> (or when the run exceeds the
-<code>max_duration</code>), the instances return to the <a href="../fleets/">fleet</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Queueing tasks</p>
+<p>By default, if <code>dstack apply</code> cannot find capacity, the task fails. 
+To queue the task and wait for capacity, specify the <a href="../reference/dstack.yml/task/#queueing-tasks"><code>retry</code></a> 
+property in the task configuration.</p>
+</div>
+<h2 id="manage-runs">Manage runs<a class="headerlink" href="#manage-runs" title="Permanent link">&para;</a></h2>
+<h3 id="list-runs">List runs<a class="headerlink" href="#list-runs" title="Permanent link">&para;</a></h3>
+<p>The <a href="../reference/cli/#dstack-ps"><code>dstack ps</code></a>  command lists all running jobs and their statuses. 
+Use <code>--watch</code> (or <code>-w</code>) to monitor the live status of runs.</p>
+<h3 id="stop-a-run">Stop a run<a class="headerlink" href="#stop-a-run" title="Permanent link">&para;</a></h3>
+<p>Once the run exceeds the <a href="../reference/dstack.yml/task/#max_duration"><code>max_duration</code></a>, or when you use <a href="../reference/cli/#dstack-stop"><code>dstack stop</code></a>, 
+the dev environment is stopped. Use <code>--abort</code> or <code>-x</code> to stop the run abruptly. </p>
+<h2 id="manage-fleets">Manage fleets<a class="headerlink" href="#manage-fleets" title="Permanent link">&para;</a></h2>
+<p>By default, <code>dstack apply</code> reuses <code>idle</code> instances from one of the existing <a href="../fleets/">fleets</a>, 
+or creates a new fleet through backends.</p>
+<div class="admonition info">
+<p class="admonition-title">Idle duration</p>
+<p>To ensure the created fleets are deleted automatically, set
+<a href="../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a>.
+By default, it's set to <code>5min</code>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Creation policy</p>
+<p>To ensure <code>dstack apply</code> always reuses an existing fleet and doesn't create a new one,
+pass <code>--reuse</code> to <code>dstack apply</code> (or set <a href="../reference/dstack.yml/task/#creation_policy"><code>creation_policy</code></a> to <code>reuse</code> in the task configuration).
+The default policy is <code>reuse_or_create</code>.</p>
+</div>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Check the <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/qlora/README.md" target="_blank">QLoRA <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> example</li>
-<li>Check the <a href="../reference/dstack.yml/task.md"><code>.dstack.yml</code> reference</a> for more details and examples</li>
-<li>Browse <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank">all examples <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a></li>
+<li>Check the <a href="/docs/examples/fine-tuning/axolotl">Axolotl</a> example</li>
+<li>Browse <a href="/docs/examples">all examples</a></li>
 <li>See <a href="../fleets/">fleets</a> on how to manage fleets</li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
+<p>See <a href="../reference/dstack.yml/task/">.dstack.yml</a> for all the options supported by
+tasks, along with multiple examples.</p>
+</div>
 
 
 
@@ -2622,7 +2693,11 @@ on how <code>dstack run</code> works.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../assets/javascripts/extra.js"></script>
       

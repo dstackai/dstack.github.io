@@ -1077,6 +1077,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2424,13 +2451,13 @@ This file can be found at <a href="https://github.com/dstackai/dstack/blob/maste
 <span class="c1"># Commands of the task</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch -m axolotl.cli.train examples/fine-tuning/axolotl/config.yaml</span>
-<span class="c1"># Expose 6006 to access TensorBoard</span>
-<span class="nt">ports</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6006</span>
 
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Two or more 24GB GPUs (required by FSDP)</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB:2..</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 24GB or more vRAM</span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB..</span>
+<span class="w">    </span><span class="c1"># Two or more GPU</span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2..</span>
 </code></pre></div>
 <p>The task uses Axolotl's Docker image, where Axolotl is already pre-installed.</p>
 <p>To run the task, use <code>dstack apply</code>:</p>
@@ -2439,8 +2466,6 @@ This file can be found at <a href="https://github.com/dstackai/dstack/blob/maste
 
 dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/train.dstack.yml
 </code></pre></div>
-<p>If you list <code>tensorbord</code> via <code>report_to</code> in <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/config.yaml"><code>examples/fine-tuning/axolotl/config.yaml</code></a>,
-you'll be able to access experiment metrics via <code>http://localhost:6006</code> (while the task is running).</p>
 <h2 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>By default, <code>dstack run</code> reuses <code>idle</code> instances from one of the existing <a href="https://dstack.ai/docs/fleets">fleets</a>.
@@ -2633,7 +2658,11 @@ The default policy is <code>reuse_or_create</code>.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

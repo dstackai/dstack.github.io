@@ -1093,6 +1093,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1433,7 +1460,7 @@
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          OpenAI-compatible interface
+          Model gateway
         </span>
       
     </span>
@@ -1493,11 +1520,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#default-environment-variables" class="md-nav__link">
+  <a href="#system-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Default environment variables
+          System environment variables
         </span>
       
     </span>
@@ -3128,7 +3155,7 @@
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          OpenAI-compatible interface
+          Model gateway
         </span>
       
     </span>
@@ -3188,11 +3215,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#default-environment-variables" class="md-nav__link">
+  <a href="#system-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Default environment variables
+          System environment variables
         </span>
       
     </span>
@@ -4014,24 +4041,28 @@
 <h1 id="service">service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h1>
 <p>The <code>service</code> configuration type allows running <a href="../../../services/">services</a>.</p>
 <blockquote>
-<p>Configuration files must have a name ending with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code> or <code>serve.dstack.yml</code> are both acceptable)
-and can be located in the project's root directory or any nested folder.
-Any configuration can be run via <a href="../../cli/#dstack-run"><code>dstack run . -f PATH</code></a>.</p>
+<p>Configuration files must be inside the project repo, and their names must end with <code>.dstack.yml</code> 
+(e.g. <code>.dstack.yml</code> or <code>serve.dstack.yml</code> are both acceptable).
+Any configuration can be run via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
 </blockquote>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="python-version">Python version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h3>
 <p>If you don't specify <code>image</code>, <code>dstack</code> uses the default Docker image pre-configured with 
 <code>python</code>, <code>pip</code>, <code>conda</code> (Miniforge), and essential CUDA drivers. 
 The <code>python</code> property determines which default Docker image is used.</p>
-<div editor-title="serve.dstack.yml"> 
+<div editor-title="service.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-server-service</span><span class="w">    </span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="c1"># If `image` is not specified, dstack uses its base image</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
-
+<span class="c1"># The port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 </code></pre></div>
 
@@ -4040,18 +4071,22 @@ The <code>python</code> property determines which default Docker image is used.<
 <div class="admonition info">
 <p class="admonition-title">nvcc</p>
 <p>Note that the default Docker image doesn't bundle <code>nvcc</code>, which is required for building custom CUDA kernels. 
-To install it, use <code>conda install cuda</code>.</p>
+To install it, use <code>conda install cuda</code> as the first command.</p>
 </div>
 <h3 id="docker-image">Docker image<a class="headerlink" href="#docker-image" title="Permanent link">&para;</a></h3>
-<div editor-title="serve.dstack.yml">
+<div editor-title="service.dstack.yml">
 
     <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-server-service</span>
 
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.11-0.4-cuda-12.1</span>
+<span class="c1"># Any custom Docker image</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.10-0.4-cuda-12.1</span>
 
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
-
+<span class="c1"># The port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 </code></pre></div>
 
@@ -4061,43 +4096,51 @@ To install it, use <code>conda install cuda</code>.</p>
 <summary>Private Docker registry</summary>
 <p>Use the <code>registry_auth</code> property to provide credentials for a private Docker registry.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-server-service</span>
 
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.11-0.4-cuda-12.1</span>
-
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
+<span class="c1"># Any private Docker iamge</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/base:py3.10-0.4-cuda-12.1</span>
+<span class="c1"># Credentials of the private registry</span>
 <span class="nt">registry_auth</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peterschmidt85</span>
 <span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghp_e49HcZ9oYwBzUbcSk2080gXZOU2hiT9AeSR5</span>
 
+<span class="c1"># Commands of the service  </span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
+<span class="c1"># The port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 </code></pre></div>
 </details>
-<h3 id="model-mapping">OpenAI-compatible interface<a class="headerlink" href="#model-mapping" title="Permanent link">&para;</a></h3>
+<h3 id="model-mapping">Model gateway<a class="headerlink" href="#model-mapping" title="Permanent link">&para;</a></h3>
 <p>By default, if you run a service, its endpoint is accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
 <p>If you run a model, you can optionally configure the mapping to make it accessible via the 
 OpenAI-compatible interface.</p>
-<div editor-title="serve.dstack.yml"> 
+<div editor-title="service.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31-service</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL=NousResearch/Llama-2-7b-chat-hf</span>
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -m vllm.entrypoints.openai.api_server --model $MODEL --port 8000</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install vllm==0.5.3.post1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vllm serve meta-llama/Meta-Llama-3.1-8B-Instruct --max-model-len 4096</span>
+<span class="c1"># Expose the port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
 <span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Change to what is required</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 
-<span class="c1"># Enable the OpenAI-compatible endpoint</span>
+<span class="c1"># Comment if you don&#39;t want to access the model via https://gateway.&lt;gateway domain&gt;</span>
 <span class="nt">model</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NousResearch/Llama-2-7b-chat-hf</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama/Meta-Llama-3.1-8B-Instruct</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
 </code></pre></div>
 
 </div>
@@ -4141,31 +4184,31 @@ from the model's repository. If it is not present there, manual configuration is
 <h3 id="auto-scaling">Auto-scaling<a class="headerlink" href="#auto-scaling" title="Permanent link">&para;</a></h3>
 <p>By default, <code>dstack</code> runs a single replica of the service.
 You can configure the number of replicas as well as the auto-scaling rules.</p>
-<div editor-title="serve.dstack.yml"> 
+<div editor-title="service.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31-service</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL=NousResearch/Llama-2-7b-chat-hf</span>
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -m vllm.entrypoints.openai.api_server --model $MODEL --port 8000</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install vllm==0.5.3.post1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vllm serve meta-llama/Meta-Llama-3.1-8B-Instruct --max-model-len 4096</span>
+<span class="c1"># Expose the port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
 <span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Change to what is required</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 
-<span class="c1"># Enable the OpenAI-compatible endpoint</span>
-<span class="nt">model</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NousResearch/Llama-2-7b-chat-hf</span>
-
+<span class="c1"># Minimum and maximum number of replicas</span>
 <span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1..4</span>
 <span class="nt">scaling</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Requests per seconds</span>
 <span class="w">  </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rps</span>
+<span class="w">  </span><span class="c1"># Target metric value</span>
 <span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
 </code></pre></div>
 
@@ -4180,30 +4223,30 @@ case <code>dstack</code> adjusts the number of replicas (scales up or down) auto
 <h3 id="_resources">Resources<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h3>
 <p>If you specify memory size, you can either specify an explicit size (e.g. <code>24GB</code>) or a 
 range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</code>).</p>
-<div editor-title="serve.dstack.yml"> 
+<div editor-title="examples/llms/mixtral/vllm.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-server-service</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -m vllm.entrypoints.openai.api_server</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--model mistralai/Mixtral-8X7B-Instruct-v0.1</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--host 0.0.0.0</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--tensor-parallel-size 2</span><span class="w"> </span><span class="c1"># Match the number of GPUs</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--tensor-parallel-size $DSTACK_GPUS_NUM</span>
+<span class="c1"># Expose the port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># 2 GPUs of 80GB</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80GB:2</span>
 
+<span class="w">  </span><span class="c1"># Minimum disk size</span>
 <span class="w">  </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200GB</span>
-
-<span class="c1"># Enable the OpenAI-compatible endpoint</span>
-<span class="nt">model</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TheBloke/Mixtral-8x7B-Instruct-v0.1-GPTQ</span>
-<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
 </code></pre></div>
 
 </div>
@@ -4220,38 +4263,48 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <h3 id="authorization">Authorization<a class="headerlink" href="#authorization" title="Permanent link">&para;</a></h3>
 <p>By default, the service endpoint requires the <code>Authorization</code> header with <code>"Bearer &lt;dstack token&gt;"</code>.
 Authorization can be disabled by setting <code>auth</code> to <code>false</code>.</p>
-<div editor-title="serve.dstack.yml"> 
+<div editor-title="examples/misc/http.server/service.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-server-service</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="c1"># Disable authorization</span>
+<span class="nt">auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
-
+<span class="c1"># The port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
-
-<span class="nt">auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 
 </div>
 
 <h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
-<div editor-title=".dstack.yml">
+<div editor-title="service.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama-2-7b-service</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
+<span class="c1"># Environment variables</span>
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL=NousResearch/Llama-2-7b-chat-hf</span>
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -m vllm.entrypoints.openai.api_server --model $MODEL --port 8000</span>
+<span class="c1"># The port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
 <span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Required GPU vRAM</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 </code></pre></div>
 
@@ -4260,7 +4313,7 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <p>If you don't assign a value to an environment variable (see <code>HUGGING_FACE_HUB_TOKEN</code> above),
 <code>dstack</code> will require the value to be passed via the CLI or set in the current process.</p>
 <p>For instance, you can define environment variables in a <code>.env</code> file and utilize tools like <code>direnv</code>.</p>
-<h4 id="default-environment-variables">Default environment variables<a class="headerlink" href="#default-environment-variables" title="Permanent link">&para;</a></h4>
+<h4 id="system-environment-variables">System environment variables<a class="headerlink" href="#system-environment-variables" title="Permanent link">&para;</a></h4>
 <p>The following environment variables are available in any run and are passed by <code>dstack</code> by default:</p>
 <table>
 <thead>
@@ -4286,15 +4339,18 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 </table>
 <h3 id="spot-policy">Spot policy<a class="headerlink" href="#spot-policy" title="Permanent link">&para;</a></h3>
 <p>You can choose whether to use spot instances, on-demand instances, or any available type.</p>
-<div editor-title="serve.dstack.yml">
+<div editor-title="service.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-server-service</span>
 
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
-
+<span class="c1"># The port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
+<span class="c1"># Use either spot or on-demand instances</span>
 <span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 </code></pre></div>
 
@@ -4303,15 +4359,19 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <p>The <code>spot_policy</code> accepts <code>spot</code>, <code>on-demand</code>, and <code>auto</code>. The default for services is <code>auto</code>.</p>
 <h3 id="backends_1">Backends<a class="headerlink" href="#backends_1" title="Permanent link">&para;</a></h3>
 <p>By default, <code>dstack</code> provisions instances in all configured backends. However, you can specify the list of backends:</p>
-<div editor-title="serve.dstack.yml">
+<div editor-title="service.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-server-service</span>
 
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
-
+<span class="c1"># The port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
+<span class="c1"># Use only listed backends</span>
 <span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">aws</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gcp</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
@@ -4319,15 +4379,19 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 
 <h3 id="regions_1">Regions<a class="headerlink" href="#regions_1" title="Permanent link">&para;</a></h3>
 <p>By default, <code>dstack</code> uses all configured regions. However, you can specify the list of regions:</p>
-<div editor-title="serve.dstack.yml">
+<div editor-title="service.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-server-service</span>
 
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
-
+<span class="c1"># The port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
+<span class="c1"># Use only listed regions</span>
 <span class="nt">regions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">eu-west-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">eu-west-2</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
@@ -4336,15 +4400,19 @@ Authorization can be disabled by setting <code>auth</code> to <code>false</code>
 <h3 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h3>
 <p>Volumes allow you to persist data between runs.
 To attach a volume, simply specify its name using the <code>volumes</code> property and specify where to mount its contents:</p>
-<div editor-title="serve.dstack.yml"> 
+<div editor-title="service.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-server-service</span>
 
+<span class="c1"># Commands of the service</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 -m http.server</span>
-
+<span class="c1"># The port of the service</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
+<span class="c1"># Map the name of the volume to any path</span>
 <span class="nt">volumes</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-new-volume</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/volume_data</span>
@@ -4574,7 +4642,11 @@ and its contents will persist across runs.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

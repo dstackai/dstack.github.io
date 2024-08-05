@@ -727,24 +727,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
+  <a href="#run-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Define a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Run configuration
+          Run a configuration
         </span>
       
     </span>
@@ -1180,6 +1167,33 @@
     
   
     Protips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
   
 
     
@@ -2236,24 +2250,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
+  <a href="#run-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Define a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Run configuration
+          Run a configuration
         </span>
       
     </span>
@@ -2301,8 +2302,7 @@
 
 <h1 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>Before using <code>dstack</code>, <a href="../installation/">install</a> the server and configure 
-backends.</p>
+<p>Before using <code>dstack</code>, <a href="../installation/">install</a> the server.</p>
 </blockquote>
 <h2 id="initialize-a-repo">Initialize a repo<a class="headerlink" href="#initialize-a-repo" title="Permanent link">&para;</a></h2>
 <p>To use <code>dstack</code>'s CLI in a folder, first run <a href="../reference/cli/#dstack-init"><code>dstack init</code></a> within that folder.</p>
@@ -2315,98 +2315,174 @@ $<span class="w"> </span>dstack<span class="w"> </span>init
 </div>
 
 <p>Your folder can be a regular local folder or a Git repo.</p>
-<h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
-<p>Define what you want to run as a YAML file. The filename must end with <code>.dstack.yml</code> (e.g., <code>.dstack.yml</code>
-or <code>train.dstack.yml</code> are both acceptable).</p>
+<h2 id="run-a-configuration">Run a configuration<a class="headerlink" href="#run-a-configuration" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Dev environment</label><label for="__tabbed_1_2">Task</label><label for="__tabbed_1_3">Service</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Dev environments allow you to quickly provision a machine with a pre-configured environment, resources, IDE, code, etc.</p>
+<p>A dev environment lets you provision a remote machine with your code, dependencies, and resources, and access it 
+with your desktop IDE.</p>
+<h5 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h5>
+<p>Create the following configuration file inside the repo:</p>
 <p><div editor-title=".dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
-<span class="c1"># Use either `python` or `image` to configure environment</span>
 <span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
-<span class="c1"># image: ghcr.io/huggingface/text-generation-inference:latest</span>
+<span class="c1"># Uncomment to use a custom Docker image</span>
+<span class="c1">#image: dstackai/base:py3.10-0.4-cuda-12.1</span>
 
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
-<span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc</span>
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+<span class="c1"># Use either spot or on-demand instances</span>
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+
+<span class="c1"># Uncomment to request resources</span>
+<span class="c1">#resources:</span>
+<span class="c1">#  gpu: 24GB</span>
 </code></pre></div>
 </div>
+<h5 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h5>
+<p>Run the configuration via <a href="../reference/cli/#dstack-apply"><code>dstack apply</code></a>:</p>
+<div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>.dstack.yml
+
+<span class="w"> </span><span class="c1">#  BACKEND  REGION           RESOURCES                 SPOT  PRICE</span>
+<span class="w"> </span><span class="m">1</span><span class="w">  </span>gcp<span class="w">      </span>us-west4<span class="w">         </span>2xCPU,<span class="w"> </span>8GB,<span class="w"> </span>100GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.010052
+<span class="w"> </span><span class="m">2</span><span class="w">  </span>azure<span class="w">    </span>westeurope<span class="w">       </span>2xCPU,<span class="w"> </span>8GB,<span class="w"> </span>100GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.0132
+<span class="w"> </span><span class="m">3</span><span class="w">  </span>gcp<span class="w">      </span>europe-central2<span class="w">  </span>2xCPU,<span class="w"> </span>8GB,<span class="w"> </span>100GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.013248
+
+Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>vscode?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+
+Launching<span class="w"> </span><span class="sb">`</span>vscode<span class="sb">`</span>...
+---&gt;<span class="w"> </span><span class="m">100</span>%
+
+To<span class="w"> </span>open<span class="w"> </span><span class="k">in</span><span class="w"> </span>VS<span class="w"> </span>Code<span class="w"> </span>Desktop,<span class="w"> </span>use<span class="w"> </span>this<span class="w"> </span>link:
+<span class="w">  </span>vscode://vscode-remote/ssh-remote+vscode/workflow
+</code></pre></div>
+</div>
+<p>Open the link to access the dev environment using your desktop IDE.</p>
 </div>
 <div class="tabbed-block">
-<p>Tasks make it very easy to run any scripts, be it for training, data processing, or web apps. They allow you to pre-configure the environment, resources, code, etc.</p>
-<p><div editor-title="train.dstack.yml"> </p>
+<p>A task allows you to schedule a job or run a web app. It lets you configure 
+dependencies, resources, ports, the number of nodes (if you want to run the task on a cluster), etc.</p>
+<h5 id="define-a-configuration_1">Define a configuration<a class="headerlink" href="#define-a-configuration_1" title="Permanent link">&para;</a></h5>
+<p>Create the following configuration file inside the repo:</p>
+<p><div editor-title="streamlit.dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamlit</span>
 
 <span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_HUB_ENABLE_HF_TRANSFER=1</span>
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r fine-tuning/qlora/requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python fine-tuning/qlora/train.py</span>
+<span class="c1"># Uncomment to use a custom Docker image</span>
+<span class="c1">#image: dstackai/base:py3.10-0.4-cuda-12.1</span>
 
-<span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc</span>
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+<span class="c1"># Commands of the task</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install streamlit</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamlit hello</span>
+<span class="c1"># Ports to forward</span>
+<span class="nt">ports</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8501</span>
+
+<span class="c1"># Use either spot or on-demand instances</span>
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+
+<span class="c1"># Uncomment to request resources</span>
+<span class="c1">#resources:</span>
+<span class="c1">#  gpu: 24GB</span>
 </code></pre></div>
 </div>
-<p>Ensure <code>requirements.txt</code> and <code>train.py</code> are in your folder. You can take them from <a href="https://github.com/dstackai/dstack/tree/master/examples/fine-tuning/qlora"><code>examples</code></a>.</p>
-</div>
-<div class="tabbed-block">
-<p>Services make it easy to deploy models and apps cost-effectively as public endpoints, allowing you to use any frameworks.</p>
-<p><div editor-title="serve.dstack.yml"> </p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
-
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span><span class="w"> </span><span class="c1"># required to run gated models</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=mistralai/Mistral-7B-Instruct-v0.1</span>
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --port 8000 --trust-remote-code</span>
-<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
-
-<span class="c1"># (Optional) Configure `gpu`, `memory`, `disk`, etc</span>
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-</div>
-<h2 id="run-configuration">Run configuration<a class="headerlink" href="#run-configuration" title="Permanent link">&para;</a></h2>
-<p>Run a configuration using the <a href="../reference/cli/#dstack-run"><code>dstack run</code></a> command, followed by the working directory path (e.g., <code>.</code>), 
-and the path to the configuration file.</p>
+<h5 id="run-the-configuration_1">Run the configuration<a class="headerlink" href="#run-the-configuration_1" title="Permanent link">&para;</a></h5>
+<p>Run the configuration via <a href="../reference/cli/#dstack-apply"><code>dstack apply</code></a>:</p>
 <div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>streamlit.dstack.yml
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>train.dstack.yml
+<span class="w"> </span><span class="c1">#  BACKEND  REGION           RESOURCES                 SPOT  PRICE</span>
+<span class="w"> </span><span class="m">1</span><span class="w">  </span>gcp<span class="w">      </span>us-west4<span class="w">         </span>2xCPU,<span class="w"> </span>8GB,<span class="w"> </span>100GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.010052
+<span class="w"> </span><span class="m">2</span><span class="w">  </span>azure<span class="w">    </span>westeurope<span class="w">       </span>2xCPU,<span class="w"> </span>8GB,<span class="w"> </span>100GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.0132
+<span class="w"> </span><span class="m">3</span><span class="w">  </span>gcp<span class="w">      </span>europe-central2<span class="w">  </span>2xCPU,<span class="w"> </span>8GB,<span class="w"> </span>100GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.013248
 
-<span class="w"> </span>BACKEND<span class="w">     </span>REGION<span class="w">         </span>RESOURCES<span class="w">                     </span>SPOT<span class="w">  </span>PRICE
-<span class="w"> </span>tensordock<span class="w">  </span>unitedkingdom<span class="w">  </span>10xCPU,<span class="w"> </span>80GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">   </span>no<span class="w">    </span><span class="nv">$1</span>.595
-<span class="w"> </span>azure<span class="w">       </span>westus3<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
-<span class="w"> </span>azure<span class="w">       </span>westus2<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
+Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>streamlit?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
 
 Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
 
-Provisioning...
+Provisioning<span class="w"> </span><span class="sb">`</span>streamlit<span class="sb">`</span>...
 ---&gt;<span class="w"> </span><span class="m">100</span>%
 
-Epoch<span class="w"> </span><span class="m">0</span>:<span class="w">  </span><span class="m">100</span>%<span class="w"> </span><span class="m">1719</span>/1719<span class="w"> </span><span class="o">[</span><span class="m">00</span>:18&lt;<span class="m">00</span>:00,<span class="w"> </span><span class="m">92</span>.32it/s,<span class="w"> </span><span class="nv">loss</span><span class="o">=</span><span class="m">0</span>.0981,<span class="w"> </span><span class="nv">acc</span><span class="o">=</span><span class="m">0</span>.969<span class="o">]</span>
-Epoch<span class="w"> </span><span class="m">1</span>:<span class="w">  </span><span class="m">100</span>%<span class="w"> </span><span class="m">1719</span>/1719<span class="w"> </span><span class="o">[</span><span class="m">00</span>:18&lt;<span class="m">00</span>:00,<span class="w"> </span><span class="m">92</span>.32it/s,<span class="w"> </span><span class="nv">loss</span><span class="o">=</span><span class="m">0</span>.0981,<span class="w"> </span><span class="nv">acc</span><span class="o">=</span><span class="m">0</span>.969<span class="o">]</span>
-Epoch<span class="w"> </span><span class="m">2</span>:<span class="w">  </span><span class="m">100</span>%<span class="w"> </span><span class="m">1719</span>/1719<span class="w"> </span><span class="o">[</span><span class="m">00</span>:18&lt;<span class="m">00</span>:00,<span class="w"> </span><span class="m">92</span>.32it/s,<span class="w"> </span><span class="nv">loss</span><span class="o">=</span><span class="m">0</span>.0981,<span class="w"> </span><span class="nv">acc</span><span class="o">=</span><span class="m">0</span>.969<span class="o">]</span>
+<span class="w">  </span>Welcome<span class="w"> </span>to<span class="w"> </span>Streamlit.<span class="w"> </span>Check<span class="w"> </span>out<span class="w"> </span>our<span class="w"> </span>demo<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>browser.
+
+<span class="w">  </span>Local<span class="w"> </span>URL:<span class="w"> </span>http://localhost:8501
 </code></pre></div>
-
 </div>
-
-<p>The <code>dstack run</code> command automatically uploads your code, including any local uncommitted changes. </p>
-<div class="admonition info">
-<p class="admonition-title">Fleets</p>
-<p>By default, <code>dstack run</code> reuses <code>idle</code> instances from one of the existing <a href="../fleets/">fleets</a>. 
-If no <code>idle</code> instances meet the requirements, it creates a new fleet using one of the configured backends.</p>
+<p><code>dstack apply</code> automatically forwards the remote ports to <code>localhost</code> for convenient access.</p>
 </div>
+<div class="tabbed-block">
+<p>A service allows you to deploy a web app or a model as a scalable endpoint. It lets you configure
+dependencies, resources, authorizarion, auto-scaling rules, etc. </p>
+<p>??? info "Prerequisites
+    If you're using the open-source server, you must set up a <a href="../concepts/gateways/">gateway</a> before you can run a service.</p>
+<div class="highlight"><pre><span></span><code>If you&#39;re using [dstack Sky :material-arrow-top-right-thin:{ .external }](https://sky.dstack.ai){:target=&quot;_blank&quot;},
+the gateway is already set up for you.
+</code></pre></div>
+<h5 id="define-a-configuration_2">Define a configuration<a class="headerlink" href="#define-a-configuration_2" title="Permanent link">&para;</a></h5>
+<p>Create the following configuration file inside the repo:</p>
+<p><div editor-title="streamlit-service.dstack.yml"> </p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamlit-service</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="c1"># Uncomment to use a custom Docker image</span>
+<span class="c1">#image: dstackai/base:py3.10-0.4-cuda-12.1</span>
+
+<span class="c1"># Commands of the service</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install streamlit</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamlit hello</span>
+<span class="c1"># Port of the service</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8501</span>
+
+<span class="c1"># Comment to enable authorizartion</span>
+<span class="nt">auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+
+<span class="c1"># Use either spot or on-demand instances</span>
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+
+<span class="c1"># Uncomment to request resources</span>
+<span class="c1">#resources:</span>
+<span class="c1">#  gpu: 24GB</span>
+</code></pre></div>
+</div>
+<h5 id="run-the-configuration_2">Run the configuration<a class="headerlink" href="#run-the-configuration_2" title="Permanent link">&para;</a></h5>
+<p>Run the configuration via <a href="../reference/cli/#dstack-apply"><code>dstack apply</code></a>:</p>
+<div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>streamlit.dstack.yml
+
+<span class="w"> </span><span class="c1">#  BACKEND  REGION           RESOURCES                 SPOT  PRICE</span>
+<span class="w"> </span><span class="m">1</span><span class="w">  </span>gcp<span class="w">      </span>us-west4<span class="w">         </span>2xCPU,<span class="w"> </span>8GB,<span class="w"> </span>100GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.010052
+<span class="w"> </span><span class="m">2</span><span class="w">  </span>azure<span class="w">    </span>westeurope<span class="w">       </span>2xCPU,<span class="w"> </span>8GB,<span class="w"> </span>100GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.0132
+<span class="w"> </span><span class="m">3</span><span class="w">  </span>gcp<span class="w">      </span>europe-central2<span class="w">  </span>2xCPU,<span class="w"> </span>8GB,<span class="w"> </span>100GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.013248
+
+Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>streamlit?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+
+Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+
+Provisioning<span class="w"> </span><span class="sb">`</span>streamlit<span class="sb">`</span>...
+---&gt;<span class="w"> </span><span class="m">100</span>%
+
+<span class="w">  </span>Welcome<span class="w"> </span>to<span class="w"> </span>Streamlit.<span class="w"> </span>Check<span class="w"> </span>out<span class="w"> </span>our<span class="w"> </span>demo<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>browser.
+
+<span class="w">  </span>Local<span class="w"> </span>URL:<span class="w"> </span>https://streamlit-service.example.com
+</code></pre></div>
+</div>
+<p>One the service is up, its endpoint is accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
+</div>
+</div>
+</div>
+<blockquote>
+<p><code>dstack apply</code> automatically uploads the code from the current repo, including your local uncommitted changes.</p>
+</blockquote>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Read about <a href="../dev-environments/">dev environments</a>, <a href="../tasks/">tasks</a>, 
@@ -2414,6 +2490,11 @@ If no <code>idle</code> instances meet the requirements, it creates a new fleet 
 <li>Browse <a href="https://github.com/dstackai/dstack/tree/master/examples" target="_blank">examples <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a></li>
 <li>Join the community via <a href="https://discord.gg/u8SmfwPpMd">Discord <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a></li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Examples</p>
+<p>To see how dev environments, tasks, services, and fleets can be used for 
+training and deploying AI models, check out the <a href="../examples/">examples</a>.</p>
+</div>
 
 
 
@@ -2571,7 +2652,11 @@ If no <code>idle</code> instances meet the requirements, it creates a new fleet 
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../assets/javascripts/extra.js"></script>
       

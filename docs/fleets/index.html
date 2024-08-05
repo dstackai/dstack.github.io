@@ -883,11 +883,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configuration
+          Define a configuration
         </span>
       
     </span>
@@ -896,11 +896,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-and-updating-fleets" class="md-nav__link">
+  <a href="#create-or-update-a-fleet" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Creating and updating fleets
+          Create or update a fleet
         </span>
       
     </span>
@@ -935,25 +935,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-fleets" class="md-nav__link">
+  <a href="#manage-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Managing fleets
+          Manage fleets
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Managing fleets">
+    <nav class="md-nav" aria-label="Manage fleets">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#listing-fleets" class="md-nav__link">
+  <a href="#list-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Listing fleets
+          List fleets
         </span>
       
     </span>
@@ -962,11 +962,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deleting-fleets" class="md-nav__link">
+  <a href="#delete-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Deleting fleets
+          Delete fleets
         </span>
       
     </span>
@@ -976,6 +976,19 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1225,6 +1238,33 @@
     
   
     Protips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/dstack-sky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    dstack Sky
   
 
     
@@ -2268,11 +2308,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Configuration
+          Define a configuration
         </span>
       
     </span>
@@ -2281,11 +2321,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-and-updating-fleets" class="md-nav__link">
+  <a href="#create-or-update-a-fleet" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Creating and updating fleets
+          Create or update a fleet
         </span>
       
     </span>
@@ -2320,25 +2360,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-fleets" class="md-nav__link">
+  <a href="#manage-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Managing fleets
+          Manage fleets
         </span>
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Managing fleets">
+    <nav class="md-nav" aria-label="Manage fleets">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#listing-fleets" class="md-nav__link">
+  <a href="#list-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Listing fleets
+          List fleets
         </span>
       
     </span>
@@ -2347,11 +2387,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deleting-fleets" class="md-nav__link">
+  <a href="#delete-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Deleting fleets
+          Delete fleets
         </span>
       
     </span>
@@ -2361,6 +2401,19 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2395,7 +2448,7 @@ fleet is created, it can be reused by dev environments, tasks, and services.</p>
 <blockquote>
 <p>Fleets is a new feature. To use it, ensure you've installed version <code>0.18.7</code> or higher.</p>
 </blockquote>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
 <p>To create a fleet, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code>
 are both acceptable).</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cloud fleets</label><label for="__tabbed_1_2">On-prem fleets</label></div>
@@ -2403,17 +2456,25 @@ are both acceptable).</p>
 <div class="tabbed-block">
 <p>To provision a fleet in the cloud using the configured backends, specify the required resources, number of nodes, 
 and other optional parameters.</p>
-<div editor-title="examples/fleets/cluster.dstack.yml">
+<div editor-title="examples/fine-tuning/alignment-handbook/fleet-distrib.dstack.yml">
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ah-fleet-distrib</span>
 
+<span class="c1"># Size of the cluster</span>
 <span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="c1"># Ensure instances are interconnected</span>
 <span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
 
-<span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">aws</span><span class="p p-Indicator">]</span>
+<span class="c1"># Use either spot or on-demand instances</span>
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 24GB or more vRAM</span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB..</span>
+<span class="w">    </span><span class="c1"># One or more GPU</span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1..</span>
 </code></pre></div>
 </div>
 <p>Set <code>placement</code> to <code>cluster</code> if the nodes should be interconnected (e.g. if you'd like to use them for multi-node tasks). 
@@ -2422,12 +2483,15 @@ In that case, <code>dstack</code> will provision all nodes in the same backend a
 </div>
 <div class="tabbed-block">
 <p>To create a fleet from on-prem servers, specify their hosts along with the user, port, and SSH key for connection via SSH.</p>
-<p><div editor-title="examples/fleets/cluster.dstack.yml"> </p>
+<p><div editor-title="fleet-on-prem.dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-on-prem-fleet</span>
 
+<span class="c1"># Ensure instances are interconnected</span>
 <span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
 
+<span class="c1"># The user, private SSH key, and hostnames of the on-prem servers</span>
 <span class="nt">ssh_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
 <span class="w">  </span><span class="nt">identity_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/id_rsa</span>
@@ -2443,21 +2507,22 @@ The user should have <code>sudo</code> access.</p>
 </div>
 <p>Set <code>placement</code> to <code>cluster</code> if the nodes are interconnected (e.g. if you'd like to use them for multi-node tasks).
 In that case, by default, <code>dstack</code> will automatically detect the private network. 
-You can specify the <a href="../reference/dstack.yml/fleet.md#network"><code>network</code></a> parameter manually.</p>
+You can specify the <a href="../reference/dstack.yml/fleet/#network"><code>network</code></a> parameter manually.</p>
 </div>
 </div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
-<p>See the <a href="../reference/dstack.yml/fleet/">.dstack.yml reference</a>
-for all supported configuration options and examples.</p>
+<p>See <a href="../reference/dstack.yml/fleet/">.dstack.yml</a> for all the options supported by
+fleets, along with multiple examples.</p>
 </div>
-<h2 id="creating-and-updating-fleets">Creating and updating fleets<a class="headerlink" href="#creating-and-updating-fleets" title="Permanent link">&para;</a></h2>
+<h2 id="create-or-update-a-fleet">Create or update a fleet<a class="headerlink" href="#create-or-update-a-fleet" title="Permanent link">&para;</a></h2>
 <p>To create or update the fleet, simply call the <a href="../reference/cli/#dstack-apply"><code>dstack apply</code></a> command:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fleets/cluster.dstack.yml
-Fleet<span class="w"> </span>my-fleet<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist<span class="w"> </span>yet.<span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>fleet?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/alignment-handbook/fleet-distributed.dstack.yml
+Fleet<span class="w"> </span>ah-fleet-distrib<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist<span class="w"> </span>yet.<span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>fleet?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+
 <span class="w"> </span>FLEET<span class="w">     </span>INSTANCE<span class="w">  </span>BACKEND<span class="w">  </span>RESOURCES<span class="w">  </span>PRICE<span class="w">  </span>STATUS<span class="w">   </span>CREATED<span class="w"> </span>
 <span class="w"> </span>my-fleet<span class="w">  </span><span class="m">0</span><span class="w">                                    </span>pending<span class="w">  </span>now<span class="w">     </span>
 <span class="w">           </span><span class="m">1</span><span class="w">                                    </span>pending<span class="w">  </span>now<span class="w">     </span>
@@ -2465,20 +2530,20 @@ Fleet<span class="w"> </span>my-fleet<span class="w"> </span>does<span class="w"
 
 </div>
 
-<p>Once the status of instances change to <code>idle</code>, they can be used by <code>dstack run</code>.</p>
+<p>Once the status of instances change to <code>idle</code>, they can be used by dev environments, tasks, and services.</p>
 <h2 id="creation-policy">Creation policy<a class="headerlink" href="#creation-policy" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>By default, <code>dstack run</code> tries to reuse <code>idle</code> instances from existing fleets. 
-If no <code>idle</code> instances meet the requirements, <code>dstack run</code> creates a new fleet automatically.
-To avoid creating new fleet, specify pass <code>--reuse</code> to <code>dstack run</code>.</p>
-</blockquote>
+<p>By default, when running dev environments, tasks, and services, <code>dstack apply</code> tries to reuse <code>idle</code> 
+instances from existing fleets. 
+If no <code>idle</code> instances meet the requirements, it creates a new fleet automatically.
+To avoid creating new fleet, specify pass <code>--reuse</code> to <code>dstack apply</code> or (or set <a href="../reference/dstack.yml/dev-environment/#creation_policy">
+<code>creation_policy</code></a> to <code>reuse</code> in the configuration).</p>
 <h2 id="termination-policy">Termination policy<a class="headerlink" href="#termination-policy" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>If you want a fleet to be automatically deleted after a certain idle time, you can set the 
+<p>If you want a fleet to be automatically deleted after a certain idle time, you can set the
 you can set the <a href="../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a> property.</p>
 </blockquote>
-<h2 id="managing-fleets">Managing fleets<a class="headerlink" href="#managing-fleets" title="Permanent link">&para;</a></h2>
-<h3 id="listing-fleets">Listing fleets<a class="headerlink" href="#listing-fleets" title="Permanent link">&para;</a></h3>
+<h2 id="manage-fleets">Manage fleets<a class="headerlink" href="#manage-fleets" title="Permanent link">&para;</a></h2>
+<h3 id="list-fleets">List fleets<a class="headerlink" href="#list-fleets" title="Permanent link">&para;</a></h3>
 <p>The <a href="../reference/cli/#dstack-gateway-list"><code>dstack fleet</code></a> command lists fleet instances and theri status:</p>
 <div class="termy">
 
@@ -2490,7 +2555,7 @@ you can set the <a href="../reference/dstack.yml/fleet/#termination_idle_time"><
 
 </div>
 
-<h3 id="deleting-fleets">Deleting fleets<a class="headerlink" href="#deleting-fleets" title="Permanent link">&para;</a></h3>
+<h3 id="delete-fleets">Delete fleets<a class="headerlink" href="#delete-fleets" title="Permanent link">&para;</a></h3>
 <p>When a fleet isn't used by run, you can delete it via <code>dstack delete</code>:</p>
 <div class="termy">
 
@@ -2503,6 +2568,17 @@ Fleet<span class="w"> </span>my-gcp-fleet<span class="w"> </span>deleted
 
 <p>You can pass either the path to the configuration file or the fleet name directly.</p>
 <p>To terminate and delete specific instances from a fleet, pass <code>-i INSTANCE_NUM</code>.</p>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Read about <a href="../dev-environments/">dev environments</a>, <a href="../tasks/">tasks</a>, and 
+    <a href="../services/">services</a> </li>
+<li>Join the community via <a href="https://discord.gg/u8SmfwPpMd">Discord <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a></li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
+<p>See <a href="../reference/dstack.yml/fleet/">.dstack.yml</a> for all the options supported by
+fleets, along with multiple examples.</p>
+</div>
 
 
 
@@ -2660,7 +2736,11 @@ Fleet<span class="w"> </span>my-gcp-fleet<span class="w"> </span>deleted
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
+<<<<<<< HEAD
       <script src="../../assets/javascripts/bundle.ef37796b.min.js"></script>
+=======
+      <script src="../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
+>>>>>>> upstream/master
       
         <script src="../../assets/javascripts/extra.js"></script>
       
