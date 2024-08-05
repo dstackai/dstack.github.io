@@ -2420,11 +2420,12 @@ Provisioning<span class="w"> </span><span class="sb">`</span>streamlit<span clas
 <div class="tabbed-block">
 <p>A service allows you to deploy a web app or a model as a scalable endpoint. It lets you configure
 dependencies, resources, authorizarion, auto-scaling rules, etc. </p>
-<p>??? info "Prerequisites
-    If you're using the open-source server, you must set up a <a href="../concepts/gateways/">gateway</a> before you can run a service.</p>
-<div class="highlight"><pre><span></span><code>If you&#39;re using [dstack Sky :material-arrow-top-right-thin:{ .external }](https://sky.dstack.ai){:target=&quot;_blank&quot;},
-the gateway is already set up for you.
-</code></pre></div>
+<details class="info">
+<summary>Prerequisites</summary>
+<p>If you're using the open-source server, you must set up a <a href="../concepts/gateways/">gateway</a> before you can run a service.</p>
+<p>If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
+the gateway is already set up for you.</p>
+</details>
 <h5 id="define-a-configuration_2">Define a configuration<a class="headerlink" href="#define-a-configuration_2" title="Permanent link">&para;</a></h5>
 <p>Create the following configuration file inside the repo:</p>
 <p><div editor-title="streamlit-service.dstack.yml"> </p>
