@@ -1135,6 +1135,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dev-environments" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1148,11 +1161,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tasks-vs-services-for-web-applications" class="md-nav__link">
+  <a href="#tasks-vs-services" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Tasks vs services for web applications
+          Tasks vs. services
         </span>
       
     </span>
@@ -1187,24 +1200,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#idle-instances" class="md-nav__link">
+  <a href="#idle-duration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Idle instances
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#profiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Profiles
+          Idle duration
         </span>
       
     </span>
@@ -1918,7 +1918,7 @@
   <span class="md-ellipsis">
     
   
-    Fine-tuning
+    LLMs
   
 
     
@@ -1931,6 +1931,91 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LLMs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/llms/llama31/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Llama 3.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Fine-tuning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2317,6 +2402,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dev-environments" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2330,11 +2428,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tasks-vs-services-for-web-applications" class="md-nav__link">
+  <a href="#tasks-vs-services" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Tasks vs services for web applications
+          Tasks vs. services
         </span>
       
     </span>
@@ -2369,24 +2467,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#idle-instances" class="md-nav__link">
+  <a href="#idle-duration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Idle instances
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#profiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Profiles
+          Idle duration
         </span>
       
     </span>
@@ -2460,6 +2545,15 @@
 
 <h1 id="protips">Protips<a class="headerlink" href="#protips" title="Permanent link">&para;</a></h1>
 <p>Below are tips and tricks to use <code>dstack</code> more efficiently.</p>
+<h2 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h2>
+<p>By default, when running dev environments, tasks, or services, <code>dstack apply</code> reuses <code>idle</code> 
+instances from existing fleets. If no <code>idle</code> instances match the requirements, it creates a new fleet automatically.</p>
+<p>To avoid creating new fleet automatically, 
+set <a href="reference/dstack.yml/dev-environment.md#creation_policy"> <code>creation_policy</code></a> to <code>reuse</code> in the configuration.</p>
+<blockquote>
+<p>Use <a href="../../fleets/">fleets</a> configurations to create fleets manually. This reduces startup time for dev environments,
+tasks, and services, and is very convenient if you want to reuse fleets across runs.</p>
+</blockquote>
 <h2 id="dev-environments">Dev environments<a class="headerlink" href="#dev-environments" title="Permanent link">&para;</a></h2>
 <p>Before running a task or service, it's recommended that you first start with a dev environment. Dev environments
 allow you to run commands interactively.</p>
@@ -2481,28 +2575,28 @@ pre-configured and easy-to-use extension.</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8888</span>
 </code></pre></div>
 </details>
-<h2 id="tasks-vs-services-for-web-applications">Tasks vs services for web applications<a class="headerlink" href="#tasks-vs-services-for-web-applications" title="Permanent link">&para;</a></h2>
+<h2 id="tasks-vs-services">Tasks vs. services<a class="headerlink" href="#tasks-vs-services" title="Permanent link">&para;</a></h2>
 <p>Tasks can be used not only for batch jobs but also for web applications.</p>
 <div editor-title="app.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamlit-task</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip3 install streamlit</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamlit hello</span>
-
 <span class="nt">ports</span><span class="p">:</span><span class="w"> </span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8501</span>
 </code></pre></div>
 
 </div>
 
-<p>While you run a task, <code>dstack</code> forwards the remote ports to <code>localhost</code>.</p>
+<p>While you run a task, <code>dstack apply</code> forwards the remote ports to <code>localhost</code>.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>app.dstack.yml
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>app.dstack.yml
 
 <span class="w">  </span>Welcome<span class="w"> </span>to<span class="w"> </span>Streamlit.<span class="w"> </span>Check<span class="w"> </span>out<span class="w"> </span>our<span class="w"> </span>demo<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>browser.
 
@@ -2516,7 +2610,7 @@ pre-configured and easy-to-use extension.</p>
 <summary>Port mapping</summary>
 <p>If you want to override the local port, use the <code>--port</code> option:</p>
 <div class="termy">
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>app.dstack.yml<span class="w"> </span>--port<span class="w"> </span><span class="m">3000</span>:8501
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>app.dstack.yml<span class="w"> </span>--port<span class="w"> </span><span class="m">3000</span>:8501
 </code></pre></div>
 </div>
 <p>This will forward the remote <code>8501</code> port to <code>localhost:3000</code>.</p>
@@ -2530,21 +2624,22 @@ without assigning a value:</p>
 <div editor-title=".dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
 
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
-
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
 <span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 </code></pre></div>
 
 </div>
 
 <p>Then, you can pass the environment variable either via the shell:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>.dstack.yml
+<div class="highlight"><pre><span></span><code><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>.dstack.yml
 </code></pre></div>
-<p>Or via the <code>-e</code> option of the <code>dstack run</code> command:</p>
-<div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>.dstack.yml<span class="w"> </span>-e<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
+<p>Or via the <code>-e</code> option of the <code>dstack apply</code> command:</p>
+<div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>.dstack.yml<span class="w"> </span>-e<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
 </code></pre></div>
 <details class="info">
 <summary>.env</summary>
@@ -2552,7 +2647,7 @@ without assigning a value:</p>
 <div class="highlight"><pre><span></span><code>HUGGING_FACE_HUB_TOKEN=...
 </code></pre></div>
 <p>If you install <a href="https://direnv.net/" target="_blank"><code>direnv</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>,
-it will automatically pass the environment variables from the <code>.env</code> file to the <code>dstack run</code> command.</p>
+it will automatically pass the environment variables from the <code>.env</code> file to the <code>dstack apply</code> command.</p>
 <p>Remember to add <code>.env</code> to <code>.gitignore</code> to avoid pushing it to the repo.    </p>
 </details>
 <h2 id="data-and-models">Data and models<a class="headerlink" href="#data-and-models" title="Permanent link">&para;</a></h2>
@@ -2563,26 +2658,25 @@ Volumes are ideal for storing intermediate work and data that should be quickly 
 For models, it's best to use services like HuggingFace Hub.
 <code>dstack</code> has no explicit support for object storage.
 You can load and save data directly from your code.</p>
-<h2 id="idle-instances">Idle instances<a class="headerlink" href="#idle-instances" title="Permanent link">&para;</a></h2>
-<p>By default, the <code>dstack</code> run command reuses an idle instance from the pool. If no instance matches the requirements, it creates a new one.</p>
-<p>When the run finishes, the instance remains idle for the configured time (by default, <code>5m</code>) before it gets destroyed.</p>
-<p>You can change the default idle duration by using <code>--idle-duration DURATION</code> with <code>dstack run</code>, or
-set <code>termination_idle_duration</code> in the configuration or profile.</p>
-<p>An idle instance can be destroyed at any time via <code>dstack pool rm INSTANCE_NAME</code>.</p>
-<h2 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">&para;</a></h2>
-<p>If you don't want to specify the same parameters for each configuration, you can define them once via <a href="../../reference/profiles.yml/">profiles</a>
-and reuse them across configurations.</p>
-<p>This can be handy, for example, for configuring parameters such as <code>max_duration</code>, <code>max_price</code>, <code>termination_idle_duration</code>,
-<code>regions</code>, etc.</p>
-<p>Set <code>default</code> to <code>true</code> in your profile, and it will be applied automatically to any run.</p>
+<h2 id="idle-duration">Idle duration<a class="headerlink" href="#idle-duration" title="Permanent link">&para;</a></h2>
+<p>If you run a dev environment, task, or service via <code>dstack apply</code>,
+and it creates a new fleet, it sets the idle duration to <code>5m</code>. If instances of the fleet are <code>idle</code>
+for this time, <code>dstack</code> terminates them.</p>
+<p>If you create a fleet manually, the idle duration is not set.</p>
+<blockquote>
+<p>You can override idle duration for fleets, dev environment, tasks, and services by
+setting <a href="../../reference/dstack.yml/dev-environment/#termination_idle_duration"><code>termination_idle_duration</code></a> in the configuration file. </p>
+</blockquote>
 <h2 id="attached-mode">Attached mode<a class="headerlink" href="#attached-mode" title="Permanent link">&para;</a></h2>
-<p>By default, <code>dstack run</code> runs in attached mode.
+<p>By default, <code>dstack apply</code> runs in attached mode.
 This means it streams the logs as they come in and, in the case of a task, forwards its ports to <code>localhost</code>.</p>
-<p>If you detach the CLI, you can re-attach it using <code>dstack logs -a RUN_NAME</code>.</p>
-<p>To run in detached mode, use <code>-d</code> with <code>dstack run</code>.</p>
+<p>To run in detached mode, use <code>-d</code> with <code>dstack apply</code>.</p>
+<blockquote>
+<p>If you detached the CLI, you can always re-attach to a run via <code>dstack logs -a RUN_NAME</code>.</p>
+</blockquote>
 <h2 id="gpu">GPU<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h2>
 <p><code>dstack</code> natively supports NVIDIA GPU, and Google Cloud TPU accelerator chips.</p>
-<p>The <code>gpu</code> property withing <code>resources</code> (or the <code>--gpu</code> option with <code>dstack run</code>)
+<p>The <code>gpu</code> property withing <code>resources</code> (or the <code>--gpu</code> option with <code>dstack apply</code>)
 allows specifying not only memory size but also GPU names, their memory, and quantity.</p>
 <p>Examples:</p>
 <ul>
@@ -2819,11 +2913,7 @@ The relevant service category is compute. The relevant resources include:</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-<<<<<<< HEAD
-      <script src="../../../assets/javascripts/bundle.ef37796b.min.js"></script>
-=======
-      <script src="../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
->>>>>>> upstream/master
+      <script src="../../../assets/javascripts/bundle.4a1b0f67.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

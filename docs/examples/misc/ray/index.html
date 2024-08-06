@@ -12,7 +12,7 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/docs/examples/misc/spark/">
+        <link rel="canonical" href="https://dstack.ai/docs/examples/misc/ray/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Spark - dstack</title>
+        <title>Ray - dstack</title>
       
     
     
@@ -85,17 +85,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Spark - dstack" />
+<meta property="og:title" content="Ray - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/examples/misc/spark/index.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/examples/misc/ray/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/examples/misc/spark/" />
+<meta property="og:url" content="https://dstack.ai/docs/examples/misc/ray/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Spark - dstack" />
+<meta property="twitter.title" content="Ray - dstack" />
 <meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/examples/misc/spark/index.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/examples/misc/ray/index.png" />
 </head>
   
   
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#spark" class="md-skip">
+        <a href="#ray" class="md-skip">
           Skip to content
         </a>
       
@@ -165,7 +165,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Spark
+              Ray
             
           </span>
         </div>
@@ -2223,11 +2223,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#launch-spark-cluster" class="md-nav__link">
+  <a href="#launch-ray-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Launch Spark cluster
+          Launch Ray cluster
         </span>
       
     </span>
@@ -2236,11 +2236,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-spark-app" class="md-nav__link">
+  <a href="#run-ray-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Run Spark app
+          Run Ray jobs
         </span>
       
     </span>
@@ -2265,49 +2265,55 @@
 
 
 
-<h1 id="spark">Spark<a class="headerlink" href="#spark" title="Permanent link">&para;</a></h1>
-<p>This example shows how use <code>dstack</code> to spin up an <a href="https://spark.apache.org/docs/latest/index.html">Apache Spark</a> cluster and run tasks on it.</p>
+<h1 id="ray">Ray<a class="headerlink" href="#ray" title="Permanent link">&para;</a></h1>
+<p>This example shows how use <code>dstack</code> to spin up a <a href="https://docs.ray.io/en/latest/ray-overview/index.html">Ray</a> cluster and run Ray jobs on it.</p>
 <h2 id="create-fleet">Create fleet<a class="headerlink" href="#create-fleet" title="Permanent link">&para;</a></h2>
-<p>First create a fleet for the Spark cluster. We'll use one instance as the Spark master node and one instance as the Spark worker node. We'll also provision a third instance that we'll use to submit Spark apps to the cluster so that we don't need to run anything locally:</p>
+<p>First create a fleet for the Ray cluster. We'll use one instance for a master node and three instances for worker nodes:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark-fleet</span>
-<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ray-fleet</span>
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
 <span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
 <span class="nt">backends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">gcp</span><span class="p p-Indicator">]</span>
+<span class="nt">resources</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8..</span>
+<span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32GB..</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>fleet.dstack.yaml
 </code></pre></div>
-<h2 id="launch-spark-cluster">Launch Spark cluster<a class="headerlink" href="#launch-spark-cluster" title="Permanent link">&para;</a></h2>
-<p>The following <code>dstack</code> task launches Spark master and worker nodes. <code>dstack</code> makes the cluster UI available at <code>localhost:8080</code>, and Spark apps can be submitted to <code>localhost:7077</code>.</p>
+<h2 id="launch-ray-cluster">Launch Ray cluster<a class="headerlink" href="#launch-ray-cluster" title="Permanent link">&para;</a></h2>
+<p>The following <code>dstack</code> task launches Ray master and worker nodes.
+<code>dstack</code> makes the Ray dashboard available at <code>localhost:8265</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark-cluster</span>
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark</span>
-<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ray-cluster</span>
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">export SPARK_MASTER_HOST=$DSTACK_MASTER_NODE_IP</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">export SPARK_NO_DAEMONIZE=true</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if [ $DSTACK_NODE_RANK = 0 ]; then /opt/spark/sbin/start-master.sh; else /opt/spark/sbin/start-worker.sh spark://$DSTACK_MASTER_NODE_IP:7077; fi</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -U &quot;ray[default]&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">    </span><span class="no">if [ $DSTACK_NODE_RANK = 0 ]; then </span>
+<span class="w">      </span><span class="no">ray start --head --port=6379;</span>
+<span class="w">    </span><span class="no">else</span>
+<span class="w">      </span><span class="no">ray start --address=$DSTACK_MASTER_NODE_IP:6379</span>
+<span class="w">    </span><span class="no">fi</span>
 <span class="nt">ports</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7077</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8265</span><span class="w"> </span><span class="c1"># ray dashboard port</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8GB</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>cluster.dstack.yaml
 </code></pre></div>
-<h2 id="run-spark-app">Run Spark app<a class="headerlink" href="#run-spark-app" title="Permanent link">&para;</a></h2>
-<p>If you have Spark installed locally, you can submit your code directly to <code>localhost:7077</code>. In this example, we run another <code>dstack</code> task to submit code to the Spark cluster. You should provide it with <code>SPARK_CLUSTER_IP</code> set to the IP address of the Spark cluster master node. (You can find it in the output of <code>dstack apply -f cluster.dstack.yaml</code>.)</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark-task</span>
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spark</span>
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SPARK_CLUSTER_IP</span>
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install pyspark</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 tasks/words.py</span>
+<h2 id="run-ray-jobs">Run Ray jobs<a class="headerlink" href="#run-ray-jobs" title="Permanent link">&para;</a></h2>
+<p>Install Ray locally:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ray
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SPARK_CLUSTER_IP</span><span class="o">=</span>
-
-dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>task.dstack.yaml
+<p>Now you can submit Ray jobs to the cluster available at <code>localhost:8265</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">RAY_ADDRESS</span><span class="o">=</span><span class="s1">&#39;http://localhost:8265&#39;</span><span class="w"> </span>ray<span class="w"> </span>job<span class="w"> </span>submit<span class="w"> </span><span class="se">\</span>
+--working-dir<span class="w"> </span>.<span class="w"> </span><span class="se">\</span>
+--runtime-env-json<span class="o">=</span><span class="s1">&#39;{&quot;pip&quot;: [&quot;ray[train]&quot;, &quot;torch&quot;, &quot;torchvision&quot;, &quot;tqdm&quot;, &quot;filelock&quot;]}&#39;</span><span class="w"> </span><span class="se">\</span>
+--<span class="w"> </span>python<span class="w"> </span>tasks/pytorch-mnist.py
 </code></pre></div>
+<p>See more examples in the <a href="https://docs.ray.io/en/latest/train/examples.html">Ray docs</a>.</p>
+<p>Using Ray via <code>dstack</code> is a powerful way to get access to the rich Ray ecosystem while benefiting from <code>dstack</code>'s provisioning capabilities.</p>
 
 
 

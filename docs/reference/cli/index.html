@@ -2000,7 +2000,7 @@
   <span class="md-ellipsis">
     
   
-    Fine-tuning
+    LLMs
   
 
     
@@ -2013,6 +2013,91 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LLMs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/llms/llama31/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Llama 3.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Fine-tuning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2952,7 +3037,7 @@ Options:
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span>.<span class="w"> </span>--help
 Usage:<span class="w"> </span>dstack<span class="w"> </span>run<span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="w"> </span><span class="o">[</span>TYPE<span class="o">]]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>RUN_NAME<span class="o">]</span>
-<span class="w">                  </span><span class="o">[</span>-d<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-offers<span class="w"> </span>MAX_OFFERS<span class="o">]</span><span class="w"> </span><span class="o">[</span>-e<span class="w"> </span><span class="nv">KEY</span><span class="o">=</span>VALUE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--gpu<span class="w"> </span>SPEC<span class="o">]</span>
+<span class="w">                  </span><span class="o">[</span>-d<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-offers<span class="w"> </span>MAX_OFFERS<span class="o">]</span><span class="w"> </span><span class="o">[</span>-e<span class="w"> </span>KEY<span class="o">[=</span>VALUE<span class="o">]]</span><span class="w"> </span><span class="o">[</span>--gpu<span class="w"> </span>SPEC<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>--disk<span class="w"> </span>RANGE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--profile<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--max-price<span class="w"> </span>PRICE<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>--max-duration<span class="w"> </span>DURATION<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-r<span class="w"> </span>NAME<span class="o">]</span>
 <span class="w">                  </span><span class="o">[</span>--instance-type<span class="w"> </span>NAME<span class="o">]</span>
@@ -2976,7 +3061,8 @@ Options:
 <span class="w">  </span>-d,<span class="w"> </span>--detach<span class="w">          </span>Do<span class="w"> </span>not<span class="w"> </span>poll<span class="w"> </span>logs<span class="w"> </span>and<span class="w"> </span>run<span class="w"> </span>status
 <span class="w">  </span>--max-offers<span class="w"> </span>MAX_OFFERS
 <span class="w">                        </span>Number<span class="w"> </span>of<span class="w"> </span>offers<span class="w"> </span>to<span class="w"> </span>show<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>plan
-<span class="w">  </span>-e,<span class="w"> </span>--env<span class="w"> </span><span class="nv">KEY</span><span class="o">=</span>VALUE<span class="w">   </span>Environment<span class="w"> </span>variables
+<span class="w">  </span>-e,<span class="w"> </span>--env<span class="w"> </span>KEY<span class="o">[=</span>VALUE<span class="o">]</span>
+<span class="w">                        </span>Environment<span class="w"> </span>variables
 <span class="w">  </span>--gpu<span class="w"> </span>SPEC<span class="w">            </span>Request<span class="w"> </span>GPU<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run.<span class="w"> </span>The<span class="w"> </span>format<span class="w"> </span>is
 <span class="w">                        </span>NAME:COUNT:MEMORY<span class="w"> </span><span class="o">(</span>all<span class="w"> </span>parts<span class="w"> </span>are<span class="w"> </span>optional<span class="o">)</span>
 <span class="w">  </span>--disk<span class="w"> </span>RANGE<span class="w">          </span>Request<span class="w"> </span>the<span class="w"> </span>size<span class="w"> </span>range<span class="w"> </span>of<span class="w"> </span>disk<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run.<span class="w"> </span>Example
@@ -3392,11 +3478,7 @@ Options:
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-<<<<<<< HEAD
-      <script src="../../../assets/javascripts/bundle.ef37796b.min.js"></script>
-=======
-      <script src="../../../assets/javascripts/bundle.20f8b5b3.min.js"></script>
->>>>>>> upstream/master
+      <script src="../../../assets/javascripts/bundle.4a1b0f67.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
