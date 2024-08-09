@@ -12,27 +12,31 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/changelog/">
+        <link rel="canonical" href="https://dstack.ai/docs/examples/fine-tuning/trl/">
       
       
+        <link rel="prev" href="../alignment-handbook/">
+      
+      
+        <link rel="next" href="../../../../blog/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31+insiders-4.53.12">
     
     
       
-        <title>Blog - dstack</title>
+        <title>TRL - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.dad623df.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.dad623df.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,17 +61,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -85,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Blog - dstack" />
+<meta property="og:title" content="TRL - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/changelog/index.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/examples/fine-tuning/trl/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/changelog/" />
+<meta property="og:url" content="https://dstack.ai/docs/examples/fine-tuning/trl/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Blog - dstack" />
+<meta property="twitter.title" content="TRL - dstack" />
 <meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/changelog/index.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/examples/fine-tuning/trl/index.png" />
 </head>
   
   
@@ -115,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blog" class="md-skip">
+        <a href="#fine-tuning-with-trl" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +152,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -165,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blog
+              TRL
             
           </span>
         </div>
@@ -264,7 +268,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -289,7 +293,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../docs/" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link">
           
   
   Docs
@@ -306,11 +310,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../docs/examples/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   Examples
@@ -345,7 +351,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../blog/" class="md-tabs__link">
+        <a href="../../../../blog/" class="md-tabs__link">
           
   
   Blog
@@ -431,7 +437,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -458,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -584,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/installation/" class="md-nav__link">
+      <a href="../../../installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -638,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/quickstart/" class="md-nav__link">
+      <a href="../../../quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/dev-environments/" class="md-nav__link">
+      <a href="../../../dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/tasks/" class="md-nav__link">
+      <a href="../../../tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -777,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/services/" class="md-nav__link">
+      <a href="../../../services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -804,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/fleets/" class="md-nav__link">
+      <a href="../../../fleets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/gateways/" class="md-nav__link">
+      <a href="../../../concepts/gateways/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/volumes/" class="md-nav__link">
+      <a href="../../../concepts/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/protips/" class="md-nav__link">
+      <a href="../../../guides/protips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1078,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/dstack-sky/" class="md-nav__link">
+      <a href="../../../guides/dstack-sky/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1113,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/examples" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1198,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/server/config.yml/" class="md-nav__link">
+      <a href="../../../reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1275,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
+      <a href="../../../reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1302,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/task/" class="md-nav__link">
+      <a href="../../../reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1329,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/service/" class="md-nav__link">
+      <a href="../../../reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1356,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/fleet/" class="md-nav__link">
+      <a href="../../../reference/dstack.yml/fleet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1383,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/gateway/" class="md-nav__link">
+      <a href="../../../reference/dstack.yml/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1410,7 +1416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/volume/" class="md-nav__link">
+      <a href="../../../reference/dstack.yml/volume/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1445,7 +1451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/profiles.yml/" class="md-nav__link">
+      <a href="../../../reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1472,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/cli/" class="md-nav__link">
+      <a href="../../../reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1549,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/api/python/" class="md-nav__link">
+      <a href="../../../reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1576,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/api/rest/" class="md-nav__link">
+      <a href="../../../reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1623,25 +1629,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1658,7 +1669,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1676,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/examples/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1710,17 +1721,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1755,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/examples/llms/llama31/" class="md-nav__link">
+      <a href="../../llms/llama31/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1787,25 +1801,30 @@
                 
   
   
+    
   
   
+  
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1822,7 +1841,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1840,7 +1859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/examples/fine-tuning/axolotl/" class="md-nav__link">
+      <a href="../axolotl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1867,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/examples/fine-tuning/alignment-handbook/" class="md-nav__link">
+      <a href="../alignment-handbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1891,10 +1910,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../docs/examples/fine-tuning/trl/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    TRL
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1909,6 +1954,149 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memory-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Memory requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-on-multiple-gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running on multiple GPUs
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running on multiple GPUs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deepspeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          DeepSpeed
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-on-multiple-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running on multiple nodes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dev-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dev environments
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Contributing
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2014,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/" class="md-nav__link">
+      <a href="../../../../blog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2095,7 +2283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/archive/2024/" class="md-nav__link">
+      <a href="../../../../blog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2230,6 +2418,137 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memory-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Memory requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-on-multiple-gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running on multiple GPUs
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running on multiple GPUs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deepspeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          DeepSpeed
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-on-multiple-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running on multiple nodes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dev-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Dev environments
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Contributing
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2244,32 +2563,251 @@
       
 
 
+
+<h1 id="fine-tuning-with-trl">Fine-tuning with TRL<a class="headerlink" href="#fine-tuning-with-trl" title="Permanent link">&para;</a></h1>
+<p>This example walks you through how to fine-tune Llama 3.1 with <code>dstack</code>, whether in the cloud or
+on-prem.</p>
+<h2 id="memory-requirements">Memory requirements<a class="headerlink" href="#memory-requirements" title="Permanent link">&para;</a></h2>
+<p>Below are the approximate memory requirements for fine-tuning Llama 3.1.</p>
+<table>
+<thead>
+<tr>
+<th>Model size</th>
+<th>Full fine-tuning</th>
+<th>LoRA</th>
+<th>QLoRA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>8B</strong></td>
+<td>60GB</td>
+<td>16GB</td>
+<td>6GB</td>
+</tr>
+<tr>
+<td><strong>70B</strong></td>
+<td>500GB</td>
+<td>160GB</td>
+<td>48GB</td>
+</tr>
+<tr>
+<td><strong>405B</strong></td>
+<td>3.25TB</td>
+<td>950GB</td>
+<td>250GB</td>
+</tr>
+</tbody>
+</table>
+<p>The requirements can be significantly reduced with certain optimizations.</p>
+<h2 id="running-on-multiple-gpus">Running on multiple GPUs<a class="headerlink" href="#running-on-multiple-gpus" title="Permanent link">&para;</a></h2>
+<p>Below is an example for fine-tuning Llama 3.1 8B on
+OpenAssistant’s <a href="https://huggingface.co/datasets/OpenAssistant/oasst_top1_2023-08-25">chat dataset</a>:</p>
+<div editor-title="examples/fine-tuning/trl/train.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trl-train</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+<span class="c1"># Ensure nvcc is installed (req. for Flash Attention) </span>
+<span class="nt">nvcc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WANDB_API_KEY</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install &quot;transformers&gt;=4.43.2&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install bitsandbytes</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install flash-attn --no-build-isolation</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install peft</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install wandb</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/huggingface/trl</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd trl</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install .</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--config_file=examples/accelerate_configs/multi_gpu.yaml</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num_processes $DSTACK_GPUS_PER_NODE</span><span class="w"> </span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">examples/scripts/sft.py</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--model_name meta-llama/Meta-Llama-3.1-8B</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--dataset_name OpenAssistant/oasst_top1_2023-08-25</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--dataset_text_field=&quot;text&quot;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--per_device_train_batch_size 1</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--per_device_eval_batch_size 1</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--gradient_accumulation_steps 4</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--learning_rate 2e-4</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--report_to wandb</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--bf16</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--max_seq_length 1024</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--lora_r 16 --lora_alpha 32</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--lora_target_modules q_proj k_proj v_proj o_proj</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--load_in_4bit</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--use_peft</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--attn_implementation &quot;flash_attention_2&quot;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--logging_steps=10</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--output_dir models/llama31</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--hub_model_id peterschmidt85/FineLlama-3.1-8B</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="nt">gpu</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># 24GB or more vRAM</span>
+<span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB..</span>
+<span class="w">  </span><span class="c1"># One or more GPU</span>
+<span class="w">  </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1..</span>
+<span class="c1"># Shared memory (for multi-gpu)</span>
+<span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+</code></pre></div>
+
+</div>
+
+<p>Change the <code>resources</code> property to specify more GPUs. </p>
+<h3 id="deepspeed">DeepSpeed<a class="headerlink" href="#deepspeed" title="Permanent link">&para;</a></h3>
+<p>For more memory-efficient use of multiple GPUs, consider using DeepSpeed and ZeRO Stage 3.</p>
+<p>To do this, use the <code>examples/accelerate_configs/deepspeed_zero3.yaml</code> configuration file instead of 
+<code>examples/accelerate_configs/multi_gpu.yaml</code>.</p>
+<h2 id="running-on-multiple-nodes">Running on multiple nodes<a class="headerlink" href="#running-on-multiple-nodes" title="Permanent link">&para;</a></h2>
+<p>In case the model doesn't feet into a single GPU, consider running a <code>dstack</code> task on multiple nodes.</p>
+<div editor-title="examples/fine-tuning/trl/train.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trl-train-distrib</span>
+
+<span class="c1"># Size of the cluster</span>
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+<span class="c1"># Ensure nvcc is installed (req. for Flash Attention) </span>
+<span class="nt">nvcc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WANDB_API_KEY</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install &quot;transformers&gt;=4.43.2&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install bitsandbytes</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install flash-attn --no-build-isolation</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install peft</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install wandb</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/huggingface/trl</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd trl</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install .</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--config_file=examples/accelerate_configs/fsdp_qlora.yaml</span><span class="w"> </span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--main_process_ip=$DSTACK_MASTER_NODE_IP</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--main_process_port=8008</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--machine_rank=$DSTACK_NODE_RANK</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num_processes=$DSTACK_GPUS_NUM</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num_machines=$DSTACK_NODES_NUM</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">examples/scripts/sft.py</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--model_name meta-llama/Meta-Llama-3.1-8B</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--dataset_name OpenAssistant/oasst_top1_2023-08-25</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--dataset_text_field=&quot;text&quot;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--per_device_train_batch_size 1</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--per_device_eval_batch_size 1</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--gradient_accumulation_steps 4</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--learning_rate 2e-4</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--report_to wandb</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--bf16</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--max_seq_length 1024</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--lora_r 16 --lora_alpha 32</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--lora_target_modules q_proj k_proj v_proj o_proj</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--load_in_4bit</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--use_peft</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--attn_implementation &quot;flash_attention_2&quot;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--logging_steps=10</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--output_dir models/llama31</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--hub_model_id peterschmidt85/FineLlama-3.1-8B</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--torch_dtype bfloat16</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--use_bnb_nested_quant</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 24GB or more vRAM</span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB..</span>
+<span class="w">    </span><span class="c1"># One or more GPU</span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1..</span>
+<span class="w">  </span><span class="c1"># Shared memory (for multi-gpu)</span>
+<span class="w">  </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+</code></pre></div>
+
+</div>
+
+<h2 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h2>
+<p>By default, <code>dstack run</code> reuses <code>idle</code> instances from one of the existing <a href="https://dstack.ai/docs/fleets">fleets</a>.
+If no <code>idle</code> instances meet the requirements, it creates a new fleet using one of the configured backends.</p>
+<p>Use <a href="https://dstack.ai/docs/fleets.md">fleets</a> configurations to create fleets manually. This reduces startup time for dev environments,
+tasks, and services, and is very convenient if you want to reuse fleets across runs.</p>
+<h2 id="dev-environments">Dev environments<a class="headerlink" href="#dev-environments" title="Permanent link">&para;</a></h2>
+<p>Before running a task or service, it's recommended that you first start with
+a <a href="https://dstack.ai/docs/dev-environments">dev environment</a>. Dev environments
+allow you to run commands interactively.</p>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<p>The source-code of this example can be found in 
+<a href="https://github.com/dstackai/dstack/blob/master/examples/llms/llama31">examples/llms/llama31</a>
+and <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/trl">examples/fine-tuning/trl</a>.</p>
+<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p>Find a mistake or can't find an important example? 
+Raise an <a href="https://github.com/dstackai/dstack/issues">issue</a> or send a <a href="https://github.com/dstackai/dstack/tree/master/examples">pull request</a>.</p>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Browse the <a href="https://dstack.ai/docs/examples/fine-tuning/axolotl">Axolotl</a> 
+   and <a href="https://dstack.ai/docs/examples/fine-tuning/alignment-handbook">Alignment Handbook</a> examples</li>
+<li>Check <a href="https://dstack.ai/docs/dev-environments">dev environments</a>, <a href="https://dstack.ai/docs/tasks">tasks</a>, 
+   <a href="https://dstack.ai/docs/services">services</a>, and <a href="https://dstack.ai/docs/fleets">fleets</a>.</li>
+</ol>
+
+
+
+
+
+
+
+
+
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/changelog/index.md" title="Edit this page" class="md-content__button md-icon">
+
+
+
+
+
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-    </a>
-  
-  
-
-
-<h1 id="blog">Blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h1>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-      
+          
+          <nav class="md-footer__inner md-grid" aria-label="Footer" >
+            
+              
+              <a href="../alignment-handbook/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Alignment Handbook">
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                </div>
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Previous
+                  </span>
+                  <div class="md-ellipsis">
+                    Alignment Handbook
+                  </div>
+                </div>
+              </a>
+            
+            
+              
+              <a href="../../../../blog/" class="md-footer__link md-footer__link--next" aria-label="Next: Blog">
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Next
+                  </span>
+                  <div class="md-ellipsis">
+                    Blog
+                  </div>
+                </div>
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+                </div>
+              </a>
+            
+          </nav>
+        
     
   </article>
 </div>
@@ -2367,17 +2905,17 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../assets/javascripts/bundle.4a1b0f67.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.4a1b0f67.min.js"></script>
       
-        <script src="../assets/javascripts/extra.js"></script>
+        <script src="../../../../assets/javascripts/extra.js"></script>
       
-        <script src="../assets/javascripts/pricing.js"></script>
+        <script src="../../../../assets/javascripts/pricing.js"></script>
       
     
 

@@ -2023,6 +2023,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../examples/fine-tuning/axolotl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Axolotl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../examples/fine-tuning/alignment-handbook/" class="md-nav__link">
         
   
@@ -2050,13 +2077,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/axolotl/" class="md-nav__link">
+      <a href="../examples/fine-tuning/trl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Axolotl
+    TRL
   
 
     
@@ -2530,9 +2557,6 @@
 <h1 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h1>
 <p>Fleets enable efficient provisioning and management of clusters and instances, both in the cloud and on-prem. Once a
 fleet is created, it can be reused by dev environments, tasks, and services.</p>
-<blockquote>
-<p>Fleets is a new feature. To use it, ensure you've installed version <code>0.18.7</code> or higher.</p>
-</blockquote>
 <h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
 <p>To create a fleet, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code>
 are both acceptable).</p>
@@ -2590,6 +2614,30 @@ In that case, <code>dstack</code> will provision all nodes in the same backend a
 <p>The on-prem servers should be pre-installed with CUDA 12.1 and NVIDIA Docker. 
 The user should have <code>sudo</code> access.</p>
 </div>
+<details class="info">
+<summary>Environment variables</summary>
+<p>For on-prem fleets, it's possible to pre-configure environment variables. 
+These variables will be used when installing the <code>dstack-shim</code> service on hosts 
+and running containers.</p>
+<p>For example, these variables can be used to configure a proxy:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+
+<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTP_PROXY=http://proxy.example.com:80</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPS_PROXY=http://proxy.example.com:80</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NO_PROXY=localhost,127.0.0.1</span>
+
+<span class="nt">ssh_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
+<span class="w">  </span><span class="nt">identity_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/id_rsa</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.51</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.52</span>
+</code></pre></div>
+</details>
 <p>Set <code>placement</code> to <code>cluster</code> if the nodes are interconnected (e.g. if you'd like to use them for multi-node tasks).
 In that case, by default, <code>dstack</code> will automatically detect the private network. 
 You can specify the <a href="../reference/dstack.yml/fleet/#network"><code>network</code></a> parameter manually.</p>
