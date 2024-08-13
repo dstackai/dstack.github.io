@@ -6,33 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center.">
+        <meta name="description" content="Learn how to use volumes with dstack to optimize model inference cold start times on RunPod.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/docs/concepts/pools/">
+        <link rel="canonical" href="https://dstack.ai/blog/volumes-on-runpod/">
       
+      
+        <link rel="prev" href="../dstack-sky-own-cloud-accounts/">
       
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31+insiders-4.53.12">
     
     
       
-        <title>Pools - dstack</title>
+        <title>Optimizing inference cold starts on RunPod with volumes - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.dad623df.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.dad623df.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,17 +59,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -85,17 +87,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Pools - dstack" />
-<meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/concepts/pools.png" />
+<meta property="og:title" content="Optimizing inference cold starts on RunPod with volumes - dstack" />
+<meta property="og:description" content="Learn how to use volumes with dstack to optimize model inference cold start times on RunPod." />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/blog/volumes-on-runpod.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/concepts/pools/" />
+<meta property="og:url" content="https://dstack.ai/blog/volumes-on-runpod/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Pools - dstack" />
-<meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/concepts/pools.png" />
+<meta property="twitter.title" content="Optimizing inference cold starts on RunPod with volumes - dstack" />
+<meta property="twitter:description" content="Learn how to use volumes with dstack to optimize model inference cold start times on RunPod." />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/blog/volumes-on-runpod.png" />
 </head>
   
   
@@ -115,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pools" class="md-skip">
+        <a href="#optimizing-inference-cold-starts-on-runpod-with-volumes" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +150,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -165,7 +167,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pools
+              Optimizing inference cold starts on RunPod with volumes
             
           </span>
         </div>
@@ -264,7 +266,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -289,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../docs/" class="md-tabs__link">
           
   
   Docs
@@ -310,7 +312,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../examples/" class="md-tabs__link">
+        <a href="../../docs/examples/" class="md-tabs__link">
           
   
   Examples
@@ -341,11 +343,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../blog/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Blog
@@ -418,7 +422,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -431,7 +437,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -458,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -584,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/" class="md-nav__link">
+      <a href="../../docs/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -638,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/" class="md-nav__link">
+      <a href="../../docs/quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev-environments/" class="md-nav__link">
+      <a href="../../docs/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tasks/" class="md-nav__link">
+      <a href="../../docs/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -777,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/" class="md-nav__link">
+      <a href="../../docs/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -804,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleets/" class="md-nav__link">
+      <a href="../../docs/fleets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gateways/" class="md-nav__link">
+      <a href="../../docs/concepts/gateways/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../volumes/" class="md-nav__link">
+      <a href="../../docs/concepts/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/protips/" class="md-nav__link">
+      <a href="../../docs/guides/protips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1078,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/dstack-sky/" class="md-nav__link">
+      <a href="../../docs/guides/dstack-sky/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1113,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples" class="md-nav__link">
+      <a href="../../docs/examples" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1198,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/server/config.yml/" class="md-nav__link">
+      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1275,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/dstack.yml/dev-environment/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1302,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/dstack.yml/task/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1329,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/dstack.yml/service/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1356,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/dstack.yml/fleet/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/fleet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1383,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/dstack.yml/gateway/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1410,7 +1416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/dstack.yml/volume/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/volume/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1445,7 +1451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/profiles.yml/" class="md-nav__link">
+      <a href="../../docs/reference/profiles.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1472,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/cli/" class="md-nav__link">
+      <a href="../../docs/reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1549,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/api/python/" class="md-nav__link">
+      <a href="../../docs/reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1576,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/api/rest/" class="md-nav__link">
+      <a href="../../docs/reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/" class="md-nav__link">
+      <a href="../../docs/examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1755,7 +1761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/llms/llama31/" class="md-nav__link">
+      <a href="../../docs/examples/llms/llama31/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1840,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/fine-tuning/axolotl/" class="md-nav__link">
+      <a href="../../docs/examples/fine-tuning/axolotl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1867,7 +1873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/fine-tuning/alignment-handbook/" class="md-nav__link">
+      <a href="../../docs/examples/fine-tuning/alignment-handbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1894,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/fine-tuning/trl/" class="md-nav__link">
+      <a href="../../docs/examples/fine-tuning/trl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1959,25 +1965,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1994,7 +2005,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2009,12 +2020,14 @@
                 
   
   
+    
+  
   
     
   
   
-    <li class="md-nav__item">
-      <a href="../../../blog/" class="md-nav__link">
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2048,17 +2061,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2095,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/archive/2024/" class="md-nav__link">
+      <a href="../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2218,6 +2234,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2230,117 +2248,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#adding-instances" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Adding instances
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adding instances">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automatic-provisioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Automatic provisioning
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#manual-provisioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Manual provisioning
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-on-prem-clusters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Adding on-prem clusters
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adding on-prem clusters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#clusters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Clusters
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#removing-instances" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Removing instances
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#list-instances" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          List instances
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2348,15 +2255,71 @@
             
           
           
-<div class="md-content" data-md-component="content">
-  
-  <article class="md-content__inner md-typeset">
-    
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2024-08-13 00:00:00" class="md-ellipsis">August 13, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              2 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
       
+        
+  
+
 
 
   
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/docs/concepts/pools.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/blog/posts/volumes-on-runpod.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -2364,100 +2327,124 @@
   
 
 
-<h1 id="pools">Pools<a class="headerlink" href="#pools" title="Permanent link">&para;</a></h1>
-<p>Pools enable the efficient reuse of cloud instances and on-premises servers across runs, simplifying their management.</p>
-<h2 id="adding-instances">Adding instances<a class="headerlink" href="#adding-instances" title="Permanent link">&para;</a></h2>
-<h3 id="automatic-provisioning">Automatic provisioning<a class="headerlink" href="#automatic-provisioning" title="Permanent link">&para;</a></h3>
-<p>By default, when using the <code>dstack run</code> command, it tries to reuse an instance from a pool. If no idle instance meets the
-requirements, <code>dstack</code> automatically provisions a new cloud instance and adds it to the pool.</p>
-<details class="info">
-<summary>Reuse policy</summary>
-<p>To avoid provisioning new cloud instances with <code>dstack run</code>, use <code>--reuse</code>. Your run will be assigned to an idle instance in
-the pool. If there are no available idle instances in the pool, the run will fail.</p>
-</details>
-<details class="info">
-<summary>Idle duration</summary>
-<p>By default, <code>dstack run</code> sets the idle duration of a newly provisioned instance to <code>5m</code>.
-This means that if the run is finished and the instance remains idle for longer than five minutes, it is automatically
-removed from the pool. To override the default idle duration, use  <code>--idle-duration DURATION</code> with <code>dstack run</code>.</p>
-</details>
-<h3 id="manual-provisioning">Manual provisioning<a class="headerlink" href="#manual-provisioning" title="Permanent link">&para;</a></h3>
-<p>To manually provision a cloud instance and add it to a pool, use <a href="../../reference/cli/#dstack-pool-add"><code>dstack pool add</code></a>:</p>
-<div class="termy">
+<h1 id="optimizing-inference-cold-starts-on-runpod-with-volumes">Optimizing inference cold starts on RunPod with volumes<a class="headerlink" href="#optimizing-inference-cold-starts-on-runpod-with-volumes" title="Permanent link">&para;</a></h1>
+<p>Deploying custom models in the cloud often faces the challenge of cold start times, including the time to provision a
+new instance and download the model. This is especially relevant for services with autoscaling when new model replicas
+need to be provisioned quickly. </p>
+<p>Let's explore how <code>dstack</code> optimizes this process using volumes, with an example of
+deploying a model on RunPod.</p>
+<!-- more -->
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add<span class="w"> </span>--gpu<span class="w"> </span>80GB
+<p>Suppose you want to deploy Llama 3.1 on RunPod as a <a href="../../docs/services/">service</a>:</p>
+<div editor-title="examples/llms/llama31/tgi/service.dstack.yml">
 
-<span class="w"> </span>BACKEND<span class="w">     </span>REGION<span class="w">         </span>RESOURCES<span class="w">                     </span>SPOT<span class="w">  </span>PRICE
-<span class="w"> </span>tensordock<span class="w">  </span>unitedkingdom<span class="w">  </span>10xCPU,<span class="w"> </span>80GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">   </span>no<span class="w">    </span><span class="nv">$1</span>.595
-<span class="w"> </span>azure<span class="w">       </span>westus3<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
-<span class="w"> </span>azure<span class="w">       </span>westus2<span class="w">        </span>24xCPU,<span class="w"> </span>220GB,<span class="w"> </span>1xA100<span class="w"> </span><span class="o">(</span>80GB<span class="o">)</span><span class="w">  </span>no<span class="w">    </span><span class="nv">$3</span>.673
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31-service-tgi</span>
 
-Continue?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+<span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1..2</span>
+<span class="nt">scaling</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rps</span>
+<span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=meta-llama/Meta-Llama-3.1-8B-Instruct</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_INPUT_LENGTH=4000</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_TOTAL_TOKENS=4096</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama/Meta-Llama-3.1-8B-Instruct</span>
 </code></pre></div>
 
 </div>
 
-<p>The <code>dstack pool add</code> command allows specifying resource requirements, along with the spot policy, idle duration, max
-price, retry policy, and other policies.</p>
-<details class="info">
-<summary>Idle duration</summary>
-<p>The default idle duration if you're using <code>dstack pool add</code> is <code>72h</code>. To override it, use the <code>--idle-duration DURATION</code> argument.</p>
-</details>
-<p>You can also specify the policies via <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a> instead of passing them as arguments.
-For more details on policies and their defaults, refer to <a href="../../reference/profiles.yml/"><code>.dstack/profiles.yml</code></a>.</p>
-<details class="info">
-<summary>Limitations</summary>
-<p>The <code>dstack pool add</code> command is not supported for Kubernetes, VastAI, and RunPod backends yet.</p>
-</details>
-<h3 id="adding-on-prem-clusters">Adding on-prem clusters<a class="headerlink" href="#adding-on-prem-clusters" title="Permanent link">&para;</a></h3>
-<p>Any on-prem server that can be accessed via SSH can be added to a pool and used to run workloads.</p>
-<p>To add on-prem servers to the pool, use the <code>dstack pool add-ssh</code> command and pass the hostname of your server along with
-the SSH key.</p>
-<div class="termy">
+<p>When you run <code>dstack apply</code>, it creates a public endpoint with one service replica. <code>dstack</code> will then automatically scale
+the service by adjusting the number of replicas based on traffic.</p>
+<p>When starting each replica, <code>text-generation-launcher</code> downloads the model to the <code>/data</code> folder. For Llama 3.1 8B, this
+usually takes under a minute, but larger models may take longer. Repeated downloads can significantly affect
+auto-scaling efficiency.</p>
+<p>Great news: RunPod supports network volumes, which we can use for caching models across multiple replicas.</p>
+<p>With <code>dstack</code>, you can create a RunPod volume using the following configuration:</p>
+<div editor-title="examples/mist/volumes/runpod.dstack.yml">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add-ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_rsa<span class="w"> </span>ubuntu@54.73.155.119
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">volume</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31-volume</span>
+
+<span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">runpod</span>
+<span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EU-SE-1</span>
+
+<span class="c1"># Required size</span>
+<span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100GB</span>
 </code></pre></div>
 
 </div>
 
-<p>The command accepts the same arguments as the standard <code>ssh</code> command.</p>
-<div class="admonition warning">
-<p class="admonition-title">Requirements</p>
-<p>On-prem servers should be pre-installed with Docker.
-Systems with NVIDIA GPUs should also be pre-installed with CUDA 12.1 and
-<a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">NVIDIA Container Toolkit <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>.
-The user should have <code>sudo</code> access.</p>
-</div>
-<p>Once the instance is provisioned, you'll see it in the pool and will be able to run workloads on it.</p>
-<h4 id="clusters">Clusters<a class="headerlink" href="#clusters" title="Permanent link">&para;</a></h4>
-<p>If you want on-prem instances to run multi-node tasks, ensure these on-prem servers share the same private network.
-Additionally, you need to pass the <code>--network</code> option to <code>dstack pool add-ssh</code>:</p>
+<p>Go ahead and create it via <code>dstack apply</code>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>add-ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_rsa<span class="w"> </span>ubuntu@54.73.155.119<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--network<span class="w"> </span><span class="m">10</span>.0.0.0/24
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/mist/volumes/runpod.dstack.yml
 </code></pre></div>
 
 </div>
 
-<p>The <code>--network</code> argument accepts the IP address range (CIDR) of the private network of the instance.</p>
-<p>Once you've added multiple instances with the same network value, you can use them as a cluster to run
-<a href="../../reference/dstack.yml/task/#_nodes">multi-node tasks</a>.</p>
-<h2 id="removing-instances">Removing instances<a class="headerlink" href="#removing-instances" title="Permanent link">&para;</a></h2>
-<p>If the instance remains idle for the configured idle duration, <code>dstack</code> removes it and deletes all cloud resources.</p>
-<p>To remove an instance from the pool manually, use the <code>dstack pool rm</code> command. </p>
-<div class="termy">
+<p>Once the volume is created, attach it to your service by updating the configuration file and mapping the 
+volume name to the <code>/data</code> path.</p>
+<div editor-title="examples/llms/llama31/tgi/service.dstack.yml">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>pool<span class="w"> </span>rm<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>instance<span class="w"> </span>name<span class="p">&amp;</span>gt<span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31-service-tgi</span>
+
+<span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1..2</span>
+<span class="nt">scaling</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rps</span>
+<span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31-volume</span>
+<span class="w">   </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/data</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/text-generation-inference:latest</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=meta-llama/Meta-Llama-3.1-8B-Instruct</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_INPUT_LENGTH=4000</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_TOTAL_TOKENS=4096</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama/Meta-Llama-3.1-8B-Instruct</span>
 </code></pre></div>
 
 </div>
 
-<h2 id="list-instances">List instances<a class="headerlink" href="#list-instances" title="Permanent link">&para;</a></h2>
-<p>The <a href="../../reference/cli/#dstack-pool-ps"><code>dstack pool ps</code></a> command lists active instances and their status (<code>busy</code>
-or <code>idle</code>).</p>
-
-
+<p>In this case, <code>dstack</code> attaches the specified volume to each new replica. This ensures the model is downloaded only
+once, reducing cold start time in proportion to the model size.</p>
+<p>A notable feature of RunPod is that volumes can be attached to multiple containers simultaneously. This capability is
+particularly useful for autoscalable services or distributed tasks.</p>
+<p>Using <a href="../../docs/concepts/volumes/">volumes</a> not only optimizes inference cold start times but also enhances the
+efficiency of data and model checkpoint loading during training and fine-tuning.
+Whether you're running <a href="../../docs/tasks/">tasks</a> or <a href="../../docs/dev-environments/">dev environments</a>, leveraging
+volumes can significantly streamline your workflow and improve overall performance.</p>
 
 
 
@@ -2466,15 +2453,20 @@ or <code>idle</code>).</p>
 
 
   
+  
 
 
+
+  
+
+
+  
 
 
 
       
-    
-  </article>
-</div>
+    </article>
+  </div>
 
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2569,17 +2561,17 @@ or <code>idle</code>).</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.4a1b0f67.min.js"></script>
+      <script src="../../assets/javascripts/bundle.4a1b0f67.min.js"></script>
       
-        <script src="../../../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../../../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 
