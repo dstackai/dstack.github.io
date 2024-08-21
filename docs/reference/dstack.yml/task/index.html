@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31+insiders-4.53.12">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32+insiders-4.53.12">
     
     
       
@@ -2815,6 +2815,91 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Accelerators
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accelerators
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/accelerators/amd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4073,13 +4158,13 @@ range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</co
 
 </div>
 
-<p>The <code>gpu</code> property allows specifying not only memory size but also GPU names
-and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</code> (either A10G or A100), 
-<code>A100:80GB</code> (one A100 of 80GB), <code>A100:2</code> (two A100), <code>24GB..40GB:2</code> (two GPUs between 24GB and 40GB), 
+<p>The <code>gpu</code> property allows specifying not only memory size but also GPU vendor, names
+and their quantity. Examples: <code>nvidia</code> (one NVIDIA GPU), <code>A100</code> (one A100), <code>A10G,A100</code> (either A10G or A100),
+<code>A100:80GB</code> (one A100 of 80GB), <code>A100:2</code> (two A100), <code>24GB..40GB:2</code> (two GPUs between 24GB and 40GB),
 <code>A100:40GB:2</code> (two A100 GPUs of 40GB).</p>
 <details class="info">
 <summary>Google Cloud TPU</summary>
-<p>To use TPUs, specify its architecture prefixed by <code>tpu-</code> via the <code>gpu</code> property.</p>
+<p>To use TPUs, specify its architecture via the <code>gpu</code> property.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 <span class="c1"># The name is optional, if not specified, generated randomly</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span>
@@ -4093,7 +4178,7 @@ and their quantity. Examples: <code>A100</code> (one A100), <code>A10G,A100</cod
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 xla/test/test_train_mp_imagenet.py --fake_data --model=resnet50 --num_epochs=1</span>
 
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">tpu-v2-8</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2-8</span>
 </code></pre></div>
 <p>Currently, only 8 TPU cores can be specified, supporting single host workloads. Multi-host support is coming soon.</p>
 </details>
@@ -4550,7 +4635,7 @@ attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.4a1b0f67.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.94ab4cf4.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

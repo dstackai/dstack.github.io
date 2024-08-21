@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31+insiders-4.53.12">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32+insiders-4.53.12">
     
     
       
@@ -1953,6 +1953,91 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Accelerators
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accelerators
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/examples/accelerators/amd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2200,10 +2285,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optimizing-inference-cold-starts-on-runpod-with-volumes" class="md-nav__link">
+  <a href="#supporting-amd-accelerators-on-runpod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Optimizing inference cold starts on RunPod with volumes
+        Supporting AMD accelerators on RunPod
       
     </span>
   </a>
@@ -2211,10 +2296,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dstack-sky-now-allows-using-your-own-cloud-accounts" class="md-nav__link">
+  <a href="#using-volumes-to-optimize-cold-starts-on-runpod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dstack Sky now allows using your own cloud accounts
+        Using volumes to optimize cold starts on RunPod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dstack-sky-now-supports-your-own-cloud-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dstack Sky now supports your own cloud accounts
       
     </span>
   </a>
@@ -2361,10 +2457,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optimizing-inference-cold-starts-on-runpod-with-volumes" class="md-nav__link">
+  <a href="#supporting-amd-accelerators-on-runpod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Optimizing inference cold starts on RunPod with volumes
+        Supporting AMD accelerators on RunPod
       
     </span>
   </a>
@@ -2372,10 +2468,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dstack-sky-now-allows-using-your-own-cloud-accounts" class="md-nav__link">
+  <a href="#using-volumes-to-optimize-cold-starts-on-runpod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dstack Sky now allows using your own cloud accounts
+        Using volumes to optimize cold starts on RunPod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dstack-sky-now-supports-your-own-cloud-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dstack Sky now supports your own cloud accounts
       
     </span>
   </a>
@@ -2414,6 +2521,45 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2024-08-21 00:00:00">August 21, 2024</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="supporting-amd-accelerators-on-runpod"><a class="toclink" href="../../amd-on-runpod/">Supporting AMD accelerators on RunPod</a></h2>
+<p>While <code>dstack</code> helps streamline the orchestration of containers for AI, its primary goal is to offer vendor independence
+and portability, ensuring compatibility across different hardware and cloud providers.</p>
+<p>Inspired by the recent <code>MI300X</code> benchmarks, we are pleased to announce that RunPod is the first cloud provider to offer
+AMD GPUs through <code>dstack</code>, with support for other cloud providers and on-prem servers to follow.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../amd-on-runpod/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2024-08-13 00:00:00">August 13, 2024</time></li>
         
         
@@ -2430,7 +2576,7 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="optimizing-inference-cold-starts-on-runpod-with-volumes"><a class="toclink" href="../../volumes-on-runpod/">Optimizing inference cold starts on RunPod with volumes</a></h2>
+    <h2 id="using-volumes-to-optimize-cold-starts-on-runpod"><a class="toclink" href="../../volumes-on-runpod/">Using volumes to optimize cold starts on RunPod</a></h2>
 <p>Deploying custom models in the cloud often faces the challenge of cold start times, including the time to provision a
 new instance and download the model. This is especially relevant for services with autoscaling when new model replicas
 need to be provisioned quickly. </p>
@@ -2470,7 +2616,7 @@ deploying a model on RunPod.</p>
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="dstack-sky-now-allows-using-your-own-cloud-accounts"><a class="toclink" href="../../dstack-sky-own-cloud-accounts/">dstack Sky now allows using your own cloud accounts</a></h2>
+    <h2 id="dstack-sky-now-supports-your-own-cloud-accounts"><a class="toclink" href="../../dstack-sky-own-cloud-accounts/">dstack Sky now supports your own cloud accounts</a></h2>
 <p><a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a> 
 enables you to access GPUs from the global marketplace at the most
 competitive rates. However, sometimes you may want to use your own cloud accounts. 
@@ -2639,7 +2785,7 @@ With today's release, both options are now supported.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.4a1b0f67.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.94ab4cf4.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
