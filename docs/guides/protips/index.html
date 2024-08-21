@@ -2688,7 +2688,7 @@
 <p>By default, when running dev environments, tasks, or services, <code>dstack apply</code> reuses <code>idle</code> 
 instances from existing fleets. If no <code>idle</code> instances match the requirements, it creates a new fleet automatically.</p>
 <p>To avoid creating new fleet automatically, 
-set <a href="reference/dstack.yml/dev-environment.md#creation_policy"> <code>creation_policy</code></a> to <code>reuse</code> in the configuration.</p>
+set <a href="../../reference/dstack.yml/dev-environment/#creation_policy"> <code>creation_policy</code></a> to <code>reuse</code> in the configuration.</p>
 <blockquote>
 <p>Use <a href="../../fleets/">fleets</a> configurations to create fleets manually. This reduces startup time for dev environments,
 tasks, and services, and is very convenient if you want to reuse fleets across runs.</p>
@@ -2804,7 +2804,7 @@ for this time, <code>dstack</code> terminates them.</p>
 <p>If you create a fleet manually, the idle duration is not set.</p>
 <blockquote>
 <p>You can override idle duration for fleets, dev environment, tasks, and services by
-setting <a href="../../reference/dstack.yml/dev-environment/#termination_idle_duration"><code>termination_idle_duration</code></a> in the configuration file. </p>
+setting <a href="../../reference/dstack.yml/dev-environment/#termination_idle_time"><code>termination_idle_time</code></a> in the configuration file. </p>
 </blockquote>
 <h2 id="attached-mode">Attached mode<a class="headerlink" href="#attached-mode" title="Permanent link">&para;</a></h2>
 <p>By default, <code>dstack apply</code> runs in attached mode.
