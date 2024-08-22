@@ -3445,6 +3445,8 @@ Options:
 <li><code>DSTACK_SERVER_PORT</code> – (Optional) Has the same effect as <code>--port</code>. Defaults to <code>3000</code>.</li>
 <li><code>DSTACK_SERVER_ADMIN_TOKEN</code> – (Optional) Has the same effect as <code>--token</code>. Defaults to <code>None</code>.</li>
 <li><code>DSTACK_DATABASE_URL</code> – (Optional) The database URL to use instead of default SQLite. Currently <code>dstack</code> supports Postgres. Example: <code>postgresql+asyncpg://myuser:mypassword@localhost:5432/mydatabase</code>. Defaults to <code>None</code>.</li>
+<li><code>SERVER_CLOUDWATCH_LOG_GROUP</code> – (Optional) The CloudWatch Logs group for workloads logs. If not set, the default file-based log storage is used.</li>
+<li><code>SERVER_CLOUDWATCH_LOG_REGION</code> — (Optional) The CloudWatch Logs region. Defaults to <code>None</code>.</li>
 <li><code>DSTACK_SERVER_DIR</code> – (Optional) Sets path to store data and server configs. Defaults to <code>~/.dstack/server</code>.</li>
 </ul>
 <details class="info">

@@ -1482,51 +1482,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Encryption">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>aes</code>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>identity</code>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-permissions_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Default permissions
-        </span>
-      
-    </span>
-  </a>
-  
 </li>
       
         <li class="md-nav__item">
@@ -4199,51 +4154,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Encryption">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>aes</code>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          <code>identity</code>
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-permissions_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Default permissions
-        </span>
-      
-    </span>
-  </a>
-  
 </li>
       
         <li class="md-nav__item">
@@ -6277,100 +6187,61 @@ of the corresponding security group:</p>
 <a href="https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html">NVIDIA GPU Operator <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5h-7.07Z"/></svg></span></a>.</p>
 </details>
 <h2 id="encryption_1">Encryption<a class="headerlink" href="#encryption_1" title="Permanent link">&para;</a></h2>
-<p><code>dstack</code> support encryption at rest that allows
-encrypting sensitive data such as backend credentials before storing it in the DB.
-It's an additional application-level encryption layer on top of file-system and DB encryption.</p>
-<p>By default, the <code>dstack</code> server stores all data in plaintext.
-To enable encryption, specify one or more encryption keys:</p>
-<div editor-title="~/.dstack/server/config.yml">
-
-<div class="highlight"><pre><span></span><code><span class="nt">encryption</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">keys</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aes</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key1</span>
-<span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E5yzN6V3XvBq/f085ISWFCdgnOGED0kuFaAkASlmmO4=</span>
-<span class="nt">projects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</code></pre></div>
-
-</div>
-
-<p>After that, subsequent DB writes will encrypt sensitive data.
-(This includes backend credentials and user tokens.)
-If several keys are specified, the first key is used for encryption and all are tried for decryption.
-This allows rotating encryption keys by specifying a new encryption key:</p>
-<div editor-title="~/.dstack/server/config.yml">
-
-<div class="highlight"><pre><span></span><code><span class="nt">encryption</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">keys</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aes</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key2</span>
-<span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cR2r1JmkPyL6edBQeHKz6ZBjCfS2oWk87Gc2G3wHVoA=</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aes</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key1</span>
-<span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E5yzN6V3XvBq/f085ISWFCdgnOGED0kuFaAkASlmmO4=</span>
-<span class="nt">projects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</code></pre></div>
-
-</div>
-
-<p>Old keys may be deleted once all existing records were updated to re-encrypt sensitive data.
-Encrypted values are prefixed with key names so that DB admins can identify keys used for encryption.</p>
-<details class="info">
-<summary>Supported encryption keys</summary>
-<p>Currently, <code>dstack</code> supports only <code>aes</code> and <code>identity</code> (plaintext) encryption keys.
-There are plans to support external encryption providers including HashiCorp Vault and AWS KMS.</p>
-</details>
-<h3 id="aes"><code>aes</code><a class="headerlink" href="#aes" title="Permanent link">&para;</a></h3>
+<p>By default, <code>dstack</code> stores data in plaintext. To enforce encryption, you 
+specify one or more encryption keys.</p>
+<p><code>dstack</code> currently supports AES and identity (plaintext) encryption keys.
+Support for external providers like HashiCorp Vault and AWS KMS is planned.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">AES</label><label for="__tabbed_8_2">Identity</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>The <code>aes</code> encryption key encrypts data using <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES-256</a> in GCM mode.
 To configure the <code>aes</code> encryption, generate a random 32-byte key:</p>
+<div class="termy">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">32</span><span class="w"> </span>/dev/urandom<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64
 
 opmx+r5xGJNVZeErnR0+n+ElF9ajzde37uggELxL
 </code></pre></div>
+</div>
 <p>And specify it as <code>secret</code>:</p>
-<div editor-title="~/.dstack/server/config.yml">
-
 <div class="highlight"><pre><span></span><code><span class="nt">encryption</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">keys</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aes</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key1</span>
-<span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opmx+r5xGJNVZeErnR0+n+ElF9ajzde37uggELxL</span>
-<span class="nt">projects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aes</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key1</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opmx+r5xGJNVZeErnR0+n+ElF9ajzde37uggELxL</span>
 </code></pre></div>
-
 </div>
-
-<h3 id="identity"><code>identity</code><a class="headerlink" href="#identity" title="Permanent link">&para;</a></h3>
+<div class="tabbed-block">
 <p>The <code>identity</code> encryption performs no encryption and stores data in plaintext.
 You can specify an <code>identity</code> encryption key explicitly if you want to decrypt the data:</p>
-<div editor-title="~/.dstack/server/config.yml">
-
 <div class="highlight"><pre><span></span><code><span class="nt">encryption</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">keys</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">identity</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aes</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key1</span>
 <span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opmx+r5xGJNVZeErnR0+n+ElF9ajzde37uggELxL</span>
-<span class="nt">projects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </code></pre></div>
-
-</div>
-
 <p>With this configuration, the <code>aes</code> key will still be used to decrypt the old data,
 but new writes will store the data in plaintext.</p>
-<h2 id="default-permissions_1">Default permissions<a class="headerlink" href="#default-permissions_1" title="Permanent link">&para;</a></h2>
-<p><code>dstack</code> supports changing default permissions. For example, by default all users
-can create and manage their own projects. You can specify <code>default_permissions</code>
-so that only global admins can create and manage projects:</p>
-<div editor-title="~/.dstack/server/config.yml">
-
-<div class="highlight"><pre><span></span><code><span class="nt">default_permissions</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">allow_non_admins_create_projects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="nt">projects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</code></pre></div>
-
 </div>
+</div>
+</div>
+<details class="info">
+<summary>Key rotation</summary>
+<p>If multiple keys are specified, the first is used for encryption, and all are tried for decryption. This enables key
+rotation by specifying a new encryption key.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">encryption</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">keys</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aes</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key2</span>
+<span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cR2r1JmkPyL6edBQeHKz6ZBjCfS2oWk87Gc2G3wHVoA=</span>
 
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aes</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key1</span>
+<span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E5yzN6V3XvBq/f085ISWFCdgnOGED0kuFaAkASlmmO4=</span>
+</code></pre></div>
+<p>Old keys may be deleted once all existing records have been updated to re-encrypt sensitive data. 
+Encrypted values are prefixed with key names, allowing DB admins to identify the keys used for encryption.</p>
+</details>
 <p>See the <a href="#default-permissions">reference table</a> for all configurable permissions.</p>
 <h2 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="_projects"><a href="#projects"><code>projects</code></a> -  The list of projects.<a class="headerlink" href="#_projects" title="Permanent link">&para;</a></h4>
@@ -6388,7 +6259,7 @@ so that only global admins can create and manage projects:</p>
 <h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#aws-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="aws-creds"><code>projects[n].backends[type=aws].creds</code><a class="headerlink" href="#aws-creds" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Access key</label><label for="__tabbed_8_2">Default</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Access key</label><label for="__tabbed_9_2">Default</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>access_key</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
@@ -6406,7 +6277,7 @@ so that only global admins can create and manage projects:</p>
 <h4 class="reference-item" id="subscription_id"><code>subscription_id</code> -  The subscription ID.<a class="headerlink" href="#subscription_id" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#azure-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="azure-creds"><code>projects[n].backends[type=azure].creds</code><a class="headerlink" href="#azure-creds" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Client</label><label for="__tabbed_9_2">Default</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Client</label><label for="__tabbed_10_2">Default</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>client</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
@@ -6433,7 +6304,7 @@ so that only global admins can create and manage projects:</p>
 <h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#gcp-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="gcp-creds"><code>projects[n].backends[type=gcp].creds</code><a class="headerlink" href="#gcp-creds" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Service account</label><label for="__tabbed_10_2">Default</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Service account</label><label for="__tabbed_11_2">Default</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>service_account</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
@@ -6457,7 +6328,7 @@ so that only global admins can create and manage projects:</p>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) List of region names for running <code>dstack</code> jobs. Omit to use all regions.<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="compartment_id"><code>compartment_id</code> - (Optional) Compartment where <code>dstack</code> will create all resources. Omit to instruct <code>dstack</code> to create a new compartment.<a class="headerlink" href="#compartment_id" title="Permanent link">&para;</a></h4>
 <h2 id="oci-creds"><code>projects[n].backends[type=oci].creds</code><a class="headerlink" href="#oci-creds" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Client</label><label for="__tabbed_11_2">Default</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Client</label><label for="__tabbed_12_2">Default</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>client</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>

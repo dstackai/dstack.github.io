@@ -714,11 +714,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-start-the-server" class="md-nav__link">
+  <a href="#3-start-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          2. Start the server
+          3. Start the server
         </span>
       
     </span>
@@ -727,11 +727,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-set-up-the-cli" class="md-nav__link">
+  <a href="#4-set-up-the-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          3. Set up the CLI
+          4. Set up the CLI
         </span>
       
     </span>
@@ -740,11 +740,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-create-on-prem-fleets" class="md-nav__link">
+  <a href="#5-create-on-prem-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          4. Create on-prem fleets
+          5. Create on-prem fleets
         </span>
       
     </span>
@@ -2533,11 +2533,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-start-the-server" class="md-nav__link">
+  <a href="#3-start-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          2. Start the server
+          3. Start the server
         </span>
       
     </span>
@@ -2546,11 +2546,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-set-up-the-cli" class="md-nav__link">
+  <a href="#4-set-up-the-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          3. Set up the CLI
+          4. Set up the CLI
         </span>
       
     </span>
@@ -2559,11 +2559,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-create-on-prem-fleets" class="md-nav__link">
+  <a href="#5-create-on-prem-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          4. Create on-prem fleets
+          5. Create on-prem fleets
         </span>
       
     </span>
@@ -2622,7 +2622,7 @@ you have to set up the server. </p>
 <h3 id="1-configure-backends">1. Configure backends<a class="headerlink" href="#1-configure-backends" title="Permanent link">&para;</a></h3>
 <p>If you want the <code>dstack</code> server to run containers or manage clusters in your cloud accounts (or use Kubernetes),
 create the <a href="../reference/server/config.yml/"><code>~/.dstack/server/config.yml</code></a> file and configure backends.</p>
-<h3 id="2-start-the-server">2. Start the server<a class="headerlink" href="#2-start-the-server" title="Permanent link">&para;</a></h3>
+<h3 id="3-start-the-server">3. Start the server<a class="headerlink" href="#3-start-the-server" title="Permanent link">&para;</a></h3>
 <p>Once the <code>~/.dstack/server/config.yml</code> file is configured, proceed to start the server:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">Docker</label></div>
 <div class="tabbed-content">
@@ -2656,11 +2656,13 @@ The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </sp
 </div>
 </div>
 </div>
-<p>By default, the <code>dstack</code> server stores its state in <code>~/.dstack/server/data</code> using SQLite.
-To use a database, set the <a href="../reference/cli/#environment-variables"><code>DSTACK_DATABASE_URL</code></a> environment variable.</p>
+<p>By default, the <code>dstack</code> server stores its state in <code>~/.dstack/server/data</code> using SQLite, 
+while run logs are stored in <code>~/.dstack/server/projects/&lt;project name&gt;/logs</code>.
+To store the state in a database, set the <a href="../reference/cli/#environment-variables"><code>DSTACK_DATABASE_URL</code></a> environment variable.
+To store the logs in AWS CloudWatch, set the <a href="../reference/cli/#environment-variables"><code>SERVER_CLOUDWATCH_LOG_GROUP</code></a> environment variable.</p>
 <p>The <code>dstack</code> server can run anywhere: on your laptop, a dedicated server, or in the cloud. Once it's up, you
 can use either the CLI or the API.</p>
-<h3 id="3-set-up-the-cli">3. Set up the CLI<a class="headerlink" href="#3-set-up-the-cli" title="Permanent link">&para;</a></h3>
+<h3 id="4-set-up-the-cli">4. Set up the CLI<a class="headerlink" href="#4-set-up-the-cli" title="Permanent link">&para;</a></h3>
 <p>To point the CLI to the <code>dstack</code> server, configure it
 with the server address, user token, and project name:</p>
 <div class="termy">
@@ -2676,7 +2678,7 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 </div>
 
 <p>This configuration is stored in <code>~/.dstack/config.yml</code>.</p>
-<h3 id="4-create-on-prem-fleets">4. Create on-prem fleets<a class="headerlink" href="#4-create-on-prem-fleets" title="Permanent link">&para;</a></h3>
+<h3 id="5-create-on-prem-fleets">5. Create on-prem fleets<a class="headerlink" href="#5-create-on-prem-fleets" title="Permanent link">&para;</a></h3>
 <p>If you want the <code>dstack</code> server to run containers on your on-prem servers,
 use <a href="../fleets/#__tabbed_1_2">fleets</a>.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
