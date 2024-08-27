@@ -5433,7 +5433,7 @@ If you don't need multiple projects, use only the <code>main</code> project.</p>
 See the examples below.</p>
 <h3 id="aws_1">AWS<a class="headerlink" href="#aws_1" title="Permanent link">&para;</a></h3>
 <p>There are two ways to configure AWS: using an access key or using the default credentials.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Access key</label><label for="__tabbed_1_2">Default credentials</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="access-key" name="__tabbed_1" type="radio" /><input id="default-credentials" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="access-key">Access key</label><label for="default-credentials">Default credentials</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Create an access key by following the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-user.html#cli-authentication-user-get">this guide <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.
@@ -5536,7 +5536,7 @@ configure the backend.</p>
 <details class="info">
 <summary>VPC</summary>
 <p>By default, <code>dstack</code> uses the default VPC. It's possible to customize it:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">vpc_name</label><label for="__tabbed_2_2">vpc_ids</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="vpc_name_1" name="__tabbed_2" type="radio" /><input id="vpc_ids_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="vpc_name_1">vpc_name</label><label for="vpc_ids_1">vpc_ids</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
@@ -5586,7 +5586,7 @@ If you want <code>dstack</code> to use private subnets, set <code>public_ips</co
 </details>
 <h3 id="azure_1">Azure<a class="headerlink" href="#azure_1" title="Permanent link">&para;</a></h3>
 <p>There are two ways to configure Azure: using a client secret or using the default credentials.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Client secret</label><label for="__tabbed_3_2">Default credentials</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="client-secret" name="__tabbed_3" type="radio" /><input id="default-credentials_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="client-secret">Client secret</label><label for="default-credentials_1">Default credentials</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>A client secret can be created using the <a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli">Azure CLI <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>:</p>
@@ -5676,7 +5676,7 @@ az<span class="w"> </span>ad<span class="w"> </span>sp<span class="w"> </span>cr
 </details>
 <h3 id="gcp_1">GCP<a class="headerlink" href="#gcp_1" title="Permanent link">&para;</a></h3>
 <p>There are two ways to configure GCP: using a service account or using the default credentials.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Service account</label><label for="__tabbed_4_2">Default credentials</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="service-account" name="__tabbed_4" type="radio" /><input id="default-credentials_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="service-account">Service account</label><label for="default-credentials_2">Default credentials</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>To create a service account, follow <a href="https://cloud.google.com/iam/docs/service-accounts-create">this guide <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>. After setting up the service account <a href="https://cloud.google.com/iam/docs/keys-create-delete">create a key <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> for it and download the corresponding JSON file.</p>
@@ -5762,7 +5762,7 @@ gcloud<span class="w"> </span>services<span class="w"> </span><span class="nb">e
 </details>
 <details class="info">
 <summary>VPC</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">VPC</label><label for="__tabbed_5_2">Shared VPC</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="vpc" name="__tabbed_5" type="radio" /><input id="shared-vpc" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="vpc">VPC</label><label for="shared-vpc">Shared VPC</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div editor-title="~/.dstack/server/config.yml">
@@ -5818,7 +5818,7 @@ If you want <code>dstack</code> to use private subnets, set <code>public_ips</co
 </details>
 <h3 id="oci_1">OCI<a class="headerlink" href="#oci_1" title="Permanent link">&para;</a></h3>
 <p>There are two ways to configure OCI: using client credentials or using the default credentials.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Client credentials</label><label for="__tabbed_6_2">Default credentials</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="client-credentials" name="__tabbed_6" type="radio" /><input id="default-credentials_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="client-credentials">Client credentials</label><label for="default-credentials_3">Default credentials</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Log into the <a href="https://cloud.oracle.com">OCI Console <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>, go to <code>My profile</code>, 
@@ -5985,7 +5985,7 @@ the button to create a Read &amp; Write key.</p>
 <p>To configure a Kubernetes backend, specify the path to the kubeconfig file,
 and the port that <code>dstack</code> can use for proxying SSH traffic.
 In case of a self-managed cluster, also specify the IP address of any node in the cluster.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Self-managed</label><label for="__tabbed_7_2">Managed</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="self-managed" name="__tabbed_7" type="radio" /><input id="managed" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="self-managed">Self-managed</label><label for="managed">Managed</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Here's how to configure the backend to use a self-managed cluster.</p>
@@ -6053,7 +6053,7 @@ of the corresponding security group:</p>
 specify one or more encryption keys.</p>
 <p><code>dstack</code> currently supports AES and identity (plaintext) encryption keys.
 Support for external providers like HashiCorp Vault and AWS KMS is planned.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">AES</label><label for="__tabbed_8_2">Identity</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="aes" name="__tabbed_8" type="radio" /><input id="identity" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="aes">AES</label><label for="identity">Identity</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The <code>aes</code> encryption key encrypts data using <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES-256</a> in GCM mode.
@@ -6121,7 +6121,7 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#aws-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="aws-creds"><code>projects[n].backends[type=aws].creds</code><a class="headerlink" href="#aws-creds" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Access key</label><label for="__tabbed_9_2">Default</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="access-key_1" name="__tabbed_9" type="radio" /><input id="default" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="access-key_1">Access key</label><label for="default">Default</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>access_key</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
@@ -6139,7 +6139,7 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <h4 class="reference-item" id="subscription_id"><code>subscription_id</code> -  The subscription ID.<a class="headerlink" href="#subscription_id" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#azure-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="azure-creds"><code>projects[n].backends[type=azure].creds</code><a class="headerlink" href="#azure-creds" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Client</label><label for="__tabbed_10_2">Default</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="client" name="__tabbed_10" type="radio" /><input id="default_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="client">Client</label><label for="default_1">Default</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>client</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
@@ -6166,7 +6166,7 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#gcp-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="gcp-creds"><code>projects[n].backends[type=gcp].creds</code><a class="headerlink" href="#gcp-creds" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Service account</label><label for="__tabbed_11_2">Default</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="service-account_1" name="__tabbed_11" type="radio" /><input id="default_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="service-account_1">Service account</label><label for="default_2">Default</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>service_account</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
@@ -6190,7 +6190,7 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) List of region names for running <code>dstack</code> jobs. Omit to use all regions.<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="compartment_id"><code>compartment_id</code> - (Optional) Compartment where <code>dstack</code> will create all resources. Omit to instruct <code>dstack</code> to create a new compartment.<a class="headerlink" href="#compartment_id" title="Permanent link">&para;</a></h4>
 <h2 id="oci-creds"><code>projects[n].backends[type=oci].creds</code><a class="headerlink" href="#oci-creds" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Client</label><label for="__tabbed_12_2">Default</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="client_1" name="__tabbed_12" type="radio" /><input id="default_3" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="client_1">Client</label><label for="default_3">Default</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>client</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>

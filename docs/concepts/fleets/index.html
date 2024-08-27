@@ -2584,13 +2584,16 @@ fleet is created, it can be reused by dev environments, tasks, and services.</p>
 <h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
 <p>To create a fleet, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code>
 are both acceptable).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cloud fleets</label><label for="__tabbed_1_2">On-prem fleets</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="cloud" name="__tabbed_1" type="radio" /><input id="on-prem" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="cloud">Cloud</label><label for="on-prem">On-prem</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<div class="admonition info">
+<p class="admonition-title">What is a cloud fleet?</p>
 <p>By default, when running dev environments, tasks, and services, <code>dstack</code> 
 reuses <code>idle</code> instances from existing fleets or creates a new cloud fleet on the fly.</p>
 <p>If you want more control over the lifecycle of cloud instances, you can create a cloud fleet manually. 
 This allows you to reuse a fleet over a longer period and across multiple runs. You can also delete the fleet only when needed.</p>
+</div>
 <p>To create a cloud fleet, specify <code>resources</code>, <code>nodes</code>, 
 and other optional parameters.</p>
 <div editor-title="examples/fine-tuning/alignment-handbook/fleet-distrib.dstack.yml">
@@ -2615,18 +2618,22 @@ and other optional parameters.</p>
 </code></pre></div>
 </div>
 <p>When you apply this configuration, <code>dstack</code> will create cloud instances using the configured backends according 
-to the specified parameters. Note that this is not supported for the <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code> backends.</p>
+to the specified parameters.</p>
 <div class="admonition info">
 <p class="admonition-title">Network</p>
 <p>Set <code>placement</code> to <code>cluster</code> if the nodes should be interconnected (e.g. if you'd like to use them for multi-node tasks). 
 In that case, <code>dstack</code> will provision all nodes in the same backend and region.</p>
 </div>
+<p>Note that cloud fleets aren't supported for the <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code> backends.</p>
 </div>
 <div class="tabbed-block">
-<p>If you’d like to run dev environments, tasks, and services on your on-prem servers that you have access to, you can
-create an on-prem fleet by providing <code>dstack</code> with the hostnames of these servers and the details for connecting to them
+<div class="admonition info">
+<p class="admonition-title">What is an on-prem fleet?</p>
+<p>If you’d like to run dev environments, tasks, and services on arbitrary on-prem servers via <code>dstack</code>, you can 
+create an on-prem fleet.</p>
+</div>
+<p>To create an on-prem fleet, specify <code>ssh_config</code> to allow the <code>dstack</code> server to connect to these servers
 via SSH.</p>
-<p>To create an on-prem fleet, specify <code>hosts</code>, <code>user</code>, <code>port</code>, and <code>identity_file</code> under <code>ssh_config</code>.</p>
 <p><div editor-title="fleet-on-prem.dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
 <span class="c1"># The name is optional, if not specified, generated randomly</span>
@@ -2683,6 +2690,7 @@ and running containers.</p>
 In that case, by default, <code>dstack</code> will automatically detect the private network. 
 You can specify the <a href="../../reference/dstack.yml/fleet/#network"><code>network</code></a> parameter manually.</p>
 </div>
+<p>Note that to use on-prem fleets, you don't need any backends at all.</p>
 </div>
 </div>
 </div>
