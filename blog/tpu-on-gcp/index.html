@@ -6,33 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center.">
+        <meta name="description" content="Learn how to use TPUs with dstack for fine-tuning and deploying LLMs, leveraging open-source tools like Hugging Face’s Optimum TPU and vLLM.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/pricing/">
+        <link rel="canonical" href="https://dstack.ai/blog/tpu-on-gcp/">
       
+      
+        <link rel="prev" href="../amd-on-runpod/">
       
       
       
         
       
       
-      <link rel="icon" href="../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34+insiders-4.53.12">
     
     
       
-        <title>AI container orchestration for everyone - dstack</title>
+        <title>Using TPUs for fine-tuning and deploying LLMs - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.52c0e027.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.52c0e027.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,17 +59,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -85,17 +87,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="AI container orchestration for everyone - dstack" />
-<meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/pricing.png" />
+<meta property="og:title" content="Using TPUs for fine-tuning and deploying LLMs - dstack" />
+<meta property="og:description" content="Learn how to use TPUs with dstack for fine-tuning and deploying LLMs, leveraging open-source tools like Hugging Face’s Optimum TPU and vLLM." />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/blog/tpu-on-gcp.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/pricing/" />
+<meta property="og:url" content="https://dstack.ai/blog/tpu-on-gcp/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="AI container orchestration for everyone - dstack" />
-<meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/pricing.png" />
+<meta property="twitter.title" content="Using TPUs for fine-tuning and deploying LLMs - dstack" />
+<meta property="twitter:description" content="Learn how to use TPUs with dstack for fine-tuning and deploying LLMs, leveraging open-source tools like Hugging Face’s Optimum TPU and vLLM." />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/blog/tpu-on-gcp.png" />
 </head>
   
   
@@ -113,6 +115,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#using-tpus-for-fine-tuning-and-deploying-llms" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -152,10 +159,9 @@ and star us on
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/" title="dstack"
-       class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
+    <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -172,15 +178,15 @@ and star us on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI container orchestration for everyone
+              Using TPUs for fine-tuning and deploying LLMs
             
           </span>
         </div>
       </div>
     </div>
     
-    
-    <form class="md-header__option" data-md-component="palette">
+      
+        <form class="md-header__option" data-md-component="palette">
   
     
     
@@ -189,14 +195,50 @@ and star us on
     
   
 </form>
+      
     
     
-    
-    <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
-    <div class="md-search"></div>
+
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
 
     <!--
@@ -212,10 +254,10 @@ and star us on
 </a>
       </div>
     -->
-    <div class="md-header__buttons">
-      <a href="https://sky.dstack.ai" target="_blank" class="md-button md-button-secondary external borderless">Sign in</a>
-      <a href="/#get-started" class="md-button md-button--primary">Get started</a>
-    </div>
+
+    <!--<div class="md-header__buttons">
+      <a href="/#get-started" class="md-button md-button-secondary">Get started</a>
+    </div>-->
   </nav>
   
 </header>
@@ -235,7 +277,7 @@ and star us on
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -260,7 +302,7 @@ and star us on
     
     
       <li class="md-tabs__item">
-        <a href="../docs/" class="md-tabs__link">
+        <a href="../../docs/" class="md-tabs__link">
           
   
   Docs
@@ -281,7 +323,7 @@ and star us on
     
     
       <li class="md-tabs__item">
-        <a href="../examples/" class="md-tabs__link">
+        <a href="../../examples/" class="md-tabs__link">
           
   
   Examples
@@ -297,7 +339,7 @@ and star us on
   
   
     <li class="md-tabs__item">
-      <a href="../backends/" class="md-tabs__link">
+      <a href="../../backends/" class="md-tabs__link">
         
   
     
@@ -312,11 +354,13 @@ and star us on
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../blog/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Blog
@@ -387,7 +431,7 @@ and star us on
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -414,7 +458,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -540,7 +584,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -567,7 +611,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/installation/" class="md-nav__link">
+      <a href="../../docs/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -594,7 +638,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/quickstart/" class="md-nav__link">
+      <a href="../../docs/quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -679,7 +723,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/dev-environments/" class="md-nav__link">
+      <a href="../../docs/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -706,7 +750,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/tasks/" class="md-nav__link">
+      <a href="../../docs/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -733,7 +777,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/services/" class="md-nav__link">
+      <a href="../../docs/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -818,7 +862,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/fleets/" class="md-nav__link">
+      <a href="../../docs/concepts/fleets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -845,7 +889,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/gateways/" class="md-nav__link">
+      <a href="../../docs/concepts/gateways/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -872,7 +916,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/volumes/" class="md-nav__link">
+      <a href="../../docs/concepts/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -899,7 +943,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/projects/" class="md-nav__link">
+      <a href="../../docs/concepts/projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -984,7 +1028,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/troubleshooting/" class="md-nav__link">
+      <a href="../../docs/guides/troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +1055,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/protips/" class="md-nav__link">
+      <a href="../../docs/guides/protips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1096,7 +1140,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/server/config.yml/" class="md-nav__link">
+      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1173,7 +1217,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1200,7 +1244,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/task/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1227,7 +1271,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/service/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1254,7 +1298,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/fleet/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/fleet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1281,7 +1325,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/gateway/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1308,7 +1352,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/volume/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/volume/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1343,7 +1387,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/cli/" class="md-nav__link">
+      <a href="../../docs/reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1420,7 +1464,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/api/python/" class="md-nav__link">
+      <a href="../../docs/reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1447,7 +1491,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/api/rest/" class="md-nav__link">
+      <a href="../../docs/reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1547,7 +1591,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1624,7 +1668,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/axolotl/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/axolotl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1651,7 +1695,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/alignment-handbook/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/alignment-handbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1678,7 +1722,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/trl/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/trl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1763,7 +1807,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/accelerators/amd/" class="md-nav__link">
+      <a href="../../examples/accelerators/amd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1790,7 +1834,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/accelerators/tpu/" class="md-nav__link">
+      <a href="../../examples/accelerators/tpu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1875,7 +1919,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/llms/llama31/" class="md-nav__link">
+      <a href="../../examples/llms/llama31/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1917,7 +1961,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../backends/" class="md-nav__link">
+      <a href="../../backends/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1940,25 +1984,30 @@ and star us on
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1975,7 +2024,7 @@ and star us on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1990,12 +2039,14 @@ and star us on
                 
   
   
+    
+  
   
     
   
   
-    <li class="md-nav__item">
-      <a href="../blog/" class="md-nav__link">
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2029,17 +2080,20 @@ and star us on
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2076,7 +2130,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../blog/archive/2024/" class="md-nav__link">
+      <a href="../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2175,7 +2229,7 @@ and star us on
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -2184,6 +2238,132 @@ and star us on
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Deployment
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Memory requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Supported frameworks
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running a configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fine-tuning
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fine-tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-requirements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Memory requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-frameworks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Supported frameworks
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2192,199 +2372,370 @@ and star us on
             
           
           
-<div class="md-content" data-md-component="content">
-  
-  <article class="md-content__inner md-typeset">
-    
-<section class="tx-container">
-    <div class="md-grid md-typeset">
-        <div class="tx-pricing">
-            <div class="tx-landing__highlights_text">
-                <h2>Pricing</h2>
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
             </div>
-
-            <form class="tx-pricing__filters js-pricing-filter-form">
-                <div class="tx-pricing__filter-field" style="display: none">
-                    <label>
-                        <span class="tx-pricing__filter-field-label">Type</span>
-
-                        <select name="type">
-                            <option value="">All</option>
-                            <option value="datacenter">Data center</option>
-                            <option value="marketplace">Marketplace</option>
-                        </select>
-                    </label>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
                 </div>
-
-                <div class="tx-pricing__filter-field">
-                    <label>
-                        <span class="tx-pricing__filter-field-label">Contract</span>
-
-                        <select name="contract">
-                            <option value="">All</option>
-                            <option value="ondemand">On-demand</option>
-                            <option value="reserved">Reserved</option>
-                        </select>
-                    </label>
-                </div>
-
-                <!--<div class="tx-pricing__filter-field">
-                    <label>
-                        <span class="tx-pricing__filter-field-label">Region</span>
-
-                        <select name="region">
-                            <option value="">All</option>
-                            <option value="us">United States</option>
-                            <option value="europe">Europe</option>
-                        </select>
-                    </label>
-                </div>-->
-            </form>
-
-            <div class="tx-pricing__cards">
-<!--
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['reserved']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">H100 (80GB)</div>
-                    <div class="tx-pricing__card-price">$2.10/h</div>
-                    <div class="tx-pricing__card-options">United States, Reserved</div>
-                </div>
--->
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['reserved']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">H100 (80GB)</div>
-                    <div class="tx-pricing__card-price">$2.10/h</div>
-                    <div class="tx-pricing__card-options">Reserved</div>
-                </div>
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">A100 (80GB)</div>
-                    <div class="tx-pricing__card-price">$1.4/h</div>
-                    <div class="tx-pricing__card-options">On-demand</div>
-                </div>
-
-                <!--<div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">A100 (80GB)</div>
-                    <div class="tx-pricing__card-price">$1.4/h</div>
-                    <div class="tx-pricing__card-options">United States, On-demand</div>
-                </div>-->
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">L40 (80GB)</div>
-                    <div class="tx-pricing__card-price">$1.05/h</div>
-                    <div class="tx-pricing__card-options">On-demand</div>
-                </div>
-
-                <!--<div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">L40 (80GB)</div>
-                    <div class="tx-pricing__card-price">$1.05/h</div>
-                    <div class="tx-pricing__card-options">United States, On-demand</div>
-                </div>-->
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">A6000 (48GB)</div>
-                    <div class="tx-pricing__card-price">$0.47/h</div>
-                    <div class="tx-pricing__card-options">On-demand</div>
-                </div>
-
-                <!--<div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">A6000 (48GB)</div>
-                    <div class="tx-pricing__card-price">$0.47/h</div>
-                    <div class="tx-pricing__card-options">United States, On-demand</div>
-                </div>-->
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">A5000 (24GB)</div>
-                    <div class="tx-pricing__card-price">$0.21/h</div>
-                    <div class="tx-pricing__card-options">On-demand</div>
-                </div>
-
-                <!--<div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">A5000 (24GB)</div>
-                    <div class="tx-pricing__card-price">$0.21/h</div>
-                    <div class="tx-pricing__card-options">United States, On-demand</div>
-                </div>-->
-            </div>
-        </div>
-
-        <div class="tx-faq">
-            <div class="tx-landing__highlights_text">
-                <h2>FAQ</h2>
-            </div>
-
-            <div class="tx-faq__list">
-                <div class="tx-faq__item">
-                    <div class="tx-faq__item-title">
-                        How is the total cost per usage calculated?
-                        <div class="tx-faq__item-title-icon">
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2024-09-10 00:00:00" class="md-ellipsis">September 10, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              4 min read
+                            
+                          </span>
                         </div>
-                    </div>
-
-                    <div class="tx-faq__item-body">
-                        The cloud version of dstack provides GPUs from various verified cloud GPU providers. Each
-                        provider may have its own pricing, and while dstack offers you the minimum available price, you
-                        have control over the maximum price. The prices above are starting prices per GPU. Storage
-                        and CPU are billed separately. If you need more details on the cost breakdown, feel free to
-                        contact <a href="javascript:void(0)" onclick="$crisp.push(['do', 'chat:open'])">support</a>.
-                    </div>
-                </div>
-            </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
         </div>
-
-        <div class="tx-pricing-cta">
-            <a href="#" class="md-button md-button--primary" data-tally-open="w7K17R">
-                <span>Get started free</span>
-                <span class="icon"><svg viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg"><path d="M12.823 4.164L8.954.182a.592.592 0 0 0-.854 0 .635.635 0 0 0 0 .88l2.836 2.92H.604A.614.614 0 0 0 0 4.604c0 .344.27.622.604.622h10.332L8.1 8.146a.635.635 0 0 0 0 .88.594.594 0 0 0 .854 0l3.869-3.982a.635.635 0 0 0 0-.88z" fill-rule="nonzero" fill="currentColor" class="fill-main"></path></svg></span>
-            </a>
-
-            <a href="#" class="md-button md-button-secondary" data-tally-open="mY4gWv">
-                <span>Reserve now</span>
-            </a>
-        </div>
+      </div>
     </div>
-</section>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
 
-  </article>
+
+
+  
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/blog/posts/tpu-on-gcp.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="using-tpus-for-fine-tuning-and-deploying-llms">Using TPUs for fine-tuning and deploying LLMs<a class="headerlink" href="#using-tpus-for-fine-tuning-and-deploying-llms" title="Permanent link">&para;</a></h1>
+<p>If you’re using or planning to use TPUs with Google Cloud, you can now do so via <code>dstack</code>. Just specify the TPU version and the number of cores 
+(separated by a dash), in the <code>gpu</code> property under <code>resources</code>. </p>
+<p>Read below to find out how to use TPUs with <code>dstack</code> for fine-tuning and deploying
+LLMs, leveraging open-source tools like Hugging Face’s 
+<a href="https://github.com/huggingface/optimum-tpu" target="_blank">Optimum TPU <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> 
+and <a href="https://docs.vllm.ai/en/latest/getting_started/tpu-installation.html" target="_blank">vLLM <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+<!-- more -->
+
+<p>Below is an example of a dev environment:</p>
+<div editor-title="examples/tpu/.dstack.yml">
+
+    <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode-tpu</span><span class="w">    </span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.11</span>
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2-8</span>
+</code></pre></div>
+
 </div>
+
+<p>If you've configured the <code>gcp</code> backend, <code>dstack</code> will automatically provision the dev environment with a TPU.</p>
+<blockquote>
+<p>Currently, maximum 8 TPU cores can be specified, so the maximum supported values are <code>v2-8</code>, <code>v3-8</code>, <code>v4-8</code>, <code>v5litepod-8</code>, 
+and <code>v5e-8</code>. Multi-host TPU support, allowing for larger numbers of cores, is coming soon.</p>
+</blockquote>
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<p>You can use any serving framework, such as vLLM, TGI. Here's an example of a <a href="https://dstack.ai/docs/services">service</a> that deploys
+Llama 3.1 8B using 
+<a href="https://github.com/huggingface/optimum-tpu" target="_blank">Optimum TPU <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
+and <a href="https://github.com/vllm-project/vllm" target="_blank">vLLM <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="optimum-tpu" name="__tabbed_1" type="radio" /><input id="vllm" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="optimum-tpu">Optimum TPU</label><label for="vllm">vLLM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div editor-title="examples/deployment/optimum-tpu/service.dstack.yml"> </p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31-service-optimum-tpu</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/optimum-tpu:llama31</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=meta-llama/Meta-Llama-3.1-8B-Instruct</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_TOTAL_TOKENS=4096</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_BATCH_PREFILL_TOKENS=4095</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher --port 8000</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v5litepod-4</span><span class="w"> </span>
+
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tgi</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama/Meta-Llama-3.1-8B-Instruct</span>
+</code></pre></div>
+</div></p>
+<p>Once the <a href="https://github.com/huggingface/optimum-tpu/pull/87" target="_blank">pull request <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> is merged, 
+the official Docker image can be used instead of <code>dstackai/optimum-tpu:llama31</code>.</p>
+</div>
+<div class="tabbed-block">
+<p><div editor-title="examples/deployment/vllm/service-tpu.dstack.yml"> </p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31-service-vllm-tpu</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=meta-llama/Meta-Llama-3.1-8B-Instruct</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DATE=20240828</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TORCH_VERSION=2.5.0</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VLLM_TARGET_DEVICE=tpu</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_MODEL_LEN=4096</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install https://storage.googleapis.com/pytorch-xla-releases/wheels/tpuvm/torch-${TORCH_VERSION}.dev${DATE}-cp311-cp311-linux_x86_64.whl</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip3 install https://storage.googleapis.com/pytorch-xla-releases/wheels/tpuvm/torch_xla-${TORCH_VERSION}.dev${DATE}-cp311-cp311-linux_x86_64.whl</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install torch_xla[tpu] -f https://storage.googleapis.com/libtpu-releases/index.html</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install torch_xla[pallas] -f https://storage.googleapis.com/jax-releases/jax_nightly_releases.html -f https://storage.googleapis.com/jax-releases/jaxlib_nightly_releases.html</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/vllm-project/vllm.git</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd vllm</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements-tpu.txt</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get install -y libopenblas-base libopenmpi-dev libomp-dev</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py develop</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vllm serve $MODEL_ID</span><span class="w"> </span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">--tensor-parallel-size 4</span><span class="w"> </span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">--max-model-len $MAX_MODEL_LEN</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">--port 8000</span>
+<span class="nt">port</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v5litepod-4</span>
+
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama/Meta-Llama-3.1-8B-Instruct</span>
+</code></pre></div>
+</div></p>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Control plane</summary>
+<p>If you specify <code>model</code> when running a service, <code>dstack</code> will automatically register the model on the gateway's global
+endpoint and allow you to use it for chat via the control plane UI.</p>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-control-plane-model-llama31.png?raw=true" width="750px" /></p>
+</details>
+<h3 id="memory-requirements">Memory requirements<a class="headerlink" href="#memory-requirements" title="Permanent link">&para;</a></h3>
+<p>Below are the approximate memory requirements for serving LLMs with their corresponding TPUs. </p>
+<table>
+<thead>
+<tr>
+<th>Model size</th>
+<th>bfloat16</th>
+<th>TPU</th>
+<th>int8</th>
+<th>TPU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>8B</strong></td>
+<td>16GB</td>
+<td>v5litepod-4</td>
+<td>8GB</td>
+<td>v5litepod-4</td>
+</tr>
+<tr>
+<td><strong>70B</strong></td>
+<td>140GB</td>
+<td>v5litepod-16</td>
+<td>70GB</td>
+<td>v5litepod-16</td>
+</tr>
+<tr>
+<td><strong>405B</strong></td>
+<td>810GB</td>
+<td>v5litepod-64</td>
+<td>405GB</td>
+<td>v5litepod-64</td>
+</tr>
+</tbody>
+</table>
+<p>Note, <code>v5litepod</code> is optimized for serving transformer-based models. Each core is equipped with 16GB of memory.</p>
+<h3 id="supported-frameworks">Supported frameworks<a class="headerlink" href="#supported-frameworks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Quantization</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TGI</strong></td>
+<td>bfloat16</td>
+<td>To deploy with TGI, Optimum TPU must be used.</td>
+</tr>
+<tr>
+<td><strong>vLLM</strong></td>
+<td>int8, bfloat16</td>
+<td>int8 quantization still requires the same memory because the weights are first moved to the TPU in bfloat16, and then converted to int8. See the <a href="https://github.com/vllm-project/vllm/pull/7005" target="_blank">pull request <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> for more details.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="running-a-configuration">Running a configuration<a class="headerlink" href="#running-a-configuration" title="Permanent link">&para;</a></h3>
+<p>Once the configuration is ready, run <code>dstack apply -f &lt;configuration file&gt;</code>, and <code>dstack</code> will automatically provision the
+cloud resources and run the configuration.</p>
+<h2 id="fine-tuning">Fine-tuning<a class="headerlink" href="#fine-tuning" title="Permanent link">&para;</a></h2>
+<p>Below is an example of fine-tuning Llama 3.1 8B using <a href="https://github.com/huggingface/optimum-tpu" target="_blank">Optimum TPU <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> 
+and the <a href="https://huggingface.co/datasets/Abirate/english_quotes" target="_blank">Abirate/english_quotes <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
+dataset.</p>
+<div editor-title="examples/fine-tuning/optimum-tpu/llama31/train.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">optimum-tpu-llama-train</span>
+
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone -b add_llama_31_support https://github.com/dstackai/optimum-tpu.git</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdir -p optimum-tpu/examples/custom/</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cp examples/fine-tuning/optimum-tpu/llama31/train.py optimum-tpu/examples/custom/train.py</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cp examples/fine-tuning/optimum-tpu/llama31/config.yaml optimum-tpu/examples/custom/config.yaml</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd optimum-tpu</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -e . -f https://storage.googleapis.com/libtpu-releases/index.html</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install datasets evaluate</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install accelerate -U</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install peft</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python examples/custom/train.py examples/custom/config.yaml</span>
+
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v5litepod-8</span>
+</code></pre></div>
+
+</div>
+
+<h3 id="memory-requirements_1">Memory requirements<a class="headerlink" href="#memory-requirements_1" title="Permanent link">&para;</a></h3>
+<p>Below are the approximate memory requirements for fine-tuning LLMs with their corresponding TPUs.</p>
+<table>
+<thead>
+<tr>
+<th>Model size</th>
+<th>LoRA</th>
+<th>TPU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>8B</strong></td>
+<td>16GB</td>
+<td>v5litepod-8</td>
+</tr>
+<tr>
+<td><strong>70B</strong></td>
+<td>160GB</td>
+<td>v5litepod-16</td>
+</tr>
+<tr>
+<td><strong>405B</strong></td>
+<td>950GB</td>
+<td>v5litepod-64</td>
+</tr>
+</tbody>
+</table>
+<p>Note, <code>v5litepod</code> is optimized for fine-tuning transformer-based models. Each core is equipped with 16GB of memory.</p>
+<h3 id="supported-frameworks_1">Supported frameworks<a class="headerlink" href="#supported-frameworks_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Quantization</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TRL</strong></td>
+<td>bfloat16</td>
+<td>To fine-tune using TRL, Optimum TPU is recommended. TRL doesn't support Llama 3.1 out of the box.</td>
+</tr>
+<tr>
+<td><strong>Pytorch XLA</strong></td>
+<td>bfloat16</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Browse <a href="https://github.com/huggingface/optimum-tpu" target="_blank">Optimum TPU <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>,
+   <a href="https://github.com/huggingface/optimum-tpu/tree/main/text-generation-inference" target="_blank">Optimum TPU TGI <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> and
+   <a href="https://docs.vllm.ai/en/latest/getting_started/tpu-installation.html" target="_blank">vLLM <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</li>
+<li>Check <a href="../../docs/dev-environments/">dev environments</a>, <a href="https://dstack.ai/docs/tasks">tasks</a>, 
+   <a href="../../docs/services/">services</a>, and <a href="../../docs/concepts/fleets/">fleets</a>.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Multi-host TPUs</p>
+<p>If you’d like to use <code>dstack</code> with more than eight TPU cores, upvote the corresponding
+<a href="https://github.com/dstackai/dstack/issues/1337" target="_blank">issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
+  </div>
 
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2486,21 +2837,17 @@ and star us on
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-<script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
-<script async src="https://tally.so/widgets/embed.js"></script>
-
-      <script src="../assets/javascripts/bundle.a59f24f2.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a59f24f2.min.js"></script>
       
-        <script src="../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 <script src="https://widget.kapa.ai/kapa-widget.bundle.js"
@@ -2511,20 +2858,6 @@ and star us on
         data-modal-disclaimer="This is a custom LLM for dstack with access to Documentation, API references and GitHub issues. This feature is experimental - Give it a try!"
         data-user-analytics-fingerprint-enabled="true"
         async></script>
-
-
-<script>
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "ce56e3b2-a23e-4d3f-9e80-e08c61a2b3cb";
-    (function () {
-        let d = document;
-        let s = d.createElement("script");
-        s.src = "https://client.crisp.chat/l.js";
-        s.async = 1;
-        d.getElementsByTagName("head")[0].appendChild(s);
-        $crisp.push(["do", "chat:hide"]);
-    })();
-</script>
 
   </body>
 </html>

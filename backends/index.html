@@ -12,9 +12,13 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/pricing/">
+        <link rel="canonical" href="https://dstack.ai/backends/">
       
       
+        <link rel="prev" href="../examples/llms/llama31/">
+      
+      
+        <link rel="next" href="../blog/">
       
       
         
@@ -87,15 +91,15 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="AI container orchestration for everyone - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/pricing.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/backends.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/pricing/" />
+<meta property="og:url" content="https://dstack.ai/backends/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="AI container orchestration for everyone - dstack" />
 <meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/pricing.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/backends.png" />
 </head>
   
   
@@ -152,8 +156,7 @@ and star us on
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/" title="dstack"
-       class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
+    <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
   <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
 
@@ -179,8 +182,8 @@ and star us on
       </div>
     </div>
     
-    
-    <form class="md-header__option" data-md-component="palette">
+      
+        <form class="md-header__option" data-md-component="palette">
   
     
     
@@ -189,14 +192,50 @@ and star us on
     
   
 </form>
+      
     
     
-    
-    <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
-    <div class="md-search"></div>
+
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
 
     <!--
@@ -212,10 +251,10 @@ and star us on
 </a>
       </div>
     -->
-    <div class="md-header__buttons">
-      <a href="https://sky.dstack.ai" target="_blank" class="md-button md-button-secondary external borderless">Sign in</a>
-      <a href="/#get-started" class="md-button md-button--primary">Get started</a>
-    </div>
+
+    <!--<div class="md-header__buttons">
+      <a href="/#get-started" class="md-button md-button-secondary">Get started</a>
+    </div>-->
   </nav>
   
 </header>
@@ -295,9 +334,11 @@ and star us on
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../backends/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -1914,10 +1955,17 @@ and star us on
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../backends/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1932,6 +1980,7 @@ and star us on
   
 
       </a>
+      
     </li>
   
 
@@ -2196,189 +2245,105 @@ and star us on
   
   <article class="md-content__inner md-typeset">
     
-<section class="tx-container">
+<section class="tx-container providers">
     <div class="md-grid md-typeset">
-        <div class="tx-pricing">
+        <div class="tx-landing__highlights">
             <div class="tx-landing__highlights_text">
-                <h2>Pricing</h2>
+                <h2 id="backends">Backends</h2>
+                <p class="tx-landing__bottom_cta_text">
+                    dstack offers built-in backends that make it easy to use with top cloud providers as well as on-prem
+                    servers.
+                </p>
             </div>
 
-            <form class="tx-pricing__filters js-pricing-filter-form">
-                <div class="tx-pricing__filter-field" style="display: none">
-                    <label>
-                        <span class="tx-pricing__filter-field-label">Type</span>
-
-                        <select name="type">
-                            <option value="">All</option>
-                            <option value="datacenter">Data center</option>
-                            <option value="marketplace">Marketplace</option>
-                        </select>
-                    </label>
-                </div>
-
-                <div class="tx-pricing__filter-field">
-                    <label>
-                        <span class="tx-pricing__filter-field-label">Contract</span>
-
-                        <select name="contract">
-                            <option value="">All</option>
-                            <option value="ondemand">On-demand</option>
-                            <option value="reserved">Reserved</option>
-                        </select>
-                    </label>
-                </div>
-
-                <!--<div class="tx-pricing__filter-field">
-                    <label>
-                        <span class="tx-pricing__filter-field-label">Region</span>
-
-                        <select name="region">
-                            <option value="">All</option>
-                            <option value="us">United States</option>
-                            <option value="europe">Europe</option>
-                        </select>
-                    </label>
-                </div>-->
-            </form>
-
-            <div class="tx-pricing__cards">
-<!--
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['reserved']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">H100 (80GB)</div>
-                    <div class="tx-pricing__card-price">$2.10/h</div>
-                    <div class="tx-pricing__card-options">United States, Reserved</div>
-                </div>
--->
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['reserved']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">H100 (80GB)</div>
-                    <div class="tx-pricing__card-price">$2.10/h</div>
-                    <div class="tx-pricing__card-options">Reserved</div>
-                </div>
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">A100 (80GB)</div>
-                    <div class="tx-pricing__card-price">$1.4/h</div>
-                    <div class="tx-pricing__card-options">On-demand</div>
-                </div>
-
-                <!--<div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">A100 (80GB)</div>
-                    <div class="tx-pricing__card-price">$1.4/h</div>
-                    <div class="tx-pricing__card-options">United States, On-demand</div>
-                </div>-->
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">L40 (80GB)</div>
-                    <div class="tx-pricing__card-price">$1.05/h</div>
-                    <div class="tx-pricing__card-options">On-demand</div>
-                </div>
-
-                <!--<div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">L40 (80GB)</div>
-                    <div class="tx-pricing__card-price">$1.05/h</div>
-                    <div class="tx-pricing__card-options">United States, On-demand</div>
-                </div>-->
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">A6000 (48GB)</div>
-                    <div class="tx-pricing__card-price">$0.47/h</div>
-                    <div class="tx-pricing__card-options">On-demand</div>
-                </div>
-
-                <!--<div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">A6000 (48GB)</div>
-                    <div class="tx-pricing__card-price">$0.47/h</div>
-                    <div class="tx-pricing__card-options">United States, On-demand</div>
-                </div>-->
-
-                <div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['europe']"
-                >
-                    <div class="tx-pricing__card-title">A5000 (24GB)</div>
-                    <div class="tx-pricing__card-price">$0.21/h</div>
-                    <div class="tx-pricing__card-options">On-demand</div>
-                </div>
-
-                <!--<div class="tx-pricing__card js-pricing-card"
-                     data-type="['datacenter']"
-                     data-contract="['ondemand']"
-                     data-region="['us']"
-                >
-                    <div class="tx-pricing__card-title">A5000 (24GB)</div>
-                    <div class="tx-pricing__card-price">$0.21/h</div>
-                    <div class="tx-pricing__card-options">United States, On-demand</div>
-                </div>-->
-            </div>
-        </div>
-
-        <div class="tx-faq">
-            <div class="tx-landing__highlights_text">
-                <h2>FAQ</h2>
+            <div class="tx-landing__features_text">
+                <h2 id="featured">Featured</h2>
             </div>
 
-            <div class="tx-faq__list">
-                <div class="tx-faq__item">
-                    <div class="tx-faq__item-title">
-                        How is the total cost per usage calculated?
-                        <div class="tx-faq__item-title-icon">
-                        </div>
-                    </div>
+            <div class="tx-landing__highlights_grid featured">
+                <a href="/docs/reference/server/config.yml#aws" class="feature-cell">
+                    <img width="52" style="padding: 10px 0 2px" src="/assets/images/aws-logo.svg">
+                    <h3>
+                        Amazon Web Services
+                    </h3>
+                </a>
 
-                    <div class="tx-faq__item-body">
-                        The cloud version of dstack provides GPUs from various verified cloud GPU providers. Each
-                        provider may have its own pricing, and while dstack offers you the minimum available price, you
-                        have control over the maximum price. The prices above are starting prices per GPU. Storage
-                        and CPU are billed separately. If you need more details on the cost breakdown, feel free to
-                        contact <a href="javascript:void(0)" onclick="$crisp.push(['do', 'chat:open'])">support</a>.
-                    </div>
-                </div>
+                <a href="/docs/reference/server/config.yml#azure" class="feature-cell">
+                    <img width="42" src="/assets/images/azure-logo.svg">
+                    <h3>
+                        Microsoft Azure
+                    </h3>
+                </a>
+
+                <a href="/docs/reference/server/config.yml#gcp" class="feature-cell">
+                    <img width="45" src="/assets/images/gcp-logo.svg">
+                    <h3>
+                        Google Cloud Platform
+                    </h3>
+                </a>
+
+                <a href="/docs/reference/server/config.yml#lambda" class="feature-cell">
+                    <img width="40" src="/assets/images/lambda-logo.svg">
+                    <h3>
+                        Lambda
+                    </h3>
+                </a>
+
+                <a href="/docs/reference/server/config.yml#runpod" class="feature-cell">
+                    <img width="45" src="/assets/images/runpod-logo.svg">
+                    <h3>
+                        RunPod
+                    </h3>
+                </a>
+
+                <a href="/docs/concepts/fleets/#on-prem" class="feature-cell">
+                    <img width="43" src="/assets/images/ssh-logo.svg">
+                    <h3>
+                        SSH
+                    </h3>
+                </a>
             </div>
-        </div>
 
-        <div class="tx-pricing-cta">
-            <a href="#" class="md-button md-button--primary" data-tally-open="w7K17R">
-                <span>Get started free</span>
-                <span class="icon"><svg viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg"><path d="M12.823 4.164L8.954.182a.592.592 0 0 0-.854 0 .635.635 0 0 0 0 .88l2.836 2.92H.604A.614.614 0 0 0 0 4.604c0 .344.27.622.604.622h10.332L8.1 8.146a.635.635 0 0 0 0 .88.594.594 0 0 0 .854 0l3.869-3.982a.635.635 0 0 0 0-.88z" fill-rule="nonzero" fill="currentColor" class="fill-main"></path></svg></span>
-            </a>
+            <div class="tx-landing__features_text">
+                <h2 id="other">Other</h2>
+            </div>
 
-            <a href="#" class="md-button md-button-secondary" data-tally-open="mY4gWv">
-                <span>Reserve now</span>
-            </a>
+            <div class="tx-landing__highlights_grid other">
+                <a href="/docs/reference/server/config.yml#vastai" class="feature-cell">
+                    <img width="38" style="padding: 4px 0" src="/assets/images/vastai-logo.svg">
+                    <h3>
+                        Vast.ai
+                    </h3>
+                </a>
+
+                <a href="/docs/reference/server/config.yml#tensordock" class="feature-cell">
+                    <img width="36" style="padding: 4px 0" src="/assets/images/tensordock-logo.svg">
+                    <h3>
+                        TensorDock
+                    </h3>
+                </a>
+
+                <a href="/docs/reference/server/config.yml#cudo" class="feature-cell">
+                    <img width="36" style="padding: 4px 0" src="/assets/images/cudo-logo.svg">
+                    <h3>
+                        CUDO
+                    </h3>
+                </a>
+
+                <a href="/docs/reference/server/config.yml#oci" class="feature-cell">
+                    <img width="41" style="padding: 4px 0 2px" src="/assets/images/oci-logo.svg">
+                    <h3>
+                        OCI
+                    </h3>
+                </a>
+
+                <a href="/docs/reference/server/config.yml#kubernetes" class="feature-cell">
+                    <img width="37" style="padding: 4px 0" src="/assets/images/kubernetes-logo.svg">
+                    <h3>
+                        Kubernetes
+                    </h3>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -2493,9 +2458,6 @@ and star us on
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-<script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
-<script async src="https://tally.so/widgets/embed.js"></script>
-
       <script src="../assets/javascripts/bundle.a59f24f2.min.js"></script>
       
         <script src="../assets/javascripts/extra.js"></script>
@@ -2511,7 +2473,6 @@ and star us on
         data-modal-disclaimer="This is a custom LLM for dstack with access to Documentation, API references and GitHub issues. This feature is experimental - Give it a try!"
         data-user-analytics-fingerprint-enabled="true"
         async></script>
-
 
 <script>
     window.$crisp = [];
