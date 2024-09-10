@@ -1396,11 +1396,11 @@ and star us on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cloud-fleet" class="md-nav__link">
+  <a href="#cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Cloud fleet
+          Cloud
         </span>
       
     </span>
@@ -1409,11 +1409,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#on-prem-fleet" class="md-nav__link">
+  <a href="#ssh" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          On-prem fleet
+          SSH
         </span>
       
     </span>
@@ -2886,11 +2886,11 @@ and star us on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cloud-fleet" class="md-nav__link">
+  <a href="#cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Cloud fleet
+          Cloud
         </span>
       
     </span>
@@ -2899,11 +2899,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#on-prem-fleet" class="md-nav__link">
+  <a href="#ssh" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          On-prem fleet
+          SSH
         </span>
       
     </span>
@@ -3460,7 +3460,7 @@ and star us on
 Any configuration can be run via <a href="../../cli/#dstack-apply"><code>dstack apply</code></a>.</p>
 </blockquote>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<h3 id="cloud-fleet">Cloud fleet<a class="headerlink" href="#cloud-fleet" title="Permanent link">&para;</a></h3>
+<h3 id="cloud">Cloud<a class="headerlink" href="#cloud" title="Permanent link">&para;</a></h3>
 <div editor-title="fleet-distrib.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
@@ -3485,12 +3485,12 @@ Any configuration can be run via <a href="../../cli/#dstack-apply"><code>dstack 
 
 </div>
 
-<h3 id="on-prem-fleet">On-prem fleet<a class="headerlink" href="#on-prem-fleet" title="Permanent link">&para;</a></h3>
-<div editor-title="fleet-on-prem.dstack.yml"> 
+<h3 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
+<div editor-title="fleet-ssh.dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
 <span class="c1"># The name is optional, if not specified, generated randomly</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-on-prem-fleet</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-ssh-fleet</span>
 
 <span class="c1"># Ensure instances are interconnected</span>
 <span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>

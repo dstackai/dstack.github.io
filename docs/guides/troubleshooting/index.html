@@ -1283,11 +1283,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#on-prem-fleets" class="md-nav__link">
+  <a href="#ssh-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          On-prem fleets
+          SSH fleets
         </span>
       
     </span>
@@ -1333,11 +1333,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#an-on-prem-fleet-doesnt-provision" class="md-nav__link">
+  <a href="#an-ssh-fleet-doesnt-provision" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          An on-prem fleet doesn't provision
+          An SSH fleet doesn't provision
         </span>
       
     </span>
@@ -2739,11 +2739,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#on-prem-fleets" class="md-nav__link">
+  <a href="#ssh-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          On-prem fleets
+          SSH fleets
         </span>
       
     </span>
@@ -2789,11 +2789,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#an-on-prem-fleet-doesnt-provision" class="md-nav__link">
+  <a href="#an-ssh-fleet-doesnt-provision" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          An on-prem fleet doesn't provision
+          An SSH fleet doesn't provision
         </span>
       
     </span>
@@ -2906,8 +2906,8 @@ correct DNS record pointing to the gateway's hostname.</p>
 <h4 id="authorization">Authorization<a class="headerlink" href="#authorization" title="Permanent link">&para;</a></h4>
 <p>If the service endpoint returns a 403 error, it is likely because the <a href="../../services/#access-the-endpoint"><code>Authorization</code></a> 
 header with the correct <code>dstack</code> token was not provided.</p>
-<h4 id="on-prem-fleets">On-prem fleets<a class="headerlink" href="#on-prem-fleets" title="Permanent link">&para;</a></h4>
-<p>If you attempt to run a service on an on-prem fleet, it won't work due to a <a href="https://github.com/dstackai/dstack/issues/1640" target="_blank">known issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> that is expected to be fixed soon.</p>
+<h4 id="ssh-fleets">SSH fleets<a class="headerlink" href="#ssh-fleets" title="Permanent link">&para;</a></h4>
+<p>If you attempt to run a service on an SSH fleet, it won't work due to a <a href="https://github.com/dstackai/dstack/issues/1640" target="_blank">known issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> that is expected to be fixed soon.</p>
 <h3 id="cannot-access-a-dev-environment-or-a-tasks-ports">Cannot access a dev environment or a task's ports<a class="headerlink" href="#cannot-access-a-dev-environment-or-a-tasks-ports" title="Permanent link">&para;</a></h3>
 <p>When running a dev environment or task with configured ports, <code>dstack apply</code> 
 automatically forwards remote ports to <code>localhost</code> via SSH for easy and secure access.
@@ -2915,8 +2915,8 @@ If you interrupt the command, the port forwarding will be disconnected. To reatt
 <h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
 <p>If you're using the CLI on Windows, make sure to run it through WSL by following <a href="https://github.com/dstackai/dstack/issues/1644#issuecomment-2321559265" target="_blank">these instructions<span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>. 
 Native support will be available soon.</p>
-<h3 id="an-on-prem-fleet-doesnt-provision">An on-prem fleet doesn't provision<a class="headerlink" href="#an-on-prem-fleet-doesnt-provision" title="Permanent link">&para;</a></h3>
-<p>If you set up an on-prem fleet and it fails to provision after a long wait, first check the server logs. 
+<h3 id="an-ssh-fleet-doesnt-provision">An SSH fleet doesn't provision<a class="headerlink" href="#an-ssh-fleet-doesnt-provision" title="Permanent link">&para;</a></h3>
+<p>If you set up an SSH fleet and it fails to provision after a long wait, first check the server logs. 
 Also, review the  <code>/root/.dstack/shim.log</code> file on each host used to create the fleet.</p>
 <h2 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 <div class="admonition info">

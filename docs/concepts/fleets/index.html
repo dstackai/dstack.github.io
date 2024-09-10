@@ -978,11 +978,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#troubleshooting-on-prem-fleets" class="md-nav__link">
+  <a href="#troubleshooting-ssh-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Troubleshooting on-prem fleets
+          Troubleshooting SSH fleets
         </span>
       
     </span>
@@ -2481,11 +2481,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#troubleshooting-on-prem-fleets" class="md-nav__link">
+  <a href="#troubleshooting-ssh-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Troubleshooting on-prem fleets
+          Troubleshooting SSH fleets
         </span>
       
     </span>
@@ -2652,14 +2652,14 @@ In that case, <code>dstack</code> will provision all nodes in the same backend a
 <div class="admonition info">
 <p class="admonition-title">What is an SSH fleet?</p>
 <p>If you’d like to run dev environments, tasks, and services on arbitrary on-prem servers via <code>dstack</code>, you can 
-create an on-prem fleet.</p>
+create an SSH fleet.</p>
 </div>
-<p>To create an on-prem fleet, specify <code>ssh_config</code> to allow the <code>dstack</code> server to connect to these servers
+<p>To create an SSH fleet, specify <code>ssh_config</code> to allow the <code>dstack</code> server to connect to these servers
 via SSH.</p>
 <p><div editor-title="fleet-ssh.dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
 <span class="c1"># The name is optional, if not specified, generated randomly</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-on-prem-fleet</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-ssh-fleet</span>
 
 <span class="c1"># Ensure instances are interconnected</span>
 <span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
@@ -2684,7 +2684,7 @@ The user should have <code>sudo</code> access.</p>
 </div>
 <details class="info">
 <summary>Environment variables</summary>
-<p>For on-prem fleets, it's possible to pre-configure environment variables. 
+<p>For SSH fleets, it's possible to pre-configure environment variables. 
 These variables will be used when installing the <code>dstack-shim</code> service on hosts 
 and running containers.</p>
 <p>For example, these variables can be used to configure a proxy:</p>
@@ -2712,7 +2712,7 @@ and running containers.</p>
 In that case, by default, <code>dstack</code> will automatically detect the private network. 
 You can specify the <a href="../../reference/dstack.yml/fleet/#network"><code>network</code></a> parameter manually.</p>
 </div>
-<p>Note that to use on-prem fleets, you don't need any backends at all.</p>
+<p>Note that to use SSH fleets, you don't need any backends at all.</p>
 </div>
 </div>
 </div>
@@ -2743,10 +2743,10 @@ the fleet configuration.</p>
 </div>
 
 <p>Once the status of instances changes to <code>idle</code>, they can be used by dev environments, tasks, and services.</p>
-<h3 id="troubleshooting-on-prem-fleets">Troubleshooting on-prem fleets<a class="headerlink" href="#troubleshooting-on-prem-fleets" title="Permanent link">&para;</a></h3>
+<h3 id="troubleshooting-ssh-fleets">Troubleshooting SSH fleets<a class="headerlink" href="#troubleshooting-ssh-fleets" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Resources</p>
-<p>If you're creating an on-prem fleet, ensure that the GPU, memory, and disk size are detected properly.
+<p>If you're creating an SSH fleet, ensure that the GPU, memory, and disk size are detected properly.
 If GPU isn't detected, ensure that the hosts meet the requirements (see above).</p>
 </div>
 <p>If the status doesn't change to <code>idle</code> after a few minutes, ensure that 
