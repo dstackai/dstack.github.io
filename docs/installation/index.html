@@ -2474,6 +2474,10 @@ create the <a href="../reference/server/config.yml/"><code>~/.dstack/server/conf
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="pip" name="__tabbed_1" type="radio" /><input id="docker" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="pip">pip</label><label for="docker">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<blockquote>
+<p>The server can be set up via <code>pip</code> on Linux, macOS, and Windows (as long as you use WSL 2).
+It requires Git and OpenSSH.</p>
+</blockquote>
 <div class="termy">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;dstack[all]&quot;</span><span class="w"> </span>-U
 $<span class="w"> </span>dstack<span class="w"> </span>server
@@ -2506,7 +2510,7 @@ The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </sp
 <p>The <code>dstack</code> server can run anywhere: on your laptop, a dedicated server, or in the cloud. Once it's up, you
 can use either the CLI or the API.</p>
 <details class="info">
-<summary>State</summary>
+<summary>Persisting state</summary>
 <p>By default, the <code>dstack</code> server stores its state locally in <code>~/.dstack/server</code>.
 To store it externally, use the <code>DSTACK_DATABASE_URL</code> and 
 <code>DSTACK_SERVER_CLOUDWATCH_LOG_GROUP</code> <a href="../reference/cli/#environment-variables">environment variables</a>.</p>
@@ -2514,6 +2518,19 @@ To store it externally, use the <code>DSTACK_DATABASE_URL</code> and
 <a href="../reference/server/config.yml/#encryption_1"><code>~/.dstack/server/config.yml</code></a>.</p>
 </details>
 <h2 id="set-up-the-cli">Set up the CLI<a class="headerlink" href="#set-up-the-cli" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>The CLI can be set up on Linux, macOS, and Windows. It requires
+Git and OpenSSH.</p>
+</blockquote>
+<details class="info">
+<summary>Windows</summary>
+<p>To use the CLI on Windows, ensure you've installed Git and OpenSSH via 
+<a href="https://git-scm.com/download/win" target="_blank">Git for Windows<span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>. </p>
+<p>When installing it, ensure you've checked 
+<code>Git from the command line and also from 3-rd party software</code> 
+(or <code>Use Git and optional Unix tools from the Command Prompt</code>), and 
+<code>Use bundled OpenSSH</code>.</p>
+</details>
 <p>To point the CLI to the <code>dstack</code> server, configure it
 with the server address, user token, and project name:</p>
 <div class="termy">
@@ -2529,11 +2546,6 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 </div>
 
 <p>This configuration is stored in <code>~/.dstack/config.yml</code>.</p>
-<details class="info">
-<summary>Windows</summary>
-<p>If you're using the CLI on Windows, make sure to run it through WSL by following <a href="https://github.com/dstackai/dstack/issues/1644#issuecomment-2321559265" target="_blank">these instructions <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>. 
-Native support will be available soon.</p>
-</details>
 <h2 id="create-ssh-fleets">Create SSH fleets<a class="headerlink" href="#create-ssh-fleets" title="Permanent link">&para;</a></h2>
 <p>If you want the <code>dstack</code> server to run containers on your on-prem clusters,
 create <a href="../concepts/fleets/#ssh">SSH fleets</a>.</p>
