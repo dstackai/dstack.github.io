@@ -1203,6 +1203,20 @@ and star us on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#cloud-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cloud providers
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud providers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#aws" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1260,19 +1274,6 @@ and star us on
       
         <span class="md-typeset">
           RunPod
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          SSH
         </span>
       
     </span>
@@ -1345,6 +1346,38 @@ and star us on
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-prem-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          On-prem servers
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On-prem servers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          SSH fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1355,6 +1388,11 @@ and star us on
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3207,7 +3245,7 @@ and star us on
   <span class="md-ellipsis">
     
   
-    AI container orchestration for everyone
+    Examples
   
 
     
@@ -3808,6 +3846,20 @@ and star us on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#cloud-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cloud providers
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud providers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#aws" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3865,19 +3917,6 @@ and star us on
       
         <span class="md-typeset">
           RunPod
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          SSH
         </span>
       
     </span>
@@ -3950,6 +3989,38 @@ and star us on
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-prem-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          On-prem servers
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On-prem servers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          SSH fleets
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
@@ -3960,6 +4031,11 @@ and star us on
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -5394,7 +5470,8 @@ If you don't need multiple projects, use only the <code>main</code> project.</p>
 </blockquote>
 <p>Each cloud account must be configured under the <code>backends</code> property of the respective project.
 See the examples below.</p>
-<h3 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
+<h3 id="cloud-providers">Cloud providers<a class="headerlink" href="#cloud-providers" title="Permanent link">&para;</a></h3>
+<h4 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h4>
 <p>There are two ways to configure AWS: using an access key or using the default credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="default-credentials" name="__tabbed_1" type="radio" /><input id="access-key" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="default-credentials">Default credentials</label><label for="access-key">Access key</label></div>
 <div class="tabbed-content">
@@ -5547,7 +5624,7 @@ If you want <code>dstack</code> to use private subnets, set <code>public_ips</co
 <p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets 
 (e.g., through VPC peering).</p>
 </details>
-<h3 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h3>
+<h4 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h4>
 <p>There are two ways to configure Azure: using a client secret or using the default credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="default-credentials_1" name="__tabbed_3" type="radio" /><input id="client-secret" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="default-credentials_1">Default credentials</label><label for="client-secret">Client secret</label></div>
 <div class="tabbed-content">
@@ -5637,7 +5714,7 @@ az<span class="w"> </span>ad<span class="w"> </span>sp<span class="w"> </span>cr
 <span class="p">}</span>
 </code></pre></div>
 </details>
-<h3 id="gcp">GCP<a class="headerlink" href="#gcp" title="Permanent link">&para;</a></h3>
+<h4 id="gcp">GCP<a class="headerlink" href="#gcp" title="Permanent link">&para;</a></h4>
 <p>There are two ways to configure GCP: using a service account or using the default credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="default-credentials_2" name="__tabbed_4" type="radio" /><input id="service-account" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="default-credentials_2">Default credentials</label><label for="service-account">Service account</label></div>
 <div class="tabbed-content">
@@ -5779,7 +5856,7 @@ If you want <code>dstack</code> to use private subnets, set <code>public_ips</co
 </code></pre></div>
 <p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets (e.g., through VPC peering). Additionally, <a href="https://cloud.google.com/nat/docs/overview">Cloud NAT</a> must be configured to provide access to external resources for provisioned instances.</p>
 </details>
-<h3 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
+<h4 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h4>
 <p>Log into your <a href="https://lambdalabs.com/service/gpu-cloud">Lambda Cloud <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> account, click API keys in the sidebar, and then click the <code>Generate API key</code>
 button to create a new API key.</p>
 <p>Then, go ahead and configure the backend:</p>
@@ -5796,7 +5873,7 @@ button to create a new API key.</p>
 
 </div>
 
-<h3 id="runpod">RunPod<a class="headerlink" href="#runpod" title="Permanent link">&para;</a></h3>
+<h4 id="runpod">RunPod<a class="headerlink" href="#runpod" title="Permanent link">&para;</a></h4>
 <p>Log into your <a href="https://www.runpod.io/console/">RunPod <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> console, click Settings in the sidebar, expand the <code>API Keys</code> section, and click
 the button to create a Read &amp; Write key.</p>
 <p>Then proceed to configuring the backend.</p>
@@ -5813,13 +5890,7 @@ the button to create a Read &amp; Write key.</p>
 
 </div>
 
-<h3 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
-<p>The <code>ssh</code> backend enables container orchestration across any on-prem servers. </p>
-<blockquote>
-<p>This backend requires no configuration.
-To use it, create <a href="../../../concepts/fleets/#ssh">SSH fleets</a>.</p>
-</blockquote>
-<h3 id="vastai">Vast.ai<a class="headerlink" href="#vastai" title="Permanent link">&para;</a></h3>
+<h4 id="vastai">Vast.ai<a class="headerlink" href="#vastai" title="Permanent link">&para;</a></h4>
 <p>Log into your <a href="https://cloud.vast.ai/">Vast.ai <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> account, click Account in the sidebar, and copy your
 API Key.</p>
 <p>Then, go ahead and configure the backend:</p>
@@ -5837,7 +5908,7 @@ API Key.</p>
 </div>
 
 <p>Also, the <code>vastai</code> backend supports on-demand instances only. Spot instance support coming soon.</p>
-<h3 id="tensordock">TensorDock<a class="headerlink" href="#tensordock" title="Permanent link">&para;</a></h3>
+<h4 id="tensordock">TensorDock<a class="headerlink" href="#tensordock" title="Permanent link">&para;</a></h4>
 <p>Log into your <a href="https://dashboard.tensordock.com/">TensorDock <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> account, click Developers in the sidebar, and use the <code>Create an Authorization</code> section to create a new authorization key.</p>
 <p>Then, go ahead and configure the backend:</p>
 <div editor-title="~/.dstack/server/config.yml">
@@ -5855,7 +5926,7 @@ API Key.</p>
 </div>
 
 <p>The <code>tensordock</code> backend supports on-demand instances only. Spot instance support coming soon.</p>
-<h3 id="cudo">CUDO<a class="headerlink" href="#cudo" title="Permanent link">&para;</a></h3>
+<h4 id="cudo">CUDO<a class="headerlink" href="#cudo" title="Permanent link">&para;</a></h4>
 <p>Log into your <a href="https://compute.cudo.org/">CUDO Compute <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> account, click API keys in the sidebar, and click the <code>Create an API key</code> button.</p>
 <p>Ensure you've created a project with CUDO Compute, then proceed to configuring the backend.</p>
 <div editor-title="~/.dstack/server/config.yml">
@@ -5872,7 +5943,7 @@ API Key.</p>
 
 </div>
 
-<h3 id="oci">OCI<a class="headerlink" href="#oci" title="Permanent link">&para;</a></h3>
+<h4 id="oci">OCI<a class="headerlink" href="#oci" title="Permanent link">&para;</a></h4>
 <p>There are two ways to configure OCI: using client credentials or using the default credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="default-credentials_3" name="__tabbed_6" type="radio" /><input id="client-credentials" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="default-credentials_3">Default credentials</label><label for="client-credentials">Client credentials</label></div>
 <div class="tabbed-content">
@@ -5932,7 +6003,7 @@ Allow group &lt;dstack-users&gt; to manage virtual-network-family in compartment
 <span class="w">    </span><span class="nt">compartment_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ocid1.compartment.oc1..aaaaaaaa</span>
 </code></pre></div>
 </details>
-<h3 id="datacrunch">DataCrunch<a class="headerlink" href="#datacrunch" title="Permanent link">&para;</a></h3>
+<h4 id="datacrunch">DataCrunch<a class="headerlink" href="#datacrunch" title="Permanent link">&para;</a></h4>
 <p>Log into your <a href="https://cloud.datacrunch.io/">DataCrunch <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> account, click Keys in the sidebar, find <code>REST API Credentials</code> area and then click the <code>Generate Credentials</code> button.</p>
 <p>Then, go ahead and configure the backend:</p>
 <div editor-title="~/.dstack/server/config.yml">
@@ -5949,8 +6020,16 @@ Allow group &lt;dstack-users&gt; to manage virtual-network-family in compartment
 
 </div>
 
-<h3 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h3>
-<p><code>dstack</code> supports both self-managed, and managed Kubernetes clusters.</p>
+<h3 id="on-prem-servers">On-prem servers<a class="headerlink" href="#on-prem-servers" title="Permanent link">&para;</a></h3>
+<h4 id="ssh-fleets">SSH fleets<a class="headerlink" href="#ssh-fleets" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>To use <code>dstack</code> with your on-prem servers, no backend configuration is required.</p>
+</blockquote>
+<p>Simply create <a href="../../../concepts/fleets/#ssh">SSH fleets</a> by specifying the hostnames 
+of the servers and the SSH private key to access these hosts.</p>
+<p>Upon fleet creation, <code>dstack</code> will automatically connect to the hosts and add them as a fleet.
+Once the fleet is created, it can be used to run dev environments, tasks, and services.</p>
+<h4 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h4>
 <p>To configure a Kubernetes backend, specify the path to the kubeconfig file,
 and the port that <code>dstack</code> can use for proxying SSH traffic.
 In case of a self-managed cluster, also specify the IP address of any node in the cluster.</p>

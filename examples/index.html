@@ -29,7 +29,7 @@
     
     
       
-        <title>AI container orchestration for everyone - dstack</title>
+        <title>Examples - dstack</title>
       
     
     
@@ -89,7 +89,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="AI container orchestration for everyone - dstack" />
+<meta property="og:title" content="Examples - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
 <meta property="og:image" content="https://dstack.ai/assets/images/social/examples.png" />
 <meta property="og:image:type" content="image/png" />
@@ -97,7 +97,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://dstack.ai/examples/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="AI container orchestration for everyone - dstack" />
+<meta property="twitter.title" content="Examples - dstack" />
 <meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
 <meta property="twitter:image" content="https://dstack.ai/assets/images/social/examples.png" />
 </head>
@@ -117,6 +117,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#fine-tuning" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -175,7 +180,7 @@ and star us on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI container orchestration for everyone
+              Examples
             
           </span>
         </div>
@@ -1567,13 +1572,30 @@ and star us on
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     
   
-    AI container orchestration for everyone
+    Examples
   
 
     
@@ -1582,6 +1604,62 @@ and star us on
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fine-tuning
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accelerators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Accelerators
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          LLMs
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2153,7 +2231,7 @@ and star us on
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -2162,6 +2240,53 @@ and star us on
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Fine-tuning
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accelerators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Accelerators
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          LLMs
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2174,103 +2299,164 @@ and star us on
   
   <article class="md-content__inner md-typeset">
     
-<section class="tx-container">
-    <div class="md-grid md-typeset">
-        <div class="tx-landing__highlights">
-            <div class="tx-landing__highlights_text">
-                <h2 id="examples">Examples</h2>
-                <!--<p class="tx-landing__bottom_cta_text">
-                    dstack is easy to use with any open-source frameworks and models.
-                </p>-->
-            </div>
+      
+  
 
-            <div class="tx-landing__features_text">
-                <h2 id="fine-tuning">Fine-tuning</h2>
-            </div>
 
-            <div class="tx-landing__highlights_grid">
-                <a href="/examples/fine-tuning/axolotl"
-                   class="feature-cell">
-                    <h3>
-                        Axolotl
-                    </h3>
 
-                    <p>
-                        Fine-tune Llama 3 on a custom dataset using Axolotl.
-                    </p>
-                </a>
+  
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/examples.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
 
-                <a href="/examples/fine-tuning/alignment-handbook"
-                   class="feature-cell">
-                    <h3>
-                        Alignment Handbook
-                    </h3>
 
-                    <p>
-                        Fine-tune Gemma 7B on a custom dataset.
-                    </p>
-                </a>
+  <h1>Examples</h1>
 
-                <a href="/examples/fine-tuning/trl"
-                   class="feature-cell">
-                    <h3>
-                        TRL
-                    </h3>
+<style>
+.md-main .md-main__inner.md-grid {
+    flex-direction: row-reverse;
+}
+</style>
 
-                    <p>
-                        Fine-tune Llama 3.1 8B on a custom dataset using TRL.
-                    </p>
-                </a>
-            </div>
+<h2 id="fine-tuning">Fine-tuning<a class="headerlink" href="#fine-tuning" title="Permanent link">&para;</a></h2>
+<div class="tx-landing__highlights_grid">
+    <a href="/examples/fine-tuning/axolotl"
+       class="feature-cell">
+        <h3>
+            Axolotl
+        </h3>
 
-            <div class="tx-landing__features_text">
-                <h2 id="accelerators">Accelerators</h2>
-            </div>
+        <p>
+            Fine-tune Llama 3 on a custom dataset using Axolotl.
+        </p>
+    </a>
 
-            <div class="tx-landing__highlights_grid">
-                <a href="/examples/accelerators/amd"
-                   class="feature-cell sky">
-                    <h3>
-                        AMD
-                    </h3>
+    <a href="/examples/fine-tuning/alignment-handbook"
+       class="feature-cell">
+        <h3>
+            Alignment Handbook
+        </h3>
 
-                    <p>
-                        Learn how to deploy and fine-tune LLMs on AMD.
-                    </p>
-                </a>
+        <p>
+            Fine-tune Gemma 7B on a custom dataset.
+        </p>
+    </a>
 
-                <a href="/examples/accelerators/tpu"
-                   class="feature-cell sky">
-                    <h3>
-                        TPU
-                    </h3>
+    <a href="/examples/fine-tuning/trl"
+       class="feature-cell">
+        <h3>
+            TRL
+        </h3>
 
-                    <p>
-                        Learn how to deploy and fine-tune LLMs on TPU.
-                    </p>
-                </a>
-            </div>
+        <p>
+            Fine-tune Llama 3.1 8B on a custom dataset using TRL.
+        </p>
+    </a>
+</div>
 
-            <div class="tx-landing__features_text">
-                <h2 id="llms">LLMs</h2>
-            </div>
+<h2 id="accelerators">Accelerators<a class="headerlink" href="#accelerators" title="Permanent link">&para;</a></h2>
+<div class="tx-landing__highlights_grid">
+    <a href="/examples/accelerators/amd"
+       class="feature-cell sky">
+        <h3>
+            AMD
+        </h3>
 
-            <div class="tx-landing__highlights_grid">
-                <a href="/examples/llms/llama31"
-                   class="feature-cell sky">
-                    <h3>
-                        Llama 3.1
-                    </h3>
+        <p>
+            Learn how to deploy and fine-tune LLMs on AMD.
+        </p>
+    </a>
 
-                    <p>
-                        Learn how to deploy and fine-tune Llama 3.1.
-                    </p>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+    <a href="/examples/accelerators/tpu"
+       class="feature-cell sky">
+        <h3>
+            TPU
+        </h3>
 
+        <p>
+            Learn how to deploy and fine-tune LLMs on TPU.
+        </p>
+    </a>
+</div>
+
+<h2 id="llms">LLMs<a class="headerlink" href="#llms" title="Permanent link">&para;</a></h2>
+<div class="tx-landing__highlights_grid">
+    <a href="/examples/llms/llama31"
+       class="feature-cell sky">
+        <h3>
+            Llama 3.1
+        </h3>
+
+        <p>
+            Learn how to deploy and fine-tune Llama 3.1.
+        </p>
+    </a>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+
+      
+          
+            
+          
+          <nav class="md-footer__inner md-grid" aria-label="Footer" hidden>
+            
+              
+              <a href="../docs/reference/api/rest/" class="md-footer__link md-footer__link--prev" aria-label="Previous: REST API">
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                </div>
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Previous
+                  </span>
+                  <div class="md-ellipsis">
+                    REST API
+                  </div>
+                </div>
+              </a>
+            
+            
+              
+              <a href="fine-tuning/axolotl/" class="md-footer__link md-footer__link--next" aria-label="Next: Axolotl">
+                <div class="md-footer__title">
+                  <span class="md-footer__direction">
+                    Next
+                  </span>
+                  <div class="md-ellipsis">
+                    Axolotl
+                  </div>
+                </div>
+                <div class="md-footer__button md-icon">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+                </div>
+              </a>
+            
+          </nav>
+        
+    
   </article>
 </div>
 
@@ -2376,7 +2562,6 @@ and star us on
     <script id="__config" type="application/json">{"base": "..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
@@ -2395,19 +2580,6 @@ and star us on
         data-modal-disclaimer="This is a custom LLM for dstack with access to Documentation, API references and GitHub issues. This feature is experimental - Give it a try!"
         data-user-analytics-fingerprint-enabled="true"
         async></script>
-
-<script>
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "ce56e3b2-a23e-4d3f-9e80-e08c61a2b3cb";
-    (function () {
-        let d = document;
-        let s = d.createElement("script");
-        s.src = "https://client.crisp.chat/l.js";
-        s.async = 1;
-        d.getElementsByTagName("head")[0].appendChild(s);
-        $crisp.push(["do", "chat:hide"]);
-    })();
-</script>
 
   </body>
 </html>
