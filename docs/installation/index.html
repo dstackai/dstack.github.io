@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34+insiders-4.53.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35+insiders-4.53.13">
     
     
       
@@ -1161,6 +1161,33 @@ and star us on
     
   
     Protips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/server-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Server deployment
   
 
     
@@ -2382,8 +2409,8 @@ and star us on
 skip installation and proceed to <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
 </blockquote>
 <h2 id="configure-backends">Configure backends<a class="headerlink" href="#configure-backends" title="Permanent link">&para;</a></h2>
-<p>To use <code>dstack</code> with your own cloud accounts or on prem servers,
-create the <a href="../reference/server/config.yml/"><code>~/.dstack/server/config.yml</code></a> file and configure backends.</p>
+<p>To use <code>dstack</code> with your own cloud accounts, create the <code>~/.dstack/server/config.yml</code> file and 
+<a href="../reference/server/config.yml/">configure backends</a>.</p>
 <h2 id="start-the-server">Start the server<a class="headerlink" href="#start-the-server" title="Permanent link">&para;</a></h2>
 <p>Once backends are configured, proceed and start the server:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="pip" name="__tabbed_1" type="radio" /><input id="docker" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="pip">pip</label><label for="docker">Docker</label></div>
@@ -2416,23 +2443,15 @@ The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </
 The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/
 </code></pre></div>
 </div>
+</div>
+</div>
+</div>
 <blockquote>
-<p>For more details on how to deploy <code>dstack</code> using Docker, check its <a href="https://hub.docker.com/r/dstackai/dstack">Docker repo</a>.</p>
+<p>For more details on server configuration options, see the
+<a href="../guides/server-deployment/">server deployment</a> guide.</p>
 </blockquote>
-</div>
-</div>
-</div>
-<p>The <code>dstack</code> server can run anywhere: on your laptop, a dedicated server, or in the cloud. Once it's up, you
-can use either the CLI or the API.</p>
-<details class="info">
-<summary>Persisting state</summary>
-<p>By default, the <code>dstack</code> server stores its state locally in <code>~/.dstack/server</code>.
-To store it externally, use the <code>DSTACK_DATABASE_URL</code> and 
-<code>DSTACK_SERVER_CLOUDWATCH_LOG_GROUP</code> <a href="../reference/cli/#environment-variables">environment variables</a>.</p>
-<p>If you want backend credentials and user tokens to be encrypted, you can set up encryption keys via
-<a href="../reference/server/config.yml/#encryption_1"><code>~/.dstack/server/config.yml</code></a>.</p>
-</details>
 <h2 id="set-up-the-cli">Set up the CLI<a class="headerlink" href="#set-up-the-cli" title="Permanent link">&para;</a></h2>
+<p>Once it's up, you can use either the CLI or the API.</p>
 <blockquote>
 <p>The CLI can be set up on Linux, macOS, and Windows. It requires
 Git and OpenSSH.</p>
@@ -2463,7 +2482,7 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 <p>This configuration is stored in <code>~/.dstack/config.yml</code>.</p>
 <h2 id="create-ssh-fleets">Create SSH fleets<a class="headerlink" href="#create-ssh-fleets" title="Permanent link">&para;</a></h2>
 <p>If you want the <code>dstack</code> server to run containers on your on-prem clusters,
-create <a href="../concepts/fleets/#ssh">SSH fleets</a>.</p>
+create <a href="../concepts/fleets/#ssh-fleets">SSH fleets</a>.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check the <a href="../reference/server/config.yml/">server/config.yml reference</a> on how to configure backends</li>
@@ -2661,7 +2680,7 @@ create <a href="../concepts/fleets/#ssh">SSH fleets</a>.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.c7c1ca2c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
