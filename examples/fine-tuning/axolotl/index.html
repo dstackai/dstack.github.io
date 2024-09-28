@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35+insiders-4.53.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38+insiders-4.53.13">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.52c0e027.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fd1ad6e4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1756,6 +1756,19 @@ and star us on
 </li>
       
         <li class="md-nav__item">
+  <a href="#running-a-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running a configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2344,6 +2357,19 @@ and star us on
 </li>
       
         <li class="md-nav__item">
+  <a href="#running-a-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running a configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2435,9 +2461,10 @@ with your HuggingFace username.</p>
 </blockquote>
 <h2 id="single-node-training">Single-node training<a class="headerlink" href="#single-node-training" title="Permanent link">&para;</a></h2>
 <p>The easiest way to run a training script with <code>dstack</code> is by creating a task configuration file.
-This file can be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/train.dstack.yml" target="_blank"><code>examples/fine-tuning/axolotl/train.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>. Below is its content: </p>
+This file can be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/train.dstack.yml" target="_blank"><code>examples/fine-tuning/axolotl/train.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+<div editor-title="examples/fine-tuning/axolotl/train.dstack.yml">
+
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-<span class="c1"># The name is optional, if not specified, generated randomly</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">axolotl-train</span>
 
 <span class="c1"># Using the official Axolotl&#39;s Docker image</span>
@@ -2451,6 +2478,9 @@ This file can be found at <a href="https://github.com/dstackai/dstack/blob/maste
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch -m axolotl.cli.train examples/fine-tuning/axolotl/config.yaml</span>
 
+<span class="c1"># Use spot or on-demand instances</span>
+<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
 <span class="w">    </span><span class="c1"># 24GB or more vRAM</span>
@@ -2458,13 +2488,21 @@ This file can be found at <a href="https://github.com/dstackai/dstack/blob/maste
 <span class="w">    </span><span class="c1"># Two or more GPU</span>
 <span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2..</span>
 </code></pre></div>
+
+</div>
+
 <p>The task uses Axolotl's Docker image, where Axolotl is already pre-installed.</p>
-<p>To run the task, use <code>dstack apply</code>:</p>
+<div class="admonition info">
+<p class="admonition-title">AMD</p>
+<p>The example above uses NVIDIA accelerators. To use it with AMD, check out <a href="https://dstack.ai/examples/accelerators/amd#axolotl">AMD</a>.</p>
+</div>
+<h2 id="running-a-configuration">Running a configuration<a class="headerlink" href="#running-a-configuration" title="Permanent link">&para;</a></h2>
+<p>Once the configuration is ready, run <code>dstack apply -f &lt;configuration file&gt;</code>, and <code>dstack</code> will automatically provision the
+cloud resources and run the configuration.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
 $<span class="w"> </span><span class="nv">WANDB_API_KEY</span><span class="o">=</span>...
-
 $<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/train.dstack.yml
 </code></pre></div>
 
@@ -2476,7 +2514,7 @@ $<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </s
 If no <code>idle</code> instances meet the requirements, it creates a new fleet using one of the configured backends.</p>
 </blockquote>
 <p>The example folder includes a fleet configuration: 
-<a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/fleet.dstack.yml"> <code>examples/fine-tuning/axolotl/fleet.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> {:target="_blank"}
+<a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/fleet.dstack.yml" target="_blank"> <code>examples/fine-tuning/axolotl/fleet.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
 (a single node with a <code>24GB</code> GPU).</p>
 <p>You can update the fleet configuration to change the vRAM size, GPU model, number of GPUs per node, or number of nodes. </p>
 <p>A fleet can be provisioned with <code>dstack apply</code>:</p>
@@ -2499,7 +2537,9 @@ The default policy is <code>reuse_or_create</code>.</p>
 <a href="https://github.com/dstackai/dstack/examples/fine-tuning/axolotl/.dstack.yml" target="_blank"><code>.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> via <code>dstack apply</code>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/.dstack.yaml<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
+$<span class="w"> </span><span class="nv">WANDB_API_KEY</span><span class="o">=</span>...
+$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/.dstack.yaml<span class="w"> </span>
 </code></pre></div>
 
 </div>
@@ -2511,6 +2551,7 @@ The default policy is <code>reuse_or_create</code>.</p>
 <ol>
 <li>Check <a href="https://dstack.ai/docs/dev-environments">dev environments</a>, <a href="https://dstack.ai/docs/tasks">tasks</a>, 
    <a href="https://dstack.ai/docs/services">services</a>, and <a href="https://dstack.ai/docs/concepts/fleets">fleets</a>.</li>
+<li>See <a href="https://dstack.ai/examples/accelerators/amd#axolotl">AMD</a>. </li>
 <li>Browse <a href="https://github.com/OpenAccess-AI-Collective/axolotl" target="_blank">Axolotl <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</li>
 </ol>
 
@@ -2709,7 +2750,7 @@ The default policy is <code>reuse_or_create</code>.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.a59f24f2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c4a99efa.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35+insiders-4.53.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38+insiders-4.53.13">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.52c0e027.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fd1ad6e4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2585,8 +2585,10 @@ and other optional parameters.</p>
 to the specified parameters.</p>
 <div class="admonition info">
 <p class="admonition-title">Network</p>
-<p>Set <code>placement</code> to <code>cluster</code> if the nodes should be interconnected (e.g. if you'd like to use them for multi-node tasks). 
-In that case, <code>dstack</code> will provision all nodes in the same backend and region.</p>
+<p>Set <code>placement</code> to <code>cluster</code> if the nodes should be interconnected
+(e.g. if you'd like to use them for <a href="reference/dstack.yml/task.md#distributed-tasks">multi-node tasks</a>). 
+In that case, <code>dstack</code> will provision all nodes in the same backend and region and configure the optimal
+connectivity via availability zones, placement groups, etc.</p>
 </div>
 <p>Note that cloud fleets aren't supported for the <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code> backends.</p>
 </div>
@@ -2650,7 +2652,8 @@ and running containers.</p>
 </details>
 <div class="admonition info">
 <p class="admonition-title">Network</p>
-<p>Set <code>placement</code> to <code>cluster</code> if the hosts are interconnected (e.g. if you'd like to use them for multi-node tasks).
+<p>Set <code>placement</code> to <code>cluster</code> if the hosts are interconnected
+(e.g. if you'd like to use them for <a href="reference/dstack.yml/task.md#distributed-tasks">multi-node tasks</a>).
 In that case, by default, <code>dstack</code> will automatically detect the private network. 
 You can specify the <a href="../../reference/dstack.yml/fleet/#network"><code>network</code></a> parameter manually.</p>
 </div>
@@ -2932,7 +2935,7 @@ fleets, along with multiple examples.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.a59f24f2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c4a99efa.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

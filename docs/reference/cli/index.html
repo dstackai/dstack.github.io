@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35+insiders-4.53.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38+insiders-4.53.13">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.52c0e027.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fd1ad6e4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1555,6 +1555,19 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#dstack-attach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          dstack attach
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dstack-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2541,6 +2554,19 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#dstack-attach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          dstack attach
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dstack-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2780,7 +2806,7 @@ Options:
 </div>
 
 <h3 id="dstack-stop">dstack stop<a class="headerlink" href="#dstack-stop" title="Permanent link">&para;</a></h3>
-<p>This command stops run(s) within the current repository.</p>
+<p>This command stops run(s).</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>stop<span class="w"> </span>--help
@@ -2798,8 +2824,35 @@ Options:
 
 </div>
 
+<h3 id="dstack-attach">dstack attach<a class="headerlink" href="#dstack-attach" title="Permanent link">&para;</a></h3>
+<p>This command attaches to a given run. It establishes the SSH tunnel, forwards ports, and shows real-time run logs.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>attach<span class="w"> </span>--help
+Usage:<span class="w"> </span>dstack<span class="w"> </span>attach<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>--ssh-identity<span class="w"> </span>SSH_PRIVATE_KEY<span class="o">]</span>
+<span class="w">                     </span><span class="o">[</span>--logs<span class="o">]</span><span class="w"> </span><span class="o">[</span>--host<span class="w"> </span>HOST<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="w"> </span>MAPPING<span class="o">]</span><span class="w"> </span><span class="o">[</span>--replica<span class="w"> </span>REPLICA<span class="o">]</span>
+<span class="w">                     </span><span class="o">[</span>--job<span class="w"> </span>JOB<span class="o">]</span>
+<span class="w">                     </span>run_name
+
+Positional<span class="w"> </span>Arguments:
+<span class="w">  </span>run_name
+
+Options:
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>Show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+<span class="w">  </span>--project<span class="w"> </span>NAME<span class="w">        </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>project.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="nv">$DSTACK_PROJECT</span>
+<span class="w">  </span>--ssh-identity<span class="w"> </span>SSH_PRIVATE_KEY
+<span class="w">                        </span>The<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>SSH<span class="w"> </span>tunneling
+<span class="w">  </span>--logs<span class="w">                </span>Print<span class="w"> </span>run<span class="w"> </span>logs<span class="w"> </span>as<span class="w"> </span>they<span class="w"> </span>follow
+<span class="w">  </span>--host<span class="w"> </span>HOST<span class="w">           </span>Local<span class="w"> </span>address<span class="w"> </span>to<span class="w"> </span>bind.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span>localhost.
+<span class="w">  </span>-p,<span class="w"> </span>--port<span class="w"> </span>MAPPING<span class="w">    </span>Port<span class="w"> </span>mapping<span class="w"> </span>overrides
+<span class="w">  </span>--replica<span class="w"> </span>REPLICA<span class="w">     </span>The<span class="w"> </span>relica<span class="w"> </span>number.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="m">0</span>.
+<span class="w">  </span>--job<span class="w"> </span>JOB<span class="w">             </span>The<span class="w"> </span>job<span class="w"> </span>number<span class="w"> </span>inside<span class="w"> </span>the<span class="w"> </span>replica.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="m">0</span>.
+</code></pre></div>
+
+</div>
+
 <h3 id="dstack-logs">dstack logs<a class="headerlink" href="#dstack-logs" title="Permanent link">&para;</a></h3>
-<p>This command shows the output of a given run within the current repository.</p>
+<p>This command shows the output of a given run.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>logs<span class="w"> </span>--help
@@ -3485,7 +3538,7 @@ Options:
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.a59f24f2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c4a99efa.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
