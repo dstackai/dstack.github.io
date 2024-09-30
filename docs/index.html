@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38+insiders-4.53.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39+insiders-4.53.14">
     
     
       
@@ -2447,9 +2447,8 @@ for AI workloads both in the cloud and on-prem, speeding up the development, tra
 <h4 id="accelerators">Accelerators<a class="headerlink" href="#accelerators" title="Permanent link">&para;</a></h4>
 <p><code>dstack</code> supports <code>NVIDIA GPU</code>, <code>AMD GPU</code>, and <code>Google Cloud TPU</code> out of the box.</p>
 <h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
-<blockquote>
+<p><img alt="" src="https://raw.githubusercontent.com/dstackai/static-assets/refs/heads/main/static-assets/images/dstack-architecture-diagram.svg" /></p>
 <p>Before using <code>dstack</code>, ensure you've <a href="installation/">installed</a> the server, or signed up for <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
-</blockquote>
 <h4 id="1-define-configurations">1. Define configurations<a class="headerlink" href="#1-define-configurations" title="Permanent link">&para;</a></h4>
 <p><code>dstack</code> supports the following configurations:</p>
 <ul>
@@ -2457,18 +2456,20 @@ for AI workloads both in the cloud and on-prem, speeding up the development, tra
 <li><a href="tasks/">Tasks</a> &mdash; for scheduling jobs (incl. distributed jobs) or running web apps</li>
 <li><a href="services/">Services</a> &mdash; for deployment of models and web apps (with auto-scaling and authorization)</li>
 <li><a href="concepts/fleets/">Fleets</a> &mdash; for managing cloud and on-prem clusters</li>
-<li><a href="concepts/volumes/">Volumes</a> &mdash; for managing persisted volumes</li>
-<li><a href="concepts/volumes/">Gateways</a> &mdash; for configuring the ingress traffic and public endpoints</li>
 </ul>
 <p>Configuration can be defined as YAML files within your repo.</p>
 <h4 id="2-apply-configurations">2. Apply configurations<a class="headerlink" href="#2-apply-configurations" title="Permanent link">&para;</a></h4>
-<p>Apply the configuration either via the <code>dstack apply</code> CLI command or through a programmatic API.</p>
-<p><code>dstack</code> automatically manages provisioning, job queuing, auto-scaling, networking, volumes, run failures,
-out-of-capacity errors, port-forwarding, and more &mdash; across clouds and on-prem clusters.</p>
+<p>Apply the configuration either via the <code>dstack apply</code> CLI command (or through a programmatic API.)</p>
+<blockquote>
+<p><code>dstack</code> automatically manages infrastructure provisioning and job scheduling, while also handling auto-scaling,
+port-forwarding, ingress, and more.</p>
+</blockquote>
 <h2 id="why-dstack">Why dstack?<a class="headerlink" href="#why-dstack" title="Permanent link">&para;</a></h2>
 <p><code>dstack</code>'s founder and CEO explains the challenges <code>dstack</code> addresses for AI and Ops teams.</p>
 <iframe width="700" height="394" src="https://www.youtube.com/embed/yzVMp5Q0aPg?si=22QzF2OvtAybBWDg&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<p><code>dstack</code> streamlines infrastructure management and container usage, enabling AI teams to work with any frameworks across
+cloud platforms or on-premise servers.</p>
 <h2 id="where-do-i-start">Where do I start?<a class="headerlink" href="#where-do-i-start" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Proceed to <a href="installation/">installation</a></li>
@@ -2672,7 +2673,7 @@ out-of-capacity errors, port-forwarding, and more &mdash; across clouds and on-p
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../assets/javascripts/bundle.c4a99efa.min.js"></script>
+      <script src="../assets/javascripts/bundle.9c5b6415.min.js"></script>
       
         <script src="../assets/javascripts/extra.js"></script>
       
