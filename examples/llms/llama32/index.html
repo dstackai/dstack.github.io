@@ -12,31 +12,31 @@
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/docs/dev-environments/">
+        <link rel="canonical" href="https://dstack.ai/examples/llms/llama32/">
       
       
-        <link rel="prev" href="../quickstart/">
+        <link rel="prev" href="../llama31/">
       
       
-        <link rel="next" href="../tasks/">
+        <link rel="next" href="../../../backends/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39+insiders-4.53.14">
     
     
       
-        <title>Dev environments - dstack</title>
+        <title>Llama 3.2 - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fd1ad6e4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fd1ad6e4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -61,17 +61,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Dev environments - dstack" />
+<meta property="og:title" content="Llama 3.2 - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/docs/dev-environments.png" />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/examples/llms/llama32/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/docs/dev-environments/" />
+<meta property="og:url" content="https://dstack.ai/examples/llms/llama32/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Dev environments - dstack" />
+<meta property="twitter.title" content="Llama 3.2 - dstack" />
 <meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/docs/dev-environments.png" />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/examples/llms/llama32/index.png" />
 </head>
   
   
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dev-environments" class="md-skip">
+        <a href="#llama-32" class="md-skip">
           Skip to content
         </a>
       
@@ -163,7 +163,7 @@ and star us on
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -180,7 +180,7 @@ and star us on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dev environments
+              Llama 3.2
             
           </span>
         </div>
@@ -280,7 +280,7 @@ and star us on
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -295,21 +295,17 @@ and star us on
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../docs/" class="md-tabs__link">
           
   
   Docs
@@ -326,11 +322,13 @@ and star us on
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../examples/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   Examples
@@ -346,7 +344,7 @@ and star us on
   
   
     <li class="md-tabs__item">
-      <a href="../../backends/" class="md-tabs__link">
+      <a href="../../../backends/" class="md-tabs__link">
         
   
     
@@ -365,7 +363,7 @@ and star us on
     
     
       <li class="md-tabs__item">
-        <a href="../../blog/" class="md-tabs__link">
+        <a href="../../../blog/" class="md-tabs__link">
           
   
   Blog
@@ -400,7 +398,7 @@ and star us on
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -427,7 +425,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -450,30 +448,25 @@ and star us on
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -490,7 +483,7 @@ and star us on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -513,20 +506,17 @@ and star us on
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -561,7 +551,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -588,7 +578,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../../../docs/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -615,7 +605,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../quickstart/" class="md-nav__link">
+      <a href="../../../docs/quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,30 +637,25 @@ and star us on
                 
   
   
-    
   
   
-  
     
     
     
       
       
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -687,7 +672,7 @@ and star us on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -702,36 +687,10 @@ and star us on
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    Dev environments
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../docs/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -746,155 +705,6 @@ and star us on
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Define a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-a-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Run a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run a configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vs-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          VS Code
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          SSH
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manage-runs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Manage runs
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Manage runs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list-runs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          List runs
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stop-a-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Stop a run
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manage-fleets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Manage fleets
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -907,7 +717,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../tasks/" class="md-nav__link">
+      <a href="../../../docs/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -934,7 +744,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../services/" class="md-nav__link">
+      <a href="../../../docs/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -961,7 +771,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../concepts/fleets/" class="md-nav__link">
+      <a href="../../../docs/concepts/fleets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -988,7 +798,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../concepts/gateways/" class="md-nav__link">
+      <a href="../../../docs/concepts/gateways/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1015,7 +825,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../concepts/volumes/" class="md-nav__link">
+      <a href="../../../docs/concepts/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1042,7 +852,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../concepts/projects/" class="md-nav__link">
+      <a href="../../../docs/concepts/projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1082,20 +892,17 @@ and star us on
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1130,7 +937,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../guides/troubleshooting/" class="md-nav__link">
+      <a href="../../../docs/guides/troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1157,7 +964,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../guides/protips/" class="md-nav__link">
+      <a href="../../../docs/guides/protips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1184,7 +991,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../guides/server-deployment/" class="md-nav__link">
+      <a href="../../../docs/guides/server-deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1224,20 +1031,17 @@ and star us on
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1272,7 +1076,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/server/config.yml/" class="md-nav__link">
+      <a href="../../../docs/reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1349,7 +1153,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/dstack.yml/dev-environment/" class="md-nav__link">
+      <a href="../../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1376,7 +1180,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/dstack.yml/task/" class="md-nav__link">
+      <a href="../../../docs/reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1403,7 +1207,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/dstack.yml/service/" class="md-nav__link">
+      <a href="../../../docs/reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1430,7 +1234,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/dstack.yml/fleet/" class="md-nav__link">
+      <a href="../../../docs/reference/dstack.yml/fleet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1457,7 +1261,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/dstack.yml/gateway/" class="md-nav__link">
+      <a href="../../../docs/reference/dstack.yml/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1484,7 +1288,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/dstack.yml/volume/" class="md-nav__link">
+      <a href="../../../docs/reference/dstack.yml/volume/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1519,7 +1323,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/cli/" class="md-nav__link">
+      <a href="../../../docs/reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1596,7 +1400,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/api/python/" class="md-nav__link">
+      <a href="../../../docs/reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1623,7 +1427,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../reference/api/rest/" class="md-nav__link">
+      <a href="../../../docs/reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1670,25 +1474,30 @@ and star us on
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1705,7 +1514,7 @@ and star us on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1723,7 +1532,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../examples/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1755,17 +1564,20 @@ and star us on
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1800,7 +1612,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../examples/fine-tuning/axolotl/" class="md-nav__link">
+      <a href="../../fine-tuning/axolotl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1827,7 +1639,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../examples/fine-tuning/alignment-handbook/" class="md-nav__link">
+      <a href="../../fine-tuning/alignment-handbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1854,7 +1666,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../examples/fine-tuning/trl/" class="md-nav__link">
+      <a href="../../fine-tuning/trl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1894,17 +1706,20 @@ and star us on
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1939,7 +1754,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../examples/accelerators/amd/" class="md-nav__link">
+      <a href="../../accelerators/amd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1966,7 +1781,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../examples/accelerators/tpu/" class="md-nav__link">
+      <a href="../../accelerators/tpu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1998,25 +1813,30 @@ and star us on
                 
   
   
+    
   
   
+  
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2033,7 +1853,7 @@ and star us on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2051,7 +1871,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../examples/llms/llama31/" class="md-nav__link">
+      <a href="../llama31/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2075,10 +1895,36 @@ and star us on
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../examples/llms/llama32/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Llama 3.2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2093,6 +1939,123 @@ and star us on
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Deployment
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-as-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running as a task
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Deploying as a service
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Memory requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running a configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2120,7 +2083,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../backends/" class="md-nav__link">
+      <a href="../../../backends/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2198,7 +2161,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../blog/" class="md-nav__link">
+      <a href="../../../blog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2279,7 +2242,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../../blog/archive/2024/" class="md-nav__link">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2343,38 +2306,25 @@ and star us on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
+  <a href="#deployment" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Define a configuration
+          Deployment
         </span>
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-a-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Run a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run a configuration">
+    <nav class="md-nav" aria-label="Deployment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vs-code" class="md-nav__link">
+  <a href="#running-as-a-task" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          VS Code
+          Running as a task
         </span>
       
     </span>
@@ -2383,11 +2333,37 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
+  <a href="#deploying-as-a-service" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          SSH
+          Deploying as a service
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Memory requirements
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running a configuration
         </span>
       
     </span>
@@ -2401,56 +2377,11 @@ and star us on
 </li>
       
         <li class="md-nav__item">
-  <a href="#manage-runs" class="md-nav__link">
+  <a href="#source-code" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Manage runs
-        </span>
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Manage runs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list-runs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          List runs
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stop-a-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Stop a run
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manage-fleets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Manage fleets
+          Source code
         </span>
       
     </span>
@@ -2487,121 +2418,136 @@ and star us on
       
 
 
-  
-    <a href="https://github.com/dstackai/dstack/edit/master/docs/docs/dev-environments.md" title="Edit this page" class="md-content__button md-icon">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
-    </a>
-  
-  
 
+<h1 id="llama-32">Llama 3.2<a class="headerlink" href="#llama-32" title="Permanent link">&para;</a></h1>
+<p>This example walks you through how to deploy Llama 3.2 vision model with <code>dstack</code> using <code>vLLM</code>.</p>
+<details class="info">
+<summary>Prerequisites</summary>
+<p>Once <code>dstack</code> is <a href="https://dstack.ai/docs/installation">installed</a>, go ahead clone the repo, and run <code>dstack init</code>.</p>
+<div class="termy">
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/dstackai/dstack
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>dstack
+$<span class="w"> </span>dstack<span class="w"> </span>init
+</code></pre></div>
+</div>
+</details>
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<h3 id="running-as-a-task">Running as a task<a class="headerlink" href="#running-as-a-task" title="Permanent link">&para;</a></h3>
+<p>If you'd like to run Llama 3.2 vision model for development purposes, consider using <code>dstack</code> tasks.</p>
+<div editor-title="examples/llms/llama32/vllm/task.dstack.yml"> 
 
-<h1 id="dev-environments">Dev environments<a class="headerlink" href="#dev-environments" title="Permanent link">&para;</a></h1>
-<p>A dev environment lets you provision a remote machine with your code, dependencies, and resources, and access it with
-your desktop IDE. </p>
-<p>Dev environments are perfect when you need to run code interactively.</p>
-<h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
-<p>First, create a YAML file in your project repo. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>dev.dstack.yml</code> are
-both acceptable).</p>
-<div editor-title="examples/.dstack.yml"> 
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama32-task-vllm</span>
 
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
-<span class="c1"># The name is optional, if not specified, generated randomly</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
-
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
-<span class="c1"># Uncomment to use a custom Docker image</span>
-<span class="c1">#image: dstackai/base:py3.10-0.5-cuda-12.1</span>
-
-<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
-
+<span class="c1"># If `image` is not specified, dstack uses its default image</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+<span class="c1"># Required environment variables</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HUGGING_FACE_HUB_TOKEN</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=meta-llama/Llama-3.2-11B-Vision-Instruct</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_MODEL_LEN=13488</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_NUM_SEQS=40</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vllm serve $MODEL_ID</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--tensor-parallel-size $DSTACK_GPUS_NUM</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--max-model-len $MAX_MODEL_LEN</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--max-num-seqs $MAX_NUM_SEQS</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--enforce-eager</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--disable-log-requests</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--limit-mm-per-prompt &quot;image=1&quot;</span>
+<span class="c1"># Expose the vllm server port</span>
+<span class="nt">ports</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 <span class="c1"># Use either spot or on-demand instances</span>
 <span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Required resources</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">48GB</span>
 </code></pre></div>
-
 </div>
 
-<p>If you don't specify your Docker image, <code>dstack</code> uses the <a href="https://hub.docker.com/r/dstackai/base/tags">base</a> image
-(pre-configured with Python, Conda, and essential CUDA drivers).</p>
-<div class="admonition info">
-<p class="admonition-title">Reference</p>
-<p>See <a href="../reference/dstack.yml/dev-environment/">.dstack.yml</a> for all the options supported by
-dev environments, along with multiple examples.</p>
-</div>
-<h2 id="run-a-configuration">Run a configuration<a class="headerlink" href="#run-a-configuration" title="Permanent link">&para;</a></h2>
-<p>To run a configuration, use the <a href="../reference/cli/#dstack-apply"><code>dstack apply</code></a> command.</p>
+<p>Note, maximum size of vLLM’s <code>KV cache</code> is <code>13488</code>, consequently we must set <code>MAX_MODEL_LEN</code> to <code>13488</code>. <code>MAX_NUM_SEQS</code>
+greater than 40 results in an out of memory error.</p>
+<h3 id="deploying-as-a-service">Deploying as a service<a class="headerlink" href="#deploying-as-a-service" title="Permanent link">&para;</a></h3>
+<p>If you'd like to deploy Llama 3.2 vision model as public auto-scalable and secure endpoint,
+consider using <code>dstack</code> <a href="https://dstack.ai/docs/services">services</a>.</p>
+<h3 id="memory-requirements">Memory requirements<a class="headerlink" href="#memory-requirements" title="Permanent link">&para;</a></h3>
+<p>Below are the approximate memory requirements for loading the model. 
+This excludes memory for the model context and CUDA kernel reservations.</p>
+<table>
+<thead>
+<tr>
+<th>Model size</th>
+<th>FP16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>11B</strong></td>
+<td>40GB</td>
+</tr>
+<tr>
+<td><strong>90B</strong></td>
+<td>180GB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="running-a-configuration">Running a configuration<a class="headerlink" href="#running-a-configuration" title="Permanent link">&para;</a></h3>
+<p>To run a configuration, use the <a href="https://dstack.ai/docs/reference/cli/index.md#dstack-apply"><code>dstack apply</code></a> command.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/.dstack.yml
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
 
-<span class="w"> </span><span class="c1">#  BACKEND  REGION    RESOURCES                SPOT  PRICE</span>
-<span class="w"> </span><span class="m">1</span><span class="w">  </span>runpod<span class="w">   </span>CA-MTL-1<span class="w">  </span>9xCPU,<span class="w"> </span>48GB,<span class="w"> </span>A5000:24GB<span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.11
-<span class="w"> </span><span class="m">2</span><span class="w">  </span>runpod<span class="w">   </span>EU-SE-1<span class="w">   </span>9xCPU,<span class="w"> </span>43GB,<span class="w"> </span>A5000:24GB<span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.11
-<span class="w"> </span><span class="m">3</span><span class="w">  </span>gcp<span class="w">      </span>us-west4<span class="w">  </span>4xCPU,<span class="w"> </span>16GB,<span class="w"> </span>L4:24GB<span class="w">     </span>yes<span class="w">   </span><span class="nv">$0</span>.214516
+$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/llms/llama32/vllm/task.dstack.yml
 
-Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>vscode?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+<span class="w"> </span><span class="c1">#  BACKEND  REGION     RESOURCES                    SPOT  PRICE   </span>
+<span class="w"> </span><span class="m">1</span><span class="w">  </span>runpod<span class="w">   </span>CA-MTL-1<span class="w">   </span>9xCPU,<span class="w"> </span>50GB,<span class="w"> </span>1xA40<span class="w"> </span><span class="o">(</span>48GB<span class="o">)</span><span class="w">    </span>yes<span class="w">   </span><span class="nv">$0</span>.24<span class="w">   </span>
+<span class="w"> </span><span class="m">2</span><span class="w">  </span>runpod<span class="w">   </span>EU-SE-1<span class="w">    </span>9xCPU,<span class="w"> </span>50GB,<span class="w"> </span>1xA40<span class="w"> </span><span class="o">(</span>48GB<span class="o">)</span><span class="w">    </span>yes<span class="w">   </span><span class="nv">$0</span>.24<span class="w">   </span>
+<span class="w"> </span><span class="m">3</span><span class="w">  </span>runpod<span class="w">   </span>EU-SE-1<span class="w">    </span>9xCPU,<span class="w"> </span>50GB,<span class="w"> </span>1xA6000<span class="w"> </span><span class="o">(</span>48GB<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.25<span class="w">   </span>
 
-Launching<span class="w"> </span><span class="sb">`</span>vscode<span class="sb">`</span>...
+
+Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>llama32-task-vllm?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+
+Provisioning...
 ---&gt;<span class="w"> </span><span class="m">100</span>%
-
-To<span class="w"> </span>open<span class="w"> </span><span class="k">in</span><span class="w"> </span>VS<span class="w"> </span>Code<span class="w"> </span>Desktop,<span class="w"> </span>use<span class="w"> </span>this<span class="w"> </span>link:
-<span class="w">  </span>vscode://vscode-remote/ssh-remote+vscode/workflow
 </code></pre></div>
 
 </div>
 
-<p><code>dstack apply</code> automatically uploads the code from the current repo, including your local uncommitted changes.
-To avoid uploading large files, ensure they are listed in <code>.gitignore</code>.</p>
-<h3 id="vs-code">VS Code<a class="headerlink" href="#vs-code" title="Permanent link">&para;</a></h3>
-<p>To open the dev environment in your desktop IDE, use the link from the output 
-(such as <code>vscode://vscode-remote/ssh-remote+fast-moth-1/workflow</code>).</p>
-<p><img alt="" src="../../assets/images/dstack-vscode-jupyter.png" width="800" /></p>
-<h3 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
-<p>Alternatively, while the CLI is attached to the run, you can connect to the dev environment via SSH:</p>
+<p>If you run a task, <code>dstack apply</code> automatically forwards the remote ports to <code>localhost</code> for convenient access.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>fast-moth-1
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>http://localhost:8000/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer token&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--data<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">        &quot;model&quot;: &quot;meta-llama/Llama-3.2-11B-Vision-Instruct&quot;,</span>
+<span class="s1">        &quot;messages&quot;: [</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">            &quot;content&quot;: [</span>
+<span class="s1">                {&quot;type&quot; : &quot;text&quot;, &quot;text&quot;: &quot;Describe the image.&quot;},</span>
+<span class="s1">                {&quot;type&quot;: &quot;image_url&quot;, &quot;image_url&quot;: {&quot;url&quot;: &quot;https://upload.wikimedia.org/wikipedia/commons/e/ea/Bento_at_Hanabishi%2C_Koyasan.jpg&quot;}}</span>
+<span class="s1">            ]</span>
+<span class="s1">        }],</span>
+<span class="s1">        &quot;max_tokens&quot;: 2048</span>
+<span class="s1">    }&#39;</span>
 </code></pre></div>
 
 </div>
 
-<h2 id="manage-runs">Manage runs<a class="headerlink" href="#manage-runs" title="Permanent link">&para;</a></h2>
-<h3 id="list-runs">List runs<a class="headerlink" href="#list-runs" title="Permanent link">&para;</a></h3>
-<p>The <a href="../reference/cli/#dstack-ps"><code>dstack ps</code></a>  command lists all running jobs and their statuses. 
-Use <code>--watch</code> (or <code>-w</code>) to monitor the live status of runs.</p>
-<h3 id="stop-a-run">Stop a run<a class="headerlink" href="#stop-a-run" title="Permanent link">&para;</a></h3>
-<p>Once the run exceeds the <a href="../reference/dstack.yml/dev-environment/#max_duration"><code>max_duration</code></a>, or when you use <a href="../reference/cli/#dstack-stop"><code>dstack stop</code></a>, 
-the dev environment is stopped. Use <code>--abort</code> or <code>-x</code> to stop the run abruptly. </p>
-<h2 id="manage-fleets">Manage fleets<a class="headerlink" href="#manage-fleets" title="Permanent link">&para;</a></h2>
-<p>By default, <code>dstack apply</code> reuses <code>idle</code> instances from one of the existing <a href="../concepts/fleets/">fleets</a>, 
-or creates a new fleet through backends.</p>
-<div class="admonition info">
-<p class="admonition-title">Idle duration</p>
-<p>To ensure the created fleets are deleted automatically, set
-<a href="../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a>.
-By default, it's set to <code>5min</code>.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Creation policy</p>
-<p>To ensure <code>dstack apply</code> always reuses an existing fleet and doesn't create a new one,
-pass <code>--reuse</code> to <code>dstack apply</code> (or set <a href="../reference/dstack.yml/dev-environment/#creation_policy"><code>creation_policy</code></a> to <code>reuse</code> in the task configuration).
-The default policy is <code>reuse_or_create</code>.</p>
-</div>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<p>The source-code of this example can be found in 
+<a href="https://github.com/dstackai/dstack/blob/master/examples/llms/llama32"><code>examples/llms/llama32</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Read about <a href="./">dev environments</a>, <a href="../tasks/">tasks</a>, and 
-    <a href="../services/">services</a></li>
-<li>See <a href="../concepts/fleets/">fleets</a> on how to manage fleets</li>
+<li>Check <a href="https://dstack.ai/docs/dev-environments">dev environments</a>, <a href="https://dstack.ai/docs/tasks">tasks</a>, 
+   <a href="https://dstack.ai/docs/services">services</a>, and <a href="https://dstack.ai/docs/protips">protips</a>.</li>
+<li>Browse <a href="https://huggingface.co/collections/meta-llama/llama-32-66f448ffc8c32f949b04c8cf">Llama 3.2 on HuggingFace <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
+   and <a href="https://docs.vllm.ai/en/latest/models/supported_models.html#multimodal-language-models">LLama 3.2 on vLLM <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</li>
 </ol>
-<div class="admonition info">
-<p class="admonition-title">Reference</p>
-<p>See <a href="../reference/dstack.yml/dev-environment/">.dstack.yml</a> for all the options supported by
-dev environments, along with multiple examples.</p>
-</div>
 
 
 
@@ -2622,7 +2568,7 @@ dev environments, along with multiple examples.</p>
           <nav class="md-footer__inner md-grid" aria-label="Footer" >
             
               
-              <a href="../quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quickstart">
+              <a href="../llama31/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Llama 3.1">
                 <div class="md-footer__button md-icon">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2632,20 +2578,20 @@ dev environments, along with multiple examples.</p>
                     Previous
                   </span>
                   <div class="md-ellipsis">
-                    Quickstart
+                    Llama 3.1
                   </div>
                 </div>
               </a>
             
             
               
-              <a href="../tasks/" class="md-footer__link md-footer__link--next" aria-label="Next: Tasks">
+              <a href="../../../backends/" class="md-footer__link md-footer__link--next" aria-label="Next: Backends">
                 <div class="md-footer__title">
                   <span class="md-footer__direction">
                     Next
                   </span>
                   <div class="md-ellipsis">
-                    Tasks
+                    Backends
                   </div>
                 </div>
                 <div class="md-footer__button md-icon">
@@ -2792,17 +2738,17 @@ dev environments, along with multiple examples.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.c7c1ca2c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.c7c1ca2c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.9c5b6415.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9c5b6415.min.js"></script>
       
-        <script src="../../assets/javascripts/extra.js"></script>
+        <script src="../../../assets/javascripts/extra.js"></script>
       
-        <script src="../../assets/javascripts/pricing.js"></script>
+        <script src="../../../assets/javascripts/pricing.js"></script>
       
     
 <script src="https://widget.kapa.ai/kapa-widget.bundle.js"
