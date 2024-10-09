@@ -2238,11 +2238,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#tokensec-per-per-rps" class="md-nav__link">
+  <a href="#tokensec-and-ttft-per-rps" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Token/sec per per RPS
+          Token/sec and TTFT per RPS
         </span>
       
     </span>
@@ -2544,22 +2544,22 @@ as the batch size increases. For batch sizes exceeding 64, the performance dispa
 <h3 id="ttft-per-context-size">TTFT per context size<a class="headerlink" href="#ttft-per-context-size" title="Permanent link">&para;</a></h3>
 <p>In this case, TGI demonstrated an advantage over vLLM in both token throughput and time to first token (TTFT).</p>
 <p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_long_seq/mean_ttft_tgi_vllm.png" width="750"/></p>
-<h3 id="tokensec-per-per-rps">Token/sec per per RPS<a class="headerlink" href="#tokensec-per-per-rps" title="Permanent link">&para;</a></h3>
+<h3 id="tokensec-and-ttft-per-rps">Token/sec and TTFT per RPS<a class="headerlink" href="#tokensec-and-ttft-per-rps" title="Permanent link">&para;</a></h3>
 <p>To assess the performance scalability of TGI and vLLM, we conducted tests by gradually increasing the Requests Per
 Second (RPS) and the total Requests Sent (RS) while keeping the prompt size consistent at 1,000 tokens for all trials. </p>
 <p>In this experiment, we initiated requests beginning with 30 requests at 1 RPS, then increased to 60 requests at 2 RPS,
 and continued this pattern up to 150 requests at 5 RPS. </p>
+<p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/token_per_second_low_tgi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
 <p>Ideally, we would expect all trials to complete within the same time frame. However, due to resource limitations and
 increasing resource utilization, higher RPS does not lead to a proportional increase in throughput (tokens per second)
-or maintain total time from first token (TTFT). The following observations illustrate the performance of both backends. </p>
+or maintain total time from first token (TTFT). </p>
+<p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/mean_ttft_low_tgi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
 <p>At 1 RPS, vLLM performs slightly better than TGI. However, between 2 and 4 RPS, TGI outperforms vLLM in both throughput and TTFT.</p>
 <p>Notably, TGI begins to drop requests once it reaches 5 RPS.</p>
-<p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/token_per_second_low_tgi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
-<p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/mean_ttft_low_tgi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
-<p>We repeated the test using a higher number of requests, ranging from 300 to 900. At 900 requests with a rate of 3
-requests per second (RPS), TGI dropped a majority of the requests. However, its performance improved notably when the
-number of requests was below 900.</p>
+<p>We repeated the test using a higher number of requests, ranging from 300 to 900.</p>
 <p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/token_per_second_tpi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
+<p>At 900 requests with a rate of 3 requests per second (RPS), TGI dropped a majority of the requests. However, its
+performance improved notably when the number of requests was below 900.</p>
 <p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/mean_ttft_tgi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
 <h3 id="vram-consumption">vRAM consumption<a class="headerlink" href="#vram-consumption" title="Permanent link">&para;</a></h3>
 <p>When considering vRAM consumption right after loading model weights, TGI allocates approximately 28% less vRAM compared
@@ -2568,16 +2568,14 @@ to vLLM.</p>
 <p>This difference may be related to how vLLM <a href="https://docs.vllm.ai/en/latest/models/performance.html" target="_blank">pre-allocates GPU cache <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <ul>
-<li>TGI is highly efficient at handling medium to high workloads, increasing the requests per second (RPS) up to a certain limit.
-  In these cases, it delivers faster time to first token (TTFT) and higher throughput.</li>
+<li>TGI is highly efficient at handling medium to high workloads. In our tests on 8 x AMD MI 300x GPU, medium workloads
+  are defined as RPS between 2 and 4. In these cases, it delivers faster time to first token (TTFT) and higher
+  throughput.</li>
 <li>Conversely, vLLM works well with lower RPS but struggles to scale, making it less ideal for more demanding workloads.</li>
 <li>TGI's edge comes from
-  its <a href="https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi">continuous batching algorithm <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>{:
-  target="_blank"} , which dynamically modifies batch sizes to optimize GPU usage.</li>
+  its <a href="https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi" target="_blank">continuous batching algorithm <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> , which dynamically modifies batch sizes to optimize GPU usage.</li>
 </ul>
-<blockquote>
 <p>To gain a more complete understanding of the performance potential, a wider variety of backend configurations should be tested.</p>
-</blockquote>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <p>While we wait for AMD to announce new GPUs and for data centers to offer them, we’re considering tests with NVIDIA GPUs
 like the H100 and H200, and possibly Google TPU.</p>
@@ -2589,8 +2587,8 @@ like the H100 and H200, and possibly Google TPU.</p>
 <h2 id="thanks-to-our-friends">Thanks to our friends<a class="headerlink" href="#thanks-to-our-friends" title="Permanent link">&para;</a></h2>
 <h3 id="hot-aisle">Hot Aisle<a class="headerlink" href="#hot-aisle" title="Permanent link">&para;</a></h3>
 <p><a href="https://hotaisle.xyz/" target="_blank">Hot Aisle <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> 
-is the primary sponsor of this benchmark, and we are sincerely grateful for their hardware and support.<br />
-If you'd like to use top-tier bare metal compute with AMD GPUs, we recommend going
+is the primary sponsor of this benchmark, and we are sincerely grateful for their hardware and support.  </p>
+<p>If you'd like to use top-tier bare metal compute with AMD GPUs, we recommend going
 with Hot Aisle. Once you gain access to a cluster, it can be easily accessed via <code>dstack</code>'s <a href="../../docs/concepts/fleets/#ssh-fleets">SSH fleet</a> easily.</p>
 <h3 id="runpod">RunPod<a class="headerlink" href="#runpod" title="Permanent link">&para;</a></h3>
 <p>If you’d like to use on-demand compute with AMD GPUs at affordable prices, you can configure <code>dstack</code> to
