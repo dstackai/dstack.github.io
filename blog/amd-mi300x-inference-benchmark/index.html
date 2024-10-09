@@ -2552,7 +2552,7 @@ and continued this pattern up to 150 requests at 5 RPS. </p>
 <p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/token_per_second_low_tgi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
 <p>Ideally, we would expect all trials to complete within the same time frame. However, due to resource limitations and
 increasing resource utilization, higher RPS does not lead to a proportional increase in throughput (tokens per second)
-or maintain total time from first token (TTFT). </p>
+or maintain Time to First Token (TTFT). </p>
 <p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/mean_ttft_low_tgi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
 <p>At 1 RPS, vLLM performs slightly better than TGI. However, between 2 and 4 RPS, TGI outperforms vLLM in both throughput and TTFT.</p>
 <p>Notably, TGI begins to drop requests once it reaches 5 RPS.</p>
@@ -2573,7 +2573,7 @@ to vLLM.</p>
   throughput.</li>
 <li>Conversely, vLLM works well with lower RPS but struggles to scale, making it less ideal for more demanding workloads.</li>
 <li>TGI's edge comes from
-  its <a href="https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi" target="_blank">continuous batching algorithm <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> , which dynamically modifies batch sizes to optimize GPU usage.</li>
+  its <a href="https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi" target="_blank">continuous batching algorithm <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>, which dynamically modifies batch sizes to optimize GPU usage.</li>
 </ul>
 <p>To gain a more complete understanding of the performance potential, a wider variety of backend configurations should be tested.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
