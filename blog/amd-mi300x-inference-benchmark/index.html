@@ -6,37 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center.">
+        <meta name="description" content="Exploring how the inference performance of Llama 3.1 405B varies on 8x AMD MI300X GPUs across vLLM and TGI backends in different use cases.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/blog/">
+        <link rel="canonical" href="https://dstack.ai/blog/amd-mi300x-inference-benchmark/">
       
       
-        <link rel="prev" href="../backends/">
+        <link rel="prev" href="../tpu-on-gcp/">
       
-      
-        <link rel="next" href="archive/2024/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39+insiders-4.53.14">
     
     
       
-        <title>Blog - dstack</title>
+        <title>Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fd1ad6e4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fd1ad6e4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -61,17 +59,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,17 +87,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Blog - dstack" />
-<meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/blog/index.png" />
+<meta property="og:title" content="Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs - dstack" />
+<meta property="og:description" content="Exploring how the inference performance of Llama 3.1 405B varies on 8x AMD MI300X GPUs across vLLM and TGI backends in different use cases." />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/blog/amd-mi300x-inference-benchmark.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/blog/" />
+<meta property="og:url" content="https://dstack.ai/blog/amd-mi300x-inference-benchmark/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Blog - dstack" />
-<meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/blog/index.png" />
+<meta property="twitter.title" content="Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs - dstack" />
+<meta property="twitter:description" content="Exploring how the inference performance of Llama 3.1 405B varies on 8x AMD MI300X GPUs across vLLM and TGI backends in different use cases." />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/blog/amd-mi300x-inference-benchmark.png" />
 </head>
   
   
@@ -119,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blog" class="md-skip">
+        <a href="#benchmarking-llama-31-405b-on-8x-amd-mi300x-gpus" class="md-skip">
           Skip to content
         </a>
       
@@ -163,7 +161,7 @@ and star us on
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -180,7 +178,7 @@ and star us on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blog
+              Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs
             
           </span>
         </div>
@@ -280,7 +278,7 @@ and star us on
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -305,7 +303,7 @@ and star us on
     
     
       <li class="md-tabs__item">
-        <a href="../docs/" class="md-tabs__link">
+        <a href="../../docs/" class="md-tabs__link">
           
   
   Docs
@@ -326,7 +324,7 @@ and star us on
     
     
       <li class="md-tabs__item">
-        <a href="../examples/" class="md-tabs__link">
+        <a href="../../examples/" class="md-tabs__link">
           
   
   Examples
@@ -342,7 +340,7 @@ and star us on
   
   
     <li class="md-tabs__item">
-      <a href="../backends/" class="md-tabs__link">
+      <a href="../../backends/" class="md-tabs__link">
         
   
     
@@ -363,7 +361,7 @@ and star us on
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   Blog
@@ -385,7 +383,9 @@ and star us on
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -398,7 +398,7 @@ and star us on
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -425,7 +425,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,7 +551,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +578,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/installation/" class="md-nav__link">
+      <a href="../../docs/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -605,7 +605,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/quickstart/" class="md-nav__link">
+      <a href="../../docs/quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -690,7 +690,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/dev-environments/" class="md-nav__link">
+      <a href="../../docs/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -717,7 +717,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/tasks/" class="md-nav__link">
+      <a href="../../docs/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -744,7 +744,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/services/" class="md-nav__link">
+      <a href="../../docs/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -771,7 +771,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/fleets/" class="md-nav__link">
+      <a href="../../docs/concepts/fleets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,7 +798,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/gateways/" class="md-nav__link">
+      <a href="../../docs/concepts/gateways/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +825,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/volumes/" class="md-nav__link">
+      <a href="../../docs/concepts/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -852,7 +852,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/projects/" class="md-nav__link">
+      <a href="../../docs/concepts/projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +937,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/troubleshooting/" class="md-nav__link">
+      <a href="../../docs/guides/troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +964,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/protips/" class="md-nav__link">
+      <a href="../../docs/guides/protips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,7 +991,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/server-deployment/" class="md-nav__link">
+      <a href="../../docs/guides/server-deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1076,7 +1076,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/server/config.yml/" class="md-nav__link">
+      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1153,7 +1153,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1180,7 +1180,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/task/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1207,7 +1207,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/service/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1234,7 +1234,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/fleet/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/fleet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1261,7 +1261,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/gateway/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1288,7 +1288,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/volume/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/volume/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1323,7 +1323,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/cli/" class="md-nav__link">
+      <a href="../../docs/reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1400,7 +1400,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/api/python/" class="md-nav__link">
+      <a href="../../docs/reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1427,7 +1427,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/api/rest/" class="md-nav__link">
+      <a href="../../docs/reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1527,7 +1527,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1604,7 +1604,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/axolotl/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/axolotl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1631,7 +1631,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/alignment-handbook/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/alignment-handbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1658,7 +1658,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/trl/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/trl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1743,7 +1743,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/accelerators/amd/" class="md-nav__link">
+      <a href="../../examples/accelerators/amd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1770,7 +1770,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/accelerators/tpu/" class="md-nav__link">
+      <a href="../../examples/accelerators/tpu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1855,7 +1855,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/llms/llama31/" class="md-nav__link">
+      <a href="../../examples/llms/llama31/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1882,7 +1882,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/llms/llama32/" class="md-nav__link">
+      <a href="../../examples/llms/llama32/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1924,7 +1924,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../backends/" class="md-nav__link">
+      <a href="../../backends/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2006,38 +2006,10 @@ and star us on
   
   
     
-      
-    
   
   
     <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    <span class="md-typeset">
-      Blog
-    </span>
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2054,92 +2026,6 @@ and star us on
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#benchmarking-llama-31-405b-on-8x-amd-mi300x-gpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-tpus-for-fine-tuning-and-deploying-llms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using TPUs for fine-tuning and deploying LLMs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supporting-amd-accelerators-on-runpod" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supporting AMD accelerators on RunPod
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-volumes-to-optimize-cold-starts-on-runpod" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using volumes to optimize cold starts on RunPod
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dstack-sky-now-supports-your-own-cloud-accounts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        dstack Sky now supports your own cloud accounts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introducing-dstack-sky" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Introducing dstack Sky
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2207,7 +2093,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="archive/2024/" class="md-nav__link">
+      <a href="../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2252,6 +2138,8 @@ and star us on
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2271,10 +2159,12 @@ and star us on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#benchmarking-llama-31-405b-on-8x-amd-mi300x-gpus" class="md-nav__link">
+  <a href="#benchmark-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs
+        <span class="md-typeset">
+          Benchmark setup
+        </span>
       
     </span>
   </a>
@@ -2282,57 +2172,195 @@ and star us on
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-tpus-for-fine-tuning-and-deploying-llms" class="md-nav__link">
+  <a href="#observations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using TPUs for fine-tuning and deploying LLMs
+        <span class="md-typeset">
+          Observations
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Observations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tokensec-per-batch-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Token/sec per batch size
+        </span>
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#supporting-amd-accelerators-on-runpod" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#ttft-per-batch-size" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supporting AMD accelerators on RunPod
+        <span class="md-typeset">
+          TTFT per batch size
+        </span>
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#using-volumes-to-optimize-cold-starts-on-runpod" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#tokensec-per-context-size" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using volumes to optimize cold starts on RunPod
+        <span class="md-typeset">
+          Token/sec per context size
+        </span>
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#dstack-sky-now-supports-your-own-cloud-accounts" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#tokensec-per-rps-ttft-per-rps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dstack Sky now supports your own cloud accounts
+        <span class="md-typeset">
+          Token/sec per RPS &amp; TTFT per RPS
+        </span>
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#introducing-dstack-sky" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#vram-consumption" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Introducing dstack Sky
+        <span class="md-typeset">
+          vRAM consumption
+        </span>
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="vRAM consumption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tgi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          TGI
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vllm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          vLLM
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          What's next?
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What's next?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thanks-to-our-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Thanks to our friends
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thanks to our friends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hot-aisle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hot Aisle
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runpod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          RunPod
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2345,268 +2373,274 @@ and star us on
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <style>
-.md-sidebar--secondary {
-    visibility: hidden;
-}
-</style>
-
-<h1 id="blog">Blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-10-09 00:00:00">October 9, 2024</time></li>
-        
-        
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2024-10-09 00:00:00" class="md-ellipsis">October 9, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="benchmarking-llama-31-405b-on-8x-amd-mi300x-gpus"><a class="toclink" href="amd-mi300x-inference-benchmark/">Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs</a></h2>
-<p>At <code>dstack</code>, we've been adding support for AMD GPUs with <a href="../docs/concepts/fleets/#ssh-fleets">SSH fleets</a>, 
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+  
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/blog/posts/amd-mi300x-inference-benchmark.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="benchmarking-llama-31-405b-on-8x-amd-mi300x-gpus">Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs<a class="headerlink" href="#benchmarking-llama-31-405b-on-8x-amd-mi300x-gpus" title="Permanent link">&para;</a></h1>
+<p>At <code>dstack</code>, we've been adding support for AMD GPUs with <a href="../../docs/concepts/fleets/#ssh-fleets">SSH fleets</a>, 
 so we saw this as a great chance to test our integration by benchmarking AMD GPUs. Our friends at 
 <a href="https://hotaisle.xyz/" target="_blank">Hot Aisle <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>, who build top-tier 
 bare metal compute for AMD GPUs, kindly provided the hardware for the benchmark.</p>
 <p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-hotaisle-amd-mi300x-prompt-v4.png?raw=true" width="750" /></p>
+<!-- more -->
 
-    
-      <nav class="md-post__action">
-        <a href="amd-mi300x-inference-benchmark/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-09-10 00:00:00">September 10, 2024</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="using-tpus-for-fine-tuning-and-deploying-llms"><a class="toclink" href="tpu-on-gcp/">Using TPUs for fine-tuning and deploying LLMs</a></h2>
-<p>If you’re using or planning to use TPUs with Google Cloud, you can now do so via <code>dstack</code>. Just specify the TPU version and the number of cores 
-(separated by a dash), in the <code>gpu</code> property under <code>resources</code>. </p>
-<p>Read below to find out how to use TPUs with <code>dstack</code> for fine-tuning and deploying
-LLMs, leveraging open-source tools like Hugging Face’s 
-<a href="https://github.com/huggingface/optimum-tpu" target="_blank">Optimum TPU <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> 
-and <a href="https://docs.vllm.ai/en/latest/getting_started/tpu-installation.html" target="_blank">vLLM <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+<p>With access to a bare metal machine with 8x AMD MI300X GPUs from Hot Aisle, we decided to skip smaller models and went
+with Llama 3.1 405B. To make the benchmark interesting, we tested how inference performance varied across different
+backends (vLLM and TGI) and use cases (real-time vs batch inference, different context sizes, etc.).</p>
+<h2 id="benchmark-setup">Benchmark setup<a class="headerlink" href="#benchmark-setup" title="Permanent link">&para;</a></h2>
+<p>Here is the spec of the bare metal machine we got:</p>
+<ul>
+<li>Intel® Xeon® Platinum 8470 2G, 52C/104T, 16GT/s, 105M Cache, Turbo, HT (350W) [x2]</li>
+<li>AMD MI300X GPU OAM 192GB 750W GPUs [x8]</li>
+<li>64GB RDIMM, 4800MT/s Dual Rank [x32]</li>
+</ul>
+<details class="info">
+<summary>Set up an SSH fleet</summary>
+<p>Hot Aisle provided us with SSH access to the machine. To make it accessible via <code>dstack</code>,
+we created an <a href="../../docs/concepts/fleets/#ssh-fleets">SSH fleet</a> using the following configuration:</p>
+<p><div editor-title="hotaisle.dstack.yml"> </p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hotaisle-fleet</span>
 
-    
-      <nav class="md-post__action">
-        <a href="tpu-on-gcp/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-08-21 00:00:00">August 21, 2024</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="supporting-amd-accelerators-on-runpod"><a class="toclink" href="amd-on-runpod/">Supporting AMD accelerators on RunPod</a></h2>
-<p>While <code>dstack</code> helps streamline the orchestration of containers for AI, its primary goal is to offer vendor independence
-and portability, ensuring compatibility across different hardware and cloud providers.</p>
-<p>Inspired by the recent <code>MI300X</code> benchmarks, we are pleased to announce that RunPod is the first cloud provider to offer
-AMD GPUs through <code>dstack</code>, with support for other cloud providers and on-prem servers to follow.</p>
+<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">any</span>
 
-    
-      <nav class="md-post__action">
-        <a href="amd-on-runpod/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-08-13 00:00:00">August 13, 2024</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="using-volumes-to-optimize-cold-starts-on-runpod"><a class="toclink" href="volumes-on-runpod/">Using volumes to optimize cold starts on RunPod</a></h2>
-<p>Deploying custom models in the cloud often faces the challenge of cold start times, including the time to provision a
-new instance and download the model. This is especially relevant for services with autoscaling when new model replicas
-need to be provisioned quickly. </p>
-<p>Let's explore how <code>dstack</code> optimizes this process using volumes, with an example of
-deploying a model on RunPod.</p>
+<span class="nt">ssh_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hotaisle</span>
+<span class="w">  </span><span class="nt">identity_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/hotaisle_id_rsa</span>
 
-    
-      <nav class="md-post__action">
-        <a href="volumes-on-runpod/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-06-11 00:00:00">June 11, 2024</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="dstack-sky-now-supports-your-own-cloud-accounts"><a class="toclink" href="dstack-sky-own-cloud-accounts/">dstack Sky now supports your own cloud accounts</a></h2>
-<p><a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> 
-enables you to access GPUs from the global marketplace at the most
-competitive rates. However, sometimes you may want to use your own cloud accounts. 
-With today's release, both options are now supported.</p>
-<p><img alt="dstack-sky-banner.png" src="https://raw.githubusercontent.com/dstackai/static-assets/main/static-assets/images/dstack-sky-project-config.png" width="650" /></p>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ssh.hotaisle.cloud</span>
+<span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22013</span>
+</code></pre></div>
+</div>
+<p>After running <code>dstack apply -f hotaisle.dstack.yml</code>, we were ready to run dev environments, tasks, and services on
+this fleet via <code>datack</code>.</p>
+</details>
+<details class="info">
+<summary>vLLM</summary>
+<div class="highlight"><pre><span></span><code>PyTorch version: 2.4.1+rocm6.1
+Is debug build: False
+CUDA used to build PyTorch: N/A
+ROCM used to build PyTorch: 6.1.40091-a8dbc0c19
 
-    
-      <nav class="md-post__action">
-        <a href="dstack-sky-own-cloud-accounts/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-03-11 00:00:00">March 11, 2024</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="introducing-dstack-sky"><a class="toclink" href="dstack-sky/">Introducing dstack Sky</a></h2>
-<p>Today we're previewing <code>dstack Sky</code>, a service built on top of 
-<code>dstack</code> that enables you to get GPUs at competitive rates from a wide pool of providers.</p>
-<p><img alt="dstack-sky-banner.png" src="images/dstack-sky-banner-4.png" width="650" /></p>
+OS: Ubuntu 22.04.4 LTS (x86_64)
+GCC version: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+Clang version: 17.0.0 (https://github.com/RadeonOpenCompute/llvm-project roc-6.1.0 24103 7db7f5e49612030319346f900c08f474b1f9023a)
+CMake version: version 3.26.4
+Libc version: glibc-2.35
 
-    
-      <nav class="md-post__action">
-        <a href="dstack-sky/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-      
-        
-          
+Python version: 3.10.14 (main, Mar 21 2024, 16:24:04) [GCC 11.2.0] (64-bit runtime)
+Python platform: Linux-6.8.0-45-generic-x86_64-with-glibc2.35
+Is CUDA available: True
+CUDA runtime version: Could not collect
+CUDA_MODULE_LOADING set to: LAZY
+GPU models and configuration: AMD Instinct MI300X (gfx942:sramecc+:xnack-)
+Nvidia driver version: Could not collect
+cuDNN version: Could not collect
+HIP runtime version: 6.1.40093
+MIOpen runtime version: 3.1.0
+Is XNNPACK available: True
+
+Versions of relevant libraries:
+[pip3] mypy==1.4.1
+[pip3] mypy-extensions==1.0.0
+[pip3] numpy==1.26.4
+[pip3] pytorch-triton-rocm==3.0.0
+[pip3] pyzmq==24.0.1
+[pip3] torch==2.4.1+rocm6.1
+[pip3] torchaudio==2.4.1+rocm6.1
+[pip3] torchvision==0.16.1+fdea156
+[pip3] transformers==4.45.1
+[pip3] triton==3.0.0
+[conda] No relevant packages
+ROCM Version: 6.1.40091-a8dbc0c19
+Neuron SDK Version: N/A
+vLLM Version: 0.6.3.dev116+g151ef4ef
+vLLM Build Flags:
+CUDA Archs: Not Set; ROCm: Disabled; Neuron: Disabled
+</code></pre></div>
+</details>
+<details class="info">
+<summary>TGI</summary>
+<p>The <code>ghcr.io/huggingface/text-generation-inference:sha-11d7af7-rocm</code> Docker image was used.</p>
+</details>
+<p>For conducting the tests, we've been using the <a href="https://github.com/vllm-project/vllm/blob/main/benchmarks/benchmark_serving.py" target="_blank">
+<code>benchmark_serving</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> provided by vLLM. </p>
+<h2 id="observations">Observations<a class="headerlink" href="#observations" title="Permanent link">&para;</a></h2>
+<h3 id="tokensec-per-batch-size">Token/sec per batch size<a class="headerlink" href="#tokensec-per-batch-size" title="Permanent link">&para;</a></h3>
+<p>TGI outperforms vLLM across all batch sizes in terms of token throughput. The performance gap increases as the batch size increases. For batches larger than 64, there is significant difference in performance. The sequence lengths of prompts are kept constant at 80 tokens per prompt.
+<img alt="chart1" src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_short_seq/throughput_tgi_vllm.png" /></p>
+<h3 id="ttft-per-batch-size">TTFT per batch size<a class="headerlink" href="#ttft-per-batch-size" title="Permanent link">&para;</a></h3>
+<p>TGI outperforms vLLM in Time To First Token across all batch sizes except batch size 2 &amp; 32. Here too the performance gap is significant at larger batches.
+<img alt="chart2" src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_short_seq/ttft_mean_tgi_vllm.png" /></p>
+<h3 id="tokensec-per-context-size">Token/sec per context size<a class="headerlink" href="#tokensec-per-context-size" title="Permanent link">&para;</a></h3>
+<p>To check the performance in larger prompt sizes we conducted the tests at 10000 tokens per prompt. Here too, in terms of token throughput and TTFT,
+TGI outperformed vLLM significantly.
+<img alt="chart3" src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_long_seq/throughput_tgi_vllm.png" />
+<img alt="chart4" src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_long_seq/mean_ttft_tgi_vllm.png" /></p>
+<h3 id="tokensec-per-rps-ttft-per-rps">Token/sec per RPS &amp; TTFT per RPS<a class="headerlink" href="#tokensec-per-rps-ttft-per-rps" title="Permanent link">&para;</a></h3>
+<p>To evaluate the performance scalability of TGI &amp; vLLM we conducted tests with increasing Request Per Second (RPS) and increasing Requests Sent (RS) with same prompt size of 1000 tokens in all runs. In this experiment, we sent requests starting from 
+30 Requests at 1 RPS, 60 Requests at 2 RPS, ...,  to 150 Requests at 5 RPS. Ideally, all the runs should complete within same time frame, however due to limitation in resources as well as resource utilization increasing RPS will
+not proportionally increase the throughout (token/s) and maintain TTFT. Below observations show how both backends behave. </p>
+<p>At low 1 RPS(Request Per Second), vLLM is slightly better than TGI. Between 2 and 4 RPS,  TGI outperforms significantly in both token/s and TTFT.
+However, TGI starts to drop requests after 5 RPS
+<img alt="chart5" src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/token_per_second_low_tgi_vllm.png" />
+<img alt="chart6" src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/mean_ttft_low_tgi_vllm.png" /></p>
+<p>We conducted same test with larger number of requests (300 to 900). At 900 requests with 3 RPS, TGI dropped most of the requests, however performed significantly better below 900 Requests.
+<img alt="chart7" src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/token_per_second_tpi_vllm.png" />
+<img alt="chart8" src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/mean_ttft_tgi_vllm.png" /></p>
+<h3 id="vram-consumption">vRAM consumption<a class="headerlink" href="#vram-consumption" title="Permanent link">&para;</a></h3>
+<h4 id="tgi">TGI<a class="headerlink" href="#tgi" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>============================================ ROCm System Management Interface ============================================
+====================================================== Concise Info ======================================================
+Device  Node  IDs              Temp        Power     Partitions          SCLK    MCLK    Fan  Perf  PwrCap  VRAM%  GPU%  
+              (DID,     GUID)  (Junction)  (Socket)  (Mem, Compute, ID)                                                  
+==========================================================================================================================
+0       2     0x74a1,   55354  47.0°C      139.0W    NPS1, SPX, 0        132Mhz  900Mhz  0%   auto  750.0W  68%    0%    
+1       3     0x74a1,   41632  40.0°C      135.0W    NPS1, SPX, 0        131Mhz  900Mhz  0%   auto  750.0W  68%    0%    
+2       4     0x74a1,   47045  44.0°C      136.0W    NPS1, SPX, 0        132Mhz  900Mhz  0%   auto  750.0W  68%    0%    
+3       5     0x74a1,   60169  48.0°C      143.0W    NPS1, SPX, 0        132Mhz  900Mhz  0%   auto  750.0W  68%    0%    
+4       6     0x74a1,   56024  46.0°C      139.0W    NPS1, SPX, 0        132Mhz  900Mhz  0%   auto  750.0W  68%    0%    
+5       7     0x74a1,   705    42.0°C      136.0W    NPS1, SPX, 0        131Mhz  900Mhz  0%   auto  750.0W  68%    0%    
+6       8     0x74a1,   59108  51.0°C      144.0W    NPS1, SPX, 0        132Mhz  900Mhz  0%   auto  750.0W  68%    0%    
+7       9     0x74a1,   10985  44.0°C      138.0W    NPS1, SPX, 0        132Mhz  900Mhz  0%   auto  750.0W  68%    0%    
+==========================================================================================================================
+================================================== End of ROCm SMI Log ===================================================
+</code></pre></div>
+<h4 id="vllm">vLLM<a class="headerlink" href="#vllm" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="o">=========================================</span><span class="w"> </span>ROCm<span class="w"> </span>System<span class="w"> </span>Management<span class="w"> </span><span class="nv">Interface</span><span class="w"> </span><span class="o">=========================================</span>
+<span class="o">===================================================</span><span class="w"> </span>Concise<span class="w"> </span><span class="nv">Info</span><span class="w"> </span><span class="o">===================================================</span>
+Device<span class="w">  </span><span class="o">[</span>Model<span class="w"> </span>:<span class="w"> </span>Revision<span class="o">]</span><span class="w">    </span>Temp<span class="w">        </span>Power<span class="w">     </span>Partitions<span class="w">      </span>SCLK<span class="w">    </span>MCLK<span class="w">    </span>Fan<span class="w">  </span>Perf<span class="w">  </span>PwrCap<span class="w">  </span>VRAM%<span class="w">  </span>GPU%<span class="w">  </span>
+<span class="w">        </span>Name<span class="w"> </span><span class="o">(</span><span class="m">20</span><span class="w"> </span>chars<span class="o">)</span><span class="w">       </span><span class="o">(</span>Junction<span class="o">)</span><span class="w">  </span><span class="o">(</span>Socket<span class="o">)</span><span class="w">  </span><span class="o">(</span>Mem,<span class="w"> </span>Compute<span class="o">)</span><span class="w">                                                  </span>
+<span class="o">====================================================================================================================</span>
+<span class="m">0</span><span class="w">       </span><span class="o">[</span>0x74a1<span class="w"> </span>:<span class="w"> </span>0x00<span class="o">]</span><span class="w">       </span><span class="m">47</span>.0°C<span class="w">      </span><span class="m">139</span>.0W<span class="w">    </span>NPS1,<span class="w"> </span>SPX<span class="w">       </span>132Mhz<span class="w">  </span>900Mhz<span class="w">  </span><span class="m">0</span>%<span class="w">   </span>auto<span class="w">  </span><span class="m">750</span>.0W<span class="w">   </span><span class="m">97</span>%<span class="w">   </span><span class="m">0</span>%<span class="w">    </span>
+<span class="w">        </span>AMD<span class="w"> </span>Instinct<span class="w"> </span>MI300X<span class="w">                                                                                         </span>
+<span class="m">1</span><span class="w">       </span><span class="o">[</span>0x74a1<span class="w"> </span>:<span class="w"> </span>0x00<span class="o">]</span><span class="w">       </span><span class="m">39</span>.0°C<span class="w">      </span><span class="m">135</span>.0W<span class="w">    </span>NPS1,<span class="w"> </span>SPX<span class="w">       </span>131Mhz<span class="w">  </span>900Mhz<span class="w">  </span><span class="m">0</span>%<span class="w">   </span>auto<span class="w">  </span><span class="m">750</span>.0W<span class="w">   </span><span class="m">95</span>%<span class="w">   </span><span class="m">0</span>%<span class="w">    </span>
+<span class="w">        </span>AMD<span class="w"> </span>Instinct<span class="w"> </span>MI300X<span class="w">                                                                                         </span>
+<span class="m">2</span><span class="w">       </span><span class="o">[</span>0x74a1<span class="w"> </span>:<span class="w"> </span>0x00<span class="o">]</span><span class="w">       </span><span class="m">44</span>.0°C<span class="w">      </span><span class="m">136</span>.0W<span class="w">    </span>NPS1,<span class="w"> </span>SPX<span class="w">       </span>132Mhz<span class="w">  </span>900Mhz<span class="w">  </span><span class="m">0</span>%<span class="w">   </span>auto<span class="w">  </span><span class="m">750</span>.0W<span class="w">   </span><span class="m">95</span>%<span class="w">   </span><span class="m">0</span>%<span class="w">    </span>
+<span class="w">        </span>AMD<span class="w"> </span>Instinct<span class="w"> </span>MI300X<span class="w">                                                                                         </span>
+<span class="m">3</span><span class="w">       </span><span class="o">[</span>0x74a1<span class="w"> </span>:<span class="w"> </span>0x00<span class="o">]</span><span class="w">       </span><span class="m">48</span>.0°C<span class="w">      </span><span class="m">143</span>.0W<span class="w">    </span>NPS1,<span class="w"> </span>SPX<span class="w">       </span>132Mhz<span class="w">  </span>900Mhz<span class="w">  </span><span class="m">0</span>%<span class="w">   </span>auto<span class="w">  </span><span class="m">750</span>.0W<span class="w">   </span><span class="m">95</span>%<span class="w">   </span><span class="m">0</span>%<span class="w">    </span>
+<span class="w">        </span>AMD<span class="w"> </span>Instinct<span class="w"> </span>MI300X<span class="w">                                                                                         </span>
+<span class="m">4</span><span class="w">       </span><span class="o">[</span>0x74a1<span class="w"> </span>:<span class="w"> </span>0x00<span class="o">]</span><span class="w">       </span><span class="m">46</span>.0°C<span class="w">      </span><span class="m">138</span>.0W<span class="w">    </span>NPS1,<span class="w"> </span>SPX<span class="w">       </span>132Mhz<span class="w">  </span>900Mhz<span class="w">  </span><span class="m">0</span>%<span class="w">   </span>auto<span class="w">  </span><span class="m">750</span>.0W<span class="w">   </span><span class="m">95</span>%<span class="w">   </span><span class="m">0</span>%<span class="w">    </span>
+<span class="w">        </span>AMD<span class="w"> </span>Instinct<span class="w"> </span>MI300X<span class="w">                                                                                         </span>
+<span class="m">5</span><span class="w">       </span><span class="o">[</span>0x74a1<span class="w"> </span>:<span class="w"> </span>0x00<span class="o">]</span><span class="w">       </span><span class="m">41</span>.0°C<span class="w">      </span><span class="m">137</span>.0W<span class="w">    </span>NPS1,<span class="w"> </span>SPX<span class="w">       </span>131Mhz<span class="w">  </span>900Mhz<span class="w">  </span><span class="m">0</span>%<span class="w">   </span>auto<span class="w">  </span><span class="m">750</span>.0W<span class="w">   </span><span class="m">95</span>%<span class="w">   </span><span class="m">0</span>%<span class="w">    </span>
+<span class="w">        </span>AMD<span class="w"> </span>Instinct<span class="w"> </span>MI300X<span class="w">                                                                                         </span>
+<span class="m">6</span><span class="w">       </span><span class="o">[</span>0x74a1<span class="w"> </span>:<span class="w"> </span>0x00<span class="o">]</span><span class="w">       </span><span class="m">51</span>.0°C<span class="w">      </span><span class="m">143</span>.0W<span class="w">    </span>NPS1,<span class="w"> </span>SPX<span class="w">       </span>132Mhz<span class="w">  </span>900Mhz<span class="w">  </span><span class="m">0</span>%<span class="w">   </span>auto<span class="w">  </span><span class="m">750</span>.0W<span class="w">   </span><span class="m">95</span>%<span class="w">   </span><span class="m">0</span>%<span class="w">    </span>
+<span class="w">        </span>AMD<span class="w"> </span>Instinct<span class="w"> </span>MI300X<span class="w">                                                                                         </span>
+<span class="m">7</span><span class="w">       </span><span class="o">[</span>0x74a1<span class="w"> </span>:<span class="w"> </span>0x00<span class="o">]</span><span class="w">       </span><span class="m">43</span>.0°C<span class="w">      </span><span class="m">137</span>.0W<span class="w">    </span>NPS1,<span class="w"> </span>SPX<span class="w">       </span>132Mhz<span class="w">  </span>900Mhz<span class="w">  </span><span class="m">0</span>%<span class="w">   </span>auto<span class="w">  </span><span class="m">750</span>.0W<span class="w">   </span><span class="m">95</span>%<span class="w">   </span><span class="m">0</span>%<span class="w">    </span>
+<span class="w">        </span>AMD<span class="w"> </span>Instinct<span class="w"> </span><span class="nv">MI300X</span><span class="w">                                                                                         </span>
+<span class="o">====================================================================================================================</span>
+<span class="o">===============================================</span><span class="w"> </span>End<span class="w"> </span>of<span class="w"> </span>ROCm<span class="w"> </span>SMI<span class="w"> </span><span class="nv">Log</span><span class="w"> </span><span class="o">================================================</span>
+</code></pre></div>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<p>While we wait for AMD to announce new GPUs and for data centers to offer them, we’re considering tests with NVIDIA GPUs
+like the H100 and H200, and possibly Google TPU.</p>
+<p>If you’d like to support us in doing more benchmarks, please let us know.</p>
+<h3 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h3>
+<p>The source code used for this benchmark can be found in our 
+<a href="https://github.com/dstackai/benchmarks/tree/main/amd/inference" target="_blank">GitHub repo <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+<p>If you have questions, feedback, or want to help improve the benchmark, please reach out to our team.</p>
+<h2 id="thanks-to-our-friends">Thanks to our friends<a class="headerlink" href="#thanks-to-our-friends" title="Permanent link">&para;</a></h2>
+<h3 id="hot-aisle">Hot Aisle<a class="headerlink" href="#hot-aisle" title="Permanent link">&para;</a></h3>
+<p><a href="https://hotaisle.xyz/" target="_blank">Hot Aisle <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> 
+is the primary sponsor of this benchmark, and we are sincerely grateful for their hardware and support.<br />
+If you'd like to use top-tier bare metal compute with AMD GPUs, we recommend going
+with Hot Aisle. Once you gain access to a cluster, it can be easily accessed via <code>dstack</code>'s <a href="../../docs/concepts/fleets/#ssh-fleets">SSH fleet</a> easily.</p>
+<h3 id="runpod">RunPod<a class="headerlink" href="#runpod" title="Permanent link">&para;</a></h3>
+<p>If you’d like to use on-demand compute with AMD GPUs at affordable prices, you can configure <code>dstack</code> to
+use <a href="https://runpod.io/" target="_blank">RunPod <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>. In
+this case, <code>dstack</code> will be able to provision fleets automatically when you run dev environments, tasks, and
+services.</p>
 
 
 
-<nav class="md-pagination">
+
+
+
+
   
-</nav>
-        
+  
+
+
+
+  
+
+
+  
+
+
+
       
-    </div>
+    </article>
   </div>
 
           
@@ -2741,17 +2775,17 @@ With today's release, both options are now supported.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../assets/javascripts/workers/search.c7c1ca2c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.c7c1ca2c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../assets/javascripts/bundle.9c5b6415.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9c5b6415.min.js"></script>
       
-        <script src="../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 <script src="https://widget.kapa.ai/kapa-widget.bundle.js"
