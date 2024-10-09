@@ -2382,11 +2382,8 @@ and star us on
 
 
 <h1 id="amd">AMD<a class="headerlink" href="#amd" title="Permanent link">&para;</a></h1>
-<p>Since <a href="https://github.com/dstackai/dstack/releases/0.18.11rc1" target="_blank">0.18.11 <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>,
-you can specify an AMD GPU under <code>resources</code>. Below are a few examples.</p>
-<blockquote>
-<p>AMD accelerators are currently supported only with the <a href="https://dstack.ai/docs/reference/server/config.yml/#runpod"><code>runpod</code></a> backend.</p>
-</blockquote>
+<p>If you're using the <code>runpod</code> backend or have set up an <a href="https://dstack.ai/docs/concepts/fleets#ssh-fleets">SSH fleets</a> 
+with on-prem AMD GPUs, you can use AMD GPUs.</p>
 <h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
 <p>You can use any serving framework, such as TGI and vLLM. Here's an example of a <a href="https://dstack.ai/docs/services">service</a> that deploys 
 Llama 3.1 70B in FP16 using <a href="https://huggingface.co/docs/text-generation-inference/en/installation_amd" target="_blank">TGI <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> and <a href="https://docs.vllm.ai/en/latest/getting_started/amd-installation.html" target="_blank">vLLM <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>

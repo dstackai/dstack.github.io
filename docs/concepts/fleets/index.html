@@ -2551,10 +2551,21 @@ and other optional parameters.</p>
 to the specified parameters.</p>
 <div class="admonition info">
 <p class="admonition-title">Network</p>
-<p>Set <code>placement</code> to <code>cluster</code> if the nodes should be interconnected
-(e.g. if you'd like to use them for <a href="reference/dstack.yml/task.md#distributed-tasks">multi-node tasks</a>). 
-In that case, <code>dstack</code> will provision all nodes in the same backend and region and configure the optimal
-connectivity via availability zones, placement groups, etc.</p>
+<p>To ensure the nodes of the fleet are interconnected (e.g., if you'd like to use them for
+<a href="../../reference/dstack.yml/task/#distributed-tasks">multi-node tasks</a>), 
+set <code>placement</code> to <code>cluster</code>. 
+In this case, <code>dstack</code> will provision all nodes in the same backend and region and configure optimal 
+inter-node connectivity.</p>
+<details class="info">
+<summary>AWS</summary>
+<p><code>dstack</code> automatically enables <a href="https://aws.amazon.com/hpc/efa/" target="_blank">Elastic Fabric Adapter <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
+for instance types that support it. The following instance types with EFA are supported:
+<code>p5.48xlarge</code>, <code>p4d.24xlarge</code>, <code>g4dn.12xlarge</code>, <code>g4dn.16xlarge</code>, <code>g4dn.8xlarge</code>, <code>g4dn.metal</code>,
+<code>g5.12xlarge</code>, <code>g5.16xlarge</code>, <code>g5.24xlarge</code>, <code>g5.48xlarge</code>, <code>g5.8xlarge</code>, <code>g6.12xlarge</code>,
+<code>g6.16xlarge</code>, <code>g6.24xlarge</code>, <code>g6.48xlarge</code>, <code>g6.8xlarge</code>, <code>gr6.8xlarge</code></p>
+<p>Currently, only one EFA interface is enabled regardless of the maximum number of interfaces supported by the instance type.
+This limitation will be lifted once <a href="https://github.com/dstackai/dstack/issues/1804" target="_blank">this issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> is fixed.</p>
+</details>
 </div>
 <p>Note that cloud fleets aren't supported for the <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code> backends.</p>
 </div>
@@ -2587,10 +2598,21 @@ via SSH.</p>
 install the dependencies, and configure these servers as a fleet.</p>
 <div class="admonition info">
 <p class="admonition-title">Requirements</p>
-<p>Hosts should be pre-installed with Docker.
-Systems with NVIDIA GPUs should also be pre-installed with CUDA 12.1 and
-<a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">NVIDIA Container Toolkit <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.
-The user should have <code>sudo</code> access.</p>
+<p>Hosts should be pre-installed with Docker.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="nvidia" name="__tabbed_2" type="radio" /><input id="amd" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="nvidia">NVIDIA</label><label for="amd">AMD</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Systems with NVIDIA GPUs should also be pre-installed with CUDA 12.1 and
+<a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">NVIDIA Container Toolkit <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+</div>
+<div class="tabbed-block">
+<p>Systems with AMD GPUs should also be pre-installed with AMDGPU-DKMS kernel driver (e.g. via
+<a href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/native-install/index.html">native package manager <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
+or <a href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/amdgpu-install.html">AMDGPU installer <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.)</p>
+</div>
+</div>
+</div>
+<p>The user should have passwordless <code>sudo</code> access.</p>
 </div>
 <details class="info">
 <summary>Environment variables</summary>

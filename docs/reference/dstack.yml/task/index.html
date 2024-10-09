@@ -4070,8 +4070,14 @@ and their quantity. Examples: <code>nvidia</code> (one NVIDIA GPU), <code>A100</
 
 </div>
 
-<p>If you run the task, <code>dstack</code> first provisions the master node and then runs the other nodes of the cluster.
-All nodes are provisioned in the same region.</p>
+<p>If you run the task, <code>dstack</code> first provisions the master node and then runs the other nodes of the cluster.</p>
+<details class="info">
+<summary>Network</summary>
+<p>To ensure all nodes are provisioned into a cluster placement group and to enable the highest level of inter-node 
+connectivity, it is recommended to manually create a  <a href="../../../concepts/fleets/">fleet</a> before running a task.
+This won’t be needed once <a href="https://github.com/dstackai/dstack/issues/1805" target="_blank">this issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> 
+is fixed.</p>
+</details>
 <blockquote>
 <p><code>dstack</code> is easy to use with <code>accelerate</code>, <code>torchrun</code>, and other distributed frameworks. All you need to do
 is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NODE</code>, <code>DSTACK_NODE_RANK</code>, <code>DSTACK_NODES_NUM</code>,
@@ -4081,6 +4087,8 @@ is pass the corresponding environment variables such as <code>DSTACK_GPUS_PER_NO
 <summary>Backends</summary>
 <p>Running on multiple nodes is supported only with the <code>aws</code>, <code>gcp</code>, <code>azure</code>, <code>oci</code> backends, or
 <a href="../../../concepts/fleets/#ssh-fleets">SSH fleets</a>.</p>
+<p>Additionally, the <code>aws</code> backend supports <a href="https://aws.amazon.com/hpc/efa/" target="_blank">Elastic Fabric Adapter <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.
+For a list of instance types with EFA support see <a href="../../../concepts/fleets/#cloud-fleets">Fleets</a>.</p>
 </details>
 <h3 id="web-applications">Web applications<a class="headerlink" href="#web-applications" title="Permanent link">&para;</a></h3>
 <p>Here's an example of using <code>ports</code> to run web apps with <code>tasks</code>. </p>
