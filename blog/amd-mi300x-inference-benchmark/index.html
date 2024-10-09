@@ -2288,6 +2288,32 @@ and star us on
 </li>
       
         <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Notes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Conclusion
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#whats-next" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2413,7 +2439,7 @@ and star us on
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              7 min read
+                              8 min read
                             
                           </span>
                         </div>
@@ -2601,6 +2627,15 @@ Device<span class="w">  </span><span class="o">[</span>Model<span class="w"> </s
 <span class="o">====================================================================================================================</span>
 <span class="o">===============================================</span><span class="w"> </span>End<span class="w"> </span>of<span class="w"> </span>ROCm<span class="w"> </span>SMI<span class="w"> </span><span class="nv">Log</span><span class="w"> </span><span class="o">================================================</span>
 </code></pre></div>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Inference backend configurations play a crucial role in determining the efficiency and scalability of both TGI and vLLM backends. The current benchmarks were conducted on a specific server setup, but to gain a comprehensive understanding of the performance capabilities more combinations of server configurations should be explored.</li>
+<li>While it was observed that TGI consumes less VRAM compared to vLLM on AMD hardware, more investigation is needed to fully understand the VRAM utilization patterns of both backends. </li>
+</ul>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>TGI is better for moderate to high workloads, handling increasing RPS more effectively up to certain limits. It delivers faster TTFT and higher throughput in these scenarios.
+vLLM performs well at low RPS, but its scalability is limited, making it less effective for higher workloads. TGI's performance advantage lies in its <a href="https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi">continuous batching algorithm</a>, which dynamically adjusts the size of batches, maximizes GPU utilization. 
+When considering VRAM consumption, it's clear that TGI is better optimized for AMD GPUs. This more efficient use of VRAM allows TGI to handle larger workloads and maintain higher throughput and lower latency  </p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <p>While we wait for AMD to announce new GPUs and for data centers to offer them, we’re considering tests with NVIDIA GPUs
 like the H100 and H200, and possibly Google TPU.</p>
