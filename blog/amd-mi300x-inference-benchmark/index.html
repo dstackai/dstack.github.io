@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40+insiders-4.53.14">
     
     
       
@@ -2555,11 +2555,15 @@ increasing resource utilization, higher RPS does not lead to a proportional incr
 or maintain Time to First Token (TTFT). </p>
 <p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/mean_ttft_low_tgi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
 <p>At 1 RPS, vLLM performs slightly better than TGI. However, between 2 and 4 RPS, TGI outperforms vLLM in both throughput and TTFT.</p>
+<blockquote>
 <p>Notably, TGI begins to drop requests once it reaches 5 RPS.</p>
+</blockquote>
 <p>We repeated the test using a higher number of requests, ranging from 300 to 900.</p>
 <p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/token_per_second_tpi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
+<blockquote>
 <p>At 900 requests with a rate of 3 requests per second (RPS), TGI dropped a majority of the requests. However, its
 performance improved notably when the number of requests was below 900.</p>
+</blockquote>
 <p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/charts_rps/mean_ttft_tgi_vllm.png" width="725" style="padding: 0 40px 0 50px"/></p>
 <h3 id="vram-consumption">vRAM consumption<a class="headerlink" href="#vram-consumption" title="Permanent link">&para;</a></h3>
 <p>When considering vRAM consumption right after loading model weights, TGI allocates approximately 28% less vRAM compared
@@ -2567,19 +2571,28 @@ to vLLM.</p>
 <p><img src="https://raw.githubusercontent.com/dstackai/benchmarks/refs/heads/main/amd/inference/gpu_vram_tgi_vllm.png" width="750" /></p>
 <p>This difference may be related to how vLLM <a href="https://docs.vllm.ai/en/latest/models/performance.html" target="_blank">pre-allocates GPU cache <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<ol>
+<li>For small sequence lengths, starting with a batch size of 64, TGI significantly outperforms vLLM in terms of throughput and TTFT.</li>
+<li>For larger sequence lengths, TGI outperforms vLLM even more in both throughput and TTFT, with the difference increasing as the batch size grows.</li>
+<li>At higher request rates, TGI continues to outperform vLLM, likely due to its superior ability to batch requests efficiently.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Limitation</p>
 <ul>
-<li>TGI is highly efficient at handling medium to high workloads. In our tests on 8x AMD MI300X GPU, medium workloads
-  are defined as RPS between 2 and 4. In these cases, it delivers faster time to first token (TTFT) and higher
-  throughput.</li>
-<li>Conversely, vLLM works well with lower RPS but struggles to scale, making it less ideal for more demanding workloads.</li>
-<li>TGI's edge comes from
-  its <a href="https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi" target="_blank">continuous batching algorithm <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>, which dynamically modifies batch sizes to optimize GPU usage.</li>
+<li>In certain circumstances (e.g., at higher request rates), for unknown reasons, TGI dropped requests, making it
+  impossible to accurately track throughput and TTFT.</li>
+<li>With vLLM, we used the default backend configuration. With better tuning, we might have achieved improved performance.</li>
 </ul>
-<p>To gain a more complete understanding of the performance potential, a wider variety of backend configurations should be tested.</p>
+</div>
+<p>In general, the 8x AMD MI300X is a good fit for larger models and allows us to make the most of its vRAM, especially for
+larger batches.</p>
+<p>If you’d like to support us in doing more benchmarks, please let us know.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <p>While we wait for AMD to announce new GPUs and for data centers to offer them, we’re considering tests with NVIDIA GPUs
-like the H100 and H200, and possibly Google TPU.</p>
-<p>If you’d like to support us in doing more benchmarks, please let us know.</p>
+like the H100 and H200, as well as possibly Google TPU. </p>
+<blockquote>
+<p>Also, the next step is to measure how the FP8 version of the model would perform on this hardware.</p>
+</blockquote>
 <h3 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h3>
 <p>The source code used for this benchmark can be found in our 
 <a href="https://github.com/dstackai/benchmarks/tree/main/amd/inference" target="_blank">GitHub repo <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40+insiders-4.53.14">
     
     
       
@@ -1153,11 +1153,11 @@ and star us on
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-multiple-replicase-of-the-server" class="md-nav__link">
+  <a href="#deploying-multiple-replicas-of-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Deploying multiple replicase of the server
+          Deploying multiple replicas of the server
         </span>
       
     </span>
@@ -2401,11 +2401,11 @@ and star us on
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-multiple-replicase-of-the-server" class="md-nav__link">
+  <a href="#deploying-multiple-replicas-of-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Deploying multiple replicase of the server
+          Deploying multiple replicas of the server
         </span>
       
     </span>
@@ -2520,7 +2520,7 @@ See <a href="../../concepts/fleets/#ssh-fleets">SSH fleets</a> for more details.
 <summary>Migrate from SQLite to PostgreSQL</summary>
 <p>You can migrate the existing state from SQLite to PostgreSQL using <code>pgloader</code>:</p>
 <ol>
-<li>Create an new PostgreSQL database</li>
+<li>Create a new PostgreSQL database</li>
 <li>Clone the <code>dstack</code> repo and <a href="https://github.com/dstackai/dstack/blob/master/contributing/DEVELOPMENT.md">install</a> <code>dstack</code> from source.
    Ensure you've checked out the tag that corresponds to your server version (e.g. <code>git checkout 0.18.10</code>).</li>
 <li>Apply database migrations to the new database:
@@ -2572,7 +2572,7 @@ the <code>DSTACK_SERVER_CLOUDWATCH_LOG_REGION</code> environment variables. </p>
 <span class="p">}</span>
 </code></pre></div>
 </details>
-<h2 id="deploying-multiple-replicase-of-the-server">Deploying multiple replicase of the server<a class="headerlink" href="#deploying-multiple-replicase-of-the-server" title="Permanent link">&para;</a></h2>
+<h2 id="deploying-multiple-replicas-of-the-server">Deploying multiple replicas of the server<a class="headerlink" href="#deploying-multiple-replicas-of-the-server" title="Permanent link">&para;</a></h2>
 <p>If you'd like to deploy multiple server replicas, make sure to configure <code>dstack</code> to use <a href="#postgresql">PostgreSQL</a>
 and <a href="#aws-cloudwatch">AWS CloudWatch</a>.</p>
 
