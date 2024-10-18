@@ -2512,7 +2512,8 @@ and star us on
 
 
 <h1 id="docker-compose">Docker Compose<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h1>
-<p>All backends except <code>runpod</code>, <code>vastai</code> and <code>kubernetes</code> allow to use Docker and Docker Compose 
+<p>All backends except <code>runpod</code>, <code>vastai</code> and <code>kubernetes</code> allow to
+use <a href="https://dstack.ai/docs/guides/protips#docker-and-docker-compose">Docker and Docker Compose</a>
 inside <code>dstack</code> runs.</p>
 <p>This example shows how to deploy Hugging Face <a href="https://huggingface.co/docs/chat-ui/index" target="_blank">Chat UI <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
 with <a href="https://huggingface.co/docs/text-generation-inference/en/index" target="_blank">TGI <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
@@ -2614,7 +2615,7 @@ use the service configuration. You can find it at <a href="https://github.com/ds
 <p>To run a configuration, use the <a href="https://dstack.ai/docs/reference/cli/index.md#dstack-apply"><code>dstack apply</code></a> command.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HUGGING_FACE_HUB_TOKEN</span><span class="o">=</span>...
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HF_TOKEN</span><span class="o">=</span>...
 
 $<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/examples/misc/docker-compose/task.dstack.yml
 
