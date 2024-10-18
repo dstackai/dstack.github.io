@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41+insiders-4.53.14">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fd1ad6e4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.12320a83.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -85,6 +85,21 @@
 
     
     
+  
+      
+      
+        
+      
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="dstack - Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs" />
+      <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
+      <meta property="og:url" content="https://dstack.ai/blog/amd-mi300x-inference-benchmark/" />
+      <meta property="og:image" content="https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-hotaisle-amd-mi300x-prompt-v5.png?raw=true" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+    
+
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs - dstack" />
@@ -1910,6 +1925,91 @@ and star us on
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/misc/docker-compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2444,7 +2544,7 @@ and star us on
 so we saw this as a great chance to test our integration by benchmarking AMD GPUs. Our friends at 
 <a href="https://hotaisle.xyz/" target="_blank">Hot Aisle <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>, who build top-tier 
 bare metal compute for AMD GPUs, kindly provided the hardware for the benchmark.</p>
-<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-hotaisle-amd-mi300x-prompt-v4.png?raw=true" width="750" /></p>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-hotaisle-amd-mi300x-prompt-v5.png?raw=true" width="750" /></p>
 <!-- more -->
 
 <p>With access to a bare metal machine with 8x AMD MI300X GPUs from Hot Aisle, we decided to skip smaller models and went
@@ -2769,7 +2869,7 @@ services.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.9c5b6415.min.js"></script>
+      <script src="../../assets/javascripts/bundle.203fd0bc.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       

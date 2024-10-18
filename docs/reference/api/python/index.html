@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41+insiders-4.53.14">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.fd1ad6e4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.12320a83.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,6 +87,10 @@
 
     
     
+  
+      
+    
+
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Python API - dstack" />
@@ -1657,6 +1661,17 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#privileged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        privileged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#entrypoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2030,6 +2045,17 @@ and star us on
     <span class="md-ellipsis">
       
         image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privileged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        privileged
       
     </span>
   </a>
@@ -3281,6 +3307,91 @@ and star us on
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/misc/docker-compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3694,6 +3805,17 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#privileged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        privileged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#entrypoint" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4067,6 +4189,17 @@ and star us on
     <span class="md-ellipsis">
       
         image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privileged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        privileged
       
     </span>
   </a>
@@ -4913,7 +5046,7 @@ configured <code>ports</code> to <code>localhost</code>.</li>
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.Client.runs">runs</span></code></td>
             <td>
-                  <code><span title="dstack.api._public.runs.RunCollection">RunCollection</span></code>
+                  <code>RunCollection</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4924,7 +5057,7 @@ configured <code>ports</code> to <code>localhost</code>.</li>
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.Client.repos">repos</span></code></td>
             <td>
-                  <code><span title="dstack.api._public.repos.RepoCollection">RepoCollection</span></code>
+                  <code>RepoCollection</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4935,7 +5068,7 @@ configured <code>ports</code> to <code>localhost</code>.</li>
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.Client.backends">backends</span></code></td>
             <td>
-                  <code><span title="dstack.api._public.backends.BackendCollection">BackendCollection</span></code>
+                  <code>BackendCollection</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4945,6 +5078,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
           </tr>
       </tbody>
     </table>
+
+
+
+
+
 
 
 
@@ -4989,9 +5127,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>project_name</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code>project_name</code>
+            </td>
+            <td>
+                  <code>Optional[str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5003,9 +5143,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>server_url</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code>server_url</code>
+            </td>
+            <td>
+                  <code>Optional[str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5017,9 +5159,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>user_token</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code>user_token</code>
+            </td>
+            <td>
+                  <code>Optional[str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5031,9 +5175,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>ssh_identity_file</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.utils.path.PathLike">PathLike</span>]</code>
+                <code>ssh_identity_file</code>
+            </td>
+            <td>
+                  <code>Optional[PathLike]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5059,7 +5205,7 @@ configured <code>ports</code> to <code>localhost</code>.</li>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="dstack.api._public.Client">Client</span></code>
+                  <code>Client</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5092,6 +5238,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
 
 
         <p>Operations with runs</p>
+
+
+
+
+
 
 
 
@@ -5132,7 +5283,9 @@ configured <code>ports</code> to <code>localhost</code>.</li>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>run_name</code></td>
+            <td>
+                <code>run_name</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5160,7 +5313,7 @@ configured <code>ports</code> to <code>localhost</code>.</li>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack.api._public.runs.Run">Run</span>]</code>
+                  <code>Optional[Run]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5201,7 +5354,9 @@ configured <code>ports</code> to <code>localhost</code>.</li>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>all</code></td>
+            <td>
+                <code>all</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5229,7 +5384,7 @@ configured <code>ports</code> to <code>localhost</code>.</li>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="typing.List">List</span>[<span title="dstack.api._public.runs.Run">Run</span>]</code>
+                  <code>List[Run]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5270,9 +5425,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>configuration</code></td>
             <td>
-                  <code><span title="typing.Union">Union</span>[<span title="dstack.api.Task">Task</span>, <span title="dstack.api.Service">Service</span>]</code>
+                <code>configuration</code>
+            </td>
+            <td>
+                  <code>Union[Task, Service]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5284,9 +5441,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>configuration_path</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code>configuration_path</code>
+            </td>
+            <td>
+                  <code>Optional[str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5298,9 +5457,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>repo</code></td>
             <td>
-                  <code><span title="typing.Union">Union</span>[<span title="dstack._internal.core.models.repos.local.LocalRepo">LocalRepo</span>, <span title="dstack._internal.core.models.repos.remote.RemoteRepo">RemoteRepo</span>, <span title="dstack._internal.core.models.repos.virtual.VirtualRepo">VirtualRepo</span>]</code>
+                <code>repo</code>
+            </td>
+            <td>
+                  <code>Union[LocalRepo, RemoteRepo, VirtualRepo]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5312,9 +5473,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>backends</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span>]]</code>
+                <code>backends</code>
+            </td>
+            <td>
+                  <code>Optional[List[BackendType]]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5326,9 +5489,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>regions</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[str]]</code>
+                <code>regions</code>
+            </td>
+            <td>
+                  <code>Optional[List[str]]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5340,9 +5505,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>resources</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.resources.ResourcesSpec">ResourcesSpec</span>]</code>
+                <code>resources</code>
+            </td>
+            <td>
+                  <code>Optional[ResourcesSpec]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5354,9 +5521,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>spot_policy</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.profiles.SpotPolicy">SpotPolicy</span>]</code>
+                <code>spot_policy</code>
+            </td>
+            <td>
+                  <code>Optional[SpotPolicy]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5368,7 +5537,9 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>retry_policy</code></td>
+            <td>
+                <code>retry_policy</code>
+            </td>
             <td>
                   <code>RetryPolicy</code>
             </td>
@@ -5382,9 +5553,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>max_duration</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Union">Union</span>[int, str]]</code>
+                <code>max_duration</code>
+            </td>
+            <td>
+                  <code>Optional[Union[int, str]]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5396,9 +5569,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>max_price</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[float]</code>
+                <code>max_price</code>
+            </td>
+            <td>
+                  <code>Optional[float]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5410,9 +5585,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>working_dir</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code>working_dir</code>
+            </td>
+            <td>
+                  <code>Optional[str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5424,9 +5601,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>run_name</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code>run_name</code>
+            </td>
+            <td>
+                  <code>Optional[str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5438,7 +5617,9 @@ configured <code>ports</code> to <code>localhost</code>.</li>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>reserve_ports</code></td>
+            <td>
+                <code>reserve_ports</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5466,7 +5647,7 @@ configured <code>ports</code> to <code>localhost</code>.</li>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="dstack.api._public.runs.Run">Run</span></code>
+                  <code>Run</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5499,6 +5680,11 @@ configured <code>ports</code> to <code>localhost</code>.</li>
 
 
         <p>Operations with repos</p>
+
+
+
+
+
 
 
 
@@ -5555,9 +5741,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>repo</code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.repos.base.Repo">Repo</span></code>
+                <code>repo</code>
+            </td>
+            <td>
+                  <code>Repo</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5569,9 +5757,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>git_identity_file</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.utils.path.PathLike">PathLike</span>]</code>
+                <code>git_identity_file</code>
+            </td>
+            <td>
+                  <code>Optional[PathLike]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5583,9 +5773,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>oauth_token</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code>oauth_token</code>
+            </td>
+            <td>
+                  <code>Optional[str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5613,6 +5805,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <h4 class="reference-item" id="nodes"><code>nodes</code> - (Optional) Number of nodes. Defaults to <code>1</code>.<a class="headerlink" href="#nodes" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The run name.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="privileged"><code>privileged</code> - (Optional) Run the container in privileged mode.<a class="headerlink" href="#privileged" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="working_dir"><code>working_dir</code> - (Optional) The path to the working directory inside the container. It's specified relative to the repository directory (<code>/workflow</code>) and should be inside it. Defaults to <code>"."</code> .<a class="headerlink" href="#working_dir" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="home_dir"><code>home_dir</code> - (Optional) The absolute path to the home directory inside the container. Defaults to <code>/root</code>. Defaults to <code>/root</code>.<a class="headerlink" href="#home_dir" title="Permanent link">&para;</a></h4>
@@ -5647,6 +5840,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <h4 class="reference-item" id="_scaling"><a href="#dstack.api.Scaling"><code>scaling</code></a> - (Optional) The auto-scaling rules. Required if <code>replicas</code> is set to a range.<a class="headerlink" href="#_scaling" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The run name.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="privileged"><code>privileged</code> - (Optional) Run the container in privileged mode.<a class="headerlink" href="#privileged" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="working_dir"><code>working_dir</code> - (Optional) The path to the working directory inside the container. It's specified relative to the repository directory (<code>/workflow</code>) and should be inside it. Defaults to <code>"."</code> .<a class="headerlink" href="#working_dir" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="home_dir"><code>home_dir</code> - (Optional) The absolute path to the home directory inside the container. Defaults to <code>/root</code>. Defaults to <code>/root</code>.<a class="headerlink" href="#home_dir" title="Permanent link">&para;</a></h4>
@@ -5708,7 +5902,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.Run.ports">ports</span></code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Dict">Dict</span>[int, int]]</code>
+                  <code>Optional[Dict[int, int]]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5719,7 +5913,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.Run.backend">backend</span></code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span>]</code>
+                  <code>Optional[BackendType]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5730,7 +5924,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.Run.status">status</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.runs.RunStatus">RunStatus</span></code>
+                  <code>RunStatus</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5751,6 +5945,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           </tr>
       </tbody>
     </table>
+
+
+
+
+
 
 
 
@@ -5791,9 +5990,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>ssh_identity_file</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="dstack._internal.utils.path.PathLike">PathLike</span>]</code>
+                <code>ssh_identity_file</code>
+            </td>
+            <td>
+                  <code>Optional[PathLike]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5819,7 +6020,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="dstack.api.PortUsedError">PortUsedError</span></code>
+                  <code>PortUsedError</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5877,9 +6078,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>start_time</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="datetime.datetime">datetime</span>]</code>
+                <code>start_time</code>
+            </td>
+            <td>
+                  <code>Optional[datetime]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5891,7 +6094,9 @@ You can override these credentials via the <code>git_identity_file</code> or <co
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>diagnose</code></td>
+            <td>
+                <code>diagnose</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5919,7 +6124,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="typing.Iterable">Iterable</span>[bytes]</code>
+                  <code>Iterable[bytes]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5977,7 +6182,9 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>abort</code></td>
+            <td>
+                <code>abort</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6040,6 +6247,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -6080,9 +6292,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>repo_dir</code></td>
             <td>
-                  <code><span title="dstack._internal.utils.path.PathLike">PathLike</span></code>
+                <code>repo_dir</code>
+            </td>
+            <td>
+                  <code>PathLike</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6108,7 +6322,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="dstack._internal.core.models.repos.local.LocalRepo">LocalRepo</span></code>
+                  <code>LocalRepo</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6165,6 +6379,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -6205,9 +6424,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>repo_dir</code></td>
             <td>
-                  <code><span title="dstack._internal.utils.path.PathLike">PathLike</span></code>
+                <code>repo_dir</code>
+            </td>
+            <td>
+                  <code>PathLike</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6233,7 +6454,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="dstack._internal.core.models.repos.remote.RemoteRepo">RemoteRepo</span></code>
+                  <code>RemoteRepo</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6278,7 +6499,9 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>repo_url</code></td>
+            <td>
+                <code>repo_url</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -6292,9 +6515,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>repo_branch</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code>repo_branch</code>
+            </td>
+            <td>
+                  <code>Optional[str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6306,9 +6531,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>repo_hash</code></td>
             <td>
-                  <code><span title="typing.Optional">Optional</span>[str]</code>
+                <code>repo_hash</code>
+            </td>
+            <td>
+                  <code>Optional[str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6334,7 +6561,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="dstack._internal.core.models.repos.remote.RemoteRepo">RemoteRepo</span></code>
+                  <code>RemoteRepo</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6401,6 +6628,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           </tr>
       </tbody>
     </table>
+
+
+
+
+
 
 
 
@@ -6495,7 +6727,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.VirtualRepo.add_file_from_package.package">package</span></code></td>
             <td>
-                  <code><span title="typing.Union">Union</span>[<span title="types.ModuleType">ModuleType</span>, str]</code>
+                  <code>Union[ModuleType, str]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6561,7 +6793,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.AWS">AWS</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6572,7 +6804,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.AZURE">AZURE</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6583,7 +6815,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.CUDO">CUDO</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6594,7 +6826,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.DSTACK">DSTACK</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6605,7 +6837,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.GCP">GCP</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6616,7 +6848,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.DATACRUNCH">DATACRUNCH</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6627,7 +6859,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.KUBERNETES">KUBERNETES</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6638,7 +6870,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.LAMBDA">LAMBDA</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6649,7 +6881,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.RUNPOD">RUNPOD</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6660,7 +6892,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.TENSORDOCK">TENSORDOCK</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6671,7 +6903,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           <tr class="doc-section-item">
             <td><code><span title="dstack.api.BackendType.VASTAI">VASTAI</span></code></td>
             <td>
-                  <code><span title="dstack._internal.core.models.backends.base.BackendType">BackendType</span></code>
+                  <code>BackendType</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6681,6 +6913,11 @@ You can override these credentials via the <code>git_identity_file</code> or <co
           </tr>
       </tbody>
     </table>
+
+
+
+
+
 
 
 
@@ -6909,7 +7146,7 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.9c5b6415.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.203fd0bc.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41+insiders-4.53.14">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fd1ad6e4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.12320a83.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,6 +87,10 @@
 
     
     
+  
+      
+    
+
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="CLI - dstack" />
@@ -1520,6 +1524,19 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#dstack-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          dstack stats
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dstack-config" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2191,6 +2208,91 @@ and star us on
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/misc/docker-compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2546,6 +2648,19 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#dstack-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          dstack stats
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dstack-config" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2840,6 +2955,24 @@ Options:
 <span class="w">                        </span>The<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>SSH<span class="w"> </span>tunneling
 <span class="w">  </span>--replica<span class="w"> </span>REPLICA<span class="w">     </span>The<span class="w"> </span>relica<span class="w"> </span>number.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="m">0</span>.
 <span class="w">  </span>--job<span class="w"> </span>JOB<span class="w">             </span>The<span class="w"> </span>job<span class="w"> </span>number<span class="w"> </span>inside<span class="w"> </span>the<span class="w"> </span>replica.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="m">0</span>.
+</code></pre></div>
+
+</div>
+
+<h3 id="dstack-stats">dstack stats<a class="headerlink" href="#dstack-stats" title="Permanent link">&para;</a></h3>
+<p>This command shows run hardware metrics such as CPU, memory, and GPU utilization.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>stats<span class="w"> </span>--help
+Usage:<span class="w"> </span>dstack<span class="w"> </span>stats<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-w<span class="o">]</span><span class="w"> </span>run_name
+
+Positional<span class="w"> </span>Arguments:
+<span class="w">  </span>run_name
+
+Options:
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">      </span>Show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+<span class="w">  </span>--project<span class="w"> </span>NAME<span class="w">  </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>project.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="nv">$DSTACK_PROJECT</span>
+<span class="w">  </span>-w,<span class="w"> </span>--watch<span class="w">     </span>Watch<span class="w"> </span>run<span class="w"> </span>stats<span class="w"> </span><span class="k">in</span><span class="w"> </span>realtime
 </code></pre></div>
 
 </div>
@@ -3504,7 +3637,7 @@ Options:
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.9c5b6415.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.203fd0bc.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

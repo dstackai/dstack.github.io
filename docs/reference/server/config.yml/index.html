@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41+insiders-4.53.14">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.fd1ad6e4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.12320a83.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,6 +87,10 @@
 
     
     
+  
+      
+    
+
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="server/config.yml - dstack" />
@@ -3588,6 +3592,91 @@ and star us on
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/misc/docker-compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -5770,6 +5859,7 @@ compute.networks.get
 compute.networks.updatePolicy
 compute.regions.get
 compute.regions.list
+compute.routers.list
 compute.subnetworks.list
 compute.subnetworks.use
 compute.subnetworks.useExternalIp
@@ -6208,7 +6298,13 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>service_account</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="filename"><code>filename</code> -  The path to the service account file.<a class="headerlink" href="#filename" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="data"><code>data</code> - (Optional) The contents of the service account file.<a class="headerlink" href="#data" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="data"><code>data</code> - (Optional) The contents of the service account file. When configuring via <code>server/config.yml</code>, it's automatically filled from <code>filename</code>. When configuring via UI, it has to be specified explicitly.<a class="headerlink" href="#data" title="Permanent link">&para;</a></h4>
+<details class="info">
+<summary>Specifying <code>data</code></summary>
+<p>To specify service account file contents as a string, use <code>jq</code>:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>my-service-account-file.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-R
+</code></pre></div>
+</details>
 </div>
 <div class="tabbed-block">
 <h4 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>default</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
@@ -6272,7 +6368,13 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <h4 class="reference-item" id="_networking"><a href="#networking"><code>networking</code></a> - (Optional) The networking configuration.<a class="headerlink" href="#_networking" title="Permanent link">&para;</a></h4>
 <h2 id="_kubeconfig"><code>projects[n].backends[type=kubernetes].kubeconfig</code><a class="headerlink" href="#_kubeconfig" title="Permanent link">&para;</a></h2>
 <h5 class="reference-item" id="filename"><code>filename</code> -  The path to the kubeconfig file.<a class="headerlink" href="#filename" title="Permanent link">&para;</a></h5>
-<h4 class="reference-item" id="data"><code>data</code> - (Optional) The contents of the kubeconfig file.<a class="headerlink" href="#data" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="data"><code>data</code> - (Optional) The contents of the kubeconfig file. When configuring via <code>server/config.yml</code>, it's automatically filled from <code>filename</code>. When configuring via UI, it has to be specified explicitly.<a class="headerlink" href="#data" title="Permanent link">&para;</a></h4>
+<details class="info">
+<summary>Specifying <code>data</code></summary>
+<p>To specify service account file contents as a string, use <code>jq</code>:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>my-service-account-file.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-R
+</code></pre></div>
+</details>
 <h2 id="_networking"><code>projects[n].backends[type=kubernetes].networking</code><a class="headerlink" href="#_networking" title="Permanent link">&para;</a></h2>
 <h5 class="reference-item" id="ssh_host"><code>ssh_host</code> - (Optional) The external IP address of any node.<a class="headerlink" href="#ssh_host" title="Permanent link">&para;</a></h5>
 <h4 class="reference-item" id="ssh_port"><code>ssh_port</code> - (Optional) Any port accessible outside of the cluster.<a class="headerlink" href="#ssh_port" title="Permanent link">&para;</a></h4>
@@ -6483,7 +6585,7 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.9c5b6415.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.203fd0bc.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

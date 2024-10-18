@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41+insiders-4.53.14">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.fd1ad6e4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.12320a83.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,6 +87,10 @@
 
     
     
+  
+      
+    
+
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="service - dstack" />
@@ -1315,11 +1319,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker-image" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Docker image
+          Docker
         </span>
       
     </span>
@@ -1562,6 +1566,17 @@ and star us on
     <span class="md-ellipsis">
       
         image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privileged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        privileged
       
     </span>
   </a>
@@ -2890,6 +2905,91 @@ and star us on
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/misc/docker-compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3154,11 +3254,11 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker-image" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Docker image
+          Docker
         </span>
       
     </span>
@@ -3401,6 +3501,17 @@ and star us on
     <span class="md-ellipsis">
       
         image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privileged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        privileged
       
     </span>
   </a>
@@ -4106,7 +4217,8 @@ If you need <code>nvcc</code>, set the corresponding property to true.</p>
 </code></pre></div>
 </div>
 </details>
-<h3 id="docker-image">Docker image<a class="headerlink" href="#docker-image" title="Permanent link">&para;</a></h3>
+<h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>If you want, you can specify your own Docker image via <code>image</code>.</p>
 <div editor-title="service.dstack.yml">
 
     <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
@@ -4146,6 +4258,11 @@ If you need <code>nvcc</code>, set the corresponding property to true.</p>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 </code></pre></div>
 </details>
+<div class="admonition info">
+<p class="admonition-title">Docker and Docker Compose</p>
+<p>All backends except <code>runpod</code>, <code>vastai</code> and <code>kubernetes</code> also allow to use <a href="../../../guides/protips/#docker-and-docker-compose">Docker and Docker Compose</a> 
+inside <code>dstack</code> runs.</p>
+</div>
 <h3 id="model-mapping">Model gateway<a class="headerlink" href="#model-mapping" title="Permanent link">&para;</a></h3>
 <p>By default, if you run a service, its endpoint is accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
 <p>If you run a model, you can optionally configure the mapping to make it accessible via the 
@@ -4465,6 +4582,7 @@ and its contents will persist across runs.</p>
 <h4 class="reference-item" id="_scaling"><a href="#scaling"><code>scaling</code></a> - (Optional) The auto-scaling rules. Required if <code>replicas</code> is set to a range.<a class="headerlink" href="#_scaling" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The run name.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="privileged"><code>privileged</code> - (Optional) Run the container in privileged mode.<a class="headerlink" href="#privileged" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="working_dir"><code>working_dir</code> - (Optional) The path to the working directory inside the container. It's specified relative to the repository directory (<code>/workflow</code>) and should be inside it. Defaults to <code>"."</code> .<a class="headerlink" href="#working_dir" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="home_dir"><code>home_dir</code> - (Optional) The absolute path to the home directory inside the container. Defaults to <code>/root</code>. Defaults to <code>/root</code>.<a class="headerlink" href="#home_dir" title="Permanent link">&para;</a></h4>
@@ -4714,7 +4832,7 @@ and its contents will persist across runs.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.9c5b6415.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.203fd0bc.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

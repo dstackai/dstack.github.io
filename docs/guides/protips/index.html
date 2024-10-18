@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41+insiders-4.53.14">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fd1ad6e4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.12320a83.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -87,6 +87,10 @@
 
     
     
+  
+      
+    
+
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Protips - dstack" />
@@ -1071,6 +1075,19 @@ and star us on
       
         <span class="md-typeset">
           Tasks vs. services
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-and-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Docker and Docker Compose
         </span>
       
     </span>
@@ -2094,6 +2111,91 @@ and star us on
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/misc/docker-compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2370,6 +2472,19 @@ and star us on
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-and-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Docker and Docker Compose
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2547,6 +2662,70 @@ pre-configured and easy-to-use extension.</p>
 <p><a href="../../services/">Services</a> require a gateway but they also provide additional features for
 production-grade service deployment not offered by tasks, such as HTTPS domains and auto-scaling.
 If you run a web app as a task and it works, go ahead and run it as a service.</p>
+<h2 id="docker-and-docker-compose">Docker and Docker Compose<a class="headerlink" href="#docker-and-docker-compose" title="Permanent link">&para;</a></h2>
+<p>All backends except <code>runpod</code>, <code>vastai</code> and <code>kubernetes</code> allow to use Docker and Docker Compose 
+inside <code>dstack</code> runs. To do that, additional configuration steps are required:</p>
+<ol>
+<li>Set the <code>privileged</code> property to <code>true</code>.</li>
+<li>Set the <code>image</code> property to <code>dstackai/dind</code> (or another DinD image).</li>
+<li>For tasks and services, add <code>start-dockerd</code> as the first command. For dev environments, add <code>start-dockerd</code> as the first comand
+   in the <code>init</code> property.
+Note, <code>start-dockerd</code> is a part of <code>dstackai/dind</code> image, if you use a different DinD image,
+replace it with a corresponding command to start Docker daemon.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="task" name="__tabbed_1" type="radio" /><input id="dev-environment" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="task">Task</label><label for="dev-environment">Dev environment</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div editor-title="examples/misc/dind/task.dstack.yml">
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task-dind</span>
+
+<span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/dind</span>
+
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start-dockerd</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker compose up</span>
+</code></pre></div>
+</div>
+</div>
+<div class="tabbed-block">
+<div editor-title="examples/misc/dind/.dstack.yml">
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode-dind</span>
+
+<span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/dind</span>
+
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="nt">init</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start-dockerd</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Volumes</summary>
+<p>To persist Docker data between runs (e.g. images, containers, volumes, etc), create a <code>dstack</code> <a href="../../concepts/volumes/">volume</a>
+and add attach it in your run configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode-dind</span>
+
+<span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/dind</span>
+<span class="w">    </span><span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="w">    </span><span class="nt">init</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start-dockerd</span>
+
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-volume</span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/docker</span>
+</code></pre></div>
+</details>
+<p>See more Docker examples <a href="https://github.com/dstackai/dstack/tree/master/examples/misc/docker-compose">here</a>.</p>
 <h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
 <p>If a configuration requires an environment variable that you don't want to hardcode in the YAML, you can define it
 without assigning a value:</p>
@@ -2893,7 +3072,7 @@ The relevant service category is compute. The relevant resources include:</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.9c5b6415.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.203fd0bc.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
