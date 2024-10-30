@@ -88,10 +88,6 @@
     
     
   
-      
-    
-
-  
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Volumes - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
@@ -902,6 +898,20 @@ and star us on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#network-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Network volumes
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -913,8 +923,8 @@ and star us on
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#create-register-or-update-a-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -926,9 +936,9 @@ and star us on
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#attach-a-volume" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#attach-network-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -939,9 +949,9 @@ and star us on
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#manage-volumes" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#manage-network-volumes" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -973,6 +983,69 @@ and star us on
       
         <span class="md-typeset">
           Delete volumes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instance-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Instance volumes
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instance volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-instance-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Manage volumes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attach-instance-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Attach a volume
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance-volumes-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Use cases
         </span>
       
     </span>
@@ -2644,6 +2717,20 @@ and star us on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#network-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Network volumes
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2655,8 +2742,8 @@ and star us on
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#create-register-or-update-a-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2668,9 +2755,9 @@ and star us on
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#attach-a-volume" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#attach-network-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -2681,9 +2768,9 @@ and star us on
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#manage-volumes" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#manage-network-volumes" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -2715,6 +2802,69 @@ and star us on
       
         <span class="md-typeset">
           Delete volumes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instance-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Instance volumes
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instance volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-instance-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Manage volumes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attach-instance-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Attach a volume
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance-volumes-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Use cases
         </span>
       
     </span>
@@ -2766,13 +2916,15 @@ and star us on
 
 
 <h1 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h1>
-<p>Volumes allow you to persist data between runs. <code>dstack</code> allows to create and attach volumes to 
-dev environments, tasks, and services.</p>
+<p>Volumes allow you to persist data between runs. <code>dstack</code> supports two kinds of volumes: <a href="#network-volumes">network volumes</a>
+and <a href="#instance-volumes">instance volumes</a>.</p>
+<h2 id="network-volumes">Network volumes<a class="headerlink" href="#network-volumes" title="Permanent link">&para;</a></h2>
+<p><code>dstack</code> allows to create and attach network volumes to dev environments, tasks, and services.</p>
 <blockquote>
-<p>Volumes are currently supported with the <code>aws</code>, <code>gcp</code>, and <code>runpod</code> backends.
+<p>Network volumes are currently supported with the <code>aws</code>, <code>gcp</code>, and <code>runpod</code> backends.
 Support for other backends and SSH fleets is coming soon.</p>
 </blockquote>
-<h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h3>
 <p>First, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>vol.dstack.yml</code>
 are both acceptable).</p>
 <div editor-title="vol.dstack.yml"> 
@@ -2802,7 +2954,7 @@ are both acceptable).</p>
 <p>See <a href="../../reference/dstack.yml/volume/">.dstack.yml</a> for all the options supported by
 volumes, along with multiple examples.</p>
 </div>
-<h2 id="create-register-or-update-a-volume">Create, register, or update a volume<a class="headerlink" href="#create-register-or-update-a-volume" title="Permanent link">&para;</a></h2>
+<h3 id="create-register-or-update-a-volume">Create, register, or update a volume<a class="headerlink" href="#create-register-or-update-a-volume" title="Permanent link">&para;</a></h3>
 <p>To create or register the volume, simply call the <code>dstack apply</code> command:</p>
 <div class="termy">
 
@@ -2819,9 +2971,10 @@ Volume<span class="w"> </span>my-new-volume<span class="w"> </span>does<span cla
 <p>When creating the volume <code>dstack</code> automatically creates an <code>ext4</code> file system on it.</p>
 </blockquote>
 <p>Once created, the volume can be attached with dev environments, tasks, and services.</p>
-<h2 id="attach-a-volume">Attach a volume<a class="headerlink" href="#attach-a-volume" title="Permanent link">&para;</a></h2>
-<p>Dev environments, tasks, and services let you attach any number of volumes.
-To attach a volume, simply specify its name using the <code>volumes</code> property and specify where to mount its contents:</p>
+<h3 id="attach-network-volume">Attach a volume<a class="headerlink" href="#attach-network-volume" title="Permanent link">&para;</a></h3>
+<p>Dev environments, tasks, and services let you attach any number of network volumes.
+To attach a network volume, simply specify its name using the <code>volumes</code> property
+and specify where to mount its contents:</p>
 <div editor-title=".dstack.yml"> 
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
@@ -2834,6 +2987,10 @@ To attach a volume, simply specify its name using the <code>volumes</code> prope
 <span class="nt">volumes</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-new-volume</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/volume_data</span>
+
+<span class="c1"># You can also use the short syntax in the `name:path` form</span>
+<span class="c1"># volumes:</span>
+<span class="c1">#   - my-new-volume:/volume_data</span>
 </code></pre></div>
 
 </div>
@@ -2846,28 +3003,93 @@ and its contents will persist across runs.</p>
 to <code>/workflow</code> (and sets that as the current working directory). Right now, <code>dstack</code> doesn't allow you to 
 attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
 </div>
-<h2 id="manage-volumes">Manage volumes<a class="headerlink" href="#manage-volumes" title="Permanent link">&para;</a></h2>
-<h3 id="list-volumes">List volumes<a class="headerlink" href="#list-volumes" title="Permanent link">&para;</a></h3>
-<p>The <a href="../../reference/cli/#dstack-gateway-list"><code>dstack volume list</code></a> command lists created and registered volumes:</p>
+<h3 id="manage-network-volumes">Manage volumes<a class="headerlink" href="#manage-network-volumes" title="Permanent link">&para;</a></h3>
+<h4 id="list-volumes">List volumes<a class="headerlink" href="#list-volumes" title="Permanent link">&para;</a></h4>
+<p>The <a href="../../reference/cli/#dstack-volume-list"><code>dstack volume list</code></a> command lists created and registered volumes:</p>
 <div class="highlight"><pre><span></span><code>$ dstack volume list
 NAME            BACKEND  REGION        STATUS  CREATED
  my-new-volume  aws      eu-central-1  active  3 weeks ago
 </code></pre></div>
-<h3 id="delete-volumes">Delete volumes<a class="headerlink" href="#delete-volumes" title="Permanent link">&para;</a></h3>
+<h4 id="delete-volumes">Delete volumes<a class="headerlink" href="#delete-volumes" title="Permanent link">&para;</a></h4>
 <p>When the volume isn't attached to any active dev environment, task, or service, you can delete it using <code>dstack delete</code>:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>vol.dstack.yaml
 </code></pre></div>
 <p>If the volume was created using <code>dstack</code>, it will be physically destroyed along with the data.
 If you've registered an existing volume, it will be de-registered with <code>dstack</code> but will keep the data.</p>
+<h2 id="instance-volumes">Instance volumes<a class="headerlink" href="#instance-volumes" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Instance volumes are currently supported on all backends except <code>runpod</code>, <code>vastai</code> and <code>kubernetes</code>.</p>
+</blockquote>
+<p>Unlike <a href="#network-volumes">network volumes</a>, which are persistent external resources mounted over network,
+instance volumes are part of the instance storage. Basically, the instance volume is a filesystem path
+(a directory or a file) mounted inside the run container.</p>
+<p>As a consequence, the contents of the instance volume are specific to the instance
+where the run is executed, and data persistence, integrity, and even existence are guaranteed only if the subsequent run
+is executed on the same exact instance, and there is no other runs in between.</p>
+<h3 id="manage-instance-volumes">Manage volumes<a class="headerlink" href="#manage-instance-volumes" title="Permanent link">&para;</a></h3>
+<p>You don't need to create or delete instance volumes, and they are not displayed in the
+<a href="../../reference/cli/#dstack-volume-list"><code>dstack volume list</code></a> command output.</p>
+<h3 id="attach-instance-volume">Attach a volume<a class="headerlink" href="#attach-instance-volume" title="Permanent link">&para;</a></h3>
+<p>Dev environments, tasks, and services let you attach any number of instance volumes.
+To attach an instance volume, specify the <code>instance_path</code> and <code>path</code> in the <code>volumes</code> property:</p>
+<div editor-title=".dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="c1"># A name of the dev environment</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode-vol</span>
+
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="c1"># Map the instance path to any container path</span>
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">instance_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/volume</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/volume_data</span>
+
+<span class="c1"># You can also use the short syntax in the `instance_path:path` form</span>
+<span class="c1"># volumes:</span>
+<span class="c1">#   - /mnt/volume:/volume_data</span>
+</code></pre></div>
+
+</div>
+
+<h3 id="instance-volumes-use-cases">Use cases<a class="headerlink" href="#instance-volumes-use-cases" title="Permanent link">&para;</a></h3>
+<p>Despite the limitations, instance volumes can still be useful in some cases:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="cache" name="__tabbed_1" type="radio" /><input id="network-storage-with-ssh-fleet" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="cache">Cache</label><label for="network-storage-with-ssh-fleet">Network storage with SSH fleet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>For example, if runs regularly install packages with <code>pip install</code>, include the instance volume in the run configuration
+to reuse pip cache between runs:</p>
+<div editor-title=".dstack.yml">
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/dstack-cache/pip:/root/.cache/pip</span>
+</code></pre></div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>If you manage your own instances, you can mount network storages (e.g., NFS or SMB) to the hosts and access them in the runs.
+Imagine you mounted the same network storage to all the fleet instances using the same path <code>/mnt/nfs-storage</code>,
+then you can treat the instance volume as a shared persistent storage:</p>
+<div editor-title=".dstack.yml">
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/nfs-storage:/storage</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
-<h5 id="can-i-use-volumes-across-backends">Can I use volumes across backends?<a class="headerlink" href="#can-i-use-volumes-across-backends" title="Permanent link">&para;</a></h5>
+<h5 id="can-i-use-network-volumes-across-backends">Can I use network volumes across backends?<a class="headerlink" href="#can-i-use-network-volumes-across-backends" title="Permanent link">&para;</a></h5>
 <p>Since volumes are backed up by cloud network disks, you can only use them within the same cloud. If you need to access
 data across different backends, you should either use object storage or replicate the data across multiple volumes.</p>
-<h5 id="can-i-use-volumes-across-regions">Can I use volumes across regions?<a class="headerlink" href="#can-i-use-volumes-across-regions" title="Permanent link">&para;</a></h5>
+<h5 id="can-i-use-network-volumes-across-regions">Can I use network volumes across regions?<a class="headerlink" href="#can-i-use-network-volumes-across-regions" title="Permanent link">&para;</a></h5>
 <p>Typically, network volumes are associated with specific regions, so you can't use them in other regions. Often,
 volumes are also linked to availability zones, but some providers support volumes that can be used across different
 availability zones within the same region.</p>
-<h5 id="can-i-attach-volumes-to-multiple-runs-or-instances">Can I attach volumes to multiple runs or instances?<a class="headerlink" href="#can-i-attach-volumes-to-multiple-runs-or-instances" title="Permanent link">&para;</a></h5>
+<h5 id="can-i-attach-network-volumes-to-multiple-runs-or-instances">Can I attach network volumes to multiple runs or instances?<a class="headerlink" href="#can-i-attach-network-volumes-to-multiple-runs-or-instances" title="Permanent link">&para;</a></h5>
 <p>You can mount a volume in multiple runs. This feature is currently supported only by the <code>runpod</code> backend.</p>
 
 

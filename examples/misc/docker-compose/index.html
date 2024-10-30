@@ -88,10 +88,6 @@
     
     
   
-      
-    
-
-  
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Docker Compose - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
@@ -2775,7 +2771,7 @@ $<span class="w"> </span>dstack<span class="w"> </span>init
 </details>
 <h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
 <h3 id="running-as-a-task">Running as a task<a class="headerlink" href="#running-as-a-task" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="taskdstackyml" name="__tabbed_1" type="radio" /><input id="composeyml" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="taskdstackyml"><code>task.dstack.yml</code></label><label for="composeyml"><code>compose.yml</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="taskdstackyml" name="__tabbed_1" type="radio" /><input id="composeyaml" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="taskdstackyml"><code>task.dstack.yml</code></label><label for="composeyaml"><code>compose.yaml</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><div editor-title="examples/misc/docker-compose/task.dstack.yml"> </p>
@@ -2787,6 +2783,7 @@ $<span class="w"> </span>dstack<span class="w"> </span>init
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=meta-llama/Llama-3.2-3B-Instruct</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_TOKEN</span>
+<span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examples/misc/docker-compose</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start-dockerd</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker compose up</span>
@@ -2798,12 +2795,12 @@ $<span class="w"> </span>dstack<span class="w"> </span>init
 
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Required resources</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;NVIDIA:16GB..&quot;</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;NVIDIA:24GB&quot;</span>
 </code></pre></div>
 </div>
 </div>
 <div class="tabbed-block">
-<p><div editor-title="examples/misc/docker-compose/compose.yml"> </p>
+<p><div editor-title="examples/misc/docker-compose/compose.yaml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">app</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/huggingface/chat-ui:sha-bf0bc92</span>
@@ -2889,6 +2886,7 @@ configuration.</p>
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=meta-llama/Llama-3.2-3B-Instruct</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_TOKEN</span>
+<span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examples/misc/docker-compose</span>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start-dockerd</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker compose up</span>
@@ -2900,7 +2898,7 @@ configuration.</p>
 
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Required resources</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;NVIDIA:16GB..&quot;</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;NVIDIA:24GB&quot;</span>
 
 <span class="nt">volumes</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-dind-volume</span>

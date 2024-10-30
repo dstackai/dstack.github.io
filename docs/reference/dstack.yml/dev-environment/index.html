@@ -88,10 +88,6 @@
     
     
   
-      
-    
-
-  
 <meta property="og:type" content="website" />
 <meta property="og:title" content="dev-environment - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
@@ -1360,7 +1356,7 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#volumes" class="md-nav__link">
+  <a href="#volumes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -1557,7 +1553,7 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#_volumes" class="md-nav__link">
+  <a href="#volumes" class="md-nav__link">
     <span class="md-ellipsis">
       
         volumes
@@ -1938,7 +1934,7 @@ and star us on
 </li>
       
         <li class="md-nav__item">
-  <a href="#volumes_1" class="md-nav__link">
+  <a href="#_volumes" class="md-nav__link">
     <span class="md-ellipsis">
       
         volumes
@@ -1954,6 +1950,28 @@ and star us on
     <span class="md-ellipsis">
       
         name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_path
       
     </span>
   </a>
@@ -3410,7 +3428,7 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#volumes" class="md-nav__link">
+  <a href="#volumes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -3607,7 +3625,7 @@ and star us on
 </li>
         
           <li class="md-nav__item">
-  <a href="#_volumes" class="md-nav__link">
+  <a href="#volumes" class="md-nav__link">
     <span class="md-ellipsis">
       
         volumes
@@ -3988,7 +4006,7 @@ and star us on
 </li>
       
         <li class="md-nav__item">
-  <a href="#volumes_1" class="md-nav__link">
+  <a href="#_volumes" class="md-nav__link">
     <span class="md-ellipsis">
       
         volumes
@@ -4004,6 +4022,28 @@ and star us on
     <span class="md-ellipsis">
       
         name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance_path
       
     </span>
   </a>
@@ -4265,7 +4305,7 @@ and their quantity. Examples: <code>nvidia</code> (one NVIDIA GPU), <code>A100</
 
 </div>
 
-<h3 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h3>
+<h3 id="volumes_1">Volumes<a class="headerlink" href="#volumes_1" title="Permanent link">&para;</a></h3>
 <p>Volumes allow you to persist data between runs.
 To attach a volume, simply specify its name using the <code>volumes</code> property and specify where to mount its contents:</p>
 <div editor-title=".dstack.yml"> 
@@ -4287,11 +4327,16 @@ To attach a volume, simply specify its name using the <code>volumes</code> prope
 <p>Once you run this configuration, the contents of the volume will be attached to <code>/volume_data</code> inside the dev
 environment, and its contents will persist across runs.</p>
 <details class="info">
-<summary>Limitations</summary>
+<summary>Instance volumes</summary>
+<p>If data persistence is not a strict requirement, use can also use
+ephemeral <a href="../../../concepts/volumes/#instance-volumes">instance volumes</a>.</p>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Limitations</p>
 <p>When you're running a dev environment, task, or service with <code>dstack</code>, it automatically mounts the project folder contents
 to <code>/workflow</code> (and sets that as the current working directory). Right now, <code>dstack</code> doesn't allow you to 
 attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
-</details>
+</div>
 <p>The <code>dev-environment</code> configuration type supports many other options. See below.</p>
 <h2 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="ide"><code>ide</code> -  The IDE to run.<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h4>
@@ -4309,7 +4354,7 @@ attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
 <h4 class="reference-item" id="_env"><a href="#env"><code>env</code></a> - (Optional) The mapping or the list of environment variables.<a class="headerlink" href="#_env" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="setup"><code>setup</code> - (Optional) The bash commands to run on the boot.<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_resources"><a href="#resources"><code>resources</code></a> - (Optional) The resources requirements to run the configuration.<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_volumes"><a href="#volumes"><code>volumes</code></a> - (Optional) The volumes mount points.<a class="headerlink" href="#_volumes" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="volumes"><code>volumes</code> - (Optional) The volumes mount points.<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="ports"><code>ports</code> - (Optional) Port numbers/mapping to expose.<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
@@ -4341,9 +4386,27 @@ attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
 <h2 id="registry_auth"><code>registry_auth</code><a class="headerlink" href="#registry_auth" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="username"><code>username</code> -  The username.<a class="headerlink" href="#username" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="password"><code>password</code> -  The password or access token.<a class="headerlink" href="#password" title="Permanent link">&para;</a></h4>
-<h2 id="volumes_1"><code>volumes</code><a class="headerlink" href="#volumes_1" title="Permanent link">&para;</a></h2>
-<h4 class="reference-item" id="name"><code>name</code> -  The name of the volume to mount.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="path"><code>path</code> -  The container path to mount the volume at.<a class="headerlink" href="#path" title="Permanent link">&para;</a></h4>
+<h2 id="_volumes"><code>volumes[n]</code><a class="headerlink" href="#_volumes" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="network-volumes" name="__tabbed_1" type="radio" /><input id="instance-volumes" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="network-volumes">Network volumes</label><label for="instance-volumes">Instance volumes</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<h4 class="reference-item" id="name"><code>name</code> -  The name of the network volume to mount.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="path"><code>path</code> -  The absolute container path to mount the volume at.<a class="headerlink" href="#path" title="Permanent link">&para;</a></h4>
+</div>
+<div class="tabbed-block">
+<h4 class="reference-item" id="instance_path"><code>instance_path</code> -  The absolute path on the instance (host).<a class="headerlink" href="#instance_path" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="path"><code>path</code> -  The absolute path in the container.<a class="headerlink" href="#path" title="Permanent link">&para;</a></h4>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Short syntax</summary>
+<p>The short syntax for volumes is a colon-separated string in the form of <code>source:destination</code></p>
+<ul>
+<li><code>volume-name:/container/path</code> for network volumes</li>
+<li><code>/instance/path:/container/path</code> for instance volumes</li>
+</ul>
+</details>
 
 
 

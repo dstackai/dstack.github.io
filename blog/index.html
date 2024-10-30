@@ -88,10 +88,6 @@
     
     
   
-      
-    
-
-  
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Blog - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
@@ -2134,6 +2130,17 @@ and star us on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-docker-and-docker-compose-inside-gpu-enabled-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Docker and Docker Compose inside GPU-enabled containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#monitoring-gpu-usage-and-other-container-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2618,6 +2625,17 @@ and star us on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-docker-and-docker-compose-inside-gpu-enabled-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Docker and Docker Compose inside GPU-enabled containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#monitoring-gpu-usage-and-other-container-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2714,6 +2732,64 @@ and star us on
 
 <h1 id="blog">Blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-10-30 00:00:00">October 30, 2024</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="using-docker-and-docker-compose-inside-gpu-enabled-containers"><a class="toclink" href="docker-inside-containers/">Using Docker and Docker Compose inside GPU-enabled containers</a></h2>
+<p>To run containers with <code>dstack</code>, you can use your own Docker image (or the default one) without a need to interact
+directly with Docker. However, some legacy code may require direct use of Docker or Docker Compose. That's why,
+in our latest release, we've added this option.</p>
+<div editor-title="examples/misc/docker-compose/task.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat-ui-task</span>
+
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/dind</span>
+<span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examples/misc/docker-compose</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start-dockerd</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker compose up</span>
+<span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">9000</span><span class="p p-Indicator">]</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16GB..24GB</span>
+</code></pre></div>
+
+</div>
+
+
+    
+      <nav class="md-post__action">
+        <a href="docker-inside-containers/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">

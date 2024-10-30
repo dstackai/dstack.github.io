@@ -88,10 +88,6 @@
     
     
   
-      
-    
-
-  
 <meta property="og:type" content="website" />
 <meta property="og:title" content="server/config.yml - dstack" />
 <meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
@@ -1698,6 +1694,28 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#vpc_ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vpc_ids
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public_ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        public_ips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tags" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1935,6 +1953,17 @@ and star us on
     <span class="md-ellipsis">
       
         public_ips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat_check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nat_check
       
     </span>
   </a>
@@ -4741,6 +4770,28 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#vpc_ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vpc_ids
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public_ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        public_ips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tags" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4978,6 +5029,17 @@ and star us on
     <span class="md-ellipsis">
       
         public_ips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat_check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nat_check
       
     </span>
   </a>
@@ -6025,8 +6087,8 @@ configure the backend.</p>
 </details>
 <details class="info">
 <summary>Private subnets</summary>
-<p>By default, <code>dstack</code> utilizes public subnets and permits inbound SSH traffic exclusively for any provisioned instances.
-If you want <code>dstack</code> to use private subnets, set <code>public_ips</code> to <code>false</code>.</p>
+<p>By default, <code>dstack</code> provisions instances with public IPs and permits inbound SSH traffic.
+If you want <code>dstack</code> to use private subnets and provision instances without public IPs, set <code>public_ips</code> to <code>false</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="w">    </span><span class="nt">backends</span><span class="p">:</span>
@@ -6036,8 +6098,8 @@ If you want <code>dstack</code> to use private subnets, set <code>public_ips</co
 
 <span class="w">        </span><span class="nt">public_ips</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
-<p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets 
-(e.g., through VPC peering).</p>
+<p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets.
+Additionally, private subnets must have outbound internet connectivity provided by NAT Gateway, Transit Gateway, or other mechanism.</p>
 </details>
 <h4 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h4>
 <p>There are two ways to configure Azure: using a client secret or using the default credentials.</p>
@@ -6128,6 +6190,40 @@ az<span class="w"> </span>ad<span class="w"> </span>sp<span class="w"> </span>cr
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+</details>
+<details class="info">
+<summary>VPC</summary>
+<p>By default, <code>dstack</code> creates new Azure networks and subnets for every configured region.
+It's possible to use custom networks by specifying <code>vpc_ids</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">    </span><span class="nt">backends</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span>
+<span class="w">        </span><span class="nt">creds</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">    </span><span class="nt">regions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">westeurope</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">vpc_ids</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">westeurope</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myNetworkResourceGroup/myNetworkName</span>
+</code></pre></div>
+</details>
+<details class="info">
+<summary>Private subnets</summary>
+<p>By default, <code>dstack</code> provisions instances with public IPs and permits inbound SSH traffic.
+If you want <code>dstack</code> to use private subnets and provision instances without public IPs,
+specify custom networks using <code>vpc_ids</code> and set <code>public_ips</code> to <code>false</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">    </span><span class="nt">backends</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span>
+<span class="w">        </span><span class="nt">creds</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">        </span><span class="nt">regions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">westeurope</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">vpc_ids</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">westeurope</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myNetworkResourceGroup/myNetworkName</span>
+<span class="w">        </span><span class="nt">public_ips</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets.
+Additionally, private subnets must have outbound internet connectivity provided by <a href="https://learn.microsoft.com/en-us/azure/nat-gateway/nat-overview">NAT Gateway or other mechanism</a>.</p>
 </details>
 <h4 id="gcp">GCP<a class="headerlink" href="#gcp" title="Permanent link">&para;</a></h4>
 <p>There are two ways to configure GCP: using a service account or using the default credentials.</p>
@@ -6260,8 +6356,8 @@ gcloud<span class="w"> </span>services<span class="w"> </span><span class="nb">e
 </details>
 <details class="info">
 <summary>Private subnets</summary>
-<p>By default, <code>dstack</code> utilizes public subnets and permits inbound SSH traffic exclusively for any provisioned instances.
-If you want <code>dstack</code> to use private subnets, set <code>public_ips</code> to <code>false</code>.</p>
+<p>By default, <code>dstack</code> provisions instances with public IPs and permits inbound SSH traffic.
+If you want <code>dstack</code> to use private subnets and provision instances without public IPs, set <code>public_ips</code> to <code>false</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <span class="w">    </span><span class="nt">backends</span><span class="p">:</span>
@@ -6271,7 +6367,8 @@ If you want <code>dstack</code> to use private subnets, set <code>public_ips</co
 
 <span class="w">        </span><span class="nt">public_ips</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
-<p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets (e.g., through VPC peering). Additionally, <a href="https://cloud.google.com/nat/docs/overview">Cloud NAT</a> must be configured to provide access to external resources for provisioned instances.</p>
+<p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets.
+Additionally, <a href="https://cloud.google.com/nat/docs/overview">Cloud NAT</a> must be configured to provide access to external resources for provisioned instances.</p>
 </details>
 <h4 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h4>
 <p>Log into your <a href="https://lambdalabs.com/service/gpu-cloud">Lambda Cloud <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> account, click API keys in the sidebar, and then click the <code>Generate API key</code>
@@ -6575,10 +6672,10 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <h2 id="_aws"><code>projects[n].backends[type=aws]</code><a class="headerlink" href="#_aws" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="type"><code>type</code> -  The type of the backend. Must be <code>aws</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The list of AWS regions.<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="vpc_name"><code>vpc_name</code> - (Optional) The VPC name. All configured regions must have a VPC with this name.<a class="headerlink" href="#vpc_name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="vpc_name"><code>vpc_name</code> - (Optional) The name of custom VPCs. All configured regions must have a VPC with this name. If your custom VPCs don't have names or have different names in different regions, use <code>vpc_ids</code> instead..<a class="headerlink" href="#vpc_name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="vpc_ids"><code>vpc_ids</code> - (Optional) The mapping from AWS regions to VPC IDs. If <code>default_vpcs: true</code>, omitted regions will use default VPCs.<a class="headerlink" href="#vpc_ids" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="default_vpcs"><code>default_vpcs</code> - (Optional) A flag to enable/disable using default VPCs in regions not configured by <code>vpc_ids</code>. Set to <code>false</code> if default VPCs should never be used. Defaults to <code>true</code>.<a class="headerlink" href="#default_vpcs" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. <code>public_ips: false</code> requires at least one private subnet with outbound internet connectivity provided by a NAT Gateway or a Transit Gateway. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="tags"><code>tags</code> - (Optional) The tags that will be assigned to resources created by <code>dstack</code>.<a class="headerlink" href="#tags" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#aws-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="_aws-creds"><code>projects[n].backends[type=aws].creds</code><a class="headerlink" href="#_aws-creds" title="Permanent link">&para;</a></h2>
@@ -6599,6 +6696,8 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <h4 class="reference-item" id="tenant_id"><code>tenant_id</code> -  The tenant ID.<a class="headerlink" href="#tenant_id" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="subscription_id"><code>subscription_id</code> -  The subscription ID.<a class="headerlink" href="#subscription_id" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The list of Azure regions (locations).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="vpc_ids"><code>vpc_ids</code> - (Optional) The mapping from configured Azure locations to network IDs. A network ID must have a format <code>networkResourceGroup/networkName</code> If not specified, <code>dstack</code> will create a new network for every configured region.<a class="headerlink" href="#vpc_ids" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. <code>public_ips: false</code> requires <code>vpc_ids</code> that specifies custom networks with outbound internet connectivity provided by NAT Gateway or other mechanism. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="tags"><code>tags</code> - (Optional) The tags that will be assigned to resources created by <code>dstack</code>.<a class="headerlink" href="#tags" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#azure-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="_azure-creds"><code>projects[n].backends[type=azure].creds</code><a class="headerlink" href="#_azure-creds" title="Permanent link">&para;</a></h2>
@@ -6624,9 +6723,10 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <h2 id="_gcp"><code>projects[n].backends[type=gcp]</code><a class="headerlink" href="#_gcp" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="type"><code>type</code> -  The type of backend. Must be <code>gcp</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="project_id"><code>project_id</code> -  The project ID.<a class="headerlink" href="#project_id" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="vpc_name"><code>vpc_name</code> - (Optional) The VPC name.<a class="headerlink" href="#vpc_name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="vpc_name"><code>vpc_name</code> - (Optional) The name of a custom VPC.<a class="headerlink" href="#vpc_name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="vpc_project_id"><code>vpc_project_id</code> - (Optional) The shared VPC hosted project ID. Required for shared VPC only.<a class="headerlink" href="#vpc_project_id" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="nat_check"><code>nat_check</code> - (Optional) A flag to enable/disable a check that Cloud NAT is configured for the VPC. This should be set to <code>false</code> when <code>public_ips: false</code> and outbound internet connectivity is provided by a mechanism other than Cloud NAT such as a third-party NAT appliance. Defaults to <code>true</code>.<a class="headerlink" href="#nat_check" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="tags"><code>tags</code> - (Optional) The tags (labels) that will be assigned to resources created by <code>dstack</code>.<a class="headerlink" href="#tags" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#gcp-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="_gcp-creds"><code>projects[n].backends[type=gcp].creds</code><a class="headerlink" href="#_gcp-creds" title="Permanent link">&para;</a></h2>
