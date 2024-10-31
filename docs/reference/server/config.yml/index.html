@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43+insiders-4.53.14">
     
     
       
@@ -1561,6 +1561,17 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#_os_images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        os_images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_creds" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1626,6 +1637,95 @@ and star us on
     <span class="md-ellipsis">
       
         type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_aws-os-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backends[type=aws].os_images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="backends[type=aws].os_images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cpu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_nvidia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nvidia
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_aws-os-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backends[type=aws].os_images.*
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="backends[type=aws].os_images.*">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user
       
     </span>
   </a>
@@ -4637,6 +4737,17 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#_os_images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        os_images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_creds" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4702,6 +4813,95 @@ and star us on
     <span class="md-ellipsis">
       
         type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_aws-os-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backends[type=aws].os_images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="backends[type=aws].os_images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cpu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_nvidia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nvidia
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_aws-os-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backends[type=aws].os_images.*
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="backends[type=aws].os_images.*">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user
       
     </span>
   </a>
@@ -6101,6 +6301,42 @@ If you want <code>dstack</code> to use private subnets and provision instances w
 <p>Using private subnets assumes that both the <code>dstack</code> server and users can access the configured VPC's private subnets.
 Additionally, private subnets must have outbound internet connectivity provided by NAT Gateway, Transit Gateway, or other mechanism.</p>
 </details>
+<details class="info">
+<summary>OS images</summary>
+<p>By default, <code>dstack</code> uses its own <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html">AMI <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
+optimized for <code>dstack</code>.
+To use your own or other third-party images, set the <code>os_images</code> property:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">    </span><span class="nt">backends</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span>
+<span class="w">        </span><span class="nt">creds</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+
+<span class="w">        </span><span class="nt">os_images</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">cpu</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-ami-for-cpu-instances</span>
+<span class="w">            </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">self</span>
+<span class="w">            </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstack</span>
+<span class="w">          </span><span class="nt">nvidia</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Some</span><span class="nv"> </span><span class="s">ThirdParty</span><span class="nv"> </span><span class="s">CUDA</span><span class="nv"> </span><span class="s">image&#39;</span>
+<span class="w">            </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123456789012</span>
+<span class="w">            </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
+</code></pre></div>
+<p>Here, both <code>cpu</code> and <code>nvidia</code> properties are optional, but if the property is not set, you won´t be able to use the corresponding instance types.</p>
+<p>The <code>name</code> is an AMI name.
+The <code>owner</code> is either an AWS account ID (a 12-digit number) or a special value <code>self</code> indicating the current account.
+The <code>user</code> specifies an OS user for instance provisioning.</p>
+<div class="admonition info">
+<p class="admonition-title">Image requirements</p>
+<ul>
+<li>SSH server listening on port 22</li>
+<li><code>user</code> with passwordless sudo access</li>
+<li>Docker is installed</li>
+<li>(For NVIDIA instances) NVIDIA/CUDA drivers and NVIDIA Container Toolkit are installed</li>
+</ul>
+</div>
+</details>
 <h4 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h4>
 <p>There are two ways to configure Azure: using a client secret or using the default credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="default-credentials_1" name="__tabbed_3" type="radio" /><input id="client-secret" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="default-credentials_1">Default credentials</label><label for="client-secret">Client secret</label></div>
@@ -6677,6 +6913,7 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 <h4 class="reference-item" id="default_vpcs"><code>default_vpcs</code> - (Optional) A flag to enable/disable using default VPCs in regions not configured by <code>vpc_ids</code>. Set to <code>false</code> if default VPCs should never be used. Defaults to <code>true</code>.<a class="headerlink" href="#default_vpcs" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. <code>public_ips: false</code> requires at least one private subnet with outbound internet connectivity provided by a NAT Gateway or a Transit Gateway. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="tags"><code>tags</code> - (Optional) The tags that will be assigned to resources created by <code>dstack</code>.<a class="headerlink" href="#tags" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_os_images"><a href="#aws-os_images"><code>os_images</code></a> - (Optional) The mapping of instance categories (CPU, NVIDIA GPU) to AMI configurations.<a class="headerlink" href="#_os_images" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_creds"><a href="#aws-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h4>
 <h2 id="_aws-creds"><code>projects[n].backends[type=aws].creds</code><a class="headerlink" href="#_aws-creds" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="access-key_1" name="__tabbed_9" type="radio" /><input id="default" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="access-key_1">Access key</label><label for="default">Default</label></div>
@@ -6691,6 +6928,13 @@ Encrypted values are prefixed with key names, allowing DB admins to identify the
 </div>
 </div>
 </div>
+<h2 id="_aws-os-images"><code>projects[n].backends[type=aws].os_images</code><a class="headerlink" href="#_aws-os-images" title="Permanent link">&para;</a></h2>
+<h4 class="reference-item" id="_cpu"><a href="#cpu"><code>cpu</code></a> - (Optional) AMI used for CPU instances.<a class="headerlink" href="#_cpu" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="_nvidia"><a href="#nvidia"><code>nvidia</code></a> - (Optional) AMI used for NVIDIA GPU instances.<a class="headerlink" href="#_nvidia" title="Permanent link">&para;</a></h4>
+<h2 id="_aws-os-image"><code>projects[n].backends[type=aws].os_images.*</code><a class="headerlink" href="#_aws-os-image" title="Permanent link">&para;</a></h2>
+<h4 class="reference-item" id="name"><code>name</code> -  AMI name.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="owner"><code>owner</code> - (Optional) AMI owner, account ID or <code>self</code>. Defaults to <code>self</code>.<a class="headerlink" href="#owner" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="user"><code>user</code> -  OS user for provisioning.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h4>
 <h2 id="_azure"><code>projects[n].backends[type=azure]</code><a class="headerlink" href="#_azure" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="type"><code>type</code> -  The type of the backend. Must be <code>azure</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="tenant_id"><code>tenant_id</code> -  The tenant ID.<a class="headerlink" href="#tenant_id" title="Permanent link">&para;</a></h4>

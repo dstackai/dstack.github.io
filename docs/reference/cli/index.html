@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43+insiders-4.53.14">
     
     
       
@@ -3666,6 +3666,7 @@ Options:
 <li><code>DSTACK_DATABASE_URL</code> – (Optional) The database URL to use instead of default SQLite. Currently <code>dstack</code> supports Postgres. Example: <code>postgresql+asyncpg://myuser:mypassword@localhost:5432/mydatabase</code>. Defaults to <code>None</code>.</li>
 <li><code>DSTACK_SERVER_CLOUDWATCH_LOG_GROUP</code> – (Optional) The CloudWatch Logs group for workloads logs. If not set, the default file-based log storage is used.</li>
 <li><code>DSTACK_SERVER_CLOUDWATCH_LOG_REGION</code> — (Optional) The CloudWatch Logs region. Defaults to <code>None</code>.</li>
+<li><code>DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE</code> – (Optional) Request body size limit for services, in bytes. Defaults to 64 MiB.</li>
 <li><code>DSTACK_SERVER_DIR</code> – (Optional) Sets path to store data and server configs. Defaults to <code>~/.dstack/server</code>.</li>
 </ul>
 <details class="info">
