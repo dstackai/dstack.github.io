@@ -6,37 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center.">
+        <meta name="description" content="To simplify caching across runs and the use of NFS, we introduce a new volume type that persists data on the instance.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/blog/">
+        <link rel="canonical" href="https://dstack.ai/blog/instance-volumes/">
       
       
-        <link rel="prev" href="../examples/misc/docker-compose/">
+        <link rel="prev" href="../docker-inside-containers/">
       
-      
-        <link rel="next" href="category/amd/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43+insiders-4.53.14">
     
     
       
-        <title>Blog - dstack</title>
+        <title>Introducing instance volumes to persist data on instances - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.12320a83.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.12320a83.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -61,17 +59,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,17 +87,19 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Blog - dstack" />
-<meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/blog/index.png" />
+<meta property="og:title" content="Introducing instance volumes to persist data on instances - dstack" />
+<meta property="og:description" content="To simplify caching across runs and the use of NFS, we introduce a new volume type that persists data on the instance." />
+<meta property="og:image" content="
+  https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-instance-volumes.png?raw=true" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/blog/" />
+<meta property="og:url" content="https://dstack.ai/blog/instance-volumes/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Blog - dstack" />
-<meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/blog/index.png" />
+<meta property="twitter.title" content="Introducing instance volumes to persist data on instances - dstack" />
+<meta property="twitter:description" content="To simplify caching across runs and the use of NFS, we introduce a new volume type that persists data on the instance." />
+<meta property="twitter:image" content="
+  https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-instance-volumes.png?raw=true" />
 </head>
   
   
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#blog" class="md-skip">
+        <a href="#introducing-instance-volumes-to-persist-data-on-instances" class="md-skip">
           Skip to content
         </a>
       
@@ -163,7 +163,7 @@ and star us on
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -180,7 +180,7 @@ and star us on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blog
+              Introducing instance volumes to persist data on instances
             
           </span>
         </div>
@@ -280,7 +280,7 @@ and star us on
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -305,7 +305,7 @@ and star us on
     
     
       <li class="md-tabs__item">
-        <a href="../docs/" class="md-tabs__link">
+        <a href="../../docs/" class="md-tabs__link">
           
   
   Docs
@@ -326,7 +326,7 @@ and star us on
     
     
       <li class="md-tabs__item">
-        <a href="../examples/" class="md-tabs__link">
+        <a href="../../examples/" class="md-tabs__link">
           
   
   Examples
@@ -346,7 +346,7 @@ and star us on
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   Blog
@@ -362,7 +362,7 @@ and star us on
   
   
     <li class="md-tabs__item">
-      <a href="../partners/" class="md-tabs__link">
+      <a href="../../partners/" class="md-tabs__link">
         
   
     
@@ -385,7 +385,9 @@ and star us on
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -398,7 +400,7 @@ and star us on
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -425,7 +427,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,7 +553,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +580,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/installation/" class="md-nav__link">
+      <a href="../../docs/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -605,7 +607,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/quickstart/" class="md-nav__link">
+      <a href="../../docs/quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -690,7 +692,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/dev-environments/" class="md-nav__link">
+      <a href="../../docs/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -717,7 +719,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/tasks/" class="md-nav__link">
+      <a href="../../docs/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -744,7 +746,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/services/" class="md-nav__link">
+      <a href="../../docs/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -771,7 +773,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/fleets/" class="md-nav__link">
+      <a href="../../docs/concepts/fleets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,7 +800,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/gateways/" class="md-nav__link">
+      <a href="../../docs/concepts/gateways/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +827,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/volumes/" class="md-nav__link">
+      <a href="../../docs/concepts/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -852,7 +854,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/concepts/projects/" class="md-nav__link">
+      <a href="../../docs/concepts/projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +939,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/protips/" class="md-nav__link">
+      <a href="../../docs/guides/protips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +966,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/troubleshooting/" class="md-nav__link">
+      <a href="../../docs/guides/troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,7 +993,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/guides/server-deployment/" class="md-nav__link">
+      <a href="../../docs/guides/server-deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1076,7 +1078,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/server/config.yml/" class="md-nav__link">
+      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1153,7 +1155,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1180,7 +1182,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/task/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1207,7 +1209,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/service/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1234,7 +1236,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/fleet/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/fleet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1261,7 +1263,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/gateway/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1288,7 +1290,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/dstack.yml/volume/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/volume/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1323,7 +1325,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/cli/" class="md-nav__link">
+      <a href="../../docs/reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1400,7 +1402,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/api/python/" class="md-nav__link">
+      <a href="../../docs/reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1427,7 +1429,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../docs/reference/api/rest/" class="md-nav__link">
+      <a href="../../docs/reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1527,7 +1529,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1604,7 +1606,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/axolotl/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/axolotl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1631,7 +1633,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/alignment-handbook/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/alignment-handbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1658,7 +1660,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/fine-tuning/trl/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/trl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1743,7 +1745,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/accelerators/amd/" class="md-nav__link">
+      <a href="../../examples/accelerators/amd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1770,7 +1772,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/accelerators/tpu/" class="md-nav__link">
+      <a href="../../examples/accelerators/tpu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1855,7 +1857,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/llms/llama31/" class="md-nav__link">
+      <a href="../../examples/llms/llama31/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1882,7 +1884,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/llms/llama32/" class="md-nav__link">
+      <a href="../../examples/llms/llama32/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1967,7 +1969,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../examples/misc/docker-compose/" class="md-nav__link">
+      <a href="../../examples/misc/docker-compose/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2065,38 +2067,10 @@ and star us on
   
   
     
-      
-    
   
   
     <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    <span class="md-typeset">
-      Blog
-    </span>
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2113,125 +2087,6 @@ and star us on
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introducing-instance-volumes-to-persist-data-on-instances" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Introducing instance volumes to persist data on instances
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-docker-and-docker-compose-inside-gpu-enabled-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Docker and Docker Compose inside GPU-enabled containers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring-gpu-usage-and-other-container-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Monitoring GPU usage and other container metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#benchmarking-llama-31-405b-on-8x-amd-mi300x-gpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-tpus-for-fine-tuning-and-deploying-llms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using TPUs for fine-tuning and deploying LLMs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supporting-amd-accelerators-on-runpod" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supporting AMD accelerators on RunPod
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-volumes-to-optimize-cold-starts-on-runpod" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using volumes to optimize cold starts on RunPod
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dstack-sky-now-supports-your-own-cloud-accounts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        dstack Sky now supports your own cloud accounts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introducing-dstack-sky" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Introducing dstack Sky
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2299,7 +2154,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="archive/2024/" class="md-nav__link">
+      <a href="../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2391,7 +2246,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="category/amd/" class="md-nav__link">
+      <a href="../category/amd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2422,7 +2277,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="category/benchmarks/" class="md-nav__link">
+      <a href="../category/benchmarks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2453,7 +2308,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="category/nvidia/" class="md-nav__link">
+      <a href="../category/nvidia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2484,7 +2339,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="category/observability/" class="md-nav__link">
+      <a href="../category/observability/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2515,7 +2370,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="category/tpu/" class="md-nav__link">
+      <a href="../category/tpu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2546,7 +2401,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="category/volumes/" class="md-nav__link">
+      <a href="../category/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2590,7 +2445,7 @@ and star us on
   
   
     <li class="md-nav__item">
-      <a href="../partners/" class="md-nav__link">
+      <a href="../../partners/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2617,6 +2472,8 @@ and star us on
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2636,10 +2493,12 @@ and star us on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introducing-instance-volumes-to-persist-data-on-instances" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Introducing instance volumes to persist data on instances
+        <span class="md-typeset">
+          How it works
+        </span>
       
     </span>
   </a>
@@ -2647,10 +2506,12 @@ and star us on
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-docker-and-docker-compose-inside-gpu-enabled-containers" class="md-nav__link">
+  <a href="#caching" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using Docker and Docker Compose inside GPU-enabled containers
+        <span class="md-typeset">
+          Caching data on fleet instances
+        </span>
       
     </span>
   </a>
@@ -2658,10 +2519,12 @@ and star us on
 </li>
       
         <li class="md-nav__item">
-  <a href="#monitoring-gpu-usage-and-other-container-metrics" class="md-nav__link">
+  <a href="#nfs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Monitoring GPU usage and other container metrics
+        <span class="md-typeset">
+          Using NFS with SSH and cloud fleets
+        </span>
       
     </span>
   </a>
@@ -2669,65 +2532,12 @@ and star us on
 </li>
       
         <li class="md-nav__item">
-  <a href="#benchmarking-llama-31-405b-on-8x-amd-mi300x-gpus" class="md-nav__link">
+  <a href="#feedback" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-tpus-for-fine-tuning-and-deploying-llms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using TPUs for fine-tuning and deploying LLMs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supporting-amd-accelerators-on-runpod" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supporting AMD accelerators on RunPod
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-volumes-to-optimize-cold-starts-on-runpod" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using volumes to optimize cold starts on RunPod
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dstack-sky-now-supports-your-own-cloud-accounts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        dstack Sky now supports your own cloud accounts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introducing-dstack-sky" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Introducing dstack Sky
+        <span class="md-typeset">
+          Feedback
+        </span>
       
     </span>
   </a>
@@ -2743,42 +2553,80 @@ and star us on
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <style>
-.md-sidebar--secondary {
-    visibility: hidden;
-}
-</style>
-
-<h1 id="blog">Blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-11-05 00:00:00">November 5, 2024</time></li>
-        
-        
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2024-11-05 00:00:00" class="md-ellipsis">November 5, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              2 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="introducing-instance-volumes-to-persist-data-on-instances"><a class="toclink" href="instance-volumes/">Introducing instance volumes to persist data on instances</a></h2>
-<h3 id="how-it-works" style="display:none"><a class="toclink" href="instance-volumes/#how-it-works">How it works</a></h3>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+  
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/blog/posts/instance-volumes.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="introducing-instance-volumes-to-persist-data-on-instances">Introducing instance volumes to persist data on instances<a class="headerlink" href="#introducing-instance-volumes-to-persist-data-on-instances" title="Permanent link">&para;</a></h1>
+<h2 id="how-it-works" style="display:none">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <p>Until now, <code>dstack</code> supported data persistence only with network volumes, managed by clouds.
 While convenient, sometimes you might want to use a simple cache on the instance or 
 mount an NFS share to your SSH fleet. To address this, we're now introducing instance volumes that work for both cases.</p>
@@ -2804,394 +2652,64 @@ mount an NFS share to your SSH fleet. To address this, we're now introducing ins
 
 </div>
 
+<!-- more -->
 
-    
-      <nav class="md-post__action">
-        <a href="instance-volumes/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-10-30 00:00:00">October 30, 2024</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="using-docker-and-docker-compose-inside-gpu-enabled-containers"><a class="toclink" href="docker-inside-containers/">Using Docker and Docker Compose inside GPU-enabled containers</a></h2>
-<p>To run containers with <code>dstack</code>, you can use your own Docker image (or the default one) without a need to interact
-directly with Docker. However, some existing code may require direct use of Docker or Docker Compose. That's why,
-in our latest release, we've added this option.</p>
-<div editor-title="examples/misc/docker-compose/task.dstack.yml"> 
+<blockquote>
+<p>Instance volumes work with both <a href="../../docs/concepts/fleets/#ssh">SSH fleets</a>
+and <a href="../../docs/concepts/fleets/#cloud">cloud fleets</a>, and it is possible to mount any folders on the instance,
+whether they are regular folders or NFS share mounts.</p>
+</blockquote>
+<p>The configuration above mounts <code>/root/.dstack/cache</code> on the instance to <code>/root/.cache</code> inside container.</p>
+<h2 id="caching">Caching data on fleet instances<a class="headerlink" href="#caching" title="Permanent link">&para;</a></h2>
+<p>If you use a folder on the instance that is not an NFS mount, instance volumes can only be used for caching purposes, as
+their state is bound to a particular instance while it's up.</p>
+<p>Caching can be especially useful if you want to re-run the same configuration on the same fleet and avoid downloading
+very large models, datasets, or dependencies with each run.</p>
+<h2 id="nfs">Using NFS with SSH and cloud fleets<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
+<p>If you want to replicate the state across instances, you can mount an NFS share to the instance folder.</p>
+<p>With SSH fleets, it's easy to set up an NFS share, as you can do it when logging into your hosts via SSH.
+If you'd like to mount NFS with your cloud fleets, you will need to use a custom AMI for that.</p>
+<p>Here's an example of a dev environment that mounts the <code>data</code> folder from an NFS share, which is mounted to
+<code>/mnt/nfs-storage</code> on the instance, to the <code>/data</code> folder inside the container.</p>
+<div editor-title="examples/misc/volumes/nfs.dstack.yml"> 
 
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat-ui-task</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode-nfs</span>
 
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dstackai/dind</span>
-<span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
 
-<span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">examples/misc/docker-compose</span>
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start-dockerd</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker compose up</span>
-<span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">9000</span><span class="p p-Indicator">]</span>
-
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16GB..24GB</span>
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/nfs-storage/data:/data</span>
 </code></pre></div>
 
 </div>
 
-
-    
-      <nav class="md-post__action">
-        <a href="docker-inside-containers/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-10-22 00:00:00">October 22, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/amd/" class="md-meta__link">AMD</a>, 
-              <a href="category/nvidia/" class="md-meta__link">NVIDIA</a>, 
-              <a href="category/observability/" class="md-meta__link">Observability</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="monitoring-gpu-usage-and-other-container-metrics"><a class="toclink" href="monitoring-gpu-usage/">Monitoring GPU usage and other container metrics</a></h2>
-<h3 id="how-it-works" style="display:none"><a class="toclink" href="monitoring-gpu-usage/#how-it-works">How it works</a></h3>
-<p>While it's possible to use third-party monitoring tools with <code>dstack</code>, it is often more convenient to debug your run and
-track metrics out of the box. That's why, with the latest release, <code>dstack</code> introduced <a href="../../docs/reference/cli#dstack-stats"><code>dstack stats</code></a>, a new CLI (and API)
-for monitoring container metrics, including GPU usage for <code>NVIDIA</code>, <code>AMD</code>, and other accelerators.</p>
-<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-stats-v2.png?raw=true" width="725"/></p>
-
-    
-      <nav class="md-post__action">
-        <a href="monitoring-gpu-usage/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-10-09 00:00:00">October 9, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/amd/" class="md-meta__link">AMD</a>, 
-              <a href="category/benchmarks/" class="md-meta__link">Benchmarks</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              6 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="benchmarking-llama-31-405b-on-8x-amd-mi300x-gpus"><a class="toclink" href="amd-mi300x-inference-benchmark/">Benchmarking Llama 3.1 405B on 8x AMD MI300X GPUs</a></h2>
-<p>At <code>dstack</code>, we've been adding support for AMD GPUs with <a href="../docs/concepts/fleets/#ssh-fleets">SSH fleets</a>, 
-so we saw this as a great chance to test our integration by benchmarking AMD GPUs. Our friends at 
-<a href="https://hotaisle.xyz/" target="_blank">Hot Aisle <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>, who build top-tier 
-bare metal compute for AMD GPUs, kindly provided the hardware for the benchmark.</p>
-<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-hotaisle-amd-mi300x-prompt-v5.png?raw=true" width="750" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="amd-mi300x-inference-benchmark/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-09-10 00:00:00">September 10, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/tpu/" class="md-meta__link">TPU</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="using-tpus-for-fine-tuning-and-deploying-llms"><a class="toclink" href="tpu-on-gcp/">Using TPUs for fine-tuning and deploying LLMs</a></h2>
-<p>If you’re using or planning to use TPUs with Google Cloud, you can now do so via <code>dstack</code>. Just specify the TPU version and the number of cores 
-(separated by a dash), in the <code>gpu</code> property under <code>resources</code>. </p>
-<p>Read below to find out how to use TPUs with <code>dstack</code> for fine-tuning and deploying
-LLMs, leveraging open-source tools like Hugging Face’s 
-<a href="https://github.com/huggingface/optimum-tpu" target="_blank">Optimum TPU <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> 
-and <a href="https://docs.vllm.ai/en/latest/getting_started/tpu-installation.html" target="_blank">vLLM <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="tpu-on-gcp/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-08-21 00:00:00">August 21, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/amd/" class="md-meta__link">AMD</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="supporting-amd-accelerators-on-runpod"><a class="toclink" href="amd-on-runpod/">Supporting AMD accelerators on RunPod</a></h2>
-<p>While <code>dstack</code> helps streamline the orchestration of containers for AI, its primary goal is to offer vendor independence
-and portability, ensuring compatibility across different hardware and cloud providers.</p>
-<p>Inspired by the recent <code>MI300X</code> benchmarks, we are pleased to announce that RunPod is the first cloud provider to offer
-AMD GPUs through <code>dstack</code>, with support for other cloud providers and on-prem servers to follow.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="amd-on-runpod/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-08-13 00:00:00">August 13, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/volumes/" class="md-meta__link">Volumes</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="using-volumes-to-optimize-cold-starts-on-runpod"><a class="toclink" href="volumes-on-runpod/">Using volumes to optimize cold starts on RunPod</a></h2>
-<p>Deploying custom models in the cloud often faces the challenge of cold start times, including the time to provision a
-new instance and download the model. This is especially relevant for services with autoscaling when new model replicas
-need to be provisioned quickly. </p>
-<p>Let's explore how <code>dstack</code> optimizes this process using volumes, with an example of
-deploying a model on RunPod.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="volumes-on-runpod/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-06-11 00:00:00">June 11, 2024</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="dstack-sky-now-supports-your-own-cloud-accounts"><a class="toclink" href="dstack-sky-own-cloud-accounts/">dstack Sky now supports your own cloud accounts</a></h2>
-<p><a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> 
-enables you to access GPUs from the global marketplace at the most
-competitive rates. However, sometimes you may want to use your own cloud accounts. 
-With today's release, both options are now supported.</p>
-<p><img alt="dstack-sky-banner.png" src="https://raw.githubusercontent.com/dstackai/static-assets/main/static-assets/images/dstack-sky-project-config.png" width="650" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="dstack-sky-own-cloud-accounts/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-03-11 00:00:00">March 11, 2024</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="introducing-dstack-sky"><a class="toclink" href="dstack-sky/">Introducing dstack Sky</a></h2>
-<p>Today we're previewing <code>dstack Sky</code>, a service built on top of 
-<code>dstack</code> that enables you to get GPUs at competitive rates from a wide pool of providers.</p>
-<p><img alt="dstack-sky-banner.png" src="images/dstack-sky-banner-4.png" width="650" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="dstack-sky/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-      
-        
-          
+<h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
+<p>If you find something not working as intended, please be sure to report it to
+<a href="https://github.com/dstackai/dstack/issues" target="_ blank">GitHub issues <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>. 
+Your feedback and feature requests is also very welcome on our 
+<a href="https://discord.gg/u8SmfwPpMd" target="_blank">Discord <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> server.</p>
 
 
 
-<nav class="md-pagination">
+
+
+
+
   
-</nav>
-        
+  
+
+
+
+  
+
+
+  
+
+
+
       
-    </div>
+    </article>
   </div>
 
           
@@ -3327,17 +2845,17 @@ With today's release, both options are now supported.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../assets/javascripts/workers/search.c7c1ca2c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.c7c1ca2c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../assets/javascripts/bundle.203fd0bc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.203fd0bc.min.js"></script>
       
-        <script src="../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 <script src="https://widget.kapa.ai/kapa-widget.bundle.js"
