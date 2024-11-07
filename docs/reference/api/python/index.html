@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44+insiders-4.53.14">
     
     
       
@@ -1964,6 +1964,17 @@ and star us on
     <span class="md-ellipsis">
       
         port
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gateway
       
     </span>
   </a>
@@ -4359,6 +4370,17 @@ and star us on
 </li>
         
           <li class="md-nav__item">
+  <a href="#gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#model" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6073,8 +6095,9 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <h4 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Time to wait before destroying the idle instance. Defaults to <code>5m</code> for <code>dstack run</code> and to <code>3d</code> for <code>dstack pool add</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h4>
 <h3 id="dstack.api.Service"><code>dstack.api.Service</code><a class="headerlink" href="#dstack.api.Service" title="Permanent link">&para;</a></h3>
 <h4 class="reference-item" id="port"><code>port</code> -  The port, that application listens on or the mapping.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="model"><code>model</code> - (Optional) Mapping of the model for the OpenAI-compatible endpoint.<a class="headerlink" href="#model" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="https"><code>https</code> - (Optional) Enable HTTPS. Defaults to <code>True</code>.<a class="headerlink" href="#https" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="gateway"><code>gateway</code> - (Optional) The name of the gateway. Specify boolean <code>false</code> to run without a gateway. Omit to run with the default gateway.<a class="headerlink" href="#gateway" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="model"><code>model</code> - (Optional) Mapping of the model for the model gateway. Can be a full model format definition or just a model name. If it's a name, the service is expected to expose an OpenAI-compatible API at the <code>/v1</code> path.<a class="headerlink" href="#model" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="https"><code>https</code> - (Optional) Enable HTTPS if running with a gateway. Defaults to <code>True</code>.<a class="headerlink" href="#https" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="auth"><code>auth</code> - (Optional) Enable the authorization. Defaults to <code>True</code>.<a class="headerlink" href="#auth" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="replicas"><code>replicas</code> - (Optional) The number of replicas. Can be a number (e.g. <code>2</code>) or a range (<code>0..4</code> or <code>1..8</code>). If it's a range, the <code>scaling</code> property is required. Defaults to <code>1</code>.<a class="headerlink" href="#replicas" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_scaling"><a href="#dstack.api.Scaling"><code>scaling</code></a> - (Optional) The auto-scaling rules. Required if <code>replicas</code> is set to a range.<a class="headerlink" href="#_scaling" title="Permanent link">&para;</a></h4>
