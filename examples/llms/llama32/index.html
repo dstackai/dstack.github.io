@@ -1977,19 +1977,6 @@ Support our project with a ⭐ on
 </li>
         
           <li class="md-nav__item">
-  <a href="#deploying-as-a-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Deploying as a service
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#memory-requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2659,19 +2646,6 @@ Support our project with a ⭐ on
 </li>
         
           <li class="md-nav__item">
-  <a href="#deploying-as-a-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Deploying as a service
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#memory-requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2760,45 +2734,33 @@ $<span class="w"> </span>dstack<span class="w"> </span>init
 <h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
 <h3 id="running-as-a-task">Running as a task<a class="headerlink" href="#running-as-a-task" title="Permanent link">&para;</a></h3>
 <p>If you'd like to run Llama 3.2 vision model for development purposes, consider using <code>dstack</code> tasks.</p>
-<div editor-title="examples/llms/llama32/vllm/task.dstack.yml"> 
+<div editor-title="examples/llms/llama32/vllm/.dstack.yml"> 
 
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama32-task-vllm</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama32</span>
 
-<span class="c1"># If `image` is not specified, dstack uses its default image</span>
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
-<span class="c1"># Required environment variables</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vllm/vllm-openai:latest</span>
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_TOKEN</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=meta-llama/Llama-3.2-11B-Vision-Instruct</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_MODEL_LEN=13488</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_NUM_SEQS=40</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_MODEL_LEN=4096</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAX_NUM_SEQS=8</span>
 <span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vllm serve $MODEL_ID</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--tensor-parallel-size $DSTACK_GPUS_NUM</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--max-model-len $MAX_MODEL_LEN</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--max-num-seqs $MAX_NUM_SEQS</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--enforce-eager</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--disable-log-requests</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--limit-mm-per-prompt &quot;image=1&quot;</span>
-<span class="c1"># Expose the vllm server port</span>
-<span class="nt">ports</span><span class="p">:</span><span class="w"> </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
-<span class="c1"># Use either spot or on-demand instances</span>
-<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--tensor-parallel-size $DSTACK_GPUS_NUM</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+<span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama/Llama-3.2-11B-Vision-Instruct</span>
 
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Required resources</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">48GB</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB..48GB</span>
 </code></pre></div>
 </div>
 
-<p>Note, maximum size of vLLM’s <code>KV cache</code> is <code>13488</code>, consequently we must set <code>MAX_MODEL_LEN</code> to <code>13488</code>. <code>MAX_NUM_SEQS</code>
-greater than 40 results in an out of memory error.</p>
-<h3 id="deploying-as-a-service">Deploying as a service<a class="headerlink" href="#deploying-as-a-service" title="Permanent link">&para;</a></h3>
-<p>If you'd like to deploy Llama 3.2 vision model as public auto-scalable and secure endpoint,
-consider using <code>dstack</code> <a href="https://dstack.ai/docs/services">services</a>.</p>
 <h3 id="memory-requirements">Memory requirements<a class="headerlink" href="#memory-requirements" title="Permanent link">&para;</a></h3>
 <p>Below are the approximate memory requirements for loading the model. 
 This excludes memory for the model context and CUDA kernel reservations.</p>
@@ -2826,7 +2788,7 @@ This excludes memory for the model context and CUDA kernel reservations.</p>
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HF_TOKEN</span><span class="o">=</span>...
 
-$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/llms/llama32/vllm/task.dstack.yml
+$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/llms/llama32/vllm/.dstack.yml
 
 <span class="w"> </span><span class="c1">#  BACKEND  REGION     RESOURCES                    SPOT  PRICE   </span>
 <span class="w"> </span><span class="m">1</span><span class="w">  </span>runpod<span class="w">   </span>CA-MTL-1<span class="w">   </span>9xCPU,<span class="w"> </span>50GB,<span class="w"> </span>1xA40<span class="w"> </span><span class="o">(</span>48GB<span class="o">)</span><span class="w">    </span>yes<span class="w">   </span><span class="nv">$0</span>.24<span class="w">   </span>
@@ -2834,7 +2796,7 @@ $<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </s
 <span class="w"> </span><span class="m">3</span><span class="w">  </span>runpod<span class="w">   </span>EU-SE-1<span class="w">    </span>9xCPU,<span class="w"> </span>50GB,<span class="w"> </span>1xA6000<span class="w"> </span><span class="o">(</span>48GB<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.25<span class="w">   </span>
 
 
-Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>llama32-task-vllm?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>llama32?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
 
 Provisioning...
 ---&gt;<span class="w"> </span><span class="m">100</span>%
@@ -2845,7 +2807,7 @@ Provisioning...
 <p>If you run a task, <code>dstack apply</code> automatically forwards the remote ports to <code>localhost</code> for convenient access.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>http://localhost:8000/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>http://127.0.0.1:3000/proxy/services/main/llama32/v1/chat/completions<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer token&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--data<span class="w"> </span><span class="s1">&#39;{</span>

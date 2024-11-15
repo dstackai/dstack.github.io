@@ -851,11 +851,24 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gateway-endpoint" class="md-nav__link">
+  <a href="#service" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Gateway endpoint
+          Service
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Model
         </span>
       
     </span>
@@ -2706,11 +2719,24 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gateway-endpoint" class="md-nav__link">
+  <a href="#service" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Gateway endpoint
+          Service
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Model
         </span>
       
     </span>
@@ -2820,16 +2846,8 @@ Support our project with a ⭐ on
 
 
 <h1 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h1>
-<p>A service allows you to deploy a web app or a model as a scalable endpoint. It lets you configure
+<p>A service allows you to deploy a model or a web app as an endpoint. It lets you configure
 dependencies, resources, authorization, auto-scaling rules, etc.</p>
-<p>Services are provisioned behind a <a href="../concepts/gateways/">gateway</a> which provides an HTTPS endpoint mapped to your domain,
-handles authentication, distributes load, and performs auto-scaling.</p>
-<details class="info">
-<summary>Gateways</summary>
-<p>If you're using the open-source server, you must set up a <a href="../concepts/gateways/">gateway</a> before you can run a service.</p>
-<p>If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>,
-the gateway is already set up for you.</p>
-</details>
 <h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
 <p>First, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or
 <code>service.dstack.yml</code>
@@ -2841,7 +2859,7 @@ are both acceptable).</p>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31-service</span>
 
 <span class="c1"># If `image` is not specified, dstack uses its default image</span>
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
 
 <span class="c1"># Required environment variables</span>
 <span class="nt">env</span><span class="p">:</span>
@@ -2852,26 +2870,29 @@ are both acceptable).</p>
 <span class="c1"># Expose the vllm server port</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
 
+<span class="c1"># Specify a name if it&#39;s an Open-AI compatible model</span>
+<span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama/Meta-Llama-3.1-8B-Instruct</span>
+
 <span class="c1"># Use either spot or on-demand instances</span>
 <span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
 
+<span class="c1"># Required resources</span>
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Change to what is required</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
-
-<span class="c1"># Comment out if you won&#39;t access the model via https://gateway.&lt;gateway domain&gt;</span>
-<span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama/Meta-Llama-3.1-8B-Instruct</span>
 </code></pre></div>
 
 </div>
 
 <p>If you don't specify your Docker image, <code>dstack</code> uses the <a href="https://hub.docker.com/r/dstackai/base/tags">base</a> image
 (pre-configured with Python, Conda, and essential CUDA drivers).</p>
+<p>Note, the <code>model</code> property is optional and not needed when deploying a non-OpenAI-compatible model or a regular web app.</p>
 <div class="admonition info">
-<p class="admonition-title">Auto-scaling</p>
-<p>By default, the service is deployed to a single instance. However, you can specify the
-<a href="../reference/dstack.yml/service/#auto-scaling">number of replicas and scaling policy</a>.
-In this case, <code>dstack</code> auto-scales it based on the load.</p>
+<p class="admonition-title">Gateway</p>
+<p>By default, services run on a single instance. However, you can specify <code>replicas</code> and <code>target</code> to enable 
+<a href="../reference/dstack.yml/service/#auto-scaling">auto-scaling</a>.</p>
+<p>Note, to use auto-scaling, a custom domain, or HTTPS, set up a 
+<a href="../concepts/gateways/">gateway</a> before running the service.
+A gateway pre-configured for you if you are using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
@@ -2896,7 +2917,8 @@ Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </s
 Provisioning...
 ---&gt;<span class="w"> </span><span class="m">100</span>%
 
-Service<span class="w"> </span>is<span class="w"> </span>published<span class="w"> </span>at<span class="w"> </span>https://llama31-service.example.com
+Service<span class="w"> </span>is<span class="w"> </span>published<span class="w"> </span>at:<span class="w"> </span>
+<span class="w">  </span>http://localhost:3000/proxy/services/main/llama31-service
 </code></pre></div>
 
 </div>
@@ -2904,11 +2926,13 @@ Service<span class="w"> </span>is<span class="w"> </span>published<span class="w
 <p><code>dstack apply</code> automatically uploads the code from the current repo, including your local uncommitted changes.
 To avoid uploading large files, ensure they are listed in <code>.gitignore</code>.</p>
 <h2 id="access-the-endpoint">Access the endpoint<a class="headerlink" href="#access-the-endpoint" title="Permanent link">&para;</a></h2>
-<p>One the service is up, its endpoint is accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
+<h3 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
+<p>If no gateway is created, the service’s endpoint will be accessible at <code>&lt;dstack server URL&gt;
+/proxy/services/&lt;project name&gt;/&lt;run name&gt;</code>.</p>
 <p>By default, the service endpoint requires the <code>Authorization</code> header with <code>Bearer &lt;dstack token&gt;</code>.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://llama31-service.example.com/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>http://localhost:3000/proxy/services/main/llama31-service/v1/chat/completions<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &amp;lt;dstack token&amp;gt;&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
@@ -2926,9 +2950,16 @@ To avoid uploading large files, ensure they are listed in <code>.gitignore</code
 
 <p>Authorization can be disabled by setting <a href="../reference/dstack.yml/service/#authorization"><code>auth</code></a> to <code>false</code> in the
 service configuration file.</p>
-<h3 id="gateway-endpoint">Gateway endpoint<a class="headerlink" href="#gateway-endpoint" title="Permanent link">&para;</a></h3>
-<p>In case the service has the <a href="../reference/dstack.yml/service/#model-mapping">model mapping</a> configured, you will also be
-able to access the model at <code>https://gateway.&lt;gateway domain&gt;</code> via the OpenAI-compatible interface.</p>
+<blockquote>
+<p>When a <a href="../concepts/gateways/">gateway</a> is configured, the service endpoint will be accessible at <code>https://&lt;run name&gt;.&lt;gateway domain&gt;</code>.</p>
+</blockquote>
+<h3 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h3>
+<p>If the service defines the <code>model</code> property, the model can be accessed with
+the OpenAI-compatible endpoint at <code>&lt;dstack server URL&gt;/proxy/models/&lt;project name&gt;</code>,
+or via the control plane UI's playground.</p>
+<blockquote>
+<p>When a <a href="../concepts/gateways/">gateway</a> is configured, the OpenAI-compatible endpoint is available at <code>https://gateway.&lt;gateway domain&gt;</code>.</p>
+</blockquote>
 <h2 id="manage-runs">Manage runs<a class="headerlink" href="#manage-runs" title="Permanent link">&para;</a></h2>
 <h3 id="list-runs">List runs<a class="headerlink" href="#list-runs" title="Permanent link">&para;</a></h3>
 <p>The <a href="../reference/cli/#dstack-ps"><code>dstack ps</code></a>  command lists all running jobs and their statuses. 
