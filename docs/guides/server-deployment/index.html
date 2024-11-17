@@ -1096,19 +1096,6 @@ Support our project with a ⭐ on
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Encryption
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1147,11 +1134,24 @@ Support our project with a ⭐ on
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-multiple-replicas-of-the-server" class="md-nav__link">
+  <a href="#running-multiple-replicas-of-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Deploying multiple replicas of the server
+          Running multiple replicas of the server
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Enabling encryption
         </span>
       
     </span>
@@ -2673,19 +2673,6 @@ Support our project with a ⭐ on
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Encryption
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2724,11 +2711,24 @@ Support our project with a ⭐ on
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-multiple-replicas-of-the-server" class="md-nav__link">
+  <a href="#running-multiple-replicas-of-the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Deploying multiple replicas of the server
+          Running multiple replicas of the server
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Enabling encryption
         </span>
       
     </span>
@@ -2765,7 +2765,7 @@ Support our project with a ⭐ on
 
 <p>The <code>dstack</code> server can run anywhere: on your laptop, a dedicated server, or in the cloud.</p>
 <p>You can run the server either through <code>pip</code> or using Docker.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="pip" name="__tabbed_1" type="radio" /><input id="docker" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="pip">pip</label><label for="docker">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="pip" name="__tabbed_1" type="radio" /><input id="docker" name="__tabbed_1" type="radio" /><input id="cloudformation" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="pip">pip</label><label for="docker">Docker</label><label for="cloudformation">CloudFormation</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="termy">
@@ -2779,7 +2779,7 @@ The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </sp
 </code></pre></div>
 </div>
 <blockquote>
-<p>The server can be set up via <code>pip</code> on Linux, macOS, and Windows (as long as you use WSL 2).
+<p>The server can be set up via <code>pip</code> on Linux, macOS, and Windows (via WSL 2).
 It requires Git and OpenSSH.</p>
 </blockquote>
 </div>
@@ -2795,6 +2795,19 @@ The<span class="w"> </span>admin<span class="w"> </span>token<span class="w"> </
 The<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>http://127.0.0.1:3000/
 </code></pre></div>
 </div>
+</div>
+<div class="tabbed-block">
+<p>If you'd like to deploy the server to a private AWS VPC, you can use 
+our CloudFormation <a href="https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://get-dstack.s3.eu-west-1.amazonaws.com/cloudformation/template.yaml" target="_blank">template <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+<p>First, ensure, you've set up a private VPC with public and private subnets.</p>
+<p><img alt="" src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/dstack-aws-private-vpc-example-v2.png?raw=true" /></p>
+<p>Create a stack using the template, and specify the VPC and private subnets.
+Once, the stack is created, go to <code>Outputs</code> for the server URL and admin token.</p>
+<p>To access the server URL, ensure you're connected to the VPC, e.g. via VPN client.</p>
+<blockquote>
+<p>If you'd like to adjust anything, the source code of the template can be found at
+<a href="https://github.com/dstackai/dstack/blob/master/examples/server-deployment/cloudformation/template.yaml" target="_blank"><code>examples/server-deployment/cloudformation/template.yaml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+</blockquote>
 </div>
 </div>
 </div>
@@ -2863,9 +2876,6 @@ pgloader<span class="w"> </span>sqlite_to_psql.load
 </ol>
 <p>If you encounter errors, please <a href="https://github.com/dstackai/dstack/issues/new/choose">submit an issue</a>.</p>
 </details>
-<h3 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">&para;</a></h3>
-<p>If you want backend credentials and user tokens to be encrypted, you can set up encryption keys via
-<a href="../../reference/server/config.yml/#encryption_1"><code>~/.dstack/server/config.yml</code></a>.</p>
 <h2 id="logs-storage">Logs storage<a class="headerlink" href="#logs-storage" title="Permanent link">&para;</a></h2>
 <p>By default, <code>dstack</code> stores workload logs in <code>~/.dstack/server/projects/&lt;project_name&gt;/logs</code>.</p>
 <h3 id="aws-cloudwatch">AWS CloudWatch<a class="headerlink" href="#aws-cloudwatch" title="Permanent link">&para;</a></h3>
@@ -2895,9 +2905,12 @@ the <code>DSTACK_SERVER_CLOUDWATCH_LOG_REGION</code> environment variables. </p>
 <span class="p">}</span>
 </code></pre></div>
 </details>
-<h2 id="deploying-multiple-replicas-of-the-server">Deploying multiple replicas of the server<a class="headerlink" href="#deploying-multiple-replicas-of-the-server" title="Permanent link">&para;</a></h2>
-<p>If you'd like to deploy multiple server replicas, make sure to configure <code>dstack</code> to use <a href="#postgresql">PostgreSQL</a>
+<h2 id="running-multiple-replicas-of-the-server">Running multiple replicas of the server<a class="headerlink" href="#running-multiple-replicas-of-the-server" title="Permanent link">&para;</a></h2>
+<p>If you'd like to run multiple server replicas, make sure to configure <code>dstack</code> to use <a href="#postgresql">PostgreSQL</a>
 and <a href="#aws-cloudwatch">AWS CloudWatch</a>.</p>
+<h2 id="enabling-encryption">Enabling encryption<a class="headerlink" href="#enabling-encryption" title="Permanent link">&para;</a></h2>
+<p>If you want backend credentials and user tokens to be encrypted, you can set up encryption keys via
+<a href="../../reference/server/config.yml/#encryption_1"><code>~/.dstack/server/config.yml</code></a>.</p>
 
 
 
