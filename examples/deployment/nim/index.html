@@ -6,30 +6,30 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center.">
+        <meta name="description" content="This example shows how to deploy Llama 3.1 to any cloud or on-premises environment using NVIDIA NIM and dstack.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/examples/fine-tuning/alignment-handbook/">
+        <link rel="canonical" href="https://dstack.ai/examples/deployment/nim/">
       
       
-        <link rel="prev" href="../axolotl/">
+        <link rel="prev" href="../tgi/">
       
       
-        <link rel="next" href="../trl/">
+        <link rel="next" href="../../fine-tuning/axolotl/">
       
       
         
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45+insiders-4.53.14">
     
     
       
-        <title>Alignment Handbook - dstack</title>
+        <title>Deploying LLMs with dstack using NIM - dstack</title>
       
     
     
@@ -89,17 +89,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Alignment Handbook - dstack" />
-<meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/examples/fine-tuning/alignment-handbook/index.png" />
+<meta property="og:title" content="Deploying LLMs with dstack using NIM - dstack" />
+<meta property="og:description" content="This example shows how to deploy Llama 3.1 to any cloud or on-premises environment using NVIDIA NIM and dstack." />
+<meta property="og:image" content="https://dstack.ai/assets/images/social/examples/deployment/nim/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/examples/fine-tuning/alignment-handbook/" />
+<meta property="og:url" content="https://dstack.ai/examples/deployment/nim/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Alignment Handbook - dstack" />
-<meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/examples/fine-tuning/alignment-handbook/index.png" />
+<meta property="twitter.title" content="Deploying LLMs with dstack using NIM - dstack" />
+<meta property="twitter:description" content="This example shows how to deploy Llama 3.1 to any cloud or on-premises environment using NVIDIA NIM and dstack." />
+<meta property="twitter:image" content="https://dstack.ai/assets/images/social/examples/deployment/nim/index.png" />
 </head>
   
   
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#alignment-handbook" class="md-skip">
+        <a href="#nim" class="md-skip">
           Skip to content
         </a>
       
@@ -174,7 +174,7 @@ Support our project with a ⭐ on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Alignment Handbook
+              Deploying LLMs with dstack using NIM
             
           </span>
         </div>
@@ -1579,7 +1579,7 @@ Support our project with a ⭐ on
   <span class="md-ellipsis">
     
   
-    Fine-tuning
+    Deployment
   
 
     
@@ -1595,7 +1595,7 @@ Support our project with a ⭐ on
             <span class="md-nav__icon md-icon"></span>
             
   
-    Fine-tuning
+    Deployment
   
 
           </label>
@@ -1608,13 +1608,40 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../axolotl/" class="md-nav__link">
+      <a href="../vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Axolotl
+    vLLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tgi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    TGI
   
 
     
@@ -1650,7 +1677,7 @@ Support our project with a ⭐ on
   <span class="md-ellipsis">
     
   
-    Alignment Handbook
+    NIM
   
 
     
@@ -1667,7 +1694,7 @@ Support our project with a ⭐ on
   <span class="md-ellipsis">
     
   
-    Alignment Handbook
+    NIM
   
 
     
@@ -1693,67 +1720,34 @@ Support our project with a ⭐ on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#training-configuration-recipe" class="md-nav__link">
+  <a href="#deployment" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Training configuration recipe
+          Deployment
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-a-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running a configuration
         </span>
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#single-node-training" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Single-node training
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multi-node-training" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Multi-node training
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fleets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Fleets
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dev-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Dev environment
-        </span>
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1792,6 +1786,67 @@ Support our project with a ⭐ on
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Fine-tuning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fine-tuning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1799,7 +1854,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../trl/" class="md-nav__link">
+      <a href="../../fine-tuning/axolotl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Axolotl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fine-tuning/trl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1849,10 +1931,10 @@ Support our project with a ⭐ on
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1869,8 +1951,8 @@ Support our project with a ⭐ on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1964,10 +2046,10 @@ Support our project with a ⭐ on
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1984,8 +2066,8 @@ Support our project with a ⭐ on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2079,10 +2161,10 @@ Support our project with a ⭐ on
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2099,8 +2181,8 @@ Support our project with a ⭐ on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2626,67 +2708,34 @@ Support our project with a ⭐ on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#training-configuration-recipe" class="md-nav__link">
+  <a href="#deployment" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Training configuration recipe
+          Deployment
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-a-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Running a configuration
         </span>
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#single-node-training" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Single-node training
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multi-node-training" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Multi-node training
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fleets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Fleets
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dev-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Dev environment
-        </span>
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2733,9 +2782,8 @@ Support our project with a ⭐ on
 
 
 
-<h1 id="alignment-handbook">Alignment Handbook<a class="headerlink" href="#alignment-handbook" title="Permanent link">&para;</a></h1>
-<p>This example shows how use <a href="https://github.com/huggingface/alignment-handbook" target="_blank">Alignment Handbook <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> with <code>dstack</code> to 
-fine-tune Gemma 7B on your SFT dataset using one node or multiple nodes. </p>
+<h1 id="nim">NIM<a class="headerlink" href="#nim" title="Permanent link">&para;</a></h1>
+<p>This example shows how to deploy LLama 3.1 using <a href="https://docs.nvidia.com/nim/large-language-models/latest/getting-started.html" target="_blank">NVIDIA NIM <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> and <code>dstack</code>.</p>
 <details class="info">
 <summary>Prerequisites</summary>
 <p>Once <code>dstack</code> is <a href="https://dstack.ai/docs/installation">installed</a>, go ahead clone the repo, and run <code>dstack init</code>.</p>
@@ -2746,166 +2794,100 @@ $<span class="w"> </span>dstack<span class="w"> </span>init
 </code></pre></div>
 </div>
 </details>
-<h2 id="training-configuration-recipe">Training configuration recipe<a class="headerlink" href="#training-configuration-recipe" title="Permanent link">&para;</a></h2>
-<p>Alignment Handbook's training script reads the model, LoRA, and dataset arguments, as well
-as trainer configuration from a YAML file.
-This file can be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/config.yaml"><code>examples/fine-tuning/alignment-handbook/config.yaml</code></a>.
-You can modify it as needed.</p>
-<blockquote>
-<p>Before you proceed with training, make sure to update the <code>hub_model_id</code> in
-<a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/config.yaml" target="_blank"><code>examples/fine-tuning/alignment-handbook/config.yaml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
-with your HuggingFace username.</p>
-</blockquote>
-<h2 id="single-node-training">Single-node training<a class="headerlink" href="#single-node-training" title="Permanent link">&para;</a></h2>
-<p>The easiest way to run a training script with <code>dstack</code> is by creating a task configuration file.
-This file can be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/train.dstack.yml" target="_blank"><code>examples/fine-tuning/alignment-handbook/train.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>. 
-Below is its content: </p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ah-train</span>
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<p>Here's an example of a service that deploys Llama 3.1 8B using vLLM.</p>
+<div editor-title="examples/deployment/nim/.dstack.yml">
 
-<span class="c1"># If `image` is not specified, dstack uses its default image</span>
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
-<span class="c1"># Ensure nvcc is installed (req. for Flash Attention) </span>
-<span class="nt">nvcc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama31</span>
 
-<span class="c1"># Required environment variables</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvcr.io/nim/meta/llama-3.1-8b-instruct:latest</span>
 <span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_TOKEN</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ACCELERATE_LOG_LEVEL=info</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WANDB_API_KEY</span>
-<span class="c1"># Commands of the task</span>
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/huggingface/alignment-handbook.git</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd alignment-handbook</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install .</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install flash-attn --no-build-isolation</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install wandb</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--config_file recipes/accelerate_configs/multi_gpu.yaml</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num_processes=$DSTACK_GPUS_NUM</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">scripts/run_sft.py</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">../examples/fine-tuning/alignment-handbook/config.yaml</span>
-<span class="c1"># Uncomment to access TensorBoard</span>
-<span class="c1">#ports:</span>
-<span class="c1">#  - 6006</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NGC_API_KEY</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NIM_MAX_MODEL_LEN=4096</span>
+<span class="nt">registry_auth</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$oauthtoken</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.NGC_API_KEY }}</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+<span class="c1"># Register the model</span>
+<span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta/llama-3.1-8b-instruct</span>
+
+<span class="c1"># Uncomment to leverage spot instances</span>
+<span class="c1">#spot_policy: auto</span>
+
+<span class="c1"># Cache downloaded models</span>
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/root/.cache/nim:/opt/nim/.cache</span>
 
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Required resources</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+<span class="w">  </span><span class="c1"># Uncomment if using multiple GPUs</span>
+<span class="w">  </span><span class="c1">#shm_size: 24GB</span>
 </code></pre></div>
-<p>The task clones Alignment Handbook's repo, installs the dependencies,
-and runs the script.</p>
-<p>The <code>DSTACK_GPUS_NUM</code> environment variable is automatically passed to the container
-according to the <code>resoruce</code> property.</p>
-<p>To run the task, use <code>dstack apply</code>:</p>
+</div>
+
+<h3 id="running-a-configuration">Running a configuration<a class="headerlink" href="#running-a-configuration" title="Permanent link">&para;</a></h3>
+<p>To run a configuration, use the <a href="https://dstack.ai/docs/reference/cli/index.md#dstack-apply"><code>dstack apply</code></a> command. </p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HF_TOKEN</span><span class="o">=</span>...
-$<span class="w"> </span><span class="nv">WANDB_API_KEY</span><span class="o">=</span>...
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">NGC_API_KEY</span><span class="o">=</span>...
+$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/deployment/nim/.dstack.yml
 
-$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/alignment-handbook/train.dstack.yml
+<span class="w"> </span><span class="c1">#  BACKEND  REGION             RESOURCES                 SPOT  PRICE       </span>
+<span class="w"> </span><span class="m">1</span><span class="w">  </span>gcp<span class="w">      </span>asia-northeast3<span class="w">    </span>4xCPU,<span class="w"> </span>16GB,<span class="w"> </span>1xL4<span class="w"> </span><span class="o">(</span>24GB<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.17<span class="w">   </span>
+<span class="w"> </span><span class="m">2</span><span class="w">  </span>gcp<span class="w">      </span>asia-east1<span class="w">         </span>4xCPU,<span class="w"> </span>16GB,<span class="w"> </span>1xL4<span class="w"> </span><span class="o">(</span>24GB<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.21<span class="w">   </span>
+<span class="w"> </span><span class="m">3</span><span class="w">  </span>gcp<span class="w">      </span>asia-northeast3<span class="w">    </span>8xCPU,<span class="w"> </span>32GB,<span class="w"> </span>1xL4<span class="w"> </span><span class="o">(</span>24GB<span class="o">)</span><span class="w">  </span>yes<span class="w">   </span><span class="nv">$0</span>.21<span class="w"> </span>
+
+Submit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>llama3-nim-task?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+
+Provisioning...
+---&gt;<span class="w"> </span><span class="m">100</span>%
+</code></pre></div>
+</div>
+
+<p>If no gateway is created, the model will be available via the OpenAI-compatible endpoint 
+at <code>&lt;dstack server URL&gt;/proxy/models/&lt;project name&gt;/</code>.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>http://127.0.0.1:3000/proxy/models/main/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &amp;lt;dstack token&amp;gt;&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">      &quot;model&quot;: &quot;meta/llama3-8b-instruct&quot;,</span>
+<span class="s1">      &quot;messages&quot;: [</span>
+<span class="s1">        {</span>
+<span class="s1">          &quot;role&quot;: &quot;system&quot;,</span>
+<span class="s1">          &quot;content&quot;: &quot;You are a helpful assistant.&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        {</span>
+<span class="s1">          &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">          &quot;content&quot;: &quot;What is Deep Learning?&quot;</span>
+<span class="s1">        }</span>
+<span class="s1">      ],</span>
+<span class="s1">      &quot;max_tokens&quot;: 128</span>
+<span class="s1">    }&#39;</span>
 </code></pre></div>
 
 </div>
 
-<p>If you list <code>tensorbord</code> via <code>report_to</code> in <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/config.yaml"><code>examples/fine-tuning/alignment-handbook/config.yaml</code></a>,
-you'll be able to access experiment metrics via <code>http://localhost:6006</code> (while the task is running).</p>
-<h2 id="multi-node-training">Multi-node training<a class="headerlink" href="#multi-node-training" title="Permanent link">&para;</a></h2>
-<p>The multi-node training task configuration file can be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/train-distrib.dstack.yml"><code>examples/fine-tuning/alignment-handbook/train-distrib.dstack.yml</code></a>.
-Below is its content:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ah-train-distrib</span>
-
-<span class="c1"># If `image` is not specified, dstack uses its default image</span>
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
-<span class="c1"># Ensure nvcc is installed (req. for Flash Attention) </span>
-<span class="nt">nvcc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-
-<span class="c1"># The size of cluster</span>
-<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-
-<span class="c1"># Required environment variables</span>
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_TOKEN</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ACCELERATE_LOG_LEVEL=info</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WANDB_API_KEY</span>
-<span class="c1"># Commands of the task (dstack runs it on each node)</span>
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/huggingface/alignment-handbook.git</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd alignment-handbook</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install .</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install flash-attn --no-build-isolation</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install wandb</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--config_file ../examples/fine-tuning/alignment-handbook/fsdp_qlora_full_shard.yaml</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--main_process_ip=$DSTACK_MASTER_NODE_IP</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--main_process_port=8008</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--machine_rank=$DSTACK_NODE_RANK</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num_processes=$DSTACK_GPUS_NUM</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num_machines=$DSTACK_NODES_NUM</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">scripts/run_sft.py</span><span class="w"> </span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">../examples/fine-tuning/alignment-handbook/config.yaml</span>
-<span class="c1"># Expose 6006 to access TensorBoard</span>
-<span class="nt">ports</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6006</span>
-
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Required resources</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
-<span class="w">  </span><span class="c1"># Shared memory size for inter-process communication</span>
-<span class="w">  </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
-</code></pre></div>
-<p>Here's how the multi-node task is different from the single-node one:</p>
-<ol>
-<li>The <code>nodes</code> property is specified with a number of required nodes (should match the fleet's nodes number).</li>
-<li>Under <code>resoruces</code>, <code>shm_size</code> is specified with the shared memory size used for the communication of parallel
-   processes within a node (in case multiple GPUs per node are used).</li>
-<li>Instead of Alignment Handbook's <a href="https://github.com/huggingface/alignment-handbook/blob/main/recipes/accelerate_configs/multi_gpu.yaml"><code>recipes/accelerate_configs/multi_gpu.yaml</code></a>, we use <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/fsdp_qlora_full_shard.yaml"><code>examples/fine-tuning/alignment-handbook/fsdp_qlora_full_shard.yaml</code></a> as an accelerate config.</li>
-<li>We use <code>DSTACK_MASTER_NODE_IP</code>, <code>DSTACK_NODE_RANK</code>, <code>DSTACK_GPUS_NUM</code>, and <code>DSTACK_NODES_NUM</code> environment variables to
-   configure <code>accelerate</code>. The environment variables are automatically passed
-   to the container for each node based on the task configuration.</li>
-</ol>
-<h2 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>By default, <code>dstack run</code> reuses <code>idle</code> instances from one of the existing <a href="https://dstack.ai/docs/fleets">fleets</a>. 
-If no <code>idle</code> instances meet the requirements, it creates a new fleet using one of the configured backends.</p>
-</blockquote>
-<p>The example folder includes two cloud fleet configurations: <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/fleet.dstack.yml"><code>examples/fine-tuning/alignment-handbook/fleet.dstack.yml</code></a> (a single node with a <code>24GB</code> GPU),
-and a <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook/fleet-distrib.dstack.yml"><code>examples/fine-tuning/alignment-handbook/fleet-distrib.dstack.yml</code></a> (a cluster of two nodes each with a <code>24GB</code> GPU).</p>
-<p>You can update the fleet configurations to change the vRAM size, GPU model, number of GPUs per node, or number of nodes. </p>
-<p>A fleet can be provisioned with <code>dstack apply</code>:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/alignment-handbook/fleet.dstack.yml
-</code></pre></div>
-
-</div>
-
-<p>Once provisioned, the fleet can run dev environments and fine-tuning tasks.
-To delete the fleet, use <code>dstack fleet delete</code>.</p>
-<blockquote>
-<p>To ensure <code>dstack apply</code> always reuses an existing fleet,
-pass <code>--reuse</code> to <code>dstack apply</code> (or set <code>creation_policy</code> to <code>reuse</code> in the task configuration).
-The default policy is <code>reuse_or_create</code>.</p>
-</blockquote>
-<h2 id="dev-environment">Dev environment<a class="headerlink" href="#dev-environment" title="Permanent link">&para;</a></h2>
-<p>If you'd like to play with the example using a dev environment, run
-<a href="https://github.com/dstackai/dstack/examples/fine-tuning/alignment-handbook/.dstack.yml" target="_blank"><code>.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> via <code>dstack apply</code>:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/alignment-handbook/.dstack.yaml<span class="w"> </span>
-</code></pre></div>
-
-</div>
-
+<p>When a <a href="https://dstack.ai/docs/concepts/gateways.md">gateway</a> is configured, the OpenAI-compatible endpoint 
+is available at <code>https://gateway.&lt;gateway domain&gt;/</code>.</p>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
-<p>The source-code of this example can be found in <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/alignment-handbook" target="_blank"><code>examples/fine-tuning/alignment-handbook</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+<p>The source-code of this example can be found in 
+<a href="https://github.com/dstackai/dstack/blob/master/examples/deployment/nim" target="_blank"><code>examples/deployment/nim</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
+<details class="warning">
+<summary>Limitations</summary>
+<p>NIM isn't working yet with <code>runpod</code> and <code>vastai</code> backends. 
+Track the <a href="https://github.com/dstackai/dstack/issues/1535" target="_blank">issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> for progress.</p>
+</details>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Check <a href="https://dstack.ai/docs/dev-environments">dev environments</a>, <a href="https://dstack.ai/docs/tasks">tasks</a>,
-   <a href="https://dstack.ai/docs/services">services</a>, and <a href="https://dstack.ai/docs/concepts/fleets">fleets</a>.</li>
-<li>Browse <a href="https://github.com/huggingface/alignment-handbook" target="_blank">Alignment Handbook <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</li>
-<li>See other <a href="/examples">examples</a>.</li>
+<li>Check <a href="https://dstack.ai/docs/services">services</a></li>
+<li>Browse the <a href="https://dstack.ai/examples/llms/llama31/">Llama 3.1</a>, <a href="https://dstack.ai/examples/deployment/tgi/">TGI</a>, 
+   and <a href="https://dstack.ai/examples/deployment/vllm/">vLLM</a> examples</li>
+<li>See also <a href="https://dstack.ai/examples/accelerators/amd/">AMD</a> and
+   <a href="https://dstack.ai/examples/accelerators/tpu/">TPU</a></li>
 </ol>
 
 
@@ -2913,6 +2895,9 @@ The default policy is <code>reuse_or_create</code>.</p>
 
 
 
+
+  
+  
 
 
 
@@ -2927,7 +2912,7 @@ The default policy is <code>reuse_or_create</code>.</p>
           <nav class="md-footer__inner md-grid" aria-label="Footer" >
             
               
-              <a href="../axolotl/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Axolotl">
+              <a href="../tgi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TGI">
                 <div class="md-footer__button md-icon">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2937,20 +2922,20 @@ The default policy is <code>reuse_or_create</code>.</p>
                     Previous
                   </span>
                   <div class="md-ellipsis">
-                    Axolotl
+                    TGI
                   </div>
                 </div>
               </a>
             
             
               
-              <a href="../trl/" class="md-footer__link md-footer__link--next" aria-label="Next: TRL">
+              <a href="../../fine-tuning/axolotl/" class="md-footer__link md-footer__link--next" aria-label="Next: Axolotl">
                 <div class="md-footer__title">
                   <span class="md-footer__direction">
                     Next
                   </span>
                   <div class="md-ellipsis">
-                    TRL
+                    Axolotl
                   </div>
                 </div>
                 <div class="md-footer__button md-icon">
@@ -3039,6 +3024,7 @@ The default policy is <code>reuse_or_create</code>.</p>
 
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Examples</div>
+                    <a href="/examples#deployment" class="tx-footer__section-link">Deployment</a>
                     <a href="/examples#fine-tuning" class="tx-footer__section-link">Fine-tuning</a>
                     <a href="/examples#accelerators" class="tx-footer__section-link">Accelerators</a>
                     <a href="/examples#llms" class="tx-footer__section-link">LLMs</a>

@@ -15,17 +15,17 @@
         <link rel="canonical" href="https://dstack.ai/examples/fine-tuning/axolotl/">
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../../deployment/nim/">
       
       
-        <link rel="next" href="../alignment-handbook/">
+        <link rel="next" href="../trl/">
       
       
         
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45+insiders-4.53.14">
     
     
       
@@ -1550,6 +1550,148 @@ Support our project with a ⭐ on
                 
   
   
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/vllm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    vLLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/tgi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    TGI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/nim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    NIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1570,10 +1712,10 @@ Support our project with a ⭐ on
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1590,8 +1732,8 @@ Support our project with a ⭐ on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1705,32 +1847,6 @@ Support our project with a ⭐ on
 </li>
       
         <li class="md-nav__item">
-  <a href="#fleets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Fleets
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dev-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Dev environment
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1760,33 +1876,6 @@ Support our project with a ⭐ on
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../alignment-handbook/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Alignment Handbook
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1849,10 +1938,10 @@ Support our project with a ⭐ on
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1869,8 +1958,8 @@ Support our project with a ⭐ on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1964,10 +2053,10 @@ Support our project with a ⭐ on
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1984,8 +2073,8 @@ Support our project with a ⭐ on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2079,10 +2168,10 @@ Support our project with a ⭐ on
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2099,8 +2188,8 @@ Support our project with a ⭐ on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2665,32 +2754,6 @@ Support our project with a ⭐ on
 </li>
       
         <li class="md-nav__item">
-  <a href="#fleets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Fleets
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dev-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Dev environment
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#source-code" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2757,7 +2820,7 @@ with your HuggingFace username.</p>
 <h2 id="single-node-training">Single-node training<a class="headerlink" href="#single-node-training" title="Permanent link">&para;</a></h2>
 <p>The easiest way to run a training script with <code>dstack</code> is by creating a task configuration file.
 This file can be found at <a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/train.dstack.yml" target="_blank"><code>examples/fine-tuning/axolotl/train.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
-<div editor-title="examples/fine-tuning/axolotl/train.dstack.yml">
+<div editor-title="examples/fine-tuning/axolotl/.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">axolotl-train</span>
@@ -2773,8 +2836,8 @@ This file can be found at <a href="https://github.com/dstackai/dstack/blob/maste
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accelerate launch -m axolotl.cli.train examples/fine-tuning/axolotl/config.yaml</span>
 
-<span class="c1"># Use spot or on-demand instances</span>
-<span class="nt">spot_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="c1"># Uncomment to leverage spot instances</span>
+<span class="c1">#spot_policy: auto</span>
 
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
@@ -2798,43 +2861,7 @@ cloud resources and run the configuration.</p>
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HF_TOKEN</span><span class="o">=</span>...
 $<span class="w"> </span><span class="nv">WANDB_API_KEY</span><span class="o">=</span>...
-$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/train.dstack.yml
-</code></pre></div>
-
-</div>
-
-<h2 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>By default, <code>dstack run</code> reuses <code>idle</code> instances from one of the existing <a href="https://dstack.ai/docs/concepts/fleets">fleets</a>.
-If no <code>idle</code> instances meet the requirements, it creates a new fleet using one of the configured backends.</p>
-</blockquote>
-<p>The example folder includes a fleet configuration: 
-<a href="https://github.com/dstackai/dstack/blob/master/examples/fine-tuning/axolotl/fleet.dstack.yml" target="_blank"> <code>examples/fine-tuning/axolotl/fleet.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
-(a single node with a <code>24GB</code> GPU).</p>
-<p>You can update the fleet configuration to change the vRAM size, GPU model, number of GPUs per node, or number of nodes. </p>
-<p>A fleet can be provisioned with <code>dstack apply</code>:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/fleet.dstack.yml
-</code></pre></div>
-
-</div>
-
-<p>Once provisioned, the fleet can run dev environments and fine-tuning tasks.
-To delete the fleet, use <code>dstack fleet delete</code>.</p>
-<blockquote>
-<p>To ensure <code>dstack apply</code> always reuses an existing fleet,
-pass <code>--reuse</code> to <code>dstack apply</code> (or set <code>creation_policy</code> to <code>reuse</code> in the task configuration).
-The default policy is <code>reuse_or_create</code>.</p>
-</blockquote>
-<h2 id="dev-environment">Dev environment<a class="headerlink" href="#dev-environment" title="Permanent link">&para;</a></h2>
-<p>If you'd like to play with the example using a dev environment, run
-<a href="https://github.com/dstackai/dstack/examples/fine-tuning/axolotl/.dstack.yml" target="_blank"><code>.dstack.yml</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> via <code>dstack apply</code>:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HF_TOKEN</span><span class="o">=</span>...
-$<span class="w"> </span><span class="nv">WANDB_API_KEY</span><span class="o">=</span>...
-$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/.dstack.yaml<span class="w"> </span>
+$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/axolotl/.dstack.yml
 </code></pre></div>
 
 </div>
@@ -2869,7 +2896,7 @@ $<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </s
           <nav class="md-footer__inner md-grid" aria-label="Footer" >
             
               
-              <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Examples">
+              <a href="../../deployment/nim/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NIM">
                 <div class="md-footer__button md-icon">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2879,20 +2906,20 @@ $<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </s
                     Previous
                   </span>
                   <div class="md-ellipsis">
-                    Examples
+                    NIM
                   </div>
                 </div>
               </a>
             
             
               
-              <a href="../alignment-handbook/" class="md-footer__link md-footer__link--next" aria-label="Next: Alignment Handbook">
+              <a href="../trl/" class="md-footer__link md-footer__link--next" aria-label="Next: TRL">
                 <div class="md-footer__title">
                   <span class="md-footer__direction">
                     Next
                   </span>
                   <div class="md-ellipsis">
-                    Alignment Handbook
+                    TRL
                   </div>
                 </div>
                 <div class="md-footer__button md-icon">
@@ -2981,6 +3008,7 @@ $<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </s
 
                 <div class="tx-footer__section">
                     <div class="tx-footer__section-title">Examples</div>
+                    <a href="/examples#deployment" class="tx-footer__section-link">Deployment</a>
                     <a href="/examples#fine-tuning" class="tx-footer__section-link">Fine-tuning</a>
                     <a href="/examples#accelerators" class="tx-footer__section-link">Accelerators</a>
                     <a href="/examples#llms" class="tx-footer__section-link">LLMs</a>
