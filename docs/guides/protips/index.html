@@ -1017,6 +1017,51 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fleets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creation-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Creation policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Termination policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Volumes
+        </span>
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1033,11 +1078,11 @@ Support our project with a ⭐ on
 </li>
       
         <li class="md-nav__item">
-  <a href="#tasks-vs-services" class="md-nav__link">
+  <a href="#tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Tasks vs. services
+          Tasks
         </span>
       
     </span>
@@ -1064,32 +1109,6 @@ Support our project with a ⭐ on
       
         <span class="md-typeset">
           Environment variables
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volumes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Volumes
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#idle-duration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Idle duration
         </span>
       
     </span>
@@ -2802,6 +2821,51 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fleets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creation-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Creation policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Termination policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Volumes
+        </span>
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2818,11 +2882,11 @@ Support our project with a ⭐ on
 </li>
       
         <li class="md-nav__item">
-  <a href="#tasks-vs-services" class="md-nav__link">
+  <a href="#tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Tasks vs. services
+          Tasks
         </span>
       
     </span>
@@ -2849,32 +2913,6 @@ Support our project with a ⭐ on
       
         <span class="md-typeset">
           Environment variables
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volumes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Volumes
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#idle-duration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Idle duration
         </span>
       
     </span>
@@ -2962,13 +3000,37 @@ Support our project with a ⭐ on
 <h1 id="protips">Protips<a class="headerlink" href="#protips" title="Permanent link">&para;</a></h1>
 <p>Below are tips and tricks to use <code>dstack</code> more efficiently.</p>
 <h2 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h2>
-<p>By default, when running dev environments, tasks, or services, <code>dstack apply</code> reuses <code>idle</code> 
-instances from existing fleets. If no <code>idle</code> instances match the requirements, it creates a new fleet automatically.</p>
-<p>To avoid creating new fleet automatically, 
-set <a href="../../reference/dstack.yml/dev-environment/#creation_policy"> <code>creation_policy</code></a> to <code>reuse</code> in the configuration.</p>
+<h3 id="creation-policy">Creation policy<a class="headerlink" href="#creation-policy" title="Permanent link">&para;</a></h3>
+<p>By default, when you run <code>dstack apply</code> with a dev environment, task, or service,
+<code>dstack</code> reuses <code>idle</code> instances from an existing <a href="concepts/fleets.md">fleet</a>.
+If no <code>idle</code> instances matching the requirements, it automatically creates a new fleet 
+using backends.</p>
+<p>To ensure <code>dstack apply</code> doesn't create a new fleet but reuses an existing one,
+pass <code>-R</code> (or <code>--reuse</code>) to <code>dstack apply</code>.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-R<span class="w"> </span>-f<span class="w"> </span>examples/.dstack.yml
+</code></pre></div>
+
+</div>
+
+<h3 id="termination-policy">Termination policy<a class="headerlink" href="#termination-policy" title="Permanent link">&para;</a></h3>
+<p>If a fleet is created automatically, it remains <code>idle</code> for 5 minutes and can be reused within that time.
+To change the default idle duration, set
+<a href="../../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a> in the run configuration (e.g., to 0 or a
+longer duration).</p>
+<div class="admonition info">
+<p class="admonition-title">Fleets</p>
+<p>For greater control over fleet provisioning, configuration, and lifecycle management, it is recommended to use
+<a href="../../concepts/fleets/">fleets</a> directly.</p>
+</div>
+<h2 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h2>
+<p>To persist data across runs, it is recommended to use volumes.
+<code>dstack</code> supports two types of volumes: <a href="../../concepts/volumes/#network-volumes">network</a> 
+(for persisting data even if the instance is interrupted)
+and <a href="../../concepts/volumes/#instance-volumes">instance</a> (useful for persisting cached data across runs while the instance remains active).</p>
 <blockquote>
-<p>Use <a href="../fleets.md">fleets</a> configurations to create fleets manually. This reduces startup time for dev environments,
-tasks, and services, and is very convenient if you want to reuse fleets across runs.</p>
+<p>If you use <a href="../../concepts/fleets/#ssh-fleets">SSH fleets</a>, you can mount network storage (e.g., NFS or SMB) to the hosts and access it in runs via instance volumes.</p>
 </blockquote>
 <h2 id="dev-environments">Dev environments<a class="headerlink" href="#dev-environments" title="Permanent link">&para;</a></h2>
 <p>Before running a task or service, it's recommended that you first start with a dev environment. Dev environments
@@ -2991,7 +3053,7 @@ pre-configured and easy-to-use extension.</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8888</span>
 </code></pre></div>
 </details>
-<h2 id="tasks-vs-services">Tasks vs. services<a class="headerlink" href="#tasks-vs-services" title="Permanent link">&para;</a></h2>
+<h2 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
 <p>Tasks can be used not only for batch jobs but also for web applications.</p>
 <div editor-title="app.dstack.yml">
 
@@ -3032,11 +3094,9 @@ pre-configured and easy-to-use extension.</p>
 <p>This will forward the remote <code>8501</code> port to <code>localhost:3000</code>.</p>
 </details>
 <blockquote>
-<p>Use <a href="../../tasks/">tasks</a> when you don't need authorization, OpenAI-compatible endpoint,
-custom domain with HTTPS, multiple replicas, and when you don't need to let
-other users access the endpoint.</p>
+<p>Use <a href="../../tasks/">tasks</a> when you don't need multiple replicas or external access to the endpoint. For other cases,
+use <a href="../../services/">services</a>.</p>
 </blockquote>
-<p>In all other cases, use <a href="../../services/">services</a>.</p>
 <h2 id="docker-and-docker-compose">Docker and Docker Compose<a class="headerlink" href="#docker-and-docker-compose" title="Permanent link">&para;</a></h2>
 <p>All backends except <code>runpod</code>, <code>vastai</code> and <code>kubernetes</code> allow to use Docker and Docker Compose 
 inside <code>dstack</code> runs. To do that, additional configuration steps are required:</p>
@@ -3146,24 +3206,6 @@ $<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </s
 it will automatically pass the environment variables from the <code>.env</code> file to the <code>dstack apply</code> command.</p>
 <p>Remember to add <code>.env</code> to <code>.gitignore</code> to avoid pushing it to the repo.    </p>
 </details>
-<h2 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h2>
-<p>To persist data across runs, it is recommended to use volumes.
-<code>dstack</code> supports two types of volumes: <a href="../../concepts/volumes/#network-volumes">network</a>
-and <a href="../../concepts/volumes/#instance-volumes">instance</a>.</p>
-<p>Network volumes are ideal for persisting data even if the instance is interrupted.</p>
-<p>Instance volumes are useful for persisting cached data across runs while the instance remains active.</p>
-<blockquote>
-<p>Besides volumes, you can load and save data using object storage services such as S3, HuggingFace Hub, and others.</p>
-</blockquote>
-<h2 id="idle-duration">Idle duration<a class="headerlink" href="#idle-duration" title="Permanent link">&para;</a></h2>
-<p>If you run a dev environment, task, or service via <code>dstack apply</code>,
-and it creates a new fleet, it sets the idle duration to <code>5m</code>. If instances of the fleet are <code>idle</code>
-for this time, <code>dstack</code> terminates them.</p>
-<p>If you create a fleet manually, the idle duration is not set.</p>
-<blockquote>
-<p>You can override idle duration for fleets, dev environment, tasks, and services by
-setting <a href="../../reference/dstack.yml/dev-environment/#termination_idle_time"><code>termination_idle_time</code></a> in the configuration file. </p>
-</blockquote>
 <h2 id="attached-mode">Attached mode<a class="headerlink" href="#attached-mode" title="Permanent link">&para;</a></h2>
 <p>By default, <code>dstack apply</code> runs in attached mode.
 This means it streams the logs as they come in and, in the case of a task, forwards its ports to <code>localhost</code>.</p>
@@ -3196,13 +3238,13 @@ allows specifying not only memory size but also GPU vendor, names, their memory,
 <li><code>tpu</code> (Google Cloud TPUs)</li>
 </ul>
 <details class="info">
+<summary>AMD</summary>
+<p>Currently, when an AMD GPU is specified, either by name or by vendor, the <code>image</code> property must be specified as well.</p>
+</details>
+<details class="info">
 <summary>TPU</summary>
 <p>Currently, you can't specify other than 8 TPU cores. This means only single host workloads are supported.
 Support for multiple hosts is coming soon.</p>
-</details>
-<details class="info">
-<summary>AMD</summary>
-<p>Currently, when an AMD GPU is specified, either by name or by vendor, the <code>image</code> property must be specified as well.</p>
 </details>
 <h2 id="monitoring-metrics">Monitoring metrics<a class="headerlink" href="#monitoring-metrics" title="Permanent link">&para;</a></h2>
 <p>While <code>dstack</code> allows the use of any third-party monitoring tools (e.g., Weights and Biases), you can also
