@@ -1656,6 +1656,17 @@ Support our project with a ⭐ on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#internal_ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        internal_ip
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3573,6 +3584,17 @@ Support our project with a ⭐ on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#internal_ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        internal_ip
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3891,12 +3913,13 @@ Any configuration can be run via <a href="../../cli/#dstack-apply"><code>dstack 
 <h4 class="reference-item" id="port"><code>port</code> - (Optional) The SSH port to connect to.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="identity_file"><code>identity_file</code> - (Optional) The private key to use for all hosts.<a class="headerlink" href="#identity_file" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="hosts"><code>hosts</code> -  The per host connection parameters: a hostname or an object that overrides default ssh parameters.<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="network"><code>network</code> - (Optional) The network address for cluster setup in the format <code>&lt;ip&gt;/&lt;netmask&gt;</code>.<a class="headerlink" href="#network" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="network"><code>network</code> - (Optional) The network address for cluster setup in the format <code>&lt;ip&gt;/&lt;netmask&gt;</code>. <code>dstack</code> will use IP addresses from this network for communication between hosts. If not specified, <code>dstack</code> will use IPs from the first found internal network..<a class="headerlink" href="#network" title="Permanent link">&para;</a></h4>
 <h2 id="ssh_confighostsn"><code>ssh_config.hosts[n]</code><a class="headerlink" href="#ssh_confighostsn" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="hostname"><code>hostname</code> -  The IP address or domain to connect to.<a class="headerlink" href="#hostname" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="port"><code>port</code> - (Optional) The SSH port to connect to for this host.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="user"><code>user</code> - (Optional) The user to log in with for this host.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="identity_file"><code>identity_file</code> - (Optional) The private key to use for this host.<a class="headerlink" href="#identity_file" title="Permanent link">&para;</a></h4>
+<h4 class="reference-item" id="internal_ip"><code>internal_ip</code> - (Optional) The internal IP of the host used for communication inside the cluster. If not specified, <code>dstack</code> will use the IP address from <code>network</code> or from the first found internal network..<a class="headerlink" href="#internal_ip" title="Permanent link">&para;</a></h4>
 <h2 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <h4 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>8GB</code>). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
