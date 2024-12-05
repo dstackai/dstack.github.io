@@ -2805,6 +2805,19 @@ Support our project with a ⭐ on
 </li>
       
         <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Source code
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#thanks-to-our-friends" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3020,7 +3033,7 @@ contrast, the 1 FP8 8xMI300x configuration is the most cost-efficient for large 
 <p>With large prompts and batch sizes, two replicas on 4xMI300x GPUs hit memory saturation when total tokens (prompt
 length x batch size) exceed the available memory for the KV cache. This forces the inference engine to compute KV
 tensors on-the-fly or offload them to CPU memory, degrading throughput.</p>
-<p>In <a href="https://lambdalabs.com/blog/partner-spotlight-evaluating-nvidia-h200-gpus-for-ai-inference-with-baseten">Lambda Labs</a>’
+<p>In <a href="https://lambdalabs.com/blog/partner-spotlight-evaluating-nvidia-h200-gpus-for-ai-inference-with-baseten" target="_blank">Lambda <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>’
 benchmark, an 8xH200 setup processed 3.4 times more tokens per second than an 8xH100. Extrapolating to our
 setup, an 8xH200 would process around 2,186 tokens per second (3.4 × 643), though still lower than 8xMI300x.</p>
 <table>
@@ -3158,6 +3171,9 @@ cost-efficiency.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<p>All the source code and findings to help you replicate the results are available in 
+<a href="https://github.com/dstackai/benchmarks/tree/main/comparison/h100sxm5_vs_mi300x" target="_blank">our GitHub repo <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
 <h2 id="thanks-to-our-friends">Thanks to our friends<a class="headerlink" href="#thanks-to-our-friends" title="Permanent link">&para;</a></h2>
 <h3 id="hot-aisle">Hot Aisle<a class="headerlink" href="#hot-aisle" title="Permanent link">&para;</a></h3>
 <p><a href="https://hotaisle.xyz/" target="_blank">Hot Aisle <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> sponsored this benchmark by providing access to 8x MI300x hardware. We’re deeply grateful for their support.</p>
