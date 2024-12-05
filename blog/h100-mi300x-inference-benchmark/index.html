@@ -6,37 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center.">
+        <meta name="description" content="This benchmark explores how GPU memory saturation affects LLM inference performance and cost, comparing NVIDIA H100 and AMD MI300x.">
       
       
         <meta name="author" content="dstack GmbH">
       
       
-        <link rel="canonical" href="https://dstack.ai/blog/category/volumes/">
+        <link rel="canonical" href="https://dstack.ai/blog/h100-mi300x-inference-benchmark/">
       
       
-        <link rel="prev" href="../tpu/">
+        <link rel="prev" href="../instance-volumes/">
       
-      
-        <link rel="next" href="../../archive/2024/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
+      <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47+insiders-4.53.14">
     
     
       
-        <title>Volumes - dstack</title>
+        <title>Exploring inference memory saturation effect: H100 vs MI300x - dstack</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d0dfab1c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d0dfab1c.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -61,17 +59,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/termynal.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/termynal.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/landing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/landing.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/pricing.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pricing.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,17 +87,19 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Volumes - dstack" />
-<meta property="og:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="og:image" content="https://dstack.ai/assets/images/social/blog/category/volumes.png" />
+<meta property="og:title" content="Exploring inference memory saturation effect: H100 vs MI300x - dstack" />
+<meta property="og:description" content="This benchmark explores how GPU memory saturation affects LLM inference performance and cost, comparing NVIDIA H100 and AMD MI300x." />
+<meta property="og:image" content="
+  https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-v2.png?raw=true" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dstack.ai/blog/category/volumes/" />
+<meta property="og:url" content="https://dstack.ai/blog/h100-mi300x-inference-benchmark/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Volumes - dstack" />
-<meta property="twitter:description" content="dstack is an open-source AI container orchestration engine working with any cloud or data center." />
-<meta property="twitter:image" content="https://dstack.ai/assets/images/social/blog/category/volumes.png" />
+<meta property="twitter.title" content="Exploring inference memory saturation effect: H100 vs MI300x - dstack" />
+<meta property="twitter:description" content="This benchmark explores how GPU memory saturation affects LLM inference performance and cost, comparing NVIDIA H100 and AMD MI300x." />
+<meta property="twitter:image" content="
+  https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-v2.png?raw=true" />
 </head>
   
   
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#volumes" class="md-skip">
+        <a href="#exploring-inference-memory-saturation-effect-h100-vs-mi300x" class="md-skip">
           Skip to content
         </a>
       
@@ -157,7 +157,7 @@ Support our project with a ⭐ on
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/" title="dstack" class="md-header__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -174,7 +174,7 @@ Support our project with a ⭐ on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Volumes
+              Exploring inference memory saturation effect: H100 vs MI300x
             
           </span>
         </div>
@@ -274,7 +274,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -299,7 +299,7 @@ Support our project with a ⭐ on
     
     
       <li class="md-tabs__item">
-        <a href="../../../docs/" class="md-tabs__link">
+        <a href="../../docs/" class="md-tabs__link">
           
   
   Docs
@@ -320,7 +320,7 @@ Support our project with a ⭐ on
     
     
       <li class="md-tabs__item">
-        <a href="../../../examples/" class="md-tabs__link">
+        <a href="../../examples/" class="md-tabs__link">
           
   
   Examples
@@ -340,7 +340,7 @@ Support our project with a ⭐ on
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   Blog
@@ -356,7 +356,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-tabs__item">
-      <a href="../../../partners/" class="md-tabs__link">
+      <a href="../../partners/" class="md-tabs__link">
         
   
     
@@ -379,7 +379,9 @@ Support our project with a ⭐ on
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -392,7 +394,7 @@ Support our project with a ⭐ on
   <label class="md-nav__title" for="__drawer">
     <a href="/" title="dstack" class="md-nav__button md-logo" aria-label="dstack" data-md-component="logo">
       
-  <img src="../../../assets/images/dstack-logo-notext.svg" alt="logo">
+  <img src="../../assets/images/dstack-logo-notext.svg" alt="logo">
 
     </a>
     dstack
@@ -419,7 +421,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -545,7 +547,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -572,7 +574,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/installation/" class="md-nav__link">
+      <a href="../../docs/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +601,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/quickstart/" class="md-nav__link">
+      <a href="../../docs/quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -684,7 +686,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/dev-environments/" class="md-nav__link">
+      <a href="../../docs/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -711,7 +713,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/tasks/" class="md-nav__link">
+      <a href="../../docs/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -738,7 +740,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/services/" class="md-nav__link">
+      <a href="../../docs/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -765,7 +767,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/concepts/fleets/" class="md-nav__link">
+      <a href="../../docs/concepts/fleets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -792,7 +794,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/concepts/volumes/" class="md-nav__link">
+      <a href="../../docs/concepts/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -819,7 +821,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/concepts/gateways/" class="md-nav__link">
+      <a href="../../docs/concepts/gateways/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -846,7 +848,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/concepts/projects/" class="md-nav__link">
+      <a href="../../docs/concepts/projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -931,7 +933,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/guides/protips/" class="md-nav__link">
+      <a href="../../docs/guides/protips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -958,7 +960,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/guides/troubleshooting/" class="md-nav__link">
+      <a href="../../docs/guides/troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -985,7 +987,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/guides/server-deployment/" class="md-nav__link">
+      <a href="../../docs/guides/server-deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1070,7 +1072,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/server/config.yml/" class="md-nav__link">
+      <a href="../../docs/reference/server/config.yml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1147,7 +1149,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/dev-environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1174,7 +1176,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/task/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1201,7 +1203,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/service/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1228,7 +1230,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/fleet/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/fleet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1255,7 +1257,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/gateway/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1282,7 +1284,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/dstack.yml/volume/" class="md-nav__link">
+      <a href="../../docs/reference/dstack.yml/volume/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1317,7 +1319,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/cli/" class="md-nav__link">
+      <a href="../../docs/reference/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1394,7 +1396,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/api/python/" class="md-nav__link">
+      <a href="../../docs/reference/api/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1421,7 +1423,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/reference/api/rest/" class="md-nav__link">
+      <a href="../../docs/reference/api/rest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1521,7 +1523,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/" class="md-nav__link">
+      <a href="../../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1598,7 +1600,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/deployment/vllm/" class="md-nav__link">
+      <a href="../../examples/deployment/vllm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1625,7 +1627,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/deployment/tgi/" class="md-nav__link">
+      <a href="../../examples/deployment/tgi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1652,7 +1654,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/deployment/nim/" class="md-nav__link">
+      <a href="../../examples/deployment/nim/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1737,7 +1739,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/fine-tuning/axolotl/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/axolotl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1764,7 +1766,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/fine-tuning/trl/" class="md-nav__link">
+      <a href="../../examples/fine-tuning/trl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1849,7 +1851,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/accelerators/amd/" class="md-nav__link">
+      <a href="../../examples/accelerators/amd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1876,7 +1878,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/accelerators/tpu/" class="md-nav__link">
+      <a href="../../examples/accelerators/tpu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1961,7 +1963,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/llms/llama31/" class="md-nav__link">
+      <a href="../../examples/llms/llama31/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1988,7 +1990,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/llms/llama32/" class="md-nav__link">
+      <a href="../../examples/llms/llama32/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2073,7 +2075,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/misc/docker-compose/" class="md-nav__link">
+      <a href="../../examples/misc/docker-compose/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2167,12 +2169,14 @@ Support our project with a ⭐ on
                 
   
   
+    
+  
   
     
   
   
-    <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2256,7 +2260,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2024/" class="md-nav__link">
+      <a href="../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2290,8 +2294,6 @@ Support our project with a ⭐ on
                 
   
   
-    
-  
   
   
     
@@ -2306,11 +2308,11 @@ Support our project with a ⭐ on
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
@@ -2330,7 +2332,7 @@ Support our project with a ⭐ on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2350,7 +2352,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../amd/" class="md-nav__link">
+      <a href="../category/amd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2381,7 +2383,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../benchmarks/" class="md-nav__link">
+      <a href="../category/benchmarks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2412,7 +2414,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../nvidia/" class="md-nav__link">
+      <a href="../category/nvidia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2443,7 +2445,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../observability/" class="md-nav__link">
+      <a href="../category/observability/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2474,7 +2476,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../tpu/" class="md-nav__link">
+      <a href="../category/tpu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2500,42 +2502,12 @@ Support our project with a ⭐ on
                 
   
   
-    
-  
   
     
-      
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    <span class="md-typeset">
-      Volumes
-    </span>
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../category/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2552,48 +2524,6 @@ Support our project with a ⭐ on
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introducing-instance-volumes-to-persist-data-on-instances" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Introducing instance volumes to persist data on instances
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-volumes-to-optimize-cold-starts-on-runpod" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using volumes to optimize cold starts on RunPod
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2621,7 +2551,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../partners/" class="md-nav__link">
+      <a href="../../partners/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2648,6 +2578,8 @@ Support our project with a ⭐ on
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2667,10 +2599,205 @@ Support our project with a ⭐ on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introducing-instance-volumes-to-persist-data-on-instances" class="md-nav__link">
+  <a href="#benchmark-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Introducing instance volumes to persist data on instances
+        <span class="md-typeset">
+          Benchmark setup
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benchmark setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Benchmark modes
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Observations
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Observations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cost-per-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cost per token
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Throughput
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Throughput">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#replicas-on-4xmi300x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Replicas on 4xMi300x
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-to-first-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Time To First Token
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-to-serve-1-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Time to Serve 1 Request
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmark-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Benchmark notes
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benchmark notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Benchmark setup
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Batch size
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-checkpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Model checkpoints
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vllm-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          vLLM configuration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-b200-mi325x-and-mi350x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          On B200, MI325x, and MI350x
+        </span>
       
     </span>
   </a>
@@ -2678,13 +2805,47 @@ Support our project with a ⭐ on
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-volumes-to-optimize-cold-starts-on-runpod" class="md-nav__link">
+  <a href="#thanks-to-our-friends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using volumes to optimize cold starts on RunPod
+        <span class="md-typeset">
+          Thanks to our friends
+        </span>
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Thanks to our friends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hot-aisle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hot Aisle
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lambda
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2697,135 +2858,337 @@ Support our project with a ⭐ on
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-11-05 00:00:00+00:00">November 5, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="./" class="md-meta__link">Volumes</a></li>
-        
-        
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2024-12-05 00:00:00+00:00" class="md-ellipsis">December 5, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/benchmarks/">Benchmarks</a>, 
+                              <a href="../category/amd/">AMD</a>, 
+                              <a href="../category/nvidia/">NVIDIA</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              6 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="introducing-instance-volumes-to-persist-data-on-instances"><a class="toclink" href="../../instance-volumes/">Introducing instance volumes to persist data on instances</a></h2>
-<h3 id="how-it-works" style="display:none"><a class="toclink" href="../../instance-volumes/#how-it-works">How it works</a></h3>
-<p>Until now, <code>dstack</code> supported data persistence only with network volumes, managed by clouds.
-While convenient, sometimes you might want to use a simple cache on the instance or 
-mount an NFS share to your SSH fleet. To address this, we're now introducing instance volumes that work for both cases.</p>
-<div editor-title="examples/misc/volumes/cache.dstack.yml"> 
+    <article class="md-content__inner md-typeset">
+      
+        
+  
 
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"> </span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llama32-task</span>
 
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HF_TOKEN</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MODEL_ID=meta-llama/Llama-3.2-3B-Instruct</span>
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install vllm</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vllm serve $MODEL_ID --max-model-len 4096</span>
-<span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">8000</span><span class="p p-Indicator">]</span>
 
-<span class="nt">volumes</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/root/.dstack/cache:/root/.cache</span>
+  
+    <a href="https://github.com/dstackai/dstack/edit/master/docs/blog/posts/h100-mi300x-inference-benchmark.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
 
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16GB..</span>
+
+<h1 id="exploring-inference-memory-saturation-effect-h100-vs-mi300x">Exploring inference memory saturation effect: H100 vs MI300x<a class="headerlink" href="#exploring-inference-memory-saturation-effect-h100-vs-mi300x" title="Permanent link">&para;</a></h1>
+<p>GPU memory plays a critical role in LLM inference, affecting both performance and cost. This benchmark evaluates memory
+saturation’s impact on inference using NVIDIA's H100 and AMD's MI300x with Llama 3.1 405B FP8.</p>
+<p>We examine the effect of limited parallel computational resources on throughput and Time to First Token (TTFT).
+Additionally, we compare deployment strategies: running two Llama 3.1 405B FP8 replicas on 4xMI300x versus a single
+replica on 4xMI300x and 8xMI300x</p>
+<p>Finally, we extrapolate performance projections for upcoming GPUs like NVIDIA H200, B200, and AMD MI325x, MI350x.</p>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-v2.png?raw=true" width="600" /></p>
+<p>This benchmark is made possible through the generous support of our friends at
+<a href="https://hotaisle.xyz/" target="_blank">Hot Aisle <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> and 
+<a href="https://lambdalabs.com/" target="_blank">Lambda <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>,
+who provided high-end hardware.</p>
+<!-- more -->
+
+<h2 id="benchmark-setup">Benchmark setup<a class="headerlink" href="#benchmark-setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>AMD 8xMI300x<ul>
+<li>2x Intel Xeon Platinum 8470, 52C/104T, 16GT/s, 105M Cache (350W)</li>
+<li>8x AMD MI300x GPU OAM, 192GB, 750W</li>
+<li>32x 64GB RDIMM, 4800MT/s</li>
+</ul>
+</li>
+<li>NVIDIA 8xH100 SXM5<ul>
+<li>2× Intel Xeon Platinum 8480+, 56C/112T, 16GT/s, 105M Cache (350W)</li>
+<li>8× NVIDIA H100 SXM5 GPU, 80GB, 700W</li>
+<li>32x 64GB DDR5</li>
+</ul>
+</li>
+</ol>
+<h3 id="benchmark-modes">Benchmark modes<a class="headerlink" href="#benchmark-modes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Online inference</strong>: Benchmarked across QPS 16, 32, and 1000 using
+   the <a href="https://huggingface.co/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered" target="_blank">ShareGPT <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> dataset. Execution used
+   vLLM’s <a href="https://github.com/vllm-project/vllm/blob/main/benchmarks/benchmark_serving.py">benchmark_serving</a>.</li>
+<li><strong>Offline inference</strong>: Benchmarked with varying input/output lengths across different batch sizes, using vLLM’s <a href="https://github.com/vllm-project/vllm/blob/main/benchmarks/benchmark_throughput.py">benchmark_throughput.py</a>.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Input prompt lengths</th>
+<th>Batch size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Short/Small</strong></td>
+<td>4 to 1024</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Short/Large</strong></td>
+<td>128</td>
+<td>256</td>
+</tr>
+<tr>
+<td><strong>Large/Large</strong></td>
+<td>32784</td>
+<td>64 (MI300x) / 16 (H100)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="observations">Observations<a class="headerlink" href="#observations" title="Permanent link">&para;</a></h2>
+<h3 id="cost-per-token">Cost per token<a class="headerlink" href="#cost-per-token" title="Permanent link">&para;</a></h3>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-cpt.png?raw=true" width="750"></p>
+<p>As prompt and batch sizes grow, the NVIDIA H100 reaches memory limits, causing a sharp drop in cost-effectiveness. In
+contrast, the 1 FP8 8xMI300x configuration is the most cost-efficient for large prompts.</p>
+<p>For large prompts, two parallel replicas running on 4xMI300x lose their cost advantage compared to a single replica on
+8xMI300x. The latter offers 51% more memory for the KV cache, improving throughput and reducing cost per token.</p>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-online-requests.png?raw=true" width="750"></p>
+<p>While 4xMI300x is a cost-effective alternative to 8xH100 for smaller load profiles, it underperforms in online serving.
+8xH100 SXM5 processes 74% more requests per second and reduces TTFT by at least 50% at all QPS levels.</p>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-online-ttft.png?raw=true" width="750"></p>
+<h3 id="throughput">Throughput<a class="headerlink" href="#throughput" title="Permanent link">&para;</a></h3>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-throughput.png?raw=true" width="750"></p>
+<p>With large prompts and batch sizes, two replicas on 4xMI300x GPUs hit memory saturation when total tokens (prompt
+length x batch size) exceed the available memory for the KV cache. This forces the inference engine to compute KV
+tensors on-the-fly or offload them to CPU memory, degrading throughput.</p>
+<p>In <a href="https://lambdalabs.com/blog/partner-spotlight-evaluating-nvidia-h200-gpus-for-ai-inference-with-baseten">Lambda Labs</a>’
+benchmark, an 8xH200 setup processed 3.4 times more tokens per second than an 8xH100. Extrapolating to our
+setup, an 8xH200 would process around 2,186 tokens per second (3.4 × 643), though still lower than 8xMI300x.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>AMD MI300x</th>
+<th>NVIDIA H200</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPU Memory</strong></td>
+<td>192 GB</td>
+<td>141 GB</td>
+</tr>
+<tr>
+<td><strong>Memory Type</strong></td>
+<td>HBM3</td>
+<td>HBM3e</td>
+</tr>
+<tr>
+<td><strong>Peak Memory Bandwidth</strong></td>
+<td>5.3TB/s</td>
+<td>4.8TB/s</td>
+</tr>
+<tr>
+<td><strong>TFLOPS (FP8)</strong></td>
+<td>2610</td>
+<td>1979</td>
+</tr>
+</tbody>
+</table>
+<h4 id="replicas-on-4xmi300x">Replicas on 4xMi300x<a class="headerlink" href="#replicas-on-4xmi300x" title="Permanent link">&para;</a></h4>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-throughput-2048.png?raw=true" width="750"></p>
+<p>Running two replicas on 4xMI300x delivers better throughput for small to medium prompts than a single replica on
+8xMI300x. </p>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-throughput-32784.png?raw=true" width="750"></p>
+<p>This boost comes from distributing the Llama 3.1 405B model across four GPUs, enabling parallel execution. For
+small prompts, a single replica underutilizes the GPUs. Running two replicas doubles the batch size, improving GPU
+utilization and efficiency.</p>
+<h3 id="time-to-first-token">Time To First Token<a class="headerlink" href="#time-to-first-token" title="Permanent link">&para;</a></h3>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-ttft-qps-1000.png?raw=true" width="750"></p>
+<p>The 4xMI300x setup provides 768 GB of memory (4 GPUs × 192 GB each), compared to 640 GB with 8xH100 (8 GPUs × 80 GB
+each). However, at 1000 QPS, TTFT for 4xMI300x is over twice as long as for 8xH100</p>
+<p>This difference occurs during the prefill stage, where KV tensors for input prompts are computed. Since tensors are
+processed in parallel, the 8xH100 configuration distributes the load more effectively, reducing computation time.</p>
+<p>Despite offering more memory, 4xMI300x lacks the parallelism of 8xH100, leading to longer TTFT.</p>
+<h3 id="time-to-serve-1-request">Time to Serve 1 Request<a class="headerlink" href="#time-to-serve-1-request" title="Permanent link">&para;</a></h3>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-time-1-request.png?raw=true" width="750"></p>
+<p>Processing a single large prompt request with 8xMI300x takes around 11.25 seconds. This latency is mainly due to
+computational demands during the prefill phase, where KV tensors are computed.</p>
+<p>Optimizations like <a href="https://docs.vllm.ai/en/latest/automatic_prefix_caching/apc.html" target="_blank">automatic prefix caching <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
+could help reduce this time, but are outside the scope of this benchmark.</p>
+<h2 id="benchmark-notes">Benchmark notes<a class="headerlink" href="#benchmark-notes" title="Permanent link">&para;</a></h2>
+<h3 id="benchmark-setup_1">Benchmark setup<a class="headerlink" href="#benchmark-setup_1" title="Permanent link">&para;</a></h3>
+<p>The script used in this benchmark was designed for large prompts in offline inference. A different script tailored for
+online inference would provide more accurate insights.</p>
+<h3 id="batch-size">Batch size<a class="headerlink" href="#batch-size" title="Permanent link">&para;</a></h3>
+<p>We compared throughput at batch size 16 for 8xH100 and batch size 64 for 8xMI300x. The 8xH100 setup begins to struggle
+with batch size 16 due to memory saturation, resulting in slower generation times.</p>
+<h3 id="model-checkpoints">Model checkpoints<a class="headerlink" href="#model-checkpoints" title="Permanent link">&para;</a></h3>
+<p>For AMD MI300x, we used <a href="https://huggingface.co/amd/Llama-3.1-405B-Instruct-FP8-KV" target="_blank"><code>amd/Llama-3.1-405B-Instruct-FP8-KV</code> <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
+to achieve optimal performance, relying on AMD for quantization.</p>
+<h3 id="vllm-configuration">vLLM configuration<a class="headerlink" href="#vllm-configuration" title="Permanent link">&para;</a></h3>
+<p>To maximize inference results on AMD MI300x, we adjusted specific arguments:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">VLLM_RPC_TIMEOUT</span><span class="o">=</span><span class="m">30000</span><span class="w"> </span><span class="nv">VLLM_USE_TRITON_FLASH_ATTN</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>vllm<span class="w"> </span>serve<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>meta-llama/Llama-3.1-405B-FP8<span class="w"> </span>-tp<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-seq-len-to-capture<span class="w"> </span><span class="m">16384</span><span class="w"> </span><span class="se">\ </span>
+<span class="w">  </span>--served-model-name<span class="w"> </span>meta-llama/Llama-3.1-405B-FP8<span class="w"> </span><span class="se">\ </span>
+<span class="w">  </span>--enable-chunked-prefill<span class="o">=</span>False<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num-scheduler-step<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-num-seqs<span class="w"> </span><span class="m">1024</span>
 </code></pre></div>
 
 </div>
 
+<p>Our benchmark focused on testing inference with tensor parallelism. Integrating tensor and pipeline parallelism could
+provide additional insights.</p>
+<h2 id="on-b200-mi325x-and-mi350x">On B200, MI325x, and MI350x<a class="headerlink" href="#on-b200-mi325x-and-mi350x" title="Permanent link">&para;</a></h2>
+<p>The MI325x offers 64GB more HBM and 0.7TB/s higher bandwidth than MI300x. However, because it has the same FP8 TFLOPS, it
+doesn't provide significant compute gains, positioning it against NVIDIA's H200.</p>
+<p>The NVIDIA B200 outperforms MI300x and MI325x with more TFLOPS and higher peak memory bandwidth, resulting in lower TTFT
+by reducing compute time for KV tensors and memory transfer times during the decode stage. We expect the B200 to
+challenge MI325x, as long as memory saturation is avoided.</p>
+<p>Notably, future GPUs from AMD and NVIDIA are expected to support FP4 and FP6, improving throughput, latency, and
+cost-efficiency.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>AMD MI300x</th>
+<th>AMD MI325x</th>
+<th>AMD MI350x</th>
+<th>NVIDIA B200</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPU Memory</strong></td>
+<td>192 GB</td>
+<td>256 GB</td>
+<td>288GB</td>
+<td>192 GB</td>
+</tr>
+<tr>
+<td><strong>Memory Type</strong></td>
+<td>HBM3</td>
+<td>HBM3e</td>
+<td></td>
+<td>HBM3e</td>
+</tr>
+<tr>
+<td><strong>Peak Memory Bandwidth</strong></td>
+<td>5.3TB/s</td>
+<td>6TB/s</td>
+<td></td>
+<td>8TB/s</td>
+</tr>
+<tr>
+<td><strong>TFLOPS (FP8)</strong></td>
+<td>2610</td>
+<td>2610</td>
+<td></td>
+<td>4500</td>
+</tr>
+<tr>
+<td><strong>Low precision</strong></td>
+<td>FP8</td>
+<td>FP8</td>
+<td>FP4, FP6, FP8</td>
+<td>FP4, FP6, FP8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="thanks-to-our-friends">Thanks to our friends<a class="headerlink" href="#thanks-to-our-friends" title="Permanent link">&para;</a></h2>
+<h3 id="hot-aisle">Hot Aisle<a class="headerlink" href="#hot-aisle" title="Permanent link">&para;</a></h3>
+<p><a href="https://hotaisle.xyz/" target="_blank">Hot Aisle <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> sponsored this benchmark by providing access to 8x MI300x hardware. We’re deeply grateful for their support.</p>
+<p>If you're looking for top-tier bare metal compute with AMD GPUs, we highly recommend Hot Aisle. With <code>dstack</code>, accessing
+your cluster via SSH is seamless and straightforward.</p>
+<h3 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
+<p><a href="https://lambdalabs.com/" target="_blank">Lambda <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> sponsored this benchmark with credits for on-demand 8x H100 instances. 
+We’re truly thankful for their support.</p>
+<p>For top-tier cloud compute with NVIDIA GPUs, Lambda is an excellent choice. Once set up, you can easily provision
+compute, manage clusters, and orchestrate your AI workloads using <code>dstack</code>.</p>
 
-    
-      <nav class="md-post__action">
-        <a href="../../instance-volumes/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-08-13 00:00:00+00:00">August 13, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="./" class="md-meta__link">Volumes</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="using-volumes-to-optimize-cold-starts-on-runpod"><a class="toclink" href="../../volumes-on-runpod/">Using volumes to optimize cold starts on RunPod</a></h2>
-<p>Deploying custom models in the cloud often faces the challenge of cold start times, including the time to provision a
-new instance and download the model. This is especially relevant for services with autoscaling when new model replicas
-need to be provisioned quickly. </p>
-<p>Let's explore how <code>dstack</code> optimizes this process using volumes, with an example of
-deploying a model on RunPod.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../volumes-on-runpod/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-      
-        
-          
 
 
 
-<nav class="md-pagination">
+
+
+
   
-</nav>
-        
+  
+
+
+
+  
+
+
+  
+
+
+
       
-    </div>
+    </article>
   </div>
 
           
@@ -2940,17 +3303,17 @@ deploying a model on RunPod.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.c7c1ca2c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.code.copy", "content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "announce.dismiss", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.c7c1ca2c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.203fd0bc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.203fd0bc.min.js"></script>
       
-        <script src="../../../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.js"></script>
       
-        <script src="../../../assets/javascripts/pricing.js"></script>
+        <script src="../../assets/javascripts/pricing.js"></script>
       
     
 <script src="https://widget.kapa.ai/kapa-widget.bundle.js"

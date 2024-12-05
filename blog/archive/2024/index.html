@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47+insiders-4.53.14">
     
     
       
@@ -2322,6 +2322,17 @@ Support our project with a ⭐ on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#exploring-inference-memory-saturation-effect-h100-vs-mi300x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploring inference memory saturation effect: H100 vs MI300x
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introducing-instance-volumes-to-persist-data-on-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2744,6 +2755,17 @@ Support our project with a ⭐ on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#exploring-inference-memory-saturation-effect-h100-vs-mi300x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploring inference memory saturation effect: H100 vs MI300x
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introducing-instance-volumes-to-persist-data-on-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2856,6 +2878,59 @@ Support our project with a ⭐ on
       <header class="md-typeset">
         <h1 id="2024">2024<a class="headerlink" href="#2024" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-12-05 00:00:00+00:00">December 5, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/benchmarks/" class="md-meta__link">Benchmarks</a>, 
+              <a href="../../category/amd/" class="md-meta__link">AMD</a>, 
+              <a href="../../category/nvidia/" class="md-meta__link">NVIDIA</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              6 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="exploring-inference-memory-saturation-effect-h100-vs-mi300x"><a class="toclink" href="../../h100-mi300x-inference-benchmark/">Exploring inference memory saturation effect: H100 vs MI300x</a></h2>
+<p>GPU memory plays a critical role in LLM inference, affecting both performance and cost. This benchmark evaluates memory
+saturation’s impact on inference using NVIDIA's H100 and AMD's MI300x with Llama 3.1 405B FP8.</p>
+<p>We examine the effect of limited parallel computational resources on throughput and Time to First Token (TTFT).
+Additionally, we compare deployment strategies: running two Llama 3.1 405B FP8 replicas on 4xMI300x versus a single
+replica on 4xMI300x and 8xMI300x</p>
+<p>Finally, we extrapolate performance projections for upcoming GPUs like NVIDIA H200, B200, and AMD MI325x, MI350x.</p>
+<p><img src="https://github.com/dstackai/static-assets/blob/main/static-assets/images/h100-mi300x-inference-benchmark-v2.png?raw=true" width="600" /></p>
+<p>This benchmark is made possible through the generous support of our friends at
+<a href="https://hotaisle.xyz/" target="_blank">Hot Aisle <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> and 
+<a href="https://lambdalabs.com/" target="_blank">Lambda <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>,
+who provided high-end hardware.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../h100-mi300x-inference-benchmark/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
