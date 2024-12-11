@@ -1646,17 +1646,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        user
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#privileged" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1826,17 +1815,6 @@
     <span class="md-ellipsis">
       
         instance_types
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reservation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        reservation
       
     </span>
   </a>
@@ -2070,17 +2048,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        user
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#privileged" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2239,17 +2206,6 @@
     <span class="md-ellipsis">
       
         instance_types
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reservation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        reservation
       
     </span>
   </a>
@@ -4232,17 +4188,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        user
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#privileged" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4412,17 +4357,6 @@
     <span class="md-ellipsis">
       
         instance_types
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reservation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        reservation
       
     </span>
   </a>
@@ -4656,17 +4590,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        user
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#privileged" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4825,17 +4748,6 @@
     <span class="md-ellipsis">
       
         instance_types
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reservation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        reservation
       
     </span>
   </a>
@@ -6287,7 +6199,6 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <h4 class="reference-item" id="nodes"><code>nodes</code> - (Optional) Number of nodes. Defaults to <code>1</code>.<a class="headerlink" href="#nodes" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The run name.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="user"><code>user</code> - (Optional) The user inside the container, <code>user_name_or_id[:group_name_or_id]</code> (e.g., <code>ubuntu</code>, <code>1000:1000</code>). Defaults to the default <code>image</code> user.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="privileged"><code>privileged</code> - (Optional) Run the container in privileged mode.<a class="headerlink" href="#privileged" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="working_dir"><code>working_dir</code> - (Optional) The path to the working directory inside the container. It's specified relative to the repository directory (<code>/workflow</code>) and should be inside it. Defaults to <code>"."</code> .<a class="headerlink" href="#working_dir" title="Permanent link">&para;</a></h4>
@@ -6304,7 +6215,6 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisioning (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="reservation"><code>reservation</code> - (Optional) The existing reservation for the instances.<a class="headerlink" href="#reservation" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>. Defaults to <code>on-demand</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for resubmitting the run. Deprecated in favor of <code>retry</code>.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
@@ -6325,7 +6235,6 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <h4 class="reference-item" id="_scaling"><a href="#dstack.api.Scaling"><code>scaling</code></a> - (Optional) The auto-scaling rules. Required if <code>replicas</code> is set to a range.<a class="headerlink" href="#_scaling" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="name"><code>name</code> - (Optional) The run name.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="image"><code>image</code> - (Optional) The name of the Docker image to run.<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="user"><code>user</code> - (Optional) The user inside the container, <code>user_name_or_id[:group_name_or_id]</code> (e.g., <code>ubuntu</code>, <code>1000:1000</code>). Defaults to the default <code>image</code> user.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="privileged"><code>privileged</code> - (Optional) Run the container in privileged mode.<a class="headerlink" href="#privileged" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="entrypoint"><code>entrypoint</code> - (Optional) The Docker entrypoint.<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="working_dir"><code>working_dir</code> - (Optional) The path to the working directory inside the container. It's specified relative to the repository directory (<code>/workflow</code>) and should be inside it. Defaults to <code>"."</code> .<a class="headerlink" href="#working_dir" title="Permanent link">&para;</a></h4>
@@ -6341,7 +6250,6 @@ You can override these credentials via the <code>git_identity_file</code> or <co
 <h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisioning (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="reservation"><code>reservation</code> - (Optional) The existing reservation for the instances.<a class="headerlink" href="#reservation" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>. Defaults to <code>on-demand</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h4>
 <h4 class="reference-item" id="_retry_policy"><a href="#retry_policy"><code>retry_policy</code></a> - (Optional) The policy for resubmitting the run. Deprecated in favor of <code>retry</code>.<a class="headerlink" href="#_retry_policy" title="Permanent link">&para;</a></h4>
