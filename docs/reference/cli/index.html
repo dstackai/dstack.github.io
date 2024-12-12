@@ -3170,7 +3170,10 @@ Options:
 </div>
 
 <h3 id="dstack-init">dstack init<a class="headerlink" href="#dstack-init" title="Permanent link">&para;</a></h3>
-<p>This command must be called inside a folder before you can run <code>dstack apply</code>.</p>
+<p>This command initializes the current directory as a <code>dstack</code> repo.
+Runs started with <code>dstack apply</code> will have all the repo files inside the <code>/workflow</code> directory.
+The repo can be a regular local directory or a Git repo directory.
+Using Git repos can be more efficient since <code>dstack</code> does not need to transfer all the local files but only a diff of local changes.</p>
 <p><strong>Git credentials</strong></p>
 <p>If the current folder is a remote Git repository, <code>dstack init</code> ensures that <code>dstack</code> can access it.
 By default, the command uses the remote repo's default Git credentials. These can be overridden with 
@@ -3186,12 +3189,12 @@ Options:
 <span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>Show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
 <span class="w">  </span>--project<span class="w"> </span>PROJECT<span class="w">     </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>project
 <span class="w">  </span>-t,<span class="w"> </span>--token<span class="w"> </span>OAUTH_TOKEN
-<span class="w">                        </span>An<span class="w"> </span>authentication<span class="w"> </span>token<span class="w"> </span><span class="k">for</span><span class="w"> </span>Git
+<span class="w">                        </span>An<span class="w"> </span>authentication<span class="w"> </span>token<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>a<span class="w"> </span>private<span class="w"> </span>Git<span class="w"> </span>repo
 <span class="w">  </span>--git-identity<span class="w"> </span>SSH_PRIVATE_KEY
-<span class="w">                        </span>The<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>the<span class="w"> </span>remote<span class="w"> </span>repo
+<span class="w">                        </span>The<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>a<span class="w"> </span>private<span class="w"> </span>Git<span class="w"> </span>repo
 <span class="w">  </span>--ssh-identity<span class="w"> </span>SSH_PRIVATE_KEY
 <span class="w">                        </span>The<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>SSH<span class="w"> </span>tunneling
-<span class="w">  </span>--local<span class="w">               </span>Do<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>git
+<span class="w">  </span>--local<span class="w">               </span>Do<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>Git
 </code></pre></div>
 
 </div>
@@ -3202,10 +3205,16 @@ It is possible to override this key via the <code>--ssh-identity</code> argument
 <h3 id="dstack-apply">dstack apply<a class="headerlink" href="#dstack-apply" title="Permanent link">&para;</a></h3>
 <p>This command applies a given configuration. If a resource does not exist, <code>dstack apply</code> creates the resource.
 If a resource exists, <code>dstack apply</code> updates the resource in-place or re-creates the resource if the update is not possible.</p>
+<p>When applying run configurations, <code>dstack apply</code> requires that you run <code>dstack init</code> first,
+or specify a repo to work with via <code>--repo</code>, or specify <code>--no-repo</code> if you don't need any repo for the run.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>--help
 Usage:<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span><span class="o">[</span>--project<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="w"> </span><span class="o">[</span>TYPE<span class="o">]]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span><span class="o">[</span>--force<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="o">]</span>
+<span class="w">                    </span><span class="o">[</span>-P<span class="w"> </span>REPO<span class="o">]</span><span class="w"> </span><span class="o">[</span>--repo-branch<span class="w"> </span>REPO_BRANCH<span class="o">]</span>
+<span class="w">                    </span><span class="o">[</span>--repo-hash<span class="w"> </span>REPO_HASH<span class="o">]</span><span class="w"> </span><span class="o">[</span>--no-repo<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="w"> </span>OAUTH_TOKEN<span class="o">]</span>
+<span class="w">                    </span><span class="o">[</span>--git-identity<span class="w"> </span>SSH_PRIVATE_KEY<span class="o">]</span>
+<span class="w">                    </span><span class="o">[</span>--ssh-identity<span class="w"> </span>SSH_PRIVATE_KEY<span class="o">]</span><span class="w"> </span><span class="o">[</span>--local<span class="o">]</span>
 
 Options:
 <span class="w">  </span>--project<span class="w"> </span>NAME<span class="w">        </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>project.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="nv">$DSTACK_PROJECT</span>
@@ -3215,6 +3224,22 @@ Options:
 <span class="w">  </span>-y,<span class="w"> </span>--yes<span class="w">             </span>Do<span class="w"> </span>not<span class="w"> </span>ask<span class="w"> </span><span class="k">for</span><span class="w"> </span>confirmation
 <span class="w">  </span>--force<span class="w">               </span>Force<span class="w"> </span>apply<span class="w"> </span>when<span class="w"> </span>no<span class="w"> </span>changes<span class="w"> </span>detected
 <span class="w">  </span>-d,<span class="w"> </span>--detach<span class="w">          </span>Exit<span class="w"> </span>immediately<span class="w"> </span>after<span class="w"> </span>sumbitting<span class="w"> </span>configuration
+
+Repo<span class="w"> </span>Options:
+<span class="w">  </span>-P,<span class="w"> </span>--repo<span class="w"> </span>REPO<span class="w">       </span>The<span class="w"> </span>repo<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run.<span class="w"> </span>Can<span class="w"> </span>be<span class="w"> </span>a<span class="w"> </span><span class="nb">local</span><span class="w"> </span>path<span class="w"> </span>or<span class="w"> </span>a
+<span class="w">                        </span>Git<span class="w"> </span>repo<span class="w"> </span>URL.
+<span class="w">  </span>--repo-branch<span class="w"> </span>REPO_BRANCH
+<span class="w">                        </span>The<span class="w"> </span>repo<span class="w"> </span>branch<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run
+<span class="w">  </span>--repo-hash<span class="w"> </span>REPO_HASH
+<span class="w">                        </span>The<span class="w"> </span><span class="nb">hash</span><span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>repo<span class="w"> </span>commit<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run
+<span class="w">  </span>--no-repo<span class="w">             </span>Do<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>any<span class="w"> </span>repo<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>run
+<span class="w">  </span>-t,<span class="w"> </span>--token<span class="w"> </span>OAUTH_TOKEN
+<span class="w">                        </span>An<span class="w"> </span>authentication<span class="w"> </span>token<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>a<span class="w"> </span>private<span class="w"> </span>Git<span class="w"> </span>repo
+<span class="w">  </span>--git-identity<span class="w"> </span>SSH_PRIVATE_KEY
+<span class="w">                        </span>The<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>a<span class="w"> </span>private<span class="w"> </span>Git<span class="w"> </span>repo
+<span class="w">  </span>--ssh-identity<span class="w"> </span>SSH_PRIVATE_KEY
+<span class="w">                        </span>The<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>SSH<span class="w"> </span>tunneling
+<span class="w">  </span>--local<span class="w">               </span>Do<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>Git
 </code></pre></div>
 
 </div>
