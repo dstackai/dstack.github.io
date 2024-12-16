@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49+insiders-4.53.14">
     
     
       
@@ -974,6 +974,33 @@
     
   
     Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/repos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Repos
   
 
     
@@ -3209,8 +3236,8 @@ Launching<span class="w"> </span><span class="sb">`</span>axolotl-train<span cla
 
 </div>
 
-<p><code>dstack apply</code> automatically uploads the code from the current repo, including your local uncommitted changes.
-To avoid uploading large files, ensure they are listed in <code>.gitignore</code>.</p>
+<p><code>dstack apply</code> automatically provisions instances, uploads the contents of the repo (incl. your local uncommitted changes),
+and runs the configuration.</p>
 <div class="admonition info">
 <p class="admonition-title">Ports</p>
 <p>If the task specifies <a href="../reference/dstack.yml/task/#_ports"><code>ports</code></a>, <code>dstack run</code> automatically forwards them to your
@@ -3257,9 +3284,9 @@ longer duration).</p>
 </div>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Check the <a href="/docs/examples/fine-tuning/axolotl">Axolotl</a> example</li>
-<li>Browse <a href="/examples">all examples</a></li>
-<li>See <a href="../concepts/fleets/">fleets</a> on how to manage fleets</li>
+<li>Read about <a href="../dev-environments/">dev environments</a>, <a href="../services/">services</a>, and <a href="../concepts/repos/">repos</a></li>
+<li>Learn how to manage <a href="../concepts/fleets/">fleets</a></li>
+<li>Check the <a href="/examples/fine-tuning/axolotl">Axolotl</a> example</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
@@ -3442,7 +3469,7 @@ tasks, along with multiple examples.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../assets/javascripts/bundle.203fd0bc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b71cdcd1.min.js"></script>
       
         <script src="../../assets/javascripts/extra.js"></script>
       
