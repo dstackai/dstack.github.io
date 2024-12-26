@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d0dfab1c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f50c755.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -135,7 +135,11 @@
               </button>
             
             
-<a href="/blog/beyond-kubernetes-2024-recap-and-whats-ahead">🔥 Beyond Kubernetes: 2024 recap and what's ahead for AI infra →</a>
+Support our project with a ⭐ on
+<a href="https://github.com/dstackai/dstack" target="_blank">
+    <span class="twemoji star">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </span></a>
 
           </div>
           
@@ -975,19 +979,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#termination-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Termination policy
-        </span>
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3612,19 +3603,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#termination-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Termination policy
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#manage-fleets" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3708,15 +3686,16 @@
 
 
 <h1 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h1>
-<p>By default, when you run <code>dstack apply</code> with a dev environment, task, or service,
+<p>Fleets are groups of cloud instances or SSH machines that you use to run dev environments, tasks, and services.</p>
+<p>By default, when you run <code>dstack apply</code> to start a new dev environment, task, or service,
 <code>dstack</code> reuses <code>idle</code> instances from an existing fleet.
-If no <code>idle</code> instances matching the requirements, it automatically creates a new fleet 
-using backends.</p>
-<p>For more control over configuration and lifecycle management, or to set up fleets out of on-prem servers, use fleets
-directly.</p>
+If no <code>idle</code> instances match the requirements, <code>dstack</code> automatically creates a new fleet 
+using configured backends.</p>
+<p>If you need more control over instance configuration and lifecycle, or if you want to use on-prem servers,
+<code>dstack</code> also offers you a way to create and manage fleets directly.</p>
 <h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
-<p>To create a fleet, create a YAML file in your project folder. Its name must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code>
-are both acceptable).</p>
+<p>To create a fleet, define its configuration as a YAML file in your project folder.
+The filename must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code> are both acceptable).</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="cloud-fleets" name="__tabbed_1" type="radio" /><input id="ssh-fleets" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="cloud-fleets">Cloud fleets</label><label for="ssh-fleets">SSH fleets</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3753,12 +3732,17 @@ and other optional parameters.</p>
 <p>When you apply this configuration, <code>dstack</code> will create cloud instances using the configured backends according 
 to the specified parameters.</p>
 <div class="admonition info">
-<p class="admonition-title">Network</p>
+<p class="admonition-title">Cluster placement</p>
 <p>To ensure the nodes of the fleet are interconnected (e.g., if you'd like to use them for
 <a href="../../reference/dstack.yml/task/#distributed-tasks">multi-node tasks</a>), 
-set <code>placement</code> to <code>cluster</code>. 
-In this case, <code>dstack</code> will provision all nodes in the same backend and region and configure optimal 
+set <code>placement</code> to <code>cluster</code>. </p>
+<p>In this case, <code>dstack</code> will provision all nodes in the same backend and region and configure optimal 
 inter-node connectivity.</p>
+<div class="admonition info">
+<p class="admonition-title">Backends</p>
+<p>The <code>cluster</code> value of the <code>placement</code> property is supported only by the <code>aws</code>, <code>azure</code>, <code>gcp</code>, and <code>oci</code>
+backends.</p>
+</div>
 <details class="info">
 <summary>AWS</summary>
 <p><code>dstack</code> automatically enables <a href="https://aws.amazon.com/hpc/efa/" target="_blank">Elastic Fabric Adapter <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
@@ -3770,7 +3754,10 @@ for instance types that support it. The following instance types with EFA are su
 This limitation will be lifted once <a href="https://github.com/dstackai/dstack/issues/1804" target="_blank">this issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> is fixed.</p>
 </details>
 </div>
-<p>Note that cloud fleets aren't supported for the <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code> backends.</p>
+<div class="admonition info">
+<p class="admonition-title">Backends</p>
+<p>Cloud fleets are supported for all backends except <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code>.</p>
+</div>
 </div>
 <div class="tabbed-block">
 <div class="admonition info">
@@ -3842,25 +3829,33 @@ and running containers.</p>
 </code></pre></div>
 </details>
 <div class="admonition info">
-<p class="admonition-title">Network</p>
+<p class="admonition-title">Cluster placement</p>
 <p>Set <code>placement</code> to <code>cluster</code> if the hosts are interconnected
-(e.g. if you'd like to use them for <a href="reference/dstack.yml/task.md#distributed-tasks">multi-node tasks</a>).
-In that case, by default, <code>dstack</code> will automatically detect the private network. 
-You can specify the <a href="../../reference/dstack.yml/fleet/#network"><code>network</code></a> parameter manually.</p>
+(e.g. if you'd like to use them for <a href="../../reference/dstack.yml/task/#distributed-tasks">multi-node tasks</a>).</p>
+<div class="admonition info">
+<p class="admonition-title">Network</p>
+<p>By default, <code>dstack</code> automatically detects the private network for the specified hosts. 
+However, it's possible to configure it explicitelly via 
+the <a href="../../reference/dstack.yml/fleet/#network"><code>network</code></a> property.</p>
 </div>
-<p>Note that to use SSH fleets, you don't need any backends at all.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Backends</p>
+<p>To use SSH fleets, you don't need to configure any backends at all.</p>
 </div>
 </div>
 </div>
-<blockquote>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
 <p>See <a href="../../reference/dstack.yml/fleet/"><code>.dstack.yml</code></a> for all the options supported by
 the fleet configuration.</p>
-</blockquote>
+</div>
 <h2 id="create-or-update-a-fleet">Create or update a fleet<a class="headerlink" href="#create-or-update-a-fleet" title="Permanent link">&para;</a></h2>
-<p>To create or update the fleet, simply call the <a href="../../reference/cli/dstack/apply/"><code>dstack apply</code></a> command:</p>
+<p>To create or update the fleet, pass the fleet configuration to <a href="../../reference/cli/dstack/apply/"><code>dstack apply</code></a>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/fine-tuning/alignment-handbook/fleet-distributed.dstack.yml
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/misc/fleets/distrib.dstack.yml
 </code></pre></div>
 
 </div>
@@ -3879,6 +3874,11 @@ the fleet configuration.</p>
 </div>
 
 <p>Once the status of instances changes to <code>idle</code>, they can be used by dev environments, tasks, and services.</p>
+<div class="admonition info">
+<p class="admonition-title">Termination policy</p>
+<p>If you want a fleet to be automatically deleted after a certain idle time,
+you can set the <a href="../../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a> property.</p>
+</div>
 <h3 id="troubleshooting-ssh-fleets">Troubleshooting SSH fleets<a class="headerlink" href="#troubleshooting-ssh-fleets" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Resources</p>
@@ -3889,9 +3889,6 @@ If GPU isn't detected, ensure that the hosts meet the requirements (see above).<
 the hosts meet the requirements (see above).</p>
 <p>If the requirements are met but the fleet still fails to be created, check <code>/root/.dstack/shim.log</code> for logs 
 on the hosts specified in <code>ssh_config</code>.</p>
-<h2 id="termination-policy">Termination policy<a class="headerlink" href="#termination-policy" title="Permanent link">&para;</a></h2>
-<p>If you want a fleet to be automatically deleted after a certain idle time,
-you can set the <a href="../../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a> property.</p>
 <h2 id="manage-fleets">Manage fleets<a class="headerlink" href="#manage-fleets" title="Permanent link">&para;</a></h2>
 <h3 id="list-fleets">List fleets<a class="headerlink" href="#list-fleets" title="Permanent link">&para;</a></h3>
 <p>The <a href="../../reference/cli/dstack/fleet/#dstack-fleet-list"><code>dstack fleet</code></a> command lists fleet instances and their status:</p>
@@ -3907,7 +3904,7 @@ you can set the <a href="../../reference/dstack.yml/fleet/#termination_idle_time
 </div>
 
 <h3 id="delete-fleets">Delete fleets<a class="headerlink" href="#delete-fleets" title="Permanent link">&para;</a></h3>
-<p>When a fleet isn't used by run, you can delete it via <code>dstack delete</code>:</p>
+<p>When a fleet isn't used by a run, you can delete it by passing the fleet configuration to <code>dstack delete</code>:</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>cluster.dstack.yaml
@@ -3917,8 +3914,8 @@ Fleet<span class="w"> </span>my-gcp-fleet<span class="w"> </span>deleted
 
 </div>
 
-<p>You can pass either the path to the configuration file or the fleet name directly.</p>
-<p>To terminate and delete specific instances from a fleet, pass <code>-i INSTANCE_NUM</code>.</p>
+<p>Alternatively, you can delete a fleet by passing the fleet name  to <code>dstack fleet delete</code>.
+To terminate and delete specific instances from a fleet, pass <code>-i INSTANCE_NUM</code>.</p>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Read about <a href="../../dev-environments/">dev environments</a>, <a href="../../tasks/">tasks</a>, and 
