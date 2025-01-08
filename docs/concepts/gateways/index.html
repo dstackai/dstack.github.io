@@ -18,7 +18,7 @@
         <link rel="prev" href="../volumes/">
       
       
-        <link rel="next" href="../projects/">
+        <link rel="next" href="../repos/">
       
       
         
@@ -439,12 +439,12 @@ Support our project with a ⭐ on
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+    
+      
+      <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 
   
@@ -759,7 +759,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../dev-environments/" class="md-nav__link">
+      <a href="../backends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -786,7 +813,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../tasks/" class="md-nav__link">
+      <a href="../tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -813,40 +840,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../services/" class="md-nav__link">
+      <a href="../services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Services
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../repos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Repos
   
 
     
@@ -1062,19 +1062,6 @@ Support our project with a ⭐ on
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1091,13 +1078,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../projects/" class="md-nav__link">
+      <a href="../repos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Projects
+    Repos
   
 
     
@@ -1240,6 +1227,33 @@ Support our project with a ⭐ on
     
   
     Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
   
 
     
@@ -3501,16 +3515,16 @@ Support our project with a ⭐ on
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+      <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -3609,27 +3623,14 @@ Support our project with a ⭐ on
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          </div>
+        </div>
+      </div>
+    
+
           
 <div class="md-content" data-md-component="content">
   
@@ -3648,9 +3649,9 @@ Support our project with a ⭐ on
 
 
 <h1 id="gateways">Gateways<a class="headerlink" href="#gateways" title="Permanent link">&para;</a></h1>
-<p>Gateways manage the ingress traffic of running <a href="../../services/">services</a>
-and provide them with an HTTPS endpoint mapped to your domain,
-handling authentication, load distribution, and auto-scaling.</p>
+<p>Gateways manage the ingress traffic of running <a href="../services/">services</a>,
+provide an HTTPS endpoint mapped to your domain,
+and handle auto-scaling.</p>
 <blockquote>
 <p>If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>,
 the gateway is already set up for you.</p>
@@ -3677,8 +3678,7 @@ The filename must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</cod
 <p>A domain name is required to create a gateway.</p>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
-<p>See <a href="../../reference/dstack.yml/gateway/">.dstack.yml</a> for all the options supported by
-gateways, along with multiple examples.</p>
+<p>For all gateway configuration options, refer to the <a href="../../reference/dstack.yml/gateway/">reference</a>.</p>
 </div>
 <h2 id="create-or-update-a-gateway">Create or update a gateway<a class="headerlink" href="#create-or-update-a-gateway" title="Permanent link">&para;</a></h2>
 <p>To create or update the gateway, simply call the <a href="../../reference/cli/dstack/apply/"><code>dstack apply</code></a> command:</p>
@@ -3712,14 +3712,11 @@ or of type <code>CNAME</code> if the hostname is another domain (some private ga
 </div>
 
 <p>Alternatively, you can delete a gateway by passing the gateway name  to <code>dstack gateway delete</code>.</p>
-<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
-<ol>
-<li>See <a href="../../services/">services</a> on how to run services</li>
-</ol>
 <div class="admonition info">
-<p class="admonition-title">Reference</p>
-<p>See <a href="../../reference/dstack.yml/gateway/">.dstack.yml</a> for all the options supported by
-gateways, along with multiple examples.</p>
+<p class="admonition-title">What's next?</p>
+<ol>
+<li>See <a href="../services/">services</a> on how to run services</li>
+</ol>
 </div>
 
 
@@ -3758,13 +3755,13 @@ gateways, along with multiple examples.</p>
             
             
               
-              <a href="../projects/" class="md-footer__link md-footer__link--next" aria-label="Next: Projects">
+              <a href="../repos/" class="md-footer__link md-footer__link--next" aria-label="Next: Repos">
                 <div class="md-footer__title">
                   <span class="md-footer__direction">
                     Next
                   </span>
                   <div class="md-ellipsis">
-                    Projects
+                    Repos
                   </div>
                 </div>
                 <div class="md-footer__button md-icon">

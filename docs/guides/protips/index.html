@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dstack.ai/docs/guides/protips/">
       
       
-        <link rel="prev" href="../../concepts/projects/">
+        <link rel="prev" href="../../concepts/repos/">
       
       
         <link rel="next" href="../server-deployment/">
@@ -439,12 +439,12 @@ Support our project with a ⭐ on
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+    
+      
+      <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 
   
@@ -757,7 +757,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../dev-environments/" class="md-nav__link">
+      <a href="../../concepts/backends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -784,7 +811,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../tasks/" class="md-nav__link">
+      <a href="../../concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -811,40 +838,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../services/" class="md-nav__link">
+      <a href="../../concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Services
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../concepts/repos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Repos
   
 
     
@@ -946,13 +946,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/projects/" class="md-nav__link">
+      <a href="../../concepts/repos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Projects
+    Repos
   
 
     
@@ -1121,11 +1121,11 @@ Support our project with a ⭐ on
 </li>
         
           <li class="md-nav__item">
-  <a href="#termination-policy" class="md-nav__link">
+  <a href="#idle-duration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Termination policy
+          Idle duration
         </span>
       
     </span>
@@ -1305,6 +1305,33 @@ Support our project with a ⭐ on
     
   
     Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
   
 
     
@@ -3566,16 +3593,16 @@ Support our project with a ⭐ on
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+      <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -3618,11 +3645,11 @@ Support our project with a ⭐ on
 </li>
         
           <li class="md-nav__item">
-  <a href="#termination-policy" class="md-nav__link">
+  <a href="#idle-duration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Termination policy
+          Idle duration
         </span>
       
     </span>
@@ -3755,11 +3782,11 @@ Support our project with a ⭐ on
     </ul>
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          </div>
+        </div>
+      </div>
+    
+
           
 <div class="md-content" data-md-component="content">
   
@@ -3794,11 +3821,12 @@ pass <code>-R</code> (or <code>--reuse</code>) to <code>dstack apply</code>.</p>
 
 </div>
 
-<h3 id="termination-policy">Termination policy<a class="headerlink" href="#termination-policy" title="Permanent link">&para;</a></h3>
-<p>If a fleet is created automatically, it remains <code>idle</code> for 5 minutes and can be reused within that time.
+<h3 id="idle-duration">Idle duration<a class="headerlink" href="#idle-duration" title="Permanent link">&para;</a></h3>
+<p>If a fleet is created automatically, it stays <code>idle</code> for 5 minutes by default and can be reused within that time.
+If the fleet is not reused within this period, it is automatically terminated.
 To change the default idle duration, set
-<a href="../../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a> in the run configuration (e.g., to 0 or a
-longer duration).</p>
+<a href="../../reference/dstack.yml/fleet/#idle_duration"><code>idle_duration</code></a> in the run configuration (e.g., <code>0s</code>, <code>1m</code>, or <code>off</code> for
+unlimited).</p>
 <div class="admonition info">
 <p class="admonition-title">Fleets</p>
 <p>For greater control over fleet provisioning, configuration, and lifecycle management, it is recommended to use
@@ -3810,7 +3838,7 @@ longer duration).</p>
 (for persisting data even if the instance is interrupted)
 and <a href="../../concepts/volumes/#instance-volumes">instance</a> (useful for persisting cached data across runs while the instance remains active).</p>
 <blockquote>
-<p>If you use <a href="../../concepts/fleets/#ssh-fleets">SSH fleets</a>, you can mount network storage (e.g., NFS or SMB) to the hosts and access it in runs via instance volumes.</p>
+<p>If you use <a href="../../concepts/fleets/#ssh">SSH fleets</a>, you can mount network storage (e.g., NFS or SMB) to the hosts and access it in runs via instance volumes.</p>
 </blockquote>
 <h2 id="dev-environments">Dev environments<a class="headerlink" href="#dev-environments" title="Permanent link">&para;</a></h2>
 <p>Before running a task or service, it's recommended that you first start with a dev environment. Dev environments
@@ -3875,8 +3903,8 @@ pre-configured and easy-to-use extension.</p>
 </details>
 <div class="admonition info">
 <p class="admonition-title">Tasks vs. services</p>
-<p><a href="../../services/">Services</a> provide external access, <code>https</code>, replicas with autoscaling, OpenAI-compatible endpoint
-and other service features. If you don't need them, you can use <a href="../../tasks/">tasks</a> for running apps.</p>
+<p><a href="../../concepts/services/">Services</a> provide external access, <code>https</code>, replicas with autoscaling, OpenAI-compatible endpoint
+and other service features. If you don't need them, you can use <a href="../../concepts/tasks/">tasks</a> for running apps.</p>
 </div>
 <h2 id="docker-and-docker-compose">Docker and Docker Compose<a class="headerlink" href="#docker-and-docker-compose" title="Permanent link">&para;</a></h2>
 <p>All backends except <code>runpod</code>, <code>vastai</code>, and <code>kubernetes</code> allow using Docker and Docker Compose 
@@ -4112,7 +4140,7 @@ The relevant service category is compute. The relevant resources include:</p>
           <nav class="md-footer__inner md-grid" aria-label="Footer" >
             
               
-              <a href="../../concepts/projects/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Projects">
+              <a href="../../concepts/repos/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Repos">
                 <div class="md-footer__button md-icon">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4122,7 +4150,7 @@ The relevant service category is compute. The relevant resources include:</p>
                     Previous
                   </span>
                   <div class="md-ellipsis">
-                    Projects
+                    Repos
                   </div>
                 </div>
               </a>

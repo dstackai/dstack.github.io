@@ -18,7 +18,7 @@
         <link rel="prev" href="../installation/">
       
       
-        <link rel="next" href="../dev-environments/">
+        <link rel="next" href="../concepts/backends/">
       
       
         
@@ -439,12 +439,12 @@ Support our project with a ⭐ on
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+    
+      
+      <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 
   
@@ -767,19 +767,6 @@ Support our project with a ⭐ on
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -857,7 +844,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../dev-environments/" class="md-nav__link">
+      <a href="../concepts/backends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -884,7 +898,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../tasks/" class="md-nav__link">
+      <a href="../concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -911,40 +925,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../services/" class="md-nav__link">
+      <a href="../concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Services
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concepts/repos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Repos
   
 
     
@@ -1046,13 +1033,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../concepts/projects/" class="md-nav__link">
+      <a href="../concepts/repos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Projects
+    Repos
   
 
     
@@ -1195,6 +1182,33 @@ Support our project with a ⭐ on
     
   
     Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
   
 
     
@@ -3456,16 +3470,16 @@ Support our project with a ⭐ on
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+      <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -3519,27 +3533,14 @@ Support our project with a ⭐ on
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          </div>
+        </div>
+      </div>
+    
+
           
 <div class="md-content" data-md-component="content">
   
@@ -3576,7 +3577,6 @@ $<span class="w"> </span>dstack<span class="w"> </span>init
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>A dev environment lets you provision an instance and access it with your desktop IDE.</p>
-<h4 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h4>
 <p>Create the following configuration file inside the repo:</p>
 <p><div editor-title=".dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
@@ -3593,7 +3593,6 @@ $<span class="w"> </span>dstack<span class="w"> </span>init
 <span class="c1">#  gpu: 24GB</span>
 </code></pre></div>
 </div>
-<h4 id="run-the-configuration">Run the configuration<a class="headerlink" href="#run-the-configuration" title="Permanent link">&para;</a></h4>
 <p>Run the configuration via <a href="../reference/cli/dstack/apply/"><code>dstack apply</code></a>:</p>
 <div class="termy">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>.dstack.yml
@@ -3617,7 +3616,6 @@ To<span class="w"> </span>open<span class="w"> </span><span class="k">in</span><
 </div>
 <div class="tabbed-block">
 <p>A task allows you to schedule a job or run a web app. Tasks can be distributed and can forward ports.</p>
-<h4 id="define-a-configuration_1">Define a configuration<a class="headerlink" href="#define-a-configuration_1" title="Permanent link">&para;</a></h4>
 <p>Create the following configuration file inside the repo:</p>
 <p><div editor-title="task.dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
@@ -3641,9 +3639,7 @@ To<span class="w"> </span>open<span class="w"> </span><span class="k">in</span><
 </code></pre></div>
 </div>
 <p>By default, tasks run on a single instance. To run a distributed task, specify 
-<a href="../reference/dstack.yml/task/#distributed-tasks"><code>nodes</code></a>, 
-and <code>dstack</code> will run it on a cluster.</p>
-<h4 id="run-the-configuration_1">Run the configuration<a class="headerlink" href="#run-the-configuration_1" title="Permanent link">&para;</a></h4>
+<a href="../concepts/tasks/#distributed-tasks"><code>nodes</code></a>, and <code>dstack</code> will run it on a cluster.</p>
 <p>Run the configuration via <a href="../reference/cli/dstack/apply/"><code>dstack apply</code></a>:</p>
 <div class="termy">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>task.dstack.yml
@@ -3667,7 +3663,6 @@ Provisioning<span class="w"> </span><span class="sb">`</span>streamlit<span clas
 </div>
 <div class="tabbed-block">
 <p>A service allows you to deploy a model or any web app as an endpoint.</p>
-<h4 id="define-a-configuration_2">Define a configuration<a class="headerlink" href="#define-a-configuration_2" title="Permanent link">&para;</a></h4>
 <p>Create the following configuration file inside the repo:</p>
 <p><div editor-title="service.dstack.yml"> </p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
@@ -3694,7 +3689,6 @@ Provisioning<span class="w"> </span><span class="sb">`</span>streamlit<span clas
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 </code></pre></div>
 </div>
-<h4 id="run-the-configuration_2">Run the configuration<a class="headerlink" href="#run-the-configuration_2" title="Permanent link">&para;</a></h4>
 <p>Run the configuration via <a href="../reference/cli/dstack/apply/"><code>dstack apply</code></a>:</p>
 <div class="termy">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">HF_TOKEN</span><span class="o">=</span>...
@@ -3718,7 +3712,7 @@ Model<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w
 </div>
 <div class="admonition info">
 <p class="admonition-title">Gateway</p>
-<p>To enable <a href="../reference/dstack.yml/service/#auto-scaling">auto-scaling</a>, or use a custom domain with HTTPS, 
+<p>To enable <a href="../concepts/services/#replicas-and-scaling">auto-scaling</a>, or use a custom domain with HTTPS, 
 set up a <a href="../concepts/gateways/">gateway</a> before running the service.
 If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>,
 a gateway is pre-configured for you.</p>
@@ -3730,13 +3724,14 @@ a gateway is pre-configured for you.</p>
 and runs the configuration.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>Something not working? See the <a href="../guides/troubleshooting/">troubleshooting</a> guide.</p>
-<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">What's next?</p>
 <ol>
-<li>Read about <a href="../dev-environments/">dev environments</a>, <a href="../tasks/">tasks</a>, <a href="../services/">services</a>,
-   and <a href="../concepts/repos/">repos</a></li>
+<li>Read about <a href="../concepts/backends/">backends</a>,  <a href="../concepts/dev-environments/">dev environments</a>, <a href="../concepts/tasks/">tasks</a>, and <a href="../concepts/services/">services</a></li>
 <li>Join <a href="https://discord.gg/u8SmfwPpMd">Discord <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a></li>
 <li>Browse <a href="https://dstack.ai/examples">examples</a></li>
 </ol>
+</div>
 
 
 
@@ -3774,13 +3769,13 @@ and runs the configuration.</p>
             
             
               
-              <a href="../dev-environments/" class="md-footer__link md-footer__link--next" aria-label="Next: Dev environments">
+              <a href="../concepts/backends/" class="md-footer__link md-footer__link--next" aria-label="Next: Backends">
                 <div class="md-footer__title">
                   <span class="md-footer__direction">
                     Next
                   </span>
                   <div class="md-ellipsis">
-                    Dev environments
+                    Backends
                   </div>
                 </div>
                 <div class="md-footer__button md-icon">

@@ -431,12 +431,12 @@ Support our project with a ⭐ on
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+    
+      
+      <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 
   
@@ -738,7 +738,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../dev-environments/" class="md-nav__link">
+      <a href="../../concepts/backends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -765,7 +792,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../tasks/" class="md-nav__link">
+      <a href="../../concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -792,40 +819,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../services/" class="md-nav__link">
+      <a href="../../concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Services
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../concepts/repos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Repos
   
 
     
@@ -927,13 +927,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/projects/" class="md-nav__link">
+      <a href="../../concepts/repos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Projects
+    Repos
   
 
     
@@ -1073,6 +1073,33 @@ Support our project with a ⭐ on
     
   
     Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
   
 
     
@@ -3334,16 +3361,16 @@ Support our project with a ⭐ on
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+      <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -3398,11 +3425,11 @@ Support our project with a ⭐ on
     </ul>
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          </div>
+        </div>
+      </div>
+    
+
           
 <div class="md-content" data-md-component="content">
   
@@ -3445,22 +3472,23 @@ via <code>--profile NAME</code> in <code>dstack run</code>.</p>
 
 <p>The profile configuration supports many properties. See below.</p>
 <h3 id="root-reference">Root reference<a class="headerlink" href="#root-reference" title="Permanent link">&para;</a></h3>
-<h4 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisioning (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="reservation"><code>reservation</code> - (Optional) The existing reservation to use for instance provisioning. Supports AWS Capacity Reservations and Capacity Blocks.<a class="headerlink" href="#reservation" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>. Defaults to <code>on-demand</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="max_duration"><code>max_duration</code> - (Optional) The maximum duration of a run (e.g., <code>2h</code>, <code>1d</code>, etc). After it elapses, the run is forced to stop. Defaults to <code>off</code>.<a class="headerlink" href="#max_duration" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="max_price"><code>max_price</code> - (Optional) The maximum instance price per hour, in dollars.<a class="headerlink" href="#max_price" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="creation_policy"><code>creation_policy</code> - (Optional) The policy for using instances from the pool. Defaults to <code>reuse-or-create</code>.<a class="headerlink" href="#creation_policy" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="termination_policy"><code>termination_policy</code> - (Optional) The policy for instance termination. Defaults to <code>destroy-after-idle</code>.<a class="headerlink" href="#termination_policy" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Time to wait before destroying the idle instance. Defaults to <code>5m</code> for <code>dstack run</code> and to <code>3d</code> for <code>dstack pool add</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="name"><code>name</code> -  The name of the profile that can be passed as <code>--profile</code> to <code>dstack run</code>.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="default"><code>default</code> - (Optional) If set to true, <code>dstack run</code> will use this profile by default..<a class="headerlink" href="#default" title="Permanent link">&para;</a></h4>
+<h6 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisioning (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="reservation"><code>reservation</code> - (Optional) The existing reservation to use for instance provisioning. Supports AWS Capacity Reservations and Capacity Blocks.<a class="headerlink" href="#reservation" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>. Defaults to <code>on-demand</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="max_duration"><code>max_duration</code> - (Optional) The maximum duration of a run (e.g., <code>2h</code>, <code>1d</code>, etc). After it elapses, the run is forced to stop. Defaults to <code>off</code>.<a class="headerlink" href="#max_duration" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="max_price"><code>max_price</code> - (Optional) The maximum instance price per hour, in dollars.<a class="headerlink" href="#max_price" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="creation_policy"><code>creation_policy</code> - (Optional) The policy for using instances from the pool. Defaults to <code>reuse-or-create</code>.<a class="headerlink" href="#creation_policy" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="idle_duration"><code>idle_duration</code> - (Optional) Time to wait before terminating idle instances. Defaults to <code>5m</code> for runs and <code>3d</code> for fleets. Use <code>off</code> for unlimited duration.<a class="headerlink" href="#idle_duration" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="termination_policy"><code>termination_policy</code> - (Optional) Deprecated in favor of <code>idle_duration</code>.<a class="headerlink" href="#termination_policy" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="termination_idle_time"><code>termination_idle_time</code> - (Optional) Deprecated in favor of <code>idle_duration</code>.<a class="headerlink" href="#termination_idle_time" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="name"><code>name</code> -  The name of the profile that can be passed as <code>--profile</code> to <code>dstack run</code>.<a class="headerlink" href="#name" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="default"><code>default</code> - (Optional) If set to true, <code>dstack run</code> will use this profile by default..<a class="headerlink" href="#default" title="Permanent link">&para;</a></h6>
 <h3 id="retry"><code>retry</code><a class="headerlink" href="#retry" title="Permanent link">&para;</a></h3>
-<h4 class="reference-item" id="on_events"><code>on_events</code> -  The list of events that should be handled with retry. Supported events are <code>no-capacity</code>, <code>interruption</code>, and <code>error</code>.<a class="headerlink" href="#on_events" title="Permanent link">&para;</a></h4>
-<h4 class="reference-item" id="duration"><code>duration</code> - (Optional) The maximum period of retrying the run, e.g., <code>4h</code> or <code>1d</code>.<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h4>
+<h6 class="reference-item" id="on_events"><code>on_events</code> -  The list of events that should be handled with retry. Supported events are <code>no-capacity</code>, <code>interruption</code>, and <code>error</code>.<a class="headerlink" href="#on_events" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="duration"><code>duration</code> - (Optional) The maximum period of retrying the run, e.g., <code>4h</code> or <code>1d</code>.<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h6>
 
 
 

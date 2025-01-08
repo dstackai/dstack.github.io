@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dstack.ai/docs/concepts/fleets/">
       
       
-        <link rel="prev" href="../repos/">
+        <link rel="prev" href="../services/">
       
       
         <link rel="next" href="../volumes/">
@@ -439,12 +439,12 @@ Support our project with a ⭐ on
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+    
+      
+      <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 
   
@@ -759,7 +759,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../dev-environments/" class="md-nav__link">
+      <a href="../backends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -786,7 +813,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../tasks/" class="md-nav__link">
+      <a href="../tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -813,40 +840,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../services/" class="md-nav__link">
+      <a href="../services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Services
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../repos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Repos
   
 
     
@@ -925,6 +925,20 @@ Support our project with a ⭐ on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cloud fleets
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud fleets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -935,10 +949,177 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Define a configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Placement
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resources
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idle-duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Idle duration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Spot policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Retry policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-or-update-a-fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Create or update a fleet
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-or-update-a-fleet" class="md-nav__link">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          SSH fleets
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH fleets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-a-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define a configuration
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Define a configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#placement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Placement
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Placement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Network
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-or-update-a-fleet_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -952,11 +1133,11 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ensure-the-fleet-is-created" class="md-nav__link">
+  <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Ensure the fleet is created
+          Troubleshooting
         </span>
       
     </span>
@@ -964,16 +1145,8 @@ Support our project with a ⭐ on
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#troubleshooting-ssh-fleets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Troubleshooting SSH fleets
-        </span>
-      
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -1024,19 +1197,6 @@ Support our project with a ⭐ on
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1110,13 +1270,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../projects/" class="md-nav__link">
+      <a href="../repos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Projects
+    Repos
   
 
     
@@ -1259,6 +1419,33 @@ Support our project with a ⭐ on
     
   
     Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
   
 
     
@@ -3520,16 +3707,16 @@ Support our project with a ⭐ on
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+      <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -3545,6 +3732,20 @@ Support our project with a ⭐ on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cloud fleets
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud fleets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#define-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3555,10 +3756,177 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Define a configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Placement
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Resources
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idle-duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Idle duration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Spot policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Retry policy
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-or-update-a-fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Create or update a fleet
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-or-update-a-fleet" class="md-nav__link">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          SSH fleets
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH fleets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-a-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Define a configuration
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Define a configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#placement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Placement
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Placement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Network
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-or-update-a-fleet_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -3572,11 +3940,11 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ensure-the-fleet-is-created" class="md-nav__link">
+  <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Ensure the fleet is created
+          Troubleshooting
         </span>
       
     </span>
@@ -3584,16 +3952,8 @@ Support our project with a ⭐ on
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#troubleshooting-ssh-fleets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Troubleshooting SSH fleets
-        </span>
-      
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -3647,27 +4007,14 @@ Support our project with a ⭐ on
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          </div>
+        </div>
+      </div>
+    
+
           
 <div class="md-content" data-md-component="content">
   
@@ -3686,96 +4033,194 @@ Support our project with a ⭐ on
 
 
 <h1 id="fleets">Fleets<a class="headerlink" href="#fleets" title="Permanent link">&para;</a></h1>
-<p>Fleets are groups of cloud instances or SSH machines that you use to run dev environments, tasks, and services.</p>
-<p>By default, when you run <code>dstack apply</code> to start a new dev environment, task, or service,
-<code>dstack</code> reuses <code>idle</code> instances from an existing fleet.
-If no <code>idle</code> instances match the requirements, <code>dstack</code> automatically creates a new fleet 
-using configured backends.</p>
-<p>If you need more control over instance configuration and lifecycle, or if you want to use on-prem servers,
-<code>dstack</code> also offers you a way to create and manage fleets directly.</p>
-<h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
-<p>To create a fleet, define its configuration as a YAML file in your project folder.
-The filename must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code> are both acceptable).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="cloud-fleets" name="__tabbed_1" type="radio" /><input id="ssh-fleets" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="cloud-fleets">Cloud fleets</label><label for="ssh-fleets">SSH fleets</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="admonition info">
-<p class="admonition-title">What is a cloud fleet?</p>
-<p>By default, when running dev environments, tasks, and services, <code>dstack</code> 
-reuses <code>idle</code> instances from existing fleets or creates a new cloud fleet on the fly.</p>
-<p>If you want more control over the lifecycle of cloud instances, you can create a cloud fleet manually. 
-This allows you to reuse a fleet over a longer period and across multiple runs. You can also delete the fleet only when needed.</p>
-</div>
-<p>To create a cloud fleet, specify <code>resources</code>, <code>nodes</code>, 
-and other optional parameters.</p>
-<div editor-title="examples/misc/fleets/distrib.dstack.yml">
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<p>Fleets are groups of instances used to run dev environments, tasks, and services.
+Depending on the fleet configuration, instances can be interconnected clusters or standalone instances.</p>
+<p><code>dstack</code> supports two kinds of fleets: </p>
+<ul>
+<li><a href="#cloud">Cloud fleets</a> – dynamically provisioned through configured backends</li>
+<li><a href="#ssh">SSH fleets</a> – created using on-prem servers</li>
+</ul>
+<h2 id="cloud">Cloud fleets<a class="headerlink" href="#cloud" title="Permanent link">&para;</a></h2>
+<p>When you call <code>dstack apply</code> to run a dev environment, task, or service, <code>dstack</code> reuses <code>idle</code> instances 
+from an existing fleet. If none match the requirements, <code>dstack</code> creates a new cloud fleet.</p>
+<p>For greater control over cloud fleet provisioning, create fleets explicitly using configuration files. </p>
+<h3 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h3>
+<p>Define a fleet configuration as a YAML file in your project directory. The file must have a
+<code>.dstack.yml</code> extension (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code>).</p>
+<div editor-title="examples/misc/fleets/.dstack.yml">
+
+    <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
 <span class="c1"># The name is optional, if not specified, generated randomly</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet-distrib</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
 
-<span class="c1"># Number of instances</span>
+<span class="c1"># Specify the number of instances</span>
 <span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-<span class="c1"># Ensure instances are inter-connected</span>
-<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
-
-<span class="c1"># Terminate if idle for 3 days</span>
-<span class="nt">termination_idle_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"> </span>
+<span class="c1"># Uncomment to ensure instances are inter-connected</span>
+<span class="c1">#placement: cluster</span>
 
 <span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># 24GB or more vRAM</span>
-<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB..</span>
-<span class="w">    </span><span class="c1"># Two or more GPUs</span>
-<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2..</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 </code></pre></div>
+
 </div>
-<p>When you apply this configuration, <code>dstack</code> will create cloud instances using the configured backends according 
-to the specified parameters.</p>
-<div class="admonition info">
-<p class="admonition-title">Cluster placement</p>
-<p>To ensure the nodes of the fleet are interconnected (e.g., if you'd like to use them for
-<a href="../../reference/dstack.yml/task/#distributed-tasks">multi-node tasks</a>), 
-set <code>placement</code> to <code>cluster</code>. </p>
-<p>In this case, <code>dstack</code> will provision all nodes in the same backend and region and configure optimal 
-inter-node connectivity.</p>
-<div class="admonition info">
-<p class="admonition-title">Backends</p>
-<p>The <code>cluster</code> value of the <code>placement</code> property is supported only by the <code>aws</code>, <code>azure</code>, <code>gcp</code>, and <code>oci</code>
-backends.</p>
-</div>
+
+<h4 id="placement">Placement<a class="headerlink" href="#placement" title="Permanent link">&para;</a></h4>
+<p>To ensure instances are interconnected (e.g., for
+<a href="../tasks/#distributed-tasks">distributed tasks</a>), set <code>placement</code> to <code>cluster</code>. 
+This ensures all instances are provisioned in the same backend and region with optimal inter-node connectivity</p>
 <details class="info">
 <summary>AWS</summary>
 <p><code>dstack</code> automatically enables <a href="https://aws.amazon.com/hpc/efa/" target="_blank">Elastic Fabric Adapter <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
-for instance types that support it. The following instance types with EFA are supported:
+for the instance types that support it:
 <code>p5.48xlarge</code>, <code>p4d.24xlarge</code>, <code>g4dn.12xlarge</code>, <code>g4dn.16xlarge</code>, <code>g4dn.8xlarge</code>, <code>g4dn.metal</code>,
 <code>g5.12xlarge</code>, <code>g5.16xlarge</code>, <code>g5.24xlarge</code>, <code>g5.48xlarge</code>, <code>g5.8xlarge</code>, <code>g6.12xlarge</code>,
-<code>g6.16xlarge</code>, <code>g6.24xlarge</code>, <code>g6.48xlarge</code>, <code>g6.8xlarge</code>, <code>gr6.8xlarge</code></p>
-<p>Currently, only one EFA interface is enabled regardless of the maximum number of interfaces supported by the instance type.
-This limitation will be lifted once <a href="https://github.com/dstackai/dstack/issues/1804" target="_blank">this issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> is fixed.</p>
+<code>g6.16xlarge</code>, <code>g6.24xlarge</code>, <code>g6.48xlarge</code>, <code>g6.8xlarge</code>, and <code>gr6.8xlarge</code>.</p>
+<p>Currently, only one EFA interface is enabled per instance, regardless of its maximum capacity.
+This will change once <a href="https://github.com/dstackai/dstack/issues/1804" target="_blank">this issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> is resolved.</p>
 </details>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Backends</p>
-<p>Cloud fleets are supported for all backends except <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code>.</p>
-</div>
-</div>
-<div class="tabbed-block">
-<div class="admonition info">
-<p class="admonition-title">What is an SSH fleet?</p>
-<p>If you’d like to run dev environments, tasks, and services on arbitrary on-prem servers via <code>dstack</code>, you can 
-create an SSH fleet.</p>
-</div>
-<p>To create an SSH fleet, specify <code>ssh_config</code> to allow the <code>dstack</code> server to connect to these servers
-via SSH.</p>
-<p><div editor-title="examples/misc/fleets/distrib-ssh.dstack.yml"> </p>
+<blockquote>
+<p>The <code>cluster</code> placement is supported only for <code>aws</code>, <code>azure</code>, <code>gcp</code>, and <code>oci</code>
+backends.</p>
+</blockquote>
+<h4 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h4>
+<p>When you specify a resource value like <code>cpu</code> or <code>memory</code>,
+you can either use an exact value (e.g. <code>24GB</code>) or a 
+range (e.g. <code>24GB..</code>, or <code>24GB..80GB</code>, or <code>..80GB</code>).</p>
+<div editor-title=".dstack.yml"> 
+
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
 <span class="c1"># The name is optional, if not specified, generated randomly</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet-distrib-ssh</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
 
-<span class="c1"># Ensure instances are inter-connected</span>
-<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 
-<span class="c1"># The user, private SSH key, and hostnames of the on-prem servers</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># 200GB or more RAM</span>
+<span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200GB..</span>
+<span class="w">  </span><span class="c1"># 4 GPUs from 40GB to 80GB</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40GB..80GB:4</span>
+<span class="w">  </span><span class="c1"># Disk size</span>
+<span class="w">  </span><span class="nt">disk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500GB</span>
+</code></pre></div>
+
+</div>
+
+<p>The <code>gpu</code> property allows specifying not only memory size but also GPU vendor, names
+and their quantity. Examples: <code>nvidia</code> (one NVIDIA GPU), <code>A100</code> (one A100), <code>A10G,A100</code> (either A10G or A100),
+<code>A100:80GB</code> (one A100 of 80GB), <code>A100:2</code> (two A100), <code>24GB..40GB:2</code> (two GPUs between 24GB and 40GB),
+<code>A100:40GB:2</code> (two A100 GPUs of 40GB).</p>
+<details class="info">
+<summary>Google Cloud TPU</summary>
+<p>To use TPUs, specify its architecture via the <code>gpu</code> property.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2-8</span>
+</code></pre></div>
+<p>Currently, only 8 TPU cores can be specified, supporting single TPU device workloads. Multi-TPU support is coming soon.</p>
+</details>
+<h4 id="idle-duration">Idle duration<a class="headerlink" href="#idle-duration" title="Permanent link">&para;</a></h4>
+<p>By default, fleet instances stay <code>idle</code> for 3 days and can be reused within that time.
+If the fleet is not reused within this period, it is automatically terminated.</p>
+<p>To change the default idle duration, set
+<a href="../../reference/dstack.yml/fleet/#idle_duration"><code>idle_duration</code></a> in the run configuration (e.g., <code>0s</code>, <code>1m</code>, or <code>off</code> for
+unlimited).</p>
+<div editor-title="examples/misc/fleets/.dstack.yml">
+
+    <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+
+<span class="c1"># Terminate instances idle for more than 1 hour</span>
+<span class="nt">idle_duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1h</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+</code></pre></div>
+
+</div>
+
+<h4 id="spot-policy">Spot policy<a class="headerlink" href="#spot-policy" title="Permanent link">&para;</a></h4>
+<p>By default, <code>dstack</code> uses on-demand instances. However, you can change that
+via the <a href="../../reference/dstack.yml/fleet/#spot_policy"><code>spot_policy</code></a> property. It accepts <code>spot</code>, <code>on-demand</code>, and <code>auto</code>.</p>
+<h4 id="retry-policy">Retry policy<a class="headerlink" href="#retry-policy" title="Permanent link">&para;</a></h4>
+<p>By default, if <code>dstack</code> fails to provision an instance or an instance is interrupted, no retry is attempted.</p>
+<p>If you'd like <code>dstack</code> to do it, configure the 
+<a href="../../reference/dstack.yml/fleet/#retry">retry</a> property accordingly:</p>
+<div editor-title=".dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+
+<span class="nt">retry</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Retry on specific events</span>
+<span class="w">  </span><span class="nt">on_events</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">no-capacity</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">interruption</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="c1"># Retry for up to 1 hour</span>
+<span class="w">  </span><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1h</span>
+</code></pre></div>
+
+</div>
+
+<blockquote>
+<p>Cloud fleets are supported by all backends except <code>kubernetes</code>, <code>vastai</code>, and <code>runpod</code>.</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
+<p>Cloud fleets support many more configuration options,
+incl. <a href="../../reference/dstack.yml/fleet/#backends"><code>backends</code></a>, 
+<a href="../../reference/dstack.yml/fleet/#regions"><code>regions</code></a>, 
+<a href="../../reference/dstack.yml/fleet/#max_price"><code>max_price</code></a>, and
+among <a href="../../reference/dstack.yml/fleet/">others</a>.</p>
+</div>
+<h3 id="create-or-update-a-fleet">Create or update a fleet<a class="headerlink" href="#create-or-update-a-fleet" title="Permanent link">&para;</a></h3>
+<p>To create or update the fleet, pass the fleet configuration to <a href="../../reference/cli/dstack/apply/"><code>dstack apply</code></a>:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/misc/fleets/.dstack.yml
+</code></pre></div>
+
+</div>
+
+<p>To ensure the fleet is created, you can use the <code>dstack fleet</code> command:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>fleet
+
+<span class="w"> </span>FLEET<span class="w">     </span>INSTANCE<span class="w">  </span>BACKEND<span class="w">              </span>GPU<span class="w">             </span>PRICE<span class="w">    </span>STATUS<span class="w">  </span>CREATED<span class="w"> </span>
+<span class="w"> </span>my-fleet<span class="w">  </span><span class="m">0</span><span class="w">         </span>gcp<span class="w"> </span><span class="o">(</span>europe-west-1<span class="o">)</span><span class="w">  </span>L4:24GB<span class="w"> </span><span class="o">(</span>spot<span class="o">)</span><span class="w">  </span><span class="nv">$0</span>.1624<span class="w">  </span>idle<span class="w">    </span><span class="m">3</span><span class="w"> </span>mins<span class="w"> </span>ago<span class="w">      </span>
+<span class="w">           </span><span class="m">1</span><span class="w">         </span>gcp<span class="w"> </span><span class="o">(</span>europe-west-1<span class="o">)</span><span class="w">  </span>L4:24GB<span class="w"> </span><span class="o">(</span>spot<span class="o">)</span><span class="w">  </span><span class="nv">$0</span>.1624<span class="w">  </span>idle<span class="w">    </span><span class="m">3</span><span class="w"> </span>mins<span class="w"> </span>ago<span class="w">    </span>
+</code></pre></div>
+
+</div>
+
+<p>Once the status of instances changes to <code>idle</code>, they can be used by dev environments, tasks, and services.</p>
+<h2 id="ssh">SSH fleets<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<p>If you have a group of on-prem servers accessible via SSH, you can create an SSH fleet.</p>
+<h3 id="define-a-configuration_1">Define a configuration<a class="headerlink" href="#define-a-configuration_1" title="Permanent link">&para;</a></h3>
+<p>Define a fleet configuration as a YAML file in your project directory. The file must have a
+<code>.dstack.yml</code> extension (e.g. <code>.dstack.yml</code> or <code>fleet.dstack.yml</code>).</p>
+<div editor-title="examples/misc/fleets/.dstack.yml"> 
+
+    <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<span class="c1"># The name is optional, if not specified, generated randomly</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+
+<span class="c1"># Uncomment if instances are interconnected</span>
+<span class="c1">#placement: cluster</span>
+
+<span class="c1"># SSH credentials for the on-prem servers</span>
 <span class="nt">ssh_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
 <span class="w">  </span><span class="nt">identity_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/id_rsa</span>
@@ -3783,37 +4228,39 @@ via SSH.</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.51</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.52</span>
 </code></pre></div>
+
 </div>
-<p>When you apply this configuration, <code>dstack</code> will connect to the specified hosts using the provided SSH credentials, 
-install the dependencies, and configure these servers as a fleet.</p>
-<div class="admonition info">
-<p class="admonition-title">Requirements</p>
-<p>Hosts should be pre-installed with Docker.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="nvidia" name="__tabbed_2" type="radio" /><input id="amd" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="nvidia">NVIDIA</label><label for="amd">AMD</label></div>
+
+<details class="info">
+<summary>Requirements</summary>
+<p>1.&nbsp;Hosts should be pre-installed with Docker.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="nvidia" name="__tabbed_1" type="radio" /><input id="amd" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="nvidia">NVIDIA</label><label for="amd">AMD</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Systems with NVIDIA GPUs should also be pre-installed with CUDA 12.1 and
+<p>2.&nbsp;Hosts with NVIDIA GPUs should also be pre-installed with CUDA 12.1 and
 <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">NVIDIA Container Toolkit <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
 </div>
 <div class="tabbed-block">
-<p>Systems with AMD GPUs should also be pre-installed with AMDGPU-DKMS kernel driver (e.g. via
+<p>2.&nbsp;Hosts with AMD GPUs should also be pre-installed with AMDGPU-DKMS kernel driver (e.g. via
 <a href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/native-install/index.html">native package manager <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
 or <a href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/amdgpu-install.html">AMDGPU installer <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.)</p>
 </div>
 </div>
 </div>
-<p>The user should have passwordless <code>sudo</code> access.</p>
-</div>
-<details class="info">
-<summary>Environment variables</summary>
-<p>For SSH fleets, it's possible to pre-configure environment variables. 
-These variables will be used when installing the <code>dstack-shim</code> service on hosts 
-and running containers.</p>
+<p>3.&nbsp;The user specified should have passwordless <code>sudo</code> access.</p>
+</details>
+<h4 id="placement_1">Placement<a class="headerlink" href="#placement_1" title="Permanent link">&para;</a></h4>
+<p>If the hosts are interconnected (i.e. share the same network), set <code>placement</code> to <code>cluster</code>. 
+This is required if you'd like to use the fleet for <a href="../tasks/#distributed-tasks">distributed tasks</a>.</p>
+<h5 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h5>
+<p>By default, <code>dstack</code> automatically detects the network shared by the hosts. 
+However, it's possible to configure it explicitly via 
+the <a href="../../reference/dstack.yml/fleet/#network"><code>network</code></a> property.</p>
+<h4 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h4>
+<p>If needed, you can specify environment variables that will be used by <code>dstack-shim</code> and passed to containers.</p>
 <p>For example, these variables can be used to configure a proxy:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
-
-<span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span>
 
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTP_PROXY=http://proxy.example.com:80</span>
@@ -3827,68 +4274,43 @@ and running containers.</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.51</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.52</span>
 </code></pre></div>
-</details>
-<div class="admonition info">
-<p class="admonition-title">Cluster placement</p>
-<p>Set <code>placement</code> to <code>cluster</code> if the hosts are interconnected
-(e.g. if you'd like to use them for <a href="../../reference/dstack.yml/task/#distributed-tasks">multi-node tasks</a>).</p>
-<div class="admonition info">
-<p class="admonition-title">Network</p>
-<p>By default, <code>dstack</code> automatically detects the private network for the specified hosts. 
-However, it's possible to configure it explicitelly via 
-the <a href="../../reference/dstack.yml/fleet/#network"><code>network</code></a> property.</p>
-</div>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Backends</p>
-<p>To use SSH fleets, you don't need to configure any backends at all.</p>
-</div>
-</div>
-</div>
-</div>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
-<p>See <a href="../../reference/dstack.yml/fleet/"><code>.dstack.yml</code></a> for all the options supported by
-the fleet configuration.</p>
+<p>For all SSH fleet configuration options, refer to the <a href="../../reference/dstack.yml/fleet/">reference</a>.</p>
 </div>
-<h2 id="create-or-update-a-fleet">Create or update a fleet<a class="headerlink" href="#create-or-update-a-fleet" title="Permanent link">&para;</a></h2>
+<h3 id="create-or-update-a-fleet_1">Create or update a fleet<a class="headerlink" href="#create-or-update-a-fleet_1" title="Permanent link">&para;</a></h3>
 <p>To create or update the fleet, pass the fleet configuration to <a href="../../reference/cli/dstack/apply/"><code>dstack apply</code></a>:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/misc/fleets/distrib.dstack.yml
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>examples/misc/fleets/.dstack.yml
 </code></pre></div>
 
 </div>
 
-<h3 id="ensure-the-fleet-is-created">Ensure the fleet is created<a class="headerlink" href="#ensure-the-fleet-is-created" title="Permanent link">&para;</a></h3>
-<p>To ensure the fleet is created, use the <code>dstack fleet</code> command:</p>
+<p>To ensure the fleet is created, you can use the <code>dstack fleet</code> command:</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>fleet
 
-<span class="w"> </span>FLEET<span class="w">     </span>INSTANCE<span class="w">  </span>BACKEND<span class="w">              </span>GPU<span class="w">             </span>PRICE<span class="w">    </span>STATUS<span class="w">  </span>CREATED<span class="w"> </span>
-<span class="w"> </span>my-fleet<span class="w">  </span><span class="m">0</span><span class="w">         </span>gcp<span class="w"> </span><span class="o">(</span>europe-west-1<span class="o">)</span><span class="w">  </span>L4:24GB<span class="w"> </span><span class="o">(</span>spot<span class="o">)</span><span class="w">  </span><span class="nv">$0</span>.1624<span class="w">  </span>idle<span class="w">    </span><span class="m">3</span><span class="w"> </span>mins<span class="w"> </span>ago<span class="w">      </span>
-<span class="w">           </span><span class="m">1</span><span class="w">         </span>gcp<span class="w"> </span><span class="o">(</span>europe-west-1<span class="o">)</span><span class="w">  </span>L4:24GB<span class="w"> </span><span class="o">(</span>spot<span class="o">)</span><span class="w">  </span><span class="nv">$0</span>.1624<span class="w">  </span>idle<span class="w">    </span><span class="m">3</span><span class="w"> </span>mins<span class="w"> </span>ago<span class="w">    </span>
+<span class="w"> </span>FLEET<span class="w">     </span>INSTANCE<span class="w">  </span>GPU<span class="w">             </span>PRICE<span class="w">  </span>STATUS<span class="w">  </span>CREATED<span class="w"> </span>
+<span class="w"> </span>my-fleet<span class="w">  </span><span class="m">0</span><span class="w">         </span>L4:24GB<span class="w"> </span><span class="o">(</span>spot<span class="o">)</span><span class="w">  </span><span class="nv">$0</span><span class="w">     </span>idle<span class="w">    </span><span class="m">3</span><span class="w"> </span>mins<span class="w"> </span>ago<span class="w">      </span>
+<span class="w">           </span><span class="m">1</span><span class="w">         </span>L4:24GB<span class="w"> </span><span class="o">(</span>spot<span class="o">)</span><span class="w">  </span><span class="nv">$0</span><span class="w">     </span>idle<span class="w">    </span><span class="m">3</span><span class="w"> </span>mins<span class="w"> </span>ago<span class="w">    </span>
 </code></pre></div>
 
 </div>
 
+<p>When you apply this configuration, <code>dstack</code> will connect to the specified hosts using the provided SSH credentials, 
+install the dependencies, and configure these servers as a fleet.</p>
 <p>Once the status of instances changes to <code>idle</code>, they can be used by dev environments, tasks, and services.</p>
-<div class="admonition info">
-<p class="admonition-title">Termination policy</p>
-<p>If you want a fleet to be automatically deleted after a certain idle time,
-you can set the <a href="../../reference/dstack.yml/fleet/#termination_idle_time"><code>termination_idle_time</code></a> property.</p>
-</div>
-<h3 id="troubleshooting-ssh-fleets">Troubleshooting SSH fleets<a class="headerlink" href="#troubleshooting-ssh-fleets" title="Permanent link">&para;</a></h3>
+<h4 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h4>
 <div class="admonition info">
 <p class="admonition-title">Resources</p>
-<p>If you're creating an SSH fleet, ensure that the GPU, memory, and disk size are detected properly.
-If GPU isn't detected, ensure that the hosts meet the requirements (see above).</p>
+<p>Once the fleet is created, double-check that the GPU, memory, and disk are detected correctly.</p>
 </div>
-<p>If the status doesn't change to <code>idle</code> after a few minutes, ensure that 
-the hosts meet the requirements (see above).</p>
-<p>If the requirements are met but the fleet still fails to be created, check <code>/root/.dstack/shim.log</code> for logs 
-on the hosts specified in <code>ssh_config</code>.</p>
+<p>If the status does not change to <code>idle</code> after a few minutes or the resources are not displayed correctly, ensure that
+all host requirements are satisfied.</p>
+<p>If the requirements are met but the fleet still fails to be created correctly, check the logs at
+<code>/root/.dstack/shim.log</code> on the hosts for error details.</p>
 <h2 id="manage-fleets">Manage fleets<a class="headerlink" href="#manage-fleets" title="Permanent link">&para;</a></h2>
 <h3 id="list-fleets">List fleets<a class="headerlink" href="#list-fleets" title="Permanent link">&para;</a></h3>
 <p>The <a href="../../reference/cli/dstack/fleet/#dstack-fleet-list"><code>dstack fleet</code></a> command lists fleet instances and their status:</p>
@@ -3916,16 +4338,12 @@ Fleet<span class="w"> </span>my-gcp-fleet<span class="w"> </span>deleted
 
 <p>Alternatively, you can delete a fleet by passing the fleet name  to <code>dstack fleet delete</code>.
 To terminate and delete specific instances from a fleet, pass <code>-i INSTANCE_NUM</code>.</p>
-<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Read about <a href="../../dev-environments/">dev environments</a>, <a href="../../tasks/">tasks</a>, and 
-    <a href="../../services/">services</a> </li>
-<li>Join the community via <a href="https://discord.gg/u8SmfwPpMd">Discord <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a></li>
-</ol>
 <div class="admonition info">
-<p class="admonition-title">Reference</p>
-<p>See <a href="../../reference/dstack.yml/fleet/">.dstack.yml</a> for all the options supported by
-fleets, along with multiple examples.</p>
+<p class="admonition-title">What's next?</p>
+<ol>
+<li>Read about <a href="../dev-environments/">dev environments</a>, <a href="../tasks/">tasks</a>, and
+<a href="../services/">services</a></li>
+</ol>
 </div>
 
 
@@ -3947,7 +4365,7 @@ fleets, along with multiple examples.</p>
           <nav class="md-footer__inner md-grid" aria-label="Footer" >
             
               
-              <a href="../repos/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Repos">
+              <a href="../services/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Services">
                 <div class="md-footer__button md-icon">
                   
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3957,7 +4375,7 @@ fleets, along with multiple examples.</p>
                     Previous
                   </span>
                   <div class="md-ellipsis">
-                    Repos
+                    Services
                   </div>
                 </div>
               </a>

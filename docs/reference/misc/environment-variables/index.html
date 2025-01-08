@@ -439,12 +439,12 @@ Support our project with a ⭐ on
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+    
+      
+      <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 
   
@@ -746,7 +746,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../dev-environments/" class="md-nav__link">
+      <a href="../../../concepts/backends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -773,7 +800,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../tasks/" class="md-nav__link">
+      <a href="../../../concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,40 +827,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../services/" class="md-nav__link">
+      <a href="../../../concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Services
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../concepts/repos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Repos
   
 
     
@@ -935,13 +935,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/projects/" class="md-nav__link">
+      <a href="../../../concepts/repos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Projects
+    Repos
   
 
     
@@ -1081,6 +1081,33 @@ Support our project with a ⭐ on
     
   
     Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
   
 
     
@@ -3449,16 +3476,16 @@ Support our project with a ⭐ on
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+      <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -3515,11 +3542,11 @@ Support our project with a ⭐ on
     </ul>
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          </div>
+        </div>
+      </div>
+    
+
           
 <div class="md-content" data-md-component="content">
   
@@ -3533,7 +3560,7 @@ Support our project with a ⭐ on
 <h2 id="dstackyml">.dstack.yml<a class="headerlink" href="#dstackyml" title="Permanent link">&para;</a></h2>
 <p>The following read-only environment variables are automatically propagated to configurations for dev environments,
 tasks, and services:</p>
-<h5 id="DSTACK_RUN_NAME">DSTACK_RUN_NAME<a class="headerlink" href="#DSTACK_RUN_NAME" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_RUN_NAME">DSTACK_RUN_NAME<a class="headerlink" href="#DSTACK_RUN_NAME" title="Permanent link">&para;</a></h6>
 <p>The name of the run.</p>
 <p>The example below simply prints <code>vscode</code> to the output.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
@@ -3543,9 +3570,9 @@ tasks, and services:</p>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo $DSTACK_RUN_NAME</span>
 </code></pre></div>
 <p>If <code>name</code> is not set in the configuration, it is assigned a random name (e.g. <code>wet-mangust-1</code>).</p>
-<h5 id="DSTACK_REPO_ID">DSTACK_REPO_ID<a class="headerlink" href="#DSTACK_REPO_ID" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_REPO_ID">DSTACK_REPO_ID<a class="headerlink" href="#DSTACK_REPO_ID" title="Permanent link">&para;</a></h6>
 <p>The ID of the repo</p>
-<h5 id="DSTACK_GPUS_NUM">DSTACK_GPUS_NUM<a class="headerlink" href="#DSTACK_GPUS_NUM" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_GPUS_NUM">DSTACK_GPUS_NUM<a class="headerlink" href="#DSTACK_GPUS_NUM" title="Permanent link">&para;</a></h6>
 <p>The total number of GPUs in the run</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
@@ -3564,13 +3591,13 @@ tasks, and services:</p>
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 </code></pre></div>
-<h5 id="DSTACK_NODES_NUM">DSTACK_NODES_NUM<a class="headerlink" href="#DSTACK_NODES_NUM" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_NODES_NUM">DSTACK_NODES_NUM<a class="headerlink" href="#DSTACK_NODES_NUM" title="Permanent link">&para;</a></h6>
 <p>The number of nodes in the run</p>
-<h5 id="DSTACK_GPUS_PER_NODE">DSTACK_GPUS_PER_NODE<a class="headerlink" href="#DSTACK_GPUS_PER_NODE" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_GPUS_PER_NODE">DSTACK_GPUS_PER_NODE<a class="headerlink" href="#DSTACK_GPUS_PER_NODE" title="Permanent link">&para;</a></h6>
 <p>The number of GPUs per node</p>
-<h5 id="DSTACK_NODE_RANK">DSTACK_NODE_RANK<a class="headerlink" href="#DSTACK_NODE_RANK" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_NODE_RANK">DSTACK_NODE_RANK<a class="headerlink" href="#DSTACK_NODE_RANK" title="Permanent link">&para;</a></h6>
 <p>The rank of the node</p>
-<h5 id="DSTACK_NODE_RANK">DSTACK_NODE_RANK<a class="headerlink" href="#DSTACK_NODE_RANK" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_NODE_RANK">DSTACK_NODE_RANK<a class="headerlink" href="#DSTACK_NODE_RANK" title="Permanent link">&para;</a></h6>
 <p>The internal IP address the master node.</p>
 <p>Below is an example of using <code>DSTACK_NODES_NUM</code>, <code>DSTACK_GPUS_PER_NODE</code>, <code>DSTACK_NODE_RANK</code>, and <code>DSTACK_NODE_RANK</code>
 for distributed training:</p>
@@ -3594,13 +3621,13 @@ for distributed training:</p>
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 </code></pre></div>
-<h5 id="DSTACK_NODES_IPS">DSTACK_NODES_IPS<a class="headerlink" href="#DSTACK_NODES_IPS" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_NODES_IPS">DSTACK_NODES_IPS<a class="headerlink" href="#DSTACK_NODES_IPS" title="Permanent link">&para;</a></h6>
 <p>The list of internal IP addresses of all nodes delimited by <code>"\n"</code></p>
 <h2 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h2>
 <p>The following environment variables are supported by the <code>dstack</code> server and can be specified whether the server is run
 via <code>dstack server</code> or deployed using Docker.</p>
 <p>For more details on the options below, refer to the <a href="../../../guides/server-deployment/">server deployment</a> guide. </p>
-<h5 id="DSTACK_SERVER_LOG_LEVEL">DSTACK_SERVER_LOG_LEVEL<a class="headerlink" href="#DSTACK_SERVER_LOG_LEVEL" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_SERVER_LOG_LEVEL">DSTACK_SERVER_LOG_LEVEL<a class="headerlink" href="#DSTACK_SERVER_LOG_LEVEL" title="Permanent link">&para;</a></h6>
 <p>Has the same effect as <code>--log-level</code>. Defaults to <code>INFO</code>.</p>
 <p>Example:</p>
 <div class="termy">
@@ -3610,25 +3637,25 @@ via <code>dstack server</code> or deployed using Docker.</p>
 
 </div>
 
-<h5 id="DSTACK_SERVER_LOG_FORMAT">DSTACK_SERVER_LOG_FORMAT<a class="headerlink" href="#DSTACK_SERVER_LOG_FORMAT" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_SERVER_LOG_FORMAT">DSTACK_SERVER_LOG_FORMAT<a class="headerlink" href="#DSTACK_SERVER_LOG_FORMAT" title="Permanent link">&para;</a></h6>
 <p>Sets format of log output. Can be <code>rich</code>, <code>standard</code>, <code>json</code>. Defaults to <code>rich</code>.</p>
-<h5 id="DSTACK_SERVER_HOST">DSTACK_SERVER_HOST<a class="headerlink" href="#DSTACK_SERVER_HOST" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_SERVER_HOST">DSTACK_SERVER_HOST<a class="headerlink" href="#DSTACK_SERVER_HOST" title="Permanent link">&para;</a></h6>
 <p>Has the same effect as <code>--host</code>. Defaults to <code>127.0.0.1</code>.</p>
-<h5 id="DSTACK_SERVER_PORT">DSTACK_SERVER_PORT<a class="headerlink" href="#DSTACK_SERVER_PORT" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_SERVER_PORT">DSTACK_SERVER_PORT<a class="headerlink" href="#DSTACK_SERVER_PORT" title="Permanent link">&para;</a></h6>
 <p>Has the same effect as <code>--port</code>. Defaults to <code>3000</code>.</p>
-<h5 id="DSTACK_SERVER_ADMIN_TOKEN">DSTACK_SERVER_ADMIN_TOKEN<a class="headerlink" href="#DSTACK_SERVER_ADMIN_TOKEN" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_SERVER_ADMIN_TOKEN">DSTACK_SERVER_ADMIN_TOKEN<a class="headerlink" href="#DSTACK_SERVER_ADMIN_TOKEN" title="Permanent link">&para;</a></h6>
 <p>Has the same effect as <code>--token</code>. Defaults to <code>None</code>.</p>
-<h5 id="DSTACK_SERVER_DIR">DSTACK_SERVER_DIR<a class="headerlink" href="#DSTACK_SERVER_DIR" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_SERVER_DIR">DSTACK_SERVER_DIR<a class="headerlink" href="#DSTACK_SERVER_DIR" title="Permanent link">&para;</a></h6>
 <p>Sets path to store data and server configs. Defaults to <code>~/.dstack/server</code>.</p>
-<h5 id="DSTACK_DATABASE_URL">DSTACK_DATABASE_URL<a class="headerlink" href="#DSTACK_DATABASE_URL" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_DATABASE_URL">DSTACK_DATABASE_URL<a class="headerlink" href="#DSTACK_DATABASE_URL" title="Permanent link">&para;</a></h6>
 <p>The database URL to use instead of default SQLite. Currently <code>dstack</code> supports Postgres. Example: <code>postgresql+asyncpg://myuser:mypassword@localhost:5432/mydatabase</code>. Defaults to <code>None</code>.</p>
-<h5 id="DSTACK_SERVER_CLOUDWATCH_LOG_GROUP">DSTACK_SERVER_CLOUDWATCH_LOG_GROUP<a class="headerlink" href="#DSTACK_SERVER_CLOUDWATCH_LOG_GROUP" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_SERVER_CLOUDWATCH_LOG_GROUP">DSTACK_SERVER_CLOUDWATCH_LOG_GROUP<a class="headerlink" href="#DSTACK_SERVER_CLOUDWATCH_LOG_GROUP" title="Permanent link">&para;</a></h6>
 <p>The CloudWatch Logs group for workloads logs. If not set, the default file-based log storage is used.</p>
-<h5 id="DSTACK_SERVER_CLOUDWATCH_LOG_REGION">DSTACK_SERVER_CLOUDWATCH_LOG_REGION<a class="headerlink" href="#DSTACK_SERVER_CLOUDWATCH_LOG_REGION" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_SERVER_CLOUDWATCH_LOG_REGION">DSTACK_SERVER_CLOUDWATCH_LOG_REGION<a class="headerlink" href="#DSTACK_SERVER_CLOUDWATCH_LOG_REGION" title="Permanent link">&para;</a></h6>
 <p>The CloudWatch Logs region. Defaults to <code>None</code>.</p>
-<h5 id="DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE">DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE<a class="headerlink" href="#DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE">DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE<a class="headerlink" href="#DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE" title="Permanent link">&para;</a></h6>
 <p>Request body size limit for services, in bytes. Defaults to 64 MiB.</p>
-<h5 id="DSTACK_FORBID_SERVICES_WITHOUT_GATEWAY">DSTACK_FORBID_SERVICES_WITHOUT_GATEWAY<a class="headerlink" href="#DSTACK_FORBID_SERVICES_WITHOUT_GATEWAY" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_FORBID_SERVICES_WITHOUT_GATEWAY">DSTACK_FORBID_SERVICES_WITHOUT_GATEWAY<a class="headerlink" href="#DSTACK_FORBID_SERVICES_WITHOUT_GATEWAY" title="Permanent link">&para;</a></h6>
 <p>Forbids registering new services without a gateway if set to any value.</p>
 <details class="info">
 <summary>Internal environment variables</summary>
@@ -3645,7 +3672,7 @@ via <code>dstack server</code> or deployed using Docker.</p>
 </details>
 <h2 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h2>
 <p>The following environment variables are supported by the CLI.</p>
-<h5 id="DSTACK_CLI_LOG_LEVEL">DSTACK_CLI_LOG_LEVEL<a class="headerlink" href="#DSTACK_CLI_LOG_LEVEL" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_CLI_LOG_LEVEL">DSTACK_CLI_LOG_LEVEL<a class="headerlink" href="#DSTACK_CLI_LOG_LEVEL" title="Permanent link">&para;</a></h6>
 <p>Configures CLI logging level. Defaults to <code>INFO</code>.</p>
 <p>Example:</p>
 <div class="termy">
@@ -3655,7 +3682,7 @@ via <code>dstack server</code> or deployed using Docker.</p>
 
 </div>
 
-<h5 id="DSTACK_PROJECT">DSTACK_PROJECT<a class="headerlink" href="#DSTACK_PROJECT" title="Permanent link">&para;</a></h5>
+<h6 id="DSTACK_PROJECT">DSTACK_PROJECT<a class="headerlink" href="#DSTACK_PROJECT" title="Permanent link">&para;</a></h6>
 <p>Has the same effect as <code>--project</code>. Defaults to <code>None</code>.</p>
 
 

@@ -18,7 +18,7 @@
         <link rel="prev" href="../server-deployment/">
       
       
-        <link rel="next" href="../../reference/dstack.yml/dev-environment/">
+        <link rel="next" href="../administration/">
       
       
         
@@ -439,12 +439,12 @@ Support our project with a ⭐ on
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+    
+      
+      <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 
   
@@ -757,7 +757,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../dev-environments/" class="md-nav__link">
+      <a href="../../concepts/backends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -784,7 +811,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../tasks/" class="md-nav__link">
+      <a href="../../concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -811,40 +838,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../services/" class="md-nav__link">
+      <a href="../../concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Services
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../concepts/repos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Repos
   
 
     
@@ -946,13 +946,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/projects/" class="md-nav__link">
+      <a href="../../concepts/repos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Projects
+    Repos
   
 
     
@@ -1204,6 +1204,51 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Provisioning fails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-backend-misconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Backend misconfiguration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-2-insufficient-service-quotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 2: Insufficient service quotas
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-3-resources-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 3: Resources mismatch
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1216,6 +1261,25 @@ Support our project with a ⭐ on
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Run starts but fails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-spot-interruption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Spot interruption
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1230,6 +1294,25 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Services fail to start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-gateway-misconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Gateway misconfiguration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1243,6 +1326,25 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Service endpoint doesn't work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-bad-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Bad Authorization
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1255,6 +1357,38 @@ Support our project with a ⭐ on
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Cannot access dev environment or task ports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-detached-from-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Detached from run
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-2-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 2: Windows
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1293,6 +1427,33 @@ Support our project with a ⭐ on
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3546,16 +3707,16 @@ Support our project with a ⭐ on
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+      <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -3627,6 +3788,51 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Provisioning fails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-backend-misconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Backend misconfiguration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-2-insufficient-service-quotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 2: Insufficient service quotas
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-3-resources-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 3: Resources mismatch
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3639,6 +3845,25 @@ Support our project with a ⭐ on
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Run starts but fails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-spot-interruption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Spot interruption
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3653,6 +3878,25 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Services fail to start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-gateway-misconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Gateway misconfiguration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3666,6 +3910,25 @@ Support our project with a ⭐ on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Service endpoint doesn't work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-bad-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Bad Authorization
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3678,6 +3941,38 @@ Support our project with a ⭐ on
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Cannot access dev environment or task ports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-detached-from-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 1: Detached from run
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-2-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cause 2: Windows
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3715,11 +4010,11 @@ Support our project with a ⭐ on
     </ul>
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          </div>
+        </div>
+      </div>
+    
+
           
 <div class="md-content" data-md-component="content">
   
@@ -3808,7 +4103,7 @@ was using spot instances and was interrupted. To address this, you can either se
 pointing to the gateway's hostname is configured.</p>
 <h3 id="service-endpoint-doesnt-work">Service endpoint doesn't work<a class="headerlink" href="#service-endpoint-doesnt-work" title="Permanent link">&para;</a></h3>
 <h4 id="cause-1-bad-authorization">Cause 1: Bad Authorization<a class="headerlink" href="#cause-1-bad-authorization" title="Permanent link">&para;</a></h4>
-<p>If the service endpoint returns a 403 error, it is likely because the <a href="../../services/#access-the-endpoint"><code>Authorization</code></a> 
+<p>If the service endpoint returns a 403 error, it is likely because the <a href="../../concepts/services/#access-the-endpoint"><code>Authorization</code></a> 
 header with the correct <code>dstack</code> token was not provided.</p>
 <h3 id="cannot-access-dev-environment-or-task-ports">Cannot access dev environment or task ports<a class="headerlink" href="#cannot-access-dev-environment-or-task-ports" title="Permanent link">&para;</a></h3>
 <h4 id="cause-1-detached-from-run">Cause 1: Detached from run<a class="headerlink" href="#cause-1-detached-from-run" title="Permanent link">&para;</a></h4>
@@ -3860,13 +4155,13 @@ Also, review the  <code>/root/.dstack/shim.log</code> file on each host used to 
             
             
               
-              <a href="../../reference/dstack.yml/dev-environment/" class="md-footer__link md-footer__link--next" aria-label="Next: dev-environment">
+              <a href="../administration/" class="md-footer__link md-footer__link--next" aria-label="Next: Administration">
                 <div class="md-footer__title">
                   <span class="md-footer__direction">
                     Next
                   </span>
                   <div class="md-ellipsis">
-                    dev-environment
+                    Administration
                   </div>
                 </div>
                 <div class="md-footer__button md-icon">

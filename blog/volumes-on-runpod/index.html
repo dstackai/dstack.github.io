@@ -437,14 +437,14 @@ Support our project with a ⭐ on
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+    
+      
+        
+      
+      <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-              
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 
   
@@ -746,7 +746,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../docs/dev-environments/" class="md-nav__link">
+      <a href="../../docs/concepts/backends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -773,7 +800,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../docs/tasks/" class="md-nav__link">
+      <a href="../../docs/concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,40 +827,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../docs/services/" class="md-nav__link">
+      <a href="../../docs/concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Services
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../docs/concepts/repos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Repos
   
 
     
@@ -935,13 +935,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../../docs/concepts/projects/" class="md-nav__link">
+      <a href="../../docs/concepts/repos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Projects
+    Repos
   
 
     
@@ -1081,6 +1081,33 @@ Support our project with a ⭐ on
     
   
     Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/guides/administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
   
 
     
@@ -3355,18 +3382,18 @@ Support our project with a ⭐ on
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+        
+      
+      <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-            
-              
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -3376,11 +3403,11 @@ Support our project with a ⭐ on
   
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          </div>
+        </div>
+      </div>
+    
+
           
   <div class="md-content md-content--post" data-md-component="content">
     <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
@@ -3472,7 +3499,7 @@ need to be provisioned quickly. </p>
 deploying a model on RunPod.</p>
 <!-- more -->
 
-<p>Suppose you want to deploy Llama 3.1 on RunPod as a <a href="../../docs/services/">service</a>:</p>
+<p>Suppose you want to deploy Llama 3.1 on RunPod as a <a href="../../docs/concepts/services/">service</a>:</p>
 <div editor-title="examples/llms/llama31/tgi/service.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
@@ -3558,7 +3585,7 @@ volume name to the <code>/data</code> path.</p>
 <span class="nt">commands</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-generation-launcher</span>
 <span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
-<span class="c1"># Register the mdoel</span>
+<span class="c1"># Register the model</span>
 <span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama/Meta-Llama-3.1-8B-Instruct</span>
 
 <span class="c1"># Uncomment to leverage spot instances</span>
@@ -3573,10 +3600,10 @@ volume name to the <code>/data</code> path.</p>
 <p>In this case, <code>dstack</code> attaches the specified volume to each new replica. This ensures the model is downloaded only
 once, reducing cold start time in proportion to the model size.</p>
 <p>A notable feature of RunPod is that volumes can be attached to multiple containers simultaneously. This capability is
-particularly useful for autoscalable services or distributed tasks.</p>
+particularly useful for auto-scalable services or distributed tasks.</p>
 <p>Using <a href="../../docs/concepts/volumes/">volumes</a> not only optimizes inference cold start times but also enhances the
 efficiency of data and model checkpoint loading during training and fine-tuning.
-Whether you're running <a href="../../docs/tasks/">tasks</a> or <a href="../../docs/dev-environments/">dev environments</a>, leveraging
+Whether you're running <a href="../../docs/concepts/tasks/">tasks</a> or <a href="../../docs/concepts/dev-environments/">dev environments</a>, leveraging
 volumes can significantly streamline your workflow and improve overall performance.</p>
 
 

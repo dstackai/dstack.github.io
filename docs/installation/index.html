@@ -439,12 +439,12 @@ Support our project with a ⭐ on
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+    
+      
+      <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 
   
@@ -740,19 +740,6 @@ Support our project with a ⭐ on
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -857,7 +844,34 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../dev-environments/" class="md-nav__link">
+      <a href="../concepts/backends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/dev-environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -884,7 +898,7 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../tasks/" class="md-nav__link">
+      <a href="../concepts/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -911,40 +925,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../services/" class="md-nav__link">
+      <a href="../concepts/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Services
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concepts/repos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Repos
   
 
     
@@ -1046,13 +1033,13 @@ Support our project with a ⭐ on
   
   
     <li class="md-nav__item">
-      <a href="../concepts/projects/" class="md-nav__link">
+      <a href="../concepts/repos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Projects
+    Repos
   
 
     
@@ -1195,6 +1182,33 @@ Support our project with a ⭐ on
     
   
     Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
   
 
     
@@ -3456,16 +3470,16 @@ Support our project with a ⭐ on
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+      <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -3519,27 +3533,14 @@ Support our project with a ⭐ on
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          What's next?
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          </div>
+        </div>
+      </div>
+    
+
           
 <div class="md-content" data-md-component="content">
   
@@ -3564,9 +3565,10 @@ Support our project with a ⭐ on
 skip installation and proceed to <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.</p>
 </blockquote>
 <h3 id="optional-configure-backends">(Optional) Configure backends<a class="headerlink" href="#optional-configure-backends" title="Permanent link">&para;</a></h3>
-<p>To use <code>dstack</code> with your own cloud accounts, create the <code>~/.dstack/server/config.yml</code> file and 
-<a href="../reference/server/config.yml/">configure backends</a>. Alternatively, you can configure backends via the control plane UI after you start the server.</p>
-<p>You can skip backends configuration if you intend to run containers  only on your on-prem servers. Use <a href="../concepts/fleets/#ssh-fleets">SSH fleets</a> for that.</p>
+<p>To use <code>dstack</code> with cloud providers, configure <a href="../concepts/backends/">backends</a>.</p>
+<blockquote>
+<p>For using <code>dstack</code> with on-prem servers, create <a href="../concepts/fleets/#ssh">SSH fleets</a> instead.</p>
+</blockquote>
 <h2 id="start-the-server">Start the server<a class="headerlink" href="#start-the-server" title="Permanent link">&para;</a></h2>
 <p>The server can run on your laptop, a dedicated server, a private cloud VPC, or any location with access to your
 cloud or on-prem clusters.</p>
@@ -3638,14 +3640,16 @@ Configuration<span class="w"> </span>is<span class="w"> </span>updated<span clas
 </div>
 
 <p>This configuration is stored in <code>~/.dstack/config.yml</code>.</p>
-<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">What's next?</p>
 <ol>
 <li>Check the <a href="../reference/server/config.yml/">server/config.yml reference</a> on how to configure backends</li>
-<li>Check <a href="../concepts/fleets/#ssh-fleets">SSH fleets</a> to learn about running on your on-prem servers</li>
+<li>Check <a href="../concepts/fleets/#ssh">SSH fleets</a> to learn about running on your on-prem servers</li>
 <li>Follow <a href="../quickstart/">quickstart</a></li>
 <li>Browse <a href="/examples">examples</a></li>
 <li>Join the community via <a href="https://discord.gg/u8SmfwPpMd">Discord <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a></li>
 </ol>
+</div>
 
 
 
