@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49+insiders-4.53.15">
     
     
       
@@ -1664,6 +1664,17 @@ Support our project with a ⭐ on
     <span class="md-ellipsis">
       
         kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vultr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vultr
       
     </span>
   </a>
@@ -3817,6 +3828,17 @@ Support our project with a ⭐ on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vultr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vultr
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4097,6 +4119,13 @@ to configure <a href="../../../concepts/backends/">backends</a> and other <a hre
 <h6 id="kubernetes-networking"><code>projects[n].backends[type=kubernetes].networking</code><a class="headerlink" href="#kubernetes-networking" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="ssh_host"># <code>ssh_host</code> - (Optional) The external IP address of any node.<a class="headerlink" href="#ssh_host" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="ssh_port"><code>ssh_port</code> - (Optional) Any port accessible outside of the cluster.<a class="headerlink" href="#ssh_port" title="Permanent link">&para;</a></h6>
+<h5 id="vultr"><code>projects[n].backends[type=vultr]</code><a class="headerlink" href="#vultr" title="Permanent link">&para;</a></h5>
+<h6 class="reference-item" id="type"><code>type</code> -  The type of backend. Must be <code>vultr</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="regions"><code>regions</code> - (Optional) The list of Vultr regions. Omit to use all regions.<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="_creds"><a href="#vultr-creds"><code>creds</code></a> -  The credentials.<a class="headerlink" href="#_creds" title="Permanent link">&para;</a></h6>
+<h6 id="vultr-creds"><code>projects[n].backends[type=vultr].creds</code><a class="headerlink" href="#vultr-creds" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="type"><code>type</code> -  The type of credentials. Must be <code>api_key</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="api_key"><code>api_key</code> -  The API key.<a class="headerlink" href="#api_key" title="Permanent link">&para;</a></h6>
 <h3 id="encryption"><code>encryption</code><a class="headerlink" href="#encryption" title="Permanent link">&para;</a></h3>
 <h6 class="reference-item" id="keys"><code>keys</code> -  The encryption keys.<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h6>
 <h4 id="encryption-keys"><code>encryption.keys</code><a class="headerlink" href="#encryption-keys" title="Permanent link">&para;</a></h4>

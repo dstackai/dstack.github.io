@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49+insiders-4.53.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49+insiders-4.53.15">
     
     
       
@@ -953,6 +953,19 @@ Support our project with a ⭐ on
       
         <span class="md-typeset">
           DataCrunch
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vultr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Vultr
         </span>
       
     </span>
@@ -3806,6 +3819,19 @@ Support our project with a ⭐ on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vultr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Vultr
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4531,6 +4557,22 @@ Allow group &lt;dstack-users&gt; to manage virtual-network-family in compartment
 <span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api_key</span>
 <span class="w">          </span><span class="nt">client_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xfaHBqYEsArqhKWX-e52x3HH7w8T</span>
 <span class="w">          </span><span class="nt">client_secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">B5ZU5Qx9Nt8oGMlmMhNI3iglK8bjMhagTbylZy4WzncZe39995f7Vxh8</span>
+</code></pre></div>
+
+</div>
+
+<h3 id="vultr">Vultr<a class="headerlink" href="#vultr" title="Permanent link">&para;</a></h3>
+<p>Log into your <a href="https://www.vultr.com/">Vultr <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> account, click <code>Account</code> in the sidebar, select <code>API</code>, find the <code>Personal Access Token</code> panel and click the <code>Enable API</code> button. In the <code>Access Control</code> panel, allow API requests from all addresses or from the subnet where your <code>dstack</code> server is deployed.</p>
+<p>Then, go ahead and configure the backend:</p>
+<div editor-title="~/.dstack/server/config.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">projects</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">    </span><span class="nt">backends</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vultr</span>
+<span class="w">        </span><span class="nt">creds</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api_key</span>
+<span class="w">          </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">B57487240a466624b48de22865589</span>
 </code></pre></div>
 
 </div>
