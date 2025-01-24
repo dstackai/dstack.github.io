@@ -926,7 +926,7 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#placement" class="md-nav__link">
+  <a href="#cloud-placement" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -1042,7 +1042,7 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#placement_1" class="md-nav__link">
+  <a href="#ssh-placement" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -3563,7 +3563,7 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#placement" class="md-nav__link">
+  <a href="#cloud-placement" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -3679,7 +3679,7 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#placement_1" class="md-nav__link">
+  <a href="#ssh-placement" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
@@ -3867,22 +3867,19 @@ from an existing fleet. If none match the requirements, <code>dstack</code> crea
 
 </div>
 
-<h4 id="placement">Placement<a class="headerlink" href="#placement" title="Permanent link">&para;</a></h4>
+<h4 id="cloud-placement">Placement<a class="headerlink" href="#cloud-placement" title="Permanent link">&para;</a></h4>
 <p>To ensure instances are interconnected (e.g., for
 <a href="../tasks/#distributed-tasks">distributed tasks</a>), set <code>placement</code> to <code>cluster</code>. 
 This ensures all instances are provisioned in the same backend and region with optimal inter-node connectivity</p>
 <details class="info">
 <summary>AWS</summary>
-<p><code>dstack</code> automatically enables <a href="https://aws.amazon.com/hpc/efa/" target="_blank">Elastic Fabric Adapter <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>
-for the instance types that support it:
-<code>p5.48xlarge</code>, <code>p4d.24xlarge</code>, <code>g4dn.12xlarge</code>, <code>g4dn.16xlarge</code>, <code>g4dn.8xlarge</code>, <code>g4dn.metal</code>,
-<code>g5.12xlarge</code>, <code>g5.16xlarge</code>, <code>g5.24xlarge</code>, <code>g5.48xlarge</code>, <code>g5.8xlarge</code>, <code>g6.12xlarge</code>,
-<code>g6.16xlarge</code>, <code>g6.24xlarge</code>, <code>g6.48xlarge</code>, <code>g6.8xlarge</code>, and <code>gr6.8xlarge</code>.</p>
-<p>Currently, only one EFA interface is enabled per instance, regardless of its maximum capacity.
+<p><code>dstack</code> automatically enables the Elastic Fabric Adapter for all
+<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html#efa-instance-types" target="_blank">EFA-capable instance types <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>.
+Currently, only one EFA interface is enabled per instance, regardless of its maximum capacity.
 This will change once <a href="https://github.com/dstackai/dstack/issues/1804" target="_blank">this issue <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a> is resolved.</p>
 </details>
 <blockquote>
-<p>The <code>cluster</code> placement is supported only for <code>aws</code>, <code>azure</code>, <code>gcp</code>, and <code>oci</code>
+<p>The <code>cluster</code> placement is supported only for <code>aws</code>, <code>azure</code>, <code>gcp</code>, <code>oci</code>, and <code>vultr</code>
 backends.</p>
 </blockquote>
 <h4 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h4>
@@ -4052,7 +4049,7 @@ or <a href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/instal
 </div>
 <p>3.&nbsp;The user specified should have passwordless <code>sudo</code> access.</p>
 </details>
-<h4 id="placement_1">Placement<a class="headerlink" href="#placement_1" title="Permanent link">&para;</a></h4>
+<h4 id="ssh-placement">Placement<a class="headerlink" href="#ssh-placement" title="Permanent link">&para;</a></h4>
 <p>If the hosts are interconnected (i.e. share the same network), set <code>placement</code> to <code>cluster</code>. 
 This is required if you'd like to use the fleet for <a href="../tasks/#distributed-tasks">distributed tasks</a>.</p>
 <h5 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h5>

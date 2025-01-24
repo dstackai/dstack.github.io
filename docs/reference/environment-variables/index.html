@@ -3398,28 +3398,30 @@ tasks, and services:</p>
 <li><code id="DSTACK_GPUS_PER_NODE">DSTACK_GPUS_PER_NODE</code> – The number of GPUs per node</li>
 <li><code id="DSTACK_NODE_RANK">DSTACK_NODE_RANK</code> – The rank of the node</li>
 <li>
-<p><code id="DSTACK_NODE_RANK">DSTACK_NODE_RANK</code> – The internal IP address the master node.</p>
-<p>Below is an example of using <code>DSTACK_NODES_NUM</code>, <code>DSTACK_GPUS_PER_NODE</code>, <code>DSTACK_NODE_RANK</code>, and <code>DSTACK_NODE_RANK</code>
+<p><code id="DSTACK_NODE_RANK">DSTACK_MASTER_NODE_IP</code> – The internal IP address of the master node.</p>
+<p>Below is an example of using <code>DSTACK_NODES_NUM</code>, <code>DSTACK_GPUS_PER_NODE</code>, <code>DSTACK_NODE_RANK</code>, and <code>DSTACK_MASTER_NODE_IP</code>
  for distributed training:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train-distrib</span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train-distrib</span>
 
-<span class="c1"># The number of instances in the cluster</span>
-<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w"> </span><span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w"> </span><span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
-<span class="nt">commands</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">torchrun</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--nproc_per_node=$DSTACK_GPUS_PER_NODE</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--node_rank=$DSTACK_NODE_RANK</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--nnodes=$DSTACK_NODES_NUM</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--master_addr=$DSTACK_MASTER_NODE_IP</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--master_port=8008</span><span class="w"> </span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">resnet_ddp.py --num_epochs 20</span>
+<span class="w"> </span><span class="nt">commands</span><span class="p">:</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/pytorch/examples.git</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd examples/distributed/ddp-tutorial-series</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">torchrun</span>
+<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">--nproc-per-node=$DSTACK_GPUS_PER_NODE</span>
+<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">--node-rank=$DSTACK_NODE_RANK</span>
+<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">--nnodes=$DSTACK_NODES_NUM</span>
+<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">--master-addr=$DSTACK_MASTER_NODE_IP</span>
+<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">--master-port=12345</span>
+<span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">multinode.py 50 10</span>
 
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+<span class="w"> </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+<span class="w">   </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
 </code></pre></div>
 </li>
 <li>

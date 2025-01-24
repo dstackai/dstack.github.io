@@ -3821,7 +3821,7 @@ application.</p>
 <h3 id="distributed-tasks">Distributed tasks<a class="headerlink" href="#distributed-tasks" title="Permanent link">&para;</a></h3>
 <p>By default, a task runs on a single node.
 However, you can run it on a cluster of nodes by specifying <code>nodes</code>.</p>
-<div editor-title="examples/fine-tuning/train.dstack.yml">
+<div editor-title="train.dstack.yml">
 
 <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
 <span class="c1"># The name is optional, if not specified, generated randomly</span>
@@ -3830,33 +3830,57 @@ However, you can run it on a cluster of nodes by specifying <code>nodes</code>.<
 <span class="c1"># The size of the cluster</span>
 <span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 
-<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span>
+<span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span>
 
-<span class="c1"># Commands of the task</span>
+<span class="c1"># Commands to run on each node</span>
 <span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/pytorch/examples.git</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd examples/distributed/ddp-tutorial-series</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">torchrun</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--nproc_per_node=$DSTACK_GPUS_PER_NODE</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--node_rank=$DSTACK_NODE_RANK</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--nproc-per-node=$DSTACK_GPUS_PER_NODE</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--node-rank=$DSTACK_NODE_RANK</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--nnodes=$DSTACK_NODES_NUM</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--master_addr=$DSTACK_MASTER_NODE_IP</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--master_port=8008 resnet_ddp.py</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--num_epochs 20</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--master-addr=$DSTACK_MASTER_NODE_IP</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">--master-port=12345</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">multinode.py 50 10</span>
 
 <span class="nt">resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24GB</span>
+<span class="w">  </span><span class="c1"># Uncomment if using multiple GPUs</span>
+<span class="w">  </span><span class="c1">#shm_size: 24GB</span>
 </code></pre></div>
 
 </div>
 
-<p>All you need to do is pass the corresponding environment variables such as 
-<code>DSTACK_GPUS_PER_NODE</code>, <code>DSTACK_NODE_RANK</code>, <code>DSTACK_NODES_NUM</code>,
-<code>DSTACK_MASTER_NODE_IP</code>, and <code>DSTACK_GPUS_NUM</code> (see <a href="#system-environment-variables">System environment variables</a>).</p>
+<p>Nodes can communicate using their private IP addresses.
+Use <code>DSTACK_MASTER_NODE_IP</code>, <code>$DSTACK_NODE_RANK</code>, and other
+<a href="#system-environment-variables">System environment variables</a>
+to discover IP addresses and other details.</p>
+<details class="info">
+<summary>Network interface</summary>
+<p>Distributed frameworks usually detect the correct network interface automatically,
+but sometimes you need to specify it explicitly.</p>
+<p>For example, with PyTorch and the NCCL backend, you may need
+to add these commands to tell NCCL to use the private interface:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get install -y iproute2</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">    </span><span class="no">if [[ $DSTACK_NODE_RANK == 0 ]]; then</span>
+<span class="w">      </span><span class="no">export NCCL_SOCKET_IFNAME=$(ip -4 -o addr show | fgrep $DSTACK_MASTER_NODE_IP | awk &#39;{print $2}&#39;)</span>
+<span class="w">    </span><span class="no">else</span>
+<span class="w">      </span><span class="no">export NCCL_SOCKET_IFNAME=$(ip route get $DSTACK_MASTER_NODE_IP | sed -E &#39;s/.*?dev (\S+) .*/\1/;t;d&#39;)</span>
+<span class="w">    </span><span class="no">fi</span>
+<span class="w">  </span><span class="c1"># ... The rest of the commands</span>
+</code></pre></div>
+</details>
 <div class="admonition info">
 <p class="admonition-title">Fleets</p>
-<p>To ensure all nodes are provisioned into a cluster placement group and to enable the highest level of inter-node 
-connectivity (incl. support for <a href="https://aws.amazon.com/hpc/efa/" target="_blank">EFA <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>),
-create a <a href="../fleets/">fleet</a> via a configuration before running a disstributed task.</p>
+<p>Distributed tasks can only run on fleets with
+<a href="../fleets/#cloud-placement">cluster placement</a>.
+While <code>dstack</code> can provision such fleets automatically, it is
+recommended to create them via a fleet configuration
+to ensure the highest level of inter-node connectivity.</p>
 </div>
 <p><code>dstack</code> is easy to use with <code>accelerate</code>, <code>torchrun</code>, Ray, Spark, and any other distributed frameworks.</p>
 <h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
@@ -4061,7 +4085,7 @@ inside <code>dstack</code> runs.</p>
 </tr>
 <tr>
 <td><code>DSTACK_MASTER_NODE_IP</code></td>
-<td>The internal IP address the master node</td>
+<td>The internal IP address of the master node</td>
 </tr>
 <tr>
 <td><code>DSTACK_NODES_IPS</code></td>
