@@ -978,6 +978,19 @@ Support our project with a ⭐ on
 </li>
         
           <li class="md-nav__item">
+  <a href="#detach-network-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Detach a volume
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#manage-network-volumes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3486,6 +3499,19 @@ Support our project with a ⭐ on
 </li>
         
           <li class="md-nav__item">
+  <a href="#detach-network-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Detach a volume
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#manage-network-volumes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3702,9 +3728,10 @@ Volume<span class="w"> </span>my-volume<span class="w"> </span>does<span class="
 </div>
 
 <p>Once created, the volume can be attached to dev environments, tasks, and services.</p>
-<blockquote>
-<p>When creating a network volume, <code>dstack</code> automatically creates an <code>ext4</code> filesystem on it.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Filesystem</p>
+<p>When creating a new network volume, <code>dstack</code> automatically creates an <code>ext4</code> filesystem on it.</p>
+</div>
 <h3 id="attach-network-volume">Attach a volume<a class="headerlink" href="#attach-network-volume" title="Permanent link">&para;</a></h3>
 <p>Dev environments, tasks, and services let you attach any number of network volumes.
 To attach a network volume, simply specify its name using the <code>volumes</code> property
@@ -3749,6 +3776,16 @@ you can specify multiple volumes for the same path.</p>
 to <code>/workflow</code> (and sets that as the current working directory). Right now, <code>dstack</code> doesn't allow you to 
 attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
 </details>
+<h3 id="detach-network-volume">Detach a volume<a class="headerlink" href="#detach-network-volume" title="Permanent link">&para;</a></h3>
+<p><code>dstack</code> automatically detaches volumes from instances when a run stops.</p>
+<div class="admonition info">
+<p class="admonition-title">Force detach</p>
+<p>In some clouds such as AWS a volume may stuck in the detaching state.
+To fix this, you can abort the run, and <code>dstack</code> will force detach the volume.
+<code>dstack</code> will also force detach the stuck volume automatically after <code>stop_duration</code>.
+Note that force detaching a volume is a last resort measure and may corrupt the file system.
+Contact your cloud support if you're experience volumes stuck in the detaching state.</p>
+</div>
 <h3 id="manage-network-volumes">Manage volumes<a class="headerlink" href="#manage-network-volumes" title="Permanent link">&para;</a></h3>
 <h4 id="list-volumes">List volumes<a class="headerlink" href="#list-volumes" title="Permanent link">&para;</a></h4>
 <p>The <a href="../../reference/cli/dstack/volume/#dstack-volume-list"><code>dstack volume list</code></a> command lists created and registered volumes:</p>

@@ -3451,7 +3451,7 @@ via <code>dstack server</code> or deployed using Docker.</p>
 <li><code id="DSTACK_DATABASE_URL">DSTACK_DATABASE_URL</code> – The database URL to use instead of default SQLite. Currently <code>dstack</code> supports Postgres. Example: <code>postgresql+asyncpg://myuser:mypassword@localhost:5432/mydatabase</code>. Defaults to <code>None</code>.</li>
 <li><code id="DSTACK_SERVER_CLOUDWATCH_LOG_GROUP">DSTACK_SERVER_CLOUDWATCH_LOG_GROUP</code> – The CloudWatch Logs group for workloads logs. If not set, the default file-based log storage is used.</li>
 <li><code id="DSTACK_SERVER_CLOUDWATCH_LOG_REGION">DSTACK_SERVER_CLOUDWATCH_LOG_REGION</code> – The CloudWatch Logs region. Defaults to <code>None</code>.</li>
-<li><code id="DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE">DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE</code> – Request body size limit for services, in bytes. Defaults to 64 MiB.</li>
+<li><code id="DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE">DSTACK_DEFAULT_SERVICE_CLIENT_MAX_BODY_SIZE</code> – Request body size limit for services running with a gateway, in bytes. Defaults to 64 MiB.</li>
 <li><code id="DSTACK_FORBID_SERVICES_WITHOUT_GATEWAY">DSTACK_FORBID_SERVICES_WITHOUT_GATEWAY</code> – Forbids registering new services without a gateway if set to any value.</li>
 </ul>
 <details class="info">
