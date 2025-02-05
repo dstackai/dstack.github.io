@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2+insiders-4.53.15">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f50c755.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.957d08c0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -3857,10 +3857,25 @@ specify the <code>instance_path</code> and <code>path</code> in the <code>volume
 
 <p>Since persistence isn't guaranteed (instances may be interrupted or runs may occur on different instances), use instance
 volumes only for caching or with directories manually mounted to network storage.</p>
-<blockquote>
-<p>Instance volumes are currently supported for all backends except <code>runpod</code>, <code>vastai</code> and <code>kubernetes</code>,
-and can also be used with <a href="../fleets/#ssh">SSH fleets</a>. </p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Backends</p>
+<p>Instance volumes are currently supported for all backends except <code>runpod</code>, <code>vastai</code> and <code>kubernetes</code>, and can also be used with <a href="../fleets/#ssh">SSH fleets</a>.</p>
+</div>
+<details class="info">
+<summary>Optional volumes</summary>
+<p>If the volume is not critical for your workload, you can mark it as <code>optional</code>.</p>
+<div editor-title=".dstack.yml">
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">instance_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/dstack-cache</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/root/.cache/</span>
+<span class="w">    </span><span class="nt">optional</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Configurations with optional volumes can run in any backend, but the volume is only mounted
+if the selected backend supports it.</p>
+</div>
+</details>
 <h3 id="use-instance-volumes-for-caching">Use instance volumes for caching<a class="headerlink" href="#use-instance-volumes-for-caching" title="Permanent link">&para;</a></h3>
 <p>For example, if a run regularly installs packages with <code>pip install</code>,
 you can mount the <code>/root/.cache/pip</code> folder inside the container to a folder on the instance for 
@@ -4100,7 +4115,7 @@ you can map this directory via instance volumes and be sure the data is persiste
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.b71cdcd1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.aa9eae41.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

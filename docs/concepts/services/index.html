@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2+insiders-4.53.15">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f50c755.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.957d08c0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -903,6 +903,19 @@ Support our project with a ⭐ on
       
         <span class="md-typeset">
           Authorization
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Path prefix
         </span>
       
     </span>
@@ -3480,6 +3493,19 @@ Support our project with a ⭐ on
 </li>
         
           <li class="md-nav__item">
+  <a href="#path-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Path prefix
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#model" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3746,6 +3772,43 @@ This can be disabled by setting <code>auth</code> to <code>false</code>.</p>
 
 </div>
 
+<h3 id="path-prefix">Path prefix<a class="headerlink" href="#path-prefix" title="Permanent link">&para;</a></h3>
+<p>If your <code>dstack</code> project doesn't have a <a href="../gateways/">gateway</a>, services are hosted with the
+<code>/proxy/services/&lt;project name&gt;/&lt;run name&gt;/</code> path prefix in the URL.
+When running web apps, you may need to set some app-specific settings
+so that browser-side scripts and CSS work correctly with the path prefix.</p>
+<div editor-title="dash.dstack.yml"> 
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dash</span>
+<span class="nt">gateway</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="c1"># Disable authorization</span>
+<span class="nt">auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="c1"># Do not strip the path prefix</span>
+<span class="nt">strip_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Configure Dash to work with a path prefix</span>
+<span class="w">  </span><span class="c1"># Replace `main` with your dstack project name</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DASH_ROUTES_PATHNAME_PREFIX=/proxy/services/main/dash/</span>
+
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install dash</span>
+<span class="w">  </span><span class="c1"># Assuming the Dash app is in your repo at app.py</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python app.py</span>
+
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8050</span>
+</code></pre></div>
+
+</div>
+
+<p>By default, <code>dstack</code> strips the prefix before forwarding requests to your service,
+so to the service it appears as if the prefix isn't there. This allows some apps
+to work out of the box. If your app doesn't expect the prefix to be stripped,
+set <a href="../../reference/dstack.yml/service/#strip_prefix"><code>strip_prefix</code></a> to <code>false</code>.</p>
+<p>If your app cannot be configured to work with a path prefix, you can host it
+on a dedicated domain name by setting up a <a href="../gateways/">gateway</a>.</p>
 <h3 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h3>
 <p>If the service is running a chat model with an OpenAI-compatible interface,
 set the <a href="#model"><code>model</code></a> property to make the model accessible via <code>dstack</code>'s 
@@ -3976,9 +4039,9 @@ among <a href="../../reference/dstack.yml/service/">others</a>.</p>
 <p>Running services doesn't require <a href="../gateways/">gateways</a> unless you need to enable auto-scaling or want the endpoint to
 use HTTPS and map it to your domain.</p>
 <div class="admonition info">
-<p class="admonition-title">Websockets and base path</p>
-<p>A <a href="../gateways/">gateway</a> may also be required if the service needs Websockets or cannot be used with 
-a base path.</p>
+<p class="admonition-title">Websockets and path prefix</p>
+<p>A gateway may also be required if the service needs Websockets or cannot be used with 
+a <a href="#path-prefix">path prefix</a>.</p>
 </div>
 <blockquote>
 <p>If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>,
@@ -4271,7 +4334,7 @@ at <code>https://gateway.&lt;gateway domain&gt;/</code>.</p>
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.b71cdcd1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.aa9eae41.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
