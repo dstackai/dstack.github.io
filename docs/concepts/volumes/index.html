@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3+insiders-4.53.15">
     
     
       
@@ -939,24 +939,11 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
+  <a href="#apply-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Define a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-register-or-update-a-volume" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Create, register, or update a volume
+          Apply a configuration
         </span>
       
     </span>
@@ -3460,24 +3447,11 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
+  <a href="#apply-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Define a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-register-or-update-a-volume" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Create, register, or update a volume
+          Apply a configuration
         </span>
       
     </span>
@@ -3668,7 +3642,7 @@ Useful as a cache for cloud fleets or for persistent storage with SSH fleets.</l
 </ul>
 <h2 id="network-volumes">Network volumes<a class="headerlink" href="#network-volumes" title="Permanent link">&para;</a></h2>
 <p>Network volumes are currently supported for the <code>aws</code>, <code>gcp</code>, and <code>runpod</code> backends.</p>
-<h3 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h3>
+<h3 id="apply-a-configuration">Apply a configuration<a class="headerlink" href="#apply-a-configuration" title="Permanent link">&para;</a></h3>
 <p>First, define a volume configuration as a YAML file in your project folder.
 The filename must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>volume.dstack.yml</code> are both acceptable).</p>
 <div editor-title="volume.dstack.yml"> 
@@ -3688,6 +3662,22 @@ The filename must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</cod
 </div>
 
 <p>If you use this configuration, <code>dstack</code> will create a new volume based on the specified options.</p>
+<p>To create, update, or register the volume, pass the volume configuration to <code>dstack apply</code>:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>volume.dstack.yml
+Volume<span class="w"> </span>my-volume<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist<span class="w"> </span>yet.<span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>volume?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+
+<span class="w"> </span>NAME<span class="w">       </span>BACKEND<span class="w">  </span>REGION<span class="w">        </span>STATUS<span class="w">     </span>CREATED<span class="w"> </span>
+<span class="w"> </span>my-volume<span class="w">  </span>aws<span class="w">      </span>eu-central-1<span class="w">  </span>submitted<span class="w">  </span>now<span class="w">     </span>
+</code></pre></div>
+
+</div>
+
+<p>Once created, the volume can be attached to dev environments, tasks, and services.</p>
+<blockquote>
+<p>When creating a new network volume, <code>dstack</code> automatically creates an <code>ext4</code> filesystem on it.</p>
+</blockquote>
 <details class="info">
 <summary>Register existing volumes</summary>
 <p>If you prefer not to create a new volume but to reuse an existing one (e.g., created manually), you can 
@@ -3713,24 +3703,6 @@ specify its ID via <a href="../../reference/dstack.yml/volume/#volume_id"><code>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
 <p>For all volume configuration options, refer to the <a href="../../reference/dstack.yml/volume/">reference</a>.</p>
-</div>
-<h3 id="create-register-or-update-a-volume">Create, register, or update a volume<a class="headerlink" href="#create-register-or-update-a-volume" title="Permanent link">&para;</a></h3>
-<p>To create or register the volume, pass the volume configuration to <code>dstack apply</code>:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>volume.dstack.yml
-Volume<span class="w"> </span>my-volume<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist<span class="w"> </span>yet.<span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>volume?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
-
-<span class="w"> </span>NAME<span class="w">       </span>BACKEND<span class="w">  </span>REGION<span class="w">        </span>STATUS<span class="w">     </span>CREATED<span class="w"> </span>
-<span class="w"> </span>my-volume<span class="w">  </span>aws<span class="w">      </span>eu-central-1<span class="w">  </span>submitted<span class="w">  </span>now<span class="w">     </span>
-</code></pre></div>
-
-</div>
-
-<p>Once created, the volume can be attached to dev environments, tasks, and services.</p>
-<div class="admonition info">
-<p class="admonition-title">Filesystem</p>
-<p>When creating a new network volume, <code>dstack</code> automatically creates an <code>ext4</code> filesystem on it.</p>
 </div>
 <h3 id="attach-network-volume">Attach a volume<a class="headerlink" href="#attach-network-volume" title="Permanent link">&para;</a></h3>
 <p>Dev environments, tasks, and services let you attach any number of network volumes.
@@ -3758,8 +3730,12 @@ and specify where to mount its contents:</p>
 
 <p>Once you run this configuration, the contents of the volume will be attached to <code>/volume_data</code> inside the dev environment, 
 and its contents will persist across runs.</p>
-<div class="admonition info">
-<p class="admonition-title">Attach volumes across regions and backends</p>
+<blockquote>
+<p>Currently, <code>dstack</code> does not allow attaching volumes to <code>/workflow</code> or any of its subdirectories because this folder is
+reserved for fetching the repository</p>
+</blockquote>
+<details class="info">
+<summary>Multiple regions or backends</summary>
 <p>If you're unsure in advance which region or backend you'd like to use (or which is available),
 you can specify multiple volumes for the same path.</p>
 <div editor-title=".dstack.yml">
@@ -3769,12 +3745,25 @@ you can specify multiple volumes for the same path.</p>
 </code></pre></div>
 </div>
 <p><code>dstack</code> will attach one of the volumes based on the region and backend of the run.  </p>
-</div>
+</details>
 <details class="info">
-<summary>Container path</summary>
-<p>When you're running a dev environment, task, or service with <code>dstack</code>, it automatically mounts the project folder contents
-to <code>/workflow</code> (and sets that as the current working directory). Right now, <code>dstack</code> doesn't allow you to 
-attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
+<summary>Distributed tasks</summary>
+<p>When using single-attach volumes such as AWS EBS with distributed tasks,
+you can attach different volumes to different nodes using <code>dstack</code> variable interpolation:</p>
+<div editor-title=".dstack.yml">
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span>
+<span class="nt">nodes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data-volume-${{ dstack.node_rank }}</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/volume_data</span>
+</code></pre></div>
+</div>
+<p>This way, every node will use its own volume.</p>
+<p>Tip: To create volumes for all nodes using one volume configuration, specify volume name with <code>-n</code>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">0</span>..7<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>vol.dstack.yml<span class="w"> </span>-n<span class="w"> </span>data-volume-<span class="nv">$i</span><span class="w"> </span>-y<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</code></pre></div>
 </details>
 <h3 id="detach-network-volume">Detach a volume<a class="headerlink" href="#detach-network-volume" title="Permanent link">&para;</a></h3>
 <p><code>dstack</code> automatically detaches volumes from instances when a run stops.</p>
@@ -3782,8 +3771,8 @@ attach volumes to <code>/workflow</code> or any of its subdirectories.</p>
 <p class="admonition-title">Force detach</p>
 <p>In some clouds such as AWS a volume may stuck in the detaching state.
 To fix this, you can abort the run, and <code>dstack</code> will force detach the volume.
-<code>dstack</code> will also force detach the stuck volume automatically after <code>stop_duration</code>.
-Note that force detaching a volume is a last resort measure and may corrupt the file system.
+<code>dstack</code> will also force detach the stuck volume automatically after <code>stop_duration</code>.</p>
+<p>Note that force detaching a volume is a last resort measure and may corrupt the file system.
 Contact your cloud support if you're experience volumes stuck in the detaching state.</p>
 </div>
 <h3 id="manage-network-volumes">Manage volumes<a class="headerlink" href="#manage-network-volumes" title="Permanent link">&para;</a></h3>
@@ -4115,7 +4104,7 @@ you can map this directory via instance volumes and be sure the data is persiste
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.aa9eae41.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5a789024.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       

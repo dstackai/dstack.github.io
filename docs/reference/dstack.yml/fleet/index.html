@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3+insiders-4.53.15">
     
     
       
@@ -3481,6 +3481,7 @@ Support our project with a ⭐ on
 <h6 class="reference-item" id="placement"><code>placement</code> - (Optional) The placement of instances: <code>any</code> or <code>cluster</code>.<a class="headerlink" href="#placement" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="reservation"><code>reservation</code> - (Optional) The existing reservation to use for instance provisioning. Supports AWS Capacity Reservations and Capacity Blocks.<a class="headerlink" href="#reservation" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="_resources"><a href="#resources"><code>resources</code></a> - (Optional) The resources requirements.<a class="headerlink" href="#_resources" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="blocks"><code>blocks</code> - (Optional) The amount of blocks to split the instance into, a number or <code>auto</code>. <code>auto</code> means as many as possible. The number of GPUs and CPUs must be divisible by the number of blocks. Defaults to <code>1</code>, i.e. do not split. Defaults to <code>1</code>.<a class="headerlink" href="#blocks" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisioning (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h6>
@@ -3502,6 +3503,7 @@ Support our project with a ⭐ on
 <h6 class="reference-item" id="user"><code>user</code> - (Optional) The user to log in with for this host.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="identity_file"><code>identity_file</code> - (Optional) The private key to use for this host.<a class="headerlink" href="#identity_file" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="internal_ip"><code>internal_ip</code> - (Optional) The internal IP of the host used for communication inside the cluster. If not specified, <code>dstack</code> will use the IP address from <code>network</code> or from the first found internal network..<a class="headerlink" href="#internal_ip" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="blocks"><code>blocks</code> - (Optional) The amount of blocks to split the instance into, a number or <code>auto</code>. <code>auto</code> means as many as possible. The number of GPUs and CPUs must be divisible by the number of blocks. Defaults to <code>1</code>, i.e. do not split. Defaults to <code>1</code>.<a class="headerlink" href="#blocks" title="Permanent link">&para;</a></h6>
 <h3 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
 <h6 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>8GB</code>). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h6>
@@ -3731,7 +3733,7 @@ Support our project with a ⭐ on
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../../assets/javascripts/bundle.aa9eae41.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.5a789024.min.js"></script>
       
         <script src="../../../../assets/javascripts/extra.js"></script>
       

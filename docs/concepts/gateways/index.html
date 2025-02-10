@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3+insiders-4.53.15">
     
     
       
@@ -952,24 +952,11 @@ Support our project with a ⭐ on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
+  <a href="#apply-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Define a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-or-update-a-gateway" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Create or update a gateway
+          Apply a configuration
         </span>
       
     </span>
@@ -3343,24 +3330,11 @@ Support our project with a ⭐ on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-a-configuration" class="md-nav__link">
+  <a href="#apply-a-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         <span class="md-typeset">
-          Define a configuration
-        </span>
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-or-update-a-gateway" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <span class="md-typeset">
-          Create or update a gateway
+          Apply a configuration
         </span>
       
     </span>
@@ -3459,7 +3433,7 @@ and handle auto-scaling.</p>
 <p>If you're using <a href="https://sky.dstack.ai" target="_blank">dstack Sky <span class="twemoji external"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.93 5 2.83 2.83L5 17.59 6.42 19l9.76-9.75L19 12.07V5z"/></svg></span></a>,
 the gateway is already set up for you.</p>
 </blockquote>
-<h2 id="define-a-configuration">Define a configuration<a class="headerlink" href="#define-a-configuration" title="Permanent link">&para;</a></h2>
+<h2 id="apply-a-configuration">Apply a configuration<a class="headerlink" href="#apply-a-configuration" title="Permanent link">&para;</a></h2>
 <p>First, define a gateway configuration as a YAML file in your project folder.
 The filename must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</code> or <code>gateway.dstack.yml</code> are both acceptable).</p>
 <div editor-title="gateway.dstack.yml"> 
@@ -3479,16 +3453,14 @@ The filename must end with <code>.dstack.yml</code> (e.g. <code>.dstack.yml</cod
 </div>
 
 <p>A domain name is required to create a gateway.</p>
-<div class="admonition info">
-<p class="admonition-title">Reference</p>
-<p>For all gateway configuration options, refer to the <a href="../../reference/dstack.yml/gateway/">reference</a>.</p>
-</div>
-<h2 id="create-or-update-a-gateway">Create or update a gateway<a class="headerlink" href="#create-or-update-a-gateway" title="Permanent link">&para;</a></h2>
 <p>To create or update the gateway, simply call the <a href="../../reference/cli/dstack/apply/"><code>dstack apply</code></a> command:</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>gateway.dstack.yml
 The<span class="w"> </span>example-gateway<span class="w"> </span>doesn<span class="err">&#39;</span>t<span class="w"> </span>exist.<span class="w"> </span>Create<span class="w"> </span>it?<span class="w"> </span><span class="o">[</span>y/n<span class="o">]</span>:<span class="w"> </span>y
+
+Provisioning...
+---&gt;<span class="w"> </span><span class="m">100</span>%
 
 <span class="w"> </span>BACKEND<span class="w">  </span>REGION<span class="w">     </span>NAME<span class="w">             </span>HOSTNAME<span class="w">  </span>DOMAIN<span class="w">       </span>DEFAULT<span class="w">  </span>STATUS
 <span class="w"> </span>aws<span class="w">      </span>eu-west-1<span class="w">  </span>example-gateway<span class="w">            </span>example.com<span class="w">  </span>✓<span class="w">        </span>submitted
@@ -3496,6 +3468,10 @@ The<span class="w"> </span>example-gateway<span class="w"> </span>doesn<span cla
 
 </div>
 
+<div class="admonition info">
+<p class="admonition-title">Reference</p>
+<p>For all gateway configuration options, refer to the <a href="../../reference/dstack.yml/gateway/">reference</a>.</p>
+</div>
 <h2 id="update-dns-records">Update DNS records<a class="headerlink" href="#update-dns-records" title="Permanent link">&para;</a></h2>
 <p>Once the gateway is assigned a hostname, go to your domain's DNS settings
 and add a DNS record for <code>*.&lt;gateway domain&gt;</code>, e.g. <code>*.example.com</code>.
@@ -3732,7 +3708,7 @@ or of type <code>CNAME</code> if the hostname is another domain (some private ga
 <script src="/assets/javascripts/termynal.js" data-termynal-container="#termynal"></script>
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-      <script src="../../../assets/javascripts/bundle.aa9eae41.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5a789024.min.js"></script>
       
         <script src="../../../assets/javascripts/extra.js"></script>
       
