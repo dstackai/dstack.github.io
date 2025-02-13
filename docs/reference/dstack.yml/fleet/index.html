@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4+insiders-4.53.15">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.957d08c0.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f15084e1.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1395,6 +1395,17 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ssh_config-proxy_jump" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        proxy_jump
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ssh_config-hosts" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1402,6 +1413,23 @@ Support our project with a ⭐ on
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxy_jump" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hosts[n].proxy_jump
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3384,6 +3412,17 @@ Support our project with a ⭐ on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ssh_config-proxy_jump" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        proxy_jump
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ssh_config-hosts" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3391,6 +3430,23 @@ Support our project with a ⭐ on
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxy_jump" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hosts[n].proxy_jump
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3484,6 +3540,7 @@ Support our project with a ⭐ on
 <h6 class="reference-item" id="blocks"><code>blocks</code> - (Optional) The amount of blocks to split the instance into, a number or <code>auto</code>. <code>auto</code> means as many as possible. The number of GPUs and CPUs must be divisible by the number of blocks. Defaults to <code>1</code>, i.e. do not split. Defaults to <code>1</code>.<a class="headerlink" href="#blocks" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="availability_zones"><code>availability_zones</code> - (Optional) The availability zones to consider for provisioning (e.g., <code>[eu-west-1a, us-west4-a]</code>).<a class="headerlink" href="#availability_zones" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisioning (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for provisioning retry. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h6>
@@ -3495,15 +3552,27 @@ Support our project with a ⭐ on
 <h6 class="reference-item" id="user"><code>user</code> - (Optional) The user to log in with on all hosts.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="port"><code>port</code> - (Optional) The SSH port to connect to.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="identity_file"><code>identity_file</code> - (Optional) The private key to use for all hosts.<a class="headerlink" href="#identity_file" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="_proxy_jump"><a href="#ssh_config-proxy_jump"><code>proxy_jump</code></a> - (Optional) The SSH proxy configuration for all hosts.<a class="headerlink" href="#_proxy_jump" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="_hosts"><a href="#ssh_config-hosts"><code>hosts</code></a> -  The per host connection parameters: a hostname or an object that overrides default ssh parameters.<a class="headerlink" href="#_hosts" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="network"><code>network</code> - (Optional) The network address for cluster setup in the format <code>&lt;ip&gt;/&lt;netmask&gt;</code>. <code>dstack</code> will use IP addresses from this network for communication between hosts. If not specified, <code>dstack</code> will use IPs from the first found internal network..<a class="headerlink" href="#network" title="Permanent link">&para;</a></h6>
+<h4 id="ssh_config-proxy_jump"><code>ssh_config.proxy_jump</code><a class="headerlink" href="#ssh_config-proxy_jump" title="Permanent link">&para;</a></h4>
+<h6 class="reference-item" id="hostname"><code>hostname</code> -  The IP address or domain of proxy host.<a class="headerlink" href="#hostname" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="port"><code>port</code> - (Optional) The SSH port of proxy host.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="user"><code>user</code> -  The user to log in with for proxy host.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="identity_file"><code>identity_file</code> -  The private key to use for proxy host.<a class="headerlink" href="#identity_file" title="Permanent link">&para;</a></h6>
 <h4 id="ssh_config-hosts"><code>ssh_config.hosts[n]</code><a class="headerlink" href="#ssh_config-hosts" title="Permanent link">&para;</a></h4>
 <h6 class="reference-item" id="hostname"><code>hostname</code> -  The IP address or domain to connect to.<a class="headerlink" href="#hostname" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="port"><code>port</code> - (Optional) The SSH port to connect to for this host.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="user"><code>user</code> - (Optional) The user to log in with for this host.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="identity_file"><code>identity_file</code> - (Optional) The private key to use for this host.<a class="headerlink" href="#identity_file" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="_proxy_jump"><a href="#proxy_jump"><code>proxy_jump</code></a> - (Optional) The SSH proxy configuration for this host.<a class="headerlink" href="#_proxy_jump" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="internal_ip"><code>internal_ip</code> - (Optional) The internal IP of the host used for communication inside the cluster. If not specified, <code>dstack</code> will use the IP address from <code>network</code> or from the first found internal network..<a class="headerlink" href="#internal_ip" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="blocks"><code>blocks</code> - (Optional) The amount of blocks to split the instance into, a number or <code>auto</code>. <code>auto</code> means as many as possible. The number of GPUs and CPUs must be divisible by the number of blocks. Defaults to <code>1</code>, i.e. do not split. Defaults to <code>1</code>.<a class="headerlink" href="#blocks" title="Permanent link">&para;</a></h6>
+<h5 id="proxy_jump"><code>ssh_config.hosts[n].proxy_jump</code><a class="headerlink" href="#proxy_jump" title="Permanent link">&para;</a></h5>
+<h6 class="reference-item" id="hostname"><code>hostname</code> -  The IP address or domain of proxy host.<a class="headerlink" href="#hostname" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="port"><code>port</code> - (Optional) The SSH port of proxy host.<a class="headerlink" href="#port" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="user"><code>user</code> -  The user to log in with for proxy host.<a class="headerlink" href="#user" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="identity_file"><code>identity_file</code> -  The private key to use for proxy host.<a class="headerlink" href="#identity_file" title="Permanent link">&para;</a></h6>
 <h3 id="resources"><code>resources</code><a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
 <h6 class="reference-item" id="cpu"><code>cpu</code> - (Optional) The number of CPU cores. Defaults to <code>2..</code>.<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="memory"><code>memory</code> - (Optional) The RAM size (e.g., <code>8GB</code>). Defaults to <code>8GB..</code>.<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h6>

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4+insiders-4.53.15">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.957d08c0.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f15084e1.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -3784,6 +3784,7 @@ to configure <a href="../../../concepts/backends/">backends</a> and other <a hre
 <h6 class="reference-item" id="type"><code>type</code> -  The type of the backend. Must be <code>azure</code>.<a class="headerlink" href="#type" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="tenant_id"><code>tenant_id</code> -  The tenant ID.<a class="headerlink" href="#tenant_id" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="subscription_id"><code>subscription_id</code> -  The subscription ID.<a class="headerlink" href="#subscription_id" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="resource_group"><code>resource_group</code> - (Optional) The resource group for resources created by <code>dstack</code>. If not specified, <code>dstack</code> will create a new resource group.<a class="headerlink" href="#resource_group" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="regions"><code>regions</code> - (Optional) The list of Azure regions (locations). Omit to use all regions.<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="vpc_ids"><code>vpc_ids</code> - (Optional) The mapping from configured Azure locations to network IDs. A network ID must have a format <code>networkResourceGroup/networkName</code> If not specified, <code>dstack</code> will create a new network for every configured region.<a class="headerlink" href="#vpc_ids" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="public_ips"><code>public_ips</code> - (Optional) A flag to enable/disable public IP assigning on instances. <code>public_ips: false</code> requires <code>vpc_ids</code> that specifies custom networks with outbound internet connectivity provided by NAT Gateway or other mechanism. Defaults to <code>true</code>.<a class="headerlink" href="#public_ips" title="Permanent link">&para;</a></h6>

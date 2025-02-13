@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4+insiders-4.53.15">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.957d08c0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f15084e1.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1092,6 +1092,19 @@ Support our project with a ⭐ on
       
         <span class="md-typeset">
           Environment variables
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Head node
         </span>
       
     </span>
@@ -3731,6 +3744,19 @@ Support our project with a ⭐ on
 </li>
         
           <li class="md-nav__item">
+  <a href="#head-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Head node
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4080,6 +4106,39 @@ the <a href="../../reference/dstack.yml/fleet/#network"><code>network</code></a>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.51</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.52</span>
 </code></pre></div>
+<h4 id="head-node">Head node<a class="headerlink" href="#head-node" title="Permanent link">&para;</a></h4>
+<p>If fleet nodes are behind a head node, configure <a href="../../reference/dstack.yml/fleet/#proxy_jump"><code>proxy_jump</code></a>:</p>
+<div editor-title="examples/misc/fleets/.dstack.yml">
+
+    <div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fleet</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-fleet</span>
+
+<span class="nt">ssh_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
+<span class="w">  </span><span class="nt">identity_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/worker_node_key</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.51</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.52</span>
+<span class="w">  </span><span class="nt">proxy_jump</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.255.177.50</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
+<span class="w">    </span><span class="nt">identity_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/head_node_key</span>
+</code></pre></div>
+
+</div>
+
+<p>To be able to attach to runs, both explicitly with <code>dstack attach</code> and implicitly with <code>dstack apply</code>, you must either
+add a front node key (<code>~/.ssh/head_node_key</code>) to an SSH agent or configure a key path in <code>~/.ssh/config</code>:</p>
+<div editor-title="~/.ssh/config">
+
+    <div class="highlight"><pre><span></span><code>Host 3.255.177.50
+    IdentityFile ~/.ssh/head_node_key
+</code></pre></div>
+
+</div>
+
+<p>where <code>Host</code> must match <code>ssh_config.proxy_jump.hostname</code> or <code>ssh_config.hosts[n].proxy_jump.hostname</code> if you configure head nodes
+on a per-worker basis.</p>
 <div class="admonition info">
 <p class="admonition-title">Reference</p>
 <p>For all SSH fleet configuration options, refer to the <a href="../../reference/dstack.yml/fleet/">reference</a>.</p>

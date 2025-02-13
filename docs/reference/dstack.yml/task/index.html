@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4+insiders-4.53.15">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.957d08c0.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f15084e1.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -3480,12 +3480,13 @@ Support our project with a ⭐ on
 <h6 class="reference-item" id="commands"><code>commands</code> - (Optional) The bash commands to run.<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="backends"><code>backends</code> - (Optional) The backends to consider for provisioning (e.g., <code>[aws, gcp]</code>).<a class="headerlink" href="#backends" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="regions"><code>regions</code> - (Optional) The regions to consider for provisioning (e.g., <code>[eu-west-1, us-west4, westeurope]</code>).<a class="headerlink" href="#regions" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="availability_zones"><code>availability_zones</code> - (Optional) The availability zones to consider for provisioning (e.g., <code>[eu-west-1a, us-west4-a]</code>).<a class="headerlink" href="#availability_zones" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="instance_types"><code>instance_types</code> - (Optional) The cloud-specific instance types to consider for provisioning (e.g., <code>[p3.8xlarge, n1-standard-4]</code>).<a class="headerlink" href="#instance_types" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="reservation"><code>reservation</code> - (Optional) The existing reservation to use for instance provisioning. Supports AWS Capacity Reservations and Capacity Blocks.<a class="headerlink" href="#reservation" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="spot_policy"><code>spot_policy</code> - (Optional) The policy for provisioning spot or on-demand instances: <code>spot</code>, <code>on-demand</code>, or <code>auto</code>. Defaults to <code>on-demand</code>.<a class="headerlink" href="#spot_policy" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="_retry"><a href="#retry"><code>retry</code></a> - (Optional) The policy for resubmitting the run. Defaults to <code>false</code>.<a class="headerlink" href="#_retry" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="max_duration"><code>max_duration</code> - (Optional) The maximum duration of a run (e.g., <code>2h</code>, <code>1d</code>, etc). After it elapses, the run is automatically stopped. Use <code>off</code> for unlimited duration. Defaults to <code>off</code>.<a class="headerlink" href="#max_duration" title="Permanent link">&para;</a></h6>
-<h6 class="reference-item" id="stop_duration"><code>stop_duration</code> - (Optional) The maximum duration of a run gracefull stopping. After it elapses, the run is automatically forced stopped. This includes force detaching volumes used by the run. Use <code>off</code> for unlimited duration. Defaults to <code>5m</code>.<a class="headerlink" href="#stop_duration" title="Permanent link">&para;</a></h6>
+<h6 class="reference-item" id="stop_duration"><code>stop_duration</code> - (Optional) The maximum duration of a run graceful stopping. After it elapses, the run is automatically forced stopped. This includes force detaching volumes used by the run. Use <code>off</code> for unlimited duration. Defaults to <code>5m</code>.<a class="headerlink" href="#stop_duration" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="max_price"><code>max_price</code> - (Optional) The maximum instance price per hour, in dollars.<a class="headerlink" href="#max_price" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="creation_policy"><code>creation_policy</code> - (Optional) The policy for using instances from the pool. Defaults to <code>reuse-or-create</code>.<a class="headerlink" href="#creation_policy" title="Permanent link">&para;</a></h6>
 <h6 class="reference-item" id="idle_duration"><code>idle_duration</code> - (Optional) Time to wait before terminating idle instances. Defaults to <code>5m</code> for runs and <code>3d</code> for fleets. Use <code>off</code> for unlimited duration.<a class="headerlink" href="#idle_duration" title="Permanent link">&para;</a></h6>

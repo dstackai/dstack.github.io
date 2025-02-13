@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/dstack-fav-32.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3+insiders-4.53.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4+insiders-4.53.15">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.957d08c0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f15084e1.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -849,6 +849,19 @@ Support our project with a ⭐ on
       
         <span class="md-typeset">
           Initialization
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inactivity-duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Inactivity duration
         </span>
       
     </span>
@@ -3461,6 +3474,19 @@ Support our project with a ⭐ on
 </li>
         
           <li class="md-nav__item">
+  <a href="#inactivity-duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Inactivity duration
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3691,6 +3717,43 @@ property with a list of commands to run at startup:</p>
 
 </div>
 
+<h3 id="inactivity-duration">Inactivity duration<a class="headerlink" href="#inactivity-duration" title="Permanent link">&para;</a></h3>
+<p>Set <a href="../../reference/dstack.yml/dev-environment/#inactivity_duration"><code>inactivity_duration</code></a>
+to automatically stop the dev environment after a configured period of inactivity.</p>
+<div editor-title=".dstack.yml">
+
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-environment</span>
+<span class="nt">ide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vscode</span>
+
+<span class="c1"># Stop if inactive for 2 hours</span>
+<span class="nt">inactivity_duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2h</span>
+</code></pre></div>
+
+</div>
+
+<p>The dev environment becomes inactive when you close the remote VS Code window,
+close any <code>ssh &lt;run name&gt;</code> shells, and stop the <code>dstack apply</code> or <code>dstack attach</code> command.
+If you go offline without stopping anything manually, the dev environment will also become inactive
+within about 3 minutes.</p>
+<p>If <code>inactivity_duration</code> is configured for your dev environment, you can see how long
+it has been inactive in <code>dstack ps --verbose</code>.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dstack<span class="w"> </span>ps<span class="w"> </span>--verbose
+<span class="w"> </span>NAME<span class="w">    </span>BACKEND<span class="w">  </span>RESOURCES<span class="w">       </span>PRICE<span class="w">    </span>STATUS<span class="w">                 </span>SUBMITTED
+<span class="w"> </span>vscode<span class="w">  </span>cudo<span class="w">     </span>2xCPU,<span class="w"> </span>8GB,<span class="w">     </span><span class="nv">$0</span>.0286<span class="w">  </span>running<span class="w">                </span><span class="m">8</span><span class="w"> </span>mins<span class="w"> </span>ago
+<span class="w">                  </span><span class="m">100</span>.0GB<span class="w"> </span><span class="o">(</span>disk<span class="o">)</span><span class="w">           </span><span class="o">(</span>inactive<span class="w"> </span><span class="k">for</span><span class="w"> </span>2m<span class="w"> </span>34s<span class="o">)</span>
+</code></pre></div>
+
+</div>
+
+<p>If you reattach to the dev environment using <a href="../../reference/cli/dstack/attach/"><code>dstack attach</code></a>,
+the inactivity timer will be reset within a few seconds.</p>
+<blockquote>
+<p><code>inactivity_duration</code> is not to be confused with <a href="#idle-duration"><code>idle_duration</code></a>.
+The latter determines how soon the underlying cloud instance will be terminated
+<em>after</em> the dev environment is stopped.</p>
+</blockquote>
 <h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
 <p>When you specify a resource value like <code>cpu</code> or <code>memory</code>,
 you can either use an exact value (e.g. <code>24GB</code>) or a 
